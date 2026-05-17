@@ -408,7 +408,7 @@ function renderMexcCard() {
 }
 
 // === Bloomberg news flash ===
-const BLOOMBERG_SEEN_KEY = "bloombergSeenIds_v1";
+const BLOOMBERG_SEEN_KEY = "bloombergSeenIds_v2";
 function loadBloombergSeen() {
   try { return new Set(JSON.parse(localStorage.getItem(BLOOMBERG_SEEN_KEY) || "[]")); }
   catch { return new Set(); }
@@ -417,7 +417,7 @@ function saveBloombergSeen(s) {
   localStorage.setItem(BLOOMBERG_SEEN_KEY, JSON.stringify([...s].slice(-50)));
 }
 let bloombergSeen = loadBloombergSeen();
-let bloombergFirstRun = !localStorage.getItem("bloombergFirstRun_v1");
+let bloombergFirstRun = !localStorage.getItem("bloombergFirstRun_v2");
 
 function checkBloombergNews(articles) {
   if (!articles) return;
@@ -427,7 +427,7 @@ function checkBloombergNews(articles) {
     // is set to false before new articles can arrive on the next fetch.
     articles.forEach(a => bloombergSeen.add(a.id));
     saveBloombergSeen(bloombergSeen);
-    localStorage.setItem("bloombergFirstRun_v1", "1");
+    localStorage.setItem("bloombergFirstRun_v2", "1");
     bloombergFirstRun = false;
     return;
   }
