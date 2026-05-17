@@ -52,6 +52,8 @@ async function fetchData() {
     state.trades = newTrades;
     state.recentCloses = newCloses;
     state.recentOpens = recentOpens;
+    state.recentSignals = d.recent_signals || [];
+    state.tp1HitsOpen = d.tp1_hits_open || [];
     state.stats = d.stats || {};
     state.lastCronIso = d.last_updated_iso || null;
     state.lastFetch = Date.now();
@@ -439,35 +441,50 @@ function renderPendingTriggers() {
 }
 
 function renderActivity() {
-  const opens = state.recentOpens || [];
-  const closes = state.recentCloses || [];
-  // Last 8 hours window
-  const cutoff = Date.now() - 8 * 3600_000;
-  const recentOpens = opens.filter(o => o._iso_ms && o._iso_ms >= cutoff);
-  const recentCloses = closes.filter(c => new Date(c.close_iso).getTime() >= cutoff);
+  const cutoff = Date.now() - 12 * 3600_000;
+  const events = [];
 
-  if (!recentOpens.length && !recentCloses.length) {
-    $("activity").innerHTML = '<span class="empty">No new opens or closes in the last 8h.</span>';
+  // New signals (PENDING created in last 12h)
+  for (const t of (state.recentSignals || [])) {
+    events.push({ ts: new Date(t.iso).getTime(), type: "signal", t });
+  }
+  // Activations (PENDING → OPEN)
+  for (const t of (state.recentOpens || [])) {
+    if (t._iso_ms >= cutoff)
+      events.push({ ts: t._iso_ms, type: "open", t });
+  }
+  // TP1 still open
+  for (const t of (state.tp1HitsOpen || [])) {
+    events.push({ ts: Date.now(), type: "tp1", t });
+  }
+  // Closes (last 12h)
+  for (const t of (state.recentCloses || [])) {
+    const ts = new Date(t.close_iso).getTime();
+    if (ts >= cutoff) events.push({ ts, type: t.won ? "win" : "loss", t });
+  }
+
+  if (!events.length) {
+    $("activity").innerHTML = '<span class="empty">Nothing new in the last 12h — system is watching.</span>';
     return;
   }
-  const parts = [];
-  if (recentOpens.length) {
-    const names = recentOpens.slice(-4).map(o => `${o.coin.replace("USDT","")} ${o.direction}`).join(", ");
-    parts.push(`<span class="chip open">${recentOpens.length} OPENED</span>${names}`);
-  }
-  if (recentCloses.length) {
-    const wins = recentCloses.filter(c => c.won);
-    const losses = recentCloses.filter(c => !c.won);
-    if (wins.length) {
-      const winSum = wins.reduce((s,c) => s + (c.pnl_usd || 0), 0);
-      parts.push(`<span class="chip win">${wins.length} WON</span>+$${winSum.toFixed(2)}`);
+
+  events.sort((a, b) => b.ts - a.ts);
+  $("activity").innerHTML = events.slice(0, 8).map(ev => {
+    const { t } = ev;
+    const coin = (t.coin || "").replace("USDT", "");
+    const dir  = t.direction || "";
+    const sys  = t.trading_system || "";
+    const px   = t.entry_price ? fmtPrice(t.entry_price) : "";
+    const track = t.track_only ? ' <span class="ev-track">track</span>' : "";
+    switch (ev.type) {
+      case "signal": return `<div class="ev-row"><span class="ev-chip signal">🔔 SIGNAL</span><span class="ev-body">${coin} ${dir} · ${sys} · $${px}${track}</span></div>`;
+      case "open":   return `<div class="ev-row"><span class="ev-chip open">✅ ENTERED</span><span class="ev-body">${coin} ${dir} · ${sys} · $${px}</span></div>`;
+      case "tp1":    return `<div class="ev-row"><span class="ev-chip tp1">🎯 TP1 HIT</span><span class="ev-body">${coin} ${dir} · ${sys} · SL at breakeven</span></div>`;
+      case "win":    return `<div class="ev-row"><span class="ev-chip win">💰 ${t.status === "TP2_HIT" ? "TP2 HIT" : "CLOSED WIN"}</span><span class="ev-body">${coin} ${dir} · ${sys} · <strong>+$${Math.abs(t.pnl_usd||0).toFixed(2)}</strong></span></div>`;
+      case "loss":   return `<div class="ev-row"><span class="ev-chip loss">❌ STOPPED</span><span class="ev-body">${coin} ${dir} · ${sys} · -$${Math.abs(t.pnl_usd||0).toFixed(2)}</span></div>`;
+      default: return "";
     }
-    if (losses.length) {
-      const lossSum = losses.reduce((s,c) => s + (c.pnl_usd || 0), 0);
-      parts.push(`<span class="chip loss">${losses.length} STOPPED</span>$${lossSum.toFixed(2)}`);
-    }
-  }
-  $("activity").innerHTML = parts.join("<br>");
+  }).join("");
 }
 
 function renderSystems() {
@@ -506,7 +523,8 @@ function rotate() {
 // Clock — CET/CEST (Europe/Paris, DST-aware)
 function tickClock() {
   const d = new Date();
-  $("clock").textContent = d.toLocaleTimeString("en-GB", { timeZone: "Europe/Paris", hour: "2-digit", minute: "2-digit" }) + " CET";
+  const t = d.toLocaleTimeString("en-GB", { timeZone: "Europe/Paris", hour: "2-digit", minute: "2-digit" });
+  $("clock").textContent = t + " CET";
 }
 
 // Init
