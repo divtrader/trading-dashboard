@@ -1,5 +1,5 @@
 {
-  "last_updated_iso": "2026-05-17T12:18:45Z",
+  "last_updated_iso": "2026-05-17T12:29:22Z",
   "active_trades": [
     {
       "trade_id": "BTCUSDT_20260427_CWM_001",
@@ -534,6 +534,15 @@
       "close_iso": "2026-05-16T08:00:00Z"
     }
   ],
+  "recent_cancels": [
+    {
+      "coin": "RENDERUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "close_reason": "6/8 signals opposing Short for 2 consecutive runs \u2014 conviction has collapsed, se",
+      "iso": "2026-05-17T12:12:00Z"
+    }
+  ],
   "tp1_hits_open": [],
   "stats": {
     "realized_pnl_usd": 135.52,
@@ -556,19 +565,5 @@
         "closed_count": 7
       }
     }
-  },
-  "bloomberg_news": [
-    {
-      "id": "test-bloomberg-fresh-1779020590",
-      "title": "Bitcoin surges past $110,000 as institutional demand hits record high",
-      "pub": "Sun, 17 May 2026 12:45:00 GMT",
-      "link": "https://bloomberg.com/test2"
-    },
-    {
-      "id": "test-bloomberg-1779020434",
-      "title": "Federal Reserve signals surprise rate cut amid crypto market surge",
-      "pub": "Sun, 17 May 2026 12:30:00 GMT",
-      "link": "https://bloomberg.com/test"
-    }
-  ]
+  }
 }
