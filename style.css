@@ -654,6 +654,34 @@ main {
   opacity: 0.85;
 }
 .tp2-flag::after { border-top-color: rgba(0,201,167,0.14); }
+.tp1-flag.achieved {
+  background: var(--green);
+  color: #fff;
+  border-color: var(--green);
+  box-shadow: 0 0 8px rgba(0,201,167,0.6);
+}
+.tp1-flag.achieved::after { border-top-color: var(--green); }
+.pos-tp1-marker.achieved {
+  background: var(--green);
+  box-shadow: 0 0 12px var(--green), 0 0 4px var(--green);
+}
+.pos-achieved-fill {
+  position: absolute; top: 0;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(0,201,167,0.25), rgba(0,201,167,0.5));
+  border-radius: 4px;
+  pointer-events: none;
+}
+.be-flag {
+  background: rgba(255,183,77,0.28);
+  color: #ffb74d;
+  border: 1px solid rgba(255,183,77,0.5);
+}
+.be-flag::after { border-top-color: rgba(255,183,77,0.28); }
+.pos-entry-marker.be-marker {
+  background: #ffb74d;
+  box-shadow: 0 0 8px rgba(255,183,77,0.7);
+}
 .pos-dot {
   position: absolute; top: 50%;
   width: 14px; height: 14px;

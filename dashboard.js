@@ -586,7 +586,7 @@ function fmtPrice(p) {
 }
 
 function positionBar(t) {
-  const { live, entry_price, sl, tp1, tp2, direction } = t;
+  const { live, entry_price, sl, tp1, tp2, direction, tp1_hit, sl_moved_to_be } = t;
   const isLong = direction === "Long";
   // Bar scale: SL = 0%, FURTHEST target = 100%. Works regardless of TP1/TP2 ordering.
   const tps = [tp1, tp2].filter(v => v && v !== sl);
@@ -604,25 +604,37 @@ function positionBar(t) {
   const distTP1 = Math.abs((tp1  - live) / entry_price * 100).toFixed(1);
   const distTP2 = tp2 ? Math.abs((tp2 - live) / entry_price * 100).toFixed(1) : null;
   const liveColor = lPct < 30 ? "#ff4d5e" : lPct > 70 ? "#00c9a7" : "#ffb74d";
+
+  // TP1 achieved: green fill from entry to TP1, brighter flag
+  const achievedFill = tp1_hit ? `
+        <div class="pos-achieved-fill" style="left:${Math.min(ePct,t1Pct).toFixed(1)}%;width:${Math.abs(t1Pct-ePct).toFixed(1)}%"></div>` : "";
+
   const tp2Marker = t2Pct !== null ? `
         <div class="pos-marker pos-tp2-marker" style="left:${t2Pct.toFixed(1)}%">
           <span class="marker-flag tp2-flag">TP2</span>
         </div>` : "";
+
+  const entryLabel = (tp1_hit || sl_moved_to_be) ? "BE" : "ENTRY";
+  const entryFlagClass = (tp1_hit || sl_moved_to_be) ? "entry-flag be-flag" : "entry-flag";
+  const tp1FlagClass = tp1_hit ? "tp1-flag achieved" : "tp1-flag";
+  const tp1FlagText = tp1_hit ? "TP1 ✓" : "TP1";
+
   return `
     <div class="pos-bar">
       <div class="pos-track">
         <div class="pos-fill" style="width:${lPct.toFixed(1)}%;background:linear-gradient(90deg, ${liveColor}22, ${liveColor}66)"></div>
-        <div class="pos-marker pos-entry-marker" style="left:${ePct.toFixed(1)}%">
-          <span class="marker-flag entry-flag">ENTRY</span>
+        ${achievedFill}
+        <div class="pos-marker pos-entry-marker${tp1_hit ? " be-marker" : ""}" style="left:${ePct.toFixed(1)}%">
+          <span class="marker-flag ${entryFlagClass}">${entryLabel}</span>
         </div>
-        <div class="pos-marker pos-tp1-marker" style="left:${t1Pct.toFixed(1)}%">
-          <span class="marker-flag tp1-flag">TP1</span>
+        <div class="pos-marker pos-tp1-marker${tp1_hit ? " achieved" : ""}" style="left:${t1Pct.toFixed(1)}%">
+          <span class="marker-flag ${tp1FlagClass}">${tp1FlagText}</span>
         </div>
         ${tp2Marker}
         <div class="pos-dot" style="left:${lPct.toFixed(1)}%;background:${liveColor};box-shadow:0 0 12px ${liveColor},0 0 4px ${liveColor}"></div>
       </div>
       <div class="pos-labels">
-        <span class="lbl-sl">SL · ${distSL}%</span>
+        <span class="lbl-sl">${tp1_hit ? "BE" : "SL"} · ${distSL}%</span>
         <span class="lbl-tp1">TP1 · ${distTP1}%</span>
         ${distTP2 !== null ? `<span class="lbl-tp2">TP2 · ${distTP2}%</span>` : ""}
       </div>
