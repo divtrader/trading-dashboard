@@ -53,6 +53,7 @@ async function fetchData() {
     state.recentCloses = newCloses;
     state.recentOpens = recentOpens;
     state.recentSignals = d.recent_signals || [];
+    state.recentCancels = d.recent_cancels || [];
     state.tp1HitsOpen = d.tp1_hits_open || [];
     checkBloombergNews(d.bloomberg_news || []);
     state.stats = d.stats || {};
@@ -498,6 +499,11 @@ function renderActivity() {
     if (t._iso_ms >= cutoff)
       events.push({ ts: t._iso_ms, type: "open", t });
   }
+  // Cancels (last 12h)
+  for (const t of (state.recentCancels || [])) {
+    const ts = new Date(t.iso).getTime();
+    if (ts >= cutoff) events.push({ ts, type: "cancel", t });
+  }
   // TP1 still open
   for (const t of (state.tp1HitsOpen || [])) {
     events.push({ ts: Date.now(), type: "tp1", t });
@@ -527,6 +533,7 @@ function renderActivity() {
       case "tp1":    return `<div class="ev-row"><span class="ev-chip tp1">🎯 TP1 HIT</span><span class="ev-body">${coin} ${dir} · ${sys} · SL at breakeven</span></div>`;
       case "win":    return `<div class="ev-row"><span class="ev-chip win">💰 ${t.status === "TP2_HIT" ? "TP2 HIT" : "CLOSED WIN"}</span><span class="ev-body">${coin} ${dir} · ${sys} · <strong>+$${Math.abs(t.pnl_usd||0).toFixed(2)}</strong></span></div>`;
       case "loss":   return `<div class="ev-row"><span class="ev-chip loss">❌ STOPPED</span><span class="ev-body">${coin} ${dir} · ${sys} · -$${Math.abs(t.pnl_usd||0).toFixed(2)}</span></div>`;
+      case "cancel": return `<div class="ev-row"><span class="ev-chip cancel">🚫 CANCELLED</span><span class="ev-body">${coin} ${dir} · ${sys}</span></div>`;
       default: return "";
     }
   }).join("");
