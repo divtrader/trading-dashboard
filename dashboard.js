@@ -102,10 +102,35 @@ function detectEvents(newTrades, newCloses, testEvents) {
 
 let overlayBusy = false;
 const overlayQueue = [];
+const overlayQueuedIds = new Set();
 let overlayHardTimer = null;
+let overlayShownAt = 0;
+
+// Watchdog: every 1s, if overlay has been visible for >10s, force-clear.
+setInterval(() => {
+  const el = document.getElementById("overlay");
+  if (el && !el.hidden && overlayShownAt && Date.now() - overlayShownAt > 10_000) {
+    console.warn("watchdog: force-clearing stuck overlay");
+    el.hidden = true;
+    el.classList.remove("out", "sulk");
+    const cf = document.getElementById("confetti");
+    if (cf) cf.innerHTML = "";
+    overlayBusy = false;
+    overlayShownAt = 0;
+    if (overlayHardTimer) { clearTimeout(overlayHardTimer); overlayHardTimer = null; }
+  }
+}, 1000);
+
 function showOverlay(ev) {
+  // Dedupe: never queue or show the same event twice in one session
+  if (seen.has(ev.id) || overlayQueuedIds.has(ev.id)) return;
+  overlayQueuedIds.add(ev.id);
+  // Mark seen IMMEDIATELY so a re-fetch can't re-queue it
+  try { seen.add(ev.id); saveSeen(seen); } catch {}
+
   if (overlayBusy) { overlayQueue.push(ev); return; }
   overlayBusy = true;
+  overlayShownAt = Date.now();
 
   const finish = () => {
     if (overlayHardTimer) { clearTimeout(overlayHardTimer); overlayHardTimer = null; }
@@ -113,9 +138,15 @@ function showOverlay(ev) {
     el.hidden = true;
     el.classList.remove("out", "sulk");
     $("confetti").innerHTML = "";
-    try { seen.add(ev.id); saveSeen(seen); } catch {}
     overlayBusy = false;
-    if (overlayQueue.length) setTimeout(() => showOverlay(overlayQueue.shift()), 800);
+    overlayShownAt = 0;
+    if (overlayQueue.length) setTimeout(() => {
+      const next = overlayQueue.shift();
+      overlayQueuedIds.delete(next.id);
+      // un-mark so showOverlay's dedupe doesn't skip it (event is being intentionally shown)
+      seen.delete(next.id);
+      showOverlay(next);
+    }, 800);
   };
 
   try {
