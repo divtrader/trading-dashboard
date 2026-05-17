@@ -154,6 +154,25 @@ main {
 .activity-body .chip.loss { background: rgba(239,83,80,0.18); color: var(--red); }
 .activity-body .empty { color: var(--muted); font-size: 13px; }
 
+.price-bar {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 12px 20px;
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+}
+.price-item { display: flex; align-items: baseline; gap: 8px; }
+.px-name { font-size: 13px; font-weight: 700; color: var(--muted); letter-spacing: 1px; }
+.px-val { font-size: 28px; font-weight: 700; color: var(--text); }
+.px-chg { font-size: 15px; font-weight: 600; }
+.px-chg.pos { color: var(--green); }
+.px-chg.neg { color: var(--red); }
+.px-sep { color: var(--border); font-size: 24px; margin: 0 24px; }
+
 .news {
   background: var(--panel);
   border: 1px solid var(--border);

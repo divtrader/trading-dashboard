@@ -290,6 +290,31 @@ function render() {
   renderActivity();
 }
 
+// === BTC / ETH / SOL live price bar ===
+const SPOTLIGHT_COINS = ["BTCUSDT", "ETHUSDT", "SOLUSDT"];
+
+async function fetchSpotlightPrices() {
+  try {
+    const symbols = JSON.stringify(SPOTLIGHT_COINS);
+    const r = await fetch(`https://api.binance.com/api/v3/ticker/24hr?symbols=${encodeURIComponent(symbols)}`);
+    const data = await r.json();
+    for (const t of data) {
+      const sym = t.symbol.replace("USDT", "");
+      const price = parseFloat(t.lastPrice);
+      const chg = parseFloat(t.priceChangePercent);
+      const el = document.getElementById(`px-${sym}`);
+      if (!el) continue;
+      const fmt = price >= 1000 ? price.toLocaleString("en-US", {maximumFractionDigits: 0})
+                : price >= 10   ? price.toFixed(2)
+                : price.toFixed(3);
+      el.querySelector(".px-val").textContent = "$" + fmt;
+      const chgEl = el.querySelector(".px-chg");
+      chgEl.textContent = (chg >= 0 ? "▲" : "▼") + Math.abs(chg).toFixed(2) + "%";
+      chgEl.className = "px-chg " + (chg >= 0 ? "pos" : "neg");
+    }
+  } catch (e) { console.error("spotlight prices failed", e); }
+}
+
 // === Crypto news ticker — Reddit JSON API (CORS-open, no key needed) ===
 const NEWS_SUBS = [
   { sub: "CryptoCurrency", label: "r/Crypto" },
@@ -442,8 +467,10 @@ function tickClock() {
 $(screens[0]).classList.add("active");
 fetchData();
 fetchNews();
+fetchSpotlightPrices();
 setInterval(fetchData, REFRESH_MS);
-setInterval(fetchNews, 15 * 60_000); // refresh news every 15 min
+setInterval(fetchNews, 15 * 60_000);
+setInterval(fetchSpotlightPrices, 30_000); // live prices every 30s
 setInterval(rotate, ROTATE_MS);
 setInterval(tickClock, 1000);
 tickClock();
