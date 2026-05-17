@@ -840,9 +840,13 @@ function renderActivity() {
   }).join("");
 }
 
+const SYS_COLOR = { John: "#5B8DEF", Braam: "#ffab40", Mong: "#a76adb" };
+const SYS_TAG   = { John: "Trend · Breakout", Braam: "EMA Pullback", Mong: "Mean Reversion" };
+
 function renderSystems() {
   const systems = ["John", "Braam", "Mong"];
   const open = state.trades.filter(t => t.status === "OPEN");
+  const r = 18, circ = 2 * Math.PI * r;
   const html = systems.map(name => {
     const sysOpen = open.filter(t => t.trading_system === name);
     const sysUnreal = sysOpen.reduce((s, t) => s + computeUnrealized(t).usd, 0);
@@ -850,12 +854,30 @@ function renderSystems() {
     const realized = stats.realized_pnl_usd ?? 0;
     const wr = stats.win_rate_pct ?? 0;
     const closed = stats.closed_count ?? 0;
+    const color = SYS_COLOR[name] || "#7280B5";
+    const dash = circ * Math.min(1, wr / 100);
+    const offset = circ - dash;
     return `
-      <div class="sys-row">
-        <div class="name">${name}</div>
+      <div class="sys-row" data-sys="${name}">
+        <div class="sys-name-block">
+          <div class="sys-ring-wrap">
+            <svg class="sys-ring-svg" viewBox="0 0 44 44">
+              <circle class="sys-ring-track" cx="22" cy="22" r="${r}"/>
+              <circle class="sys-ring-fill" cx="22" cy="22" r="${r}"
+                stroke="${color}"
+                stroke-dasharray="${circ.toFixed(1)}"
+                stroke-dashoffset="${offset.toFixed(1)}"/>
+            </svg>
+            <div class="sys-ring-label">${wr.toFixed(0)}%</div>
+          </div>
+          <div>
+            <div class="sys-name" style="color:${color}">${name}</div>
+            <div class="sys-tag">${SYS_TAG[name]}</div>
+          </div>
+        </div>
         <div class="metric"><span class="k">Open</span><span class="v">${sysOpen.length}</span></div>
         <div class="metric"><span class="k">Unrealized</span><span class="v ${cls(sysUnreal)}">${fmtUsd(sysUnreal)}</span></div>
-        <div class="metric"><span class="k">Realized · WR</span><span class="v ${cls(realized)}">${fmtUsd(realized)} <span style="font-size:14px;color:var(--muted);font-weight:500">· ${wr.toFixed(0)}% (${closed})</span></span></div>
+        <div class="metric"><span class="k">Realized · ${closed}t</span><span class="v ${cls(realized)}">${fmtUsd(realized)}</span></div>
       </div>
     `;
   }).join("");
