@@ -482,9 +482,9 @@ function renderLive() {
 
   // Movers
   const sorted = [...enriched].sort((a, b) => b.leveragedPct - a.leveragedPct);
-  const winners = sorted.slice(0, 2);
+  const winners = sorted.slice(0, 3);
   const winnerIds = new Set(winners.map(w => w.trade_id));
-  const losers = sorted.slice().reverse().filter(t => !winnerIds.has(t.trade_id)).slice(0, 2);
+  const losers = sorted.slice().reverse().filter(t => !winnerIds.has(t.trade_id)).slice(0, 3);
   $("winners").innerHTML = renderMovers(winners, "winner");
   $("losers").innerHTML = renderMovers(losers, "loser");
 
@@ -657,6 +657,7 @@ function renderMovers(list, kind) {
     const age = tradeAge(t);
     return `
       <div class="mover ${isLong ? "long-card" : "short-card"}" style="--coin-color:${color}">
+        <img class="mover-watermark" src="${coinIconUrl(t.coin)}" alt="" onerror="this.style.display='none'">
         <div class="mover-head">
           <div class="coin-avatar" style="--coin-color:${color}">
             <img class="coin-icon" src="${coinIconUrl(t.coin)}" alt="${coin}" onerror="this.parentElement.classList.add('icon-fail')">

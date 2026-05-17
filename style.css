@@ -363,16 +363,28 @@ main {
   background: linear-gradient(135deg, var(--panel) 0%, rgba(255,255,255,0.01) 100%);
   border: 1px solid var(--border);
   border-radius: 14px;
-  padding: 18px 20px 16px 22px;
+  padding: 14px 18px 12px 20px;
   display: flex;
   flex-direction: column;
   flex: 1;
-  justify-content: space-between;
-  gap: 18px;
+  justify-content: center;
+  gap: 12px;
   position: relative;
   overflow: hidden;
   transition: border-color 0.4s ease, box-shadow 0.4s ease;
 }
+.mover-watermark {
+  position: absolute;
+  right: -28px;
+  bottom: -28px;
+  width: 150px;
+  height: 150px;
+  opacity: 0.055;
+  pointer-events: none;
+  z-index: 0;
+  filter: blur(0.5px);
+}
+.mover > * { position: relative; z-index: 1; }
 .mover::before {
   content: "";
   position: absolute;
