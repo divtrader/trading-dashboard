@@ -355,6 +355,63 @@ main {
 .px-chg.neg { color: var(--red); }
 .px-sep { color: var(--border-hi); font-size: 20px; margin: 0 28px; }
 
+/* ── Bottom row: price bar + MEXC card ── */
+.bottom-row {
+  display: flex;
+  gap: 10px;
+  align-items: stretch;
+  flex-shrink: 0;
+}
+.bottom-row .price-bar {
+  flex: 1;
+  margin-top: 0;
+}
+
+.mexc-card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 8px 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 170px;
+  flex-shrink: 0;
+  transition: border-color 0.5s ease, box-shadow 0.5s ease;
+}
+.mexc-card.glow-green {
+  border-color: rgba(0,201,167,0.28);
+  box-shadow: 0 0 20px rgba(0,201,167,0.06);
+}
+.mexc-card.glow-red {
+  border-color: rgba(255,77,94,0.25);
+  box-shadow: 0 0 20px rgba(255,77,94,0.06);
+}
+.mexc-label {
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: var(--muted);
+  text-transform: uppercase;
+  margin-bottom: 3px;
+}
+.mexc-pnl {
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  line-height: 1.1;
+  transition: color 0.4s ease, text-shadow 0.4s ease;
+}
+.mexc-pnl.pos { color: var(--green); text-shadow: 0 0 20px var(--green-glow); }
+.mexc-pnl.neg { color: var(--red);   text-shadow: 0 0 20px var(--red-glow); }
+.mexc-sub {
+  font-size: 10px;
+  color: var(--muted);
+  margin-top: 3px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
 /* ── Dot navigation ── */
 .dots { display: flex; justify-content: center; gap: 6px; padding: 10px 0 12px; flex-shrink: 0; }
 .dots .d {

@@ -104,7 +104,7 @@ function setTileGlow(tileEl, val) {
   tileEl.classList.toggle("glow-red",   val < -0.005);
 }
 
-let state = { trades: [], stats: {}, prices: {}, lastFetch: 0, lastCronIso: null, recentCloses: [] };
+let state = { trades: [], stats: {}, prices: {}, lastFetch: 0, lastCronIso: null, recentCloses: [], mexcAccount: null };
 
 // Seen-events memory (so we don't replay celebrations on every refresh)
 const SEEN_KEY = "dashSeenEvents_v1";
@@ -138,6 +138,7 @@ async function fetchData() {
     state.tp1HitsOpen = d.tp1_hits_open || [];
     checkBloombergNews(d.bloomberg_news || []);
     state.stats = d.stats || {};
+    state.mexcAccount = d.mexc_account || null;
     state.lastCronIso = d.last_updated_iso || null;
     state.lastFetch = Date.now();
     subscribeWs();
@@ -377,6 +378,26 @@ function render() {
   renderSystems();
   renderActivity();
   renderPendingTriggers();
+  renderMexcCard();
+}
+
+function renderMexcCard() {
+  const card = $("mexc-card");
+  const pnlEl = $("mexc-pnl");
+  const subEl = $("mexc-sub");
+  if (!card) return;
+  const m = state.mexcAccount;
+  if (!m) {
+    pnlEl.textContent = "—";
+    pnlEl.className = "mexc-pnl";
+    subEl.textContent = "no data";
+    return;
+  }
+  const pnl = m.unrealized_pnl;
+  pnlEl.className = "mexc-pnl " + cls(pnl);
+  animateValue(pnlEl, pnl, v => (v >= 0 ? "+" : "") + v.toFixed(2) + " USDT");
+  setTileGlow(card, pnl);
+  subEl.textContent = `Equity $${m.equity.toLocaleString("en-US", {maximumFractionDigits: 2})}  ·  Avail $${m.available.toLocaleString("en-US", {maximumFractionDigits: 2})}`;
 }
 
 // === Bloomberg news flash ===
