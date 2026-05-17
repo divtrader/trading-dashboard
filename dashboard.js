@@ -238,18 +238,41 @@ function render() {
   renderActivity();
 }
 
-// === Crypto news ticker (CryptoCompare free API, no key required) ===
+// === Crypto news ticker — parse RSS via allorigins CORS proxy (free, no key) ===
+const NEWS_FEEDS = [
+  { url: "https://www.coindesk.com/arc/outboundfeeds/rss/", name: "CoinDesk" },
+  { url: "https://cointelegraph.com/rss", name: "CoinTelegraph" },
+  { url: "https://decrypt.co/feed", name: "Decrypt" },
+  { url: "https://bitcoinmagazine.com/feed", name: "BTC Magazine" },
+];
+
+async function fetchOneFeed(feed) {
+  const proxied = `https://api.allorigins.win/raw?url=${encodeURIComponent(feed.url)}`;
+  const r = await fetch(proxied);
+  const xmlText = await r.text();
+  const doc = new DOMParser().parseFromString(xmlText, "application/xml");
+  const items = [...doc.querySelectorAll("item")].slice(0, 8);
+  return items.map(it => ({
+    title: (it.querySelector("title")?.textContent || "").trim(),
+    source: feed.name,
+    ts: new Date(it.querySelector("pubDate")?.textContent || Date.now()).getTime(),
+  })).filter(x => x.title);
+}
+
 async function fetchNews() {
   try {
-    const r = await fetch("https://min-api.cryptocompare.com/data/v2/news/?lang=EN&excludeCategories=Sponsored");
-    const d = await r.json();
-    const items = (d.Data || []).slice(0, 20);
-    if (!items.length) return;
-    const html = items.map(n => `
-      <span class="news-item">${escapeHtml(n.title)}<span class="news-source">${escapeHtml(n.source_info?.name || n.source || "")}</span></span>
-    `).join("");
+    const results = await Promise.allSettled(NEWS_FEEDS.map(fetchOneFeed));
+    const out = [];
+    for (const r of results) if (r.status === "fulfilled") out.push(...r.value);
+    if (!out.length) throw new Error("no items");
+    out.sort((a, b) => b.ts - a.ts);
+    const top = out.slice(0, 25);
+    const html = top.map(n =>
+      `<span class="news-item">${escapeHtml(n.title)}<span class="news-source">${escapeHtml(n.source)}</span></span>`
+    ).join("");
     $("news-ticker").innerHTML = `<span class="news-scroll">${html}${html}</span>`;
   } catch (e) {
+    console.error("news failed", e);
     $("news-ticker").innerHTML = '<span class="news-item" style="color:var(--muted)">News feed unavailable</span>';
   }
 }
