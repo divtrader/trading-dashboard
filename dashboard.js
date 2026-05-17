@@ -54,6 +54,7 @@ async function fetchData() {
     state.recentOpens = recentOpens;
     state.recentSignals = d.recent_signals || [];
     state.tp1HitsOpen = d.tp1_hits_open || [];
+    checkBloombergNews(d.bloomberg_news || []);
     state.stats = d.stats || {};
     state.lastCronIso = d.last_updated_iso || null;
     state.lastFetch = Date.now();
@@ -292,6 +293,50 @@ function render() {
   renderSystems();
   renderActivity();
   renderPendingTriggers();
+}
+
+// === Bloomberg news flash ===
+const BLOOMBERG_SEEN_KEY = "bloombergSeenIds_v1";
+function loadBloombergSeen() {
+  try { return new Set(JSON.parse(localStorage.getItem(BLOOMBERG_SEEN_KEY) || "[]")); }
+  catch { return new Set(); }
+}
+function saveBloombergSeen(s) {
+  localStorage.setItem(BLOOMBERG_SEEN_KEY, JSON.stringify([...s].slice(-50)));
+}
+let bloombergSeen = loadBloombergSeen();
+let bloombergFirstRun = !localStorage.getItem("bloombergFirstRun_v1");
+
+function checkBloombergNews(articles) {
+  if (!articles || !articles.length) return;
+  if (bloombergFirstRun) {
+    // Mark all current as seen on first load — don't replay old news
+    articles.forEach(a => bloombergSeen.add(a.id));
+    saveBloombergSeen(bloombergSeen);
+    localStorage.setItem("bloombergFirstRun_v1", "1");
+    bloombergFirstRun = false;
+    return;
+  }
+  const fresh = articles.filter(a => !bloombergSeen.has(a.id));
+  fresh.slice(0, 3).forEach((a, i) => {
+    setTimeout(() => showNewsFlash(a), i * 6500);
+  });
+}
+
+let nfBusy = false;
+function showNewsFlash(article) {
+  if (nfBusy) return;
+  nfBusy = true;
+  bloombergSeen.add(article.id);
+  saveBloombergSeen(bloombergSeen);
+  const el = document.getElementById("news-flash");
+  document.getElementById("nf-headline").textContent = article.title;
+  el.classList.remove("out");
+  el.hidden = false;
+  setTimeout(() => {
+    el.classList.add("out");
+    setTimeout(() => { el.hidden = true; el.classList.remove("out"); nfBusy = false; }, 500);
+  }, 5000);
 }
 
 // === BTC / ETH / SOL live price bar ===
