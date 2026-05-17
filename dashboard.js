@@ -102,57 +102,75 @@ function detectEvents(newTrades, newCloses, testEvents) {
 
 let overlayBusy = false;
 const overlayQueue = [];
+let overlayHardTimer = null;
 function showOverlay(ev) {
   if (overlayBusy) { overlayQueue.push(ev); return; }
   overlayBusy = true;
-  const el = $("overlay");
-  const t = ev.trade;
-  let emoji, headline, detail, pnl, sulk = false, confetti = false;
 
-  if (ev.type === "tp1") {
-    emoji = "🎯";
-    headline = "TP1 HIT!";
-    detail = `${t.coin.replace("USDT","")} ${t.direction} · ${t.trading_system}`;
-    pnl = "SL → breakeven, riding TP2";
-    confetti = true;
-  } else if (ev.type === "win") {
-    const reason = t.status === "TP2_HIT" ? "TP2 SMASHED" : "WINNER CLOSED";
-    emoji = "🚀";
-    headline = reason;
-    detail = `${t.coin.replace("USDT","")} ${t.direction} · ${t.trading_system}`;
-    pnl = (t.pnl_usd >= 0 ? "+$" : "-$") + Math.abs(t.pnl_usd).toFixed(2);
-    confetti = true;
-  } else {
-    emoji = "💔";
-    headline = "STOPPED OUT";
-    detail = `${t.coin.replace("USDT","")} ${t.direction} · ${t.trading_system}`;
-    pnl = (t.pnl_usd >= 0 ? "+$" : "-$") + Math.abs(t.pnl_usd).toFixed(2);
-    sulk = true;
+  const finish = () => {
+    if (overlayHardTimer) { clearTimeout(overlayHardTimer); overlayHardTimer = null; }
+    const el = $("overlay");
+    el.hidden = true;
+    el.classList.remove("out", "sulk");
+    $("confetti").innerHTML = "";
+    try { seen.add(ev.id); saveSeen(seen); } catch {}
+    overlayBusy = false;
+    if (overlayQueue.length) setTimeout(() => showOverlay(overlayQueue.shift()), 800);
+  };
+
+  try {
+    const t = ev.trade || {};
+    const coin = (t.coin || "?").replace("USDT", "");
+    const dir = t.direction || "";
+    const sys = t.trading_system || "";
+    const pnlNum = typeof t.pnl_usd === "number" ? t.pnl_usd : 0;
+    let emoji, headline, detail, pnl, sulk = false, confetti = false;
+
+    if (ev.type === "tp1") {
+      emoji = "🎯"; headline = "TP1 HIT!";
+      detail = `${coin} ${dir} · ${sys}`;
+      pnl = "SL → breakeven, riding TP2";
+      confetti = true;
+    } else if (ev.type === "win") {
+      emoji = "🚀";
+      headline = t.status === "TP2_HIT" ? "TP2 SMASHED" : "WINNER CLOSED";
+      detail = `${coin} ${dir} · ${sys}`;
+      pnl = (pnlNum >= 0 ? "+$" : "-$") + Math.abs(pnlNum).toFixed(2);
+      confetti = true;
+    } else {
+      emoji = "💔"; headline = "STOPPED OUT";
+      detail = `${coin} ${dir} · ${sys}`;
+      pnl = (pnlNum >= 0 ? "+$" : "-$") + Math.abs(pnlNum).toFixed(2);
+      sulk = true;
+    }
+
+    const el = $("overlay");
+    $("overlay-emoji").textContent = emoji;
+    $("overlay-headline").textContent = headline;
+    $("overlay-detail").textContent = detail;
+    const pnlEl = $("overlay-pnl");
+    pnlEl.textContent = pnl;
+    pnlEl.className = "overlay-pnl " + (ev.type === "loss" ? "neg" : "pos");
+    el.classList.toggle("sulk", sulk);
+    el.classList.remove("out");
+    el.hidden = false;
+    if (confetti) launchConfetti();
+
+    // Soft clear at 5.5s, hard fail-safe at 7s (no matter what)
+    setTimeout(() => $("overlay").classList.add("out"), 5500);
+    setTimeout(finish, 6100);
+    overlayHardTimer = setTimeout(() => { console.warn("overlay hard-clear"); finish(); }, 7000);
+  } catch (err) {
+    console.error("overlay error", err);
+    finish();
   }
-
-  $("overlay-emoji").textContent = emoji;
-  $("overlay-headline").textContent = headline;
-  $("overlay-detail").textContent = detail;
-  const pnlEl = $("overlay-pnl");
-  pnlEl.textContent = pnl;
-  pnlEl.className = "overlay-pnl " + (ev.type === "loss" ? "neg" : "pos");
-  el.classList.toggle("sulk", sulk);
-  el.classList.remove("out");
-  el.hidden = false;
-  if (confetti) launchConfetti();
-
-  setTimeout(() => {
-    el.classList.add("out");
-    setTimeout(() => {
-      el.hidden = true;
-      $("confetti").innerHTML = "";
-      seen.add(ev.id);
-      saveSeen(seen);
-      overlayBusy = false;
-      if (overlayQueue.length) showOverlay(overlayQueue.shift());
-    }, 600);
-  }, 5500);
 }
+
+// Emergency: tap the overlay to dismiss
+document.addEventListener("DOMContentLoaded", () => {
+  const ov = document.getElementById("overlay");
+  if (ov) ov.addEventListener("click", () => { ov.hidden = true; ov.classList.remove("out","sulk"); document.getElementById("confetti").innerHTML=""; overlayBusy=false; });
+});
 
 function launchConfetti() {
   const box = $("confetti");
