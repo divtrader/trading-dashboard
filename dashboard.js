@@ -1,0 +1,193 @@
+// Trading dashboard - reads sanitized data.json from this repo + live prices from Binance WS.
+// Public-by-data, gated-by-URL-token in JS. Token check is cosmetic; real privacy comes from URL obscurity.
+
+const URL_TOKEN = "BUKTYYvc1SELHNeI";
+const DATA_URL = "data.json";
+const REFRESH_MS = 60_000;
+const ROTATE_MS = 15_000;
+const STALE_MS = 30 * 60_000;
+
+const params = new URLSearchParams(location.search);
+if (params.get("k") !== URL_TOKEN) {
+  // Leave gate visible, don't load anything.
+  throw new Error("blocked");
+}
+document.getElementById("gate").remove();
+document.getElementById("app").hidden = false;
+
+const $ = (id) => document.getElementById(id);
+const fmtUsd = (n) => (n >= 0 ? "+$" : "-$") + Math.abs(n).toFixed(2);
+const fmtPct = (n) => (n >= 0 ? "+" : "") + n.toFixed(2) + "%";
+const cls = (n) => (n >= 0 ? "pos" : "neg");
+
+let state = { trades: [], stats: {}, prices: {}, lastFetch: 0, lastCronIso: null };
+
+async function fetchData() {
+  try {
+    const r = await fetch(DATA_URL + "?t=" + Date.now(), { cache: "no-store" });
+    const d = await r.json();
+    state.trades = d.active_trades || [];
+    state.stats = d.stats || {};
+    state.lastCronIso = d.last_updated_iso || null;
+    state.lastFetch = Date.now();
+    subscribeWs();
+    render();
+  } catch (e) {
+    console.error("fetch failed", e);
+  }
+}
+
+let ws = null;
+let wsSymbols = "";
+function subscribeWs() {
+  const symbols = [...new Set(state.trades.map(t => t.coin.toLowerCase()))];
+  const key = symbols.sort().join(",");
+  if (key === wsSymbols && ws && ws.readyState === 1) return;
+  wsSymbols = key;
+  if (ws) { try { ws.close(); } catch {} }
+  if (!symbols.length) return;
+  const streams = symbols.map(s => s + "@miniTicker").join("/");
+  ws = new WebSocket(`wss://stream.binance.com:9443/stream?streams=${streams}`);
+  ws.onmessage = (ev) => {
+    try {
+      const msg = JSON.parse(ev.data);
+      const p = parseFloat(msg.data.c);
+      const sym = msg.data.s;
+      state.prices[sym] = p;
+      renderLive();
+    } catch {}
+  };
+  ws.onclose = () => setTimeout(subscribeWs, 5000);
+}
+
+function computeUnrealized(t) {
+  const live = state.prices[t.coin] ?? t.price_at_run ?? t.entry_price;
+  const dir = t.direction === "Long" ? 1 : -1;
+  const pricePct = ((live - t.entry_price) / t.entry_price) * 100 * dir;
+  const leveragedPct = pricePct * (t.leverage || 1);
+  const usd = (t.capital_usd || 100) * (leveragedPct / 100);
+  return { live, pricePct, leveragedPct, usd };
+}
+
+function render() {
+  const open = state.trades.filter(t => t.status === "OPEN");
+  const pending = state.trades.filter(t => t.status === "PENDING");
+
+  // Counts
+  $("open-count").textContent = open.length;
+  const oL = open.filter(t => t.direction === "Long").length;
+  const oS = open.length - oL;
+  $("open-split").textContent = `${oL} Long · ${oS} Short`;
+
+  $("pending-count").textContent = pending.length;
+  const pL = pending.filter(t => t.direction === "Long").length;
+  const pS = pending.length - pL;
+  $("pending-split").textContent = `${pL} Long · ${pS} Short`;
+
+  // Realized
+  const r = state.stats.realized_pnl_usd ?? 0;
+  const wr = state.stats.win_rate_pct ?? 0;
+  const closed = state.stats.closed_count ?? 0;
+  const rEl = $("realized");
+  rEl.textContent = fmtUsd(r);
+  rEl.className = "value " + cls(r);
+  $("realized-wr").textContent = `${wr.toFixed(1)}% WR · ${closed} closed`;
+
+  // Last-cron meta
+  if (state.lastCronIso) {
+    const d = new Date(state.lastCronIso);
+    const ago = Math.floor((Date.now() - d.getTime()) / 60000);
+    $("last-cron").textContent = `last run: ${d.toUTCString().slice(17, 22)} UTC (${ago}m ago)`;
+    $("live-dot").classList.toggle("stale", Date.now() - d.getTime() > STALE_MS);
+  }
+
+  renderLive();
+  renderSystems();
+}
+
+function renderLive() {
+  const open = state.trades.filter(t => t.status === "OPEN");
+  const enriched = open.map(t => ({ ...t, ...computeUnrealized(t) }));
+
+  // Unrealized total
+  const totalUsd = enriched.reduce((s, t) => s + t.usd, 0);
+  const totalCap = enriched.reduce((s, t) => s + (t.capital_usd || 100), 0);
+  const totalPct = totalCap > 0 ? (totalUsd / totalCap) * 100 : 0;
+  const uEl = $("unrealized");
+  uEl.textContent = fmtUsd(totalUsd);
+  uEl.className = "value " + cls(totalUsd);
+  const upEl = $("unrealized-pct");
+  upEl.textContent = enriched.length ? fmtPct(totalPct) + " on $" + totalCap.toFixed(0) + " open" : "no open trades";
+  upEl.className = "sub " + cls(totalUsd);
+
+  // Movers
+  const sorted = [...enriched].sort((a, b) => b.leveragedPct - a.leveragedPct);
+  const winners = sorted.slice(0, 2);
+  const losers = sorted.slice(-2).reverse();
+  $("winners").innerHTML = renderMovers(winners, "winner");
+  $("losers").innerHTML = renderMovers(losers, "loser");
+}
+
+function renderMovers(list, kind) {
+  if (!list.length) return `<div class="mover empty">No open trades</div>`;
+  return list.map(t => `
+    <div class="mover">
+      <div class="row1">
+        <span class="coin">${t.coin.replace("USDT", "")}</span>
+        <span class="dir ${t.direction.toLowerCase()}">${t.direction.toUpperCase()}</span>
+      </div>
+      <div class="pnl-pct ${cls(t.leveragedPct)}">${fmtPct(t.leveragedPct)}</div>
+      <div class="row3">
+        <span>${t.entry_price.toPrecision(5)} → ${t.live.toPrecision(5)}</span>
+        <span class="${cls(t.usd)}">${fmtUsd(t.usd)}</span>
+      </div>
+    </div>
+  `).join("");
+}
+
+function renderSystems() {
+  const systems = ["John", "Braam", "Mong"];
+  const open = state.trades.filter(t => t.status === "OPEN");
+  const html = systems.map(name => {
+    const sysOpen = open.filter(t => t.trading_system === name);
+    const sysUnreal = sysOpen.reduce((s, t) => s + computeUnrealized(t).usd, 0);
+    const stats = state.stats.per_system?.[name] || {};
+    const realized = stats.realized_pnl_usd ?? 0;
+    const wr = stats.win_rate_pct ?? 0;
+    const closed = stats.closed_count ?? 0;
+    return `
+      <div class="sys-row">
+        <div class="name">${name}</div>
+        <div class="metric"><span class="k">Open</span><span class="v">${sysOpen.length}</span></div>
+        <div class="metric"><span class="k">Unrealized</span><span class="v ${cls(sysUnreal)}">${fmtUsd(sysUnreal)}</span></div>
+        <div class="metric"><span class="k">Realized · WR</span><span class="v ${cls(realized)}">${fmtUsd(realized)} <span style="font-size:14px;color:var(--muted);font-weight:500">· ${wr.toFixed(0)}% (${closed})</span></span></div>
+      </div>
+    `;
+  }).join("");
+  $("systems").innerHTML = html;
+}
+
+// Screen rotation
+let screenIdx = 0;
+const screens = ["screen-1", "screen-2", "screen-3"];
+function rotate() {
+  document.querySelectorAll(".screen").forEach(s => s.classList.remove("active"));
+  document.querySelectorAll(".dots .d").forEach(d => d.classList.remove("active"));
+  screenIdx = (screenIdx + 1) % screens.length;
+  $(screens[screenIdx]).classList.add("active");
+  document.querySelector(`.dots .d[data-i="${screenIdx}"]`).classList.add("active");
+}
+
+// Clock
+function tickClock() {
+  const d = new Date();
+  $("clock").textContent = d.toTimeString().slice(0, 5);
+}
+
+// Init
+$(screens[0]).classList.add("active");
+fetchData();
+setInterval(fetchData, REFRESH_MS);
+setInterval(rotate, ROTATE_MS);
+setInterval(tickClock, 1000);
+tickClock();

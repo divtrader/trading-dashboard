@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<title>Trading Dashboard</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="gate" class="gate">
+  <div class="gate-msg">Access required</div>
+</div>
+
+<main id="app" hidden>
+  <header class="top">
+    <div class="brand">Trading Dashboard</div>
+    <div class="meta">
+      <span id="last-cron">last run: —</span>
+      <span class="dot" id="live-dot">●</span>
+      <span id="clock">--:--</span>
+    </div>
+  </header>
+
+  <section id="screen-1" class="screen active">
+    <div class="tile big">
+      <div class="label">Unrealized P&amp;L</div>
+      <div class="value" id="unrealized">—</div>
+      <div class="sub" id="unrealized-pct">—</div>
+    </div>
+    <div class="tile big">
+      <div class="label">Realized P&amp;L (all time)</div>
+      <div class="value" id="realized">—</div>
+      <div class="sub" id="realized-wr">—</div>
+    </div>
+    <div class="tile">
+      <div class="label">Open trades</div>
+      <div class="value" id="open-count">—</div>
+      <div class="sub" id="open-split">—</div>
+    </div>
+    <div class="tile">
+      <div class="label">Pending</div>
+      <div class="value" id="pending-count">—</div>
+      <div class="sub" id="pending-split">—</div>
+    </div>
+  </section>
+
+  <section id="screen-2" class="screen">
+    <div class="screen-title">Best &amp; worst open trades</div>
+    <div class="movers">
+      <div class="mover-col">
+        <div class="col-head winners">WINNERS</div>
+        <div id="winners" class="mover-list"></div>
+      </div>
+      <div class="mover-col">
+        <div class="col-head losers">LOSERS</div>
+        <div id="losers" class="mover-list"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="screen-3" class="screen">
+    <div class="screen-title">Per-system scoreboard</div>
+    <div id="systems" class="systems"></div>
+  </section>
+
+  <div class="dots">
+    <span class="d active" data-i="0"></span>
+    <span class="d" data-i="1"></span>
+    <span class="d" data-i="2"></span>
+  </div>
+</main>
+
+<script src="dashboard.js"></script>
+</body>
+</html>
