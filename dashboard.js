@@ -77,6 +77,33 @@ const fmtUsd = (n) => (n >= 0 ? "+$" : "-$") + Math.abs(n).toFixed(2);
 const fmtPct = (n) => (n >= 0 ? "+" : "") + n.toFixed(2) + "%";
 const cls = (n) => (n >= 0 ? "pos" : "neg");
 
+// Animated number counter — smoothly transitions displayed value over ~600ms
+const _animTargets = new Map();
+function animateValue(el, toVal, formatter) {
+  if (!el) return;
+  const prev = _animTargets.get(el) ?? toVal;
+  _animTargets.set(el, toVal);
+  const start = performance.now();
+  const dur = 650;
+  const from = parseFloat(el.dataset.rawVal ?? toVal);
+  el.dataset.rawVal = toVal;
+  if (Math.abs(toVal - from) < 0.005) { el.textContent = formatter(toVal); return; }
+  function step(now) {
+    if (_animTargets.get(el) !== toVal) return; // superseded
+    const t = Math.min(1, (now - start) / dur);
+    const ease = 1 - Math.pow(1 - t, 3); // cubic ease-out
+    el.textContent = formatter(from + (toVal - from) * ease);
+    if (t < 1) requestAnimationFrame(step);
+  }
+  requestAnimationFrame(step);
+}
+
+// Tile glow: applies glow-green / glow-red based on sign
+function setTileGlow(tileEl, val) {
+  tileEl.classList.toggle("glow-green", val > 0.005);
+  tileEl.classList.toggle("glow-red",   val < -0.005);
+}
+
 let state = { trades: [], stats: {}, prices: {}, lastFetch: 0, lastCronIso: null, recentCloses: [] };
 
 // Seen-events memory (so we don't replay celebrations on every refresh)
@@ -332,8 +359,9 @@ function render() {
   const wr = state.stats.win_rate_pct ?? 0;
   const closed = state.stats.closed_count ?? 0;
   const rEl = $("realized");
-  rEl.textContent = fmtUsd(r);
   rEl.className = "value " + cls(r);
+  animateValue(rEl, r, fmtUsd);
+  setTileGlow(rEl.closest(".tile"), r);
   $("realized-wr").textContent = `${wr.toFixed(1)}% WR · ${closed} closed`;
 
   // Last-cron meta
@@ -434,8 +462,9 @@ function renderLive() {
   const totalCap = enriched.reduce((s, t) => s + (t.capital_usd || 100), 0);
   const totalPct = totalCap > 0 ? (totalUsd / totalCap) * 100 : 0;
   const uEl = $("unrealized");
-  uEl.textContent = fmtUsd(totalUsd);
-  uEl.className = "value " + cls(totalUsd);
+  uEl.className = "value " + (enriched.length ? cls(totalUsd) : "neu");
+  animateValue(uEl, totalUsd, fmtUsd);
+  setTileGlow(uEl.closest(".tile"), totalUsd);
   const upEl = $("unrealized-pct");
   upEl.textContent = enriched.length ? fmtPct(totalPct) + " on $" + totalCap.toFixed(0) + " open" : "no open trades";
   upEl.className = "sub " + cls(totalUsd);
@@ -478,7 +507,7 @@ function positionBar(t) {
 function renderMovers(list, kind) {
   if (!list.length) return `<div class="mover empty">No open trades</div>`;
   return list.map(t => `
-    <div class="mover">
+    <div class="mover ${t.direction === 'Long' ? 'long-card' : 'short-card'}">
       <div class="row1">
         <span class="coin">${t.coin.replace("USDT", "")}</span>
         <span class="dir ${t.direction.toLowerCase()}">${t.direction.toUpperCase()}</span>
