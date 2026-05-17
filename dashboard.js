@@ -419,15 +419,18 @@ let bloombergSeen = loadBloombergSeen();
 let bloombergFirstRun = !localStorage.getItem("bloombergFirstRun_v1");
 
 function checkBloombergNews(articles) {
-  if (!articles || !articles.length) return;
+  if (!articles) return;
   if (bloombergFirstRun) {
-    // Mark all current as seen on first load — don't replay old news
+    // First load: mark existing articles as seen so we don't replay old news.
+    // Always complete this block even if array is empty, so bloombergFirstRun
+    // is set to false before new articles can arrive on the next fetch.
     articles.forEach(a => bloombergSeen.add(a.id));
     saveBloombergSeen(bloombergSeen);
     localStorage.setItem("bloombergFirstRun_v1", "1");
     bloombergFirstRun = false;
     return;
   }
+  if (!articles.length) return;
   const fresh = articles.filter(a => !bloombergSeen.has(a.id));
   fresh.slice(0, 3).forEach((a, i) => {
     setTimeout(() => showNewsFlash(a), i * 6500);
