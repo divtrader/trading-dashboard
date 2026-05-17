@@ -565,5 +565,18 @@
         "closed_count": 7
       }
     }
-  }
+  },
+  "test_events": [
+    {
+      "id": "celebrate-demo-001",
+      "type": "win",
+      "trade": {
+        "coin": "BTCUSDT",
+        "direction": "Long",
+        "trading_system": "Spyker",
+        "status": "TP2_HIT",
+        "pnl_usd": 87.5
+      }
+    }
+  ]
 }
