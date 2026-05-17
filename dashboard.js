@@ -9,11 +9,14 @@ const STALE_MS = 30 * 60_000;
 
 const params = new URLSearchParams(location.search);
 if (params.get("k") !== URL_TOKEN) {
-  // Leave gate visible, don't load anything.
   throw new Error("blocked");
 }
 document.getElementById("gate").remove();
 document.getElementById("app").hidden = false;
+
+// Force-clear any overlay left open by a previous broken session
+{ const _ov = document.getElementById("overlay"); if (_ov) { _ov.hidden = true; _ov.classList.remove("out","sulk"); } }
+const _cf = document.getElementById("confetti"); if (_cf) _cf.innerHTML = "";
 
 const $ = (id) => document.getElementById(id);
 const fmtUsd = (n) => (n >= 0 ? "+$" : "-$") + Math.abs(n).toFixed(2);
