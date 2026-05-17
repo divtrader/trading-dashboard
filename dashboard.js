@@ -588,18 +588,20 @@ function fmtPrice(p) {
 function positionBar(t) {
   const { live, entry_price, sl, tp1, tp2, direction, tp1_hit, sl_moved_to_be } = t;
   const isLong = direction === "Long";
-  // Bar scale: SL = left (0%), TP2 = right (100%), TP1 proportional in between.
-  const right = tp2 || tp1; // fallback to tp1 if no tp2
-  const span = isLong ? (right - sl) : (sl - right);
+  // Bar scale: SL = left (0%), furthest target = right (100%).
+  // Both TP1 + TP2 always land within the bar regardless of ordering.
+  const hasTP2 = !!(tp2 && tp2 !== tp1);
+  const furthest = hasTP2
+    ? (isLong ? Math.max(tp1, tp2) : Math.min(tp1, tp2))
+    : tp1;
+  const span = isLong ? (furthest - sl) : (sl - furthest);
   const posOf = price => {
     const v = isLong ? (price - sl) / span : (sl - price) / span;
-    return Math.max(0, Math.min(100, v)) * 100;
+    return Math.max(0, Math.min(1, v)) * 100; // clamp 0–100%
   };
   const ePct  = posOf(entry_price);
   const lPct  = posOf(live);
   const t1Pct = posOf(tp1);
-  // TP2 is always pinned at 100%, but render marker if it exists
-  const hasTP2 = tp2 && tp2 !== tp1;
 
   const distSL  = Math.abs((live - sl)          / entry_price * 100).toFixed(1);
   const distTP1 = Math.abs((tp1  - live)         / entry_price * 100).toFixed(1);
