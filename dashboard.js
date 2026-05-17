@@ -362,15 +362,7 @@ function render() {
   const pS = pending.length - pL;
   $("pending-split").textContent = `${pL} Long · ${pS} Short`;
 
-  // Realized
-  const r = state.stats.realized_pnl_usd ?? 0;
-  const wr = state.stats.win_rate_pct ?? 0;
-  const closed = state.stats.closed_count ?? 0;
-  const rEl = $("realized");
-  rEl.className = "value " + cls(r);
-  animateValue(rEl, r, fmtUsd);
-  setTileGlow(rEl.closest(".tile"), r);
-  $("realized-wr").textContent = `${wr.toFixed(1)}% WR · ${closed} closed`;
+  // Hero portfolio P&L tile (realized + unrealized + donut + sparkline) — rendered in renderLive()
 
   // Last-cron meta
   if (state.lastCronIso) {
@@ -488,24 +480,102 @@ function renderLive() {
   const open = state.trades.filter(t => t.status === "OPEN");
   const enriched = open.map(t => ({ ...t, ...computeUnrealized(t) }));
 
-  // Unrealized total
-  const totalUsd = enriched.reduce((s, t) => s + t.usd, 0);
-  const totalCap = enriched.reduce((s, t) => s + (t.capital_usd || 100), 0);
-  const totalPct = totalCap > 0 ? (totalUsd / totalCap) * 100 : 0;
-  const uEl = $("unrealized");
-  uEl.className = "value " + (enriched.length ? cls(totalUsd) : "neu");
-  animateValue(uEl, totalUsd, fmtUsd);
-  setTileGlow(uEl.closest(".tile"), totalUsd);
-  const upEl = $("unrealized-pct");
-  upEl.textContent = enriched.length ? fmtPct(totalPct) + " on $" + totalCap.toFixed(0) + " open" : "no open trades";
-  upEl.className = "sub " + cls(totalUsd);
-
   // Movers
   const sorted = [...enriched].sort((a, b) => b.leveragedPct - a.leveragedPct);
   const winners = sorted.slice(0, 2);
   const losers = sorted.slice(-2).reverse();
   $("winners").innerHTML = renderMovers(winners, "winner");
   $("losers").innerHTML = renderMovers(losers, "loser");
+
+  renderHero(enriched);
+}
+
+function renderHero(enrichedOpen) {
+  const enriched = enrichedOpen || state.trades.filter(t => t.status === "OPEN").map(t => ({ ...t, ...computeUnrealized(t) }));
+  const unrealized = enriched.reduce((s, t) => s + t.usd, 0);
+  const totalCap   = enriched.reduce((s, t) => s + (t.capital_usd || 100), 0);
+  const realized   = state.stats.realized_pnl_usd ?? 0;
+  const total      = realized + unrealized;
+
+  const pEl = $("portfolio-total");
+  if (pEl) {
+    pEl.className = "value hero-value " + cls(total);
+    animateValue(pEl, total, fmtUsd);
+    setTileGlow(pEl.closest(".tile"), total);
+  }
+  const rEl = $("hero-realized");
+  const uEl = $("hero-unrealized");
+  const cEl = $("hero-capital");
+  if (rEl) {
+    rEl.textContent = fmtUsd(realized);
+    rEl.className = "hero-stat-val " + cls(realized);
+  }
+  if (uEl) {
+    uEl.textContent = enriched.length ? fmtUsd(unrealized) : "—";
+    uEl.className = "hero-stat-val " + (enriched.length ? cls(unrealized) : "");
+  }
+  if (cEl) {
+    cEl.textContent = enriched.length ? "$" + totalCap.toFixed(0) : "—";
+    cEl.className = "hero-stat-val";
+  }
+
+  // Donut
+  const wr = state.stats.win_rate_pct ?? 0;
+  const closed = state.stats.closed_count ?? 0;
+  const wins = Math.round((wr / 100) * closed);
+  const losses = closed - wins;
+  const pctEl = $("donut-pct");
+  const subEl = $("donut-sub");
+  const circle = $("donut-fill-circle");
+  if (pctEl) pctEl.textContent = closed ? wr.toFixed(1) + "%" : "—";
+  if (subEl) subEl.textContent = closed ? `${wins}W · ${losses}L · ${closed} closed` : "no closes yet";
+  if (circle) {
+    const C = 2 * Math.PI * 50;
+    circle.style.strokeDashoffset = (C - (wr / 100) * C).toFixed(2);
+    const color = wr >= 50 ? "#00c9a7" : wr >= 30 ? "#ffb74d" : "#ff4d5e";
+    const glow  = wr >= 50 ? "rgba(0,201,167,0.5)" : wr >= 30 ? "rgba(255,183,77,0.45)" : "rgba(255,77,94,0.5)";
+    circle.style.stroke = color;
+    circle.style.filter = `drop-shadow(0 0 8px ${glow})`;
+  }
+
+  renderEquitySparkline(state.recentCloses || []);
+}
+
+function renderEquitySparkline(recentCloses) {
+  const svg = document.getElementById("equity-spark");
+  if (!svg) return;
+  const closes = [...recentCloses].sort((a, b) => new Date(a.close_iso) - new Date(b.close_iso));
+  if (!closes.length) {
+    svg.innerHTML = '<text x="200" y="36" text-anchor="middle" fill="rgba(255,255,255,0.25)" font-size="11" font-family="-apple-system,sans-serif">no closed trades yet</text>';
+    return;
+  }
+  let cum = 0;
+  const points = [0, ...closes.map(t => { cum += (t.pnl_usd || 0); return cum; })];
+  const min = Math.min(...points);
+  const max = Math.max(...points);
+  const range = (max - min) || 1;
+  const W = 400, H = 60, pad = 6;
+  const stepX = W / (points.length - 1);
+  const yFor = v => H - pad - ((v - min) / range) * (H - pad * 2);
+  const d = points.map((v, i) => `${i ? "L" : "M"}${(i * stepX).toFixed(2)} ${yFor(v).toFixed(2)}`).join(" ");
+  const lastX = ((points.length - 1) * stepX).toFixed(2);
+  const lastY = yFor(points[points.length - 1]).toFixed(2);
+  const final = points[points.length - 1];
+  const color = final >= 0 ? "#00c9a7" : "#ff4d5e";
+  const glow  = final >= 0 ? "rgba(0,201,167,0.5)" : "rgba(255,77,94,0.5)";
+  const gid = "spark-grad-" + (final >= 0 ? "g" : "r");
+  const area = d + ` L${lastX} ${H} L0 ${H} Z`;
+  svg.innerHTML = `
+    <defs>
+      <linearGradient id="${gid}" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="${color}" stop-opacity="0.35"/>
+        <stop offset="100%" stop-color="${color}" stop-opacity="0"/>
+      </linearGradient>
+    </defs>
+    <path d="${area}" fill="url(#${gid})"/>
+    <path d="${d}" fill="none" stroke="${color}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="filter: drop-shadow(0 0 4px ${glow})"/>
+    <circle cx="${lastX}" cy="${lastY}" r="3.5" fill="${color}" style="filter: drop-shadow(0 0 6px ${glow})"/>
+  `;
 }
 
 function fmtPrice(p) {
