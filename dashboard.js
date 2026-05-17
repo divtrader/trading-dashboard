@@ -451,7 +451,7 @@ function showNewsFlash(article) {
   setTimeout(() => {
     el.classList.add("out");
     setTimeout(() => { el.hidden = true; el.classList.remove("out"); nfBusy = false; }, 500);
-  }, 5000);
+  }, 15000);
 }
 
 // === BTC / ETH / SOL live price bar ===
