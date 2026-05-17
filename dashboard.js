@@ -5,7 +5,7 @@ const URL_TOKEN = "BUKTYYvc1SELHNeI";
 const DATA_URL = "data.json";
 const REFRESH_MS = 60_000;
 const ROTATE_MS = 15_000;
-const STALE_MS = 30 * 60_000;
+const STALE_MS = 5 * 60 * 60_000; // red dot if no cron in >5h (cron is every 4H)
 
 const params = new URLSearchParams(location.search);
 if (params.get("k") !== URL_TOKEN) {
