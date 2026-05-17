@@ -381,22 +381,23 @@ function render() {
 }
 
 function renderMexcCard() {
-  const card = $("mexc-card");
   const pnlEl = $("mexc-pnl");
-  const subEl = $("mexc-sub");
-  if (!card) return;
+  const eqEl  = $("mexc-equity");
+  const avEl  = $("mexc-avail");
+  if (!pnlEl) return;
   const m = state.mexcAccount;
   if (!m) {
     pnlEl.textContent = "—";
-    pnlEl.className = "mexc-pnl";
-    subEl.textContent = "no data";
+    pnlEl.className = "value hero-value";
+    if (eqEl) eqEl.textContent = "—";
+    if (avEl) avEl.textContent = "—";
     return;
   }
   const pnl = m.unrealized_pnl;
-  pnlEl.className = "mexc-pnl " + cls(pnl);
-  animateValue(pnlEl, pnl, v => (v >= 0 ? "+" : "") + v.toFixed(2) + " USDT");
-  setTileGlow(card, pnl);
-  subEl.textContent = `Equity $${m.equity.toLocaleString("en-US", {maximumFractionDigits: 2})}  ·  Avail $${m.available.toLocaleString("en-US", {maximumFractionDigits: 2})}`;
+  pnlEl.className = "value hero-value " + cls(pnl);
+  animateValue(pnlEl, pnl, fmtUsd);
+  if (eqEl) eqEl.textContent = "$" + m.equity.toLocaleString("en-US", {maximumFractionDigits: 0});
+  if (avEl) avEl.textContent = "$" + m.available.toLocaleString("en-US", {maximumFractionDigits: 0});
 }
 
 // === Bloomberg news flash ===

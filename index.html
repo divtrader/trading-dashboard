@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex,nofollow">
 <title>Spyker Trading Inc — Dashboard</title>
-<link rel="stylesheet" href="style.css?v=39">
+<link rel="stylesheet" href="style.css?v=40">
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
@@ -50,22 +50,42 @@
     <div class="hero-tile tile">
       <div class="hero-grid">
         <div class="hero-main">
-          <div class="label">Portfolio P&amp;L</div>
-          <div class="value hero-value" id="portfolio-total">—</div>
-          <div class="hero-breakdown">
-            <div class="hero-stat">
-              <div class="hero-stat-label">Realized</div>
-              <div class="hero-stat-val" id="hero-realized">—</div>
+          <div class="hero-pnls">
+            <div class="pnl-block paper-block">
+              <div class="pnl-block-label">Portfolio P&amp;L · Paper</div>
+              <div class="value hero-value" id="portfolio-total">—</div>
+              <div class="hero-breakdown">
+                <div class="hero-stat">
+                  <div class="hero-stat-label">Realized</div>
+                  <div class="hero-stat-val" id="hero-realized">—</div>
+                </div>
+                <div class="hero-stat-sep"></div>
+                <div class="hero-stat">
+                  <div class="hero-stat-label">Unrealized</div>
+                  <div class="hero-stat-val" id="hero-unrealized">—</div>
+                </div>
+                <div class="hero-stat-sep"></div>
+                <div class="hero-stat">
+                  <div class="hero-stat-label">Capital</div>
+                  <div class="hero-stat-val" id="hero-capital">—</div>
+                </div>
+              </div>
             </div>
-            <div class="hero-stat-sep"></div>
-            <div class="hero-stat">
-              <div class="hero-stat-label">Unrealized</div>
-              <div class="hero-stat-val" id="hero-unrealized">—</div>
-            </div>
-            <div class="hero-stat-sep"></div>
-            <div class="hero-stat">
-              <div class="hero-stat-label">Open Capital</div>
-              <div class="hero-stat-val" id="hero-capital">—</div>
+            <div class="pnl-divider"></div>
+            <div class="pnl-block mexc-block" id="mexc-card">
+              <div class="pnl-block-label">MEXC Live <span class="live-pulse"></span></div>
+              <div class="value hero-value" id="mexc-pnl">—</div>
+              <div class="hero-breakdown">
+                <div class="hero-stat">
+                  <div class="hero-stat-label">Equity</div>
+                  <div class="hero-stat-val" id="mexc-equity">—</div>
+                </div>
+                <div class="hero-stat-sep"></div>
+                <div class="hero-stat">
+                  <div class="hero-stat-label">Available</div>
+                  <div class="hero-stat-val" id="mexc-avail">—</div>
+                </div>
+              </div>
             </div>
           </div>
           <div class="hero-spark">
@@ -126,19 +146,12 @@
       <div class="activity-title">Pending triggers — closest to entry</div>
       <div id="triggers" class="triggers-body"></div>
     </div>
-    <div class="bottom-row">
-      <div class="price-bar" id="price-bar">
-        <span class="price-item" id="px-BTC"><span class="px-name">BTC</span> <span class="px-val">—</span> <span class="px-chg">—</span></span>
-        <span class="px-sep">·</span>
-        <span class="price-item" id="px-ETH"><span class="px-name">ETH</span> <span class="px-val">—</span> <span class="px-chg">—</span></span>
-        <span class="px-sep">·</span>
-        <span class="price-item" id="px-SOL"><span class="px-name">SOL</span> <span class="px-val">—</span> <span class="px-chg">—</span></span>
-      </div>
-      <div class="mexc-card" id="mexc-card">
-        <div class="mexc-label">MEXC LIVE</div>
-        <div class="mexc-pnl" id="mexc-pnl">—</div>
-        <div class="mexc-sub" id="mexc-sub">—</div>
-      </div>
+    <div class="price-bar" id="price-bar">
+      <span class="price-item" id="px-BTC"><span class="px-name">BTC</span> <span class="px-val">—</span> <span class="px-chg">—</span></span>
+      <span class="px-sep">·</span>
+      <span class="price-item" id="px-ETH"><span class="px-name">ETH</span> <span class="px-val">—</span> <span class="px-chg">—</span></span>
+      <span class="px-sep">·</span>
+      <span class="price-item" id="px-SOL"><span class="px-name">SOL</span> <span class="px-val">—</span> <span class="px-chg">—</span></span>
     </div>
   </section>
 
@@ -151,6 +164,6 @@
   </div>
 </main>
 
-<script src="dashboard.js?v=45"></script>
+<script src="dashboard.js?v=46"></script>
 </body>
 </html>

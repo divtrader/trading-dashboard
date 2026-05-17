@@ -160,11 +160,44 @@ main {
   min-width: 0;
 }
 .hero-value {
-  font-size: 96px !important;
+  font-size: 68px !important;
   font-weight: 900 !important;
-  letter-spacing: -3px !important;
+  letter-spacing: -2px !important;
   line-height: 0.92 !important;
-  margin: 8px 0 22px;
+  margin: 6px 0 18px;
+}
+.hero-pnls {
+  display: grid;
+  grid-template-columns: 1fr 1px 1fr;
+  gap: 28px;
+  align-items: stretch;
+  margin-bottom: 18px;
+}
+.pnl-divider {
+  background: linear-gradient(180deg, transparent, var(--border-hi) 30%, var(--border-hi) 70%, transparent);
+  width: 1px;
+}
+.pnl-block { display: flex; flex-direction: column; min-width: 0; }
+.pnl-block-label {
+  font-size: 11px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 700;
+  display: flex; align-items: center; gap: 8px;
+}
+.mexc-block .pnl-block-label { color: #ffb74d; }
+.live-pulse {
+  display: inline-block;
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: #ff4d5e;
+  box-shadow: 0 0 0 0 rgba(255,77,94,0.7);
+  animation: live-pulse 1.6s ease-in-out infinite;
+}
+@keyframes live-pulse {
+  0%,100% { box-shadow: 0 0 0 0 rgba(255,77,94,0.6); }
+  50%     { box-shadow: 0 0 0 8px rgba(255,77,94,0); }
 }
 .hero-breakdown {
   display: flex;
@@ -871,62 +904,9 @@ main {
 .px-chg.neg { color: var(--red); }
 .px-sep { color: var(--border-hi); font-size: 20px; margin: 0 28px; }
 
-/* ── Bottom row: price bar + MEXC card ── */
-.bottom-row {
-  display: flex;
-  gap: 10px;
-  align-items: stretch;
-  flex-shrink: 0;
-}
-.bottom-row .price-bar {
-  flex: 1;
-  margin-top: 0;
-}
-
-.mexc-card {
-  background: var(--panel);
-  border: 1px solid var(--border);
-  border-radius: 14px;
-  padding: 8px 16px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  min-width: 170px;
-  flex-shrink: 0;
-  transition: border-color 0.5s ease, box-shadow 0.5s ease;
-}
-.mexc-card.glow-green {
-  border-color: rgba(0,201,167,0.28);
-  box-shadow: 0 0 20px rgba(0,201,167,0.06);
-}
-.mexc-card.glow-red {
-  border-color: rgba(255,77,94,0.25);
-  box-shadow: 0 0 20px rgba(255,77,94,0.06);
-}
-.mexc-label {
-  font-size: 9px;
-  font-weight: 800;
-  letter-spacing: 2px;
-  color: var(--muted);
-  text-transform: uppercase;
-  margin-bottom: 3px;
-}
-.mexc-pnl {
-  font-size: 22px;
-  font-weight: 800;
-  letter-spacing: -0.5px;
-  line-height: 1.1;
-  transition: color 0.4s ease, text-shadow 0.4s ease;
-}
-.mexc-pnl.pos { color: var(--green); text-shadow: 0 0 20px var(--green-glow); }
-.mexc-pnl.neg { color: var(--red);   text-shadow: 0 0 20px var(--red-glow); }
-.mexc-sub {
-  font-size: 10px;
-  color: var(--muted);
-  margin-top: 3px;
-  font-weight: 500;
-  white-space: nowrap;
-}
+/* MEXC P&L lives in the hero now — colour mirrors paper P&L via .pos/.neg on #mexc-pnl */
+#mexc-pnl.pos { color: var(--green); text-shadow: 0 0 24px var(--green-glow); }
+#mexc-pnl.neg { color: var(--red);   text-shadow: 0 0 24px var(--red-glow); }
 
 /* ── Dot navigation ── */
 .dots { display: flex; justify-content: center; gap: 6px; padding: 10px 0 12px; flex-shrink: 0; }
