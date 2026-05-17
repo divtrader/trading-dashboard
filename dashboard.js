@@ -20,13 +20,32 @@ const fmtUsd = (n) => (n >= 0 ? "+$" : "-$") + Math.abs(n).toFixed(2);
 const fmtPct = (n) => (n >= 0 ? "+" : "") + n.toFixed(2) + "%";
 const cls = (n) => (n >= 0 ? "pos" : "neg");
 
-let state = { trades: [], stats: {}, prices: {}, lastFetch: 0, lastCronIso: null };
+let state = { trades: [], stats: {}, prices: {}, lastFetch: 0, lastCronIso: null, recentCloses: [] };
+
+// Seen-events memory (so we don't replay celebrations on every refresh)
+const SEEN_KEY = "dashSeenEvents_v1";
+const FIRST_RUN_KEY = "dashFirstRun_v1";
+function loadSeen() {
+  try { return new Set(JSON.parse(localStorage.getItem(SEEN_KEY) || "[]")); }
+  catch { return new Set(); }
+}
+function saveSeen(set) {
+  // Cap at last 200 events to keep storage bounded.
+  const arr = [...set].slice(-200);
+  localStorage.setItem(SEEN_KEY, JSON.stringify(arr));
+}
+let seen = loadSeen();
+let firstRun = !localStorage.getItem(FIRST_RUN_KEY);
 
 async function fetchData() {
   try {
     const r = await fetch(DATA_URL + "?t=" + Date.now(), { cache: "no-store" });
     const d = await r.json();
-    state.trades = d.active_trades || [];
+    const newTrades = d.active_trades || [];
+    const newCloses = d.recent_closes || [];
+    detectEvents(newTrades, newCloses);
+    state.trades = newTrades;
+    state.recentCloses = newCloses;
     state.stats = d.stats || {};
     state.lastCronIso = d.last_updated_iso || null;
     state.lastFetch = Date.now();
@@ -34,6 +53,106 @@ async function fetchData() {
     render();
   } catch (e) {
     console.error("fetch failed", e);
+  }
+}
+
+// === Event detection: TP1 hits + closes → queue overlays ===
+function detectEvents(newTrades, newCloses) {
+  const events = [];
+
+  // TP1 transitions on still-open trades
+  for (const t of newTrades) {
+    if (t.tp1_hit) {
+      const evId = `tp1:${t.trade_id}`;
+      if (!seen.has(evId)) events.push({ id: evId, type: "tp1", trade: t });
+    }
+  }
+
+  // Newly-closed trades
+  for (const t of newCloses) {
+    const evId = `close:${t.trade_id}`;
+    if (!seen.has(evId)) events.push({ id: evId, type: t.won ? "win" : "loss", trade: t });
+  }
+
+  if (firstRun) {
+    // First time this browser opens dashboard: mark everything seen, don't replay history.
+    for (const e of events) seen.add(e.id);
+    saveSeen(seen);
+    localStorage.setItem(FIRST_RUN_KEY, "1");
+    firstRun = false;
+    return;
+  }
+
+  // Queue events with mild stagger so multiple don't collide
+  events.forEach((ev, i) => setTimeout(() => showOverlay(ev), i * 6500));
+}
+
+let overlayBusy = false;
+const overlayQueue = [];
+function showOverlay(ev) {
+  if (overlayBusy) { overlayQueue.push(ev); return; }
+  overlayBusy = true;
+  const el = $("overlay");
+  const t = ev.trade;
+  let emoji, headline, detail, pnl, sulk = false, confetti = false;
+
+  if (ev.type === "tp1") {
+    emoji = "🎯";
+    headline = "TP1 HIT!";
+    detail = `${t.coin.replace("USDT","")} ${t.direction} · ${t.trading_system}`;
+    pnl = "SL → breakeven, riding TP2";
+    confetti = true;
+  } else if (ev.type === "win") {
+    const reason = t.status === "TP2_HIT" ? "TP2 SMASHED" : "WINNER CLOSED";
+    emoji = "🚀";
+    headline = reason;
+    detail = `${t.coin.replace("USDT","")} ${t.direction} · ${t.trading_system}`;
+    pnl = (t.pnl_usd >= 0 ? "+$" : "-$") + Math.abs(t.pnl_usd).toFixed(2);
+    confetti = true;
+  } else {
+    emoji = "💔";
+    headline = "STOPPED OUT";
+    detail = `${t.coin.replace("USDT","")} ${t.direction} · ${t.trading_system}`;
+    pnl = (t.pnl_usd >= 0 ? "+$" : "-$") + Math.abs(t.pnl_usd).toFixed(2);
+    sulk = true;
+  }
+
+  $("overlay-emoji").textContent = emoji;
+  $("overlay-headline").textContent = headline;
+  $("overlay-detail").textContent = detail;
+  const pnlEl = $("overlay-pnl");
+  pnlEl.textContent = pnl;
+  pnlEl.className = "overlay-pnl " + (ev.type === "loss" ? "neg" : "pos");
+  el.classList.toggle("sulk", sulk);
+  el.classList.remove("out");
+  el.hidden = false;
+  if (confetti) launchConfetti();
+
+  setTimeout(() => {
+    el.classList.add("out");
+    setTimeout(() => {
+      el.hidden = true;
+      $("confetti").innerHTML = "";
+      seen.add(ev.id);
+      saveSeen(seen);
+      overlayBusy = false;
+      if (overlayQueue.length) showOverlay(overlayQueue.shift());
+    }, 600);
+  }, 5500);
+}
+
+function launchConfetti() {
+  const box = $("confetti");
+  const colors = ["#26A69A", "#4CAF50", "#FF9800", "#FFD54F", "#80DEEA"];
+  for (let i = 0; i < 80; i++) {
+    const p = document.createElement("div");
+    p.className = "confetti-piece";
+    p.style.left = Math.random() * 100 + "vw";
+    p.style.background = colors[Math.floor(Math.random() * colors.length)];
+    p.style.animationDuration = (2 + Math.random() * 2.5) + "s";
+    p.style.animationDelay = (Math.random() * 0.8) + "s";
+    p.style.transform = `rotate(${Math.random() * 360}deg)`;
+    box.appendChild(p);
   }
 }
 

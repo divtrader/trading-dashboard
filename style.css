@@ -140,3 +140,79 @@ main {
 .dots { display: flex; justify-content: center; gap: 8px; padding: 12px 0 0; }
 .dots .d { width: 8px; height: 8px; border-radius: 50%; background: var(--border); }
 .dots .d.active { background: var(--muted); }
+
+/* === Overlays: celebrate / sulk === */
+.overlay {
+  position: fixed; inset: 0; z-index: 100;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  text-align: center;
+  background: radial-gradient(ellipse at center, rgba(38,166,154,0.35), rgba(10,14,26,0.85) 70%);
+  animation: overlay-in 0.5s ease;
+  overflow: hidden;
+}
+.overlay.sulk {
+  background: radial-gradient(ellipse at center, rgba(239,83,80,0.28), rgba(10,14,26,0.92) 70%);
+  filter: grayscale(0.3);
+}
+.overlay.out { animation: overlay-out 0.6s ease forwards; }
+
+@keyframes overlay-in { from { opacity: 0; transform: scale(0.96); } to { opacity: 1; transform: none; } }
+@keyframes overlay-out { to { opacity: 0; transform: scale(1.04); } }
+
+.overlay-emoji {
+  font-size: 140px;
+  line-height: 1;
+  margin-bottom: 18px;
+  animation: bounce 0.7s ease;
+}
+.overlay.sulk .overlay-emoji {
+  animation: shake 0.8s ease;
+}
+
+@keyframes bounce {
+  0% { transform: scale(0) rotate(-20deg); }
+  60% { transform: scale(1.25) rotate(10deg); }
+  100% { transform: scale(1) rotate(0); }
+}
+@keyframes shake {
+  0%, 100% { transform: translateX(0) rotate(0); }
+  20% { transform: translateX(-12px) rotate(-3deg); }
+  40% { transform: translateX(12px) rotate(3deg); }
+  60% { transform: translateX(-8px) rotate(-2deg); }
+  80% { transform: translateX(8px) rotate(2deg); }
+}
+
+.overlay-headline {
+  font-size: 64px; font-weight: 800;
+  letter-spacing: 2px;
+  color: var(--green-bright);
+  text-shadow: 0 0 30px rgba(76,175,80,0.6);
+  margin-bottom: 14px;
+}
+.overlay.sulk .overlay-headline {
+  color: var(--red);
+  text-shadow: 0 0 24px rgba(239,83,80,0.5);
+}
+
+.overlay-detail { font-size: 26px; color: var(--text); margin-bottom: 18px; opacity: 0.9; }
+.overlay-pnl { font-size: 56px; font-weight: 700; }
+.overlay-pnl.pos { color: var(--green); }
+.overlay-pnl.neg { color: var(--red); }
+
+/* Confetti */
+#confetti {
+  position: absolute; inset: 0;
+  pointer-events: none;
+}
+.confetti-piece {
+  position: absolute;
+  width: 10px; height: 14px;
+  top: -20px;
+  opacity: 0.9;
+  animation: confetti-fall linear forwards;
+}
+@keyframes confetti-fall {
+  0% { transform: translateY(0) rotate(0); opacity: 1; }
+  100% { transform: translateY(110vh) rotate(720deg); opacity: 0; }
+}
