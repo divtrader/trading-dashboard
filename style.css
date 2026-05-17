@@ -603,6 +603,11 @@ main {
   background: var(--green);
   box-shadow: 0 0 8px var(--green), 0 0 2px var(--green);
 }
+.pos-tp2-marker {
+  background: var(--green);
+  opacity: 0.75;
+  box-shadow: 0 0 6px var(--green);
+}
 .marker-flag {
   position: absolute;
   bottom: calc(100% + 5px);
@@ -642,6 +647,13 @@ main {
   border: 1px solid rgba(0,201,167,0.4);
 }
 .tp1-flag::after { border-top-color: rgba(0,201,167,0.22); }
+.tp2-flag {
+  background: rgba(0,201,167,0.14);
+  color: var(--green);
+  border: 1px solid rgba(0,201,167,0.3);
+  opacity: 0.85;
+}
+.tp2-flag::after { border-top-color: rgba(0,201,167,0.14); }
 .pos-dot {
   position: absolute; top: 50%;
   width: 14px; height: 14px;

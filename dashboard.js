@@ -588,20 +588,26 @@ function fmtPrice(p) {
 function positionBar(t) {
   const { live, entry_price, sl, tp1, tp2, direction } = t;
   const isLong = direction === "Long";
-  // Scale: SL = 0%, TP2 = 100% (TP2 is the ultimate target). TP1 and entry sit between.
-  const target = tp2 && tp2 !== tp1 ? tp2 : tp1;
-  const span = isLong ? (target - sl) : (sl - target);
+  // Bar scale: SL = 0%, FURTHEST target = 100%. Works regardless of TP1/TP2 ordering.
+  const tps = [tp1, tp2].filter(v => v && v !== sl);
+  const furthestTP = isLong ? Math.max(...tps) : Math.min(...tps);
+  const span = isLong ? (furthestTP - sl) : (sl - furthestTP);
   const posOf = price => {
     const v = isLong ? (price - sl) / span : (sl - price) / span;
     return Math.max(-0.05, Math.min(1.05, v)) * 100;
   };
-  const ePct = posOf(entry_price);
-  const lPct = posOf(live);
+  const ePct  = posOf(entry_price);
+  const lPct  = posOf(live);
   const t1Pct = posOf(tp1);
+  const t2Pct = tp2 && tp2 !== tp1 ? posOf(tp2) : null;
   const distSL  = Math.abs((live - sl)  / entry_price * 100).toFixed(1);
   const distTP1 = Math.abs((tp1  - live) / entry_price * 100).toFixed(1);
+  const distTP2 = tp2 ? Math.abs((tp2 - live) / entry_price * 100).toFixed(1) : null;
   const liveColor = lPct < 30 ? "#ff4d5e" : lPct > 70 ? "#00c9a7" : "#ffb74d";
-  const hasTp2 = tp2 && tp2 !== tp1;
+  const tp2Marker = t2Pct !== null ? `
+        <div class="pos-marker pos-tp2-marker" style="left:${t2Pct.toFixed(1)}%">
+          <span class="marker-flag tp2-flag">TP2</span>
+        </div>` : "";
   return `
     <div class="pos-bar">
       <div class="pos-track">
@@ -612,12 +618,13 @@ function positionBar(t) {
         <div class="pos-marker pos-tp1-marker" style="left:${t1Pct.toFixed(1)}%">
           <span class="marker-flag tp1-flag">TP1</span>
         </div>
+        ${tp2Marker}
         <div class="pos-dot" style="left:${lPct.toFixed(1)}%;background:${liveColor};box-shadow:0 0 12px ${liveColor},0 0 4px ${liveColor}"></div>
       </div>
       <div class="pos-labels">
         <span class="lbl-sl">SL · ${distSL}%</span>
         <span class="lbl-tp1">TP1 · ${distTP1}%</span>
-        ${hasTp2 ? `<span class="lbl-tp2">TP2 · ${fmtPrice(tp2)}</span>` : ""}
+        ${distTP2 !== null ? `<span class="lbl-tp2">TP2 · ${distTP2}%</span>` : ""}
       </div>
     </div>`;
 }
