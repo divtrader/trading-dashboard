@@ -64,7 +64,8 @@ const STALE_MS   = 5 * 60 * 60_000;
 // ── Set this to your Cloudflare Worker URL once deployed ──────────────────
 // e.g. "https://mexc-proxy.yourname.workers.dev"
 // Leave empty to rely on the 5-minute GHA snapshot fallback.
-const MEXC_WORKER_URL = "https://mexc-proxy.braamdeclerk.workers.dev";
+const MEXC_WORKER_URL      = "https://mexc-proxy.braamdeclerk.workers.dev";
+const BLOOMBERG_WORKER_URL = "https://bloomberg-news.braamdeclerk.workers.dev";
 // ─────────────────────────────────────────────────────────────────────────
 
 const params = new URLSearchParams(location.search);
@@ -142,7 +143,7 @@ async function fetchData() {
     state.recentSignals = d.recent_signals || [];
     state.recentCancels = d.recent_cancels || [];
     state.tp1HitsOpen = d.tp1_hits_open || [];
-    checkBloombergNews(d.bloomberg_news || []);
+    // bloomberg_news now comes from CF Worker, not data.json
     state.stats = d.stats || {};
     state.mexcAccount = d.mexc_account || null;
     state.lastCronIso = d.last_updated_iso || null;
@@ -732,8 +733,22 @@ setInterval(rotate, ROTATE_MS);
 setInterval(tickClock, 1000);
 tickClock();
 
-// MEXC live: 15 s when worker configured, otherwise skip (data.json carries it)
+// MEXC live: poll every 15s via CF Worker
 if (MEXC_WORKER_URL) {
   fetchMexcLive();
   setInterval(fetchMexcLive, 15_000);
 }
+
+// Bloomberg news: poll CF Worker every 60s
+async function fetchBloombergNews() {
+  if (!BLOOMBERG_WORKER_URL) return;
+  try {
+    const r = await fetch(BLOOMBERG_WORKER_URL + "?t=" + Date.now(), { cache: "no-store" });
+    const d = await r.json();
+    checkBloombergNews(d.articles || []);
+  } catch (e) {
+    console.warn("Bloomberg worker fetch failed:", e);
+  }
+}
+fetchBloombergNews();
+setInterval(fetchBloombergNews, 60_000);
