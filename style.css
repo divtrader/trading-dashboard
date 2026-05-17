@@ -176,10 +176,11 @@ main {
 .paper-group {
   display: flex;
   align-items: center;
-  gap: 18px;
+  justify-content: flex-start;
+  gap: 22px;
   min-width: 0;
 }
-.paper-group .pnl-block { flex: 1; min-width: 0; }
+.paper-group .pnl-block { flex: 0 0 auto; min-width: 0; }
 .paper-group .hero-donut { flex-shrink: 0; }
 .pnl-divider {
   background: linear-gradient(180deg, transparent, var(--border-hi) 30%, var(--border-hi) 70%, transparent);
