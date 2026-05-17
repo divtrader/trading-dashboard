@@ -483,7 +483,8 @@ function renderLive() {
   // Movers
   const sorted = [...enriched].sort((a, b) => b.leveragedPct - a.leveragedPct);
   const winners = sorted.slice(0, 2);
-  const losers = sorted.slice(-2).reverse();
+  const winnerIds = new Set(winners.map(w => w.trade_id));
+  const losers = sorted.slice().reverse().filter(t => !winnerIds.has(t.trade_id)).slice(0, 2);
   $("winners").innerHTML = renderMovers(winners, "winner");
   $("losers").innerHTML = renderMovers(losers, "loser");
 
@@ -587,40 +588,88 @@ function fmtPrice(p) {
 function positionBar(t) {
   const { live, entry_price, sl, tp1, direction } = t;
   const isLong = direction === "Long";
-  const pos = isLong ? (live - sl) / (tp1 - sl) : (sl - live) / (sl - tp1);
-  const pct = Math.max(0, Math.min(1, pos)) * 100;
+  const entryPos = isLong ? (entry_price - sl) / (tp1 - sl) : (sl - entry_price) / (sl - tp1);
+  const livePos  = isLong ? (live - sl) / (tp1 - sl)         : (sl - live) / (sl - tp1);
+  const ePct = Math.max(0, Math.min(1, entryPos)) * 100;
+  const lPct = Math.max(0, Math.min(1, livePos))  * 100;
   const distSL  = Math.abs((live - sl)  / entry_price * 100).toFixed(1);
-  const distTP1 = Math.abs((tp1 - live) / entry_price * 100).toFixed(1);
-  const fillColor = pos < 0.35 ? "#EF5350" : pos > 0.65 ? "#26A69A" : "#FF9800";
+  const distTP1 = Math.abs((tp1  - live) / entry_price * 100).toFixed(1);
+  const liveColor = livePos < 0.3 ? "#ff4d5e" : livePos > 0.7 ? "#00c9a7" : "#ffb74d";
   return `
     <div class="pos-bar">
       <div class="pos-track">
-        <div class="pos-fill" style="width:${pct.toFixed(1)}%;background:${fillColor}16;border-right:2px solid ${fillColor}"></div>
-        <div class="pos-dot" style="left:${pct.toFixed(1)}%;background:${fillColor}"></div>
+        <div class="pos-fill" style="width:${lPct.toFixed(1)}%;background:linear-gradient(90deg, ${liveColor}22, ${liveColor}66)"></div>
+        <div class="pos-entry-marker" style="left:${ePct.toFixed(1)}%" title="Entry ${fmtPrice(entry_price)}"></div>
+        <div class="pos-dot" style="left:${lPct.toFixed(1)}%;background:${liveColor};box-shadow:0 0 12px ${liveColor},0 0 4px ${liveColor}"></div>
       </div>
       <div class="pos-labels">
-        <span style="color:#EF5350">SL ${distSL}%</span>
-        <span style="color:#26A69A">TP1 ${distTP1}%</span>
+        <span class="lbl-sl">SL · ${distSL}%</span>
+        <span class="lbl-prices">${fmtPrice(entry_price)} <span class="arrow">→</span> <span class="live-price">${fmtPrice(live)}</span></span>
+        <span class="lbl-tp1">TP1 · ${distTP1}%</span>
       </div>
     </div>`;
 }
 
+const COIN_COLORS = {
+  BTC: "#F7931A", ETH: "#627EEA", SOL: "#14F195", XRP: "#0066CC",
+  ADA: "#0033AD", DOGE: "#C2A633", BNB: "#F0B90B", AVAX: "#E84142",
+  LINK: "#2A5ADA", SUI: "#6FBCF0", ZEC: "#ECB244", TAO: "#FF6B35",
+  TRX: "#FF060A", APT: "#06CFCB", HBAR: "#5C2D91", LTC: "#345D9D",
+  NEAR: "#00C08B", ONDO: "#3D63E5", RENDER: "#FF4E5E", THETA: "#2AB8E6",
+  TON: "#0098EA", UNI: "#FF007A", XLM: "#08B5E5", ALGO: "#00C08B",
+  CAKE: "#D1884F",
+};
+const SYSTEM_TAG = { John: "J", William: "W", Braam: "B", Mong: "M" };
+function coinColor(coin) {
+  const c = coin.replace("USDT", "");
+  return COIN_COLORS[c] || "#7280B5";
+}
+function tradeAge(t) {
+  const d = t.date_activated || t.date_opened;
+  const tm = t.time_activated_utc || t.time_opened_utc || "00:00";
+  if (!d) return "";
+  const iso = `${d}T${tm}:00Z`;
+  const ms = Date.now() - new Date(iso).getTime();
+  if (ms <= 0) return "now";
+  const h = Math.floor(ms / 3600000);
+  if (h < 1) return Math.floor(ms / 60000) + "m";
+  if (h < 24) return h + "h";
+  const days = Math.floor(h / 24);
+  return `${days}d ${h - days * 24}h`;
+}
+
 function renderMovers(list, kind) {
   if (!list.length) return `<div class="mover empty">No open trades</div>`;
-  return list.map(t => `
-    <div class="mover ${t.direction === 'Long' ? 'long-card' : 'short-card'}">
-      <div class="row1">
-        <span class="coin">${t.coin.replace("USDT", "")}</span>
-        <span class="dir ${t.direction.toLowerCase()}">${t.direction.toUpperCase()}</span>
+  return list.map(t => {
+    const coin = t.coin.replace("USDT", "");
+    const color = coinColor(t.coin);
+    const isLong = t.direction === "Long";
+    const sys = t.trading_system || "";
+    const sysShort = SYSTEM_TAG[sys] || (sys ? sys[0] : "");
+    const age = tradeAge(t);
+    return `
+      <div class="mover ${isLong ? "long-card" : "short-card"}" style="--coin-color:${color}">
+        <div class="mover-head">
+          <div class="coin-avatar">${coin.slice(0,4)}</div>
+          <div class="mover-meta">
+            <div class="coin-name">${coin}</div>
+            <div class="mover-tags">
+              <span class="dir-tag ${isLong ? "long" : "short"}">${isLong ? "▲ LONG" : "▼ SHORT"}</span>
+              ${sysShort ? `<span class="sys-tag" title="${sys}">${sysShort}</span>` : ""}
+              ${t.leverage > 1 ? `<span class="lev-tag">${t.leverage}×</span>` : ""}
+              ${age ? `<span class="age-tag">${age}</span>` : ""}
+              ${t.tp1_hit ? `<span class="tp1-tag" title="TP1 hit, SL at BE">TP1✓</span>` : ""}
+            </div>
+          </div>
+          <div class="mover-pnl">
+            <div class="pnl-pct ${cls(t.leveragedPct)}">${fmtPct(t.leveragedPct)}</div>
+            <div class="pnl-usd ${cls(t.usd)}">${fmtUsd(t.usd)}</div>
+          </div>
+        </div>
+        ${positionBar(t)}
       </div>
-      <div class="pnl-pct ${cls(t.leveragedPct)}">${fmtPct(t.leveragedPct)}</div>
-      ${positionBar(t)}
-      <div class="row3">
-        <span>${fmtPrice(t.entry_price)} → ${fmtPrice(t.live)}</span>
-        <span class="${cls(t.usd)}">${fmtUsd(t.usd)}</span>
-      </div>
-    </div>
-  `).join("");
+    `;
+  }).join("");
 }
 
 function renderPendingTriggers() {
