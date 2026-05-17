@@ -111,20 +111,28 @@ main {
   gap: 12px;
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.65s cubic-bezier(0.4,0,0.2,1), transform 0.65s cubic-bezier(0.4,0,0.2,1);
-  transform: translateX(24px) scale(0.99);
+  transition: opacity 0.45s cubic-bezier(0.4,0,0.2,1), transform 0.45s cubic-bezier(0.4,0,0.2,1);
+  transform: translateX(40px) scale(0.99);
   will-change: opacity, transform;
 }
+.screen.from-left  { transform: translateX(-40px) scale(0.99); }
+.screen.from-right { transform: translateX(40px)  scale(0.99); }
 .screen.active {
   opacity: 1;
   pointer-events: auto;
   transform: translateX(0) scale(1);
 }
-.screen.out {
+.screen.out-left {
   opacity: 0;
-  transform: translateX(-24px) scale(0.99);
-  transition: opacity 0.45s cubic-bezier(0.4,0,0.2,1), transform 0.45s cubic-bezier(0.4,0,0.2,1);
+  transform: translateX(-40px) scale(0.99);
 }
+.screen.out-right {
+  opacity: 0;
+  transform: translateX(40px) scale(0.99);
+}
+
+/* Dots — clickable */
+.dots .d { cursor: pointer; }
 
 #screen-1 {
   display: grid;

@@ -884,24 +884,89 @@ function renderSystems() {
   $("systems").innerHTML = html;
 }
 
-// Screen rotation
+// Screen navigation (swipeable — no auto-rotation)
 let screenIdx = 0;
+let screenTransitioning = false;
 const screens = ["screen-1", "screen-2", "screen-3"];
-function rotate() {
+
+function goToScreen(targetIdx, dir) {
+  targetIdx = Math.max(0, Math.min(screens.length - 1, targetIdx));
+  if (targetIdx === screenIdx || screenTransitioning) return;
+  screenTransitioning = true;
+
   const prev = $(screens[screenIdx]);
-  screenIdx = (screenIdx + 1) % screens.length;
-  const next = $(screens[screenIdx]);
+  const next = $(screens[targetIdx]);
+  // dir: +1 = swiping to next (current exits left, new enters from right)
+  //      -1 = swiping to prev (current exits right, new enters from left)
+  if (dir == null) dir = targetIdx > screenIdx ? 1 : -1;
 
-  // Slide old screen out to the left, bring new one in from the right
   prev.classList.remove("active");
-  prev.classList.add("out");
-  setTimeout(() => prev.classList.remove("out"), 600);
+  prev.classList.add(dir === 1 ? "out-left" : "out-right");
 
+  next.classList.remove("out-left", "out-right");
+  next.classList.add(dir === 1 ? "from-right" : "from-left");
+  // force reflow so the from-* transform applies before .active
+  void next.offsetWidth;
+  next.classList.remove("from-right", "from-left");
   next.classList.add("active");
 
+  setTimeout(() => {
+    prev.classList.remove("out-left", "out-right");
+    screenTransitioning = false;
+  }, 500);
+
+  screenIdx = targetIdx;
   document.querySelectorAll(".dots .d").forEach(d => d.classList.remove("active"));
   document.querySelector(`.dots .d[data-i="${screenIdx}"]`).classList.add("active");
 }
+
+function nextScreen() { goToScreen((screenIdx + 1) % screens.length, 1); }
+function prevScreen() { goToScreen((screenIdx - 1 + screens.length) % screens.length, -1); }
+
+// Touch swipe on the screen wrapper
+(function setupSwipe() {
+  const wrap = document.getElementById("screen-wrap");
+  if (!wrap) return;
+  let startX = 0, startY = 0, startT = 0, tracking = false;
+  const THRESHOLD = 50;    // px horizontal to count as swipe
+  const SLOPE = 1.2;       // horizontal must dominate vertical
+  const MAX_MS = 600;      // ignore long, slow drags
+
+  wrap.addEventListener("touchstart", e => {
+    if (e.touches.length !== 1) return;
+    startX = e.touches[0].clientX;
+    startY = e.touches[0].clientY;
+    startT = Date.now();
+    tracking = true;
+  }, { passive: true });
+
+  wrap.addEventListener("touchend", e => {
+    if (!tracking) return;
+    tracking = false;
+    const t = e.changedTouches[0];
+    const dx = t.clientX - startX;
+    const dy = t.clientY - startY;
+    const dt = Date.now() - startT;
+    if (dt > MAX_MS) return;
+    if (Math.abs(dx) < THRESHOLD) return;
+    if (Math.abs(dx) < Math.abs(dy) * SLOPE) return;
+    if (dx < 0) nextScreen(); else prevScreen();
+  }, { passive: true });
+})();
+
+// Clickable dots
+document.querySelectorAll(".dots .d").forEach(d => {
+  d.addEventListener("click", () => {
+    const i = parseInt(d.dataset.i, 10);
+    if (!isNaN(i)) goToScreen(i);
+  });
+});
+
+// Keyboard arrows (handy for desktop testing)
+document.addEventListener("keydown", e => {
+  if (e.key === "ArrowRight") nextScreen();
+  else if (e.key === "ArrowLeft") prevScreen();
+});
 
 // Clock — CET/CEST (Europe/Paris, DST-aware)
 function tickClock() {
@@ -936,7 +1001,7 @@ fetchData();
 fetchSpotlightPrices();
 setInterval(fetchData, REFRESH_MS);
 setInterval(fetchSpotlightPrices, 30_000);
-setInterval(rotate, ROTATE_MS);
+// Auto-rotation disabled — user swipes between screens manually
 setInterval(tickClock, 1000);
 tickClock();
 
