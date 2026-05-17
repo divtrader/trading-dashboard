@@ -290,35 +290,30 @@ function render() {
   renderActivity();
 }
 
-// === Crypto news ticker — parse RSS via allorigins CORS proxy (free, no key) ===
-const NEWS_FEEDS = [
-  { url: "https://www.coindesk.com/arc/outboundfeeds/rss/", name: "CoinDesk" },
-  { url: "https://cointelegraph.com/rss", name: "CoinTelegraph" },
-  { url: "https://decrypt.co/feed", name: "Decrypt" },
-  { url: "https://bitcoinmagazine.com/feed", name: "BTC Magazine" },
+// === Crypto news ticker — Reddit JSON API (CORS-open, no key needed) ===
+const NEWS_SUBS = [
+  { sub: "CryptoCurrency", label: "r/Crypto" },
+  { sub: "CryptoMarkets",  label: "r/Markets" },
+  { sub: "Bitcoin",        label: "r/Bitcoin" },
 ];
 
-async function fetchOneFeed(feed) {
-  const proxied = `https://api.allorigins.win/raw?url=${encodeURIComponent(feed.url)}`;
-  const r = await fetch(proxied);
-  const xmlText = await r.text();
-  const doc = new DOMParser().parseFromString(xmlText, "application/xml");
-  const items = [...doc.querySelectorAll("item")].slice(0, 8);
-  return items.map(it => ({
-    title: (it.querySelector("title")?.textContent || "").trim(),
-    source: feed.name,
-    ts: new Date(it.querySelector("pubDate")?.textContent || Date.now()).getTime(),
-  })).filter(x => x.title);
+async function fetchOneSub({ sub, label }) {
+  const r = await fetch(`https://www.reddit.com/r/${sub}/hot.json?limit=10`);
+  const d = await r.json();
+  return (d.data?.children || [])
+    .filter(c => !c.data.stickied && c.data.score > 10)
+    .slice(0, 8)
+    .map(c => ({ title: c.data.title, source: label, ts: c.data.created_utc * 1000 }));
 }
 
 async function fetchNews() {
   try {
-    const results = await Promise.allSettled(NEWS_FEEDS.map(fetchOneFeed));
+    const results = await Promise.allSettled(NEWS_SUBS.map(fetchOneSub));
     const out = [];
     for (const r of results) if (r.status === "fulfilled") out.push(...r.value);
     if (!out.length) throw new Error("no items");
     out.sort((a, b) => b.ts - a.ts);
-    const top = out.slice(0, 25);
+    const top = out.slice(0, 24);
     const html = top.map(n =>
       `<span class="news-item">${escapeHtml(n.title)}<span class="news-source">${escapeHtml(n.source)}</span></span>`
     ).join("");
