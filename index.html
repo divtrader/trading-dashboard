@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex,nofollow">
-<title>Trading Dashboard</title>
+<title>Spyker Trading Inc — Dashboard</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -22,7 +22,7 @@
 
 <main id="app" hidden>
   <header class="top">
-    <div class="brand">Trading Dashboard</div>
+    <div class="brand"><span class="brand-co">Spyker Trading Inc</span> · Trading Dashboard</div>
     <div class="meta">
       <span id="last-cron">last run: —</span>
       <span class="dot" id="live-dot">●</span>
@@ -40,6 +40,7 @@
       <div class="label">Realized P&amp;L (all time)</div>
       <div class="value" id="realized">—</div>
       <div class="sub" id="realized-wr">—</div>
+      <div class="sub" style="font-size:11px;opacity:0.6;margin-top:2px">incl. track-only learning trades</div>
     </div>
     <div class="tile">
       <div class="label">Open trades</div>
@@ -70,6 +71,14 @@
   <section id="screen-3" class="screen">
     <div class="screen-title">Per-system scoreboard</div>
     <div id="systems" class="systems"></div>
+    <div class="activity">
+      <div class="activity-title">Since last run</div>
+      <div id="activity" class="activity-body">—</div>
+    </div>
+    <div class="news">
+      <div class="news-title">📰 Crypto news</div>
+      <div id="news-ticker" class="news-ticker">Loading…</div>
+    </div>
   </section>
 
   <div class="dots">

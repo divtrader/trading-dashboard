@@ -43,9 +43,12 @@ async function fetchData() {
     const d = await r.json();
     const newTrades = d.active_trades || [];
     const newCloses = d.recent_closes || [];
-    detectEvents(newTrades, newCloses);
+    const recentOpens = d.recent_opens || [];
+    const testEvents = d.test_events || [];
+    detectEvents(newTrades, newCloses, testEvents);
     state.trades = newTrades;
     state.recentCloses = newCloses;
+    state.recentOpens = recentOpens;
     state.stats = d.stats || {};
     state.lastCronIso = d.last_updated_iso || null;
     state.lastFetch = Date.now();
@@ -56,8 +59,8 @@ async function fetchData() {
   }
 }
 
-// === Event detection: TP1 hits + closes → queue overlays ===
-function detectEvents(newTrades, newCloses) {
+// === Event detection: TP1 hits + closes + manual test events → queue overlays ===
+function detectEvents(newTrades, newCloses, testEvents) {
   const events = [];
 
   // TP1 transitions on still-open trades
@@ -74,12 +77,22 @@ function detectEvents(newTrades, newCloses) {
     if (!seen.has(evId)) events.push({ id: evId, type: t.won ? "win" : "loss", trade: t });
   }
 
+  // Manual test events (always fire, even on first run — pushed deliberately)
+  for (const e of (testEvents || [])) {
+    const evId = `test:${e.id}`;
+    if (!seen.has(evId)) events.push({ id: evId, type: e.type, trade: e.trade });
+  }
+
   if (firstRun) {
-    // First time this browser opens dashboard: mark everything seen, don't replay history.
-    for (const e of events) seen.add(e.id);
+    // First time this browser opens dashboard: mark organic events as seen so we don't replay
+    // history, BUT let manual test_events fire so initial tablet tests still play.
+    for (const e of events) {
+      if (!e.id.startsWith("test:")) seen.add(e.id);
+    }
     saveSeen(seen);
     localStorage.setItem(FIRST_RUN_KEY, "1");
     firstRun = false;
+    events.filter(e => e.id.startsWith("test:")).forEach((ev, i) => setTimeout(() => showOverlay(ev), i * 6500));
     return;
   }
 
@@ -222,6 +235,26 @@ function render() {
 
   renderLive();
   renderSystems();
+  renderActivity();
+}
+
+// === Crypto news ticker (CryptoCompare free API, no key required) ===
+async function fetchNews() {
+  try {
+    const r = await fetch("https://min-api.cryptocompare.com/data/v2/news/?lang=EN&excludeCategories=Sponsored");
+    const d = await r.json();
+    const items = (d.Data || []).slice(0, 20);
+    if (!items.length) return;
+    const html = items.map(n => `
+      <span class="news-item">${escapeHtml(n.title)}<span class="news-source">${escapeHtml(n.source_info?.name || n.source || "")}</span></span>
+    `).join("");
+    $("news-ticker").innerHTML = `<span class="news-scroll">${html}${html}</span>`;
+  } catch (e) {
+    $("news-ticker").innerHTML = '<span class="news-item" style="color:var(--muted)">News feed unavailable</span>';
+  }
+}
+function escapeHtml(s) {
+  return String(s || "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"})[c]);
 }
 
 function renderLive() {
@@ -262,6 +295,38 @@ function renderMovers(list, kind) {
       </div>
     </div>
   `).join("");
+}
+
+function renderActivity() {
+  const opens = state.recentOpens || [];
+  const closes = state.recentCloses || [];
+  // Last 8 hours window
+  const cutoff = Date.now() - 8 * 3600_000;
+  const recentOpens = opens.filter(o => o._iso_ms && o._iso_ms >= cutoff);
+  const recentCloses = closes.filter(c => new Date(c.close_iso).getTime() >= cutoff);
+
+  if (!recentOpens.length && !recentCloses.length) {
+    $("activity").innerHTML = '<span class="empty">No new opens or closes in the last 8h.</span>';
+    return;
+  }
+  const parts = [];
+  if (recentOpens.length) {
+    const names = recentOpens.slice(-4).map(o => `${o.coin.replace("USDT","")} ${o.direction}`).join(", ");
+    parts.push(`<span class="chip open">${recentOpens.length} OPENED</span>${names}`);
+  }
+  if (recentCloses.length) {
+    const wins = recentCloses.filter(c => c.won);
+    const losses = recentCloses.filter(c => !c.won);
+    if (wins.length) {
+      const winSum = wins.reduce((s,c) => s + (c.pnl_usd || 0), 0);
+      parts.push(`<span class="chip win">${wins.length} WON</span>+$${winSum.toFixed(2)}`);
+    }
+    if (losses.length) {
+      const lossSum = losses.reduce((s,c) => s + (c.pnl_usd || 0), 0);
+      parts.push(`<span class="chip loss">${losses.length} STOPPED</span>$${lossSum.toFixed(2)}`);
+    }
+  }
+  $("activity").innerHTML = parts.join("<br>");
 }
 
 function renderSystems() {
@@ -306,7 +371,9 @@ function tickClock() {
 // Init
 $(screens[0]).classList.add("active");
 fetchData();
+fetchNews();
 setInterval(fetchData, REFRESH_MS);
+setInterval(fetchNews, 15 * 60_000); // refresh news every 15 min
 setInterval(rotate, ROTATE_MS);
 setInterval(tickClock, 1000);
 tickClock();
