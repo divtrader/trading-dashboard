@@ -621,10 +621,18 @@ function renderSystems() {
 let screenIdx = 0;
 const screens = ["screen-1", "screen-2", "screen-3"];
 function rotate() {
-  document.querySelectorAll(".screen").forEach(s => s.classList.remove("active"));
-  document.querySelectorAll(".dots .d").forEach(d => d.classList.remove("active"));
+  const prev = $(screens[screenIdx]);
   screenIdx = (screenIdx + 1) % screens.length;
-  $(screens[screenIdx]).classList.add("active");
+  const next = $(screens[screenIdx]);
+
+  // Slide old screen out to the left, bring new one in from the right
+  prev.classList.remove("active");
+  prev.classList.add("out");
+  setTimeout(() => prev.classList.remove("out"), 600);
+
+  next.classList.add("active");
+
+  document.querySelectorAll(".dots .d").forEach(d => d.classList.remove("active"));
   document.querySelector(`.dots .d[data-i="${screenIdx}"]`).classList.add("active");
 }
 
