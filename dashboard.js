@@ -56,10 +56,16 @@ function playSound(type) {
 }
 
 const URL_TOKEN = "BUKTYYvc1SELHNeI";
-const DATA_URL = "data.json";
+const DATA_URL  = "data.json";
 const REFRESH_MS = 60_000;
-const ROTATE_MS = 15_000;
-const STALE_MS = 5 * 60 * 60_000; // red dot if no cron in >5h (cron is every 4H)
+const ROTATE_MS  = 15_000;
+const STALE_MS   = 5 * 60 * 60_000;
+
+// ── Set this to your Cloudflare Worker URL once deployed ──────────────────
+// e.g. "https://mexc-proxy.yourname.workers.dev"
+// Leave empty to rely on the 5-minute GHA snapshot fallback.
+const MEXC_WORKER_URL = "";
+// ─────────────────────────────────────────────────────────────────────────
 
 const params = new URLSearchParams(location.search);
 if (params.get("k") !== URL_TOKEN) {
@@ -693,6 +699,26 @@ function tickClock() {
   $("clock").textContent = t + " CET";
 }
 
+// === Live MEXC polling (CF Worker) ===
+let mexcWorkerFailing = false;
+
+async function fetchMexcLive() {
+  if (!MEXC_WORKER_URL) return;           // not configured — rely on data.json
+  try {
+    const r = await fetch(MEXC_WORKER_URL + "?t=" + Date.now(), { cache: "no-store" });
+    if (!r.ok) throw new Error(`HTTP ${r.status}`);
+    const m = await r.json();
+    if (m.error) throw new Error(m.error);
+    state.mexcAccount = m;
+    mexcWorkerFailing = false;
+    renderMexcCard();
+  } catch (e) {
+    if (!mexcWorkerFailing) console.warn("MEXC worker:", e.message);
+    mexcWorkerFailing = true;
+    // card keeps showing last known value — no blank-out
+  }
+}
+
 // Init
 $(screens[0]).classList.add("active");
 fetchData();
@@ -702,3 +728,9 @@ setInterval(fetchSpotlightPrices, 30_000);
 setInterval(rotate, ROTATE_MS);
 setInterval(tickClock, 1000);
 tickClock();
+
+// MEXC live: 15 s when worker configured, otherwise skip (data.json carries it)
+if (MEXC_WORKER_URL) {
+  fetchMexcLive();
+  setInterval(fetchMexcLive, 15_000);
+}
