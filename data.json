@@ -1,8 +1,8 @@
 {
-  "last_updated_iso": "2026-05-17T12:48:47Z",
+  "last_updated_iso": "2026-05-17T14:19:59Z",
   "mexc_account": {
-    "unrealized_pnl": -14.049,
-    "equity": 1837.2826,
+    "unrealized_pnl": -30.2952,
+    "equity": 1821.0364,
     "available": 553.6569,
     "position_margin": 398.3574
   },
@@ -42,7 +42,7 @@
       "trading_system": "John",
       "track_only": true,
       "status": "OPEN",
-      "price_at_run": 78463.34,
+      "price_at_run": 77989.99,
       "date_activated": "2026-04-28",
       "time_activated_utc": "12:00",
       "date_opened": "2026-04-28",
@@ -64,7 +64,7 @@
       "trading_system": "John",
       "track_only": true,
       "status": "OPEN",
-      "price_at_run": 1.55,
+      "price_at_run": 1.526,
       "date_activated": "2026-05-16",
       "time_activated_utc": "08:00",
       "date_opened": "2026-05-12",
@@ -86,7 +86,7 @@
       "trading_system": "John",
       "track_only": true,
       "status": "PENDING",
-      "price_at_run": 657.25,
+      "price_at_run": 651.97,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-05-12",
@@ -108,7 +108,7 @@
       "trading_system": "John",
       "track_only": true,
       "status": "OPEN",
-      "price_at_run": 0.1521,
+      "price_at_run": 0.1509,
       "date_activated": "2026-05-15",
       "time_activated_utc": "12:00",
       "date_opened": "2026-05-14",
@@ -130,7 +130,7 @@
       "trading_system": "John",
       "track_only": true,
       "status": "OPEN",
-      "price_at_run": 56.37,
+      "price_at_run": 55.88,
       "date_activated": "2026-05-15",
       "time_activated_utc": "12:00",
       "date_opened": "2026-05-15",
@@ -152,7 +152,7 @@
       "trading_system": "John",
       "track_only": true,
       "status": "OPEN",
-      "price_at_run": 1.844,
+      "price_at_run": 1.822,
       "date_activated": "2026-05-15",
       "time_activated_utc": "12:00",
       "date_opened": "2026-05-15",
@@ -174,7 +174,7 @@
       "trading_system": "John",
       "track_only": true,
       "status": "PENDING",
-      "price_at_run": 0.1521,
+      "price_at_run": 0.1509,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-05-15",
@@ -196,7 +196,7 @@
       "trading_system": "John",
       "track_only": true,
       "status": "OPEN",
-      "price_at_run": 3.592,
+      "price_at_run": 3.536,
       "date_activated": "2026-05-15",
       "time_activated_utc": "12:00",
       "date_opened": "2026-05-15",
@@ -275,10 +275,10 @@
       "trade_id": "HBARUSDT_20260516_CB_001",
       "coin": "HBARUSDT",
       "direction": "Short",
-      "entry_price": 0.09416754,
-      "sl": 0.09729938,
-      "tp1": 0.08484739,
-      "tp2": 0.07840124,
+      "entry_price": 0.09266913,
+      "sl": 0.09530229,
+      "tp1": 0.08206543,
+      "tp2": 0.07403465,
       "capital_usd": 100,
       "leverage": 3,
       "trading_system": "Braam",
@@ -363,10 +363,10 @@
       "trade_id": "TAOUSDT_20260517_CB_001",
       "coin": "TAOUSDT",
       "direction": "Short",
-      "entry_price": 285.01998951,
-      "sl": 295.17642512,
-      "tp1": 253.97711473,
-      "tp2": 200.64367667,
+      "entry_price": 297.89862707,
+      "sl": 311.20183307,
+      "tp1": 237.5,
+      "tp2": 190.59633386,
       "capital_usd": 100,
       "leverage": 3,
       "trading_system": "Braam",
@@ -380,6 +380,28 @@
       "conviction": "MEDIUM",
       "tp1_hit": false,
       "sl_moved_to_be": false
+    },
+    {
+      "trade_id": "XRPUSDT_20260517_CB_001",
+      "coin": "XRPUSDT",
+      "direction": "Short",
+      "entry_price": 1.43141665,
+      "sl": 1.46172199,
+      "tp1": 1.355308,
+      "tp2": 1.22491799,
+      "capital_usd": 100,
+      "leverage": 3,
+      "trading_system": "Braam",
+      "track_only": false,
+      "status": "PENDING",
+      "price_at_run": 1.413,
+      "date_activated": null,
+      "time_activated_utc": null,
+      "date_opened": "2026-05-17",
+      "time_opened_utc": "14:19",
+      "conviction": "MEDIUM",
+      "tp1_hit": false,
+      "sl_moved_to_be": false
     }
   ],
   "recent_signals": [
@@ -388,12 +410,24 @@
       "coin": "TAOUSDT",
       "direction": "Short",
       "trading_system": "Braam",
-      "entry_price": 285.01998951,
-      "tp1": 253.97711473,
-      "sl": 295.17642512,
+      "entry_price": 297.89862707,
+      "tp1": 237.5,
+      "sl": 311.20183307,
       "conviction": "MEDIUM",
       "track_only": false,
       "iso": "2026-05-17T10:04:00Z"
+    },
+    {
+      "trade_id": "XRPUSDT_20260517_CB_001",
+      "coin": "XRPUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "entry_price": 1.43141665,
+      "tp1": 1.355308,
+      "sl": 1.46172199,
+      "conviction": "MEDIUM",
+      "track_only": false,
+      "iso": "2026-05-17T14:19:00Z"
     }
   ],
   "recent_opens": [
@@ -571,13 +605,5 @@
         "closed_count": 7
       }
     }
-  },
-  "bloomberg_news": [
-    {
-      "id": "test-hourly-1779027213",
-      "headline": "Bank of Japan raises rates to 1.5% \u2014 highest since 2008",
-      "body": "",
-      "iso": "2026-05-17T16:13:33Z"
-    }
-  ]
+  }
 }
