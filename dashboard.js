@@ -281,13 +281,15 @@ function render() {
   if (state.lastCronIso) {
     const d = new Date(state.lastCronIso);
     const ago = Math.floor((Date.now() - d.getTime()) / 60000);
-    $("last-cron").textContent = `last run: ${d.toUTCString().slice(17, 22)} UTC (${ago}m ago)`;
+    const cetTime = d.toLocaleTimeString("en-GB", { timeZone: "Europe/Paris", hour: "2-digit", minute: "2-digit" });
+    $("last-cron").textContent = `last run: ${cetTime} CET (${ago}m ago)`;
     $("live-dot").classList.toggle("stale", Date.now() - d.getTime() > STALE_MS);
   }
 
   renderLive();
   renderSystems();
   renderActivity();
+  renderPendingTriggers();
 }
 
 // === BTC / ETH / SOL live price bar ===
@@ -342,6 +344,33 @@ function renderLive() {
   $("losers").innerHTML = renderMovers(losers, "loser");
 }
 
+function fmtPrice(p) {
+  return p >= 1000 ? p.toLocaleString("en-US", {maximumFractionDigits: 0})
+       : p >= 1    ? p.toPrecision(5)
+       : p.toPrecision(4);
+}
+
+function positionBar(t) {
+  const { live, entry_price, sl, tp1, direction } = t;
+  const isLong = direction === "Long";
+  const pos = isLong ? (live - sl) / (tp1 - sl) : (sl - live) / (sl - tp1);
+  const pct = Math.max(0, Math.min(1, pos)) * 100;
+  const distSL  = Math.abs((live - sl)  / entry_price * 100).toFixed(1);
+  const distTP1 = Math.abs((tp1 - live) / entry_price * 100).toFixed(1);
+  const fillColor = pos < 0.35 ? "#EF5350" : pos > 0.65 ? "#26A69A" : "#FF9800";
+  return `
+    <div class="pos-bar">
+      <div class="pos-track">
+        <div class="pos-fill" style="width:${pct.toFixed(1)}%;background:${fillColor}16;border-right:2px solid ${fillColor}"></div>
+        <div class="pos-dot" style="left:${pct.toFixed(1)}%;background:${fillColor}"></div>
+      </div>
+      <div class="pos-labels">
+        <span style="color:#EF5350">SL ${distSL}%</span>
+        <span style="color:#26A69A">TP1 ${distTP1}%</span>
+      </div>
+    </div>`;
+}
+
 function renderMovers(list, kind) {
   if (!list.length) return `<div class="mover empty">No open trades</div>`;
   return list.map(t => `
@@ -351,12 +380,62 @@ function renderMovers(list, kind) {
         <span class="dir ${t.direction.toLowerCase()}">${t.direction.toUpperCase()}</span>
       </div>
       <div class="pnl-pct ${cls(t.leveragedPct)}">${fmtPct(t.leveragedPct)}</div>
+      ${positionBar(t)}
       <div class="row3">
-        <span>${t.entry_price.toPrecision(5)} → ${t.live.toPrecision(5)}</span>
+        <span>${fmtPrice(t.entry_price)} → ${fmtPrice(t.live)}</span>
         <span class="${cls(t.usd)}">${fmtUsd(t.usd)}</span>
       </div>
     </div>
   `).join("");
+}
+
+function renderPendingTriggers() {
+  const pending = state.trades.filter(t => t.status === "PENDING" && !t.track_only);
+  if (!pending.length) {
+    $("triggers").innerHTML = '<span class="empty">No active pending trades</span>';
+    return;
+  }
+  const enriched = pending.map(t => {
+    const live = state.prices[t.coin] ?? t.price_at_run ?? t.entry_price;
+    const isLong = t.direction === "Long";
+    // Distance: how far price is from entry zone (entry_lo / entry_hi)
+    // 0% = in zone (trigger imminent), positive = still approaching
+    let distPct, proximity;
+    if (isLong) {
+      // Long: waiting for price to drop into zone (entry_lo..entry_hi)
+      distPct = live > (t.entry_hi ?? t.entry_price)
+        ? ((live - (t.entry_hi ?? t.entry_price)) / live * 100)
+        : 0;
+    } else {
+      // Short: waiting for price to rise into zone
+      distPct = live < (t.entry_lo ?? t.entry_price)
+        ? (((t.entry_lo ?? t.entry_price) - live) / live * 100)
+        : 0;
+    }
+    // proximity bar: 100% = in zone, 0% = far away (cap at 20% distance = 0% fill)
+    proximity = Math.max(0, Math.min(100, (1 - distPct / 20) * 100));
+    return { ...t, live, distPct, proximity };
+  }).sort((a, b) => b.proximity - a.proximity).slice(0, 4);
+
+  $("triggers").innerHTML = enriched.map(t => {
+    const inZone = t.distPct < 0.1;
+    const barColor = inZone ? "#FF9800" : t.proximity > 60 ? "#26A69A" : "#4a5568";
+    const label = inZone ? "IN ZONE" : `${t.distPct.toFixed(1)}% away`;
+    return `
+      <div class="trigger-row">
+        <div class="tr-left">
+          <span class="tr-coin">${t.coin.replace("USDT","")}</span>
+          <span class="dir ${t.direction.toLowerCase()}" style="font-size:11px;padding:2px 6px">${t.direction.toUpperCase()}</span>
+          <span class="tr-sys">${t.trading_system}</span>
+        </div>
+        <div class="tr-bar-wrap">
+          <div class="tr-bar-track">
+            <div class="tr-bar-fill" style="width:${t.proximity.toFixed(0)}%;background:${barColor}"></div>
+          </div>
+        </div>
+        <div class="tr-dist ${inZone ? "in-zone" : ""}">${label}</div>
+      </div>`;
+  }).join("");
 }
 
 function renderActivity() {
@@ -424,10 +503,10 @@ function rotate() {
   document.querySelector(`.dots .d[data-i="${screenIdx}"]`).classList.add("active");
 }
 
-// Clock
+// Clock — CET/CEST (Europe/Paris, DST-aware)
 function tickClock() {
   const d = new Date();
-  $("clock").textContent = d.toTimeString().slice(0, 5);
+  $("clock").textContent = d.toLocaleTimeString("en-GB", { timeZone: "Europe/Paris", hour: "2-digit", minute: "2-digit" }) + " CET";
 }
 
 // Init
