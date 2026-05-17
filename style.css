@@ -191,7 +191,7 @@ main {
 }
 .news-ticker .news-item { display: inline-block; margin-right: 60px; }
 .news-ticker .news-source { color: var(--muted); font-size: 11px; margin-left: 8px; text-transform: uppercase; letter-spacing: 0.8px; }
-.news-scroll { display: inline-block; animation: ticker 90s linear infinite; padding-left: 100%; }
+.news-scroll { display: inline-block; animation: ticker 240s linear infinite; padding-left: 100%; }
 @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-100%); } }
 
 .dots { display: flex; justify-content: center; gap: 8px; padding: 12px 0 0; }
