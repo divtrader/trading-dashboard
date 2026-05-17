@@ -606,8 +606,12 @@ function positionBar(t) {
     <div class="pos-bar">
       <div class="pos-track">
         <div class="pos-fill" style="width:${lPct.toFixed(1)}%;background:linear-gradient(90deg, ${liveColor}22, ${liveColor}66)"></div>
-        <div class="pos-entry-marker" style="left:${ePct.toFixed(1)}%" title="Entry ${fmtPrice(entry_price)}"></div>
-        <div class="pos-tp1-marker" style="left:${t1Pct.toFixed(1)}%" title="TP1 ${fmtPrice(tp1)}"></div>
+        <div class="pos-marker pos-entry-marker" style="left:${ePct.toFixed(1)}%">
+          <span class="marker-flag entry-flag">ENTRY</span>
+        </div>
+        <div class="pos-marker pos-tp1-marker" style="left:${t1Pct.toFixed(1)}%">
+          <span class="marker-flag tp1-flag">TP1</span>
+        </div>
         <div class="pos-dot" style="left:${lPct.toFixed(1)}%;background:${liveColor};box-shadow:0 0 12px ${liveColor},0 0 4px ${liveColor}"></div>
       </div>
       <div class="pos-labels">
