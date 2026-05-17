@@ -315,39 +315,6 @@ async function fetchSpotlightPrices() {
   } catch (e) { console.error("spotlight prices failed", e); }
 }
 
-// === Crypto news ticker — Reddit JSON API (CORS-open, no key needed) ===
-const NEWS_SUBS = [
-  { sub: "CryptoCurrency", label: "r/Crypto" },
-  { sub: "CryptoMarkets",  label: "r/Markets" },
-  { sub: "Bitcoin",        label: "r/Bitcoin" },
-];
-
-async function fetchOneSub({ sub, label }) {
-  const r = await fetch(`https://www.reddit.com/r/${sub}/hot.json?limit=10`);
-  const d = await r.json();
-  return (d.data?.children || [])
-    .filter(c => !c.data.stickied && c.data.score > 10)
-    .slice(0, 8)
-    .map(c => ({ title: c.data.title, source: label, ts: c.data.created_utc * 1000 }));
-}
-
-async function fetchNews() {
-  try {
-    const results = await Promise.allSettled(NEWS_SUBS.map(fetchOneSub));
-    const out = [];
-    for (const r of results) if (r.status === "fulfilled") out.push(...r.value);
-    if (!out.length) throw new Error("no items");
-    out.sort((a, b) => b.ts - a.ts);
-    const top = out.slice(0, 24);
-    const html = top.map(n =>
-      `<span class="news-item">${escapeHtml(n.title)}<span class="news-source">${escapeHtml(n.source)}</span></span>`
-    ).join("");
-    $("news-ticker").innerHTML = `<span class="news-scroll">${html}${html}</span>`;
-  } catch (e) {
-    console.error("news failed", e);
-    $("news-ticker").innerHTML = '<span class="news-item" style="color:var(--muted)">News feed unavailable</span>';
-  }
-}
 function escapeHtml(s) {
   return String(s || "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"})[c]);
 }
@@ -466,11 +433,9 @@ function tickClock() {
 // Init
 $(screens[0]).classList.add("active");
 fetchData();
-fetchNews();
 fetchSpotlightPrices();
 setInterval(fetchData, REFRESH_MS);
-setInterval(fetchNews, 15 * 60_000);
-setInterval(fetchSpotlightPrices, 30_000); // live prices every 30s
+setInterval(fetchSpotlightPrices, 30_000);
 setInterval(rotate, ROTATE_MS);
 setInterval(tickClock, 1000);
 tickClock();
