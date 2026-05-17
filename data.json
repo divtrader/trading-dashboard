@@ -568,14 +568,14 @@
   },
   "test_events": [
     {
-      "id": "celebrate-demo-001",
-      "type": "win",
+      "id": "sulk-demo-001",
+      "type": "loss",
       "trade": {
-        "coin": "BTCUSDT",
-        "direction": "Long",
+        "coin": "ETHUSDT",
+        "direction": "Short",
         "trading_system": "Spyker",
-        "status": "TP2_HIT",
-        "pnl_usd": 87.5
+        "status": "STOPPED",
+        "pnl_usd": -23.4
       }
     }
   ]
