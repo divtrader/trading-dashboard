@@ -395,18 +395,41 @@ main {
 }
 .coin-avatar {
   width: 48px; height: 48px;
-  background: var(--coin-color);
-  color: white;
+  background: #fff;
   border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 5px;
+  flex-shrink: 0;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.45), inset 0 1px 0 rgba(255,255,255,0.4);
+  position: relative;
+  overflow: hidden;
+}
+.coin-icon {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+.coin-fallback {
+  position: absolute;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: var(--coin-color);
+  color: white;
   font-weight: 900;
   font-size: 12px;
   letter-spacing: 0.3px;
-  box-shadow: 0 6px 16px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.18);
-  flex-shrink: 0;
 }
+.coin-avatar.icon-fail {
+  background: var(--coin-color);
+  padding: 0;
+}
+.coin-avatar.icon-fail .coin-icon { display: none; }
+.coin-avatar.icon-fail .coin-fallback { display: flex; }
 .mover-meta {
   display: flex;
   flex-direction: column;

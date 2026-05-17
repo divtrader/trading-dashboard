@@ -624,6 +624,14 @@ function coinColor(coin) {
   const c = coin.replace("USDT", "");
   return COIN_COLORS[c] || "#7280B5";
 }
+const COIN_ICON_SLUG = {
+  RENDER: "rndr",   // older ticker in icon package
+};
+function coinIconUrl(coin) {
+  const c = coin.replace("USDT", "");
+  const slug = (COIN_ICON_SLUG[c] || c).toLowerCase();
+  return `https://cdn.jsdelivr.net/npm/cryptocurrency-icons@0.18.1/svg/color/${slug}.svg`;
+}
 function tradeAge(t) {
   const d = t.date_activated || t.date_opened;
   const tm = t.time_activated_utc || t.time_opened_utc || "00:00";
@@ -650,7 +658,10 @@ function renderMovers(list, kind) {
     return `
       <div class="mover ${isLong ? "long-card" : "short-card"}" style="--coin-color:${color}">
         <div class="mover-head">
-          <div class="coin-avatar">${coin.slice(0,4)}</div>
+          <div class="coin-avatar" style="--coin-color:${color}">
+            <img class="coin-icon" src="${coinIconUrl(t.coin)}" alt="${coin}" onerror="this.parentElement.classList.add('icon-fail')">
+            <span class="coin-fallback">${coin.slice(0,4)}</span>
+          </div>
           <div class="mover-meta">
             <div class="coin-name">${coin}</div>
             <div class="mover-tags">
