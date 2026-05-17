@@ -260,10 +260,17 @@ main {
 @keyframes nf-out { to   { opacity:0; transform:scale(1.02); } }
 
 .nf-logo {
-  font-size: 22px; font-weight: 900; letter-spacing: 3px;
-  color: #000; background: #F84F31;
-  padding: 6px 20px; border-radius: 4px;
+  background: #fff;
+  padding: 8px 24px;
+  border-radius: 4px;
   margin-bottom: 20px;
+  display: inline-flex;
+  align-items: center;
+}
+.nf-logo-img {
+  height: 36px;
+  width: auto;
+  display: block;
 }
 .nf-bar {
   width: 60px; height: 3px; background: #F84F31;

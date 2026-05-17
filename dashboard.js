@@ -1,6 +1,60 @@
 // Trading dashboard - reads sanitized data.json from this repo + live prices from Binance WS.
 // Public-by-data, gated-by-URL-token in JS. Token check is cosmetic; real privacy comes from URL obscurity.
 
+// === Audio ===
+let _audioCtx = null;
+function _ctx() {
+  if (!_audioCtx) _audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+  if (_audioCtx.state === "suspended") _audioCtx.resume();
+  return _audioCtx;
+}
+function _tone(ctx, freq, start, dur, vol = 0.18, type = "sine") {
+  const o = ctx.createOscillator();
+  const g = ctx.createGain();
+  o.type = type;
+  o.frequency.setValueAtTime(freq, start);
+  g.gain.setValueAtTime(0, start);
+  g.gain.linearRampToValueAtTime(vol, start + 0.01);
+  g.gain.exponentialRampToValueAtTime(0.001, start + dur);
+  o.connect(g); g.connect(ctx.destination);
+  o.start(start); o.stop(start + dur + 0.05);
+}
+function playSound(type) {
+  try {
+    const ctx = _ctx();
+    const t = ctx.currentTime;
+    if (type === "bloomberg") {
+      // Three-note descending news chime (D→A→E)
+      _tone(ctx, 587, t,       0.35, 0.20);
+      _tone(ctx, 440, t + 0.3, 0.35, 0.20);
+      _tone(ctx, 330, t + 0.6, 0.55, 0.22);
+    } else if (type === "tp1") {
+      // Rising success: C→E→G→C
+      _tone(ctx, 523, t,        0.18, 0.18);
+      _tone(ctx, 659, t + 0.12, 0.18, 0.18);
+      _tone(ctx, 784, t + 0.24, 0.18, 0.18);
+      _tone(ctx, 1047,t + 0.36, 0.40, 0.20);
+    } else if (type === "win") {
+      // Full celebration: rapid ascending fanfare
+      [523, 659, 784, 880, 1047].forEach((f, i) =>
+        _tone(ctx, f, t + i * 0.10, 0.25, 0.18));
+      _tone(ctx, 1319, t + 0.55, 0.60, 0.22);
+    } else if (type === "loss") {
+      // Descending minor — sad trombone style
+      _tone(ctx, 330, t,        0.40, 0.18, "triangle");
+      _tone(ctx, 277, t + 0.35, 0.40, 0.18, "triangle");
+      _tone(ctx, 220, t + 0.70, 0.65, 0.20, "triangle");
+    } else if (type === "open") {
+      // Clean double-ping (entry confirmed)
+      _tone(ctx, 880, t,       0.20, 0.16);
+      _tone(ctx, 1047,t + 0.22, 0.20, 0.16);
+    } else if (type === "signal") {
+      // Single soft ping (new signal)
+      _tone(ctx, 660, t, 0.30, 0.14);
+    }
+  } catch (e) { console.warn("sound error", e); }
+}
+
 const URL_TOKEN = "BUKTYYvc1SELHNeI";
 const DATA_URL = "data.json";
 const REFRESH_MS = 60_000;
@@ -193,6 +247,7 @@ function showOverlay(ev) {
     el.classList.remove("out");
     el.hidden = false;
     if (confetti) launchConfetti();
+    playSound(ev.type);
 
     // Soft clear at 5.5s, hard fail-safe at 7s (no matter what)
     setTimeout(() => $("overlay").classList.add("out"), 5500);
@@ -334,6 +389,7 @@ function showNewsFlash(article) {
   document.getElementById("nf-headline").textContent = article.title;
   el.classList.remove("out");
   el.hidden = false;
+  playSound("bloomberg");
   setTimeout(() => {
     el.classList.add("out");
     setTimeout(() => { el.hidden = true; el.classList.remove("out"); nfBusy = false; }, 500);
