@@ -1,5 +1,5 @@
 {
-  "last_updated_iso": "2026-05-17T11:44:03Z",
+  "last_updated_iso": "2026-05-17T11:44:16Z",
   "active_trades": [
     {
       "trade_id": "BTCUSDT_20260427_CWM_001",
@@ -398,7 +398,72 @@
       "sl_moved_to_be": false
     }
   ],
-  "recent_opens": [],
+  "recent_signals": [
+    {
+      "trade_id": "TAOUSDT_20260517_CB_001",
+      "coin": "TAOUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "entry_price": 285.01998951,
+      "tp1": 253.97711473,
+      "sl": 295.17642512,
+      "conviction": "MEDIUM",
+      "track_only": false,
+      "iso": "2026-05-17T10:04:00Z"
+    }
+  ],
+  "recent_opens": [
+    {
+      "trade_id": "XLMUSDT_20260514_CJ_M_002",
+      "coin": "XLMUSDT",
+      "direction": "Long",
+      "trading_system": "John",
+      "entry_price": 0.15609707,
+      "tp1_hit": false,
+      "iso": "2026-05-15T12:00:00Z",
+      "_iso_ms": 1778846400000
+    },
+    {
+      "trade_id": "LTCUSDT_20260515_CJ_M_001",
+      "coin": "LTCUSDT",
+      "direction": "Long",
+      "trading_system": "John",
+      "entry_price": 56.61516015,
+      "tp1_hit": false,
+      "iso": "2026-05-15T12:00:00Z",
+      "_iso_ms": 1778846400000
+    },
+    {
+      "trade_id": "RENDERUSDT_20260515_CJ_M_001",
+      "coin": "RENDERUSDT",
+      "direction": "Long",
+      "trading_system": "John",
+      "entry_price": 1.83695415,
+      "tp1_hit": false,
+      "iso": "2026-05-15T12:00:00Z",
+      "_iso_ms": 1778846400000
+    },
+    {
+      "trade_id": "UNIUSDT_20260515_CJ_M_001",
+      "coin": "UNIUSDT",
+      "direction": "Long",
+      "trading_system": "John",
+      "entry_price": 3.5546071,
+      "tp1_hit": false,
+      "iso": "2026-05-15T12:00:00Z",
+      "_iso_ms": 1778846400000
+    },
+    {
+      "trade_id": "NEARUSDT_20260512_CJ_M_001",
+      "coin": "NEARUSDT",
+      "direction": "Long",
+      "trading_system": "John",
+      "entry_price": 1.48153256,
+      "tp1_hit": false,
+      "iso": "2026-05-16T08:00:00Z",
+      "_iso_ms": 1778918400000
+    }
+  ],
   "recent_closes": [
     {
       "trade_id": "TONUSDT_20260512_CJ_001",
@@ -544,6 +609,7 @@
       "close_iso": "2026-05-16T08:00:00Z"
     }
   ],
+  "tp1_hits_open": [],
   "stats": {
     "realized_pnl_usd": 135.52,
     "win_rate_pct": 35.4,
