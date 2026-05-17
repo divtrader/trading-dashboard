@@ -444,7 +444,7 @@ function showNewsFlash(article) {
   bloombergSeen.add(article.id);
   saveBloombergSeen(bloombergSeen);
   const el = document.getElementById("news-flash");
-  document.getElementById("nf-headline").textContent = article.title;
+  document.getElementById("nf-headline").textContent = article.headline || article.title || "";
   el.classList.remove("out");
   el.hidden = false;
   playSound("bloomberg");
