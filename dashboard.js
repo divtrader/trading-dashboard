@@ -482,9 +482,9 @@ function renderLive() {
 
   // Movers
   const sorted = [...enriched].sort((a, b) => b.leveragedPct - a.leveragedPct);
-  const winners = sorted.slice(0, 3);
+  const winners = sorted.slice(0, 2);
   const winnerIds = new Set(winners.map(w => w.trade_id));
-  const losers = sorted.slice().reverse().filter(t => !winnerIds.has(t.trade_id)).slice(0, 3);
+  const losers = sorted.slice().reverse().filter(t => !winnerIds.has(t.trade_id)).slice(0, 2);
   $("winners").innerHTML = renderMovers(winners, "winner");
   $("losers").innerHTML = renderMovers(losers, "loser");
 
@@ -586,26 +586,34 @@ function fmtPrice(p) {
 }
 
 function positionBar(t) {
-  const { live, entry_price, sl, tp1, direction } = t;
+  const { live, entry_price, sl, tp1, tp2, direction } = t;
   const isLong = direction === "Long";
-  const entryPos = isLong ? (entry_price - sl) / (tp1 - sl) : (sl - entry_price) / (sl - tp1);
-  const livePos  = isLong ? (live - sl) / (tp1 - sl)         : (sl - live) / (sl - tp1);
-  const ePct = Math.max(0, Math.min(1, entryPos)) * 100;
-  const lPct = Math.max(0, Math.min(1, livePos))  * 100;
+  // Scale: SL = 0%, TP2 = 100% (TP2 is the ultimate target). TP1 and entry sit between.
+  const target = tp2 && tp2 !== tp1 ? tp2 : tp1;
+  const span = isLong ? (target - sl) : (sl - target);
+  const posOf = price => {
+    const v = isLong ? (price - sl) / span : (sl - price) / span;
+    return Math.max(-0.05, Math.min(1.05, v)) * 100;
+  };
+  const ePct = posOf(entry_price);
+  const lPct = posOf(live);
+  const t1Pct = posOf(tp1);
   const distSL  = Math.abs((live - sl)  / entry_price * 100).toFixed(1);
   const distTP1 = Math.abs((tp1  - live) / entry_price * 100).toFixed(1);
-  const liveColor = livePos < 0.3 ? "#ff4d5e" : livePos > 0.7 ? "#00c9a7" : "#ffb74d";
+  const liveColor = lPct < 30 ? "#ff4d5e" : lPct > 70 ? "#00c9a7" : "#ffb74d";
+  const hasTp2 = tp2 && tp2 !== tp1;
   return `
     <div class="pos-bar">
       <div class="pos-track">
         <div class="pos-fill" style="width:${lPct.toFixed(1)}%;background:linear-gradient(90deg, ${liveColor}22, ${liveColor}66)"></div>
         <div class="pos-entry-marker" style="left:${ePct.toFixed(1)}%" title="Entry ${fmtPrice(entry_price)}"></div>
+        <div class="pos-tp1-marker" style="left:${t1Pct.toFixed(1)}%" title="TP1 ${fmtPrice(tp1)}"></div>
         <div class="pos-dot" style="left:${lPct.toFixed(1)}%;background:${liveColor};box-shadow:0 0 12px ${liveColor},0 0 4px ${liveColor}"></div>
       </div>
       <div class="pos-labels">
         <span class="lbl-sl">SL · ${distSL}%</span>
-        <span class="lbl-prices">${fmtPrice(entry_price)} <span class="arrow">→</span> <span class="live-price">${fmtPrice(live)}</span></span>
         <span class="lbl-tp1">TP1 · ${distTP1}%</span>
+        ${hasTp2 ? `<span class="lbl-tp2">TP2 · ${fmtPrice(tp2)}</span>` : ""}
       </div>
     </div>`;
 }
@@ -655,6 +663,14 @@ function renderMovers(list, kind) {
     const sys = t.trading_system || "";
     const sysShort = SYSTEM_TAG[sys] || (sys ? sys[0] : "");
     const age = tradeAge(t);
+    const cap = t.capital_usd || 100;
+    const lev = t.leverage || 1;
+    const posSize = cap * lev;
+    // R-multiple = current move / risk
+    const risk = Math.abs(t.entry_price - t.sl);
+    const move = isLong ? (t.live - t.entry_price) : (t.entry_price - t.live);
+    const rMult = risk > 0 ? move / risk : 0;
+    const rStr = (rMult >= 0 ? "+" : "") + rMult.toFixed(2) + "R";
     return `
       <div class="mover ${isLong ? "long-card" : "short-card"}" style="--coin-color:${color}">
         <img class="mover-watermark" src="${coinIconUrl(t.coin)}" alt="" onerror="this.style.display='none'">
@@ -668,14 +684,33 @@ function renderMovers(list, kind) {
             <div class="mover-tags">
               <span class="dir-tag ${isLong ? "long" : "short"}">${isLong ? "▲ LONG" : "▼ SHORT"}</span>
               ${sysShort ? `<span class="sys-tag" title="${sys}">${sysShort}</span>` : ""}
-              ${t.leverage > 1 ? `<span class="lev-tag">${t.leverage}×</span>` : ""}
+              ${lev > 1 ? `<span class="lev-tag">${lev}×</span>` : ""}
               ${age ? `<span class="age-tag">${age}</span>` : ""}
               ${t.tp1_hit ? `<span class="tp1-tag" title="TP1 hit, SL at BE">TP1✓</span>` : ""}
             </div>
           </div>
-          <div class="mover-pnl">
+        </div>
+        <div class="mover-pnl-block">
+          <div class="pnl-main">
             <div class="pnl-pct ${cls(t.leveragedPct)}">${fmtPct(t.leveragedPct)}</div>
-            <div class="pnl-usd ${cls(t.usd)}">${fmtUsd(t.usd)}</div>
+            <div class="pnl-sub">
+              <span class="pnl-usd ${cls(t.usd)}">${fmtUsd(t.usd)}</span>
+              <span class="pnl-r ${cls(rMult)}">${rStr}</span>
+            </div>
+          </div>
+          <div class="pnl-meta">
+            <div class="meta-item">
+              <div class="meta-label">Position</div>
+              <div class="meta-val">$${posSize.toFixed(0)}</div>
+            </div>
+            <div class="meta-item">
+              <div class="meta-label">Entry</div>
+              <div class="meta-val">${fmtPrice(t.entry_price)}</div>
+            </div>
+            <div class="meta-item">
+              <div class="meta-label">Live</div>
+              <div class="meta-val live-tick">${fmtPrice(t.live)}</div>
+            </div>
           </div>
         </div>
         ${positionBar(t)}

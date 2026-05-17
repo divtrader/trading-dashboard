@@ -362,29 +362,28 @@ main {
 .mover {
   background: linear-gradient(135deg, var(--panel) 0%, rgba(255,255,255,0.01) 100%);
   border: 1px solid var(--border);
-  border-radius: 14px;
-  padding: 14px 18px 12px 20px;
+  border-radius: 16px;
+  padding: 18px 22px 16px 24px;
   display: flex;
   flex-direction: column;
   flex: 1;
-  justify-content: center;
-  gap: 12px;
+  justify-content: space-between;
+  gap: 14px;
   position: relative;
   overflow: hidden;
   transition: border-color 0.4s ease, box-shadow 0.4s ease;
 }
 .mover-watermark {
   position: absolute;
-  right: -28px;
-  bottom: -28px;
-  width: 150px;
-  height: 150px;
-  opacity: 0.055;
+  right: -50px;
+  bottom: -50px;
+  width: 240px;
+  height: 240px;
+  opacity: 0.07;
   pointer-events: none;
   z-index: 0;
-  filter: blur(0.5px);
 }
-.mover > * { position: relative; z-index: 1; }
+.mover > *:not(.mover-watermark) { position: relative; z-index: 1; }
 .mover::before {
   content: "";
   position: absolute;
@@ -401,7 +400,7 @@ main {
 
 .mover-head {
   display: grid;
-  grid-template-columns: auto 1fr auto;
+  grid-template-columns: auto 1fr;
   align-items: center;
   gap: 14px;
 }
@@ -500,24 +499,74 @@ main {
   font-weight: 800;
   letter-spacing: 0.5px;
 }
-.mover-pnl {
+.mover-pnl-block {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+}
+.pnl-main {
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
-  gap: 2px;
+  align-items: flex-start;
+  gap: 4px;
+  min-width: 0;
 }
 .mover .pnl-pct {
-  font-size: 36px;
+  font-size: 56px;
   font-weight: 900;
-  line-height: 1;
-  letter-spacing: -1.5px;
+  line-height: 0.95;
+  letter-spacing: -2.5px;
   font-variant-numeric: tabular-nums;
 }
+.pnl-sub {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
 .pnl-usd {
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 700;
   font-variant-numeric: tabular-nums;
 }
+.pnl-r {
+  font-size: 13px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  padding: 2px 6px;
+  background: rgba(255,255,255,0.05);
+  border-radius: 4px;
+  letter-spacing: 0.3px;
+}
+.pnl-r.pos { color: var(--green); background: rgba(0,201,167,0.10); }
+.pnl-r.neg { color: var(--red);   background: rgba(255,77,94,0.10); }
+.pnl-meta {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  gap: 14px;
+  text-align: right;
+}
+.meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  align-items: flex-end;
+}
+.meta-label {
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  color: var(--muted);
+  font-weight: 600;
+}
+.meta-val {
+  font-size: 13px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  color: var(--text);
+  letter-spacing: -0.2px;
+}
+.meta-val.live-tick { color: var(--green); }
 
 /* Position bar SL → entry → live → TP1 */
 .pos-bar { margin: 0; }
@@ -548,6 +597,17 @@ main {
   border-radius: 1px;
   box-shadow: 0 0 4px rgba(255,255,255,0.3);
 }
+.pos-tp1-marker {
+  position: absolute;
+  top: -3px;
+  width: 2px;
+  height: 14px;
+  background: var(--green);
+  opacity: 0.6;
+  transform: translateX(-1px);
+  border-radius: 1px;
+  box-shadow: 0 0 4px var(--green-glow);
+}
 .pos-dot {
   position: absolute; top: 50%;
   width: 14px; height: 14px;
@@ -557,28 +617,20 @@ main {
   transition: left 1s cubic-bezier(0.4,0,0.2,1), background 0.5s ease;
 }
 .pos-labels {
-  display: grid;
-  grid-template-columns: auto 1fr auto;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
   gap: 8px;
   font-size: 10px;
-  margin-top: 10px;
+  margin-top: 12px;
   font-weight: 700;
-  letter-spacing: 0.5px;
-}
-.lbl-sl  { color: var(--red);   text-transform: uppercase; }
-.lbl-tp1 { color: var(--green); text-transform: uppercase; text-align: right; }
-.lbl-prices {
-  font-size: 12px;
-  font-weight: 600;
-  color: var(--muted);
-  text-align: center;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
   font-variant-numeric: tabular-nums;
-  letter-spacing: 0;
-  text-transform: none;
 }
-.lbl-prices .arrow { opacity: 0.4; margin: 0 4px; }
-.lbl-prices .live-price { color: var(--text); font-weight: 700; }
+.lbl-sl  { color: var(--red);   }
+.lbl-tp1 { color: var(--green); }
+.lbl-tp2 { color: var(--green); opacity: 0.7; }
 
 
 /* ── Systems (screen 3) ── */
