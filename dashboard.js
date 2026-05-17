@@ -143,7 +143,7 @@ async function fetchData() {
     state.recentSignals = d.recent_signals || [];
     state.recentCancels = d.recent_cancels || [];
     state.tp1HitsOpen = d.tp1_hits_open || [];
-    // bloomberg_news now comes from CF Worker, not data.json
+    checkBloombergNews(d.bloomberg_news || []);
     state.stats = d.stats || {};
     state.mexcAccount = d.mexc_account || null;
     state.lastCronIso = d.last_updated_iso || null;
