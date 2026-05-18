@@ -984,7 +984,7 @@ function renderPendingTriggers() {
         ? (((t.entry_lo ?? t.entry_price) - live) / live * 100) : 0;
     }
     return { ...t, live, distPct, inZone: distPct < 0.1 };
-  }).sort((a, b) => a.distPct - b.distPct);
+  }).sort((a, b) => a.distPct - b.distPct).slice(0, 5);
 
   host.innerHTML = enriched.map(t => {
     const isLong = t.direction === "Long";

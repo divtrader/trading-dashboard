@@ -137,9 +137,10 @@ main {
 #screen-1 {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 2.2fr 1fr;
+  grid-template-rows: 2.2fr 1fr auto;
   gap: 12px;
 }
+#screen-1 .price-bar { grid-column: 1 / -1; }
 
 /* ── Hero portfolio tile ── */
 .hero-tile {
