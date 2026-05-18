@@ -576,7 +576,7 @@ main {
   border: 1px solid var(--border);
   border-left: 4px solid var(--border-hi);
   border-radius: 12px;
-  padding: 0 28px;
+  padding: 12px 28px;
   position: relative;
   transition: border-color 0.3s ease;
   flex: 1 1 0;
@@ -590,7 +590,7 @@ main {
   min-width: 0;
 }
 .pb-coin {
-  font-size: 22px; font-weight: 900; letter-spacing: -0.5px;
+  font-size: 26px; font-weight: 900; letter-spacing: -0.5px;
   color: var(--text);
 }
 .pb-meta {
@@ -624,46 +624,46 @@ main {
   max-width: 100%;
 }
 
-.pb-bar { position: relative; height: 12px; padding: 14px 0; }
+.pb-bar { position: relative; height: 16px; padding: 20px 0; }
 .pb-track {
   position: absolute; top: 50%; transform: translateY(-50%);
-  left: 0; right: 0; height: 6px;
+  left: 0; right: 0; height: 10px;
   background: linear-gradient(90deg,
     rgba(255,77,94,0.28) 0%,
     rgba(255,255,255,0.05) 50%,
     rgba(0,201,167,0.28) 100%);
-  border-radius: 3px;
+  border-radius: 5px;
 }
 .pb-achieved {
   position: absolute; top: 50%; transform: translateY(-50%);
-  height: 6px;
+  height: 10px;
   background: linear-gradient(90deg, rgba(0,201,167,0.35), rgba(0,201,167,0.6));
-  border-radius: 3px;
+  border-radius: 5px;
 }
 .pb-marker {
   position: absolute; top: 50%; transform: translate(-50%, -50%);
-  width: 3px; height: 18px;
+  width: 4px; height: 26px;
   border-radius: 2px;
 }
-.pb-marker.sl    { background: var(--red);   box-shadow: 0 0 6px var(--red); }
+.pb-marker.sl    { background: var(--red);   box-shadow: 0 0 8px var(--red); }
 .pb-marker.entry { background: rgba(255,255,255,0.85); }
-.pb-marker.entry.be { background: #ffb74d; box-shadow: 0 0 8px rgba(255,183,77,0.7); }
+.pb-marker.entry.be { background: #ffb74d; box-shadow: 0 0 10px rgba(255,183,77,0.7); }
 .pb-marker.tp1   { background: var(--green); opacity: 0.85; }
-.pb-marker.tp1.hit { background: var(--green); opacity: 1; box-shadow: 0 0 8px var(--green); }
+.pb-marker.tp1.hit { background: var(--green); opacity: 1; box-shadow: 0 0 10px var(--green); }
 .pb-marker.tp2   { background: var(--green); }
 .pb-dot {
   position: absolute; top: 50%;
-  width: 14px; height: 14px; border-radius: 50%;
-  border: 2px solid var(--bg);
+  width: 18px; height: 18px; border-radius: 50%;
+  border: 2.5px solid var(--bg);
   transform: translate(-50%, -50%);
   transition: left 0.8s cubic-bezier(0.4,0,0.2,1);
 }
 .pb-flag {
   position: absolute;
-  bottom: calc(50% + 14px);
+  bottom: calc(50% + 18px);
   transform: translateX(-50%);
-  font-size: 9px; font-weight: 800; letter-spacing: 0.6px;
-  padding: 2px 6px; border-radius: 4px;
+  font-size: 10px; font-weight: 800; letter-spacing: 0.6px;
+  padding: 3px 8px; border-radius: 5px;
   white-space: nowrap;
 }
 .pb-flag.sl    { color: var(--red);    background: rgba(255,77,94,0.18); }
@@ -679,14 +679,14 @@ main {
   text-align: right;
 }
 .pb-pnl-pct {
-  font-size: 22px; font-weight: 800; letter-spacing: -0.5px;
+  font-size: 28px; font-weight: 800; letter-spacing: -0.5px;
   font-variant-numeric: tabular-nums;
   line-height: 1;
 }
 .pb-pnl-pct.pos { color: var(--green); }
 .pb-pnl-pct.neg { color: var(--red); }
 .pb-pnl-usd {
-  font-size: 13px; font-weight: 700;
+  font-size: 14px; font-weight: 700;
   font-variant-numeric: tabular-nums;
   color: var(--muted);
 }
