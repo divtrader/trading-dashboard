@@ -563,23 +563,24 @@ main {
 .paper-bars {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 10px;
   flex: 1;
   min-height: 0;
-  overflow-y: auto;
 }
 .paper-bar-row {
   display: grid;
-  grid-template-columns: 170px 1fr 130px;
-  gap: 24px;
+  grid-template-columns: 200px 1fr 140px;
+  gap: 28px;
   align-items: center;
   background: var(--panel);
   border: 1px solid var(--border);
   border-left: 4px solid var(--border-hi);
   border-radius: 12px;
-  padding: 14px 22px;
+  padding: 0 28px;
   position: relative;
   transition: border-color 0.3s ease;
+  flex: 1 1 0;
+  min-height: 0;
 }
 .paper-bar-row.long  { border-left-color: rgba(0,201,167,0.7); }
 .paper-bar-row.short { border-left-color: rgba(255,77,94,0.7); }
