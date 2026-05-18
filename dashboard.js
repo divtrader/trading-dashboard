@@ -409,17 +409,24 @@ function renderMexcPositions(positions) {
     host.innerHTML = '<div class="mexc-pos-empty">No open positions</div>';
     return;
   }
-  // MEXC = user's personal live trades. Independent from paper system — no overlay.
-  // Each bar shows: liquidation (left), entry (centred), live mark (dot).
+  // MEXC = user's personal live trades. Independent from paper system.
+  // Bar shows: SL (actual MEXC stop-loss order, or liquidation fallback) on the
+  // left, entry centred, live mark dot, and TP (actual MEXC take-profit) on the
+  // right when set.
   host.innerHTML = positions.map(p => {
     const coin = p.coin.replace("USDT", "");
     const isLong = p.direction === "Long";
     const dirCls = isLong ? "long" : "short";
     const pnlCls = cls(p.unrealized_pnl);
 
-    // Symmetric scale anchored on entry — half-span = entry-to-liquidation distance.
-    const liq = p.liq || (isLong ? p.entry * 0.5 : p.entry * 1.5);
-    const halfSpan = Math.abs(p.entry - liq);
+    // Use the actual SL order if MEXC has one attached; otherwise liquidation.
+    const slPrice = (p.sl != null && p.sl > 0) ? p.sl : p.liq;
+    const slIsLiq = (p.sl == null || p.sl <= 0);
+    const tpPrice = (p.tp != null && p.tp > 0) ? p.tp : null;
+
+    // Symmetric scale anchored on entry — half-span = max(entry→SL, entry→TP).
+    let halfSpan = Math.abs(p.entry - slPrice);
+    if (tpPrice) halfSpan = Math.max(halfSpan, Math.abs(tpPrice - p.entry));
     const leftEdge  = isLong ? (p.entry - halfSpan) : (p.entry + halfSpan);
     const rightEdge = isLong ? (p.entry + halfSpan) : (p.entry - halfSpan);
     const posOf = price => {
@@ -427,10 +434,13 @@ function renderMexcPositions(positions) {
       return Math.max(0, Math.min(1, v)) * 100;
     };
 
-    const liqPct = posOf(liq);
-    const ePct   = posOf(p.entry);   // ~50% by construction
+    const slPct  = posOf(slPrice);
+    const ePct   = posOf(p.entry);
     const mPct   = posOf(p.mark);
+    const tpPct  = tpPrice ? posOf(tpPrice) : null;
     const liveColor = p.unrealized_pnl >= 0 ? "#00c9a7" : "#ff4d5e";
+
+    const titleAttr = `Entry ${p.entry} · Mark ${p.mark} · SL ${p.sl ?? "(liq " + p.liq + ")"}${tpPrice ? " · TP " + tpPrice : ""}`;
 
     return `
       <div class="mexc-pos-row">
@@ -438,10 +448,11 @@ function renderMexcPositions(positions) {
           <span class="mexc-pos-coin">${coin}</span>
           <span class="mexc-pos-dir ${dirCls}">${isLong ? "L" : "S"}${p.leverage ? "·" + p.leverage + "x" : ""}</span>
         </div>
-        <div class="mexc-pos-bar" title="Liq ${p.liq} · Entry ${p.entry} · Mark ${p.mark}">
+        <div class="mexc-pos-bar" title="${titleAttr}">
           <div class="mexc-pos-track"></div>
-          <div class="mexc-pos-marker sl"    style="left:${liqPct.toFixed(1)}%"></div>
+          <div class="mexc-pos-marker sl${slIsLiq ? " liq-fallback" : ""}" style="left:${slPct.toFixed(1)}%"></div>
           <div class="mexc-pos-marker entry" style="left:${ePct.toFixed(1)}%"></div>
+          ${tpPct !== null ? `<div class="mexc-pos-marker tp1" style="left:${tpPct.toFixed(1)}%"></div>` : ""}
           <div class="mexc-pos-dot" style="left:${mPct.toFixed(1)}%;background:${liveColor};box-shadow:0 0 8px ${liveColor}"></div>
         </div>
         <div class="mexc-pos-pnl ${pnlCls}">${fmtUsd(p.unrealized_pnl)}</div>
