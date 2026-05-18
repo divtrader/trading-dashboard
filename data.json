@@ -1,8 +1,8 @@
 {
-  "last_updated_iso": "2026-05-18T20:20:41Z",
+  "last_updated_iso": "2026-05-18T20:55:01Z",
   "mexc_account": {
-    "unrealized_pnl": -56.1467,
-    "equity": 1795.2346,
+    "unrealized_pnl": -61.4259,
+    "equity": 1789.9554,
     "available": 553.7067,
     "position_margin": 398.3574
   },
@@ -42,7 +42,7 @@
       "trading_system": "John",
       "track_only": true,
       "status": "OPEN",
-      "price_at_run": 77064.5,
+      "price_at_run": 76982.02,
       "date_activated": "2026-04-28",
       "time_activated_utc": "12:00",
       "date_opened": "2026-04-28",
@@ -64,7 +64,7 @@
       "trading_system": "John",
       "track_only": true,
       "status": "OPEN",
-      "price_at_run": 1.583,
+      "price_at_run": 1.582,
       "date_activated": "2026-05-16",
       "time_activated_utc": "08:00",
       "date_opened": "2026-05-12",
@@ -86,7 +86,7 @@
       "trading_system": "John",
       "track_only": true,
       "status": "OPEN",
-      "price_at_run": 644.96,
+      "price_at_run": 642.86,
       "date_activated": "2026-05-17",
       "time_activated_utc": "20:00",
       "date_opened": "2026-05-12",
@@ -382,28 +382,6 @@
       "sl_moved_to_be": false
     },
     {
-      "trade_id": "BNBUSDT_20260518_CB_001",
-      "coin": "BNBUSDT",
-      "direction": "Short",
-      "entry_price": 653.87556012,
-      "sl": 666.13017413,
-      "tp1": 616.05187928,
-      "tp2": 571.31672243,
-      "capital_usd": 100,
-      "leverage": 3,
-      "trading_system": "Braam",
-      "track_only": false,
-      "status": "PENDING",
-      "price_at_run": 640.26,
-      "date_activated": null,
-      "time_activated_utc": null,
-      "date_opened": "2026-05-18",
-      "time_opened_utc": "17:59",
-      "conviction": "MEDIUM",
-      "tp1_hit": false,
-      "sl_moved_to_be": false
-    },
-    {
       "trade_id": "LTCUSDT_20260518_CB_001",
       "coin": "LTCUSDT",
       "direction": "Short",
@@ -438,18 +416,6 @@
       "conviction": "MEDIUM",
       "track_only": false,
       "iso": "2026-05-18T17:48:00Z"
-    },
-    {
-      "trade_id": "BNBUSDT_20260518_CB_001",
-      "coin": "BNBUSDT",
-      "direction": "Short",
-      "trading_system": "Braam",
-      "entry_price": 653.87556012,
-      "tp1": 616.05187928,
-      "sl": 666.13017413,
-      "conviction": "MEDIUM",
-      "track_only": false,
-      "iso": "2026-05-18T17:59:00Z"
     },
     {
       "trade_id": "LTCUSDT_20260518_CB_001",
@@ -1019,6 +985,13 @@
       "trading_system": "Braam",
       "close_reason": "Signal direction flipped to Long (6/8 signals) \u2014 original setup no longer valid",
       "iso": "2026-05-18T20:20:00Z"
+    },
+    {
+      "coin": "BNBUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "close_reason": "6/8 signals opposing Short for 2 consecutive runs \u2014 conviction has collapsed, se",
+      "iso": "2026-05-18T20:54:00Z"
     }
   ],
   "tp1_hits_open": [
