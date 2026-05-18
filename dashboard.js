@@ -1009,12 +1009,14 @@ function renderPendingTriggers() {
     return `
       <div class="paper-bar-row ${dirCls}${t.inZone ? " trig-in-zone" : ""}" title="${t.trade_id}">
         <div class="pb-head">
-          <div class="pb-coin">${coin}</div>
+          <div class="pb-coin-row">
+            <span class="pb-coin">${coin}</span>
+            <span class="pb-tid-inline">${t.trade_id || ""}</span>
+          </div>
           <div class="pb-meta">
             <span class="pb-dir ${dirCls}">${isLong ? "▲ LONG" : "▼ SHORT"}</span>
             <span class="pb-sys">${t.trading_system || ""}</span>
           </div>
-          <div class="pb-tid">${t.trade_id || ""}</div>
         </div>
         <div class="pb-bar">
           <div class="pb-track"></div>
