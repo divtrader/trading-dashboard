@@ -1,8 +1,8 @@
 {
-  "last_updated_iso": "2026-05-18T17:59:46Z",
+  "last_updated_iso": "2026-05-18T20:20:41Z",
   "mexc_account": {
-    "unrealized_pnl": -71.0416,
-    "equity": 1780.3397,
+    "unrealized_pnl": -56.1467,
+    "equity": 1795.2346,
     "available": 553.7067,
     "position_margin": 398.3574
   },
@@ -42,7 +42,7 @@
       "trading_system": "John",
       "track_only": true,
       "status": "OPEN",
-      "price_at_run": 76698.0,
+      "price_at_run": 77064.5,
       "date_activated": "2026-04-28",
       "time_activated_utc": "12:00",
       "date_opened": "2026-04-28",
@@ -64,7 +64,7 @@
       "trading_system": "John",
       "track_only": true,
       "status": "OPEN",
-      "price_at_run": 1.545,
+      "price_at_run": 1.583,
       "date_activated": "2026-05-16",
       "time_activated_utc": "08:00",
       "date_opened": "2026-05-12",
@@ -86,7 +86,7 @@
       "trading_system": "John",
       "track_only": true,
       "status": "OPEN",
-      "price_at_run": 640.26,
+      "price_at_run": 644.96,
       "date_activated": "2026-05-17",
       "time_activated_utc": "20:00",
       "date_opened": "2026-05-12",
@@ -360,28 +360,6 @@
       "sl_moved_to_be": false
     },
     {
-      "trade_id": "ONDOUSDT_20260518_CB_001",
-      "coin": "ONDOUSDT",
-      "direction": "Short",
-      "entry_price": 0.35411575,
-      "sl": 0.3710289,
-      "tp1": 0.2635,
-      "tp2": 0.17337579,
-      "capital_usd": 100,
-      "leverage": 3,
-      "trading_system": "Braam",
-      "track_only": false,
-      "status": "PENDING",
-      "price_at_run": 0.3414,
-      "date_activated": null,
-      "time_activated_utc": null,
-      "date_opened": "2026-05-18",
-      "time_opened_utc": "16:10",
-      "conviction": "MEDIUM",
-      "tp1_hit": false,
-      "sl_moved_to_be": false
-    },
-    {
       "trade_id": "APTUSDT_20260518_CB_001",
       "coin": "APTUSDT",
       "direction": "Short",
@@ -424,21 +402,31 @@
       "conviction": "MEDIUM",
       "tp1_hit": false,
       "sl_moved_to_be": false
+    },
+    {
+      "trade_id": "LTCUSDT_20260518_CB_001",
+      "coin": "LTCUSDT",
+      "direction": "Short",
+      "entry_price": 55.48273193,
+      "sl": 56.73277867,
+      "tp1": 52.13983143,
+      "tp2": 47.47635944,
+      "capital_usd": 100,
+      "leverage": 3,
+      "trading_system": "Braam",
+      "track_only": false,
+      "status": "PENDING",
+      "price_at_run": 54.37,
+      "date_activated": null,
+      "time_activated_utc": null,
+      "date_opened": "2026-05-18",
+      "time_opened_utc": "20:20",
+      "conviction": "MEDIUM",
+      "tp1_hit": false,
+      "sl_moved_to_be": false
     }
   ],
   "recent_signals": [
-    {
-      "trade_id": "ONDOUSDT_20260518_CB_001",
-      "coin": "ONDOUSDT",
-      "direction": "Short",
-      "trading_system": "Braam",
-      "entry_price": 0.35411575,
-      "tp1": 0.2635,
-      "sl": 0.3710289,
-      "conviction": "MEDIUM",
-      "track_only": false,
-      "iso": "2026-05-18T16:10:00Z"
-    },
     {
       "trade_id": "APTUSDT_20260518_CB_001",
       "coin": "APTUSDT",
@@ -462,6 +450,18 @@
       "conviction": "MEDIUM",
       "track_only": false,
       "iso": "2026-05-18T17:59:00Z"
+    },
+    {
+      "trade_id": "LTCUSDT_20260518_CB_001",
+      "coin": "LTCUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "entry_price": 55.48273193,
+      "tp1": 52.13983143,
+      "sl": 56.73277867,
+      "conviction": "MEDIUM",
+      "track_only": false,
+      "iso": "2026-05-18T20:20:00Z"
     }
   ],
   "recent_opens": [
@@ -1012,6 +1012,13 @@
       "trading_system": "John",
       "close_reason": "False activation: flag bar (May 15 12:00 UTC) opened at $0.15910 (already above ",
       "iso": "2026-05-18T16:20:00Z"
+    },
+    {
+      "coin": "ONDOUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "close_reason": "Signal direction flipped to Long (6/8 signals) \u2014 original setup no longer valid",
+      "iso": "2026-05-18T20:20:00Z"
     }
   ],
   "tp1_hits_open": [
