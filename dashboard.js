@@ -440,7 +440,7 @@ function renderMexcPositions(positions) {
     const tpPct = (p.tp != null && p.tp > 0) ? posOf(p.tp) : null;   // = 100 when set
     const liveColor = p.unrealized_pnl >= 0 ? "#00c9a7" : "#ff4d5e";
 
-    const titleAttr = `Entry ${p.entry} · Mark ${p.mark} · SL ${p.sl ?? "(liq " + p.liq + ")"}${tpPrice ? " · TP " + tpPrice : ""}`;
+    const titleAttr = `Entry ${p.entry} · Mark ${p.mark} · SL ${p.sl ?? "(liq " + p.liq + ")"}${p.tp ? " · TP " + p.tp : ""}`;
 
     return `
       <div class="mexc-pos-row">
