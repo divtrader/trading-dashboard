@@ -391,6 +391,7 @@ function renderMexcCard() {
     pnlEl.className = "value hero-value";
     if (eqEl) eqEl.textContent = "—";
     if (avEl) avEl.textContent = "—";
+    renderMexcPositions([]);
     return;
   }
   const pnl = m.unrealized_pnl;
@@ -398,6 +399,77 @@ function renderMexcCard() {
   animateValue(pnlEl, pnl, fmtUsd);
   if (eqEl) eqEl.textContent = "$" + m.equity.toLocaleString("en-US", {maximumFractionDigits: 0});
   if (avEl) avEl.textContent = "$" + m.available.toLocaleString("en-US", {maximumFractionDigits: 0});
+  renderMexcPositions(m.positions || []);
+}
+
+function renderMexcPositions(positions) {
+  const host = $("mexc-positions");
+  if (!host) return;
+  if (!positions.length) {
+    host.innerHTML = '<div class="mexc-pos-empty">No open positions</div>';
+    return;
+  }
+  // Match each MEXC position to a paper trade by coin + direction to borrow SL/TP1/TP2.
+  const paperOpen = state.trades.filter(t => t.status === "OPEN");
+  host.innerHTML = positions.map(p => {
+    const paper = paperOpen.find(t => t.coin === p.coin && t.direction === p.direction);
+    const coin = p.coin.replace("USDT", "");
+    const isLong = p.direction === "Long";
+    const dirCls = isLong ? "long" : "short";
+    const pnlCls = cls(p.unrealized_pnl);
+
+    let barHtml = "";
+    let unlinked = "";
+    if (paper && paper.sl && paper.tp1) {
+      const tp2 = paper.tp2 || paper.tp1;
+      const furthest = isLong ? Math.max(paper.tp1, tp2) : Math.min(paper.tp1, tp2);
+      const span = isLong ? (furthest - paper.sl) : (paper.sl - furthest);
+      const posOf = price => {
+        const v = isLong ? (price - paper.sl) / span : (paper.sl - price) / span;
+        return Math.max(0, Math.min(1, v)) * 100;
+      };
+      const ePct = posOf(p.entry);
+      const mPct = posOf(p.mark);
+      const t1Pct = posOf(paper.tp1);
+      const t2Pct = (paper.tp2 && paper.tp2 !== paper.tp1) ? posOf(paper.tp2) : null;
+      const liveColor = mPct < 33 ? "#ff4d5e" : mPct > 66 ? "#00c9a7" : "#ffb74d";
+      barHtml = `
+        <div class="mexc-pos-bar">
+          <div class="mexc-pos-track"></div>
+          <div class="mexc-pos-marker entry" style="left:${ePct.toFixed(1)}%"></div>
+          <div class="mexc-pos-marker tp1"   style="left:${t1Pct.toFixed(1)}%"></div>
+          ${t2Pct !== null ? `<div class="mexc-pos-marker tp2" style="left:${t2Pct.toFixed(1)}%"></div>` : ""}
+          <div class="mexc-pos-dot" style="left:${mPct.toFixed(1)}%;background:${liveColor};box-shadow:0 0 8px ${liveColor}"></div>
+        </div>`;
+    } else {
+      // No paper match — scale by entry ± distance to mark/liq.
+      const refMove = Math.abs(p.mark - p.entry) || (p.entry * 0.02);
+      const span = refMove * 4; // ±2× current move
+      const left  = p.entry - span / 2;
+      const right = p.entry + span / 2;
+      const posOf = price => Math.max(0, Math.min(1, (price - left) / (right - left))) * 100;
+      const ePct = 50;
+      const mPct = posOf(p.mark);
+      const liveColor = p.unrealized_pnl >= 0 ? "#00c9a7" : "#ff4d5e";
+      unlinked = " mexc-pos-unlinked";
+      barHtml = `
+        <div class="mexc-pos-bar" title="No matched paper trade — bar shows entry ± current move">
+          <div class="mexc-pos-track"></div>
+          <div class="mexc-pos-marker entry" style="left:${ePct.toFixed(1)}%"></div>
+          <div class="mexc-pos-dot" style="left:${mPct.toFixed(1)}%;background:${liveColor};box-shadow:0 0 8px ${liveColor}"></div>
+        </div>`;
+    }
+
+    return `
+      <div class="mexc-pos-row${unlinked}">
+        <div class="mexc-pos-head">
+          <span class="mexc-pos-coin">${coin}</span>
+          <span class="mexc-pos-dir ${dirCls}">${isLong ? "L" : "S"}${p.leverage ? "·" + p.leverage + "x" : ""}</span>
+        </div>
+        ${barHtml}
+        <div class="mexc-pos-pnl ${pnlCls}">${fmtUsd(p.unrealized_pnl)}</div>
+      </div>`;
+  }).join("");
 }
 
 // === Bloomberg news flash ===

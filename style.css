@@ -196,6 +196,73 @@ main {
 .mexc-block { align-items: flex-end; text-align: right; }
 .mexc-block .hero-breakdown { justify-content: flex-end; }
 .mexc-block .pnl-block-label { color: #ffb74d; }
+
+/* ── MEXC mini position bars ── */
+.mexc-positions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+  margin-top: 18px;
+  text-align: left;
+}
+.mexc-pos-row {
+  display: grid;
+  grid-template-columns: 78px 1fr 70px;
+  align-items: center;
+  gap: 10px;
+  font-size: 11px;
+}
+.mexc-pos-head {
+  display: flex; align-items: center; gap: 6px;
+  font-weight: 800; letter-spacing: -0.2px;
+  font-size: 12px;
+}
+.mexc-pos-coin { color: var(--text); }
+.mexc-pos-dir {
+  font-size: 9px; font-weight: 800;
+  padding: 1px 5px; border-radius: 3px;
+  letter-spacing: 0.5px;
+}
+.mexc-pos-dir.long  { background: rgba(0,201,167,0.18); color: var(--green); }
+.mexc-pos-dir.short { background: rgba(255,77,94,0.18); color: var(--red); }
+.mexc-pos-pnl {
+  font-size: 12px; font-weight: 800;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+.mexc-pos-pnl.pos { color: var(--green); }
+.mexc-pos-pnl.neg { color: var(--red); }
+.mexc-pos-bar { position: relative; height: 6px; }
+.mexc-pos-track {
+  position: absolute; inset: 0;
+  background: linear-gradient(90deg,
+    rgba(255,77,94,0.22) 0%,
+    rgba(255,255,255,0.04) 50%,
+    rgba(0,201,167,0.22) 100%);
+  border-radius: 3px;
+}
+.mexc-pos-marker {
+  position: absolute; top: -3px;
+  width: 2px; height: 12px;
+  transform: translateX(-1px);
+  border-radius: 1px;
+}
+.mexc-pos-marker.entry { background: rgba(255,255,255,0.85); }
+.mexc-pos-marker.tp1   { background: var(--green); opacity: 0.85; }
+.mexc-pos-marker.tp2   { background: var(--green); }
+.mexc-pos-dot {
+  position: absolute; top: 50%;
+  width: 9px; height: 9px; border-radius: 50%;
+  border: 1.5px solid var(--bg);
+  transform: translate(-50%, -50%);
+}
+.mexc-pos-empty {
+  font-size: 11px; color: var(--muted);
+  font-style: italic; padding: 4px 0; text-align: left;
+}
+.mexc-pos-unlinked .mexc-pos-coin { color: var(--muted); }
+.mexc-pos-unlinked .mexc-pos-bar  { opacity: 0.6; }
 .live-pulse {
   display: inline-block;
   width: 8px; height: 8px;
