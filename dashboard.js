@@ -608,17 +608,20 @@ function renderEquitySparkline(recentCloses) {
   if (!svg) return;
   const closes = [...recentCloses].sort((a, b) => new Date(a.close_iso) - new Date(b.close_iso));
   if (!closes.length) {
-    svg.innerHTML = '<text x="200" y="36" text-anchor="middle" fill="rgba(255,255,255,0.25)" font-size="11" font-family="-apple-system,sans-serif">no closed trades yet</text>';
+    svg.setAttribute("viewBox", "0 0 400 80");
+    svg.innerHTML = '<text x="200" y="40" text-anchor="middle" fill="rgba(255,255,255,0.25)" font-size="11" font-family="-apple-system,sans-serif">no closed trades yet</text>';
     return;
   }
   let cum = 0;
+  // First "anchor" point at $0 baseline before any closes
   const points = [0, ...closes.map(t => { cum += (t.pnl_usd || 0); return cum; })];
   const min = Math.min(...points);
   const max = Math.max(...points);
   const range = (max - min) || 1;
-  const W = 400, H = 60, pad = 6;
+  const W = 400, H = 80;
+  const TOP = 8, BOT = 56; // chart area; below = labels
   const stepX = W / (points.length - 1);
-  const yFor = v => H - pad - ((v - min) / range) * (H - pad * 2);
+  const yFor = v => BOT - ((v - min) / range) * (BOT - TOP);
   const d = points.map((v, i) => `${i ? "L" : "M"}${(i * stepX).toFixed(2)} ${yFor(v).toFixed(2)}`).join(" ");
   const lastX = ((points.length - 1) * stepX).toFixed(2);
   const lastY = yFor(points[points.length - 1]).toFixed(2);
@@ -626,7 +629,30 @@ function renderEquitySparkline(recentCloses) {
   const color = final >= 0 ? "#00c9a7" : "#ff4d5e";
   const glow  = final >= 0 ? "rgba(0,201,167,0.5)" : "rgba(255,77,94,0.5)";
   const gid = "spark-grad-" + (final >= 0 ? "g" : "r");
-  const area = d + ` L${lastX} ${H} L0 ${H} Z`;
+  const area = d + ` L${lastX} ${BOT} L0 ${BOT} Z`;
+
+  // Date labels — first close on the left, last on the right
+  const fmtDate = iso => {
+    const d = new Date(iso);
+    return d.toLocaleDateString("en-GB", { day: "numeric", month: "short" });
+  };
+  const firstDate = fmtDate(closes[0].close_iso);
+  const lastDate  = fmtDate(closes[closes.length - 1].close_iso);
+
+  // Cumulative P&L label near the end dot
+  const finalLabel = (final >= 0 ? "+$" : "-$") + Math.abs(final).toFixed(2);
+  // Position the label above or below the dot depending on space
+  const labelY = Number(lastY) > 24 ? Number(lastY) - 8 : Number(lastY) + 16;
+  const labelX = Math.min(Number(lastX) - 2, W - 4);
+
+  // Optional zero line if the chart crosses zero
+  let zeroLine = "";
+  if (min < 0 && max > 0) {
+    const z = yFor(0).toFixed(2);
+    zeroLine = `<line x1="0" y1="${z}" x2="${W}" y2="${z}" stroke="rgba(255,255,255,0.08)" stroke-width="1" stroke-dasharray="3 3"/>`;
+  }
+
+  svg.setAttribute("viewBox", `0 0 ${W} ${H}`);
   svg.innerHTML = `
     <defs>
       <linearGradient id="${gid}" x1="0" y1="0" x2="0" y2="1">
@@ -634,9 +660,13 @@ function renderEquitySparkline(recentCloses) {
         <stop offset="100%" stop-color="${color}" stop-opacity="0"/>
       </linearGradient>
     </defs>
+    ${zeroLine}
     <path d="${area}" fill="url(#${gid})"/>
     <path d="${d}" fill="none" stroke="${color}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="filter: drop-shadow(0 0 4px ${glow})"/>
     <circle cx="${lastX}" cy="${lastY}" r="3.5" fill="${color}" style="filter: drop-shadow(0 0 6px ${glow})"/>
+    <text x="${labelX}" y="${labelY}" text-anchor="end" fill="${color}" font-size="11" font-weight="800" font-family="-apple-system,sans-serif" style="filter: drop-shadow(0 0 4px ${glow})">${finalLabel}</text>
+    <text x="0"   y="74" text-anchor="start" fill="rgba(255,255,255,0.45)" font-size="10" font-weight="700" letter-spacing="0.8" font-family="-apple-system,sans-serif">${firstDate.toUpperCase()}</text>
+    <text x="${W}" y="74" text-anchor="end"   fill="rgba(255,255,255,0.45)" font-size="10" font-weight="700" letter-spacing="0.8" font-family="-apple-system,sans-serif">${lastDate.toUpperCase()}</text>
   `;
 }
 
