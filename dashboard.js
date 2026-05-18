@@ -689,10 +689,30 @@ function renderEquitySparkline(recentCloses) {
       </div>`;
   });
 
+  // Date labels — one per unique day across the chart, anchored at each day's
+  // first close. First/last dates always shown at the edges so the chart
+  // reads naturally regardless of which days fall in the middle.
+  const dayKey = iso => iso.slice(0, 10);                    // YYYY-MM-DD
+  const dayShort = iso => fmtDate(iso).toUpperCase();
+  const seenDays = new Set();
+  let datesHtml = "";
+  closes.forEach((c, i) => {
+    const k = dayKey(c.close_iso);
+    if (seenDays.has(k)) return;
+    seenDays.add(k);
+    const idx = i + 1;
+    const xPct = (idx * stepX / W) * 100;
+    // Skip if it would collide with the right-pinned final date or left edge.
+    if (xPct < 6) return;
+    if (xPct > 94) return;
+    datesHtml += `<div class="spark-date mid" style="left:${xPct.toFixed(2)}%">${dayShort(c.close_iso)}</div>`;
+  });
+
   overlay.innerHTML = `
     ${dotsHtml}
     <div class="spark-final ${finalCls}">${finalLabel}</div>
     <div class="spark-date left">${firstDate}</div>
+    ${datesHtml}
     <div class="spark-date right">${lastDate}</div>
   `;
 }
