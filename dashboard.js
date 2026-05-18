@@ -794,6 +794,17 @@ function renderEquitySparkline(recentCloses) {
   `;
 }
 
+function fmtAgo(iso) {
+  if (!iso) return "";
+  const d = new Date(iso);
+  const diffMs = Date.now() - d.getTime();
+  const diffM = Math.floor(diffMs / 60000);
+  if (diffM < 60) return `${diffM}m ago`;
+  const diffH = Math.floor(diffMs / 3600000);
+  if (diffH < 24) return `${diffH}h ago`;
+  return d.toLocaleDateString("en-GB", { day: "numeric", month: "short", timeZone: "Europe/Paris" });
+}
+
 function fmtPrice(p) {
   return p >= 1000 ? p.toLocaleString("en-US", {maximumFractionDigits: 0})
        : p >= 1    ? p.toPrecision(5)
@@ -954,50 +965,79 @@ function renderMovers(list, kind) {
 }
 
 function renderPendingTriggers() {
+  const host = $("triggers");
   const pending = state.trades.filter(t => t.status === "PENDING" && !t.track_only);
   if (!pending.length) {
-    $("triggers").innerHTML = '<span class="empty">No active pending trades</span>';
+    host.innerHTML = '<span class="empty">No pending triggers</span>';
     return;
   }
+
   const enriched = pending.map(t => {
     const live = state.prices[t.coin] ?? t.price_at_run ?? t.entry_price;
     const isLong = t.direction === "Long";
-    // Distance: how far price is from entry zone (entry_lo / entry_hi)
-    // 0% = in zone (trigger imminent), positive = still approaching
-    let distPct, proximity;
+    let distPct;
     if (isLong) {
-      // Long: waiting for price to drop into zone (entry_lo..entry_hi)
       distPct = live > (t.entry_hi ?? t.entry_price)
-        ? ((live - (t.entry_hi ?? t.entry_price)) / live * 100)
-        : 0;
+        ? ((live - (t.entry_hi ?? t.entry_price)) / live * 100) : 0;
     } else {
-      // Short: waiting for price to rise into zone
       distPct = live < (t.entry_lo ?? t.entry_price)
-        ? (((t.entry_lo ?? t.entry_price) - live) / live * 100)
-        : 0;
+        ? (((t.entry_lo ?? t.entry_price) - live) / live * 100) : 0;
     }
-    // proximity bar: 100% = in zone, 0% = far away (cap at 20% distance = 0% fill)
-    proximity = Math.max(0, Math.min(100, (1 - distPct / 20) * 100));
-    return { ...t, live, distPct, proximity };
-  }).sort((a, b) => b.proximity - a.proximity).slice(0, 4);
+    return { ...t, live, distPct, inZone: distPct < 0.1 };
+  }).sort((a, b) => a.distPct - b.distPct);
 
-  $("triggers").innerHTML = enriched.map(t => {
-    const inZone = t.distPct < 0.1;
-    const barColor = inZone ? "#FF9800" : t.proximity > 60 ? "#26A69A" : "#4a5568";
-    const label = inZone ? "IN ZONE" : `${t.distPct.toFixed(1)}% away`;
+  host.innerHTML = enriched.map(t => {
+    const isLong = t.direction === "Long";
+    const dirCls = isLong ? "long" : "short";
+    const coin = (t.coin || "").replace("USDT", "");
+    const sl = t.sl, tp1 = t.tp1, tp2 = t.tp2;
+    const hasTP2 = !!(tp2 && tp2 !== tp1);
+    const furthest = hasTP2 ? (isLong ? Math.max(tp1, tp2) : Math.min(tp1, tp2)) : tp1;
+    const span = isLong ? (furthest - sl) : (sl - furthest);
+    const posOf = p => Math.max(0, Math.min(1, isLong ? (p - sl) / span : (sl - p) / span)) * 100;
+
+    const slPct = 0;
+    const ePct  = posOf(t.entry_price);
+    const lPct  = posOf(t.live);
+    const t1Pct = posOf(tp1);
+    const t2Pct = hasTP2 ? posOf(tp2) : null;
+
+    const liveColor = t.inZone ? "#FF9800" : "#5a6585";
+    const distLabel = t.inZone ? "IN ZONE" : `${t.distPct.toFixed(1)}% away`;
+    const distCls   = t.inZone ? "pos" : "muted-val";
+
     return `
-      <div class="trigger-row">
-        <div class="tr-left">
-          <span class="tr-coin">${t.coin.replace("USDT","")}</span>
-          <span class="dir ${t.direction.toLowerCase()}" style="font-size:11px;padding:2px 6px">${t.direction.toUpperCase()}</span>
-          <span class="tr-sys">${t.trading_system}</span>
+      <div class="paper-bar-row ${dirCls}${t.inZone ? " trig-in-zone" : ""}" title="${t.trade_id}">
+        <div class="pb-head">
+          <div class="pb-coin">${coin}</div>
+          <div class="pb-meta">
+            <span class="pb-dir ${dirCls}">${isLong ? "▲ LONG" : "▼ SHORT"}</span>
+            <span class="pb-sys">${t.trading_system || ""}</span>
+          </div>
+          <div class="pb-tid">${t.trade_id || ""}</div>
         </div>
-        <div class="tr-bar-wrap">
-          <div class="tr-bar-track">
-            <div class="tr-bar-fill" style="width:${t.proximity.toFixed(0)}%;background:${barColor}"></div>
+        <div class="pb-bar">
+          <div class="pb-track"></div>
+          <span class="pb-flag sl"    style="left:${slPct}%">SL</span>
+          <span class="pb-flag entry" style="left:${ePct.toFixed(1)}%">ENTRY</span>
+          <span class="pb-flag tp1"   style="left:${t1Pct.toFixed(1)}%">TP1</span>
+          ${t2Pct !== null ? `<span class="pb-flag tp2" style="left:${t2Pct.toFixed(1)}%">TP2</span>` : ""}
+          <div class="pb-marker sl"    style="left:${slPct}%"></div>
+          <div class="pb-marker entry" style="left:${ePct.toFixed(1)}%"></div>
+          <div class="pb-marker tp1"   style="left:${t1Pct.toFixed(1)}%"></div>
+          ${t2Pct !== null ? `<div class="pb-marker tp2" style="left:${t2Pct.toFixed(1)}%"></div>` : ""}
+          <div class="pb-dot" style="left:${lPct.toFixed(1)}%;background:${liveColor};box-shadow:0 0 12px ${liveColor},0 0 4px ${liveColor}"></div>
+          <div class="pb-prices">
+            <span class="pb-price-val sl"    style="left:${slPct}%">${fmtPrice(sl)}</span>
+            <span class="pb-price-val entry" style="left:${ePct.toFixed(1)}%">${fmtPrice(t.entry_price)}</span>
+            <span class="pb-price-val tp1"   style="left:${t1Pct.toFixed(1)}%">${fmtPrice(tp1)}</span>
+            ${t2Pct !== null ? `<span class="pb-price-val tp2" style="left:${t2Pct.toFixed(1)}%">${fmtPrice(tp2)}</span>` : ""}
           </div>
         </div>
-        <div class="tr-dist ${inZone ? "in-zone" : ""}">${label}</div>
+        <div class="pb-pnl">
+          <div class="pb-pnl-pct ${distCls}">${distLabel}</div>
+          <div class="pb-pnl-usd">${fmtPrice(t.live)}</div>
+        </div>
       </div>`;
   }).join("");
 }
@@ -1040,13 +1080,13 @@ function renderActivity() {
     const sys  = t.trading_system || "";
     const px   = t.entry_price ? fmtPrice(t.entry_price) : "";
     const track = t.track_only ? ' <span class="ev-track">track</span>' : "";
+    const ago  = `<span class="ev-time">${fmtAgo(t.iso || t.close_iso)}</span>`;
     switch (ev.type) {
-      case "signal": return `<div class="ev-row"><span class="ev-chip signal">🔔 SIGNAL</span><span class="ev-body">${coin} ${dir} · ${sys} · $${px}${track}</span></div>`;
-      case "open":   return `<div class="ev-row"><span class="ev-chip open">✅ ENTERED</span><span class="ev-body">${coin} ${dir} · ${sys} · $${px}</span></div>`;
-      case "tp1":    return `<div class="ev-row"><span class="ev-chip tp1">🎯 TP1 HIT</span><span class="ev-body">${coin} ${dir} · ${sys} · SL at breakeven</span></div>`;
-      case "win":    return `<div class="ev-row"><span class="ev-chip win">💰 ${t.status === "TP2_HIT" ? "TP2 HIT" : "CLOSED WIN"}</span><span class="ev-body">${coin} ${dir} · ${sys} · <strong>+$${Math.abs(t.pnl_usd||0).toFixed(2)}</strong></span></div>`;
-      case "loss":   return `<div class="ev-row"><span class="ev-chip loss">❌ STOPPED</span><span class="ev-body">${coin} ${dir} · ${sys} · -$${Math.abs(t.pnl_usd||0).toFixed(2)}</span></div>`;
-      case "cancel": return `<div class="ev-row"><span class="ev-chip cancel">🚫 CANCELLED</span><span class="ev-body">${coin} ${dir} · ${sys}</span></div>`;
+      case "signal": return `<div class="ev-row"><span class="ev-chip signal">🔔 SIGNAL</span><span class="ev-body">${coin} ${dir} · ${sys} · $${px}${track}</span>${ago}</div>`;
+      case "open":   return `<div class="ev-row"><span class="ev-chip open">✅ ENTERED</span><span class="ev-body">${coin} ${dir} · ${sys} · $${px}</span>${ago}</div>`;
+      case "win":    return `<div class="ev-row"><span class="ev-chip win">💰 ${t.status === "TP2_HIT" ? "TP2 HIT" : "CLOSED WIN"}</span><span class="ev-body">${coin} ${dir} · ${sys} · <strong>+$${Math.abs(t.pnl_usd||0).toFixed(2)}</strong></span>${ago}</div>`;
+      case "loss":   return `<div class="ev-row"><span class="ev-chip loss">❌ STOPPED</span><span class="ev-body">${coin} ${dir} · ${sys} · -$${Math.abs(t.pnl_usd||0).toFixed(2)}</span>${ago}</div>`;
+      case "cancel": return `<div class="ev-row"><span class="ev-chip cancel">🚫 CANCELLED</span><span class="ev-body">${coin} ${dir} · ${sys}</span>${ago}</div>`;
       default: return "";
     }
   }).join("");
