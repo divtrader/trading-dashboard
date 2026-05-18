@@ -1,8 +1,8 @@
 {
-  "last_updated_iso": "2026-05-18T16:11:14Z",
+  "last_updated_iso": "2026-05-18T16:29:15Z",
   "mexc_account": {
-    "unrealized_pnl": -71.8591,
-    "equity": 1779.5222,
+    "unrealized_pnl": -78.8784,
+    "equity": 1772.5029,
     "available": 553.7067,
     "position_margin": 398.3574
   },
@@ -42,7 +42,7 @@
       "trading_system": "John",
       "track_only": true,
       "status": "OPEN",
-      "price_at_run": 76399.27,
+      "price_at_run": 76235.0,
       "date_activated": "2026-04-28",
       "time_activated_utc": "12:00",
       "date_opened": "2026-04-28",
@@ -64,7 +64,7 @@
       "trading_system": "John",
       "track_only": true,
       "status": "OPEN",
-      "price_at_run": 1.515,
+      "price_at_run": 1.52,
       "date_activated": "2026-05-16",
       "time_activated_utc": "08:00",
       "date_opened": "2026-05-12",
@@ -86,33 +86,11 @@
       "trading_system": "John",
       "track_only": true,
       "status": "OPEN",
-      "price_at_run": 636.67,
+      "price_at_run": 636.2,
       "date_activated": "2026-05-17",
       "time_activated_utc": "20:00",
       "date_opened": "2026-05-12",
       "time_opened_utc": "04:56",
-      "conviction": "MEDIUM",
-      "tp1_hit": false,
-      "sl_moved_to_be": null
-    },
-    {
-      "trade_id": "XLMUSDT_20260515_CJ_M_001",
-      "coin": "XLMUSDT",
-      "direction": "Short",
-      "entry_price": 0.15680447,
-      "sl": 0.16194715,
-      "tp1": 0.12048557,
-      "tp2": 0.11440571,
-      "capital_usd": 100,
-      "leverage": 3,
-      "trading_system": "John",
-      "track_only": true,
-      "status": "OPEN",
-      "price_at_run": 0.1462,
-      "date_activated": "2026-05-15",
-      "time_activated_utc": "12:00",
-      "date_opened": "2026-05-15",
-      "time_opened_utc": "13:23",
       "conviction": "MEDIUM",
       "tp1_hit": false,
       "sl_moved_to_be": null
@@ -1026,6 +1004,13 @@
       "trading_system": "Braam",
       "close_reason": "Zone drift corrupted entry from $57.789 to $56.149 (below flag $56.34). Auto-can",
       "iso": "2026-05-18T09:01:00Z"
+    },
+    {
+      "coin": "XLMUSDT",
+      "direction": "Short",
+      "trading_system": "John",
+      "close_reason": "False activation: flag bar (May 15 12:00 UTC) opened at $0.15910 (already above ",
+      "iso": "2026-05-18T16:20:00Z"
     }
   ],
   "tp1_hits_open": [
