@@ -409,7 +409,7 @@ function renderMexcPositions(positions) {
     host.innerHTML = '<div class="mexc-pos-empty">No open positions</div>';
     return;
   }
-  // Match each MEXC position to a paper trade by coin + direction to borrow SL/TP1/TP2.
+  // Match each MEXC position to a paper trade by coin + direction (TP overlay only).
   const paperOpen = state.trades.filter(t => t.status === "OPEN");
   host.innerHTML = positions.map(p => {
     const paper = paperOpen.find(t => t.coin === p.coin && t.direction === p.direction);
@@ -418,55 +418,50 @@ function renderMexcPositions(positions) {
     const dirCls = isLong ? "long" : "short";
     const pnlCls = cls(p.unrealized_pnl);
 
-    let barHtml = "";
-    let unlinked = "";
-    if (paper && paper.sl && paper.tp1) {
-      const tp2 = paper.tp2 || paper.tp1;
-      const furthest = isLong ? Math.max(paper.tp1, tp2) : Math.min(paper.tp1, tp2);
-      const span = isLong ? (furthest - paper.sl) : (paper.sl - furthest);
-      const posOf = price => {
-        const v = isLong ? (price - paper.sl) / span : (paper.sl - price) / span;
-        return Math.max(0, Math.min(1, v)) * 100;
-      };
-      const ePct = posOf(p.entry);
-      const mPct = posOf(p.mark);
-      const t1Pct = posOf(paper.tp1);
-      const t2Pct = (paper.tp2 && paper.tp2 !== paper.tp1) ? posOf(paper.tp2) : null;
-      const liveColor = mPct < 33 ? "#ff4d5e" : mPct > 66 ? "#00c9a7" : "#ffb74d";
-      barHtml = `
-        <div class="mexc-pos-bar">
-          <div class="mexc-pos-track"></div>
-          <div class="mexc-pos-marker entry" style="left:${ePct.toFixed(1)}%"></div>
-          <div class="mexc-pos-marker tp1"   style="left:${t1Pct.toFixed(1)}%"></div>
-          ${t2Pct !== null ? `<div class="mexc-pos-marker tp2" style="left:${t2Pct.toFixed(1)}%"></div>` : ""}
-          <div class="mexc-pos-dot" style="left:${mPct.toFixed(1)}%;background:${liveColor};box-shadow:0 0 8px ${liveColor}"></div>
-        </div>`;
-    } else {
-      // No paper match — scale by entry ± distance to mark/liq.
-      const refMove = Math.abs(p.mark - p.entry) || (p.entry * 0.02);
-      const span = refMove * 4; // ±2× current move
-      const left  = p.entry - span / 2;
-      const right = p.entry + span / 2;
-      const posOf = price => Math.max(0, Math.min(1, (price - left) / (right - left))) * 100;
-      const ePct = 50;
-      const mPct = posOf(p.mark);
-      const liveColor = p.unrealized_pnl >= 0 ? "#00c9a7" : "#ff4d5e";
-      unlinked = " mexc-pos-unlinked";
-      barHtml = `
-        <div class="mexc-pos-bar" title="No matched paper trade — bar shows entry ± current move">
-          <div class="mexc-pos-track"></div>
-          <div class="mexc-pos-marker entry" style="left:${ePct.toFixed(1)}%"></div>
-          <div class="mexc-pos-dot" style="left:${mPct.toFixed(1)}%;background:${liveColor};box-shadow:0 0 8px ${liveColor}"></div>
-        </div>`;
+    // Universal scale — every bar shows SL (= MEXC liquidation), Entry (centred),
+    // Mark (live dot). TP1/TP2 overlaid only when a paper trade matches.
+    // Symmetric layout: entry pinned at 50%, half-span = max(entry-to-liq, furthest TP).
+    const liq = p.liq || (isLong ? p.entry * 0.5 : p.entry * 1.5);
+    const entryToLiq = Math.abs(p.entry - liq);
+    let halfSpan = entryToLiq;
+    if (paper && paper.tp1) {
+      halfSpan = Math.max(halfSpan, Math.abs(paper.tp1 - p.entry));
+      if (paper.tp2 && paper.tp2 !== paper.tp1) {
+        halfSpan = Math.max(halfSpan, Math.abs(paper.tp2 - p.entry));
+      }
     }
+    const leftEdge  = isLong ? (p.entry - halfSpan) : (p.entry + halfSpan);
+    const rightEdge = isLong ? (p.entry + halfSpan) : (p.entry - halfSpan);
+    const posOf = price => {
+      const v = (price - leftEdge) / (rightEdge - leftEdge);
+      return Math.max(0, Math.min(1, v)) * 100;
+    };
+
+    const liqPct = posOf(liq);
+    const ePct   = posOf(p.entry);   // ~50% by construction
+    const mPct   = posOf(p.mark);
+    const t1Pct  = (paper && paper.tp1) ? posOf(paper.tp1) : null;
+    const t2Pct  = (paper && paper.tp2 && paper.tp2 !== paper.tp1) ? posOf(paper.tp2) : null;
+
+    const liveColor = p.unrealized_pnl >= 0 ? "#00c9a7" : "#ff4d5e";
+    const titleAttr = paper
+      ? `Paper match: ${paper.trade_id} (SL ${paper.sl}, TP1 ${paper.tp1}${paper.tp2 ? ", TP2 " + paper.tp2 : ""})`
+      : "No paper trade — SL = MEXC liquidation, no TP targets";
 
     return `
-      <div class="mexc-pos-row${unlinked}">
+      <div class="mexc-pos-row">
         <div class="mexc-pos-head">
           <span class="mexc-pos-coin">${coin}</span>
           <span class="mexc-pos-dir ${dirCls}">${isLong ? "L" : "S"}${p.leverage ? "·" + p.leverage + "x" : ""}</span>
         </div>
-        ${barHtml}
+        <div class="mexc-pos-bar" title="${titleAttr}">
+          <div class="mexc-pos-track"></div>
+          <div class="mexc-pos-marker sl"    style="left:${liqPct.toFixed(1)}%"></div>
+          <div class="mexc-pos-marker entry" style="left:${ePct.toFixed(1)}%"></div>
+          ${t1Pct !== null ? `<div class="mexc-pos-marker tp1" style="left:${t1Pct.toFixed(1)}%"></div>` : ""}
+          ${t2Pct !== null ? `<div class="mexc-pos-marker tp2" style="left:${t2Pct.toFixed(1)}%"></div>` : ""}
+          <div class="mexc-pos-dot" style="left:${mPct.toFixed(1)}%;background:${liveColor};box-shadow:0 0 8px ${liveColor}"></div>
+        </div>
         <div class="mexc-pos-pnl ${pnlCls}">${fmtUsd(p.unrealized_pnl)}</div>
       </div>`;
   }).join("");
