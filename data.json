@@ -1,8 +1,8 @@
 {
-  "last_updated_iso": "2026-05-18T10:03:31Z",
+  "last_updated_iso": "2026-05-18T10:22:35Z",
   "mexc_account": {
-    "unrealized_pnl": -69.1313,
-    "equity": 1782.2675,
+    "unrealized_pnl": -76.8102,
+    "equity": 1774.5886,
     "available": 553.7241,
     "position_margin": 398.3574
   },
@@ -42,7 +42,7 @@
       "trading_system": "John",
       "track_only": true,
       "status": "OPEN",
-      "price_at_run": 76927.81,
+      "price_at_run": 76727.0,
       "date_activated": "2026-04-28",
       "time_activated_utc": "12:00",
       "date_opened": "2026-04-28",
@@ -64,7 +64,7 @@
       "trading_system": "John",
       "track_only": true,
       "status": "OPEN",
-      "price_at_run": 1.483,
+      "price_at_run": 1.498,
       "date_activated": "2026-05-16",
       "time_activated_utc": "08:00",
       "date_opened": "2026-05-12",
@@ -86,7 +86,7 @@
       "trading_system": "John",
       "track_only": true,
       "status": "OPEN",
-      "price_at_run": 638.94,
+      "price_at_run": 637.62,
       "date_activated": "2026-05-17",
       "time_activated_utc": "20:00",
       "date_opened": "2026-05-12",
@@ -108,33 +108,11 @@
       "trading_system": "John",
       "track_only": true,
       "status": "PENDING",
-      "price_at_run": 0.147,
+      "price_at_run": 0.1464,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-05-15",
       "time_opened_utc": "13:23",
-      "conviction": "MEDIUM",
-      "tp1_hit": false,
-      "sl_moved_to_be": null
-    },
-    {
-      "trade_id": "UNIUSDT_20260515_CJ_M_001",
-      "coin": "UNIUSDT",
-      "direction": "Long",
-      "entry_price": 3.5546071,
-      "sl": 3.37282245,
-      "tp1": 3.78669935,
-      "tp2": 4.10835511,
-      "capital_usd": 100,
-      "leverage": 3,
-      "trading_system": "John",
-      "track_only": true,
-      "status": "OPEN",
-      "price_at_run": 3.424,
-      "date_activated": "2026-05-15",
-      "time_activated_utc": "12:00",
-      "date_opened": "2026-05-15",
-      "time_opened_utc": "13:34",
       "conviction": "MEDIUM",
       "tp1_hit": false,
       "sl_moved_to_be": null
@@ -479,19 +457,6 @@
     }
   ],
   "recent_closes": [
-    {
-      "trade_id": "LTCUSDT_20260505_W_001",
-      "coin": "LTCUSDT",
-      "direction": "Short",
-      "status": "STOPPED_AFTER_TP1",
-      "pnl_usd": 0.32,
-      "close_reason": "SL hit",
-      "date_closed": "2026-05-06",
-      "time_closed_utc": "08:00",
-      "trading_system": "William",
-      "won": true,
-      "close_iso": "2026-05-06T08:00:00Z"
-    },
     {
       "trade_id": "NEARUSDT_20260505_J_M_001",
       "coin": "NEARUSDT",
@@ -998,6 +963,19 @@
       "trading_system": "John",
       "won": false,
       "close_iso": "2026-05-17T20:00:00Z"
+    },
+    {
+      "trade_id": "UNIUSDT_20260515_CJ_M_001",
+      "coin": "UNIUSDT",
+      "direction": "Long",
+      "status": "STOPPED",
+      "pnl_usd": -15.34,
+      "close_reason": "SL hit",
+      "date_closed": "2026-05-18",
+      "time_closed_utc": "08:00",
+      "trading_system": "John",
+      "won": false,
+      "close_iso": "2026-05-18T08:00:00Z"
     }
   ],
   "recent_cancels": [
@@ -1018,14 +996,14 @@
   ],
   "tp1_hits_open": [],
   "stats": {
-    "realized_pnl_usd": 99.84,
-    "win_rate_pct": 34.1,
-    "closed_count": 82,
+    "realized_pnl_usd": 84.5,
+    "win_rate_pct": 33.7,
+    "closed_count": 83,
     "per_system": {
       "John": {
-        "realized_pnl_usd": 72.36,
-        "win_rate_pct": 34.0,
-        "closed_count": 53
+        "realized_pnl_usd": 57.02,
+        "win_rate_pct": 33.3,
+        "closed_count": 54
       },
       "William": {
         "realized_pnl_usd": 51.09,
