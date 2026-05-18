@@ -1,8 +1,8 @@
 {
-  "last_updated_iso": "2026-05-18T08:31:34Z",
+  "last_updated_iso": "2026-05-18T08:48:31Z",
   "mexc_account": {
-    "unrealized_pnl": -66.64,
-    "equity": 1784.7588,
+    "unrealized_pnl": -66.8005,
+    "equity": 1784.5983,
     "available": 553.7241,
     "position_margin": 398.3574
   },
@@ -42,7 +42,7 @@
       "trading_system": "John",
       "track_only": true,
       "status": "OPEN",
-      "price_at_run": 76940.07,
+      "price_at_run": 76958.0,
       "date_activated": "2026-04-28",
       "time_activated_utc": "12:00",
       "date_opened": "2026-04-28",
@@ -64,7 +64,7 @@
       "trading_system": "John",
       "track_only": true,
       "status": "OPEN",
-      "price_at_run": 1.484,
+      "price_at_run": 1.485,
       "date_activated": "2026-05-16",
       "time_activated_utc": "08:00",
       "date_opened": "2026-05-12",
@@ -86,7 +86,7 @@
       "trading_system": "John",
       "track_only": true,
       "status": "OPEN",
-      "price_at_run": 639.82,
+      "price_at_run": 639.32,
       "date_activated": "2026-05-17",
       "time_activated_utc": "20:00",
       "date_opened": "2026-05-12",
@@ -108,7 +108,7 @@
       "trading_system": "John",
       "track_only": true,
       "status": "PENDING",
-      "price_at_run": 0.1476,
+      "price_at_run": 0.1475,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-05-15",
@@ -130,7 +130,7 @@
       "trading_system": "John",
       "track_only": true,
       "status": "OPEN",
-      "price_at_run": 3.417,
+      "price_at_run": 3.421,
       "date_activated": "2026-05-15",
       "time_activated_utc": "12:00",
       "date_opened": "2026-05-15",
@@ -157,28 +157,6 @@
       "time_activated_utc": null,
       "date_opened": "2026-05-15",
       "time_opened_utc": "16:22",
-      "conviction": "MEDIUM",
-      "tp1_hit": false,
-      "sl_moved_to_be": false
-    },
-    {
-      "trade_id": "LTCUSDT_20260516_CB_001",
-      "coin": "LTCUSDT",
-      "direction": "Short",
-      "entry_price": 56.148745,
-      "sl": 57.80017163,
-      "tp1": 48.92986201,
-      "tp2": 45.88965673,
-      "capital_usd": 100,
-      "leverage": 3,
-      "trading_system": "Braam",
-      "track_only": false,
-      "status": "OPEN",
-      "price_at_run": 56.34,
-      "date_activated": "2026-05-18",
-      "time_activated_utc": "08:14",
-      "date_opened": "2026-05-16",
-      "time_opened_utc": "07:05",
       "conviction": "MEDIUM",
       "tp1_hit": false,
       "sl_moved_to_be": false
@@ -498,16 +476,6 @@
       "tp1_hit": false,
       "iso": "2026-05-17T20:00:00Z",
       "_iso_ms": 1779048000000
-    },
-    {
-      "trade_id": "LTCUSDT_20260516_CB_001",
-      "coin": "LTCUSDT",
-      "direction": "Short",
-      "trading_system": "Braam",
-      "entry_price": 56.148745,
-      "tp1_hit": false,
-      "iso": "2026-05-18T08:14:00Z",
-      "_iso_ms": 1779092040000
     }
   ],
   "recent_closes": [
@@ -1039,6 +1007,13 @@
       "trading_system": "Braam",
       "close_reason": "Bug: Short flagged when price ($0.989) was ABOVE EMA ($0.97225). Entry below fla",
       "iso": "2026-05-18T05:28:00Z"
+    },
+    {
+      "coin": "LTCUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "close_reason": "Zone drift bug: entry corrupted from $57.789 to $56.149 (below flag price $56.34",
+      "iso": "2026-05-18T08:46:00Z"
     }
   ],
   "tp1_hits_open": [],
