@@ -167,11 +167,11 @@ main {
   display: grid;
   grid-template-columns: 1fr 1px 1fr;
   gap: 44px;
-  align-items: center;
+  align-items: start;
 }
 .paper-group {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: flex-start;
   gap: 36px;
   min-width: 0;
