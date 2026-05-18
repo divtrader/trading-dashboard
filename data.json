@@ -1,8 +1,8 @@
 {
-  "last_updated_iso": "2026-05-18T10:22:35Z",
+  "last_updated_iso": "2026-05-18T10:39:51Z",
   "mexc_account": {
-    "unrealized_pnl": -76.8102,
-    "equity": 1774.5886,
+    "unrealized_pnl": -74.2047,
+    "equity": 1777.1941,
     "available": 553.7241,
     "position_margin": 398.3574
   },
@@ -13,8 +13,8 @@
       "direction": "Long",
       "entry_price": 75838.91889335,
       "sl": 74360.05997493,
-      "tp1": 84400,
-      "tp2": 88504.83921357,
+      "tp1": 81493,
+      "tp2": 84530,
       "capital_usd": 100,
       "leverage": 3,
       "trading_system": "William",
@@ -34,22 +34,22 @@
       "coin": "BTCUSDT",
       "direction": "Long",
       "entry_price": 75838.91889335,
-      "sl": 74291.80494793,
-      "tp1": 84400,
-      "tp2": 88504.83921357,
+      "sl": 75838.91889335,
+      "tp1": 81493,
+      "tp2": 84530,
       "capital_usd": 100,
       "leverage": 3,
       "trading_system": "John",
       "track_only": true,
       "status": "OPEN",
-      "price_at_run": 76727.0,
+      "price_at_run": 76819.23,
       "date_activated": "2026-04-28",
       "time_activated_utc": "12:00",
       "date_opened": "2026-04-28",
       "time_opened_utc": "05:57",
       "conviction": "MEDIUM",
-      "tp1_hit": false,
-      "sl_moved_to_be": false
+      "tp1_hit": true,
+      "sl_moved_to_be": true
     },
     {
       "trade_id": "NEARUSDT_20260512_CJ_M_001",
@@ -57,14 +57,14 @@
       "direction": "Long",
       "entry_price": 1.48153256,
       "sl": 1.40253769,
-      "tp1": 1.61778911,
+      "tp1": 1.663,
       "tp2": 1.81192462,
       "capital_usd": 100,
       "leverage": 3,
       "trading_system": "John",
       "track_only": true,
       "status": "OPEN",
-      "price_at_run": 1.498,
+      "price_at_run": 1.512,
       "date_activated": "2026-05-16",
       "time_activated_utc": "08:00",
       "date_opened": "2026-05-12",
@@ -86,7 +86,7 @@
       "trading_system": "John",
       "track_only": true,
       "status": "OPEN",
-      "price_at_run": 637.62,
+      "price_at_run": 638.46,
       "date_activated": "2026-05-17",
       "time_activated_utc": "20:00",
       "date_opened": "2026-05-12",
@@ -994,7 +994,14 @@
       "iso": "2026-05-18T09:01:00Z"
     }
   ],
-  "tp1_hits_open": [],
+  "tp1_hits_open": [
+    {
+      "coin": "BTCUSDT",
+      "direction": "Long",
+      "trading_system": "John",
+      "entry_price": 75838.91889335
+    }
+  ],
   "stats": {
     "realized_pnl_usd": 84.5,
     "win_rate_pct": 33.7,
