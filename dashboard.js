@@ -1019,10 +1019,7 @@ function renderActivity() {
     const ts = new Date(t.iso).getTime();
     if (ts >= cutoff) events.push({ ts, type: "cancel", t });
   }
-  // TP1 still open
-  for (const t of (state.tp1HitsOpen || [])) {
-    events.push({ ts: Date.now(), type: "tp1", t });
-  }
+
   // Closes (last 12h)
   for (const t of (state.recentCloses || [])) {
     const ts = new Date(t.close_iso).getTime();
