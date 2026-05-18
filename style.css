@@ -1138,6 +1138,16 @@ main {
 .trig-in-zone { border-left-color: var(--orange) !important; animation: pulse-zone 1.4s ease-in-out infinite; }
 .pb-pnl-pct.muted-val { color: var(--muted); }
 
+/* Compact overrides for trigger bars (they're shorter than Screen 2 bars) */
+.triggers-body .paper-bar-row { padding: 4px 20px; }
+.triggers-body .pb-bar { padding: 14px 0 22px; }
+.triggers-body .pb-coin { font-size: 20px; }
+.triggers-body .pb-pnl-pct { font-size: 15px; letter-spacing: 0; }
+.triggers-body .pb-pnl-usd { font-size: 12px; }
+.triggers-body .pb-flag { font-size: 9px; padding: 2px 5px; }
+.triggers-body .pb-prices { top: calc(50% + 13px); }
+.triggers-body .pb-price-val { font-size: 9px; }
+
 /* ── Activity feed ── */
 .activity {
   background: var(--panel);
