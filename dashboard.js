@@ -599,6 +599,7 @@ function renderPaperBars(enrichedOpen) {
             <span class="pb-sys">${sys}</span>
             ${beActive ? '<span class="pb-be">BE</span>' : ""}
           </div>
+          <div class="pb-tid">${t.trade_id || ""}</div>
         </div>
         <div class="pb-bar">
           <div class="pb-track"></div>
