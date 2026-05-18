@@ -422,22 +422,22 @@ function renderMexcPositions(positions) {
     // Use the actual SL order if MEXC has one attached; otherwise liquidation.
     const slPrice = (p.sl != null && p.sl > 0) ? p.sl : p.liq;
     const slIsLiq = (p.sl == null || p.sl <= 0);
-    const tpPrice = (p.tp != null && p.tp > 0) ? p.tp : null;
+    // Right edge = actual TP order if set; otherwise mirror the SL distance.
+    const rightPrice = (p.tp != null && p.tp > 0)
+      ? p.tp
+      : (isLong ? p.entry + Math.abs(p.entry - slPrice)
+                : p.entry - Math.abs(p.entry - slPrice));
 
-    // Symmetric scale anchored on entry — half-span = max(entry→SL, entry→TP).
-    let halfSpan = Math.abs(p.entry - slPrice);
-    if (tpPrice) halfSpan = Math.max(halfSpan, Math.abs(tpPrice - p.entry));
-    const leftEdge  = isLong ? (p.entry - halfSpan) : (p.entry + halfSpan);
-    const rightEdge = isLong ? (p.entry + halfSpan) : (p.entry - halfSpan);
+    // Scale: SL at 0%, TP (or symmetric fallback) at 100%, entry/mark in between.
     const posOf = price => {
-      const v = (price - leftEdge) / (rightEdge - leftEdge);
+      const v = (price - slPrice) / (rightPrice - slPrice);
       return Math.max(0, Math.min(1, v)) * 100;
     };
 
-    const slPct  = posOf(slPrice);
-    const ePct   = posOf(p.entry);
-    const mPct   = posOf(p.mark);
-    const tpPct  = tpPrice ? posOf(tpPrice) : null;
+    const slPct = posOf(slPrice);            // = 0
+    const ePct  = posOf(p.entry);
+    const mPct  = posOf(p.mark);
+    const tpPct = (p.tp != null && p.tp > 0) ? posOf(p.tp) : null;   // = 100 when set
     const liveColor = p.unrealized_pnl >= 0 ? "#00c9a7" : "#ff4d5e";
 
     const titleAttr = `Entry ${p.entry} · Mark ${p.mark} · SL ${p.sl ?? "(liq " + p.liq + ")"}${tpPrice ? " · TP " + tpPrice : ""}`;
