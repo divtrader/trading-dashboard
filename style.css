@@ -350,12 +350,13 @@ main {
 .spark-overlay .spark-date.right { right: 0; }
 .spark-overlay .spark-final {
   position: absolute;
-  font-size: 12px;
+  top: 0;
+  right: 0;
+  font-size: 14px;
   font-weight: 800;
   font-variant-numeric: tabular-nums;
-  transform: translate(-100%, -50%);
-  padding-right: 8px;
   white-space: nowrap;
+  letter-spacing: -0.3px;
 }
 .spark-overlay .spark-final.pos { color: var(--green-bright); text-shadow: 0 0 6px rgba(0,201,167,0.5); }
 .spark-overlay .spark-final.neg { color: var(--red);          text-shadow: 0 0 6px rgba(255,77,94,0.5); }

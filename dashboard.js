@@ -607,7 +607,9 @@ function renderEquitySparkline(recentCloses) {
   const svg = document.getElementById("equity-spark");
   const overlay = document.getElementById("equity-spark-overlay");
   if (!svg) return;
-  const closes = [...recentCloses].sort((a, b) => new Date(a.close_iso) - new Date(b.close_iso));
+  const closes = [...recentCloses]
+    .sort((a, b) => new Date(a.close_iso) - new Date(b.close_iso))
+    .slice(-20);
   if (!closes.length) {
     svg.setAttribute("viewBox", "0 0 400 80");
     svg.innerHTML = "";
@@ -687,12 +689,9 @@ function renderEquitySparkline(recentCloses) {
       </div>`;
   });
 
-  const finalXPct = (lastX / W) * 100;
-  const finalYPct = (lastY / H) * 100;
-
   overlay.innerHTML = `
     ${dotsHtml}
-    <div class="spark-final ${finalCls}" style="left:${finalXPct.toFixed(2)}%;top:${finalYPct.toFixed(2)}%">${finalLabel}</div>
+    <div class="spark-final ${finalCls}">${finalLabel}</div>
     <div class="spark-date left">${firstDate}</div>
     <div class="spark-date right">${lastDate}</div>
   `;
