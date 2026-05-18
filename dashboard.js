@@ -604,17 +604,17 @@ function renderPaperBars(enrichedOpen) {
         <div class="pb-bar">
           <div class="pb-track"></div>
           ${achieved}
-          <span class="pb-flag sl"  style="left:${slPct}%">SL</span>
+          ${!beActive ? `<span class="pb-flag sl" style="left:${slPct}%">SL</span>` : ""}
           <span class="pb-flag entry${beActive ? " be" : ""}" style="left:${ePct.toFixed(1)}%">${beActive ? "BE" : "ENTRY"}</span>
           <span class="pb-flag tp1${tp1Hit ? " hit" : ""}" style="left:${t1Pct.toFixed(1)}%">TP1</span>
           ${t2Pct !== null ? `<span class="pb-flag tp2" style="left:${t2Pct.toFixed(1)}%">TP2</span>` : ""}
-          <div class="pb-marker sl"    style="left:${slPct}%"></div>
+          ${!beActive ? `<div class="pb-marker sl" style="left:${slPct}%"></div>` : ""}
           <div class="pb-marker entry${beActive ? " be" : ""}" style="left:${ePct.toFixed(1)}%"></div>
           <div class="pb-marker tp1${tp1Hit ? " hit" : ""}" style="left:${t1Pct.toFixed(1)}%"></div>
           ${t2Pct !== null ? `<div class="pb-marker tp2" style="left:${t2Pct.toFixed(1)}%"></div>` : ""}
           <div class="pb-dot" style="left:${lPct.toFixed(1)}%;background:${liveColor};box-shadow:0 0 12px ${liveColor},0 0 4px ${liveColor}"></div>
           <div class="pb-prices">
-            <span class="pb-price-val sl"    style="left:${slPct}%">${fmtPrice(sl)}</span>
+            ${!beActive ? `<span class="pb-price-val sl" style="left:${slPct}%">${fmtPrice(sl)}</span>` : ""}
             <span class="pb-price-val entry" style="left:${ePct.toFixed(1)}%">${fmtPrice(t.entry_price)}</span>
             <span class="pb-price-val tp1"   style="left:${t1Pct.toFixed(1)}%">${fmtPrice(tp1)}</span>
             ${t2Pct !== null ? `<span class="pb-price-val tp2" style="left:${t2Pct.toFixed(1)}%">${fmtPrice(tp2)}</span>` : ""}
