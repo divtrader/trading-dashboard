@@ -540,16 +540,84 @@ function escapeHtml(s) {
 function renderLive() {
   const open = state.trades.filter(t => t.status === "OPEN");
   const enriched = open.map(t => ({ ...t, ...computeUnrealized(t) }));
-
-  // Movers
-  const sorted = [...enriched].sort((a, b) => b.leveragedPct - a.leveragedPct);
-  const winners = sorted.slice(0, 2);
-  const winnerIds = new Set(winners.map(w => w.trade_id));
-  const losers = sorted.slice().reverse().filter(t => !winnerIds.has(t.trade_id)).slice(0, 2);
-  $("winners").innerHTML = renderMovers(winners, "winner");
-  $("losers").innerHTML = renderMovers(losers, "loser");
-
+  renderPaperBars(enriched);
   renderHero(enriched);
+}
+
+function renderPaperBars(enrichedOpen) {
+  const host = $("paper-bars");
+  if (!host) return;
+  if (!enrichedOpen.length) {
+    host.innerHTML = '<div class="paper-bars-empty">No open paper trades</div>';
+    return;
+  }
+  // Winners on top, losers below — sorted by leveraged % P&L descending.
+  const sorted = [...enrichedOpen].sort((a, b) => (b.leveragedPct || 0) - (a.leveragedPct || 0));
+
+  host.innerHTML = sorted.map(t => {
+    const isLong = t.direction === "Long";
+    const dirCls = isLong ? "long" : "short";
+    const coin = (t.coin || "").replace("USDT", "");
+    const sys  = t.trading_system || "";
+    const tp1Hit = !!t.tp1_hit;
+    const beActive = tp1Hit || !!t.sl_moved_to_be;
+
+    // Scale: SL = 0%, furthest TP = 100%. Both TP1 + TP2 always land on the bar.
+    const sl = t.sl;
+    const tp1 = t.tp1;
+    const tp2 = t.tp2;
+    const hasTP2 = !!(tp2 && tp2 !== tp1);
+    const furthest = hasTP2
+      ? (isLong ? Math.max(tp1, tp2) : Math.min(tp1, tp2))
+      : tp1;
+    const span = isLong ? (furthest - sl) : (sl - furthest);
+    const posOf = price => {
+      const v = isLong ? (price - sl) / span : (sl - price) / span;
+      return Math.max(0, Math.min(1, v)) * 100;
+    };
+    const slPct  = 0;
+    const ePct   = posOf(t.entry_price);
+    const lPct   = posOf(t.live);
+    const t1Pct  = posOf(tp1);
+    const t2Pct  = hasTP2 ? posOf(tp2) : null;
+
+    const liveColor = lPct < 33 ? "#ff4d5e" : lPct > 66 ? "#00c9a7" : "#ffb74d";
+
+    const pct = t.leveragedPct ?? 0;
+    const usd = t.usd ?? 0;
+    const pctCls = cls(pct);
+
+    // Filled segment showing TP1-achieved range
+    const achieved = tp1Hit ? `<div class="pb-achieved" style="left:${Math.min(ePct,t1Pct).toFixed(1)}%;width:${Math.abs(t1Pct-ePct).toFixed(1)}%"></div>` : "";
+
+    return `
+      <div class="paper-bar-row ${dirCls}" title="${t.trade_id}">
+        <div class="pb-head">
+          <div class="pb-coin">${coin}</div>
+          <div class="pb-meta">
+            <span class="pb-dir ${dirCls}">${isLong ? "▲ LONG" : "▼ SHORT"}</span>
+            <span class="pb-sys">${sys}</span>
+            ${beActive ? '<span class="pb-be">BE</span>' : ""}
+          </div>
+        </div>
+        <div class="pb-bar">
+          <div class="pb-track"></div>
+          ${achieved}
+          <span class="pb-flag sl"  style="left:${slPct}%">SL</span>
+          <span class="pb-flag tp1${tp1Hit ? " hit" : ""}" style="left:${t1Pct.toFixed(1)}%">TP1</span>
+          ${t2Pct !== null ? `<span class="pb-flag tp2" style="left:${t2Pct.toFixed(1)}%">TP2</span>` : ""}
+          <div class="pb-marker sl"    style="left:${slPct}%"></div>
+          <div class="pb-marker entry${beActive ? " be" : ""}" style="left:${ePct.toFixed(1)}%"></div>
+          <div class="pb-marker tp1${tp1Hit ? " hit" : ""}" style="left:${t1Pct.toFixed(1)}%"></div>
+          ${t2Pct !== null ? `<div class="pb-marker tp2" style="left:${t2Pct.toFixed(1)}%"></div>` : ""}
+          <div class="pb-dot" style="left:${lPct.toFixed(1)}%;background:${liveColor};box-shadow:0 0 12px ${liveColor},0 0 4px ${liveColor}"></div>
+        </div>
+        <div class="pb-pnl">
+          <div class="pb-pnl-pct ${pctCls}">${fmtPct(pct)}</div>
+          <div class="pb-pnl-usd">${fmtUsd(usd)}</div>
+        </div>
+      </div>`;
+  }).join("");
 }
 
 function renderHero(enrichedOpen) {

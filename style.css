@@ -559,6 +559,129 @@ main {
 .col-head.losers::before  { background: var(--red);   box-shadow: 0 0 8px var(--red); }
 .mover-list { display: flex; flex-direction: column; gap: 10px; flex: 1; min-height: 0; }
 
+/* ── Screen 2: open paper trades — full-width position bar list ── */
+.paper-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+}
+.paper-bar-row {
+  display: grid;
+  grid-template-columns: 170px 1fr 130px;
+  gap: 24px;
+  align-items: center;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--border-hi);
+  border-radius: 12px;
+  padding: 14px 22px;
+  position: relative;
+  transition: border-color 0.3s ease;
+}
+.paper-bar-row.long  { border-left-color: rgba(0,201,167,0.7); }
+.paper-bar-row.short { border-left-color: rgba(255,77,94,0.7); }
+
+.pb-head {
+  display: flex; flex-direction: column; gap: 4px;
+  min-width: 0;
+}
+.pb-coin {
+  font-size: 22px; font-weight: 900; letter-spacing: -0.5px;
+  color: var(--text);
+}
+.pb-meta {
+  display: flex; align-items: center; gap: 6px;
+  font-size: 10px; font-weight: 700; letter-spacing: 0.5px;
+}
+.pb-meta .pb-dir {
+  padding: 2px 7px; border-radius: 4px;
+  text-transform: uppercase;
+}
+.pb-meta .pb-dir.long  { background: rgba(0,201,167,0.18); color: var(--green); }
+.pb-meta .pb-dir.short { background: rgba(255,77,94,0.18); color: var(--red); }
+.pb-meta .pb-sys {
+  color: var(--muted);
+  text-transform: uppercase;
+}
+.pb-meta .pb-be {
+  color: #ffb74d;
+  background: rgba(255,183,77,0.15);
+  padding: 2px 6px; border-radius: 4px;
+}
+
+.pb-bar { position: relative; height: 12px; padding: 14px 0; }
+.pb-track {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  left: 0; right: 0; height: 6px;
+  background: linear-gradient(90deg,
+    rgba(255,77,94,0.28) 0%,
+    rgba(255,255,255,0.05) 50%,
+    rgba(0,201,167,0.28) 100%);
+  border-radius: 3px;
+}
+.pb-achieved {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  height: 6px;
+  background: linear-gradient(90deg, rgba(0,201,167,0.35), rgba(0,201,167,0.6));
+  border-radius: 3px;
+}
+.pb-marker {
+  position: absolute; top: 50%; transform: translate(-50%, -50%);
+  width: 3px; height: 18px;
+  border-radius: 2px;
+}
+.pb-marker.sl    { background: var(--red);   box-shadow: 0 0 6px var(--red); }
+.pb-marker.entry { background: rgba(255,255,255,0.85); }
+.pb-marker.entry.be { background: #ffb74d; box-shadow: 0 0 8px rgba(255,183,77,0.7); }
+.pb-marker.tp1   { background: var(--green); opacity: 0.85; }
+.pb-marker.tp1.hit { background: var(--green); opacity: 1; box-shadow: 0 0 8px var(--green); }
+.pb-marker.tp2   { background: var(--green); }
+.pb-dot {
+  position: absolute; top: 50%;
+  width: 14px; height: 14px; border-radius: 50%;
+  border: 2px solid var(--bg);
+  transform: translate(-50%, -50%);
+  transition: left 0.8s cubic-bezier(0.4,0,0.2,1);
+}
+.pb-flag {
+  position: absolute;
+  bottom: calc(50% + 14px);
+  transform: translateX(-50%);
+  font-size: 9px; font-weight: 800; letter-spacing: 0.6px;
+  padding: 2px 6px; border-radius: 4px;
+  white-space: nowrap;
+}
+.pb-flag.sl   { color: var(--red);    background: rgba(255,77,94,0.18); }
+.pb-flag.tp1  { color: var(--green);  background: rgba(0,201,167,0.22); }
+.pb-flag.tp2  { color: var(--green);  background: rgba(0,201,167,0.18); }
+.pb-flag.tp1.hit::after { content: " ✓"; }
+
+.pb-pnl {
+  display: flex; flex-direction: column; gap: 3px;
+  align-items: flex-end;
+  text-align: right;
+}
+.pb-pnl-pct {
+  font-size: 22px; font-weight: 800; letter-spacing: -0.5px;
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+}
+.pb-pnl-pct.pos { color: var(--green); }
+.pb-pnl-pct.neg { color: var(--red); }
+.pb-pnl-usd {
+  font-size: 13px; font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  color: var(--muted);
+}
+
+.paper-bars-empty {
+  display: flex; align-items: center; justify-content: center;
+  color: var(--muted); font-size: 14px; padding: 40px;
+}
+
 .mover {
   background: linear-gradient(135deg, var(--panel) 0%, rgba(255,255,255,0.01) 100%);
   border: 1px solid var(--border);
