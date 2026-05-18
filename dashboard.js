@@ -333,6 +333,7 @@ function subscribeWs() {
       const sym = msg.data.s;
       state.prices[sym] = p;
       renderLive();
+      renderPendingTriggers();
     } catch {}
   };
   ws.onclose = () => setTimeout(subscribeWs, 5000);
