@@ -605,53 +605,43 @@ function renderHero(enrichedOpen) {
 
 function renderEquitySparkline(recentCloses) {
   const svg = document.getElementById("equity-spark");
+  const overlay = document.getElementById("equity-spark-overlay");
   if (!svg) return;
   const closes = [...recentCloses].sort((a, b) => new Date(a.close_iso) - new Date(b.close_iso));
   if (!closes.length) {
     svg.setAttribute("viewBox", "0 0 400 80");
-    svg.innerHTML = '<text x="200" y="40" text-anchor="middle" fill="rgba(255,255,255,0.25)" font-size="11" font-family="-apple-system,sans-serif">no closed trades yet</text>';
+    svg.innerHTML = "";
+    if (overlay) overlay.innerHTML = '<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.25);font-size:11px">no closed trades yet</div>';
     return;
   }
+
+  // First "anchor" point at $0 baseline before any closes.
   let cum = 0;
-  // First "anchor" point at $0 baseline before any closes
   const points = [0, ...closes.map(t => { cum += (t.pnl_usd || 0); return cum; })];
   const min = Math.min(...points);
   const max = Math.max(...points);
   const range = (max - min) || 1;
   const W = 400, H = 80;
-  const TOP = 8, BOT = 56; // chart area; below = labels
+  const TOP = 8, BOT = 56;          // chart area; below BOT = label band
   const stepX = W / (points.length - 1);
   const yFor = v => BOT - ((v - min) / range) * (BOT - TOP);
   const d = points.map((v, i) => `${i ? "L" : "M"}${(i * stepX).toFixed(2)} ${yFor(v).toFixed(2)}`).join(" ");
-  const lastX = ((points.length - 1) * stepX).toFixed(2);
-  const lastY = yFor(points[points.length - 1]).toFixed(2);
-  const final = points[points.length - 1];
+  const lastIdx = points.length - 1;
+  const lastX = lastIdx * stepX;
+  const lastY = yFor(points[lastIdx]);
+  const final = points[lastIdx];
   const color = final >= 0 ? "#00c9a7" : "#ff4d5e";
   const glow  = final >= 0 ? "rgba(0,201,167,0.5)" : "rgba(255,77,94,0.5)";
   const gid = "spark-grad-" + (final >= 0 ? "g" : "r");
-  const area = d + ` L${lastX} ${BOT} L0 ${BOT} Z`;
+  const area = d + ` L${lastX.toFixed(2)} ${BOT} L0 ${BOT} Z`;
 
-  // Date labels — first close on the left, last on the right
-  const fmtDate = iso => {
-    const d = new Date(iso);
-    return d.toLocaleDateString("en-GB", { day: "numeric", month: "short" });
-  };
-  const firstDate = fmtDate(closes[0].close_iso);
-  const lastDate  = fmtDate(closes[closes.length - 1].close_iso);
-
-  // Cumulative P&L label near the end dot
-  const finalLabel = (final >= 0 ? "+$" : "-$") + Math.abs(final).toFixed(2);
-  // Position the label above or below the dot depending on space
-  const labelY = Number(lastY) > 24 ? Number(lastY) - 8 : Number(lastY) + 16;
-  const labelX = Math.min(Number(lastX) - 2, W - 4);
-
-  // Optional zero line if the chart crosses zero
   let zeroLine = "";
   if (min < 0 && max > 0) {
     const z = yFor(0).toFixed(2);
     zeroLine = `<line x1="0" y1="${z}" x2="${W}" y2="${z}" stroke="rgba(255,255,255,0.08)" stroke-width="1" stroke-dasharray="3 3"/>`;
   }
 
+  // SVG: chart only (line stretches with the container — no text inside).
   svg.setAttribute("viewBox", `0 0 ${W} ${H}`);
   svg.innerHTML = `
     <defs>
@@ -663,10 +653,48 @@ function renderEquitySparkline(recentCloses) {
     ${zeroLine}
     <path d="${area}" fill="url(#${gid})"/>
     <path d="${d}" fill="none" stroke="${color}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="filter: drop-shadow(0 0 4px ${glow})"/>
-    <circle cx="${lastX}" cy="${lastY}" r="3.5" fill="${color}" style="filter: drop-shadow(0 0 6px ${glow})"/>
-    <text x="${labelX}" y="${labelY}" text-anchor="end" fill="${color}" font-size="11" font-weight="800" font-family="-apple-system,sans-serif" style="filter: drop-shadow(0 0 4px ${glow})">${finalLabel}</text>
-    <text x="0"   y="74" text-anchor="start" fill="rgba(255,255,255,0.45)" font-size="10" font-weight="700" letter-spacing="0.8" font-family="-apple-system,sans-serif">${firstDate.toUpperCase()}</text>
-    <text x="${W}" y="74" text-anchor="end"   fill="rgba(255,255,255,0.45)" font-size="10" font-weight="700" letter-spacing="0.8" font-family="-apple-system,sans-serif">${lastDate.toUpperCase()}</text>
+  `;
+
+  // HTML overlay: everything that should NOT stretch — dates, end P&L, per-close dots.
+  if (!overlay) return;
+  const fmtDate = iso => new Date(iso).toLocaleDateString("en-GB", { day: "numeric", month: "short" });
+  const firstDate = fmtDate(closes[0].close_iso).toUpperCase();
+  const lastDate  = fmtDate(closes[closes.length - 1].close_iso).toUpperCase();
+  const finalLabel = (final >= 0 ? "+$" : "-$") + Math.abs(final).toFixed(2);
+  const finalCls   = final >= 0 ? "pos" : "neg";
+
+  // Trade ID short label — pull the coin abbreviation from "BTCUSDT_..." style.
+  const shortId = c => {
+    const tid = c.trade_id || "";
+    const coin = (c.coin || tid.split("_")[0] || "").replace("USDT", "");
+    return coin || "?";
+  };
+
+  // Per-close dots: alternate label position above/below dots to reduce overlap.
+  let dotsHtml = "";
+  closes.forEach((c, i) => {
+    const idx = i + 1;                  // points[0] is the $0 anchor
+    const xPct = (idx * stepX / W) * 100;
+    const yPct = (yFor(points[idx]) / H) * 100;
+    const won = c.won != null ? c.won : (c.pnl_usd || 0) > 0;
+    const cls = won ? "win" : "loss";
+    const above = (i % 2 === 0);
+    const pnlStr = ((c.pnl_usd || 0) >= 0 ? "+$" : "-$") + Math.abs(c.pnl_usd || 0).toFixed(2);
+    dotsHtml += `
+      <div class="spark-dot ${cls}" style="left:${xPct.toFixed(2)}%;top:${yPct.toFixed(2)}%"
+           title="${c.trade_id || ""} · ${pnlStr}">
+        <span class="spark-tid ${above ? "above" : "below"}">${shortId(c)}</span>
+      </div>`;
+  });
+
+  const finalXPct = (lastX / W) * 100;
+  const finalYPct = (lastY / H) * 100;
+
+  overlay.innerHTML = `
+    ${dotsHtml}
+    <div class="spark-final ${finalCls}" style="left:${finalXPct.toFixed(2)}%;top:${finalYPct.toFixed(2)}%">${finalLabel}</div>
+    <div class="spark-date left">${firstDate}</div>
+    <div class="spark-date right">${lastDate}</div>
   `;
 }
 

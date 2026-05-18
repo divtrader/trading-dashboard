@@ -322,11 +322,64 @@ main {
   letter-spacing: 1.8px;
   font-weight: 700;
 }
-#equity-spark {
+.spark-wrap {
+  position: relative;
   width: 100%;
   height: 90px;
+}
+#equity-spark {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
   display: block;
 }
+.spark-overlay {
+  position: absolute; inset: 0;
+  pointer-events: none;
+}
+.spark-overlay .spark-date {
+  position: absolute;
+  bottom: 0;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  color: rgba(255,255,255,0.45);
+  text-transform: uppercase;
+  font-variant-numeric: tabular-nums;
+}
+.spark-overlay .spark-date.left  { left: 0; }
+.spark-overlay .spark-date.right { right: 0; }
+.spark-overlay .spark-final {
+  position: absolute;
+  font-size: 12px;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+  transform: translate(-100%, -50%);
+  padding-right: 8px;
+  white-space: nowrap;
+}
+.spark-overlay .spark-final.pos { color: var(--green-bright); text-shadow: 0 0 6px rgba(0,201,167,0.5); }
+.spark-overlay .spark-final.neg { color: var(--red);          text-shadow: 0 0 6px rgba(255,77,94,0.5); }
+.spark-overlay .spark-dot {
+  position: absolute;
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: auto;
+}
+.spark-overlay .spark-dot.win  { background: var(--green); box-shadow: 0 0 6px rgba(0,201,167,0.6); }
+.spark-overlay .spark-dot.loss { background: var(--red);   box-shadow: 0 0 6px rgba(255,77,94,0.6); }
+.spark-overlay .spark-tid {
+  position: absolute;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  color: rgba(255,255,255,0.55);
+  white-space: nowrap;
+  transform: translateX(-50%);
+  text-transform: uppercase;
+}
+.spark-overlay .spark-tid.above { bottom: calc(100% + 4px); }
+.spark-overlay .spark-tid.below { top:    calc(100% + 4px); }
 
 /* ── Win-rate donut ── */
 .hero-donut {

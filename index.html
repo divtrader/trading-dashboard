@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex,nofollow">
 <title>Spyker Trading Inc — Dashboard</title>
-<link rel="stylesheet" href="style.css?v=51">
+<link rel="stylesheet" href="style.css?v=52">
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
@@ -105,7 +105,10 @@
         </div>
         <div class="hero-spark">
           <div class="hero-spark-label">Equity curve · last 10 closes</div>
-          <svg id="equity-spark" viewBox="0 0 400 60" preserveAspectRatio="none"></svg>
+          <div class="spark-wrap">
+            <svg id="equity-spark" viewBox="0 0 400 80" preserveAspectRatio="none"></svg>
+            <div class="spark-overlay" id="equity-spark-overlay"></div>
+          </div>
         </div>
       </div>
     </div>
@@ -165,6 +168,6 @@
   </div>
 </main>
 
-<script src="dashboard.js?v=53"></script>
+<script src="dashboard.js?v=54"></script>
 </body>
 </html>
