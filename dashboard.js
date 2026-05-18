@@ -604,6 +604,7 @@ function renderPaperBars(enrichedOpen) {
           <div class="pb-track"></div>
           ${achieved}
           <span class="pb-flag sl"  style="left:${slPct}%">SL</span>
+          <span class="pb-flag entry${beActive ? " be" : ""}" style="left:${ePct.toFixed(1)}%">${beActive ? "BE" : "ENTRY"}</span>
           <span class="pb-flag tp1${tp1Hit ? " hit" : ""}" style="left:${t1Pct.toFixed(1)}%">TP1</span>
           ${t2Pct !== null ? `<span class="pb-flag tp2" style="left:${t2Pct.toFixed(1)}%">TP2</span>` : ""}
           <div class="pb-marker sl"    style="left:${slPct}%"></div>
