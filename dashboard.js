@@ -102,18 +102,20 @@ const _voiceQueue = [];
 let   _voiceBusy  = false;
 
 // Prefer list of professional female voices (checked in order)
+// Chrome OS (Lenovo) uses Google voices — listed first
 const FEMALE_VOICE_NAMES = [
-  "Samantha",           // macOS / iOS — best quality
-  "Karen",              // macOS Australian
-  "Moira",              // macOS Irish
-  "Fiona",              // macOS Scottish
-  "Victoria",           // macOS
-  "Ava",                // macOS
-  "Allison",            // macOS
-  "Google UK English Female",
-  "Microsoft Zira",
-  "Microsoft Hazel",
-  "en-GB-Standard-A",
+  "Google UK English Female",   // Chrome OS / Chromebook — best option
+  "Google US English Female",
+  "Google Australian English",
+  "Samantha",                   // macOS / iOS
+  "Karen",                      // macOS Australian
+  "Moira",                      // macOS Irish
+  "Fiona",                      // macOS Scottish
+  "Victoria",                   // macOS
+  "Ava",                        // macOS
+  "Allison",                    // macOS
+  "Microsoft Zira",             // Windows
+  "Microsoft Hazel",            // Windows
 ];
 
 function _pickVoice() {
@@ -122,10 +124,12 @@ function _pickVoice() {
   if (!voices.length) return null;
   for (const name of FEMALE_VOICE_NAMES) {
     const v = voices.find(v => v.name.includes(name));
-    if (v) { _selVoice = v; return v; }
+    if (v) { _selVoice = v; console.log("[voice] selected:", v.name); return v; }
   }
-  // Fallback: any English female-sounding voice
-  _selVoice = voices.find(v => v.lang.startsWith("en")) || null;
+  // Fallback: any English voice
+  _selVoice = voices.find(v => v.lang.startsWith("en-GB")) ||
+              voices.find(v => v.lang.startsWith("en")) || null;
+  if (_selVoice) console.log("[voice] fallback:", _selVoice.name);
   return _selVoice;
 }
 
