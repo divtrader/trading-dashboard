@@ -1,9 +1,9 @@
 {
-  "last_updated_iso": "2026-05-19T06:58:46Z",
+  "last_updated_iso": "2026-05-19T08:12:39Z",
   "mexc_account": {
-    "unrealized_pnl": -35.3243,
-    "equity": 1816.0285,
-    "available": 553.6782,
+    "unrealized_pnl": -41.3106,
+    "equity": 1809.9348,
+    "available": 553.5708,
     "position_margin": 398.3574
   },
   "active_trades": [
@@ -42,7 +42,7 @@
       "trading_system": "John",
       "track_only": true,
       "status": "OPEN",
-      "price_at_run": 77043.55,
+      "price_at_run": 77083.93,
       "date_activated": "2026-04-28",
       "time_activated_utc": "12:00",
       "date_opened": "2026-04-28",
@@ -56,7 +56,7 @@
       "coin": "NEARUSDT",
       "direction": "Long",
       "entry_price": 1.48153256,
-      "sl": 1.40253769,
+      "sl": 1.48153256,
       "tp1": 1.663,
       "tp2": 1.81192462,
       "capital_usd": 100,
@@ -64,14 +64,14 @@
       "trading_system": "John",
       "track_only": true,
       "status": "OPEN",
-      "price_at_run": 1.641,
+      "price_at_run": 1.638,
       "date_activated": "2026-05-16",
       "time_activated_utc": "08:00",
       "date_opened": "2026-05-12",
       "time_opened_utc": "04:56",
       "conviction": "MEDIUM",
-      "tp1_hit": false,
-      "sl_moved_to_be": null
+      "tp1_hit": true,
+      "sl_moved_to_be": true
     },
     {
       "trade_id": "BNBUSDT_20260512_CJ_M_001",
@@ -86,7 +86,7 @@
       "trading_system": "John",
       "track_only": true,
       "status": "OPEN",
-      "price_at_run": 644.26,
+      "price_at_run": 642.64,
       "date_activated": "2026-05-17",
       "time_activated_utc": "20:00",
       "date_opened": "2026-05-12",
@@ -963,6 +963,12 @@
       "direction": "Long",
       "trading_system": "John",
       "entry_price": 75838.91889335
+    },
+    {
+      "coin": "NEARUSDT",
+      "direction": "Long",
+      "trading_system": "John",
+      "entry_price": 1.48153256
     }
   ],
   "stats": {
