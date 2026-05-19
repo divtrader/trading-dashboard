@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex,nofollow">
 <title>Spyker Trading Inc — Dashboard</title>
-<link rel="stylesheet" href="style.css?v=64">
+<link rel="stylesheet" href="style.css?v=65">
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
@@ -51,22 +51,7 @@
       <div class="hero-main">
         <div class="hero-pnls">
           <div class="pnl-block paper-block">
-            <div class="paper-top">
-              <div class="pnl-block-label">Portfolio P&amp;L · Paper</div>
-              <div class="hero-donut">
-                <div class="donut-wrap">
-                  <svg viewBox="0 0 120 120" class="donut-svg">
-                    <circle class="donut-track" cx="60" cy="60" r="50"/>
-                    <circle class="donut-fill" cx="60" cy="60" r="50" id="donut-fill-circle"/>
-                  </svg>
-                  <div class="donut-center">
-                    <div class="donut-pct" id="donut-pct">—</div>
-                    <div class="donut-label">WIN RATE</div>
-                  </div>
-                </div>
-                <div class="donut-sub" id="donut-sub">— closed</div>
-              </div>
-            </div>
+            <div class="pnl-block-label">Portfolio P&amp;L · Paper</div>
             <div class="value hero-value" id="portfolio-total">—</div>
             <div class="hero-return" id="hero-pct">—</div>
             <div class="hero-breakdown">
@@ -83,6 +68,20 @@
               <div class="hero-stat">
                 <div class="hero-stat-label">Capital</div>
                 <div class="hero-stat-val" id="hero-capital">—</div>
+              </div>
+              <div class="hero-stat-sep"></div>
+              <div class="hero-donut-inline">
+                <div class="donut-wrap">
+                  <svg viewBox="0 0 120 120" class="donut-svg">
+                    <circle class="donut-track" cx="60" cy="60" r="50"/>
+                    <circle class="donut-fill" cx="60" cy="60" r="50" id="donut-fill-circle"/>
+                  </svg>
+                  <div class="donut-center">
+                    <div class="donut-pct" id="donut-pct">—</div>
+                    <div class="donut-label">WIN RATE</div>
+                  </div>
+                </div>
+                <div class="donut-sub" id="donut-sub">— closed</div>
               </div>
             </div>
           </div>
@@ -159,6 +158,6 @@
   </div>
 </main>
 
-<script src="dashboard.js?v=64"></script>
+<script src="dashboard.js?v=65"></script>
 </body>
 </html>

@@ -170,12 +170,12 @@ main {
   gap: 44px;
   align-items: start;
 }
-.paper-top {
+.hero-donut-inline {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 16px;
-  margin-bottom: 4px;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
 }
 .pnl-divider {
   background: linear-gradient(180deg, transparent, var(--border-hi) 25%, var(--border-hi) 75%, transparent);
@@ -406,8 +406,8 @@ main {
 }
 .donut-wrap {
   position: relative;
-  width: 110px;
-  height: 110px;
+  width: 90px;
+  height: 90px;
 }
 .donut-svg {
   width: 100%;
@@ -437,7 +437,7 @@ main {
   justify-content: center;
 }
 .donut-pct {
-  font-size: 30px;
+  font-size: 22px;
   font-weight: 800;
   color: var(--text);
   letter-spacing: -1px;
