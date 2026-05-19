@@ -659,8 +659,10 @@ function renderHero(enrichedOpen) {
   }
   const pctEl2 = $("hero-pct");
   if (pctEl2) {
-    const retPct = totalCap > 0 ? (total / totalCap) * 100 : 0;
-    pctEl2.textContent = (retPct >= 0 ? "+" : "") + retPct.toFixed(1) + "% return on capital";
+    const closedCap = (state.stats.closed_count ?? 0) * 100;
+    const totalDeployed = closedCap + totalCap;
+    const retPct = totalDeployed > 0 ? (total / totalDeployed) * 100 : 0;
+    pctEl2.textContent = (retPct >= 0 ? "+" : "") + retPct.toFixed(2) + "% on all capital deployed";
     pctEl2.className = "hero-return " + cls(total);
   }
 
