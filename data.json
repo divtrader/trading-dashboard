@@ -1,9 +1,9 @@
 {
-  "last_updated_iso": "2026-05-18T21:38:17Z",
+  "last_updated_iso": "2026-05-19T04:28:49Z",
   "mexc_account": {
-    "unrealized_pnl": -46.0555,
-    "equity": 1805.3258,
-    "available": 553.7067,
+    "unrealized_pnl": -42.8788,
+    "equity": 1808.474,
+    "available": 553.6782,
     "position_margin": 398.3574
   },
   "active_trades": [
@@ -42,7 +42,7 @@
       "trading_system": "John",
       "track_only": true,
       "status": "OPEN",
-      "price_at_run": 77048.14,
+      "price_at_run": 76719.63,
       "date_activated": "2026-04-28",
       "time_activated_utc": "12:00",
       "date_opened": "2026-04-28",
@@ -64,7 +64,7 @@
       "trading_system": "John",
       "track_only": true,
       "status": "OPEN",
-      "price_at_run": 1.593,
+      "price_at_run": 1.603,
       "date_activated": "2026-05-16",
       "time_activated_utc": "08:00",
       "date_opened": "2026-05-12",
@@ -86,7 +86,7 @@
       "trading_system": "John",
       "track_only": true,
       "status": "OPEN",
-      "price_at_run": 645.41,
+      "price_at_run": 641.94,
       "date_activated": "2026-05-17",
       "time_activated_utc": "20:00",
       "date_opened": "2026-05-12",
@@ -402,6 +402,28 @@
       "conviction": "MEDIUM",
       "tp1_hit": false,
       "sl_moved_to_be": false
+    },
+    {
+      "trade_id": "ETHUSDT_20260519_CB_001",
+      "coin": "ETHUSDT",
+      "direction": "Short",
+      "entry_price": 2164.98668396,
+      "sl": 2211.77374066,
+      "tp1": 2050.43447549,
+      "tp2": 1846.2594219,
+      "capital_usd": 100,
+      "leverage": 3,
+      "trading_system": "Braam",
+      "track_only": false,
+      "status": "PENDING",
+      "price_at_run": 2129.01,
+      "date_activated": null,
+      "time_activated_utc": null,
+      "date_opened": "2026-05-19",
+      "time_opened_utc": "04:28",
+      "conviction": "MEDIUM",
+      "tp1_hit": false,
+      "sl_moved_to_be": false
     }
   ],
   "recent_signals": [
@@ -428,6 +450,18 @@
       "conviction": "MEDIUM",
       "track_only": false,
       "iso": "2026-05-18T20:20:00Z"
+    },
+    {
+      "trade_id": "ETHUSDT_20260519_CB_001",
+      "coin": "ETHUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "entry_price": 2164.98668396,
+      "tp1": 2050.43447549,
+      "sl": 2211.77374066,
+      "conviction": "MEDIUM",
+      "track_only": false,
+      "iso": "2026-05-19T04:28:00Z"
     }
   ],
   "recent_opens": [
@@ -965,13 +999,6 @@
     }
   ],
   "recent_cancels": [
-    {
-      "coin": "XLMUSDT",
-      "direction": "Short",
-      "trading_system": "John",
-      "close_reason": "False activation: flag bar (May 15 12:00 UTC) opened at $0.15910 (already above ",
-      "iso": "2026-05-18T16:20:00Z"
-    },
     {
       "coin": "ONDOUSDT",
       "direction": "Short",
