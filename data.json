@@ -1,8 +1,8 @@
 {
-  "last_updated_iso": "2026-05-19T04:28:49Z",
+  "last_updated_iso": "2026-05-19T06:58:46Z",
   "mexc_account": {
-    "unrealized_pnl": -42.8788,
-    "equity": 1808.474,
+    "unrealized_pnl": -35.3243,
+    "equity": 1816.0285,
     "available": 553.6782,
     "position_margin": 398.3574
   },
@@ -42,7 +42,7 @@
       "trading_system": "John",
       "track_only": true,
       "status": "OPEN",
-      "price_at_run": 76719.63,
+      "price_at_run": 77043.55,
       "date_activated": "2026-04-28",
       "time_activated_utc": "12:00",
       "date_opened": "2026-04-28",
@@ -64,7 +64,7 @@
       "trading_system": "John",
       "track_only": true,
       "status": "OPEN",
-      "price_at_run": 1.603,
+      "price_at_run": 1.641,
       "date_activated": "2026-05-16",
       "time_activated_utc": "08:00",
       "date_opened": "2026-05-12",
@@ -86,7 +86,7 @@
       "trading_system": "John",
       "track_only": true,
       "status": "OPEN",
-      "price_at_run": 641.94,
+      "price_at_run": 644.26,
       "date_activated": "2026-05-17",
       "time_activated_utc": "20:00",
       "date_opened": "2026-05-12",
@@ -272,72 +272,6 @@
       "sl_moved_to_be": false
     },
     {
-      "trade_id": "UNIUSDT_20260518_CB_001",
-      "coin": "UNIUSDT",
-      "direction": "Short",
-      "entry_price": 3.63672829,
-      "sl": 3.80271255,
-      "tp1": 3.06745658,
-      "tp2": 2.70557491,
-      "capital_usd": 100,
-      "leverage": 3,
-      "trading_system": "Braam",
-      "track_only": false,
-      "status": "PENDING",
-      "price_at_run": 3.426,
-      "date_activated": null,
-      "time_activated_utc": null,
-      "date_opened": "2026-05-18",
-      "time_opened_utc": "04:39",
-      "conviction": "MEDIUM",
-      "tp1_hit": false,
-      "sl_moved_to_be": false
-    },
-    {
-      "trade_id": "RENDERUSDT_20260518_CB_001",
-      "coin": "RENDERUSDT",
-      "direction": "Short",
-      "entry_price": 1.91554413,
-      "sl": 2.00648859,
-      "tp1": 1.69306418,
-      "tp2": 1.34202281,
-      "capital_usd": 100,
-      "leverage": 3,
-      "trading_system": "Braam",
-      "track_only": false,
-      "status": "PENDING",
-      "price_at_run": 1.778,
-      "date_activated": null,
-      "time_activated_utc": null,
-      "date_opened": "2026-05-18",
-      "time_opened_utc": "04:39",
-      "conviction": "MEDIUM",
-      "tp1_hit": false,
-      "sl_moved_to_be": false
-    },
-    {
-      "trade_id": "LINKUSDT_20260518_CB_001",
-      "coin": "LINKUSDT",
-      "direction": "Short",
-      "entry_price": 9.91057747,
-      "sl": 10.27750619,
-      "tp1": 9.07846484,
-      "tp2": 8.03498761,
-      "capital_usd": 100,
-      "leverage": 3,
-      "trading_system": "Braam",
-      "track_only": false,
-      "status": "PENDING",
-      "price_at_run": 9.53,
-      "date_activated": null,
-      "time_activated_utc": null,
-      "date_opened": "2026-05-18",
-      "time_opened_utc": "04:39",
-      "conviction": "MEDIUM",
-      "tp1_hit": false,
-      "sl_moved_to_be": false
-    },
-    {
       "trade_id": "XLMUSDT_20260518_CB_001",
       "coin": "XLMUSDT",
       "direction": "Short",
@@ -427,18 +361,6 @@
     }
   ],
   "recent_signals": [
-    {
-      "trade_id": "APTUSDT_20260518_CB_001",
-      "coin": "APTUSDT",
-      "direction": "Short",
-      "trading_system": "Braam",
-      "entry_price": 0.96050184,
-      "tp1": 0.87726167,
-      "sl": 0.997453,
-      "conviction": "MEDIUM",
-      "track_only": false,
-      "iso": "2026-05-18T17:48:00Z"
-    },
     {
       "trade_id": "LTCUSDT_20260518_CB_001",
       "coin": "LTCUSDT",
@@ -1012,6 +934,27 @@
       "trading_system": "Braam",
       "close_reason": "6/8 signals opposing Short for 2 consecutive runs \u2014 conviction has collapsed, se",
       "iso": "2026-05-18T20:54:00Z"
+    },
+    {
+      "coin": "UNIUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "close_reason": "6/8 signals opposing Short for 2 consecutive runs \u2014 conviction has collapsed, se",
+      "iso": "2026-05-19T06:58:00Z"
+    },
+    {
+      "coin": "RENDERUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "close_reason": "6/8 signals opposing Short for 2 consecutive runs \u2014 conviction has collapsed, se",
+      "iso": "2026-05-19T06:58:00Z"
+    },
+    {
+      "coin": "LINKUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "close_reason": "6/8 signals opposing Short for 2 consecutive runs \u2014 conviction has collapsed, se",
+      "iso": "2026-05-19T06:58:00Z"
     }
   ],
   "tp1_hits_open": [
