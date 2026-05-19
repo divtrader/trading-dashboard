@@ -88,144 +88,81 @@ const _rootStyle = getComputedStyle(document.documentElement);
 const cssVar = (name) => _rootStyle.getPropertyValue(name).trim();
 const cls = (n) => (n >= 0 ? "pos" : "neg");
 
-// ── Voice / TTS — Duke Nukem mode 🎮 ─────────────────────────────────────────
-// Uses Web Speech API. All alerts delivered with Duke's signature demeanour.
+// ── Voice — Duke Nukem 3D Audio Clips 🎮 ──────────────────────────────────────
+// Plays actual Duke Nukem 3D WAV clips hosted in /duke/ directory.
 // All alerts deduplicated by key in localStorage — fires once per trade event.
 
-// Duke Nukem phrase banks — picked randomly for variety
-const _duke = {
-  ready: [
-    "I'm back, and I'm ready to make you rich. Come get some.",
-    "Hail to the king, baby. Duke Nukem is on the clock.",
-    "I've got balls of steel and a live price feed. Let's rock.",
-  ],
-  signal: (coin, dir, sys) => _pick([
-    `Hail to the king, baby! Fresh signal — ${coin} ${dir}. ${sys} system. It's ass-kicking time.`,
-    `Come get some! New trade lined up. ${coin} ${dir}, ${sys}. Don't be a damn fool — set your limit order.`,
-    `Holy shit, a new signal. ${coin} ${dir}. ${sys} system is locked and loaded. Let's rock!`,
-  ]),
-  entry: (coin, dir, sys) => _pick([
-    `It's time to kick ass and make money! ${coin} ${dir} is now active. ${sys} system in the game.`,
-    `We're in, baby! ${coin} ${dir} just went live. ${sys}. Damn, I'm good.`,
-    `Holy crap, ${coin} ${dir} entry hit. ${sys} system. Nobody messes with Duke Nukem.`,
-  ]),
-  tp1: (coin, dir) => _pick([
-    `Damn, I'm good! ${coin} ${dir} hit take profit one. Partial position banked, baby!`,
-    `Shake it, baby! ${coin} ${dir}, TP one is done. Eighty percent of the money, zero percent of the crap.`,
-    `I've got balls of steel and a fat take profit. ${coin} ${dir} TP one hit. Come get some more!`,
-  ]),
-  sl: (coin, dir) => _pick([
-    `Son of a bitch! ${coin} ${dir} just got stopped out. Shake it off — Duke always comes back.`,
-    `What the hell?! Stop loss triggered on ${coin} ${dir}. Nobody wins 'em all. Let's rock the next one.`,
-    `Shit happens. ${coin} ${dir} stopped out. Even Duke takes an L sometimes. Hail to the king, baby.`,
-  ]),
-  tp2: (coin, dir) => _pick([
-    `Holy shit! ${coin} ${dir} hit take profit two. Full trade closed. Nobody messes with Duke!`,
-    `It's time to go celebrate, baby! ${coin} ${dir}, TP two. Trade closed. Damn, I'm good.`,
-    `${coin} ${dir} — all the way to TP two! Come get some! Duke Nukem delivers.`,
-  ]),
-};
 function _pick(arr) { return arr[Math.floor(Math.random() * arr.length)]; }
 
-const MUTE_KEY    = "dashMute_v1";
-const VSEEN_KEY   = "dashVoiceSeen_v1";
-let   _voiceMuted = localStorage.getItem(MUTE_KEY) === "1";
-let   _voiceReady = false;
-let   _selVoice   = null;
-const _voiceQueue = [];
-let   _voiceBusy  = false;
+// Clip mapping: event type → WAV files in /duke/
+// Clips sourced from Duke Nukem 3D (3D Realms) — personal/non-commercial use
+const _clipMap = {
+  ready:  ["hail01.wav", "cool01.wav", "rockin02.wav"],
+  signal: ["getsom1a.wav", "hail01.wav", "wansom4a.wav"],
+  entry:  ["letsrk03.wav", "getsom1a.wav"],
+  tp1:    ["imgood12.wav", "shake2a.wav"],
+  sl:     ["oops.wav"],
+  tp2:    ["piece02.wav", "imgood12.wav"],
+};
 
-// Prefer list of professional female voices (checked in order)
-// Chrome OS (Lenovo) uses Google voices — listed first
-const FEMALE_VOICE_NAMES = [
-  "Google UK English Male",     // Chrome OS — deep male voice
-  "Google US English Male",
-  "Microsoft David",            // Windows male
-  "Google UK English Female",   // fallback
-  "Samantha",                   // macOS fallback
-];
+const MUTE_KEY  = "dashMute_v1";
+const VSEEN_KEY = "dashVoiceSeen_v1";
+let _voiceMuted = localStorage.getItem(MUTE_KEY) === "1";
 
-function _pickVoice() {
-  if (_selVoice) return _selVoice;
-  const voices = speechSynthesis.getVoices();
-  if (!voices.length) return null;
-  for (const name of FEMALE_VOICE_NAMES) {
-    const v = voices.find(v => v.name.includes(name));
-    if (v) { _selVoice = v; console.log("[voice] selected:", v.name); return v; }
-  }
-  // Fallback: any English voice
-  _selVoice = voices.find(v => v.lang.startsWith("en-GB")) ||
-              voices.find(v => v.lang.startsWith("en")) || null;
-  if (_selVoice) console.log("[voice] fallback:", _selVoice.name);
-  return _selVoice;
+// Audio queue — prevents clips overlapping
+const _audioQueue = [];
+let _audioBusy = false;
+
+function _playNext() {
+  if (_audioBusy || !_audioQueue.length || _voiceMuted) return;
+  _audioBusy = true;
+  const src = _audioQueue.shift();
+  const a = new Audio("duke/" + src);
+  a.volume = 1.0;
+  a.onended = () => { _audioBusy = false; setTimeout(_playNext, 300); };
+  a.onerror = () => { console.warn("[duke] failed:", src); _audioBusy = false; setTimeout(_playNext, 300); };
+  a.play().catch(err => { console.warn("[duke] play blocked:", err.message); _audioBusy = false; });
 }
 
-// Preload voices (Chrome lazy-loads them)
-if (window.speechSynthesis) {
-  speechSynthesis.getVoices(); // kick load
-  speechSynthesis.onvoiceschanged = () => { _voiceReady = true; _pickVoice(); };
-  _voiceReady = true;
+function _playDuke(clipType) {
+  if (_voiceMuted) return;
+  const clips = _clipMap[clipType] || _clipMap.signal;
+  _audioQueue.push(_pick(clips));
+  _playNext();
 }
 
-function _speakNext() {
-  if (_voiceBusy || !_voiceQueue.length || _voiceMuted) return;
-  _voiceBusy = true;
-  const text = _voiceQueue.shift();
-  const utt  = new SpeechSynthesisUtterance(text);
-  const v    = _pickVoice();
-  if (v) utt.voice = v;
-  utt.rate   = 0.82;   // slower = more gravelly
-  utt.pitch  = 0.55;   // low pitch = Duke-ish baritone
-  utt.volume = 1.0;
-  utt.onend  = utt.onerror = () => { _voiceBusy = false; setTimeout(_speakNext, 400); };
-  try { speechSynthesis.speak(utt); } catch { _voiceBusy = false; }
-}
-
-function speak(text) {
-  if (!window.speechSynthesis || _voiceMuted) return;
-  _voiceQueue.push(text);
-  _speakNext();
-}
-
-// Dedup: each voice key fires only once (persists across reloads)
+// Dedup: each alert key fires only once (persists across reloads)
 let vseen = new Set(JSON.parse(localStorage.getItem(VSEEN_KEY) || "[]"));
 function saveVseen() {
   localStorage.setItem(VSEEN_KEY, JSON.stringify([...vseen].slice(-800)));
 }
-function maybeSpeak(key, text) {
+function maybeSpeak(key, clipType) {
   if (vseen.has(key)) return false;
   vseen.add(key);
   saveVseen();
-  speak(text);
+  _playDuke(clipType);
   return true;
 }
 
-// Coin name helper: strip USDT suffix for natural speech
+// Coin name helper: strip USDT suffix
 function coinName(t) { return t.coin.replace(/USDT$/i, ""); }
 
 // Mute toggle wired to header button
-// First unmute also speaks a test phrase so user can confirm voice is working
-let _voiceTestedOnce = false;
 function toggleMute() {
   _voiceMuted = !_voiceMuted;
   localStorage.setItem(MUTE_KEY, _voiceMuted ? "1" : "0");
   const btn = document.getElementById("mute-btn");
   if (btn) btn.textContent = _voiceMuted ? "🔇" : "🔊";
-  if (_voiceMuted) {
-    speechSynthesis.cancel();
-  } else {
-    // Speak immediately to confirm voice is active + show which voice was picked
+  if (!_voiceMuted) {
+    // Play a clip immediately to confirm Duke is live
     setTimeout(() => {
-      const v = _pickVoice();
-      const name = v ? v.name.replace("Google ", "").replace(" Female","") : "default";
-      _showVoiceToast(name);
-      speak(_pick(_duke.ready));
-      _voiceTestedOnce = true;
+      _showVoiceToast("Duke is live 🎮");
+      _playDuke("ready");
     }, 200);
   }
 }
 
-function _showVoiceToast(voiceName) {
+function _showVoiceToast(msg) {
   let t = document.getElementById("voice-toast");
   if (!t) {
     t = document.createElement("div");
@@ -239,7 +176,7 @@ function _showVoiceToast(voiceName) {
     `;
     document.body.appendChild(t);
   }
-  t.textContent = `🔊 ${voiceName}`;
+  t.textContent = `🔊 ${msg}`;
   t.style.opacity = "1";
   clearTimeout(t._hide);
   t._hide = setTimeout(() => { t.style.opacity = "0"; }, 3000);
@@ -258,8 +195,7 @@ function checkLiveLevels() {
     if (t.status === "PENDING") {
       const atEntry = isLong ? live <= t.entry_price : live >= t.entry_price;
       if (atEntry) {
-        maybeSpeak(`voice:entry:${t.trade_id}`,
-          _duke.entry(coinName(t), t.direction, t.trading_system));
+        maybeSpeak(`voice:entry:${t.trade_id}`, "entry");
       }
 
     } else if (t.status === "OPEN") {
@@ -267,16 +203,14 @@ function checkLiveLevels() {
       if (!t.tp1_hit && t.tp1) {
         const tp1Hit = isLong ? live >= t.tp1 : live <= t.tp1;
         if (tp1Hit) {
-          maybeSpeak(`voice:tp1live:${t.trade_id}`,
-            _duke.tp1(coinName(t), t.direction));
+          maybeSpeak(`voice:tp1live:${t.trade_id}`, "tp1");
         }
       }
       // SL hit
       if (t.sl) {
         const slHit = isLong ? live <= t.sl : live >= t.sl;
         if (slHit) {
-          maybeSpeak(`voice:sllive:${t.trade_id}`,
-            _duke.sl(coinName(t), t.direction));
+          maybeSpeak(`voice:sllive:${t.trade_id}`, "sl");
         }
       }
     }
@@ -355,9 +289,10 @@ async function fetchData() {
     state.lastCronIso = d.last_updated_iso || null;
     state.lastFetch = Date.now();
 
-    // Voice test events — injected via data.json for testing, always unique IDs (timestamp-based)
+    // Voice test events — injected via data.json for testing, always unique IDs (timestamp-type-step)
     for (const e of (d.voice_test_events || [])) {
-      maybeSpeak(`voice:test:${e.id}`, e.text);
+      const clipType = e.id.split("-")[1] || "signal"; // extract type from "ts-type-step"
+      maybeSpeak(`voice:test:${e.id}`, clipType);
     }
 
     // Voice: new pending signals (only fire for signals ≤30min old to avoid replaying history)
@@ -365,14 +300,12 @@ async function fetchData() {
     for (const t of state.recentSignals) {
       const age = t.iso ? new Date(t.iso).getTime() : 0;
       if (age >= _sigCutoff) {
-        maybeSpeak(`voice:signal:${t.trade_id}`,
-          _duke.signal(coinName(t), t.direction, t.trading_system));
+        maybeSpeak(`voice:signal:${t.trade_id}`, "signal");
       }
     }
     // Voice: PENDING → OPEN activations (entry hit, confirmed by data.json)
     for (const t of recentOpens) {
-      maybeSpeak(`voice:entry:${t.trade_id}`,
-        _duke.entry(coinName(t), t.direction, t.trading_system));
+      maybeSpeak(`voice:entry:${t.trade_id}`, "entry");
     }
 
     subscribeWs();
@@ -392,7 +325,7 @@ function detectEvents(newTrades, newCloses, testEvents) {
       const evId = `tp1:${t.trade_id}`;
       if (!seen.has(evId)) events.push({ id: evId, type: "tp1", trade: t });
       // Voice — confirmed by data.json (fires once, deduped against live detection key too)
-      maybeSpeak(`voice:tp1live:${t.trade_id}`, _duke.tp1(coinName(t), t.direction));
+      maybeSpeak(`voice:tp1live:${t.trade_id}`, "tp1");
     }
   }
 
@@ -403,9 +336,9 @@ function detectEvents(newTrades, newCloses, testEvents) {
     // Voice for SL / TP2
     const status = t.status || "";
     if (status === "STOPPED" || status === "STOPPED_AFTER_TP1") {
-      maybeSpeak(`voice:sl:${t.trade_id}`, _duke.sl(coinName(t), t.direction));
+      maybeSpeak(`voice:sl:${t.trade_id}`, "sl");
     } else if (status === "TP2_HIT") {
-      maybeSpeak(`voice:tp2:${t.trade_id}`, _duke.tp2(coinName(t), t.direction));
+      maybeSpeak(`voice:tp2:${t.trade_id}`, "tp2");
     }
   }
 
