@@ -82,6 +82,10 @@ const _cf = document.getElementById("confetti"); if (_cf) _cf.innerHTML = "";
 const $ = (id) => document.getElementById(id);
 const fmtUsd = (n) => (n >= 0 ? "+$" : "-$") + Math.abs(n).toFixed(2);
 const fmtPct = (n) => (n >= 0 ? "+" : "") + n.toFixed(2) + "%";
+
+// Read a CSS variable from the root — allows themes to control JS-injected colors
+const _rootStyle = getComputedStyle(document.documentElement);
+const cssVar = (name) => _rootStyle.getPropertyValue(name).trim();
 const cls = (n) => (n >= 0 ? "pos" : "neg");
 
 // Animated number counter — smoothly transitions displayed value over ~600ms
@@ -439,7 +443,7 @@ function renderMexcPositions(positions) {
     const ePct  = posOf(p.entry);
     const mPct  = posOf(p.mark);
     const tpPct = (p.tp != null && p.tp > 0) ? posOf(p.tp) : null;   // = 100 when set
-    const liveColor = p.unrealized_pnl >= 0 ? "#00c9a7" : "#ff4d5e";
+    const liveColor = p.unrealized_pnl >= 0 ? cssVar("--green") : cssVar("--red");
 
     const titleAttr = `Entry ${p.entry} · Mark ${p.mark} · SL ${p.sl ?? "(liq " + p.liq + ")"}${p.tp ? " · TP " + p.tp : ""}`;
 
@@ -582,7 +586,7 @@ function renderPaperBars(enrichedOpen) {
     const t1Pct  = posOf(tp1);
     const t2Pct  = hasTP2 ? posOf(tp2) : null;
 
-    const liveColor = lPct < 33 ? "#ff4d5e" : lPct > 66 ? "#00c9a7" : "#ffb74d";
+    const liveColor = lPct < 33 ? cssVar("--red") : lPct > 66 ? cssVar("--green") : cssVar("--orange");
 
     const pct = t.leveragedPct ?? 0;
     const usd = t.usd ?? 0;
@@ -840,7 +844,7 @@ function positionBar(t) {
   const distSL  = Math.abs((live - sl)          / entry_price * 100).toFixed(1);
   const distTP1 = Math.abs((tp1  - live)         / entry_price * 100).toFixed(1);
   const distTP2 = hasTP2 ? Math.abs((tp2 - live) / entry_price * 100).toFixed(1) : null;
-  const liveColor = lPct < 33 ? "#ff4d5e" : lPct > 66 ? "#00c9a7" : "#ffb74d";
+  const liveColor = lPct < 33 ? cssVar("--red") : lPct > 66 ? cssVar("--green") : cssVar("--orange");
 
   const achievedFill = tp1_hit ? `
         <div class="pos-achieved-fill" style="left:${Math.min(ePct,t1Pct).toFixed(1)}%;width:${Math.abs(t1Pct-ePct).toFixed(1)}%"></div>` : "";
@@ -1010,7 +1014,7 @@ function renderPendingTriggers() {
     const t1Pct = posOf(tp1);
     const t2Pct = hasTP2 ? posOf(tp2) : null;
 
-    const liveColor = t.inZone ? "#FF9800" : "#5a6585";
+    const liveColor = t.inZone ? cssVar("--orange") : cssVar("--muted");
     const distLabel = t.inZone ? "IN ZONE" : `${t.distPct.toFixed(1)}% away`;
     const distCls   = t.inZone ? "pos" : "muted-val";
 
@@ -1102,7 +1106,12 @@ function renderActivity() {
   }).join("");
 }
 
-const SYS_COLOR = { John: "#5B8DEF", Braam: "#ffab40", Mong: "#a76adb" };
+// System accent colors — read from CSS vars if defined (allows theme overrides), else use defaults
+const SYS_COLOR = {
+  John:  cssVar("--sys-john")  || "#5B8DEF",
+  Braam: cssVar("--sys-braam") || "#ffab40",
+  Mong:  cssVar("--sys-mong")  || "#a76adb"
+};
 const SYS_TAG   = { John: "Trend · Breakout", Braam: "EMA Pullback", Mong: "Mean Reversion" };
 
 function renderSystems() {
