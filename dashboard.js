@@ -177,12 +177,45 @@ function maybeSpeak(key, text) {
 function coinName(t) { return t.coin.replace(/USDT$/i, ""); }
 
 // Mute toggle wired to header button
+// First unmute also speaks a test phrase so user can confirm voice is working
+let _voiceTestedOnce = false;
 function toggleMute() {
   _voiceMuted = !_voiceMuted;
   localStorage.setItem(MUTE_KEY, _voiceMuted ? "1" : "0");
   const btn = document.getElementById("mute-btn");
   if (btn) btn.textContent = _voiceMuted ? "🔇" : "🔊";
-  if (_voiceMuted) speechSynthesis.cancel();
+  if (_voiceMuted) {
+    speechSynthesis.cancel();
+  } else {
+    // Speak immediately to confirm voice is active + show which voice was picked
+    setTimeout(() => {
+      const v = _pickVoice();
+      const name = v ? v.name.replace("Google ", "").replace(" Female","") : "default";
+      _showVoiceToast(name);
+      speak(`Voice alerts active. Using ${name}.`);
+      _voiceTestedOnce = true;
+    }, 200);
+  }
+}
+
+function _showVoiceToast(voiceName) {
+  let t = document.getElementById("voice-toast");
+  if (!t) {
+    t = document.createElement("div");
+    t.id = "voice-toast";
+    t.style.cssText = `
+      position:fixed; bottom:60px; left:50%; transform:translateX(-50%);
+      background:rgba(0,201,167,0.92); color:#fff; font-size:13px; font-weight:700;
+      padding:8px 18px; border-radius:20px; z-index:200; white-space:nowrap;
+      box-shadow:0 4px 16px rgba(0,0,0,0.4); pointer-events:none;
+      transition:opacity 0.4s ease;
+    `;
+    document.body.appendChild(t);
+  }
+  t.textContent = `🔊 ${voiceName}`;
+  t.style.opacity = "1";
+  clearTimeout(t._hide);
+  t._hide = setTimeout(() => { t.style.opacity = "0"; }, 3000);
 }
 
 // Real-time level monitoring — runs on every WS price tick.
