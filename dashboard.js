@@ -1348,8 +1348,9 @@ function renderSystems() {
           </div>
         </div>
         <div class="metric"><span class="k">Open</span><span class="v">${sysOpen.length}</span></div>
+        <div class="metric"><span class="k">Closed</span><span class="v">${closed}</span></div>
         <div class="metric"><span class="k">Unrealized</span><span class="v ${cls(sysUnreal)}">${fmtUsd(sysUnreal)}</span></div>
-        <div class="metric"><span class="k">Realized · ${closed}t</span><span class="v ${cls(realized)}">${fmtUsd(realized)}</span></div>
+        <div class="metric"><span class="k">Realized</span><span class="v ${cls(realized)}">${fmtUsd(realized)}</span></div>
       </div>
     `;
   }).join("");
