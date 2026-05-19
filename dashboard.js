@@ -138,18 +138,11 @@ let   _voiceBusy  = false;
 // Prefer list of professional female voices (checked in order)
 // Chrome OS (Lenovo) uses Google voices — listed first
 const FEMALE_VOICE_NAMES = [
-  "Google UK English Female",   // Chrome OS / Chromebook — best option
-  "Google US English Female",
-  "Google Australian English",
-  "Samantha",                   // macOS / iOS
-  "Karen",                      // macOS Australian
-  "Moira",                      // macOS Irish
-  "Fiona",                      // macOS Scottish
-  "Victoria",                   // macOS
-  "Ava",                        // macOS
-  "Allison",                    // macOS
-  "Microsoft Zira",             // Windows
-  "Microsoft Hazel",            // Windows
+  "Google UK English Male",     // Chrome OS — deep male voice
+  "Google US English Male",
+  "Microsoft David",            // Windows male
+  "Google UK English Female",   // fallback
+  "Samantha",                   // macOS fallback
 ];
 
 function _pickVoice() {
@@ -181,8 +174,8 @@ function _speakNext() {
   const utt  = new SpeechSynthesisUtterance(text);
   const v    = _pickVoice();
   if (v) utt.voice = v;
-  utt.rate   = 0.90;
-  utt.pitch  = 1.05;
+  utt.rate   = 0.82;   // slower = more gravelly
+  utt.pitch  = 0.55;   // low pitch = Duke-ish baritone
   utt.volume = 1.0;
   utt.onend  = utt.onerror = () => { _voiceBusy = false; setTimeout(_speakNext, 400); };
   try { speechSynthesis.speak(utt); } catch { _voiceBusy = false; }
