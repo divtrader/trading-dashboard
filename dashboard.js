@@ -1309,14 +1309,18 @@ function renderActivity() {
 
 // System accent colors — read from CSS vars if defined (allows theme overrides), else use defaults
 const SYS_COLOR = {
-  John:  cssVar("--sys-john")  || "#5B8DEF",
-  Braam: cssVar("--sys-braam") || "#ffab40",
-  Mong:  cssVar("--sys-mong")  || "#a76adb"
+  John:    cssVar("--sys-john")  || "#5B8DEF",
+  Braam:   cssVar("--sys-braam") || "#ffab40",
+  Mong:    cssVar("--sys-mong")  || "#a76adb",
+  William: "#5a5a6e",
 };
-const SYS_TAG   = { John: "Trend · Breakout", Braam: "EMA Pullback", Mong: "Mean Reversion" };
+const SYS_TAG = {
+  John: "Trend · Breakout", Braam: "EMA Pullback",
+  Mong: "Mean Reversion",   William: "Decommissioned",
+};
 
 function renderSystems() {
-  const systems = ["John", "Braam", "Mong"];
+  const systems = ["John", "Braam", "Mong", "William"];
   const open = state.trades.filter(t => t.status === "OPEN");
   const r = 18, circ = 2 * Math.PI * r;
   const html = systems.map(name => {
@@ -1331,8 +1335,9 @@ function renderSystems() {
     const color = SYS_COLOR[name] || "#7280B5";
     const dash = circ * Math.min(1, wr / 100);
     const offset = circ - dash;
+    const decom = name === "William";
     return `
-      <div class="sys-row" data-sys="${name}">
+      <div class="sys-row" data-sys="${name}" style="${decom ? 'opacity:0.45' : ''}">
         <div class="sys-name-block">
           <div class="sys-ring-wrap">
             <svg class="sys-ring-svg" viewBox="0 0 44 44">
