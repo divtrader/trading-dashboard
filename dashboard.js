@@ -292,6 +292,11 @@ async function fetchData() {
     state.lastCronIso = d.last_updated_iso || null;
     state.lastFetch = Date.now();
 
+    // Voice test events — injected via data.json for testing, always unique IDs (timestamp-based)
+    for (const e of (d.voice_test_events || [])) {
+      maybeSpeak(`voice:test:${e.id}`, e.text);
+    }
+
     // Voice: new pending signals (only fire for signals ≤30min old to avoid replaying history)
     const _sigCutoff = Date.now() - 30 * 60_000;
     for (const t of state.recentSignals) {
