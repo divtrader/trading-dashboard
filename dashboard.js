@@ -88,6 +88,139 @@ const _rootStyle = getComputedStyle(document.documentElement);
 const cssVar = (name) => _rootStyle.getPropertyValue(name).trim();
 const cls = (n) => (n >= 0 ? "pos" : "neg");
 
+// ── Voice / TTS ──────────────────────────────────────────────────────────────
+// Uses Web Speech API (built-in, free). On iOS/macOS "Samantha" is excellent.
+// On Chrome desktop "Google UK English Female" is used as fallback.
+// All alerts deduplicated by key in localStorage — fires once per trade event.
+
+const MUTE_KEY    = "dashMute_v1";
+const VSEEN_KEY   = "dashVoiceSeen_v1";
+let   _voiceMuted = localStorage.getItem(MUTE_KEY) === "1";
+let   _voiceReady = false;
+let   _selVoice   = null;
+const _voiceQueue = [];
+let   _voiceBusy  = false;
+
+// Prefer list of professional female voices (checked in order)
+const FEMALE_VOICE_NAMES = [
+  "Samantha",           // macOS / iOS — best quality
+  "Karen",              // macOS Australian
+  "Moira",              // macOS Irish
+  "Fiona",              // macOS Scottish
+  "Victoria",           // macOS
+  "Ava",                // macOS
+  "Allison",            // macOS
+  "Google UK English Female",
+  "Microsoft Zira",
+  "Microsoft Hazel",
+  "en-GB-Standard-A",
+];
+
+function _pickVoice() {
+  if (_selVoice) return _selVoice;
+  const voices = speechSynthesis.getVoices();
+  if (!voices.length) return null;
+  for (const name of FEMALE_VOICE_NAMES) {
+    const v = voices.find(v => v.name.includes(name));
+    if (v) { _selVoice = v; return v; }
+  }
+  // Fallback: any English female-sounding voice
+  _selVoice = voices.find(v => v.lang.startsWith("en")) || null;
+  return _selVoice;
+}
+
+// Preload voices (Chrome lazy-loads them)
+if (window.speechSynthesis) {
+  speechSynthesis.getVoices(); // kick load
+  speechSynthesis.onvoiceschanged = () => { _voiceReady = true; _pickVoice(); };
+  _voiceReady = true;
+}
+
+function _speakNext() {
+  if (_voiceBusy || !_voiceQueue.length || _voiceMuted) return;
+  _voiceBusy = true;
+  const text = _voiceQueue.shift();
+  const utt  = new SpeechSynthesisUtterance(text);
+  const v    = _pickVoice();
+  if (v) utt.voice = v;
+  utt.rate   = 0.90;
+  utt.pitch  = 1.05;
+  utt.volume = 1.0;
+  utt.onend  = utt.onerror = () => { _voiceBusy = false; setTimeout(_speakNext, 400); };
+  try { speechSynthesis.speak(utt); } catch { _voiceBusy = false; }
+}
+
+function speak(text) {
+  if (!window.speechSynthesis || _voiceMuted) return;
+  _voiceQueue.push(text);
+  _speakNext();
+}
+
+// Dedup: each voice key fires only once (persists across reloads)
+let vseen = new Set(JSON.parse(localStorage.getItem(VSEEN_KEY) || "[]"));
+function saveVseen() {
+  localStorage.setItem(VSEEN_KEY, JSON.stringify([...vseen].slice(-800)));
+}
+function maybeSpeak(key, text) {
+  if (vseen.has(key)) return false;
+  vseen.add(key);
+  saveVseen();
+  speak(text);
+  return true;
+}
+
+// Coin name helper: strip USDT suffix for natural speech
+function coinName(t) { return t.coin.replace(/USDT$/i, ""); }
+
+// Mute toggle wired to header button
+function toggleMute() {
+  _voiceMuted = !_voiceMuted;
+  localStorage.setItem(MUTE_KEY, _voiceMuted ? "1" : "0");
+  const btn = document.getElementById("mute-btn");
+  if (btn) btn.textContent = _voiceMuted ? "🔇" : "🔊";
+  if (_voiceMuted) speechSynthesis.cancel();
+}
+
+// Real-time level monitoring — runs on every WS price tick.
+// Detects TP1, SL, and entry zone hits without waiting for the 4H GHA job.
+function checkLiveLevels() {
+  const now = Date.now();
+  for (const t of state.trades) {
+    if (t.track_only) continue;
+    const live = state.prices[t.coin];
+    if (!live) continue;
+    const isLong = t.direction === "Long";
+
+    if (t.status === "PENDING") {
+      // Entry zone: price has reached or crossed the entry level
+      const atEntry = isLong ? live <= t.entry_price : live >= t.entry_price;
+      if (atEntry) {
+        maybeSpeak(`voice:entry:${t.trade_id}`,
+          `${coinName(t)} ${t.direction} entry zone reached. ${t.trading_system} system.`);
+      }
+
+    } else if (t.status === "OPEN") {
+      // TP1 — only if data.json hasn't flagged it yet (real-time detection)
+      if (!t.tp1_hit && t.tp1) {
+        const tp1Hit = isLong ? live >= t.tp1 : live <= t.tp1;
+        if (tp1Hit) {
+          maybeSpeak(`voice:tp1live:${t.trade_id}`,
+            `${coinName(t)} ${t.direction}. Take profit one hit. Position partially closed.`);
+        }
+      }
+      // SL hit
+      if (t.sl) {
+        const slHit = isLong ? live <= t.sl : live >= t.sl;
+        if (slHit) {
+          maybeSpeak(`voice:sllive:${t.trade_id}`,
+            `${coinName(t)} ${t.direction}. Stop loss triggered.`);
+        }
+      }
+    }
+  }
+}
+// ─────────────────────────────────────────────────────────────────────────────
+
 // Animated number counter — smoothly transitions displayed value over ~600ms
 const _animTargets = new Map();
 function animateValue(el, toVal, formatter) {
@@ -132,6 +265,12 @@ function saveSeen(set) {
 let seen = loadSeen();
 let firstRun = !localStorage.getItem(FIRST_RUN_KEY);
 
+// Set correct mute icon on load
+document.addEventListener("DOMContentLoaded", () => {
+  const btn = document.getElementById("mute-btn");
+  if (btn) btn.textContent = _voiceMuted ? "🔇" : "🔊";
+});
+
 async function fetchData() {
   try {
     const r = await fetch(DATA_URL + "?t=" + Date.now(), { cache: "no-store" });
@@ -152,6 +291,22 @@ async function fetchData() {
     state.mexcAccount = d.mexc_account || null;
     state.lastCronIso = d.last_updated_iso || null;
     state.lastFetch = Date.now();
+
+    // Voice: new pending signals (only fire for signals ≤30min old to avoid replaying history)
+    const _sigCutoff = Date.now() - 30 * 60_000;
+    for (const t of state.recentSignals) {
+      const age = t.iso ? new Date(t.iso).getTime() : 0;
+      if (age >= _sigCutoff) {
+        maybeSpeak(`voice:signal:${t.trade_id}`,
+          `New trade signal. ${coinName(t)} ${t.direction}. ${t.trading_system} system.`);
+      }
+    }
+    // Voice: PENDING → OPEN activations (entry hit, confirmed by data.json)
+    for (const t of recentOpens) {
+      maybeSpeak(`voice:entry:${t.trade_id}`,
+        `${coinName(t)} ${t.direction} trade is now active. ${t.trading_system} system.`);
+    }
+
     subscribeWs();
     render();
   } catch (e) {
@@ -168,6 +323,9 @@ function detectEvents(newTrades, newCloses, testEvents) {
     if (t.tp1_hit) {
       const evId = `tp1:${t.trade_id}`;
       if (!seen.has(evId)) events.push({ id: evId, type: "tp1", trade: t });
+      // Voice — confirmed by data.json (fires once, deduped against live detection key too)
+      maybeSpeak(`voice:tp1live:${t.trade_id}`,
+        `${coinName(t)} ${t.direction}. Take profit one hit. Position partially closed.`);
     }
   }
 
@@ -175,6 +333,15 @@ function detectEvents(newTrades, newCloses, testEvents) {
   for (const t of newCloses) {
     const evId = `close:${t.trade_id}`;
     if (!seen.has(evId)) events.push({ id: evId, type: t.won ? "win" : "loss", trade: t });
+    // Voice for SL / TP2
+    const status = t.status || "";
+    if (status === "STOPPED" || status === "STOPPED_AFTER_TP1") {
+      maybeSpeak(`voice:sl:${t.trade_id}`,
+        `${coinName(t)} ${t.direction}. Stop loss triggered.`);
+    } else if (status === "TP2_HIT") {
+      maybeSpeak(`voice:tp2:${t.trade_id}`,
+        `${coinName(t)} ${t.direction}. Take profit two hit. Trade closed.`);
+    }
   }
 
   // Manual test events (always fire, even on first run — pushed deliberately)
@@ -338,6 +505,7 @@ function subscribeWs() {
       state.prices[sym] = p;
       renderLive();
       renderPendingTriggers();
+      checkLiveLevels();
     } catch {}
   };
   ws.onclose = () => setTimeout(subscribeWs, 5000);
