@@ -1,8 +1,8 @@
 {
-  "last_updated_iso": "2026-05-19T08:29:31Z",
+  "last_updated_iso": "2026-05-19T10:54:09Z",
   "mexc_account": {
-    "unrealized_pnl": -40.0541,
-    "equity": 1811.1913,
+    "unrealized_pnl": -55.1698,
+    "equity": 1796.0756,
     "available": 553.5708,
     "position_margin": 398.3574
   },
@@ -43,7 +43,7 @@
       "trading_system": "John",
       "track_only": true,
       "status": "OPEN",
-      "price_at_run": 77083.93,
+      "price_at_run": 76919.25,
       "date_activated": "2026-04-28",
       "time_activated_utc": "12:00",
       "date_opened": "2026-04-28",
@@ -60,13 +60,13 @@
       "entry_price": 1.48153256,
       "sl": 1.48153256,
       "tp1": 1.663,
-      "tp2": 1.81192462,
+      "tp2": 1.8,
       "capital_usd": 100,
       "leverage": 3,
       "trading_system": "John",
       "track_only": true,
       "status": "OPEN",
-      "price_at_run": 1.638,
+      "price_at_run": 1.609,
       "date_activated": "2026-05-16",
       "time_activated_utc": "08:00",
       "date_opened": "2026-05-12",
@@ -89,7 +89,7 @@
       "trading_system": "John",
       "track_only": true,
       "status": "OPEN",
-      "price_at_run": 642.64,
+      "price_at_run": 639.51,
       "date_activated": "2026-05-17",
       "time_activated_utc": "20:00",
       "date_opened": "2026-05-12",
@@ -926,13 +926,6 @@
   ],
   "recent_cancels": [
     {
-      "coin": "BNBUSDT",
-      "direction": "Short",
-      "trading_system": "Braam",
-      "close_reason": "6/8 signals opposing Short for 2 consecutive runs \u2014 conviction has collapsed, se",
-      "iso": "2026-05-18T20:54:00Z"
-    },
-    {
       "coin": "UNIUSDT",
       "direction": "Short",
       "trading_system": "Braam",
@@ -989,11 +982,5 @@
         "closed_count": 7
       }
     }
-  },
-  "voice_test_events": [
-    {
-      "id": "1779186661-tp2-v77t4",
-      "text": "test"
-    }
-  ]
+  }
 }
