@@ -88,10 +88,44 @@ const _rootStyle = getComputedStyle(document.documentElement);
 const cssVar = (name) => _rootStyle.getPropertyValue(name).trim();
 const cls = (n) => (n >= 0 ? "pos" : "neg");
 
-// ── Voice / TTS ──────────────────────────────────────────────────────────────
-// Uses Web Speech API (built-in, free). On iOS/macOS "Samantha" is excellent.
-// On Chrome desktop "Google UK English Female" is used as fallback.
+// ── Voice / TTS — Duke Nukem mode 🎮 ─────────────────────────────────────────
+// Uses Web Speech API. All alerts delivered with Duke's signature demeanour.
 // All alerts deduplicated by key in localStorage — fires once per trade event.
+
+// Duke Nukem phrase banks — picked randomly for variety
+const _duke = {
+  ready: [
+    "I'm back, and I'm ready to make you rich. Come get some.",
+    "Hail to the king, baby. Duke Nukem is on the clock.",
+    "I've got balls of steel and a live price feed. Let's rock.",
+  ],
+  signal: (coin, dir, sys) => _pick([
+    `Hail to the king, baby! Fresh signal — ${coin} ${dir}. ${sys} system. It's ass-kicking time.`,
+    `Come get some! New trade lined up. ${coin} ${dir}, ${sys}. Don't be a damn fool — set your limit order.`,
+    `Holy shit, a new signal. ${coin} ${dir}. ${sys} system is locked and loaded. Let's rock!`,
+  ]),
+  entry: (coin, dir, sys) => _pick([
+    `It's time to kick ass and make money! ${coin} ${dir} is now active. ${sys} system in the game.`,
+    `We're in, baby! ${coin} ${dir} just went live. ${sys}. Damn, I'm good.`,
+    `Holy crap, ${coin} ${dir} entry hit. ${sys} system. Nobody messes with Duke Nukem.`,
+  ]),
+  tp1: (coin, dir) => _pick([
+    `Damn, I'm good! ${coin} ${dir} hit take profit one. Partial position banked, baby!`,
+    `Shake it, baby! ${coin} ${dir}, TP one is done. Eighty percent of the money, zero percent of the crap.`,
+    `I've got balls of steel and a fat take profit. ${coin} ${dir} TP one hit. Come get some more!`,
+  ]),
+  sl: (coin, dir) => _pick([
+    `Son of a bitch! ${coin} ${dir} just got stopped out. Shake it off — Duke always comes back.`,
+    `What the hell?! Stop loss triggered on ${coin} ${dir}. Nobody wins 'em all. Let's rock the next one.`,
+    `Shit happens. ${coin} ${dir} stopped out. Even Duke takes an L sometimes. Hail to the king, baby.`,
+  ]),
+  tp2: (coin, dir) => _pick([
+    `Holy shit! ${coin} ${dir} hit take profit two. Full trade closed. Nobody messes with Duke!`,
+    `It's time to go celebrate, baby! ${coin} ${dir}, TP two. Trade closed. Damn, I'm good.`,
+    `${coin} ${dir} — all the way to TP two! Come get some! Duke Nukem delivers.`,
+  ]),
+};
+function _pick(arr) { return arr[Math.floor(Math.random() * arr.length)]; }
 
 const MUTE_KEY    = "dashMute_v1";
 const VSEEN_KEY   = "dashVoiceSeen_v1";
@@ -192,7 +226,7 @@ function toggleMute() {
       const v = _pickVoice();
       const name = v ? v.name.replace("Google ", "").replace(" Female","") : "default";
       _showVoiceToast(name);
-      speak(`Voice alerts active. Using ${name}.`);
+      speak(_pick(_duke.ready));
       _voiceTestedOnce = true;
     }, 200);
   }
@@ -229,20 +263,19 @@ function checkLiveLevels() {
     const isLong = t.direction === "Long";
 
     if (t.status === "PENDING") {
-      // Entry zone: price has reached or crossed the entry level
       const atEntry = isLong ? live <= t.entry_price : live >= t.entry_price;
       if (atEntry) {
         maybeSpeak(`voice:entry:${t.trade_id}`,
-          `${coinName(t)} ${t.direction} entry zone reached. ${t.trading_system} system.`);
+          _duke.entry(coinName(t), t.direction, t.trading_system));
       }
 
     } else if (t.status === "OPEN") {
-      // TP1 — only if data.json hasn't flagged it yet (real-time detection)
+      // TP1 — real-time, before data.json updates
       if (!t.tp1_hit && t.tp1) {
         const tp1Hit = isLong ? live >= t.tp1 : live <= t.tp1;
         if (tp1Hit) {
           maybeSpeak(`voice:tp1live:${t.trade_id}`,
-            `${coinName(t)} ${t.direction}. Take profit one hit. Position partially closed.`);
+            _duke.tp1(coinName(t), t.direction));
         }
       }
       // SL hit
@@ -250,7 +283,7 @@ function checkLiveLevels() {
         const slHit = isLong ? live <= t.sl : live >= t.sl;
         if (slHit) {
           maybeSpeak(`voice:sllive:${t.trade_id}`,
-            `${coinName(t)} ${t.direction}. Stop loss triggered.`);
+            _duke.sl(coinName(t), t.direction));
         }
       }
     }
@@ -340,13 +373,13 @@ async function fetchData() {
       const age = t.iso ? new Date(t.iso).getTime() : 0;
       if (age >= _sigCutoff) {
         maybeSpeak(`voice:signal:${t.trade_id}`,
-          `New trade signal. ${coinName(t)} ${t.direction}. ${t.trading_system} system.`);
+          _duke.signal(coinName(t), t.direction, t.trading_system));
       }
     }
     // Voice: PENDING → OPEN activations (entry hit, confirmed by data.json)
     for (const t of recentOpens) {
       maybeSpeak(`voice:entry:${t.trade_id}`,
-        `${coinName(t)} ${t.direction} trade is now active. ${t.trading_system} system.`);
+        _duke.entry(coinName(t), t.direction, t.trading_system));
     }
 
     subscribeWs();
@@ -366,8 +399,7 @@ function detectEvents(newTrades, newCloses, testEvents) {
       const evId = `tp1:${t.trade_id}`;
       if (!seen.has(evId)) events.push({ id: evId, type: "tp1", trade: t });
       // Voice — confirmed by data.json (fires once, deduped against live detection key too)
-      maybeSpeak(`voice:tp1live:${t.trade_id}`,
-        `${coinName(t)} ${t.direction}. Take profit one hit. Position partially closed.`);
+      maybeSpeak(`voice:tp1live:${t.trade_id}`, _duke.tp1(coinName(t), t.direction));
     }
   }
 
@@ -378,11 +410,9 @@ function detectEvents(newTrades, newCloses, testEvents) {
     // Voice for SL / TP2
     const status = t.status || "";
     if (status === "STOPPED" || status === "STOPPED_AFTER_TP1") {
-      maybeSpeak(`voice:sl:${t.trade_id}`,
-        `${coinName(t)} ${t.direction}. Stop loss triggered.`);
+      maybeSpeak(`voice:sl:${t.trade_id}`, _duke.sl(coinName(t), t.direction));
     } else if (status === "TP2_HIT") {
-      maybeSpeak(`voice:tp2:${t.trade_id}`,
-        `${coinName(t)} ${t.direction}. Take profit two hit. Trade closed.`);
+      maybeSpeak(`voice:tp2:${t.trade_id}`, _duke.tp2(coinName(t), t.direction));
     }
   }
 
