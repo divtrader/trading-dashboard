@@ -1321,9 +1321,11 @@ function renderSystems() {
   const r = 18, circ = 2 * Math.PI * r;
   const html = systems.map(name => {
     const sysOpen = open.filter(t => t.trading_system === name);
-    const sysUnreal = sysOpen.reduce((s, t) => s + computeUnrealized(t).usd, 0);
+    const sysComputed = sysOpen.map(t => computeUnrealized(t));
+    const sysUnreal = sysComputed.reduce((s, c) => s + c.usd, 0);
+    const sysTp1Banked = sysComputed.reduce((s, c) => s + (c.tp1BankedUsd || 0), 0);
     const stats = state.stats.per_system?.[name] || {};
-    const realized = stats.realized_pnl_usd ?? 0;
+    const realized = (stats.realized_pnl_usd ?? 0) + sysTp1Banked;
     const wr = stats.win_rate_pct ?? 0;
     const closed = stats.closed_count ?? 0;
     const color = SYS_COLOR[name] || "#7280B5";
