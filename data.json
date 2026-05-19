@@ -1,8 +1,8 @@
 {
-  "last_updated_iso": "2026-05-19T10:54:09Z",
+  "last_updated_iso": "2026-05-19T11:02:56Z",
   "mexc_account": {
-    "unrealized_pnl": -55.1698,
-    "equity": 1796.0756,
+    "unrealized_pnl": -52.141,
+    "equity": 1799.1044,
     "available": 553.5708,
     "position_margin": 398.3574
   },
@@ -43,7 +43,7 @@
       "trading_system": "John",
       "track_only": true,
       "status": "OPEN",
-      "price_at_run": 76919.25,
+      "price_at_run": 77046.98,
       "date_activated": "2026-04-28",
       "time_activated_utc": "12:00",
       "date_opened": "2026-04-28",
@@ -66,7 +66,7 @@
       "trading_system": "John",
       "track_only": true,
       "status": "OPEN",
-      "price_at_run": 1.609,
+      "price_at_run": 1.606,
       "date_activated": "2026-05-16",
       "time_activated_utc": "08:00",
       "date_opened": "2026-05-12",
@@ -89,7 +89,7 @@
       "trading_system": "John",
       "track_only": true,
       "status": "OPEN",
-      "price_at_run": 639.51,
+      "price_at_run": 640.38,
       "date_activated": "2026-05-17",
       "time_activated_utc": "20:00",
       "date_opened": "2026-05-12",
@@ -374,6 +374,29 @@
       "tp1_hit": false,
       "sl_moved_to_be": false,
       "pnl_tp1_realized_usd": null
+    },
+    {
+      "trade_id": "BNBUSDT_20260519_CB_001",
+      "coin": "BNBUSDT",
+      "direction": "Short",
+      "entry_price": 650.72325456,
+      "sl": 662.21472662,
+      "tp1": 616.40831647,
+      "tp2": 572.80727797,
+      "capital_usd": 100,
+      "leverage": 3,
+      "trading_system": "Braam",
+      "track_only": false,
+      "status": "PENDING",
+      "price_at_run": 640.38,
+      "date_activated": null,
+      "time_activated_utc": null,
+      "date_opened": "2026-05-19",
+      "time_opened_utc": "11:02",
+      "conviction": "MEDIUM",
+      "tp1_hit": false,
+      "sl_moved_to_be": false,
+      "pnl_tp1_realized_usd": null
     }
   ],
   "recent_signals": [
@@ -388,6 +411,18 @@
       "conviction": "MEDIUM",
       "track_only": false,
       "iso": "2026-05-19T04:28:00Z"
+    },
+    {
+      "trade_id": "BNBUSDT_20260519_CB_001",
+      "coin": "BNBUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "entry_price": 650.72325456,
+      "tp1": 616.40831647,
+      "sl": 662.21472662,
+      "conviction": "MEDIUM",
+      "track_only": false,
+      "iso": "2026-05-19T11:02:00Z"
     }
   ],
   "recent_opens": [
