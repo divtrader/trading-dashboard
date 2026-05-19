@@ -348,8 +348,11 @@ function computeUnrealized(t) {
   const dir = t.direction === "Long" ? 1 : -1;
   const pricePct = ((live - t.entry_price) / t.entry_price) * 100 * dir;
   const leveragedPct = pricePct * (t.leverage || 1);
-  const usd = (t.capital_usd || 100) * (leveragedPct / 100);
-  return { live, pricePct, leveragedPct, usd };
+  // When TP1 is hit, 80% was already closed — only 20% of the position remains open
+  const remainingFraction = (t.tp1_hit && t.pnl_tp1_realized_usd != null) ? 0.2 : 1.0;
+  const usd = (t.capital_usd || 100) * remainingFraction * (leveragedPct / 100);
+  const tp1BankedUsd = (t.tp1_hit && t.pnl_tp1_realized_usd != null) ? (t.pnl_tp1_realized_usd || 0) : 0;
+  return { live, pricePct, leveragedPct, usd, tp1BankedUsd };
 }
 
 function render() {
@@ -589,8 +592,9 @@ function renderPaperBars(enrichedOpen) {
     const liveColor = lPct < 33 ? cssVar("--red") : lPct > 66 ? cssVar("--green") : cssVar("--orange");
 
     const pct = t.leveragedPct ?? 0;
-    const usd = t.usd ?? 0;
-    const pctCls = cls(pct);
+    // For tp1_hit trades: show total blended P&L (banked TP1 portion + remaining 20% live)
+    const usd = (t.tp1BankedUsd || 0) + (t.usd ?? 0);
+    const pctCls = cls(usd);
 
     // Filled segment showing TP1-achieved range
     const achieved = tp1Hit ? `<div class="pb-achieved" style="left:${Math.min(ePct,t1Pct).toFixed(1)}%;width:${Math.abs(t1Pct-ePct).toFixed(1)}%"></div>` : "";
@@ -637,7 +641,9 @@ function renderHero(enrichedOpen) {
   const enriched = enrichedOpen || state.trades.filter(t => t.status === "OPEN").map(t => ({ ...t, ...computeUnrealized(t) }));
   const unrealized = enriched.reduce((s, t) => s + t.usd, 0);
   const totalCap   = enriched.reduce((s, t) => s + (t.capital_usd || 100), 0);
-  const realized   = state.stats.realized_pnl_usd ?? 0;
+  // realized = fully-closed trades + banked TP1 portion from still-open tp1_hit trades
+  const tp1Banked  = enriched.reduce((s, t) => s + (t.tp1BankedUsd || 0), 0);
+  const realized   = (state.stats.realized_pnl_usd ?? 0) + tp1Banked;
   const total      = realized + unrealized;
 
   const pEl = $("portfolio-total");
