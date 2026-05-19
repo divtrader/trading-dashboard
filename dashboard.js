@@ -109,25 +109,41 @@ const MUTE_KEY  = "dashMute_v1";
 const VSEEN_KEY = "dashVoiceSeen_v1";
 let _voiceMuted = localStorage.getItem(MUTE_KEY) === "1";
 
-// Audio queue — prevents clips overlapping
+// Audio queue — each item: { src, context }
+// Duke clip plays first, then TTS speaks the trade context (coin, direction, event)
 const _audioQueue = [];
 let _audioBusy = false;
+
+function _speakContext(text, onDone) {
+  if (!text || !window.speechSynthesis) { onDone(); return; }
+  const utt = new SpeechSynthesisUtterance(text);
+  // Pick a low male Google voice on Chrome OS; fall back to any English
+  const voices = speechSynthesis.getVoices();
+  const v = voices.find(v => v.name.includes("Google UK English Male")) ||
+            voices.find(v => v.name.includes("Google US English")) ||
+            voices.find(v => v.lang.startsWith("en")) || null;
+  if (v) utt.voice = v;
+  utt.rate = 0.88; utt.pitch = 0.6; utt.volume = 1.0;
+  utt.onend = utt.onerror = onDone;
+  try { speechSynthesis.speak(utt); } catch { onDone(); }
+}
 
 function _playNext() {
   if (_audioBusy || !_audioQueue.length || _voiceMuted) return;
   _audioBusy = true;
-  const src = _audioQueue.shift();
+  const { src, context } = _audioQueue.shift();
   const a = new Audio("duke/" + src);
   a.volume = 1.0;
-  a.onended = () => { _audioBusy = false; setTimeout(_playNext, 300); };
-  a.onerror = () => { console.warn("[duke] failed:", src); _audioBusy = false; setTimeout(_playNext, 300); };
-  a.play().catch(err => { console.warn("[duke] play blocked:", err.message); _audioBusy = false; });
+  const done = () => { _audioBusy = false; setTimeout(_playNext, 300); };
+  a.onended = () => _speakContext(context, done);
+  a.onerror = () => { console.warn("[duke] failed:", src); _speakContext(context, done); };
+  a.play().catch(err => { console.warn("[duke] play blocked:", err.message); _speakContext(context, done); });
 }
 
-function _playDuke(clipType) {
+function _playDuke(clipType, context) {
   if (_voiceMuted) return;
   const clips = _clipMap[clipType] || _clipMap.signal;
-  _audioQueue.push(_pick(clips));
+  _audioQueue.push({ src: _pick(clips), context: context || null });
   _playNext();
 }
 
@@ -136,11 +152,11 @@ let vseen = new Set(JSON.parse(localStorage.getItem(VSEEN_KEY) || "[]"));
 function saveVseen() {
   localStorage.setItem(VSEEN_KEY, JSON.stringify([...vseen].slice(-800)));
 }
-function maybeSpeak(key, clipType) {
+function maybeSpeak(key, clipType, context) {
   if (vseen.has(key)) return false;
   vseen.add(key);
   saveVseen();
-  _playDuke(clipType);
+  _playDuke(clipType, context);
   return true;
 }
 
@@ -195,7 +211,8 @@ function checkLiveLevels() {
     if (t.status === "PENDING") {
       const atEntry = isLong ? live <= t.entry_price : live >= t.entry_price;
       if (atEntry) {
-        maybeSpeak(`voice:entry:${t.trade_id}`, "entry");
+        maybeSpeak(`voice:entry:${t.trade_id}`, "entry",
+          `${coinName(t)} ${t.direction}. Entry hit. Trade is now live.`);
       }
 
     } else if (t.status === "OPEN") {
@@ -203,14 +220,16 @@ function checkLiveLevels() {
       if (!t.tp1_hit && t.tp1) {
         const tp1Hit = isLong ? live >= t.tp1 : live <= t.tp1;
         if (tp1Hit) {
-          maybeSpeak(`voice:tp1live:${t.trade_id}`, "tp1");
+          maybeSpeak(`voice:tp1live:${t.trade_id}`, "tp1",
+            `${coinName(t)} ${t.direction}. Take profit one hit. Eighty percent banked.`);
         }
       }
       // SL hit
       if (t.sl) {
         const slHit = isLong ? live <= t.sl : live >= t.sl;
         if (slHit) {
-          maybeSpeak(`voice:sllive:${t.trade_id}`, "sl");
+          maybeSpeak(`voice:sllive:${t.trade_id}`, "sl",
+            `${coinName(t)} ${t.direction}. Stop loss hit. Trade closed.`);
         }
       }
     }
@@ -290,9 +309,12 @@ async function fetchData() {
     state.lastFetch = Date.now();
 
     // Voice test events — injected via data.json for testing, always unique IDs (timestamp-type-step)
+    const _testCtx = { signal: "New trade signal.", entry: "Entry hit. Trade is now live.",
+      tp1: "Take profit one hit. Eighty percent banked.", sl: "Stop loss hit. Trade closed.",
+      tp2: "Take profit two hit. Trade fully closed.", ready: "" };
     for (const e of (d.voice_test_events || [])) {
-      const clipType = e.id.split("-")[1] || "signal"; // extract type from "ts-type-step"
-      maybeSpeak(`voice:test:${e.id}`, clipType);
+      const clipType = e.id.split("-")[1] || "signal";
+      maybeSpeak(`voice:test:${e.id}`, clipType, _testCtx[clipType] || "");
     }
 
     // Voice: new pending signals (only fire for signals ≤30min old to avoid replaying history)
@@ -300,12 +322,14 @@ async function fetchData() {
     for (const t of state.recentSignals) {
       const age = t.iso ? new Date(t.iso).getTime() : 0;
       if (age >= _sigCutoff) {
-        maybeSpeak(`voice:signal:${t.trade_id}`, "signal");
+        maybeSpeak(`voice:signal:${t.trade_id}`, "signal",
+          `${coinName(t)} ${t.direction}. New signal. ${t.trading_system} system.`);
       }
     }
     // Voice: PENDING → OPEN activations (entry hit, confirmed by data.json)
     for (const t of recentOpens) {
-      maybeSpeak(`voice:entry:${t.trade_id}`, "entry");
+      maybeSpeak(`voice:entry:${t.trade_id}`, "entry",
+        `${coinName(t)} ${t.direction}. Entry hit. Trade is now live.`);
     }
 
     subscribeWs();
@@ -325,7 +349,8 @@ function detectEvents(newTrades, newCloses, testEvents) {
       const evId = `tp1:${t.trade_id}`;
       if (!seen.has(evId)) events.push({ id: evId, type: "tp1", trade: t });
       // Voice — confirmed by data.json (fires once, deduped against live detection key too)
-      maybeSpeak(`voice:tp1live:${t.trade_id}`, "tp1");
+      maybeSpeak(`voice:tp1live:${t.trade_id}`, "tp1",
+        `${coinName(t)} ${t.direction}. Take profit one hit. Eighty percent banked.`);
     }
   }
 
@@ -336,9 +361,11 @@ function detectEvents(newTrades, newCloses, testEvents) {
     // Voice for SL / TP2
     const status = t.status || "";
     if (status === "STOPPED" || status === "STOPPED_AFTER_TP1") {
-      maybeSpeak(`voice:sl:${t.trade_id}`, "sl");
+      maybeSpeak(`voice:sl:${t.trade_id}`, "sl",
+        `${coinName(t)} ${t.direction}. Stop loss hit. Trade closed.`);
     } else if (status === "TP2_HIT") {
-      maybeSpeak(`voice:tp2:${t.trade_id}`, "tp2");
+      maybeSpeak(`voice:tp2:${t.trade_id}`, "tp2",
+        `${coinName(t)} ${t.direction}. Take profit two hit. Trade fully closed.`);
     }
   }
 
