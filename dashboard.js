@@ -88,63 +88,59 @@ const _rootStyle = getComputedStyle(document.documentElement);
 const cssVar = (name) => _rootStyle.getPropertyValue(name).trim();
 const cls = (n) => (n >= 0 ? "pos" : "neg");
 
-// ── Voice — Duke Nukem 3D Audio Clips 🎮 ──────────────────────────────────────
-// Plays actual Duke Nukem 3D WAV clips hosted in /duke/ directory.
-// All alerts deduplicated by key in localStorage — fires once per trade event.
-
-function _pick(arr) { return arr[Math.floor(Math.random() * arr.length)]; }
-
-// Clip mapping: event type → WAV files in /duke/
-// Clips sourced from Duke Nukem 3D (3D Realms) — personal/non-commercial use
-const _clipMap = {
-  ready:  ["hail01.wav", "cool01.wav", "rockin02.wav"],
-  signal: ["getsom1a.wav", "hail01.wav", "wansom4a.wav"],
-  entry:  ["letsrk03.wav", "getsom1a.wav"],
-  tp1:    ["imgood12.wav", "shake2a.wav"],
-  sl:     ["oops.wav"],
-  tp2:    ["piece02.wav", "imgood12.wav"],
-};
+// ── Voice — Professional TTS alerts ──────────────────────────────────────────
+// Uses Web Speech API. All alerts deduplicated by key in localStorage.
 
 const MUTE_KEY  = "dashMute_v1";
 const VSEEN_KEY = "dashVoiceSeen_v1";
 let _voiceMuted = localStorage.getItem(MUTE_KEY) === "1";
+let _selVoice   = null;
+const _ttsQueue = [];
+let _ttsBusy    = false;
 
-// Audio queue — each item: { src, context }
-// Duke clip plays first, then TTS speaks the trade context (coin, direction, event)
-const _audioQueue = [];
-let _audioBusy = false;
+// Voice priority: female voices on Chrome OS / desktop
+const VOICE_PREFS = [
+  "Google UK English Female",
+  "Google US English Female",
+  "Microsoft Zira",
+  "Samantha",
+  "Google UK English Male",
+  "Google US English",
+];
 
-function _speakContext(text, onDone) {
-  if (!text || !window.speechSynthesis) { onDone(); return; }
-  const utt = new SpeechSynthesisUtterance(text);
-  // Pick a low male Google voice on Chrome OS; fall back to any English
+function _pickVoice() {
+  if (_selVoice) return _selVoice;
   const voices = speechSynthesis.getVoices();
-  const v = voices.find(v => v.name.includes("Google UK English Male")) ||
-            voices.find(v => v.name.includes("Google US English")) ||
-            voices.find(v => v.lang.startsWith("en")) || null;
+  if (!voices.length) return null;
+  for (const pref of VOICE_PREFS) {
+    const v = voices.find(v => v.name.includes(pref));
+    if (v) { _selVoice = v; console.log("[voice]", v.name); return v; }
+  }
+  _selVoice = voices.find(v => v.lang.startsWith("en")) || null;
+  return _selVoice;
+}
+
+if (window.speechSynthesis) {
+  speechSynthesis.getVoices();
+  speechSynthesis.onvoiceschanged = _pickVoice;
+}
+
+function _ttsNext() {
+  if (_ttsBusy || !_ttsQueue.length || _voiceMuted) return;
+  _ttsBusy = true;
+  const text = _ttsQueue.shift();
+  const utt = new SpeechSynthesisUtterance(text);
+  const v = _pickVoice();
   if (v) utt.voice = v;
-  utt.rate = 0.88; utt.pitch = 0.6; utt.volume = 1.0;
-  utt.onend = utt.onerror = onDone;
-  try { speechSynthesis.speak(utt); } catch { onDone(); }
+  utt.rate = 0.92; utt.pitch = 1.0; utt.volume = 1.0;
+  utt.onend = utt.onerror = () => { _ttsBusy = false; setTimeout(_ttsNext, 250); };
+  try { speechSynthesis.speak(utt); } catch { _ttsBusy = false; }
 }
 
-function _playNext() {
-  if (_audioBusy || !_audioQueue.length || _voiceMuted) return;
-  _audioBusy = true;
-  const { src, context } = _audioQueue.shift();
-  const a = new Audio("duke/" + src);
-  a.volume = 1.0;
-  const done = () => { _audioBusy = false; setTimeout(_playNext, 300); };
-  a.onended = () => _speakContext(context, done);
-  a.onerror = () => { console.warn("[duke] failed:", src); _speakContext(context, done); };
-  a.play().catch(err => { console.warn("[duke] play blocked:", err.message); _speakContext(context, done); });
-}
-
-function _playDuke(clipType, context) {
-  if (_voiceMuted) return;
-  const clips = _clipMap[clipType] || _clipMap.signal;
-  _audioQueue.push({ src: _pick(clips), context: context || null });
-  _playNext();
+function speak(text) {
+  if (!window.speechSynthesis || _voiceMuted || !text) return;
+  _ttsQueue.push(text);
+  _ttsNext();
 }
 
 // Dedup: each alert key fires only once (persists across reloads)
@@ -152,11 +148,10 @@ let vseen = new Set(JSON.parse(localStorage.getItem(VSEEN_KEY) || "[]"));
 function saveVseen() {
   localStorage.setItem(VSEEN_KEY, JSON.stringify([...vseen].slice(-800)));
 }
-function maybeSpeak(key, clipType, context) {
+function maybeSpeak(key, text) {
   if (vseen.has(key)) return false;
-  vseen.add(key);
-  saveVseen();
-  _playDuke(clipType, context);
+  vseen.add(key); saveVseen();
+  speak(text);
   return true;
 }
 
@@ -169,11 +164,13 @@ function toggleMute() {
   localStorage.setItem(MUTE_KEY, _voiceMuted ? "1" : "0");
   const btn = document.getElementById("mute-btn");
   if (btn) btn.textContent = _voiceMuted ? "🔇" : "🔊";
-  if (!_voiceMuted) {
-    // Play a clip immediately to confirm Duke is live
+  if (_voiceMuted) {
+    speechSynthesis.cancel();
+  } else {
     setTimeout(() => {
-      _showVoiceToast("Duke is live 🎮");
-      _playDuke("ready");
+      const v = _pickVoice();
+      _showVoiceToast(v ? v.name.replace("Google ","") : "Voice active");
+      speak("Voice alerts active.");
     }, 200);
   }
 }
@@ -211,7 +208,7 @@ function checkLiveLevels() {
     if (t.status === "PENDING") {
       const atEntry = isLong ? live <= t.entry_price : live >= t.entry_price;
       if (atEntry) {
-        maybeSpeak(`voice:entry:${t.trade_id}`, "entry",
+        maybeSpeak(`voice:entry:${t.trade_id}`,
           `${coinName(t)} ${t.direction}. Entry hit. Trade is now live.`);
       }
 
@@ -220,7 +217,7 @@ function checkLiveLevels() {
       if (!t.tp1_hit && t.tp1) {
         const tp1Hit = isLong ? live >= t.tp1 : live <= t.tp1;
         if (tp1Hit) {
-          maybeSpeak(`voice:tp1live:${t.trade_id}`, "tp1",
+          maybeSpeak(`voice:tp1live:${t.trade_id}`,
             `${coinName(t)} ${t.direction}. Take profit one hit. Eighty percent banked.`);
         }
       }
@@ -228,7 +225,7 @@ function checkLiveLevels() {
       if (t.sl) {
         const slHit = isLong ? live <= t.sl : live >= t.sl;
         if (slHit) {
-          maybeSpeak(`voice:sllive:${t.trade_id}`, "sl",
+          maybeSpeak(`voice:sllive:${t.trade_id}`,
             `${coinName(t)} ${t.direction}. Stop loss hit. Trade closed.`);
         }
       }
@@ -309,12 +306,17 @@ async function fetchData() {
     state.lastFetch = Date.now();
 
     // Voice test events — injected via data.json for testing, always unique IDs (timestamp-type-step)
-    const _testCtx = { signal: "New trade signal.", entry: "Entry hit. Trade is now live.",
-      tp1: "Take profit one hit. Eighty percent banked.", sl: "Stop loss hit. Trade closed.",
-      tp2: "Take profit two hit. Trade fully closed.", ready: "" };
+    const _testPhrases = {
+      signal: "New trade signal. Ethereum Long. John system.",
+      entry:  "Entry hit. Bitcoin Short is now live.",
+      tp1:    "Take profit one hit. Eighty percent banked.",
+      sl:     "Stop loss hit. Solana Long closed.",
+      tp2:    "Take profit two hit. Trade fully closed.",
+      ready:  "Voice alerts active.",
+    };
     for (const e of (d.voice_test_events || [])) {
-      const clipType = e.id.split("-")[1] || "signal";
-      maybeSpeak(`voice:test:${e.id}`, clipType, _testCtx[clipType] || "");
+      const evType = e.id.split("-")[1] || "signal";
+      maybeSpeak(`voice:test:${e.id}`, _testPhrases[evType] || e.text || "Alert.");
     }
 
     // Voice: new pending signals (only fire for signals ≤30min old to avoid replaying history)
@@ -322,13 +324,13 @@ async function fetchData() {
     for (const t of state.recentSignals) {
       const age = t.iso ? new Date(t.iso).getTime() : 0;
       if (age >= _sigCutoff) {
-        maybeSpeak(`voice:signal:${t.trade_id}`, "signal",
-          `${coinName(t)} ${t.direction}. New signal. ${t.trading_system} system.`);
+        maybeSpeak(`voice:signal:${t.trade_id}`,
+          `New signal. ${coinName(t)} ${t.direction}. ${t.trading_system} system.`);
       }
     }
     // Voice: PENDING → OPEN activations (entry hit, confirmed by data.json)
     for (const t of recentOpens) {
-      maybeSpeak(`voice:entry:${t.trade_id}`, "entry",
+      maybeSpeak(`voice:entry:${t.trade_id}`,
         `${coinName(t)} ${t.direction}. Entry hit. Trade is now live.`);
     }
 
@@ -349,7 +351,7 @@ function detectEvents(newTrades, newCloses, testEvents) {
       const evId = `tp1:${t.trade_id}`;
       if (!seen.has(evId)) events.push({ id: evId, type: "tp1", trade: t });
       // Voice — confirmed by data.json (fires once, deduped against live detection key too)
-      maybeSpeak(`voice:tp1live:${t.trade_id}`, "tp1",
+      maybeSpeak(`voice:tp1live:${t.trade_id}`,
         `${coinName(t)} ${t.direction}. Take profit one hit. Eighty percent banked.`);
     }
   }
@@ -361,10 +363,10 @@ function detectEvents(newTrades, newCloses, testEvents) {
     // Voice for SL / TP2
     const status = t.status || "";
     if (status === "STOPPED" || status === "STOPPED_AFTER_TP1") {
-      maybeSpeak(`voice:sl:${t.trade_id}`, "sl",
+      maybeSpeak(`voice:sl:${t.trade_id}`,
         `${coinName(t)} ${t.direction}. Stop loss hit. Trade closed.`);
     } else if (status === "TP2_HIT") {
-      maybeSpeak(`voice:tp2:${t.trade_id}`, "tp2",
+      maybeSpeak(`voice:tp2:${t.trade_id}`,
         `${coinName(t)} ${t.direction}. Take profit two hit. Trade fully closed.`);
     }
   }
