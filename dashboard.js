@@ -657,6 +657,12 @@ function renderHero(enrichedOpen) {
     cEl.textContent = enriched.length ? "$" + totalCap.toFixed(0) : "—";
     cEl.className = "hero-stat-val";
   }
+  const pctEl2 = $("hero-pct");
+  if (pctEl2) {
+    const retPct = totalCap > 0 ? (total / totalCap) * 100 : 0;
+    pctEl2.textContent = (retPct >= 0 ? "+" : "") + retPct.toFixed(1) + "% return on capital";
+    pctEl2.className = "hero-return " + cls(total);
+  }
 
   // Donut
   const wr = state.stats.win_rate_pct ?? 0;
