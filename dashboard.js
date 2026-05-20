@@ -293,21 +293,21 @@ function startHeatmapPolling() {
 }
 
 function _heatColor(pct) {
-  // Flat → neutral; up → green (darker with magnitude); down → red (darker with magnitude)
-  if (pct == null || isNaN(pct) || Math.abs(pct) < 0.1) return "#131c2e";
-  const t = Math.min(1, Math.abs(pct) / 6); // saturates at ±6%
+  // Uses dashboard colour DNA: teal (#00c9a7) for up, red (#ff4d5e) for down
+  if (pct == null || isNaN(pct) || Math.abs(pct) < 0.1) return "#0d1120";
+  const t = Math.min(1, Math.abs(pct) / 6); // full intensity at ±6%
   if (pct > 0) {
-    // light mint at +0.1% → rich emerald → dark forest at +6%
-    const r = Math.round(20  - 10  * t);
-    const g = Math.round(110 + (60  - 110) * t);   // 110 → 60 (darker as bigger)
-    const b = Math.round(65  - 40  * t);
-    return `rgb(${Math.max(0,r)},${Math.max(0,g)},${Math.max(0,b)})`;
+    // dark teal → richer teal (matches --green: #00c9a7)
+    const r = Math.round(4);
+    const g = Math.round(52  + (105 - 52)  * t);  // 52 → 105
+    const b = Math.round(44  + (88  - 44)  * t);  // 44 → 88
+    return `rgb(${r},${g},${b})`;
   } else {
-    // warm rose at -0.1% → vivid red → deep crimson at -6%
-    const r = Math.round(160 - 40  * t);            // 160 → 120
-    const g = Math.round(30  - 25  * t);
-    const b = Math.round(30  - 25  * t);
-    return `rgb(${r},${Math.max(0,g)},${Math.max(0,b)})`;
+    // dark red → richer red (matches --red: #ff4d5e)
+    const r = Math.round(65  + (130 - 65)  * t);  // 65 → 130
+    const g = Math.round(12  + (20  - 12)  * t);
+    const b = Math.round(18  + (26  - 18)  * t);
+    return `rgb(${r},${g},${b})`;
   }
 }
 
