@@ -293,22 +293,12 @@ function startHeatmapPolling() {
 }
 
 function _heatColor(pct) {
-  // Uses dashboard colour DNA: teal (#00c9a7) for up, red (#ff4d5e) for down
-  if (pct == null || isNaN(pct) || Math.abs(pct) < 0.1) return "#0d1120";
-  const t = Math.min(1, Math.abs(pct) / 6); // full intensity at ±6%
-  if (pct > 0) {
-    // teal family: mid teal at small, deep teal at large
-    const r = Math.round(8);
-    const g = Math.round(110 + (170 - 110) * t);  // 110 → 170
-    const b = Math.round(90  + (140 - 90)  * t);  // 90  → 140
-    return `rgb(${r},${g},${b})`;
-  } else {
-    // red family: mid red at small, deep red at large
-    const r = Math.round(160 + (210 - 160) * t);  // 160 → 210
-    const g = Math.round(30  + (50  - 30)  * t);  // 30  → 50
-    const b = Math.round(40  + (60  - 40)  * t);  // 40  → 60
-    return `rgb(${r},${g},${b})`;
-  }
+  // Glassmorphism: semi-transparent teal/red overlay — colour shows through
+  if (pct == null || isNaN(pct) || Math.abs(pct) < 0.1) return "rgba(255,255,255,0.04)";
+  const t = Math.min(1, Math.abs(pct) / 6);
+  const alpha = 0.18 + 0.32 * t; // 0.18 → 0.50 opacity as magnitude grows
+  if (pct > 0) return `rgba(0,201,167,${alpha.toFixed(2)})`; // --green
+  else          return `rgba(255,77,94,${alpha.toFixed(2)})`; // --red
 }
 
 function renderHeatmap() {
