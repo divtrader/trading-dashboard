@@ -261,7 +261,83 @@ function setTileGlow(tileEl, val) {
   tileEl.classList.toggle("glow-red",   val < -0.005);
 }
 
-let state = { trades: [], stats: {}, prices: {}, lastFetch: 0, lastCronIso: null, recentCloses: [], mexcAccount: null };
+let state = { trades: [], stats: {}, prices: {}, chg24h: {}, chg1h: {}, lastFetch: 0, lastCronIso: null, recentCloses: [], mexcAccount: null };
+
+// Full 24-coin watchlist for the heatmap screen
+const WATCHLIST = [
+  "BTCUSDT","ETHUSDT","SOLUSDT","XRPUSDT","DOGEUSDT","SUIUSDT",
+  "BNBUSDT","ADAUSDT","LINKUSDT","AVAXUSDT","TRXUSDT","TAOUSDT",
+  "NEARUSDT","APTUSDT","ONDOUSDT","RENDERUSDT","THETAUSDT",
+  "TONUSDT","UNIUSDT","XLMUSDT","ALGOUSDT","HBARUSDT",
+  "LTCUSDT","CAKEUSDT",
+];
+
+// Fetch 1h rolling window change for all watchlist coins — called every 60s
+let _heatmapTimer = null;
+async function fetchHeatmap1h() {
+  try {
+    const syms = JSON.stringify(WATCHLIST);
+    const r = await fetch(`https://api.binance.com/api/v3/ticker?symbols=${encodeURIComponent(syms)}&windowSize=1h`);
+    const data = await r.json();
+    for (const d of data) {
+      state.chg1h[d.symbol] = parseFloat(d.priceChangePercent);
+    }
+    renderHeatmap();
+  } catch(e) { console.warn("heatmap 1h fetch failed", e); }
+}
+
+function startHeatmapPolling() {
+  if (_heatmapTimer) return;
+  fetchHeatmap1h();
+  _heatmapTimer = setInterval(fetchHeatmap1h, 60_000);
+}
+
+function _heatColor(pct) {
+  // Returns a CSS colour: deep green at +8%, deep red at -8%, neutral near 0
+  const clamped = Math.max(-8, Math.min(8, pct));
+  if (clamped >= 0) {
+    const t = clamped / 8;
+    const r = Math.round(17  + (22  - 17)  * (1-t));
+    const g = Math.round(24  + (166 - 24)  * t);
+    const b = Math.round(47  + (104 - 47)  * (1-t));
+    return `rgb(${r},${g},${b})`;
+  } else {
+    const t = Math.abs(clamped) / 8;
+    const r = Math.round(17  + (239 - 17)  * t);
+    const g = Math.round(24  + (83  - 24)  * (1-t));
+    const b = Math.round(47  + (80  - 47)  * (1-t));
+    return `rgb(${r},${g},${b})`;
+  }
+}
+
+function renderHeatmap() {
+  const el = document.getElementById("heatmap-grid");
+  if (!el) return;
+  // Only render if screen 4 is active (perf optimisation)
+  const s4 = document.getElementById("screen-4");
+  if (!s4 || !s4.classList.contains("active")) return;
+
+  el.innerHTML = WATCHLIST.map(sym => {
+    const coin  = sym.replace("USDT", "");
+    const price = state.prices[sym];
+    const d24   = state.chg24h[sym];
+    const d1h   = state.chg1h[sym];
+    const bg    = d24 != null ? _heatColor(d24) : "#1a2233";
+    const priceTxt = price != null
+      ? (price >= 1000 ? `$${price.toLocaleString("en", {maximumFractionDigits:0})}`
+       : price >= 1    ? `$${price.toFixed(2)}`
+       : `$${price.toFixed(4)}`)
+      : "—";
+    const fmt = v => v != null ? `${v >= 0 ? "+" : ""}${v.toFixed(2)}%` : "—";
+    const cls1h  = d1h  != null ? (d1h  >= 0 ? "hm-pos" : "hm-neg") : "";
+    return `<div class="hm-tile" style="background:${bg}">
+      <div class="hm-coin">${coin}</div>
+      <div class="hm-price">${priceTxt}</div>
+      <div class="hm-chg24">${fmt(d24)}</div>
+      <div class="hm-1h ${cls1h}">1h ${fmt(d1h)}</div>
+    </div>`;
+  }).join("");
+}
 
 // Seen-events memory (so we don't replay celebrations on every refresh)
 const SEEN_KEY = "dashSeenEvents_v1";
@@ -527,12 +603,14 @@ function subscribeWs() {
   ws.onmessage = (ev) => {
     try {
       const msg = JSON.parse(ev.data);
-      const p = parseFloat(msg.data.c);
+      const p   = parseFloat(msg.data.c);
       const sym = msg.data.s;
-      state.prices[sym] = p;
+      state.prices[sym]    = p;
+      state.chg24h[sym]    = parseFloat(msg.data.P); // 24h % from miniTicker
       renderLive();
       renderPendingTriggers();
       checkLiveLevels();
+      renderHeatmap();
     } catch {}
   };
   ws.onclose = () => setTimeout(subscribeWs, 5000);
@@ -581,6 +659,7 @@ function render() {
   renderActivity();
   renderPendingTriggers();
   renderMexcCard();
+  startHeatmapPolling();
 }
 
 function renderMexcCard() {
@@ -1367,7 +1446,7 @@ function renderSystems() {
 // Screen navigation (swipeable — no auto-rotation)
 let screenIdx = 0;
 let screenTransitioning = false;
-const screens = ["screen-1", "screen-2", "screen-3"];
+const screens = ["screen-1", "screen-2", "screen-3", "screen-4"];
 
 function goToScreen(targetIdx, dir) {
   targetIdx = Math.max(0, Math.min(screens.length - 1, targetIdx));
@@ -1398,6 +1477,8 @@ function goToScreen(targetIdx, dir) {
   screenIdx = targetIdx;
   document.querySelectorAll(".dots .d").forEach(d => d.classList.remove("active"));
   document.querySelector(`.dots .d[data-i="${screenIdx}"]`).classList.add("active");
+  // Render heatmap when navigating to screen 4
+  if (screenIdx === 3) renderHeatmap();
 }
 
 function nextScreen() { goToScreen((screenIdx + 1) % screens.length, 1); }
