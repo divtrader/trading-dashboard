@@ -297,16 +297,16 @@ function _heatColor(pct) {
   if (pct == null || isNaN(pct) || Math.abs(pct) < 0.1) return "#0d1120";
   const t = Math.min(1, Math.abs(pct) / 6); // full intensity at ±6%
   if (pct > 0) {
-    // dark teal → richer teal (matches --green: #00c9a7)
-    const r = Math.round(4);
-    const g = Math.round(52  + (105 - 52)  * t);  // 52 → 105
-    const b = Math.round(44  + (88  - 44)  * t);  // 44 → 88
+    // teal family: mid teal at small, deep teal at large
+    const r = Math.round(8);
+    const g = Math.round(110 + (170 - 110) * t);  // 110 → 170
+    const b = Math.round(90  + (140 - 90)  * t);  // 90  → 140
     return `rgb(${r},${g},${b})`;
   } else {
-    // dark red → richer red (matches --red: #ff4d5e)
-    const r = Math.round(65  + (130 - 65)  * t);  // 65 → 130
-    const g = Math.round(12  + (20  - 12)  * t);
-    const b = Math.round(18  + (26  - 18)  * t);
+    // red family: mid red at small, deep red at large
+    const r = Math.round(160 + (210 - 160) * t);  // 160 → 210
+    const g = Math.round(30  + (50  - 30)  * t);  // 30  → 50
+    const b = Math.round(40  + (60  - 40)  * t);  // 40  → 60
     return `rgb(${r},${g},${b})`;
   }
 }
