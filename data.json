@@ -1,8 +1,8 @@
 {
-  "last_updated_iso": "2026-05-20T11:31:40Z",
+  "last_updated_iso": "2026-05-20T12:59:17Z",
   "mexc_account": {
-    "unrealized_pnl": -45.6781,
-    "equity": 1805.549,
+    "unrealized_pnl": -42.6648,
+    "equity": 1808.5623,
     "available": 553.5524,
     "position_margin": 398.3574
   },
@@ -43,7 +43,7 @@
       "trading_system": "John",
       "track_only": true,
       "status": "OPEN",
-      "price_at_run": 77482.18,
+      "price_at_run": 77639.09,
       "date_activated": "2026-04-28",
       "time_activated_utc": "12:00",
       "date_opened": "2026-04-28",
@@ -66,7 +66,7 @@
       "trading_system": "John",
       "track_only": true,
       "status": "OPEN",
-      "price_at_run": 1.638,
+      "price_at_run": 1.644,
       "date_activated": "2026-05-16",
       "time_activated_utc": "08:00",
       "date_opened": "2026-05-12",
@@ -89,7 +89,7 @@
       "trading_system": "John",
       "track_only": true,
       "status": "OPEN",
-      "price_at_run": 643.19,
+      "price_at_run": 645.05,
       "date_activated": "2026-05-17",
       "time_activated_utc": "20:00",
       "date_opened": "2026-05-12",
@@ -370,29 +370,6 @@
       "time_activated_utc": null,
       "date_opened": "2026-05-19",
       "time_opened_utc": "04:28",
-      "conviction": "MEDIUM",
-      "tp1_hit": false,
-      "sl_moved_to_be": false,
-      "pnl_tp1_realized_usd": null
-    },
-    {
-      "trade_id": "BNBUSDT_20260519_CB_001",
-      "coin": "BNBUSDT",
-      "direction": "Short",
-      "entry_price": 650.72325456,
-      "sl": 662.21472662,
-      "tp1": 616.40831647,
-      "tp2": 572.80727797,
-      "capital_usd": 100,
-      "leverage": 3,
-      "trading_system": "Braam",
-      "track_only": false,
-      "status": "PENDING",
-      "price_at_run": 640.38,
-      "date_activated": null,
-      "time_activated_utc": null,
-      "date_opened": "2026-05-19",
-      "time_opened_utc": "11:02",
       "conviction": "MEDIUM",
       "tp1_hit": false,
       "sl_moved_to_be": false,
@@ -959,7 +936,15 @@
       "close_iso": "2026-05-18T08:00:00Z"
     }
   ],
-  "recent_cancels": [],
+  "recent_cancels": [
+    {
+      "coin": "BNBUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "close_reason": "6/8 signals opposing Short for 2 consecutive 4H bars \u2014 conviction has collapsed,",
+      "iso": "2026-05-20T12:58:00Z"
+    }
+  ],
   "tp1_hits_open": [
     {
       "coin": "BTCUSDT",
