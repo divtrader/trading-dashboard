@@ -293,14 +293,13 @@ function startHeatmapPolling() {
 }
 
 function _heatColor(pct) {
-  // Glassmorphism: semi-transparent teal/red overlay with wide shade range
-  if (pct == null || isNaN(pct) || Math.abs(pct) < 0.1) return "rgba(255,255,255,0.04)";
+  // True iOS glassmorphism: frosted white base + subtle colour tint
+  // Background always shows through — colour is a hint, not a fill
+  if (pct == null || isNaN(pct) || Math.abs(pct) < 0.1) return "rgba(255,255,255,0.06)";
   const t = Math.min(1, Math.abs(pct) / 7);
-  // Power curve so small moves (0.5% vs 1%) are visibly different shades
-  const alpha = 0.10 + 0.62 * Math.pow(t, 0.55);
-  // e.g: ±0.5%→0.20  ±1%→0.27  ±2%→0.36  ±3.5%→0.47  ±5%→0.56  ±7%→0.72
-  if (pct > 0) return `rgba(0,201,167,${alpha.toFixed(2)})`; // --green teal
-  else          return `rgba(255,77,94,${alpha.toFixed(2)})`; // --red
+  const tint = 0.06 + 0.22 * Math.pow(t, 0.55); // 0.06→0.28 max — stays glassy
+  if (pct > 0) return `rgba(0,201,167,${tint.toFixed(2)})`;
+  else          return `rgba(255,77,94,${tint.toFixed(2)})`;
 }
 
 function renderHeatmap() {

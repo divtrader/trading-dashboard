@@ -1390,19 +1390,22 @@ main {
   height: 100%;
 }
 .hm-tile {
-  border-radius: 14px;
+  border-radius: 16px;
   padding: 14px 14px 12px;
   display: flex;
   flex-direction: column;
   gap: 2px;
-  transition: background 0.9s ease;
+  transition: background 1s ease;
   cursor: default;
   justify-content: center;
   overflow: hidden;
-  border: 1px solid rgba(255,255,255,0.14);
-  box-shadow: inset 0 1px 0 rgba(255,255,255,0.10), 0 2px 8px rgba(0,0,0,0.25);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.22);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.18),
+    inset 0 -1px 0 rgba(0,0,0,0.08),
+    0 4px 16px rgba(0,0,0,0.30);
+  backdrop-filter: blur(24px) saturate(160%);
+  -webkit-backdrop-filter: blur(24px) saturate(160%);
 }
 .hm-coin  { font-size: 18px; font-weight: 900; color: #fff; letter-spacing: 0.3px; text-shadow: 0 1px 6px rgba(0,0,0,0.5); }
 .hm-price { font-size: 12px; color: rgba(255,255,255,0.80); font-weight: 600; margin-bottom: 4px; letter-spacing: 0.1px; }
