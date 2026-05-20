@@ -592,7 +592,10 @@ function launchConfetti() {
 let ws = null;
 let wsSymbols = "";
 function subscribeWs() {
-  const symbols = [...new Set(state.trades.map(t => t.coin.toLowerCase()))];
+  // Always include all watchlist coins so heatmap has live prices + 24h data
+  const tradeCoins = state.trades.map(t => t.coin.toLowerCase());
+  const allCoins   = [...new Set([...tradeCoins, ...WATCHLIST.map(s => s.toLowerCase())])];
+  const symbols = allCoins;
   const key = symbols.sort().join(",");
   if (key === wsSymbols && ws && ws.readyState === 1) return;
   wsSymbols = key;
