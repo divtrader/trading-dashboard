@@ -261,7 +261,7 @@ function setTileGlow(tileEl, val) {
   tileEl.classList.toggle("glow-red",   val < -0.005);
 }
 
-let state = { trades: [], stats: {}, prices: {}, chg24h: {}, chg1h: {}, lastFetch: 0, lastCronIso: null, recentCloses: [], mexcAccount: null };
+let state = { trades: [], stats: {}, prices: {}, chg24h: {}, chg1h: {}, vol24h: {}, lastFetch: 0, lastCronIso: null, recentCloses: [], mexcAccount: null };
 
 // Full 24-coin watchlist for the heatmap screen
 const WATCHLIST = [
@@ -302,38 +302,128 @@ function _heatColor(pct) {
   else          return `rgba(255,77,94,${tint.toFixed(2)})`;
 }
 
-function renderHeatmap() {
-  const el = document.getElementById("heatmap-grid");
-  if (!el) return;
-  // Only render if screen 4 is active (perf optimisation)
-  const s4 = document.getElementById("screen-4");
-  if (!s4 || !s4.classList.contains("active")) return;
+// ── Bubble Physics ─────────────────────────────────────────────────────────────
+const _bState = {}; // sym → { x, y, vx, vy, r }
+let _bRAF = null;
+let _bBuilt = false;
 
-  const sorted = [...WATCHLIST].sort((a, b) => {
-    const da = state.chg24h[a] ?? -Infinity;
-    const db = state.chg24h[b] ?? -Infinity;
-    return db - da;
+function _getBubbleR(sym) {
+  const vol = state.vol24h?.[sym] || 0;
+  if (!vol) return 44;
+  const t = Math.max(0, Math.min(1, (Math.log10(vol) - 7.8) / 2.8));
+  return Math.round(30 + t * 58); // 30px → 88px
+}
+
+function _initBubbles(container) {
+  const w = container.clientWidth;
+  const h = container.clientHeight;
+  // Spread into a rough grid then let physics settle
+  const cols = 6, rows = 4;
+  WATCHLIST.forEach((sym, i) => {
+    if (_bState[sym]) { _bState[sym].r = _getBubbleR(sym); return; }
+    const col = i % cols, row = Math.floor(i / cols);
+    const r = _getBubbleR(sym);
+    _bState[sym] = {
+      x: (col + 0.5) * (w / cols) + (Math.random() - 0.5) * 20,
+      y: (row + 0.5) * (h / rows) + (Math.random() - 0.5) * 20,
+      vx: (Math.random() - 0.5) * 0.5,
+      vy: (Math.random() - 0.5) * 0.5,
+      r,
+    };
   });
-  el.innerHTML = sorted.map(sym => {
-    const coin  = sym.replace("USDT", "");
-    const price = state.prices[sym];
-    const d24   = state.chg24h[sym];
-    const d1h   = state.chg1h[sym];
-    const bg    = d24 != null ? _heatColor(d24) : "#1a2233";
-    const priceTxt = price != null
-      ? (price >= 1000 ? `$${price.toLocaleString("en", {maximumFractionDigits:0})}`
-       : price >= 1    ? `$${price.toFixed(2)}`
-       : `$${price.toFixed(4)}`)
-      : "—";
-    const fmt = v => v != null ? `${v >= 0 ? "+" : ""}${v.toFixed(2)}%` : "—";
-    const cls1h  = d1h  != null ? (d1h  >= 0 ? "hm-pos" : "hm-neg") : "";
-    return `<div class="hm-tile" style="background:${bg}">
-      <div class="hm-coin">${coin}</div>
-      <div class="hm-price">${priceTxt}</div>
-      <div class="hm-chg24">${fmt(d24)}</div>
-      <div class="hm-1h ${cls1h}">1h ${fmt(d1h)}</div>
-    </div>`;
-  }).join("");
+}
+
+function _tickBubbles() {
+  const container = document.getElementById('heatmap-grid');
+  if (!container) { _bRAF = null; return; }
+  const s4 = document.getElementById('screen-4');
+  if (!s4 || !s4.classList.contains('active')) { _bRAF = null; return; }
+
+  const w = container.clientWidth;
+  const h = container.clientHeight;
+  const syms = WATCHLIST.filter(s => _bState[s]);
+
+  for (let i = 0; i < syms.length; i++) {
+    const b = _bState[syms[i]];
+    // Update radius from latest volume
+    if (state.vol24h?.[syms[i]]) b.r = _getBubbleR(syms[i]);
+    // Soft centre gravity
+    b.vx += (w / 2 - b.x) * 0.0012;
+    b.vy += (h / 2 - b.y) * 0.0012;
+    // Bubble-bubble repulsion
+    for (let j = i + 1; j < syms.length; j++) {
+      const o = _bState[syms[j]];
+      const dx = b.x - o.x, dy = b.y - o.y;
+      const dist = Math.sqrt(dx * dx + dy * dy) || 0.1;
+      const minD = b.r + o.r + 5;
+      if (dist < minD) {
+        const f = (minD - dist) / minD * 0.28;
+        const fx = (dx / dist) * f, fy = (dy / dist) * f;
+        b.vx += fx; b.vy += fy;
+        o.vx -= fx; o.vy -= fy;
+      }
+    }
+    // Damping
+    b.vx *= 0.88; b.vy *= 0.88;
+    // Integrate
+    b.x += b.vx; b.y += b.vy;
+    // Boundary
+    const pad = b.r + 3;
+    if (b.x < pad)     { b.x = pad;     b.vx *= -0.4; }
+    if (b.x > w - pad) { b.x = w - pad; b.vx *= -0.4; }
+    if (b.y < pad)     { b.y = pad;     b.vy *= -0.4; }
+    if (b.y > h - pad) { b.y = h - pad; b.vy *= -0.4; }
+  }
+
+  // Update DOM positions + colours
+  for (const sym of syms) {
+    const b = _bState[sym];
+    const el = document.getElementById(`bbl-${sym}`);
+    if (!el) continue;
+    const d = b.r * 2;
+    el.style.transform = `translate(${Math.round(b.x - b.r)}px,${Math.round(b.y - b.r)}px)`;
+    el.style.width  = `${d}px`;
+    el.style.height = `${d}px`;
+    el.style.background = _heatColor(state.chg24h[sym]);
+    // Scale font with bubble size
+    const scale = Math.max(0.6, b.r / 60);
+    el.style.setProperty('--bbl-scale', scale.toFixed(2));
+    // Update pct text
+    const pct = state.chg24h[sym];
+    const h1  = state.chg1h[sym];
+    const pctEl = el.querySelector('.hm-chg24');
+    const h1El  = el.querySelector('.hm-1h');
+    if (pctEl) pctEl.textContent = pct != null ? `${pct >= 0 ? '+' : ''}${pct.toFixed(2)}%` : '—';
+    if (h1El) {
+      h1El.textContent  = h1 != null && b.r >= 48 ? `1h ${h1 >= 0 ? '+' : ''}${h1.toFixed(2)}%` : '';
+      h1El.className = `hm-1h ${h1 != null ? (h1 >= 0 ? 'hm-pos' : 'hm-neg') : ''}`;
+    }
+  }
+
+  _bRAF = requestAnimationFrame(_tickBubbles);
+}
+
+function renderHeatmap() {
+  const container = document.getElementById('heatmap-grid');
+  if (!container) return;
+  const s4 = document.getElementById('screen-4');
+  if (!s4 || !s4.classList.contains('active')) return;
+
+  // Build bubble DOM once
+  if (!_bBuilt) {
+    container.innerHTML = WATCHLIST.map(sym => {
+      const coin = sym.replace('USDT', '');
+      return `<div class="hm-bubble" id="bbl-${sym}">
+        <div class="hm-coin">${coin}</div>
+        <div class="hm-chg24">—</div>
+        <div class="hm-1h"></div>
+      </div>`;
+    }).join('');
+    _initBubbles(container);
+    _bBuilt = true;
+  }
+
+  if (!_bRAF) _bRAF = requestAnimationFrame(_tickBubbles);
 }
 
 // Seen-events memory (so we don't replay celebrations on every refresh)
@@ -609,6 +699,7 @@ function subscribeWs() {
       state.prices[sym] = c;
       // miniTicker has no P field — compute 24h% from close vs open
       if (o > 0) state.chg24h[sym] = ((c - o) / o) * 100;
+      state.vol24h[sym] = parseFloat(msg.data.q);
       renderLive();
       renderPendingTriggers();
       checkLiveLevels();
@@ -1480,7 +1571,8 @@ function goToScreen(targetIdx, dir) {
   document.querySelectorAll(".dots .d").forEach(d => d.classList.remove("active"));
   document.querySelector(`.dots .d[data-i="${screenIdx}"]`).classList.add("active");
   // Render heatmap when navigating to screen 4
-  if (screenIdx === 3) renderHeatmap();
+  if (screenIdx === 3) { startHeatmapPolling(); renderHeatmap(); }
+  else if (_bRAF) { cancelAnimationFrame(_bRAF); _bRAF = null; }
 }
 
 function nextScreen() { goToScreen((screenIdx + 1) % screens.length, 1); }
