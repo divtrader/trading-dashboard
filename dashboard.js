@@ -293,21 +293,21 @@ function startHeatmapPolling() {
 }
 
 function _heatColor(pct) {
-  // Neutral near zero; green when up, red when down — darker as magnitude grows
-  if (Math.abs(pct) < 0.15) return "#111827";
-  const t = Math.min(1, Math.abs(pct) / 7); // full intensity at ±7%
+  // Flat → neutral; up → green (darker with magnitude); down → red (darker with magnitude)
+  if (pct == null || isNaN(pct) || Math.abs(pct) < 0.1) return "#131c2e";
+  const t = Math.min(1, Math.abs(pct) / 6); // saturates at ±6%
   if (pct > 0) {
-    // neutral → vivid green → dark forest green
-    const r = Math.round(10  + 10  * (1 - t));
-    const g = Math.round(55  + (155 - 55)  * t);
-    const b = Math.round(30  + 20  * (1 - t));
-    return `rgb(${r},${g},${b})`;
+    // light mint at +0.1% → rich emerald → dark forest at +6%
+    const r = Math.round(20  - 10  * t);
+    const g = Math.round(110 + (60  - 110) * t);   // 110 → 60 (darker as bigger)
+    const b = Math.round(65  - 40  * t);
+    return `rgb(${Math.max(0,r)},${Math.max(0,g)},${Math.max(0,b)})`;
   } else {
-    // neutral → vivid red → dark crimson
-    const r = Math.round(90  + (170 - 90)  * t);
-    const g = Math.round(10  * (1 - t));
-    const b = Math.round(10  * (1 - t));
-    return `rgb(${r},${g},${b})`;
+    // warm rose at -0.1% → vivid red → deep crimson at -6%
+    const r = Math.round(160 - 40  * t);            // 160 → 120
+    const g = Math.round(30  - 25  * t);
+    const b = Math.round(30  - 25  * t);
+    return `rgb(${r},${Math.max(0,g)},${Math.max(0,b)})`;
   }
 }
 
@@ -607,10 +607,12 @@ function subscribeWs() {
   ws.onmessage = (ev) => {
     try {
       const msg = JSON.parse(ev.data);
-      const p   = parseFloat(msg.data.c);
+      const c   = parseFloat(msg.data.c); // close
+      const o   = parseFloat(msg.data.o); // open 24h ago
       const sym = msg.data.s;
-      state.prices[sym]    = p;
-      state.chg24h[sym]    = parseFloat(msg.data.P); // 24h % from miniTicker
+      state.prices[sym] = c;
+      // miniTicker has no P field — compute 24h% from close vs open
+      if (o > 0) state.chg24h[sym] = ((c - o) / o) * 100;
       renderLive();
       renderPendingTriggers();
       checkLiveLevels();
