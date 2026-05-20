@@ -1,8 +1,8 @@
 {
-  "last_updated_iso": "2026-05-20T17:25:15Z",
+  "last_updated_iso": "2026-05-20T20:32:43Z",
   "mexc_account": {
-    "unrealized_pnl": -31.4876,
-    "equity": 1819.6492,
+    "unrealized_pnl": -36.3378,
+    "equity": 1814.799,
     "available": 553.4622,
     "position_margin": 398.3574
   },
@@ -43,7 +43,7 @@
       "trading_system": "John",
       "track_only": true,
       "status": "OPEN",
-      "price_at_run": 77530.01,
+      "price_at_run": 77672.35,
       "date_activated": "2026-04-28",
       "time_activated_utc": "12:00",
       "date_opened": "2026-04-28",
@@ -66,7 +66,7 @@
       "trading_system": "John",
       "track_only": true,
       "status": "OPEN",
-      "price_at_run": 1.682,
+      "price_at_run": 1.685,
       "date_activated": "2026-05-16",
       "time_activated_utc": "08:00",
       "date_opened": "2026-05-12",
@@ -89,7 +89,7 @@
       "trading_system": "John",
       "track_only": true,
       "status": "OPEN",
-      "price_at_run": 649.71,
+      "price_at_run": 650.59,
       "date_activated": "2026-05-17",
       "time_activated_utc": "20:00",
       "date_opened": "2026-05-12",
@@ -192,52 +192,6 @@
       "pnl_tp1_realized_usd": null
     },
     {
-      "trade_id": "CAKEUSDT_20260516_CB_001",
-      "coin": "CAKEUSDT",
-      "direction": "Short",
-      "entry_price": 1.51335733,
-      "sl": 1.5475648,
-      "tp1": 1.42339018,
-      "tp2": 1.28017721,
-      "capital_usd": 100,
-      "leverage": 3,
-      "trading_system": "Braam",
-      "track_only": false,
-      "status": "PENDING",
-      "price_at_run": 1.469,
-      "date_activated": null,
-      "time_activated_utc": null,
-      "date_opened": "2026-05-16",
-      "time_opened_utc": "12:18",
-      "conviction": "MEDIUM",
-      "tp1_hit": false,
-      "sl_moved_to_be": false,
-      "pnl_tp1_realized_usd": null
-    },
-    {
-      "trade_id": "TAOUSDT_20260517_CB_001",
-      "coin": "TAOUSDT",
-      "direction": "Short",
-      "entry_price": 297.89862707,
-      "sl": 311.20183307,
-      "tp1": 237.5,
-      "tp2": 190.59633386,
-      "capital_usd": 100,
-      "leverage": 3,
-      "trading_system": "Braam",
-      "track_only": false,
-      "status": "PENDING",
-      "price_at_run": 271.8,
-      "date_activated": null,
-      "time_activated_utc": null,
-      "date_opened": "2026-05-17",
-      "time_opened_utc": "10:04",
-      "conviction": "MEDIUM",
-      "tp1_hit": false,
-      "sl_moved_to_be": false,
-      "pnl_tp1_realized_usd": null
-    },
-    {
       "trade_id": "SOLUSDT_20260517_CB_001",
       "coin": "SOLUSDT",
       "direction": "Short",
@@ -318,10 +272,10 @@
       "leverage": 3,
       "trading_system": "Braam",
       "track_only": false,
-      "status": "PENDING",
+      "status": "OPEN",
       "price_at_run": 0.929,
-      "date_activated": null,
-      "time_activated_utc": null,
+      "date_activated": "2026-05-20",
+      "time_activated_utc": "18:34",
       "date_opened": "2026-05-18",
       "time_opened_utc": "17:48",
       "conviction": "MEDIUM",
@@ -400,7 +354,18 @@
     }
   ],
   "recent_signals": [],
-  "recent_opens": [],
+  "recent_opens": [
+    {
+      "trade_id": "APTUSDT_20260518_CB_001",
+      "coin": "APTUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "entry_price": 0.96050184,
+      "tp1_hit": false,
+      "iso": "2026-05-20T18:34:00Z",
+      "_iso_ms": 1779302040000
+    }
+  ],
   "recent_closes": [
     {
       "trade_id": "NEARUSDT_20260505_J_M_001",
@@ -930,6 +895,20 @@
       "trading_system": "Braam",
       "close_reason": "6/8 signals opposing Short for 2 consecutive 4H bars \u2014 conviction has collapsed,",
       "iso": "2026-05-20T12:58:00Z"
+    },
+    {
+      "coin": "CAKEUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "close_reason": "6/8 signals opposing Short for 2 consecutive 4H bars \u2014 conviction has collapsed,",
+      "iso": "2026-05-20T20:32:00Z"
+    },
+    {
+      "coin": "TAOUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "close_reason": "6/8 signals opposing Short for 2 consecutive 4H bars \u2014 conviction has collapsed,",
+      "iso": "2026-05-20T20:32:00Z"
     }
   ],
   "tp1_hits_open": [
