@@ -1,9 +1,9 @@
 {
-  "last_updated_iso": "2026-05-19T23:47:45Z",
+  "last_updated_iso": "2026-05-20T04:37:10Z",
   "mexc_account": {
-    "unrealized_pnl": -66.536,
-    "equity": 1784.7533,
-    "available": 553.6147,
+    "unrealized_pnl": -67.8193,
+    "equity": 1783.4746,
+    "available": 553.6193,
     "position_margin": 398.3574
   },
   "active_trades": [
@@ -43,7 +43,7 @@
       "trading_system": "John",
       "track_only": true,
       "status": "OPEN",
-      "price_at_run": 76850.0,
+      "price_at_run": 76710.29,
       "date_activated": "2026-04-28",
       "time_activated_utc": "12:00",
       "date_opened": "2026-04-28",
@@ -66,7 +66,7 @@
       "trading_system": "John",
       "track_only": true,
       "status": "OPEN",
-      "price_at_run": 1.602,
+      "price_at_run": 1.596,
       "date_activated": "2026-05-16",
       "time_activated_utc": "08:00",
       "date_opened": "2026-05-12",
@@ -89,7 +89,7 @@
       "trading_system": "John",
       "track_only": true,
       "status": "OPEN",
-      "price_at_run": 639.99,
+      "price_at_run": 638.69,
       "date_activated": "2026-05-17",
       "time_activated_utc": "20:00",
       "date_opened": "2026-05-12",
@@ -397,9 +397,45 @@
       "tp1_hit": false,
       "sl_moved_to_be": false,
       "pnl_tp1_realized_usd": null
+    },
+    {
+      "trade_id": "DOGEUSDT_20260520_CB_001",
+      "coin": "DOGEUSDT",
+      "direction": "Short",
+      "entry_price": 0.10587577,
+      "sl": 0.10891693,
+      "tp1": 0.09282226,
+      "tp2": 0.08090403,
+      "capital_usd": 100,
+      "leverage": 3,
+      "trading_system": "Braam",
+      "track_only": false,
+      "status": "PENDING",
+      "price_at_run": 0.10228,
+      "date_activated": null,
+      "time_activated_utc": null,
+      "date_opened": "2026-05-20",
+      "time_opened_utc": "04:36",
+      "conviction": "MEDIUM",
+      "tp1_hit": false,
+      "sl_moved_to_be": false,
+      "pnl_tp1_realized_usd": null
     }
   ],
-  "recent_signals": [],
+  "recent_signals": [
+    {
+      "trade_id": "DOGEUSDT_20260520_CB_001",
+      "coin": "DOGEUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "entry_price": 0.10587577,
+      "tp1": 0.09282226,
+      "sl": 0.10891693,
+      "conviction": "MEDIUM",
+      "track_only": false,
+      "iso": "2026-05-20T04:36:00Z"
+    }
+  ],
   "recent_opens": [],
   "recent_closes": [
     {
