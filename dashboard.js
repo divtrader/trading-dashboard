@@ -293,19 +293,20 @@ function startHeatmapPolling() {
 }
 
 function _heatColor(pct) {
-  // Returns a CSS colour: deep green at +8%, deep red at -8%, neutral near 0
-  const clamped = Math.max(-8, Math.min(8, pct));
-  if (clamped >= 0) {
-    const t = clamped / 8;
-    const r = Math.round(17  + (22  - 17)  * (1-t));
-    const g = Math.round(24  + (166 - 24)  * t);
-    const b = Math.round(47  + (104 - 47)  * (1-t));
+  // Neutral near zero; green when up, red when down — darker as magnitude grows
+  if (Math.abs(pct) < 0.15) return "#111827";
+  const t = Math.min(1, Math.abs(pct) / 7); // full intensity at ±7%
+  if (pct > 0) {
+    // neutral → vivid green → dark forest green
+    const r = Math.round(10  + 10  * (1 - t));
+    const g = Math.round(55  + (155 - 55)  * t);
+    const b = Math.round(30  + 20  * (1 - t));
     return `rgb(${r},${g},${b})`;
   } else {
-    const t = Math.abs(clamped) / 8;
-    const r = Math.round(17  + (239 - 17)  * t);
-    const g = Math.round(24  + (83  - 24)  * (1-t));
-    const b = Math.round(47  + (80  - 47)  * (1-t));
+    // neutral → vivid red → dark crimson
+    const r = Math.round(90  + (170 - 90)  * t);
+    const g = Math.round(10  * (1 - t));
+    const b = Math.round(10  * (1 - t));
     return `rgb(${r},${g},${b})`;
   }
 }
