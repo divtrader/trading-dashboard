@@ -318,7 +318,12 @@ function renderHeatmap() {
   const s4 = document.getElementById("screen-4");
   if (!s4 || !s4.classList.contains("active")) return;
 
-  el.innerHTML = WATCHLIST.map(sym => {
+  const sorted = [...WATCHLIST].sort((a, b) => {
+    const da = state.chg24h[a] ?? -Infinity;
+    const db = state.chg24h[b] ?? -Infinity;
+    return db - da;
+  });
+  el.innerHTML = sorted.map(sym => {
     const coin  = sym.replace("USDT", "");
     const price = state.prices[sym];
     const d24   = state.chg24h[sym];
