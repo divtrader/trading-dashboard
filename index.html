@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <meta name="robots" content="noindex,nofollow">
 <title>Spyker Trading Inc — Dashboard</title>
-<link rel="stylesheet" href="style.css?v=81">
+<link rel="stylesheet" href="style.css?v=83">
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
@@ -150,6 +150,162 @@
     </div>
   </section>
 
+  <section id="screen-4" class="screen">
+    <!-- Live insights ticker -->
+    <div class="edge-insights" id="edge-insights">
+      <span class="edge-ins-label">EDGE INSIGHTS</span>
+    </div>
+
+    <!-- Row 1: 4 hero tiles -->
+    <div class="edge-row edge-row-1">
+      <div class="edge-tile edge-perf">
+        <div class="edge-label">ALL-TIME P&amp;L</div>
+        <div class="edge-big" id="edge-pnl">—</div>
+        <div class="edge-sub" id="edge-perf-sub">—</div>
+        <div class="edge-mini-grid">
+          <div><span class="edge-mk">Best</span><span class="edge-mv" id="edge-best-usd">—</span></div>
+          <div><span class="edge-mk">Worst</span><span class="edge-mv" id="edge-worst-usd">—</span></div>
+          <div><span class="edge-mk">Avg W</span><span class="edge-mv" id="edge-avg-win">—</span></div>
+          <div><span class="edge-mk">Avg L</span><span class="edge-mv" id="edge-avg-loss">—</span></div>
+        </div>
+      </div>
+
+      <div class="edge-tile edge-wr">
+        <div class="edge-label">WIN RATE</div>
+        <div class="edge-wr-content">
+          <div class="donut-wrap edge-donut">
+            <svg viewBox="0 0 120 120" class="donut-svg">
+              <circle class="donut-track" cx="60" cy="60" r="50"/>
+              <circle class="donut-fill" cx="60" cy="60" r="50" id="edge-donut-fill"/>
+            </svg>
+            <div class="donut-center">
+              <div class="donut-pct" id="edge-wr-pct">—</div>
+              <div class="donut-label">WIN RATE</div>
+            </div>
+          </div>
+          <div class="edge-wr-meta">
+            <div class="edge-wr-row"><span>Trades</span><strong id="edge-trades">—</strong></div>
+            <div class="edge-wr-row"><span>Wins / Losses</span><strong id="edge-wl">—</strong></div>
+            <div class="edge-wr-row"><span>Profit Factor</span><strong id="edge-pf">—</strong></div>
+            <div class="edge-wr-row"><span>Expectancy</span><strong id="edge-exp">—</strong></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="edge-tile edge-dir">
+        <div class="edge-label">DIRECTION</div>
+        <div class="edge-dir-rows" id="edge-direction">—</div>
+      </div>
+
+      <div class="edge-tile edge-streak">
+        <div class="edge-label">CURRENT STREAK</div>
+        <div class="edge-streak-big" id="edge-streak-big">—</div>
+        <div class="edge-streak-sub" id="edge-streak-sub">—</div>
+        <div class="edge-streak-meta">
+          <div><span class="edge-mk">Longest W</span><span class="edge-mv" id="edge-longest-w">—</span></div>
+          <div><span class="edge-mk">Longest L</span><span class="edge-mv" id="edge-longest-l">—</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Row 2: macro tiles + breakdown tiles -->
+    <div class="edge-row edge-row-2">
+      <div class="edge-tile edge-fg">
+        <div class="edge-label">FEAR &amp; GREED</div>
+        <div class="fg-gauge">
+          <svg viewBox="0 0 200 110" class="fg-svg" id="fg-svg">
+            <defs>
+              <linearGradient id="fgGrad" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" stop-color="#ff4d5e"/>
+                <stop offset="25%" stop-color="#ff9800"/>
+                <stop offset="50%" stop-color="#ffd54f"/>
+                <stop offset="75%" stop-color="#9ccc65"/>
+                <stop offset="100%" stop-color="#00c9a7"/>
+              </linearGradient>
+            </defs>
+            <path d="M 20 100 A 80 80 0 0 1 180 100" stroke="url(#fgGrad)" stroke-width="12" fill="none" stroke-linecap="round"/>
+            <line id="fg-needle" x1="100" y1="100" x2="100" y2="30" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+            <circle cx="100" cy="100" r="6" fill="#fff"/>
+          </svg>
+          <div class="fg-value" id="fg-value">—</div>
+          <div class="fg-label" id="fg-label">—</div>
+        </div>
+      </div>
+
+      <div class="edge-tile edge-macro">
+        <div class="edge-label">MACRO</div>
+        <div class="macro-rows">
+          <div class="macro-row">
+            <div class="macro-key">VIX</div>
+            <div class="macro-val" id="macro-vix">—</div>
+            <div class="macro-trend" id="macro-vix-trend">—</div>
+          </div>
+          <div class="macro-row">
+            <div class="macro-key">DXY</div>
+            <div class="macro-val" id="macro-dxy">—</div>
+            <div class="macro-trend" id="macro-dxy-trend">—</div>
+          </div>
+          <div class="macro-row">
+            <div class="macro-key">BTC 7d</div>
+            <div class="macro-val" id="macro-btc7d">—</div>
+            <div class="macro-trend"></div>
+          </div>
+          <div class="macro-row">
+            <div class="macro-key">BTC 30d</div>
+            <div class="macro-val" id="macro-btc30d">—</div>
+            <div class="macro-trend"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="edge-tile edge-systems-tile">
+        <div class="edge-label">BY SYSTEM · SINCE INCEPTION</div>
+        <div class="edge-systems" id="edge-systems">—</div>
+      </div>
+
+      <div class="edge-tile edge-monthly-tile">
+        <div class="edge-label">MONTHLY P&amp;L</div>
+        <div class="monthly-chart-wrap">
+          <svg id="monthly-chart" viewBox="0 0 300 130" preserveAspectRatio="none"></svg>
+          <div class="monthly-meta" id="monthly-meta">—</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Row 3: more breakdown tiles -->
+    <div class="edge-row edge-row-3">
+      <div class="edge-tile edge-bars-tile">
+        <div class="edge-label">BY ENTRY TYPE</div>
+        <div class="edge-bars" id="edge-by-entry">—</div>
+      </div>
+
+      <div class="edge-tile edge-bars-tile">
+        <div class="edge-label">BY SESSION (UTC)</div>
+        <div class="edge-bars" id="edge-by-session">—</div>
+      </div>
+
+      <div class="edge-tile edge-bars-tile">
+        <div class="edge-label">BY CONFLUENCE</div>
+        <div class="edge-bars" id="edge-by-confluence">—</div>
+      </div>
+
+      <div class="edge-tile edge-bars-tile">
+        <div class="edge-label">BY CONVICTION</div>
+        <div class="edge-bars" id="edge-by-conviction">—</div>
+      </div>
+    </div>
+
+    <!-- Bottom strip: best/worst + live positions -->
+    <div class="edge-strip" id="edge-strip">
+      <div class="strip-cell"><div class="strip-k">BEST COIN</div><div class="strip-v" id="strip-best-coin">—</div></div>
+      <div class="strip-cell"><div class="strip-k">WORST COIN</div><div class="strip-v" id="strip-worst-coin">—</div></div>
+      <div class="strip-cell"><div class="strip-k">BEST TRADE</div><div class="strip-v" id="strip-best-trade">—</div></div>
+      <div class="strip-cell"><div class="strip-k">WORST TRADE</div><div class="strip-v" id="strip-worst-trade">—</div></div>
+      <div class="strip-cell"><div class="strip-k">AVG HOLD</div><div class="strip-v" id="strip-avg-hold">—</div></div>
+      <div class="strip-cell"><div class="strip-k">LIVE</div><div class="strip-v" id="strip-live">—</div></div>
+    </div>
+  </section>
+
 
   </div><!-- /screen-wrap -->
 
@@ -157,9 +313,10 @@
     <span class="d active" data-i="0"></span>
     <span class="d" data-i="1"></span>
     <span class="d" data-i="2"></span>
+    <span class="d" data-i="3"></span>
   </div>
 </main>
 
-<script src="dashboard.js?v=93"></script>
+<script src="dashboard.js?v=95"></script>
 </body>
 </html>

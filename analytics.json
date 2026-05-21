@@ -1,0 +1,1173 @@
+{
+  "generated_at_utc": "2026-05-21T08:09:03+00:00",
+  "all_time": {
+    "total_trades": 83,
+    "wins": 28,
+    "losses": 55,
+    "win_rate": 33.7,
+    "total_pnl_usd": 84.5,
+    "avg_pnl_usd": 1.02,
+    "best_usd": 85.94,
+    "worst_usd": -44.29,
+    "avg_win_usd": 22.49,
+    "avg_loss_usd": -9.91,
+    "expectancy_usd": 1.02,
+    "profit_factor": 1.16,
+    "longest_win_streak": 5,
+    "longest_loss_streak": 11,
+    "current_streak_type": "loss",
+    "current_streak_count": 4,
+    "avg_hold_hours": 78.8,
+    "median_hold_hours": 56.0
+  },
+  "by_system": {
+    "John": {
+      "n": 54,
+      "wins": 18,
+      "wr": 33.3,
+      "pnl": 57.02,
+      "avg": 1.06,
+      "inception": "2026-04-25",
+      "days_active": 26,
+      "pnl_per_day": 2.19,
+      "status": "active",
+      "open": 3,
+      "pending": 0
+    },
+    "Braam": {
+      "n": 7,
+      "wins": 1,
+      "wr": 14.3,
+      "pnl": -23.61,
+      "avg": -3.37,
+      "inception": "2026-05-01",
+      "days_active": 20,
+      "pnl_per_day": -1.18,
+      "status": "active",
+      "open": 2,
+      "pending": 9
+    },
+    "Mong": {
+      "n": 0,
+      "wins": 0,
+      "wr": 0.0,
+      "pnl": 0.0,
+      "avg": 0.0,
+      "inception": null,
+      "days_active": null,
+      "pnl_per_day": null,
+      "status": "active",
+      "open": 0,
+      "pending": 0
+    }
+  },
+  "decommissioned_systems": {
+    "William": {
+      "n": 22,
+      "wins": 9,
+      "wr": 40.9,
+      "pnl": 51.09,
+      "avg": 2.32,
+      "status": "decommissioned"
+    }
+  },
+  "system_summary": [
+    {
+      "name": "John",
+      "inception": "2026-04-25",
+      "days_active": 26,
+      "closed": 54,
+      "wins": 18,
+      "wr": 33.3,
+      "pnl": 57.02,
+      "pnl_per_day": 2.19,
+      "open": 3,
+      "pending": 0
+    },
+    {
+      "name": "Braam",
+      "inception": "2026-05-01",
+      "days_active": 20,
+      "closed": 7,
+      "wins": 1,
+      "wr": 14.3,
+      "pnl": -23.61,
+      "pnl_per_day": -1.18,
+      "open": 2,
+      "pending": 9
+    },
+    {
+      "name": "Mong",
+      "inception": null,
+      "days_active": null,
+      "closed": 0,
+      "wins": 0,
+      "wr": 0.0,
+      "pnl": 0.0,
+      "pnl_per_day": null,
+      "open": 0,
+      "pending": 0
+    }
+  ],
+  "monthly": [
+    {
+      "month": "2026-04",
+      "n": 7,
+      "wins": 1,
+      "wr": 14.3,
+      "pnl": -29.97,
+      "cumulative_pnl": -29.97
+    },
+    {
+      "month": "2026-05",
+      "n": 76,
+      "wins": 27,
+      "wr": 35.5,
+      "pnl": 114.47,
+      "cumulative_pnl": 84.5
+    }
+  ],
+  "equity_curve": [
+    {
+      "iso": "2026-04-28T00:00:00+00:00",
+      "pnl": 4.73,
+      "cumulative": 4.73,
+      "won": true
+    },
+    {
+      "iso": "2026-04-28T12:00:00+00:00",
+      "pnl": -13.7,
+      "cumulative": -8.97,
+      "won": false
+    },
+    {
+      "iso": "2026-04-28T12:00:00+00:00",
+      "pnl": -0.83,
+      "cumulative": -9.8,
+      "won": false
+    },
+    {
+      "iso": "2026-04-29T08:00:00+00:00",
+      "pnl": -7.39,
+      "cumulative": -17.19,
+      "won": false
+    },
+    {
+      "iso": "2026-04-29T08:00:00+00:00",
+      "pnl": -0.16,
+      "cumulative": -17.35,
+      "won": false
+    },
+    {
+      "iso": "2026-04-29T16:00:00+00:00",
+      "pnl": -7.68,
+      "cumulative": -25.03,
+      "won": false
+    },
+    {
+      "iso": "2026-04-29T16:00:00+00:00",
+      "pnl": -4.94,
+      "cumulative": -29.97,
+      "won": false
+    },
+    {
+      "iso": "2026-05-01T11:47:00+00:00",
+      "pnl": -22.14,
+      "cumulative": -52.11,
+      "won": false
+    },
+    {
+      "iso": "2026-05-01T20:00:00+00:00",
+      "pnl": -2.32,
+      "cumulative": -54.43,
+      "won": false
+    },
+    {
+      "iso": "2026-05-02T20:00:00+00:00",
+      "pnl": -4.32,
+      "cumulative": -58.75,
+      "won": false
+    },
+    {
+      "iso": "2026-05-03T04:00:00+00:00",
+      "pnl": -11.05,
+      "cumulative": -69.8,
+      "won": false
+    },
+    {
+      "iso": "2026-05-03T04:00:00+00:00",
+      "pnl": -12.07,
+      "cumulative": -81.87,
+      "won": false
+    },
+    {
+      "iso": "2026-05-03T08:00:00+00:00",
+      "pnl": 7.41,
+      "cumulative": -74.46,
+      "won": true
+    },
+    {
+      "iso": "2026-05-03T12:00:00+00:00",
+      "pnl": -11.6,
+      "cumulative": -86.06,
+      "won": false
+    },
+    {
+      "iso": "2026-05-03T12:00:00+00:00",
+      "pnl": -4.47,
+      "cumulative": -90.53,
+      "won": false
+    },
+    {
+      "iso": "2026-05-04T00:00:00+00:00",
+      "pnl": 0.45,
+      "cumulative": -90.08,
+      "won": true
+    },
+    {
+      "iso": "2026-05-04T00:00:00+00:00",
+      "pnl": -5.06,
+      "cumulative": -95.14,
+      "won": false
+    },
+    {
+      "iso": "2026-05-04T04:00:00+00:00",
+      "pnl": -9.69,
+      "cumulative": -104.83,
+      "won": false
+    },
+    {
+      "iso": "2026-05-04T04:00:00+00:00",
+      "pnl": -4.13,
+      "cumulative": -108.96,
+      "won": false
+    },
+    {
+      "iso": "2026-05-04T04:00:00+00:00",
+      "pnl": -4.13,
+      "cumulative": -113.09,
+      "won": false
+    },
+    {
+      "iso": "2026-05-04T04:00:00+00:00",
+      "pnl": -10.17,
+      "cumulative": -123.26,
+      "won": false
+    },
+    {
+      "iso": "2026-05-04T04:00:00+00:00",
+      "pnl": -10.17,
+      "cumulative": -133.43,
+      "won": false
+    },
+    {
+      "iso": "2026-05-04T08:00:00+00:00",
+      "pnl": -8.43,
+      "cumulative": -141.86,
+      "won": false
+    },
+    {
+      "iso": "2026-05-04T12:00:00+00:00",
+      "pnl": -10.12,
+      "cumulative": -151.98,
+      "won": false
+    },
+    {
+      "iso": "2026-05-04T12:00:00+00:00",
+      "pnl": -8.48,
+      "cumulative": -160.46,
+      "won": false
+    },
+    {
+      "iso": "2026-05-04T21:53:00+00:00",
+      "pnl": 64.71,
+      "cumulative": -95.75,
+      "won": true
+    },
+    {
+      "iso": "2026-05-05T08:00:00+00:00",
+      "pnl": -5.66,
+      "cumulative": -101.41,
+      "won": false
+    },
+    {
+      "iso": "2026-05-05T12:00:00+00:00",
+      "pnl": -3.3,
+      "cumulative": -104.71,
+      "won": false
+    },
+    {
+      "iso": "2026-05-05T12:00:00+00:00",
+      "pnl": -7.75,
+      "cumulative": -112.46,
+      "won": false
+    },
+    {
+      "iso": "2026-05-05T12:00:00+00:00",
+      "pnl": -4.57,
+      "cumulative": -117.03,
+      "won": false
+    },
+    {
+      "iso": "2026-05-05T22:26:00+00:00",
+      "pnl": 85.94,
+      "cumulative": -31.09,
+      "won": true
+    },
+    {
+      "iso": "2026-05-06T00:00:00+00:00",
+      "pnl": 1.66,
+      "cumulative": -29.43,
+      "won": true
+    },
+    {
+      "iso": "2026-05-06T00:00:00+00:00",
+      "pnl": 1.66,
+      "cumulative": -27.77,
+      "won": true
+    },
+    {
+      "iso": "2026-05-06T00:00:00+00:00",
+      "pnl": -1.7,
+      "cumulative": -29.47,
+      "won": false
+    },
+    {
+      "iso": "2026-05-06T04:00:00+00:00",
+      "pnl": -6.46,
+      "cumulative": -35.93,
+      "won": false
+    },
+    {
+      "iso": "2026-05-06T04:00:00+00:00",
+      "pnl": -6.46,
+      "cumulative": -42.39,
+      "won": false
+    },
+    {
+      "iso": "2026-05-06T04:00:00+00:00",
+      "pnl": -6.04,
+      "cumulative": -48.43,
+      "won": false
+    },
+    {
+      "iso": "2026-05-06T08:00:00+00:00",
+      "pnl": -8.83,
+      "cumulative": -57.26,
+      "won": false
+    },
+    {
+      "iso": "2026-05-06T08:00:00+00:00",
+      "pnl": -5.15,
+      "cumulative": -62.41,
+      "won": false
+    },
+    {
+      "iso": "2026-05-06T08:00:00+00:00",
+      "pnl": -6.65,
+      "cumulative": -69.06,
+      "won": false
+    },
+    {
+      "iso": "2026-05-06T08:00:00+00:00",
+      "pnl": 0.91,
+      "cumulative": -68.15,
+      "won": true
+    },
+    {
+      "iso": "2026-05-06T08:00:00+00:00",
+      "pnl": -5.57,
+      "cumulative": -73.72,
+      "won": false
+    },
+    {
+      "iso": "2026-05-06T08:00:00+00:00",
+      "pnl": 0.32,
+      "cumulative": -73.4,
+      "won": true
+    },
+    {
+      "iso": "2026-05-06T08:00:00+00:00",
+      "pnl": -9.09,
+      "cumulative": -82.49,
+      "won": false
+    },
+    {
+      "iso": "2026-05-06T08:00:00+00:00",
+      "pnl": -9.09,
+      "cumulative": -91.58,
+      "won": false
+    },
+    {
+      "iso": "2026-05-06T12:00:00+00:00",
+      "pnl": -4.68,
+      "cumulative": -96.26,
+      "won": false
+    },
+    {
+      "iso": "2026-05-06T12:00:00+00:00",
+      "pnl": -4.68,
+      "cumulative": -100.94,
+      "won": false
+    },
+    {
+      "iso": "2026-05-08T16:00:00+00:00",
+      "pnl": 55.55,
+      "cumulative": -45.39,
+      "won": true
+    },
+    {
+      "iso": "2026-05-08T20:00:00+00:00",
+      "pnl": 24.06,
+      "cumulative": -21.33,
+      "won": true
+    },
+    {
+      "iso": "2026-05-09T00:00:00+00:00",
+      "pnl": 36.47,
+      "cumulative": 15.14,
+      "won": true
+    },
+    {
+      "iso": "2026-05-09T00:00:00+00:00",
+      "pnl": -5.31,
+      "cumulative": 9.83,
+      "won": false
+    },
+    {
+      "iso": "2026-05-10T04:00:00+00:00",
+      "pnl": 39.48,
+      "cumulative": 49.31,
+      "won": true
+    },
+    {
+      "iso": "2026-05-10T16:00:00+00:00",
+      "pnl": 46.56,
+      "cumulative": 95.87,
+      "won": true
+    },
+    {
+      "iso": "2026-05-10T16:00:00+00:00",
+      "pnl": 35.78,
+      "cumulative": 131.65,
+      "won": true
+    },
+    {
+      "iso": "2026-05-10T16:00:00+00:00",
+      "pnl": 18.77,
+      "cumulative": 150.42,
+      "won": true
+    },
+    {
+      "iso": "2026-05-10T16:00:00+00:00",
+      "pnl": 13.48,
+      "cumulative": 163.9,
+      "won": true
+    },
+    {
+      "iso": "2026-05-10T16:00:00+00:00",
+      "pnl": -7.06,
+      "cumulative": 156.84,
+      "won": false
+    },
+    {
+      "iso": "2026-05-10T20:00:00+00:00",
+      "pnl": 13.71,
+      "cumulative": 170.55,
+      "won": true
+    },
+    {
+      "iso": "2026-05-11T20:00:00+00:00",
+      "pnl": 14.7,
+      "cumulative": 185.25,
+      "won": true
+    },
+    {
+      "iso": "2026-05-12T12:00:00+00:00",
+      "pnl": 23.43,
+      "cumulative": 208.68,
+      "won": true
+    },
+    {
+      "iso": "2026-05-12T12:00:00+00:00",
+      "pnl": -9.21,
+      "cumulative": 199.47,
+      "won": false
+    },
+    {
+      "iso": "2026-05-12T12:00:00+00:00",
+      "pnl": -16.63,
+      "cumulative": 182.84,
+      "won": false
+    },
+    {
+      "iso": "2026-05-12T16:00:00+00:00",
+      "pnl": 19.96,
+      "cumulative": 202.8,
+      "won": true
+    },
+    {
+      "iso": "2026-05-13T12:00:00+00:00",
+      "pnl": 7.56,
+      "cumulative": 210.36,
+      "won": true
+    },
+    {
+      "iso": "2026-05-13T12:00:00+00:00",
+      "pnl": -44.29,
+      "cumulative": 166.07,
+      "won": false
+    },
+    {
+      "iso": "2026-05-14T16:00:00+00:00",
+      "pnl": 29.72,
+      "cumulative": 195.79,
+      "won": true
+    },
+    {
+      "iso": "2026-05-14T16:00:00+00:00",
+      "pnl": 18.34,
+      "cumulative": 214.13,
+      "won": true
+    },
+    {
+      "iso": "2026-05-15T04:00:00+00:00",
+      "pnl": 6.16,
+      "cumulative": 220.29,
+      "won": true
+    },
+    {
+      "iso": "2026-05-15T12:00:00+00:00",
+      "pnl": -34.33,
+      "cumulative": 185.96,
+      "won": false
+    },
+    {
+      "iso": "2026-05-16T04:00:00+00:00",
+      "pnl": 23.96,
+      "cumulative": 209.92,
+      "won": true
+    },
+    {
+      "iso": "2026-05-16T04:00:00+00:00",
+      "pnl": -15.17,
+      "cumulative": 194.75,
+      "won": false
+    },
+    {
+      "iso": "2026-05-16T04:00:00+00:00",
+      "pnl": -31.36,
+      "cumulative": 163.39,
+      "won": false
+    },
+    {
+      "iso": "2026-05-16T04:00:00+00:00",
+      "pnl": -12.63,
+      "cumulative": 150.76,
+      "won": false
+    },
+    {
+      "iso": "2026-05-16T04:00:00+00:00",
+      "pnl": -11.76,
+      "cumulative": 139.0,
+      "won": false
+    },
+    {
+      "iso": "2026-05-16T04:00:00+00:00",
+      "pnl": -10.25,
+      "cumulative": 128.75,
+      "won": false
+    },
+    {
+      "iso": "2026-05-16T04:00:00+00:00",
+      "pnl": -10.3,
+      "cumulative": 118.45,
+      "won": false
+    },
+    {
+      "iso": "2026-05-16T04:00:00+00:00",
+      "pnl": 12.26,
+      "cumulative": 130.71,
+      "won": true
+    },
+    {
+      "iso": "2026-05-16T04:00:00+00:00",
+      "pnl": -17.08,
+      "cumulative": 113.63,
+      "won": false
+    },
+    {
+      "iso": "2026-05-16T08:00:00+00:00",
+      "pnl": 21.89,
+      "cumulative": 135.52,
+      "won": true
+    },
+    {
+      "iso": "2026-05-17T20:00:00+00:00",
+      "pnl": -11.36,
+      "cumulative": 124.16,
+      "won": false
+    },
+    {
+      "iso": "2026-05-17T20:00:00+00:00",
+      "pnl": -9.6,
+      "cumulative": 114.56,
+      "won": false
+    },
+    {
+      "iso": "2026-05-17T20:00:00+00:00",
+      "pnl": -14.72,
+      "cumulative": 99.84,
+      "won": false
+    },
+    {
+      "iso": "2026-05-18T08:00:00+00:00",
+      "pnl": -15.34,
+      "cumulative": 84.5,
+      "won": false
+    }
+  ],
+  "by_direction": {
+    "Long": {
+      "n": 43,
+      "wins": 20,
+      "wr": 46.5,
+      "pnl": 275.8,
+      "avg": 6.41
+    },
+    "Short": {
+      "n": 40,
+      "wins": 8,
+      "wr": 20.0,
+      "pnl": -191.3,
+      "avg": -4.78
+    }
+  },
+  "by_conviction": {
+    "MEDIUM": {
+      "n": 78,
+      "wins": 26,
+      "wr": 33.3,
+      "pnl": 86.19,
+      "avg": 1.11
+    },
+    "VERY HIGH": {
+      "n": 1,
+      "wins": 0,
+      "wr": 0.0,
+      "pnl": -22.14,
+      "avg": -22.14
+    },
+    "HIGH": {
+      "n": 4,
+      "wins": 2,
+      "wr": 50.0,
+      "pnl": 20.45,
+      "avg": 5.11
+    }
+  },
+  "by_entry_type": {
+    "at_support": {
+      "n": 39,
+      "wins": 13,
+      "wr": 33.3,
+      "pnl": -37.02,
+      "avg": -0.95
+    },
+    "breakout_chase": {
+      "n": 2,
+      "wins": 1,
+      "wr": 50.0,
+      "pnl": -14.73,
+      "avg": -7.37
+    },
+    "structural_limit": {
+      "n": 1,
+      "wins": 1,
+      "wr": 100.0,
+      "pnl": 4.73,
+      "avg": 4.73
+    },
+    "near_support": {
+      "n": 32,
+      "wins": 11,
+      "wr": 34.4,
+      "pnl": 149.93,
+      "avg": 4.69
+    },
+    "ema20_rejection": {
+      "n": 7,
+      "wins": 1,
+      "wr": 14.3,
+      "pnl": -23.61,
+      "avg": -3.37
+    },
+    "at_resistance": {
+      "n": 2,
+      "wins": 1,
+      "wr": 50.0,
+      "pnl": 5.2,
+      "avg": 2.6
+    }
+  },
+  "by_confluence_score": {
+    "5": {
+      "n": 13,
+      "wins": 1,
+      "wr": 7.7,
+      "pnl": -120.34,
+      "avg": -9.26
+    },
+    "8": {
+      "n": 1,
+      "wins": 0,
+      "wr": 0.0,
+      "pnl": -22.14,
+      "avg": -22.14
+    },
+    "4": {
+      "n": 20,
+      "wins": 7,
+      "wr": 35.0,
+      "pnl": 45.16,
+      "avg": 2.26
+    },
+    "3": {
+      "n": 25,
+      "wins": 7,
+      "wr": 28.0,
+      "pnl": -60.71,
+      "avg": -2.43
+    },
+    "2": {
+      "n": 21,
+      "wins": 12,
+      "wr": 57.1,
+      "pnl": 252.13,
+      "avg": 12.01
+    },
+    "6": {
+      "n": 3,
+      "wins": 1,
+      "wr": 33.3,
+      "pnl": -9.6,
+      "avg": -3.2
+    }
+  },
+  "by_session": {
+    "europe": {
+      "n": 33,
+      "wins": 10,
+      "wr": 30.3,
+      "pnl": -81.17,
+      "avg": -2.46
+    },
+    "asia": {
+      "n": 23,
+      "wins": 5,
+      "wr": 21.7,
+      "pnl": -33.16,
+      "avg": -1.44
+    },
+    "us": {
+      "n": 25,
+      "wins": 12,
+      "wr": 48.0,
+      "pnl": 216.24,
+      "avg": 8.65
+    }
+  },
+  "by_audit_verdict": {
+    "PASS": {
+      "n": 76,
+      "wins": 25,
+      "wr": 32.9,
+      "pnl": 105.44,
+      "avg": 1.39
+    },
+    "DEGRADED": {
+      "n": 5,
+      "wins": 2,
+      "wr": 40.0,
+      "pnl": -3.53,
+      "avg": -0.71
+    }
+  },
+  "by_dow": {
+    "Sunday": {
+      "n": 5,
+      "wins": 2,
+      "wr": 40.0,
+      "pnl": -0.69,
+      "avg": -0.14
+    },
+    "Wednesday": {
+      "n": 29,
+      "wins": 9,
+      "wr": 31.0,
+      "pnl": 83.4,
+      "avg": 2.88
+    },
+    "Monday": {
+      "n": 9,
+      "wins": 2,
+      "wr": 22.2,
+      "pnl": -41.18,
+      "avg": -4.58
+    },
+    "Tuesday": {
+      "n": 10,
+      "wins": 3,
+      "wr": 30.0,
+      "pnl": -51.3,
+      "avg": -5.13
+    },
+    "Saturday": {
+      "n": 7,
+      "wins": 2,
+      "wr": 28.6,
+      "pnl": 44.91,
+      "avg": 6.42
+    },
+    "Thursday": {
+      "n": 9,
+      "wins": 8,
+      "wr": 88.9,
+      "pnl": 163.75,
+      "avg": 18.19
+    },
+    "Friday": {
+      "n": 12,
+      "wins": 1,
+      "wr": 8.3,
+      "pnl": -96.98,
+      "avg": -8.08
+    }
+  },
+  "by_hour": {
+    "13": {
+      "n": 1,
+      "wins": 0,
+      "wr": 0.0,
+      "pnl": -13.7,
+      "avg": -13.7
+    },
+    "8": {
+      "n": 16,
+      "wins": 4,
+      "wr": 25.0,
+      "pnl": -52.28,
+      "avg": -3.27
+    },
+    "7": {
+      "n": 1,
+      "wins": 0,
+      "wr": 0.0,
+      "pnl": -0.83,
+      "avg": -0.83
+    },
+    "0": {
+      "n": 11,
+      "wins": 5,
+      "wr": 45.5,
+      "pnl": 48.64,
+      "avg": 4.42
+    },
+    "5": {
+      "n": 2,
+      "wins": 0,
+      "wr": 0.0,
+      "pnl": -7.84,
+      "avg": -3.92
+    },
+    "12": {
+      "n": 16,
+      "wins": 6,
+      "wr": 37.5,
+      "pnl": -15.19,
+      "avg": -0.95
+    },
+    "4": {
+      "n": 9,
+      "wins": 0,
+      "wr": 0.0,
+      "pnl": -73.13,
+      "avg": -8.13
+    },
+    "16": {
+      "n": 12,
+      "wins": 5,
+      "wr": 41.7,
+      "pnl": 151.54,
+      "avg": 12.63
+    },
+    "22": {
+      "n": 1,
+      "wins": 0,
+      "wr": 0.0,
+      "pnl": -11.05,
+      "avg": -11.05
+    },
+    "20": {
+      "n": 10,
+      "wins": 7,
+      "wr": 70.0,
+      "pnl": 92.14,
+      "avg": 9.21
+    },
+    "18": {
+      "n": 1,
+      "wins": 0,
+      "wr": 0.0,
+      "pnl": -12.07,
+      "avg": -12.07
+    },
+    "17": {
+      "n": 1,
+      "wins": 0,
+      "wr": 0.0,
+      "pnl": -4.32,
+      "avg": -4.32
+    }
+  },
+  "best_coins": [
+    {
+      "coin": "ONDO",
+      "n": 3,
+      "wins": 2,
+      "wr": 66.7,
+      "pnl": 110.13,
+      "avg": 36.71
+    },
+    {
+      "coin": "ADA",
+      "n": 4,
+      "wins": 2,
+      "wr": 50.0,
+      "pnl": 62.9,
+      "avg": 15.72
+    },
+    {
+      "coin": "CAKE",
+      "n": 6,
+      "wins": 3,
+      "wr": 50.0,
+      "pnl": 24.96,
+      "avg": 4.16
+    },
+    {
+      "coin": "RENDER",
+      "n": 5,
+      "wins": 2,
+      "wr": 40.0,
+      "pnl": 22.53,
+      "avg": 4.51
+    },
+    {
+      "coin": "LINK",
+      "n": 2,
+      "wins": 1,
+      "wr": 50.0,
+      "pnl": 21.29,
+      "avg": 10.64
+    }
+  ],
+  "worst_coins": [
+    {
+      "coin": "ALGO",
+      "n": 2,
+      "wins": 0,
+      "wr": 0.0,
+      "pnl": -35.84,
+      "avg": -17.92
+    },
+    {
+      "coin": "SUI",
+      "n": 3,
+      "wins": 0,
+      "wr": 0.0,
+      "pnl": -34.07,
+      "avg": -11.36
+    },
+    {
+      "coin": "TON",
+      "n": 5,
+      "wins": 1,
+      "wr": 20.0,
+      "pnl": -32.51,
+      "avg": -6.5
+    },
+    {
+      "coin": "AVAX",
+      "n": 3,
+      "wins": 0,
+      "wr": 0.0,
+      "pnl": -24.76,
+      "avg": -8.25
+    },
+    {
+      "coin": "NEAR",
+      "n": 4,
+      "wins": 1,
+      "wr": 25.0,
+      "pnl": -19.49,
+      "avg": -4.87
+    }
+  ],
+  "best_trade": {
+    "trade_id": "ONDOUSDT_20260428_J_M_001",
+    "coin": "ONDO",
+    "direction": "Long",
+    "system": "John",
+    "pnl_usd": 85.94,
+    "pnl_pct": 85.94,
+    "date_closed": "2026-05-05",
+    "close_reason": "TP2 hit",
+    "conviction": "MEDIUM"
+  },
+  "worst_trade": {
+    "trade_id": "TONUSDT_20260508_CJ_M_001",
+    "coin": "TON",
+    "direction": "Long",
+    "system": "John",
+    "pnl_usd": -44.29,
+    "pnl_pct": -44.29,
+    "date_closed": "2026-05-13",
+    "close_reason": "SL hit",
+    "conviction": "MEDIUM"
+  },
+  "recent_closes": [
+    {
+      "trade_id": "UNIUSDT_20260515_CJ_M_001",
+      "coin": "UNI",
+      "direction": "Long",
+      "system": "John",
+      "pnl_usd": -15.34,
+      "won": false,
+      "close_reason": "SL hit",
+      "iso": "2026-05-18T08:00:00+00:00"
+    },
+    {
+      "trade_id": "RENDERUSDT_20260515_CJ_M_001",
+      "coin": "RENDER",
+      "direction": "Long",
+      "system": "John",
+      "pnl_usd": -14.72,
+      "won": false,
+      "close_reason": "SL hit",
+      "iso": "2026-05-17T20:00:00+00:00"
+    },
+    {
+      "trade_id": "LTCUSDT_20260515_CJ_M_001",
+      "coin": "LTC",
+      "direction": "Long",
+      "system": "John",
+      "pnl_usd": -9.6,
+      "won": false,
+      "close_reason": "SL hit",
+      "iso": "2026-05-17T20:00:00+00:00"
+    },
+    {
+      "trade_id": "XLMUSDT_20260514_CJ_M_002",
+      "coin": "XLM",
+      "direction": "Long",
+      "system": "John",
+      "pnl_usd": -11.36,
+      "won": false,
+      "close_reason": "SL hit",
+      "iso": "2026-05-17T20:00:00+00:00"
+    },
+    {
+      "trade_id": "HBARUSDT_20260505_J_M_001",
+      "coin": "HBAR",
+      "direction": "Long",
+      "system": "John",
+      "pnl_usd": 21.89,
+      "won": true,
+      "close_reason": "SL hit",
+      "iso": "2026-05-16T08:00:00+00:00"
+    },
+    {
+      "trade_id": "APTUSDT_20260515_CJ_M_001",
+      "coin": "APT",
+      "direction": "Long",
+      "system": "John",
+      "pnl_usd": -17.08,
+      "won": false,
+      "close_reason": "SL hit",
+      "iso": "2026-05-16T04:00:00+00:00"
+    },
+    {
+      "trade_id": "XLMUSDT_20260514_CJ_M_001",
+      "coin": "XLM",
+      "direction": "Short",
+      "system": "John",
+      "pnl_usd": 12.26,
+      "won": true,
+      "close_reason": "TP2 hit",
+      "iso": "2026-05-16T04:00:00+00:00"
+    },
+    {
+      "trade_id": "SOLUSDT_20260513_CJ_M_001",
+      "coin": "SOL",
+      "direction": "Long",
+      "system": "John",
+      "pnl_usd": -10.3,
+      "won": false,
+      "close_reason": "SL hit",
+      "iso": "2026-05-16T04:00:00+00:00"
+    },
+    {
+      "trade_id": "CAKEUSDT_20260513_CJ_001",
+      "coin": "CAKE",
+      "direction": "Long",
+      "system": "John",
+      "pnl_usd": -10.25,
+      "won": false,
+      "close_reason": "SL hit",
+      "iso": "2026-05-16T04:00:00+00:00"
+    },
+    {
+      "trade_id": "ADAUSDT_20260512_CJ_M_001",
+      "coin": "ADA",
+      "direction": "Long",
+      "system": "John",
+      "pnl_usd": -11.76,
+      "won": false,
+      "close_reason": "SL hit",
+      "iso": "2026-05-16T04:00:00+00:00"
+    }
+  ],
+  "live_positions": {
+    "open_count": 6,
+    "open_long": 4,
+    "open_short": 2,
+    "pending_count": 9,
+    "capital_open_usd": 600,
+    "capital_pending_usd": 900
+  },
+  "macro": {
+    "vix": 17.44,
+    "vix_5d": [
+      18.43,
+      17.82,
+      18.06,
+      17.44,
+      17.44
+    ],
+    "vix_ma14": 17.72,
+    "dxy": 99.27,
+    "dxy_5d": [
+      99.27,
+      98.97,
+      99.3,
+      99.11,
+      99.27
+    ],
+    "dxy_ma14": 98.63,
+    "btc_price_last_seen": 76947.58,
+    "btc_7d_change_pct": -5.233,
+    "btc_30d_change_pct": 1.195,
+    "btc_correlation_30d": 0.625
+  }
+}

@@ -1368,7 +1368,7 @@ function renderSystems() {
 // Screen navigation (swipeable — no auto-rotation)
 let screenIdx = 0;
 let screenTransitioning = false;
-const screens = ["screen-1", "screen-2", "screen-3"];
+const screens = ["screen-1", "screen-2", "screen-3", "screen-4"];
 
 function goToScreen(targetIdx, dir) {
   targetIdx = Math.max(0, Math.min(screens.length - 1, targetIdx));
@@ -1505,3 +1505,420 @@ async function fetchBloombergNews() {
 }
 fetchBloombergNews();
 setInterval(fetchBloombergNews, 60_000);
+
+// ════════════════════════════════════════════════════════════════════════
+// SCREEN 4 — EDGE INTELLIGENCE
+// Fetches analytics.json (pre-computed deep stats from publish_analytics.py)
+// + live Fear & Greed from alternative.me (CORS-friendly, no key).
+// ════════════════════════════════════════════════════════════════════════
+
+const ANALYTICS_URL = "analytics.json";
+const FNG_URL       = "https://api.alternative.me/fng/?limit=1";
+let _edgeAnalytics = null;
+let _edgeFng = null;
+
+function _fmtUsdEdge(v) {
+  if (v == null || isNaN(v)) return "—";
+  const sign = v > 0 ? "+" : (v < 0 ? "−" : "");
+  return sign + "$" + Math.abs(v).toLocaleString("en-US", { maximumFractionDigits: 2 });
+}
+function _fmtPctEdge(v, d = 1) {
+  if (v == null || isNaN(v)) return "—";
+  const sign = v > 0 ? "+" : "";
+  return sign + Number(v).toFixed(d) + "%";
+}
+function _signCls(v) { return v > 0 ? "pos" : (v < 0 ? "neg" : "neu"); }
+
+async function fetchAnalytics() {
+  try {
+    const r = await fetch(ANALYTICS_URL + "?t=" + Date.now(), { cache: "no-store" });
+    if (!r.ok) throw new Error("HTTP " + r.status);
+    _edgeAnalytics = await r.json();
+    renderEdgeScreen();
+  } catch (e) {
+    console.warn("analytics fetch failed:", e);
+  }
+}
+
+async function fetchFearGreed() {
+  try {
+    const r = await fetch(FNG_URL + "&t=" + Date.now(), { cache: "no-store" });
+    const d = await r.json();
+    const item = (d.data || [])[0];
+    if (item) {
+      _edgeFng = {
+        value: parseInt(item.value, 10),
+        label: item.value_classification,
+      };
+      renderEdgeFng();
+    }
+  } catch (e) { console.warn("F&G fetch failed:", e); }
+}
+
+// ── Render: F&G gauge ──
+function renderEdgeFng() {
+  if (!_edgeFng) return;
+  const v = _edgeFng.value;
+  $("fg-value").textContent = v;
+  $("fg-label").textContent = (_edgeFng.label || "").toUpperCase();
+
+  // Needle: map 0..100 → angle −90° to +90° (180° arc)
+  const angleDeg = -90 + (v / 100) * 180;
+  const rad = angleDeg * Math.PI / 180;
+  const cx = 100, cy = 100, len = 64;
+  const x2 = cx + Math.sin(rad) * len;
+  const y2 = cy - Math.cos(rad) * len;
+  const needle = document.getElementById("fg-needle");
+  if (needle) {
+    needle.setAttribute("x2", x2.toFixed(1));
+    needle.setAttribute("y2", y2.toFixed(1));
+  }
+
+  // Colour the value based on bucket
+  const fgValEl = $("fg-value");
+  fgValEl.classList.remove("fg-fear", "fg-greed", "fg-neutral");
+  if (v < 35) fgValEl.classList.add("fg-fear");
+  else if (v > 65) fgValEl.classList.add("fg-greed");
+  else fgValEl.classList.add("fg-neutral");
+}
+
+// ── Render: stacked horizontal bars (used for system/conviction/entry/etc.) ──
+function _renderBars(containerId, dataObj, opts = {}) {
+  const el = document.getElementById(containerId);
+  if (!el) return;
+  const entries = Object.entries(dataObj || {});
+  if (!entries.length) { el.innerHTML = '<div class="bars-empty">no data</div>'; return; }
+
+  // Sort: by pnl desc by default, or by key if numeric
+  if (opts.sortByKey) {
+    entries.sort((a, b) => Number(a[0]) - Number(b[0]));
+  } else {
+    entries.sort((a, b) => (b[1].pnl ?? 0) - (a[1].pnl ?? 0));
+  }
+
+  // For bar fill width: scale by win rate (0–100%)
+  const html = entries.map(([key, v]) => {
+    const wr = v.wr ?? 0;
+    const pnl = v.pnl ?? 0;
+    const n = v.n ?? 0;
+    const cls = pnl > 0 ? "pos" : (pnl < 0 ? "neg" : "neu");
+    const label = opts.labelMap ? (opts.labelMap[key] || key) : key;
+    return `
+      <div class="bars-row ${cls}">
+        <div class="bars-key">${label}</div>
+        <div class="bars-track"><div class="bars-fill ${cls}" style="width:${Math.max(2, wr)}%"></div></div>
+        <div class="bars-wr">${wr.toFixed(0)}%</div>
+        <div class="bars-n">${n}t</div>
+        <div class="bars-pnl ${cls}">${_fmtUsdEdge(pnl)}</div>
+      </div>`;
+  }).join("");
+  el.innerHTML = html;
+}
+
+// ── Render: direction tile (Long vs Short) ──
+function _renderDirection(d) {
+  const el = $("edge-direction");
+  if (!el || !d) return;
+  const long = d.Long || { n: 0, wr: 0, pnl: 0 };
+  const short = d.Short || { n: 0, wr: 0, pnl: 0 };
+  el.innerHTML = `
+    <div class="dir-row">
+      <div class="dir-label dir-long">LONG</div>
+      <div class="dir-bar"><div class="dir-fill" style="width:${Math.max(2, long.wr)}%"></div></div>
+      <div class="dir-stat"><span class="dir-wr">${long.wr.toFixed(0)}%</span><span class="dir-pnl ${_signCls(long.pnl)}">${_fmtUsdEdge(long.pnl)}</span></div>
+    </div>
+    <div class="dir-row">
+      <div class="dir-label dir-short">SHORT</div>
+      <div class="dir-bar"><div class="dir-fill short" style="width:${Math.max(2, short.wr)}%"></div></div>
+      <div class="dir-stat"><span class="dir-wr">${short.wr.toFixed(0)}%</span><span class="dir-pnl ${_signCls(short.pnl)}">${_fmtUsdEdge(short.pnl)}</span></div>
+    </div>
+    <div class="dir-meta">
+      <span>${long.n} long · ${short.n} short trades</span>
+    </div>
+  `;
+}
+
+// ── Render: insights ticker ──
+function _renderEdgeInsights(a) {
+  const at = a.all_time || {};
+  const macro = a.macro || {};
+  const fng = _edgeFng;
+  const pieces = [];
+
+  if (at.win_rate != null) pieces.push(`<span><strong>${at.win_rate}%</strong> WR · ${at.total_trades}t</span>`);
+  if (at.profit_factor != null) pieces.push(`<span>PF <strong>${at.profit_factor}</strong></span>`);
+  if (at.current_streak_type && at.current_streak_count) {
+    const cls = at.current_streak_type === "win" ? "pos" : "neg";
+    pieces.push(`<span>Streak: <strong class="${cls}">${at.current_streak_count}${at.current_streak_type === "win" ? "W" : "L"}</strong></span>`);
+  }
+  if (macro.btc_7d_change_pct != null) {
+    pieces.push(`<span>BTC 7d <strong class="${_signCls(macro.btc_7d_change_pct)}">${_fmtPctEdge(macro.btc_7d_change_pct)}</strong></span>`);
+  }
+  if (fng) {
+    pieces.push(`<span>F&amp;G <strong>${fng.value}</strong> ${fng.label}</span>`);
+  }
+  if (macro.vix != null) pieces.push(`<span>VIX <strong>${macro.vix}</strong></span>`);
+  if (a.live_positions) {
+    pieces.push(`<span>${a.live_positions.open_count} open · ${a.live_positions.pending_count} pending</span>`);
+  }
+
+  const el = $("edge-insights");
+  el.innerHTML = `<span class="edge-ins-label">EDGE INSIGHTS</span>` +
+    pieces.map(p => `<span class="edge-ins-sep">·</span>${p}`).join("");
+}
+
+// ── Render: BY SYSTEM (rich, with inception + days active + decommissioned) ──
+const SYS_COLORS = {
+  John:    "#5B8DEF",
+  Braam:   "#ffab40",
+  Mong:    "#a76adb",
+  William: "#6a7390",
+};
+function _renderSystemsRich(systems, decommissioned) {
+  const el = $("edge-systems");
+  if (!el) return;
+  const active = (systems || []).map(s => {
+    const color = SYS_COLORS[s.name] || "#888";
+    const pnlCls = s.pnl > 0 ? "pos" : (s.pnl < 0 ? "neg" : "neu");
+    const inceptShort = s.inception ? s.inception.slice(5) : "—";
+    const daysTxt = s.days_active != null ? `${s.days_active}d` : "no trades yet";
+    const liveBadges = [];
+    if (s.open > 0) liveBadges.push(`<span class="sys-live-badge open">${s.open} open</span>`);
+    if (s.pending > 0) liveBadges.push(`<span class="sys-live-badge pending">${s.pending} pending</span>`);
+    const ppd = s.pnl_per_day != null
+      ? `<span class="sys-ppd ${pnlCls}">${_fmtUsdEdge(s.pnl_per_day)}/d</span>`
+      : `<span class="sys-ppd muted">—</span>`;
+    const noTrades = s.closed === 0;
+    return `
+      <div class="sys-rich-row${noTrades ? ' empty' : ''}" data-sys="${s.name}">
+        <div class="sys-rich-dot" style="background:${color};box-shadow:0 0 10px ${color}80"></div>
+        <div class="sys-rich-main">
+          <div class="sys-rich-line1">
+            <span class="sys-rich-name">${s.name}</span>
+            <span class="sys-rich-incept">since ${inceptShort} · ${daysTxt}</span>
+            <span class="sys-rich-pnl ${pnlCls}">${_fmtUsdEdge(s.pnl)}</span>
+          </div>
+          <div class="sys-rich-line2">
+            <div class="sys-rich-bar"><div class="sys-rich-fill ${pnlCls}" style="width:${Math.max(2, s.wr || 0)}%;background:${noTrades ? 'rgba(255,255,255,0.05)' : ''}"></div></div>
+            <span class="sys-rich-wr">${noTrades ? '—' : s.wr.toFixed(0) + '%'}</span>
+            <span class="sys-rich-n">${s.closed}t</span>
+            ${ppd}
+          </div>
+          ${liveBadges.length ? `<div class="sys-rich-live">${liveBadges.join(" ")}</div>` : ""}
+        </div>
+      </div>
+    `;
+  }).join("");
+
+  // Decommissioned (dimmed footer)
+  let decomHtml = "";
+  if (decommissioned && Object.keys(decommissioned).length) {
+    const decoms = Object.entries(decommissioned).map(([name, d]) => {
+      const color = SYS_COLORS[name] || "#666";
+      const pnlCls = d.pnl > 0 ? "pos" : (d.pnl < 0 ? "neg" : "neu");
+      return `
+        <div class="sys-decom-row">
+          <div class="sys-rich-dot" style="background:${color}"></div>
+          <span class="sys-rich-name">${name}</span>
+          <span class="sys-decom-badge">DECOM</span>
+          <span class="sys-decom-meta">${d.wr.toFixed(0)}% · ${d.n}t</span>
+          <span class="sys-rich-pnl ${pnlCls}">${_fmtUsdEdge(d.pnl)}</span>
+        </div>`;
+    }).join("");
+    decomHtml = `<div class="sys-decom-wrap">${decoms}</div>`;
+  }
+
+  el.innerHTML = active + decomHtml;
+}
+
+// ── Render: MONTHLY P&L bar chart (SVG, zero-line in middle) ──
+function _renderMonthly(monthly) {
+  const svg = document.getElementById("monthly-chart");
+  const meta = $("monthly-meta");
+  if (!svg || !monthly || !monthly.length) {
+    if (svg) svg.innerHTML = "";
+    if (meta) meta.textContent = "no closed trades yet";
+    return;
+  }
+  const W = 300, H = 130;
+  const padX = 14, padY = 18;
+  const innerW = W - 2 * padX;
+  const innerH = H - 2 * padY;
+  const N = monthly.length;
+  const barGap = N > 6 ? 4 : 8;
+  const barW = Math.max(8, (innerW - barGap * (N - 1)) / N);
+  const maxAbs = Math.max(1, ...monthly.map(m => Math.abs(m.pnl)));
+  const zeroY = padY + innerH / 2;
+  const scale = (innerH / 2 - 4) / maxAbs;
+
+  const bars = monthly.map((m, i) => {
+    const x = padX + i * (barW + barGap);
+    const h = Math.abs(m.pnl) * scale;
+    const y = m.pnl >= 0 ? zeroY - h : zeroY;
+    const color = m.pnl > 0 ? "url(#mGreen)" : (m.pnl < 0 ? "url(#mRed)" : "rgba(255,255,255,0.12)");
+    const labelY = m.pnl >= 0 ? zeroY - h - 4 : zeroY + h + 12;
+    const labelColor = m.pnl > 0 ? "#26A69A" : (m.pnl < 0 ? "#ff8a80" : "#777");
+    const monShort = m.month.slice(5); // MM
+    const monLabelY = m.pnl >= 0 ? zeroY + 12 : zeroY - 4;
+    return `
+      <rect x="${x.toFixed(1)}" y="${y.toFixed(1)}" width="${barW.toFixed(1)}" height="${Math.max(1, h).toFixed(1)}"
+            fill="${color}" rx="2"/>
+      <text x="${(x + barW/2).toFixed(1)}" y="${labelY.toFixed(1)}" text-anchor="middle"
+            font-size="9" font-weight="800" fill="${labelColor}" font-family="ui-monospace,Menlo,monospace">
+        ${m.pnl >= 0 ? "+" : "−"}$${Math.abs(m.pnl).toFixed(0)}
+      </text>
+      <text x="${(x + barW/2).toFixed(1)}" y="${monLabelY.toFixed(1)}" text-anchor="middle"
+            font-size="8" fill="#5a6585" font-family="ui-monospace,Menlo,monospace">
+        ${monShort}
+      </text>
+    `;
+  }).join("");
+
+  svg.innerHTML = `
+    <defs>
+      <linearGradient id="mGreen" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#26A69A" stop-opacity="0.95"/>
+        <stop offset="100%" stop-color="#26A69A" stop-opacity="0.55"/>
+      </linearGradient>
+      <linearGradient id="mRed" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#ff4d5e" stop-opacity="0.55"/>
+        <stop offset="100%" stop-color="#ff4d5e" stop-opacity="0.95"/>
+      </linearGradient>
+    </defs>
+    <line x1="${padX}" y1="${zeroY}" x2="${W - padX}" y2="${zeroY}"
+          stroke="rgba(255,255,255,0.15)" stroke-width="1" stroke-dasharray="2,3"/>
+    ${bars}
+  `;
+
+  // Meta line: total trades, cumulative, current month trend
+  const totalN = monthly.reduce((s, m) => s + m.n, 0);
+  const cum = monthly[monthly.length - 1]?.cumulative_pnl ?? 0;
+  const last = monthly[monthly.length - 1];
+  const lastCls = (last?.pnl ?? 0) > 0 ? "pos" : ((last?.pnl ?? 0) < 0 ? "neg" : "neu");
+  meta.innerHTML = `
+    <span>${monthly.length}mo · ${totalN}t</span>
+    <span class="monthly-cum ${cum > 0 ? 'pos' : (cum < 0 ? 'neg' : 'neu')}">cum ${_fmtUsdEdge(cum)}</span>
+    <span class="monthly-now ${lastCls}">${last?.month?.slice(5)}: ${_fmtUsdEdge(last?.pnl)}</span>
+  `;
+}
+
+// ── Render: full screen 4 ──
+function renderEdgeScreen() {
+  if (!_edgeAnalytics) return;
+  const a = _edgeAnalytics;
+  const at = a.all_time || {};
+  const macro = a.macro || {};
+
+  // Hero P&L tile
+  const pnlEl = $("edge-pnl");
+  pnlEl.textContent = _fmtUsdEdge(at.total_pnl_usd);
+  pnlEl.classList.remove("pos", "neg", "neu");
+  pnlEl.classList.add(_signCls(at.total_pnl_usd));
+  $("edge-perf-sub").textContent = `${at.wins ?? 0}W · ${at.losses ?? 0}L · ${at.total_trades ?? 0} closed`;
+  $("edge-best-usd").textContent = _fmtUsdEdge(at.best_usd);
+  $("edge-best-usd").classList.add("pos");
+  $("edge-worst-usd").textContent = _fmtUsdEdge(at.worst_usd);
+  $("edge-worst-usd").classList.add("neg");
+  $("edge-avg-win").textContent = _fmtUsdEdge(at.avg_win_usd);
+  $("edge-avg-win").classList.add("pos");
+  $("edge-avg-loss").textContent = _fmtUsdEdge(at.avg_loss_usd);
+  $("edge-avg-loss").classList.add("neg");
+
+  // WR donut
+  const wr = at.win_rate ?? 0;
+  $("edge-wr-pct").textContent = wr.toFixed(1) + "%";
+  const C = 2 * Math.PI * 50;
+  const fill = document.getElementById("edge-donut-fill");
+  if (fill) {
+    fill.setAttribute("stroke-dasharray", C);
+    fill.setAttribute("stroke-dashoffset", C * (1 - wr / 100));
+    fill.style.stroke = wr >= 50 ? "var(--green)" : (wr >= 35 ? "#ffab40" : "#ff8a80");
+  }
+  $("edge-trades").textContent = at.total_trades ?? "—";
+  $("edge-wl").textContent = `${at.wins ?? 0} / ${at.losses ?? 0}`;
+  $("edge-pf").textContent = at.profit_factor ?? "—";
+  $("edge-exp").textContent = _fmtUsdEdge(at.expectancy_usd);
+
+  // Direction
+  _renderDirection(a.by_direction);
+
+  // Streak
+  const streakBig = $("edge-streak-big");
+  if (at.current_streak_count != null) {
+    streakBig.textContent = at.current_streak_count + (at.current_streak_type === "win" ? "W" : "L");
+    streakBig.classList.remove("pos", "neg");
+    streakBig.classList.add(at.current_streak_type === "win" ? "pos" : "neg");
+  }
+  $("edge-streak-sub").textContent = at.current_streak_type === "win"
+    ? `${at.current_streak_count} winning trades`
+    : `${at.current_streak_count} losing trades`;
+  $("edge-longest-w").textContent = at.longest_win_streak ?? "—";
+  $("edge-longest-w").classList.add("pos");
+  $("edge-longest-l").textContent = at.longest_loss_streak ?? "—";
+  $("edge-longest-l").classList.add("neg");
+
+  // Macro
+  if (macro.vix != null) {
+    $("macro-vix").textContent = macro.vix.toFixed(2);
+    const trend = macro.vix > (macro.vix_ma14 ?? macro.vix) ? "↑" : "↓";
+    const trendEl = $("macro-vix-trend");
+    trendEl.textContent = `${trend} ma14 ${macro.vix_ma14?.toFixed(2) ?? "—"}`;
+    trendEl.className = "macro-trend " + (macro.vix > (macro.vix_ma14 ?? 0) ? "neg" : "pos");
+  }
+  if (macro.dxy != null) {
+    $("macro-dxy").textContent = macro.dxy.toFixed(2);
+    const trend = macro.dxy > (macro.dxy_ma14 ?? macro.dxy) ? "↑" : "↓";
+    const trendEl = $("macro-dxy-trend");
+    trendEl.textContent = `${trend} ma14 ${macro.dxy_ma14?.toFixed(2) ?? "—"}`;
+    trendEl.className = "macro-trend " + (macro.dxy > (macro.dxy_ma14 ?? 0) ? "neg" : "pos");
+  }
+  if (macro.btc_7d_change_pct != null) {
+    const el = $("macro-btc7d");
+    el.textContent = _fmtPctEdge(macro.btc_7d_change_pct);
+    el.className = "macro-val " + _signCls(macro.btc_7d_change_pct);
+  }
+  if (macro.btc_30d_change_pct != null) {
+    const el = $("macro-btc30d");
+    el.textContent = _fmtPctEdge(macro.btc_30d_change_pct);
+    el.className = "macro-val " + _signCls(macro.btc_30d_change_pct);
+  }
+
+  // Breakdown bar tiles
+  _renderSystemsRich(a.system_summary, a.decommissioned_systems);
+  _renderMonthly(a.monthly);
+  _renderBars("edge-by-conviction", a.by_conviction, {
+    labelMap: { "VERY HIGH": "V.HIGH", "HIGH": "HIGH", "MEDIUM": "MED", "LOW": "LOW" }
+  });
+  _renderBars("edge-by-entry", a.by_entry_type, {
+    labelMap: {
+      "at_support": "@ Support", "near_support": "Near Sup",
+      "at_resistance": "@ Resist", "ema20_rejection": "EMA20 Rej",
+      "breakout_chase": "Brkout", "structural_limit": "Struct"
+    }
+  });
+  _renderBars("edge-by-session", a.by_session, {
+    labelMap: { "asia": "Asia", "europe": "Europe", "us": "US" }
+  });
+  _renderBars("edge-by-confluence", a.by_confluence_score, {
+    sortByKey: true,
+    labelMap: { "4": "4/8", "5": "5/8", "6": "6/8", "7": "7/8", "8": "8/8" }
+  });
+
+  // Bottom strip
+  const bc = (a.best_coins || [])[0];
+  if (bc) $("strip-best-coin").innerHTML = `<span class="strip-name">${bc.coin}</span> <span class="pos">${_fmtUsdEdge(bc.pnl)}</span> <span class="strip-sub">${bc.n}t</span>`;
+  const wc = (a.worst_coins || [])[0];
+  if (wc) $("strip-worst-coin").innerHTML = `<span class="strip-name">${wc.coin}</span> <span class="neg">${_fmtUsdEdge(wc.pnl)}</span> <span class="strip-sub">${wc.n}t</span>`;
+  if (a.best_trade) $("strip-best-trade").innerHTML = `<span class="strip-name">${a.best_trade.coin} ${a.best_trade.direction}</span> <span class="pos">${_fmtUsdEdge(a.best_trade.pnl_usd)}</span>`;
+  if (a.worst_trade) $("strip-worst-trade").innerHTML = `<span class="strip-name">${a.worst_trade.coin} ${a.worst_trade.direction}</span> <span class="neg">${_fmtUsdEdge(a.worst_trade.pnl_usd)}</span>`;
+  if (at.avg_hold_hours != null) $("strip-avg-hold").innerHTML = `<span class="strip-name">${at.avg_hold_hours.toFixed(1)}h</span> <span class="strip-sub">median ${at.median_hold_hours?.toFixed(1) ?? "—"}h</span>`;
+  if (a.live_positions) $("strip-live").innerHTML = `<span class="strip-name">${a.live_positions.open_count} open</span> <span class="strip-sub">${a.live_positions.open_long}L · ${a.live_positions.open_short}S</span>`;
+
+  // Live insights ticker
+  _renderEdgeInsights(a);
+}
+
+fetchAnalytics();
+fetchFearGreed();
+setInterval(fetchAnalytics, 5 * 60_000);    // analytics: every 5 min
+setInterval(fetchFearGreed, 30 * 60_000);   // F&G: every 30 min (updates daily anyway)
