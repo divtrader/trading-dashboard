@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <meta name="robots" content="noindex,nofollow">
 <title>Spyker Trading Inc — Dashboard</title>
-<link rel="stylesheet" href="style.css?v=86">
+<link rel="stylesheet" href="style.css?v=87">
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
@@ -161,6 +161,7 @@
       <div class="edge-tile edge-perf edge-span-2">
         <div class="edge-perf-overlay">
           <div class="edge-label">ALL-TIME P&amp;L · EQUITY CURVE</div>
+          <div class="edge-desc">Live portfolio · realized + TP1 banked + unrealized · curve traces closed trades over time</div>
           <div class="edge-big" id="edge-pnl">—</div>
           <div class="edge-sub" id="edge-perf-sub">—</div>
           <div class="edge-mini-row">
@@ -178,6 +179,7 @@
 
       <div class="edge-tile edge-wr">
         <div class="edge-label">WIN RATE</div>
+        <div class="edge-desc">% of closed trades that ended in profit</div>
         <div class="wr-big-donut">
           <svg viewBox="0 0 160 160" class="wr-donut-svg">
             <defs>
@@ -211,6 +213,7 @@
 
       <div class="edge-tile edge-dir">
         <div class="edge-label">DIRECTION</div>
+        <div class="edge-desc">Long vs Short · tower height scales with P&amp;L</div>
         <div class="dir-vbars" id="edge-direction">
           <div class="dir-vbar-col long">
             <div class="dir-vbar-pnl" id="dir-long-pnl">—</div>
@@ -242,6 +245,7 @@
     <div class="edge-row edge-row-2">
       <div class="edge-tile edge-fg">
         <div class="edge-label">FEAR &amp; GREED</div>
+        <div class="edge-desc">Live crypto sentiment · 0 = Extreme Fear → 100 = Extreme Greed</div>
         <div class="fg-gauge">
           <svg viewBox="0 0 220 130" class="fg-svg" id="fg-svg">
             <defs>
@@ -267,6 +271,7 @@
 
       <div class="edge-tile edge-macro">
         <div class="edge-label">MACRO</div>
+        <div class="edge-desc">VIX vol · DXY dollar · BTC momentum — risk-off indicators</div>
         <div class="macro-grid">
           <div class="macro-cell" data-key="vix">
             <div class="macro-cell-top">
@@ -303,6 +308,7 @@
 
       <div class="edge-tile edge-systems-tile edge-span-2">
         <div class="edge-label">BY SYSTEM · SINCE INCEPTION</div>
+        <div class="edge-desc">Per-system track record · William decommissioned · Mong awaiting first signal</div>
         <div class="edge-systems" id="edge-systems">—</div>
       </div>
     </div>
@@ -311,19 +317,22 @@
     <div class="edge-row edge-row-3">
       <div class="edge-tile edge-monthly-tile edge-span-2">
         <div class="edge-label">MONTHLY P&amp;L</div>
+        <div class="edge-desc">Realized P&amp;L per calendar month · all systems combined</div>
         <div class="monthly-chart-wrap">
-          <svg id="monthly-chart" viewBox="0 0 600 160" preserveAspectRatio="none"></svg>
+          <div class="monthly-bars" id="monthly-bars"></div>
           <div class="monthly-meta" id="monthly-meta">—</div>
         </div>
       </div>
 
       <div class="edge-tile edge-bars-tile">
         <div class="edge-label">BY CONVICTION</div>
+        <div class="edge-desc">Outcome by signal strength rating</div>
         <div class="edge-bars" id="edge-by-conviction">—</div>
       </div>
 
       <div class="edge-tile edge-streak">
         <div class="edge-label">STREAK</div>
+        <div class="edge-desc">Current run · pills = last 10 closes (green=win)</div>
         <div class="edge-streak-big" id="edge-streak-big">—</div>
         <div class="edge-streak-pills" id="edge-streak-pills"></div>
         <div class="edge-streak-meta">
@@ -337,16 +346,19 @@
     <div class="edge-row edge-row-4">
       <div class="edge-tile edge-bars-tile">
         <div class="edge-label">BY ENTRY TYPE</div>
+        <div class="edge-desc">Setup classification at signal time</div>
         <div class="edge-bars" id="edge-by-entry">—</div>
       </div>
 
       <div class="edge-tile edge-bars-tile">
         <div class="edge-label">BY SESSION (UTC)</div>
+        <div class="edge-desc">Trading window at trade activation</div>
         <div class="edge-bars" id="edge-by-session">—</div>
       </div>
 
       <div class="edge-tile edge-bars-tile">
         <div class="edge-label">BY CONFLUENCE</div>
+        <div class="edge-desc">How many of 8 signal categories aligned at entry</div>
         <div class="edge-bars" id="edge-by-confluence">—</div>
       </div>
     </div>
@@ -373,6 +385,6 @@
   </div>
 </main>
 
-<script src="dashboard.js?v=97"></script>
+<script src="dashboard.js?v=98"></script>
 </body>
 </html>

@@ -1911,89 +1911,42 @@ function _renderSystemsRich(systems, decommissioned) {
   el.innerHTML = active + decomHtml;
 }
 
-// ── Render: MONTHLY P&L — smooth gradient bars + glow + rounded tops + cumulative line ──
+// ── Render: MONTHLY P&L — HTML/CSS flex bars (no SVG stretching) ──
+const MONTH_NAMES = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
 function _renderMonthly(monthly) {
-  const svg = document.getElementById("monthly-chart");
+  const host = document.getElementById("monthly-bars");
   const meta = $("monthly-meta");
-  if (!svg || !monthly || !monthly.length) {
-    if (svg) svg.innerHTML = "";
+  if (!host || !monthly || !monthly.length) {
+    if (host) host.innerHTML = "";
     if (meta) meta.textContent = "no closed trades yet";
     return;
   }
-  const W = 600, H = 160;
-  const padX = 24, padTop = 24, padBottom = 26;
-  const innerW = W - 2 * padX;
-  const innerH = H - padTop - padBottom;
-  const N = monthly.length;
-  const barGap = 14;
-  const barW = Math.max(20, Math.min(80, (innerW - barGap * (N - 1)) / N));
-  const totalBars = barW * N + barGap * (N - 1);
-  const startX = padX + (innerW - totalBars) / 2;
   const maxAbs = Math.max(1, ...monthly.map(m => Math.abs(m.pnl)));
-  const zeroY = padTop + innerH / 2;
-  const scale = (innerH / 2 - 6) / maxAbs;
-
-  // Cumulative line points
-  const cumPts = monthly.map((m, i) => {
-    const x = startX + i * (barW + barGap) + barW / 2;
-    // Cumulative scaled against same maxAbs * N (rough scale)
-    const cumMax = Math.max(...monthly.map(mm => Math.abs(mm.cumulative_pnl)), 1);
-    const y = zeroY - (m.cumulative_pnl / cumMax) * (innerH / 2 - 6);
-    return [x, y];
-  });
-  const cumPath = _smoothPath(cumPts);
-
-  const bars = monthly.map((m, i) => {
-    const x = startX + i * (barW + barGap);
-    const h = Math.max(2, Math.abs(m.pnl) * scale);
-    const y = m.pnl >= 0 ? zeroY - h : zeroY;
-    const fillGrad = m.pnl >= 0 ? "mGradGreen" : "mGradRed";
-    const labelY = m.pnl >= 0 ? y - 6 : y + h + 14;
-    const labelColor = m.pnl >= 0 ? "#26A69A" : "#ff8a80";
-    const monShort = m.month.slice(5);
-    const monLabelY = m.pnl >= 0 ? zeroY + 16 : zeroY - 6;
-    // Rounded top corners via path (rect with only top rx)
-    const r = Math.min(6, barW / 4);
-    let path;
-    if (m.pnl >= 0) {
-      // Rounded top
-      path = `M ${x} ${y + r} Q ${x} ${y} ${x + r} ${y} L ${x + barW - r} ${y} Q ${x + barW} ${y} ${x + barW} ${y + r} L ${x + barW} ${y + h} L ${x} ${y + h} Z`;
-    } else {
-      // Rounded bottom
-      path = `M ${x} ${y} L ${x + barW} ${y} L ${x + barW} ${y + h - r} Q ${x + barW} ${y + h} ${x + barW - r} ${y + h} L ${x + r} ${y + h} Q ${x} ${y + h} ${x} ${y + h - r} Z`;
-    }
+  // Each half (above/below zero line) maps maxAbs to ~85% of that half's height
+  const html = monthly.map(m => {
+    const heightPct = (Math.abs(m.pnl) / maxAbs) * 85;
+    const cls = m.pnl >= 0 ? "pos" : "neg";
+    const monIdx = parseInt(m.month.slice(5), 10) - 1;
+    const monShort = MONTH_NAMES[monIdx] || m.month.slice(5);
+    const yr = m.month.slice(2, 4);
+    const pnlTxt = (m.pnl >= 0 ? "+" : "−") + "$" + Math.abs(m.pnl).toFixed(0);
+    const sub = `${m.n}t · ${m.wr.toFixed(0)}% WR`;
     return `
-      <path d="${path}" fill="url(#${fillGrad})" filter="url(#mBarGlow)"/>
-      <path d="${path}" fill="url(#${fillGrad})"/>
-      <text x="${(x + barW/2).toFixed(1)}" y="${labelY.toFixed(1)}" text-anchor="middle"
-            font-size="11" font-weight="900" fill="${labelColor}" font-family="ui-monospace,Menlo,monospace">
-        ${m.pnl >= 0 ? "+" : "−"}$${Math.abs(m.pnl).toFixed(0)}
-      </text>
-      <text x="${(x + barW/2).toFixed(1)}" y="${monLabelY.toFixed(1)}" text-anchor="middle"
-            font-size="9" fill="#7a85a5" font-weight="700" letter-spacing="1" font-family="ui-monospace,Menlo,monospace">
-        ${monShort}
-      </text>
+      <div class="mbar ${cls}" title="${monShort} ${yr} · ${pnlTxt} · ${sub}">
+        <div class="mbar-pnl">${pnlTxt}</div>
+        <div class="mbar-half top">
+          <div class="mbar-fill" style="height:${m.pnl >= 0 ? heightPct : 0}%"></div>
+        </div>
+        <div class="mbar-baseline"></div>
+        <div class="mbar-half bot">
+          <div class="mbar-fill" style="height:${m.pnl < 0 ? heightPct : 0}%"></div>
+        </div>
+        <div class="mbar-month">${monShort} '${yr}</div>
+        <div class="mbar-sub">${sub}</div>
+      </div>
     `;
   }).join("");
-
-  svg.innerHTML = `
-    <defs>
-      <linearGradient id="mGradGreen" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0%" stop-color="#00e6c0" stop-opacity="1"/>
-        <stop offset="100%" stop-color="#00a884" stop-opacity="0.7"/>
-      </linearGradient>
-      <linearGradient id="mGradRed" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0%" stop-color="#ff6b7a" stop-opacity="0.7"/>
-        <stop offset="100%" stop-color="#ff4d5e" stop-opacity="1"/>
-      </linearGradient>
-      <filter id="mBarGlow"><feGaussianBlur stdDeviation="4"/></filter>
-    </defs>
-    <line x1="${padX}" y1="${zeroY}" x2="${W - padX}" y2="${zeroY}"
-          stroke="rgba(255,255,255,0.12)" stroke-width="1" stroke-dasharray="3,4"/>
-    ${bars}
-    <path d="${cumPath}" fill="none" stroke="rgba(255,255,255,0.45)" stroke-width="1.5"
-          stroke-dasharray="4,3" stroke-linecap="round"/>
-  `;
+  host.innerHTML = html;
 
   // Meta line
   const totalN = monthly.reduce((s, m) => s + m.n, 0);

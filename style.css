@@ -1446,7 +1446,17 @@ main {
   letter-spacing: 2px;
   color: var(--muted);
   text-transform: uppercase;
+  margin-bottom: 2px;
+  flex-shrink: 0;
+}
+.edge-tile .edge-desc {
+  font-size: 9.5px;
+  color: var(--muted-2);
+  font-weight: 500;
+  letter-spacing: 0.2px;
+  line-height: 1.3;
   margin-bottom: 6px;
+  opacity: 0.75;
   flex-shrink: 0;
 }
 
@@ -1998,17 +2008,88 @@ main {
 }
 .sys-decom-meta { color: var(--muted-2); font-size: 9px; }
 
-/* MONTHLY P&L tile */
+/* MONTHLY P&L tile — CSS flex bars (clean, no SVG stretching) */
 .monthly-chart-wrap {
   flex: 1;
   display: flex;
   flex-direction: column;
   min-height: 0;
 }
-#monthly-chart {
+.monthly-bars {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 28px;
+  padding: 4px 12px 0;
+  min-height: 0;
+}
+.mbar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 0;
+  flex: 0 1 110px;
+  max-width: 130px;
+  height: 100%;
+  position: relative;
+}
+.mbar-pnl {
+  font-size: 12px;
+  font-weight: 900;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.3px;
+  margin-bottom: 4px;
+  line-height: 1;
+}
+.mbar.pos .mbar-pnl { color: #00e6c0; }
+.mbar.neg .mbar-pnl { color: #ff8a80; }
+.mbar-half {
   width: 100%;
   flex: 1;
+  display: flex;
   min-height: 0;
+}
+.mbar-half.top {
+  align-items: flex-end;
+}
+.mbar-half.bot {
+  align-items: flex-start;
+}
+.mbar-baseline {
+  position: absolute;
+  left: -14px; right: -14px;
+  top: 50%;
+  border-top: 1px dashed rgba(255,255,255,0.18);
+}
+.mbar-fill {
+  width: 100%;
+  border-radius: 6px 6px 2px 2px;
+  background: linear-gradient(180deg, #00e6c0 0%, #00a884 100%);
+  box-shadow: 0 0 22px rgba(0,201,167,0.35),
+              inset 0 1px 0 rgba(255,255,255,0.2);
+  transition: height 1.1s cubic-bezier(0.4,0,0.2,1);
+}
+.mbar.neg .mbar-fill {
+  border-radius: 2px 2px 6px 6px;
+  background: linear-gradient(180deg, #ff6b7a 0%, #ff4d5e 100%);
+  box-shadow: 0 0 22px rgba(255,77,94,0.35),
+              inset 0 -1px 0 rgba(255,255,255,0.15);
+}
+.mbar-month {
+  font-size: 11px;
+  font-weight: 800;
+  color: var(--text);
+  margin-top: 4px;
+  letter-spacing: 0.4px;
+  font-family: ui-monospace, "SF Mono", Menlo, monospace;
+}
+.mbar-sub {
+  font-size: 9px;
+  color: var(--muted-2);
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  font-variant-numeric: tabular-nums;
 }
 .monthly-meta {
   display: flex;
