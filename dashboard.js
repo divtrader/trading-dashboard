@@ -595,7 +595,7 @@ function renderRecentClosesTile() {
     el.innerHTML = '<div class="rc-empty">no closes yet</div>';
     return;
   }
-  el.innerHTML = closes.map(c => {
+  const newHtml = closes.map(c => {
     const coin = (c.coin || "").replace("USDT", "");
     const won = c.won != null ? c.won : (c.pnl_usd || 0) > 0;
     const pnl = c.pnl_usd || 0;
@@ -619,7 +619,7 @@ function renderRecentClosesTile() {
     // Trade-id subtitle: strip the redundant "COINUSDT_" prefix → "20260427_CWM_001"
     const tid = (c.trade_id || "").replace(/^[A-Z]+(?:USDT)?_/, "");
     return `
-      <div class="rc-row ${dirCls}" title="${c.trade_id || ""}">
+      <div class="rc-row ${dirCls}" data-trade-id="${c.trade_id || ""}" title="${c.trade_id || ""}">
         <div class="rc-dot ${won ? 'win' : 'loss'}"></div>
         <div class="rc-dir-pill ${dirCls}">${dirLetter}</div>
         <div class="rc-coin-block">
@@ -631,6 +631,7 @@ function renderRecentClosesTile() {
         <div class="rc-ago">${fmtAgo(c.close_iso)}</div>
       </div>`;
   }).join("");
+  flipReplace(el, newHtml);
 }
 
 function renderMexcCard() {
@@ -809,7 +810,7 @@ function renderPaperBars(enrichedOpen) {
   // Winners on top, losers below — sorted by leveraged % P&L descending.
   const sorted = [...enrichedOpen].sort((a, b) => (b.leveragedPct || 0) - (a.leveragedPct || 0));
 
-  host.innerHTML = sorted.map(t => {
+  const newHtml = sorted.map(t => {
     const isLong = t.direction === "Long";
     const dirCls = isLong ? "long" : "short";
     const coin = (t.coin || "").replace("USDT", "");
@@ -858,7 +859,7 @@ function renderPaperBars(enrichedOpen) {
     const achieved = tp1Hit ? `<div class="pb-achieved" style="left:${Math.min(ePct,t1Pct).toFixed(1)}%;width:${Math.abs(t1Pct-ePct).toFixed(1)}%"></div>` : "";
 
     return `
-      <div class="paper-bar-row ${dirCls}" title="${t.trade_id}">
+      <div class="paper-bar-row ${dirCls}" data-trade-id="${t.trade_id}" title="${t.trade_id}">
         <div class="pb-head">
           <div class="pb-coin">${coin}</div>
           <div class="pb-meta">
@@ -894,6 +895,7 @@ function renderPaperBars(enrichedOpen) {
         </div>
       </div>`;
   }).join("");
+  flipReplace(host, newHtml);
 }
 
 function renderHero(enrichedOpen) {
@@ -1263,7 +1265,7 @@ function renderPendingTriggers() {
     return { ...t, live, distPct, inZone: distPct < 0.1 };
   }).sort((a, b) => a.distPct - b.distPct).slice(0, 5);
 
-  host.innerHTML = enriched.map(t => {
+  const newHtml = enriched.map(t => {
     const isLong = t.direction === "Long";
     const dirCls = isLong ? "long" : "short";
     const coin = (t.coin || "").replace("USDT", "");
@@ -1284,7 +1286,7 @@ function renderPendingTriggers() {
     const distCls   = t.inZone ? "pos" : "muted-val";
 
     return `
-      <div class="paper-bar-row ${dirCls}${t.inZone ? " trig-in-zone" : ""}" title="${t.trade_id}">
+      <div class="paper-bar-row ${dirCls}${t.inZone ? " trig-in-zone" : ""}" data-trade-id="${t.trade_id}" title="${t.trade_id}">
         <div class="pb-head">
           <div class="pb-coin-row">
             <span class="pb-coin">${coin}</span>
@@ -1319,6 +1321,7 @@ function renderPendingTriggers() {
         </div>
       </div>`;
   }).join("");
+  flipReplace(host, newHtml);
 }
 
 function renderActivity() {
@@ -1591,6 +1594,55 @@ function _fmtPctEdge(v, d = 1) {
   return sign + Number(v).toFixed(d) + "%";
 }
 function _signCls(v) { return v > 0 ? "pos" : (v < 0 ? "neg" : "neu"); }
+
+// ── FLIP animation: replace innerHTML and smoothly slide rows that changed rank ──
+// Each row must have a [data-trade-id] attribute (or pass a different keyAttr).
+function flipReplace(host, newHtml, keyAttr = "data-trade-id") {
+  if (!host) return;
+  // 1. FIRST — capture every existing row's top position
+  const old = new Map();
+  host.querySelectorAll(`[${keyAttr}]`).forEach(el => {
+    old.set(el.getAttribute(keyAttr), el.getBoundingClientRect().top);
+  });
+  // 2. LAST — apply new HTML
+  host.innerHTML = newHtml;
+  // 3 + 4. INVERT + PLAY
+  // Read all new positions in one pass first (avoids layout thrashing),
+  // then write transforms in a separate pass.
+  const rows = host.querySelectorAll(`[${keyAttr}]`);
+  const work = [];
+  rows.forEach(el => {
+    const key = el.getAttribute(keyAttr);
+    const newTop = el.getBoundingClientRect().top;
+    const oldTop = old.get(key);
+    work.push({ el, key, newTop, oldTop });
+  });
+  for (const w of work) {
+    if (w.oldTop != null) {
+      const delta = w.oldTop - w.newTop;
+      if (Math.abs(delta) > 0.5) {
+        // Invert: put it visually back where it was
+        w.el.style.transform = `translateY(${delta.toFixed(2)}px)`;
+        w.el.style.transition = "none";
+        // Play: next frame, animate to natural position
+        requestAnimationFrame(() => {
+          w.el.style.transition = "transform 0.55s cubic-bezier(0.22, 1, 0.36, 1)";
+          w.el.style.transform = "";
+        });
+      }
+    } else {
+      // New row — gentle fade-in from below
+      w.el.style.opacity = "0";
+      w.el.style.transform = "translateY(6px) scale(0.985)";
+      w.el.style.transition = "none";
+      requestAnimationFrame(() => {
+        w.el.style.transition = "opacity 0.4s ease, transform 0.4s cubic-bezier(0.22, 1, 0.36, 1)";
+        w.el.style.opacity = "";
+        w.el.style.transform = "";
+      });
+    }
+  }
+}
 
 async function fetchAnalytics() {
   try {
