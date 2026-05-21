@@ -2175,25 +2175,25 @@ main {
 .strip-v .neg { color: var(--red); }
 
 /* ── Mobile: iPhone portrait ───────────────────────────────────────────────── */
-/* ── Tablet (601px – 1100px) — compress hero so the equity-curve dates fit ── */
-@media (min-width: 601px) and (max-width: 1100px) {
-  .hero-tile  { padding: 22px 30px; }
-  .hero-value { font-size: 88px !important; letter-spacing: -3px !important; margin: 6px 0 16px !important; }
-  .hero-pnls  { gap: 28px; }
-  .hero-stat-val   { font-size: 20px; }
+/* ── Tablet & smaller laptops (601px – 1400px) — compress hero so equity-curve dates fit ── */
+@media (min-width: 601px) and (max-width: 1400px) {
+  .hero-tile  { padding: 20px 28px; }
+  .hero-value { font-size: 80px !important; letter-spacing: -2.6px !important; margin: 4px 0 12px !important; }
+  .hero-pnls  { gap: 24px; }
+  .hero-stat-val   { font-size: 18px; }
   .hero-stat-label { font-size: 9px; letter-spacing: 1.5px; }
-  .donut-wrap { width: 96px; height: 96px; }
-  .donut-pct  { font-size: 22px; }
-  .donut-sub  { font-size: 11px; }
-  .hero-return { font-size: 13px; margin-bottom: 8px; }
-  /* Spark band: shrink chart slightly so date labels at bottom: 0 stay inside the tile's
-     overflow:hidden clip — the dates were the first thing to fall below the cut on tablet. */
-  .hero-spark { gap: 6px; padding-top: 2px; }
+  .donut-wrap { width: 90px; height: 90px; }
+  .donut-pct  { font-size: 20px; }
+  .donut-sub  { font-size: 10px; }
+  .hero-return { font-size: 12px; margin-bottom: 6px; }
+  /* Spark band: shorter wrap + chart sits in its top half so the date band at bottom always
+     stays inside the tile's overflow:hidden clip. */
+  .hero-spark { gap: 4px; padding-top: 0; }
   .hero-spark-label { font-size: 9px; letter-spacing: 1.5px; }
-  .spark-wrap { height: 78px; }
-  .spark-overlay .spark-date { font-size: 9px; letter-spacing: 1px; }
+  .spark-wrap { height: 68px; }
+  .spark-overlay .spark-date { font-size: 9px; letter-spacing: 0.8px; }
   .spark-overlay .spark-tid  { font-size: 8px; }
-  .spark-overlay .spark-final { font-size: 13px; }
+  .spark-overlay .spark-final { font-size: 12px; }
 }
 
 @media (max-width: 600px) {
