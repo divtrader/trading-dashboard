@@ -628,7 +628,7 @@ function renderRecentClosesTile() {
         </div>
         <div class="rc-reason ${rCls}">${rCode}</div>
         <div class="rc-pnl ${won ? 'pos' : 'neg'}">${pnlStr}</div>
-        <div class="rc-ago">${fmtAgo(c.close_iso)}</div>
+        <div class="rc-ago">${fmtAgo(c.close_iso, { detectedAtIso: state.lastCronIso })}</div>
       </div>`;
   }).join("");
   flipReplace(el, newHtml);
@@ -1074,11 +1074,26 @@ function renderEquitySparkline(recentCloses) {
   `;
 }
 
-function fmtAgo(iso) {
+function fmtAgo(iso, opts) {
   if (!iso) return "";
-  const d = new Date(iso);
+  let d = new Date(iso);
+  // Source-data quirk: time_closed_utc is set to the 4H bar's OPEN time
+  // (e.g. "12:00") even though the actual close detection happens at the next
+  // cron run, which can be up to 4 hours later. For very-recent closes, the
+  // bar-open timestamp makes the display say "3h ago" when the user just saw
+  // it happen. If the close falls inside the most-recent 4H bar window (i.e.
+  // bar_open + 4h >= lastCronIso > bar_open), the cron run time is a much
+  // better approximation of "when this was actually detected".
+  if (opts && opts.detectedAtIso) {
+    const detected = new Date(opts.detectedAtIso);
+    const fourH = 4 * 3600 * 1000;
+    if (detected.getTime() > d.getTime() && detected.getTime() - d.getTime() <= fourH) {
+      d = detected;
+    }
+  }
   const diffMs = Date.now() - d.getTime();
   const diffM = Math.floor(diffMs / 60000);
+  if (diffM < 1)  return "just now";
   if (diffM < 60) return `${diffM}m ago`;
   const diffH = Math.floor(diffMs / 3600000);
   if (diffH < 24) return `${diffH}h ago`;
