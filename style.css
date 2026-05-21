@@ -2175,6 +2175,27 @@ main {
 .strip-v .neg { color: var(--red); }
 
 /* ── Mobile: iPhone portrait ───────────────────────────────────────────────── */
+/* ── Tablet (601px – 1100px) — compress hero so the equity-curve dates fit ── */
+@media (min-width: 601px) and (max-width: 1100px) {
+  .hero-tile  { padding: 22px 30px; }
+  .hero-value { font-size: 88px !important; letter-spacing: -3px !important; margin: 6px 0 16px !important; }
+  .hero-pnls  { gap: 28px; }
+  .hero-stat-val   { font-size: 20px; }
+  .hero-stat-label { font-size: 9px; letter-spacing: 1.5px; }
+  .donut-wrap { width: 96px; height: 96px; }
+  .donut-pct  { font-size: 22px; }
+  .donut-sub  { font-size: 11px; }
+  .hero-return { font-size: 13px; margin-bottom: 8px; }
+  /* Spark band: shrink chart slightly so date labels at bottom: 0 stay inside the tile's
+     overflow:hidden clip — the dates were the first thing to fall below the cut on tablet. */
+  .hero-spark { gap: 6px; padding-top: 2px; }
+  .hero-spark-label { font-size: 9px; letter-spacing: 1.5px; }
+  .spark-wrap { height: 78px; }
+  .spark-overlay .spark-date { font-size: 9px; letter-spacing: 1px; }
+  .spark-overlay .spark-tid  { font-size: 8px; }
+  .spark-overlay .spark-final { font-size: 13px; }
+}
+
 @media (max-width: 600px) {
   /* iOS 100vh bug fix + safe-area insets */
   main {
