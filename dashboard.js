@@ -793,6 +793,15 @@ function renderPaperBars(enrichedOpen) {
     // For tp1_hit trades: show total blended P&L (banked TP1 portion + remaining 20% live)
     const usd = (t.tp1BankedUsd || 0) + (t.usd ?? 0);
     const pctCls = cls(usd);
+    // For tp1_hit trades: render a breakdown line showing banked vs live unrealized
+    const liveUsd = t.usd ?? 0;
+    const bankedUsd = t.tp1BankedUsd || 0;
+    const breakdownHtml = tp1Hit
+      ? `<div class="pb-pnl-breakdown">
+           <div class="pb-bd-row"><span class="pb-bd-k">banked</span><span class="pb-bd-v pos">${fmtUsd(bankedUsd)}</span></div>
+           <div class="pb-bd-row"><span class="pb-bd-k">live</span><span class="pb-bd-v ${cls(liveUsd)}">${fmtUsd(liveUsd)}</span></div>
+         </div>`
+      : '';
 
     // Filled segment showing TP1-achieved range
     const achieved = tp1Hit ? `<div class="pb-achieved" style="left:${Math.min(ePct,t1Pct).toFixed(1)}%;width:${Math.abs(t1Pct-ePct).toFixed(1)}%"></div>` : "";
@@ -830,6 +839,7 @@ function renderPaperBars(enrichedOpen) {
         <div class="pb-pnl">
           <div class="pb-pnl-pct ${pctCls}">${fmtPct(pct)}</div>
           <div class="pb-pnl-usd">${fmtUsd(usd)}</div>
+          ${breakdownHtml}
         </div>
       </div>`;
   }).join("");
