@@ -169,13 +169,13 @@ main {
 .recent-closes-tile {
   align-items: stretch;
   justify-content: flex-start;
-  padding: 18px 18px;
+  padding: 12px 14px;
 }
-.recent-closes-tile .label { margin-bottom: 8px; }
+.recent-closes-tile .label { margin-bottom: 4px; }
 .recent-closes-list {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 2px;
   flex: 1;
   min-height: 0;
   overflow: hidden;
@@ -185,8 +185,8 @@ main {
   display: grid;
   grid-template-columns: 12px 22px auto auto 1fr auto;
   align-items: center;
-  gap: 9px;
-  padding: 5px 0;
+  gap: 8px;
+  padding: 3px 0;
   font-size: 12px;
   border-bottom: 1px solid rgba(255,255,255,0.04);
   position: relative;
@@ -243,8 +243,8 @@ main {
 .rc-coin-block {
   display: flex;
   flex-direction: column;
-  gap: 1px;
-  line-height: 1.1;
+  gap: 0;
+  line-height: 1;
   min-width: 0;
 }
 .rc-coin {
@@ -253,17 +253,18 @@ main {
   letter-spacing: 0.2px;
   font-size: 12px;
   white-space: nowrap;
-  line-height: 1.05;
+  line-height: 1;
 }
 .rc-tid {
-  font-size: 8.5px;
+  font-size: 8px;
   font-weight: 600;
   color: var(--muted-2);
   font-family: ui-monospace, "SF Mono", Menlo, monospace;
   letter-spacing: 0.2px;
   opacity: 0.7;
   white-space: nowrap;
-  line-height: 1.1;
+  line-height: 1;
+  margin-top: 1px;
 }
 /* Close reason badge — TP2/TP1/SL/other */
 .rc-reason {
