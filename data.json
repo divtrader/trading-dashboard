@@ -1,8 +1,8 @@
 {
-  "last_updated_iso": "2026-05-21T14:49:46Z",
+  "last_updated_iso": "2026-05-21T14:53:48Z",
   "mexc_account": {
-    "unrealized_pnl": -49.711,
-    "equity": 1801.2612,
+    "unrealized_pnl": -48.7538,
+    "equity": 1802.2184,
     "available": 553.2975,
     "position_margin": 398.3574
   },
@@ -43,7 +43,7 @@
       "trading_system": "John",
       "track_only": true,
       "status": "OPEN",
-      "price_at_run": 76912.96,
+      "price_at_run": 76981.08,
       "date_activated": "2026-04-28",
       "time_activated_utc": "12:00",
       "date_opened": "2026-04-28",
@@ -66,7 +66,7 @@
       "trading_system": "John",
       "track_only": true,
       "status": "OPEN",
-      "price_at_run": 1.746,
+      "price_at_run": 1.75,
       "date_activated": "2026-05-16",
       "time_activated_utc": "08:00",
       "date_opened": "2026-05-12",
@@ -89,7 +89,7 @@
       "trading_system": "John",
       "track_only": true,
       "status": "OPEN",
-      "price_at_run": 648.44,
+      "price_at_run": 649.27,
       "date_activated": "2026-05-17",
       "time_activated_utc": "20:00",
       "date_opened": "2026-05-12",
@@ -272,10 +272,10 @@
       "leverage": 3,
       "trading_system": "Braam",
       "track_only": false,
-      "status": "PENDING",
+      "status": "OPEN",
       "price_at_run": 9.549,
-      "date_activated": null,
-      "time_activated_utc": null,
+      "date_activated": "2026-05-21",
+      "time_activated_utc": "14:53",
       "date_opened": "2026-05-21",
       "time_opened_utc": "12:17",
       "conviction": "MEDIUM",
@@ -284,20 +284,7 @@
       "pnl_tp1_realized_usd": null
     }
   ],
-  "recent_signals": [
-    {
-      "trade_id": "LINKUSDT_20260521_CB_001",
-      "coin": "LINKUSDT",
-      "direction": "Short",
-      "trading_system": "Braam",
-      "entry_price": 9.63607492,
-      "tp1": 8.92838002,
-      "sl": 9.88548381,
-      "conviction": "MEDIUM",
-      "track_only": false,
-      "iso": "2026-05-21T12:17:00Z"
-    }
-  ],
+  "recent_signals": [],
   "recent_opens": [
     {
       "trade_id": "APTUSDT_20260518_CB_001",
@@ -318,6 +305,16 @@
       "tp1_hit": false,
       "iso": "2026-05-21T04:13:00Z",
       "_iso_ms": 1779336780000
+    },
+    {
+      "trade_id": "LINKUSDT_20260521_CB_001",
+      "coin": "LINKUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "entry_price": 9.63607492,
+      "tp1_hit": false,
+      "iso": "2026-05-21T14:53:00Z",
+      "_iso_ms": 1779375180000
     }
   ],
   "recent_closes": [
