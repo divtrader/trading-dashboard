@@ -746,6 +746,8 @@ function renderLive() {
   const enriched = open.map(t => ({ ...t, ...computeUnrealized(t) }));
   renderPaperBars(enriched);
   renderHero(enriched);
+  // Keep Screen 4 hero P&L in sync with live prices (cheap incremental update)
+  if (typeof updateEdgeLivePnL === "function") updateEdgeLivePnL();
 }
 
 function renderPaperBars(enrichedOpen) {
@@ -1724,6 +1726,31 @@ function _renderMacroSpark(svgId, values, isInverted) {
   `;
 }
 
+// ── Refresh just the Edge hero P&L number — called from renderLive on every WS tick ──
+function updateEdgeLivePnL() {
+  if (!_edgeAnalytics) return;
+  const pnlEl = document.getElementById("edge-pnl");
+  if (!pnlEl) return;
+  const at = _edgeAnalytics.all_time || {};
+  const openTrades = (state.trades || []).filter(t => t.status === "OPEN");
+  const liveEnriched = openTrades.map(t => ({ ...t, ...computeUnrealized(t) }));
+  const liveUnreal = liveEnriched.reduce((s, t) => s + (t.usd || 0), 0);
+  const liveTp1Banked = liveEnriched.reduce((s, t) => s + (t.tp1BankedUsd || 0), 0);
+  const realizedTotal = (at.total_pnl_usd || 0) + liveTp1Banked;
+  const liveTotalPnl = realizedTotal + liveUnreal;
+  pnlEl.textContent = _fmtUsdEdge(liveTotalPnl);
+  pnlEl.classList.remove("pos", "neg", "neu");
+  pnlEl.classList.add(_signCls(liveTotalPnl));
+  const subEl = document.getElementById("edge-perf-sub");
+  if (subEl) {
+    const unrealTxt = openTrades.length
+      ? ` · <span class="${_signCls(liveUnreal)}">${_fmtUsdEdge(liveUnreal)} unreal</span>`
+      : "";
+    subEl.innerHTML =
+      `<span class="${_signCls(realizedTotal)}">${_fmtUsdEdge(realizedTotal)} realized</span>${unrealTxt} · ${at.total_trades ?? 0} closed · ${at.win_rate ?? 0}% WR`;
+  }
+}
+
 // ── Render: streak pills (last 10 closes as W/L dots) ──
 function _renderStreakPills(recentCloses) {
   const el = $("edge-streak-pills");
@@ -1988,11 +2015,25 @@ function renderEdgeScreen() {
   const macro = a.macro || {};
 
   // Hero P&L tile + equity curve
+  // Compute LIVE portfolio total (matches Screen 1): realized + unrealized + tp1_banked
+  // realized = closed-trade P&L; tp1_banked = banked TP1 from still-open trades; unrealized = mark-to-market on open
+  const openTrades = (state.trades || []).filter(t => t.status === "OPEN");
+  const liveEnriched = openTrades.map(t => ({ ...t, ...computeUnrealized(t) }));
+  const liveUnreal = liveEnriched.reduce((s, t) => s + (t.usd || 0), 0);
+  const liveTp1Banked = liveEnriched.reduce((s, t) => s + (t.tp1BankedUsd || 0), 0);
+  const realizedTotal = (at.total_pnl_usd || 0) + liveTp1Banked;
+  const liveTotalPnl = realizedTotal + liveUnreal;
+
   const pnlEl = $("edge-pnl");
-  pnlEl.textContent = _fmtUsdEdge(at.total_pnl_usd);
+  pnlEl.textContent = _fmtUsdEdge(liveTotalPnl);
   pnlEl.classList.remove("pos", "neg", "neu");
-  pnlEl.classList.add(_signCls(at.total_pnl_usd));
-  $("edge-perf-sub").textContent = `${at.wins ?? 0}W · ${at.losses ?? 0}L · ${at.total_trades ?? 0} closed · ${at.win_rate ?? 0}% WR`;
+  pnlEl.classList.add(_signCls(liveTotalPnl));
+  // Sub-line: show the breakdown so realized vs unrealized vs WR is clear
+  const unrealTxt = openTrades.length
+    ? ` · <span class="${_signCls(liveUnreal)}">${_fmtUsdEdge(liveUnreal)} unreal</span>`
+    : "";
+  $("edge-perf-sub").innerHTML =
+    `<span class="${_signCls(realizedTotal)}">${_fmtUsdEdge(realizedTotal)} realized</span>${unrealTxt} · ${at.total_trades ?? 0} closed · ${at.win_rate ?? 0}% WR`;
   $("edge-best-usd").textContent = _fmtUsdEdge(at.best_usd);
   $("edge-worst-usd").textContent = _fmtUsdEdge(at.worst_usd);
   $("edge-avg-win").textContent = _fmtUsdEdge(at.avg_win_usd);

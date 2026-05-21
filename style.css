@@ -1383,11 +1383,12 @@ main {
 
 #screen-4 {
   display: grid;
-  grid-template-rows: auto repeat(3, 1fr) auto auto;
+  grid-template-rows: auto repeat(4, 1fr) auto;
   gap: 8px;
   overflow: hidden;
 }
 .edge-span-2 { grid-column: span 2; }
+.edge-row-4  { grid-template-columns: repeat(3, 1fr); }  /* 3 tiles, no empty cell */
 
 /* Live insights ticker */
 .edge-insights {
@@ -1472,11 +1473,11 @@ main {
   pointer-events: none;
 }
 .edge-perf .edge-big {
-  font-size: 52px;
+  font-size: 42px;
   font-weight: 900;
-  letter-spacing: -2px;
+  letter-spacing: -1.6px;
   line-height: 1;
-  margin-top: 4px;
+  margin-top: 2px;
 }
 .edge-perf .edge-big.pos { color: var(--green); text-shadow: 0 0 28px var(--green-glow); }
 .edge-perf .edge-big.neg { color: var(--red); text-shadow: 0 0 28px var(--red-glow); }
@@ -1717,18 +1718,27 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
   position: relative;
-  padding-top: 8px;
+  padding-top: 4px;
+  min-height: 0;
 }
-.fg-svg { width: 100%; max-width: 220px; height: auto; }
+.fg-svg {
+  width: 100%;
+  max-width: 200px;
+  max-height: 110px;
+  height: auto;
+  flex-shrink: 0;
+}
 .fg-value {
-  font-size: 44px;
+  font-size: 36px;
   font-weight: 900;
-  letter-spacing: -1.8px;
-  margin-top: -28px;
+  letter-spacing: -1.4px;
+  margin-top: -34px;
   font-variant-numeric: tabular-nums;
   line-height: 1;
+  position: relative;
+  z-index: 2;
 }
 .fg-value.fg-fear    { color: #ff8a80; text-shadow: 0 0 16px rgba(255,77,94,0.5); }
 .fg-value.fg-greed   { color: var(--green); text-shadow: 0 0 16px var(--green-glow); }
