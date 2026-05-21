@@ -1562,14 +1562,16 @@ function renderEdgeFng() {
   $("fg-value").textContent = v;
   $("fg-label").textContent = (_edgeFng.label || "").toUpperCase();
 
-  // Needle: map 0..100 → angle −90° to +90° (180° arc)
+  // Needle: map 0..100 → angle −90° to +90° (180° arc). Updated for viewBox 220×130.
   const angleDeg = -90 + (v / 100) * 180;
   const rad = angleDeg * Math.PI / 180;
-  const cx = 100, cy = 100, len = 64;
+  const cx = 110, cy = 110, len = 78;
   const x2 = cx + Math.sin(rad) * len;
   const y2 = cy - Math.cos(rad) * len;
   const needle = document.getElementById("fg-needle");
   if (needle) {
+    needle.setAttribute("x1", cx);
+    needle.setAttribute("y1", cy);
     needle.setAttribute("x2", x2.toFixed(1));
     needle.setAttribute("y2", y2.toFixed(1));
   }
@@ -1580,6 +1582,157 @@ function renderEdgeFng() {
   if (v < 35) fgValEl.classList.add("fg-fear");
   else if (v > 65) fgValEl.classList.add("fg-greed");
   else fgValEl.classList.add("fg-neutral");
+}
+
+// ── Catmull-Rom → cubic Bézier smoothing ──
+function _smoothPath(points) {
+  if (!points.length) return "";
+  if (points.length === 1) return `M ${points[0][0]} ${points[0][1]}`;
+  const path = [`M ${points[0][0]} ${points[0][1]}`];
+  for (let i = 0; i < points.length - 1; i++) {
+    const p0 = points[i - 1] || points[i];
+    const p1 = points[i];
+    const p2 = points[i + 1];
+    const p3 = points[i + 2] || p2;
+    const c1x = p1[0] + (p2[0] - p0[0]) / 6;
+    const c1y = p1[1] + (p2[1] - p0[1]) / 6;
+    const c2x = p2[0] - (p3[0] - p1[0]) / 6;
+    const c2y = p2[1] - (p3[1] - p1[1]) / 6;
+    path.push(`C ${c1x.toFixed(2)} ${c1y.toFixed(2)}, ${c2x.toFixed(2)} ${c2y.toFixed(2)}, ${p2[0]} ${p2[1]}`);
+  }
+  return path.join(" ");
+}
+
+// ── Render: smooth equity curve area chart ──
+function _renderEquityCurve(curve) {
+  const svg = document.getElementById("equity-curve-svg");
+  if (!svg || !curve || curve.length < 2) {
+    if (svg) svg.innerHTML = "";
+    return;
+  }
+  const W = 800, H = 200;
+  const padX = 8, padTop = 80, padBottom = 14;  // padTop leaves room for the overlay text
+  const innerW = W - 2 * padX;
+  const innerH = H - padTop - padBottom;
+  const N = curve.length;
+  const vals = curve.map(p => p.cumulative);
+  const vMin = Math.min(0, ...vals);
+  const vMax = Math.max(0, ...vals);
+  const range = (vMax - vMin) || 1;
+  const yFor = v => padTop + innerH - ((v - vMin) / range) * innerH;
+  const xFor = i => padX + (i / (N - 1)) * innerW;
+  const zeroY = yFor(0);
+
+  const pts = curve.map((p, i) => [xFor(i), yFor(p.cumulative)]);
+  const linePath = _smoothPath(pts);
+  // Area: extend path to bottom corners
+  const areaPath = linePath + ` L ${pts[N-1][0]} ${H} L ${pts[0][0]} ${H} Z`;
+
+  const finalVal = vals[N - 1];
+  const isPositive = finalVal >= 0;
+  const stroke = isPositive ? "#00e6c0" : "#ff6b7a";
+  const gradId = isPositive ? "eqAreaPos" : "eqAreaNeg";
+
+  svg.innerHTML = `
+    <defs>
+      <linearGradient id="eqAreaPos" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#00e6c0" stop-opacity="0.45"/>
+        <stop offset="40%" stop-color="#00c9a7" stop-opacity="0.2"/>
+        <stop offset="100%" stop-color="#00c9a7" stop-opacity="0"/>
+      </linearGradient>
+      <linearGradient id="eqAreaNeg" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#ff4d5e" stop-opacity="0.4"/>
+        <stop offset="40%" stop-color="#ff4d5e" stop-opacity="0.18"/>
+        <stop offset="100%" stop-color="#ff4d5e" stop-opacity="0"/>
+      </linearGradient>
+      <filter id="eqGlow"><feGaussianBlur stdDeviation="3"/></filter>
+    </defs>
+    <line x1="${padX}" y1="${zeroY}" x2="${W - padX}" y2="${zeroY}"
+          stroke="rgba(255,255,255,0.08)" stroke-width="1" stroke-dasharray="3,4"/>
+    <path d="${areaPath}" fill="url(#${gradId})"/>
+    <path d="${linePath}" fill="none" stroke="${stroke}" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" filter="url(#eqGlow)" opacity="0.55"/>
+    <path d="${linePath}" fill="none" stroke="${stroke}" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="${pts[N-1][0]}" cy="${pts[N-1][1]}" r="4" fill="${stroke}" filter="url(#eqGlow)"/>
+    <circle cx="${pts[N-1][0]}" cy="${pts[N-1][1]}" r="2.5" fill="#fff"/>
+  `;
+}
+
+// ── Render: vertical Long/Short bars with glow ──
+function _renderDirectionVbars(d) {
+  if (!d) return;
+  const long = d.Long || { n: 0, wr: 0, pnl: 0 };
+  const short = d.Short || { n: 0, wr: 0, pnl: 0 };
+
+  // Heights scale by PnL magnitude (winner reaches 100%)
+  const maxAbsPnl = Math.max(1, Math.abs(long.pnl), Math.abs(short.pnl));
+  const longH = Math.max(8, Math.abs(long.pnl) / maxAbsPnl * 100);
+  const shortH = Math.max(8, Math.abs(short.pnl) / maxAbsPnl * 100);
+
+  // Apply with a small delay for animation feel
+  requestAnimationFrame(() => {
+    $("dir-long-fill").style.height = longH + "%";
+    $("dir-short-fill").style.height = shortH + "%";
+  });
+
+  const longEl = $("dir-long-pnl");
+  longEl.textContent = _fmtUsdEdge(long.pnl);
+  longEl.className = "dir-vbar-pnl " + _signCls(long.pnl);
+  const shortEl = $("dir-short-pnl");
+  shortEl.textContent = _fmtUsdEdge(short.pnl);
+  shortEl.className = "dir-vbar-pnl " + _signCls(short.pnl);
+
+  $("dir-long-wr").textContent = (long.wr || 0).toFixed(0) + "%";
+  $("dir-short-wr").textContent = (short.wr || 0).toFixed(0) + "%";
+  $("dir-long-n").textContent = long.n + "t";
+  $("dir-short-n").textContent = short.n + "t";
+}
+
+// ── Render: macro sparklines (smooth area for VIX & DXY 5d) ──
+function _renderMacroSpark(svgId, values, isInverted) {
+  const svg = document.getElementById(svgId);
+  if (!svg || !values || values.length < 2) {
+    if (svg) svg.innerHTML = "";
+    return;
+  }
+  const W = 120, H = 32, padX = 2, padY = 4;
+  const vMin = Math.min(...values), vMax = Math.max(...values);
+  const range = (vMax - vMin) || 1;
+  const pts = values.map((v, i) => [
+    padX + (i / (values.length - 1)) * (W - 2 * padX),
+    padY + (1 - (v - vMin) / range) * (H - 2 * padY),
+  ]);
+  const path = _smoothPath(pts);
+  const rising = values[values.length - 1] >= values[0];
+  // For VIX, rising = risk-off (red). For DXY, rising = USD strength (neutral/amber).
+  // For neutral coloring on DXY, just use the rising direction.
+  const color = isInverted
+    ? (rising ? "#ff8a80" : "#00e6c0")  // higher VIX is bad (red)
+    : (rising ? "#ffd54f" : "#9ccc65"); // higher DXY = amber, falling = green
+  const areaPath = path + ` L ${pts[pts.length-1][0]} ${H} L ${pts[0][0]} ${H} Z`;
+  const fillGrad = isInverted
+    ? (rising ? "macroRedFill" : "macroGreenFill")
+    : (rising ? "macroAmberFill" : "macroLightGreenFill");
+  svg.innerHTML = `
+    <defs>
+      <linearGradient id="macroRedFill" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#ff4d5e" stop-opacity="0.35"/><stop offset="100%" stop-color="#ff4d5e" stop-opacity="0"/></linearGradient>
+      <linearGradient id="macroGreenFill" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#00c9a7" stop-opacity="0.35"/><stop offset="100%" stop-color="#00c9a7" stop-opacity="0"/></linearGradient>
+      <linearGradient id="macroAmberFill" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#ffd54f" stop-opacity="0.35"/><stop offset="100%" stop-color="#ffd54f" stop-opacity="0"/></linearGradient>
+      <linearGradient id="macroLightGreenFill" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#9ccc65" stop-opacity="0.35"/><stop offset="100%" stop-color="#9ccc65" stop-opacity="0"/></linearGradient>
+    </defs>
+    <path d="${areaPath}" fill="url(#${fillGrad})"/>
+    <path d="${path}" fill="none" stroke="${color}" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  `;
+}
+
+// ── Render: streak pills (last 10 closes as W/L dots) ──
+function _renderStreakPills(recentCloses) {
+  const el = $("edge-streak-pills");
+  if (!el) return;
+  const last10 = (recentCloses || []).slice(0, 10).reverse();  // chronological L→R
+  if (!last10.length) { el.innerHTML = ""; return; }
+  el.innerHTML = last10.map(t => {
+    return `<span class="streak-pill ${t.won ? 'win' : 'loss'}" title="${t.coin} ${t.direction} · ${_fmtUsdEdge(t.pnl_usd)}"></span>`;
+  }).join("");
 }
 
 // ── Render: stacked horizontal bars (used for system/conviction/entry/etc.) ──
@@ -1731,7 +1884,7 @@ function _renderSystemsRich(systems, decommissioned) {
   el.innerHTML = active + decomHtml;
 }
 
-// ── Render: MONTHLY P&L bar chart (SVG, zero-line in middle) ──
+// ── Render: MONTHLY P&L — smooth gradient bars + glow + rounded tops + cumulative line ──
 function _renderMonthly(monthly) {
   const svg = document.getElementById("monthly-chart");
   const meta = $("monthly-meta");
@@ -1740,35 +1893,57 @@ function _renderMonthly(monthly) {
     if (meta) meta.textContent = "no closed trades yet";
     return;
   }
-  const W = 300, H = 130;
-  const padX = 14, padY = 18;
+  const W = 600, H = 160;
+  const padX = 24, padTop = 24, padBottom = 26;
   const innerW = W - 2 * padX;
-  const innerH = H - 2 * padY;
+  const innerH = H - padTop - padBottom;
   const N = monthly.length;
-  const barGap = N > 6 ? 4 : 8;
-  const barW = Math.max(8, (innerW - barGap * (N - 1)) / N);
+  const barGap = 14;
+  const barW = Math.max(20, Math.min(80, (innerW - barGap * (N - 1)) / N));
+  const totalBars = barW * N + barGap * (N - 1);
+  const startX = padX + (innerW - totalBars) / 2;
   const maxAbs = Math.max(1, ...monthly.map(m => Math.abs(m.pnl)));
-  const zeroY = padY + innerH / 2;
-  const scale = (innerH / 2 - 4) / maxAbs;
+  const zeroY = padTop + innerH / 2;
+  const scale = (innerH / 2 - 6) / maxAbs;
+
+  // Cumulative line points
+  const cumPts = monthly.map((m, i) => {
+    const x = startX + i * (barW + barGap) + barW / 2;
+    // Cumulative scaled against same maxAbs * N (rough scale)
+    const cumMax = Math.max(...monthly.map(mm => Math.abs(mm.cumulative_pnl)), 1);
+    const y = zeroY - (m.cumulative_pnl / cumMax) * (innerH / 2 - 6);
+    return [x, y];
+  });
+  const cumPath = _smoothPath(cumPts);
 
   const bars = monthly.map((m, i) => {
-    const x = padX + i * (barW + barGap);
-    const h = Math.abs(m.pnl) * scale;
+    const x = startX + i * (barW + barGap);
+    const h = Math.max(2, Math.abs(m.pnl) * scale);
     const y = m.pnl >= 0 ? zeroY - h : zeroY;
-    const color = m.pnl > 0 ? "url(#mGreen)" : (m.pnl < 0 ? "url(#mRed)" : "rgba(255,255,255,0.12)");
-    const labelY = m.pnl >= 0 ? zeroY - h - 4 : zeroY + h + 12;
-    const labelColor = m.pnl > 0 ? "#26A69A" : (m.pnl < 0 ? "#ff8a80" : "#777");
-    const monShort = m.month.slice(5); // MM
-    const monLabelY = m.pnl >= 0 ? zeroY + 12 : zeroY - 4;
+    const fillGrad = m.pnl >= 0 ? "mGradGreen" : "mGradRed";
+    const labelY = m.pnl >= 0 ? y - 6 : y + h + 14;
+    const labelColor = m.pnl >= 0 ? "#26A69A" : "#ff8a80";
+    const monShort = m.month.slice(5);
+    const monLabelY = m.pnl >= 0 ? zeroY + 16 : zeroY - 6;
+    // Rounded top corners via path (rect with only top rx)
+    const r = Math.min(6, barW / 4);
+    let path;
+    if (m.pnl >= 0) {
+      // Rounded top
+      path = `M ${x} ${y + r} Q ${x} ${y} ${x + r} ${y} L ${x + barW - r} ${y} Q ${x + barW} ${y} ${x + barW} ${y + r} L ${x + barW} ${y + h} L ${x} ${y + h} Z`;
+    } else {
+      // Rounded bottom
+      path = `M ${x} ${y} L ${x + barW} ${y} L ${x + barW} ${y + h - r} Q ${x + barW} ${y + h} ${x + barW - r} ${y + h} L ${x + r} ${y + h} Q ${x} ${y + h} ${x} ${y + h - r} Z`;
+    }
     return `
-      <rect x="${x.toFixed(1)}" y="${y.toFixed(1)}" width="${barW.toFixed(1)}" height="${Math.max(1, h).toFixed(1)}"
-            fill="${color}" rx="2"/>
+      <path d="${path}" fill="url(#${fillGrad})" filter="url(#mBarGlow)"/>
+      <path d="${path}" fill="url(#${fillGrad})"/>
       <text x="${(x + barW/2).toFixed(1)}" y="${labelY.toFixed(1)}" text-anchor="middle"
-            font-size="9" font-weight="800" fill="${labelColor}" font-family="ui-monospace,Menlo,monospace">
+            font-size="11" font-weight="900" fill="${labelColor}" font-family="ui-monospace,Menlo,monospace">
         ${m.pnl >= 0 ? "+" : "−"}$${Math.abs(m.pnl).toFixed(0)}
       </text>
       <text x="${(x + barW/2).toFixed(1)}" y="${monLabelY.toFixed(1)}" text-anchor="middle"
-            font-size="8" fill="#5a6585" font-family="ui-monospace,Menlo,monospace">
+            font-size="9" fill="#7a85a5" font-weight="700" letter-spacing="1" font-family="ui-monospace,Menlo,monospace">
         ${monShort}
       </text>
     `;
@@ -1776,28 +1951,31 @@ function _renderMonthly(monthly) {
 
   svg.innerHTML = `
     <defs>
-      <linearGradient id="mGreen" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0%" stop-color="#26A69A" stop-opacity="0.95"/>
-        <stop offset="100%" stop-color="#26A69A" stop-opacity="0.55"/>
+      <linearGradient id="mGradGreen" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#00e6c0" stop-opacity="1"/>
+        <stop offset="100%" stop-color="#00a884" stop-opacity="0.7"/>
       </linearGradient>
-      <linearGradient id="mRed" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0%" stop-color="#ff4d5e" stop-opacity="0.55"/>
-        <stop offset="100%" stop-color="#ff4d5e" stop-opacity="0.95"/>
+      <linearGradient id="mGradRed" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#ff6b7a" stop-opacity="0.7"/>
+        <stop offset="100%" stop-color="#ff4d5e" stop-opacity="1"/>
       </linearGradient>
+      <filter id="mBarGlow"><feGaussianBlur stdDeviation="4"/></filter>
     </defs>
     <line x1="${padX}" y1="${zeroY}" x2="${W - padX}" y2="${zeroY}"
-          stroke="rgba(255,255,255,0.15)" stroke-width="1" stroke-dasharray="2,3"/>
+          stroke="rgba(255,255,255,0.12)" stroke-width="1" stroke-dasharray="3,4"/>
     ${bars}
+    <path d="${cumPath}" fill="none" stroke="rgba(255,255,255,0.45)" stroke-width="1.5"
+          stroke-dasharray="4,3" stroke-linecap="round"/>
   `;
 
-  // Meta line: total trades, cumulative, current month trend
+  // Meta line
   const totalN = monthly.reduce((s, m) => s + m.n, 0);
   const cum = monthly[monthly.length - 1]?.cumulative_pnl ?? 0;
   const last = monthly[monthly.length - 1];
   const lastCls = (last?.pnl ?? 0) > 0 ? "pos" : ((last?.pnl ?? 0) < 0 ? "neg" : "neu");
   meta.innerHTML = `
     <span>${monthly.length}mo · ${totalN}t</span>
-    <span class="monthly-cum ${cum > 0 ? 'pos' : (cum < 0 ? 'neg' : 'neu')}">cum ${_fmtUsdEdge(cum)}</span>
+    <span class="monthly-cum ${cum > 0 ? 'pos' : (cum < 0 ? 'neg' : 'neu')}">cumulative ${_fmtUsdEdge(cum)}</span>
     <span class="monthly-now ${lastCls}">${last?.month?.slice(5)}: ${_fmtUsdEdge(last?.pnl)}</span>
   `;
 }
@@ -1809,78 +1987,83 @@ function renderEdgeScreen() {
   const at = a.all_time || {};
   const macro = a.macro || {};
 
-  // Hero P&L tile
+  // Hero P&L tile + equity curve
   const pnlEl = $("edge-pnl");
   pnlEl.textContent = _fmtUsdEdge(at.total_pnl_usd);
   pnlEl.classList.remove("pos", "neg", "neu");
   pnlEl.classList.add(_signCls(at.total_pnl_usd));
-  $("edge-perf-sub").textContent = `${at.wins ?? 0}W · ${at.losses ?? 0}L · ${at.total_trades ?? 0} closed`;
+  $("edge-perf-sub").textContent = `${at.wins ?? 0}W · ${at.losses ?? 0}L · ${at.total_trades ?? 0} closed · ${at.win_rate ?? 0}% WR`;
   $("edge-best-usd").textContent = _fmtUsdEdge(at.best_usd);
-  $("edge-best-usd").classList.add("pos");
   $("edge-worst-usd").textContent = _fmtUsdEdge(at.worst_usd);
-  $("edge-worst-usd").classList.add("neg");
   $("edge-avg-win").textContent = _fmtUsdEdge(at.avg_win_usd);
-  $("edge-avg-win").classList.add("pos");
   $("edge-avg-loss").textContent = _fmtUsdEdge(at.avg_loss_usd);
-  $("edge-avg-loss").classList.add("neg");
+  $("edge-pf-mini").textContent = at.profit_factor ?? "—";
+  $("edge-exp-mini").textContent = _fmtUsdEdge(at.expectancy_usd);
+  _renderEquityCurve(a.equity_curve);
 
-  // WR donut
+  // WR big donut (radius 64, circumference = 2π·64 = 402.124)
   const wr = at.win_rate ?? 0;
   $("edge-wr-pct").textContent = wr.toFixed(1) + "%";
-  const C = 2 * Math.PI * 50;
+  $("edge-wl").textContent = `${at.wins ?? 0}W · ${at.losses ?? 0}L`;
+  const C = 2 * Math.PI * 64;
   const fill = document.getElementById("edge-donut-fill");
-  if (fill) {
+  const glow = document.getElementById("edge-donut-glow");
+  if (fill && glow) {
+    const gradId = wr >= 50 ? "wrGradGreen" : (wr >= 35 ? "wrGradAmber" : "wrGradRed");
     fill.setAttribute("stroke-dasharray", C);
     fill.setAttribute("stroke-dashoffset", C * (1 - wr / 100));
-    fill.style.stroke = wr >= 50 ? "var(--green)" : (wr >= 35 ? "#ffab40" : "#ff8a80");
+    fill.style.stroke = `url(#${gradId})`;
+    glow.setAttribute("stroke-dasharray", C);
+    glow.setAttribute("stroke-dashoffset", C * (1 - wr / 100));
+    glow.style.stroke = `url(#${gradId})`;
   }
-  $("edge-trades").textContent = at.total_trades ?? "—";
-  $("edge-wl").textContent = `${at.wins ?? 0} / ${at.losses ?? 0}`;
-  $("edge-pf").textContent = at.profit_factor ?? "—";
-  $("edge-exp").textContent = _fmtUsdEdge(at.expectancy_usd);
 
-  // Direction
-  _renderDirection(a.by_direction);
+  // Direction (vertical bars)
+  _renderDirectionVbars(a.by_direction);
 
-  // Streak
+  // Streak: big number + pills + longest meta
   const streakBig = $("edge-streak-big");
   if (at.current_streak_count != null) {
     streakBig.textContent = at.current_streak_count + (at.current_streak_type === "win" ? "W" : "L");
     streakBig.classList.remove("pos", "neg");
     streakBig.classList.add(at.current_streak_type === "win" ? "pos" : "neg");
   }
-  $("edge-streak-sub").textContent = at.current_streak_type === "win"
-    ? `${at.current_streak_count} winning trades`
-    : `${at.current_streak_count} losing trades`;
+  _renderStreakPills(a.recent_closes);
   $("edge-longest-w").textContent = at.longest_win_streak ?? "—";
-  $("edge-longest-w").classList.add("pos");
   $("edge-longest-l").textContent = at.longest_loss_streak ?? "—";
-  $("edge-longest-l").classList.add("neg");
 
-  // Macro
+  // Macro: number + mini sparkline + trend label
   if (macro.vix != null) {
     $("macro-vix").textContent = macro.vix.toFixed(2);
-    const trend = macro.vix > (macro.vix_ma14 ?? macro.vix) ? "↑" : "↓";
+    _renderMacroSpark("macro-vix-spark", macro.vix_5d || [], /*isInverted=*/true);
+    const rising = macro.vix > (macro.vix_ma14 ?? macro.vix);
     const trendEl = $("macro-vix-trend");
-    trendEl.textContent = `${trend} ma14 ${macro.vix_ma14?.toFixed(2) ?? "—"}`;
-    trendEl.className = "macro-trend " + (macro.vix > (macro.vix_ma14 ?? 0) ? "neg" : "pos");
+    trendEl.textContent = `${rising ? "↑" : "↓"} MA14 ${macro.vix_ma14?.toFixed(1) ?? "—"}`;
+    trendEl.className = "macro-cell-foot " + (rising ? "neg" : "pos");
   }
   if (macro.dxy != null) {
     $("macro-dxy").textContent = macro.dxy.toFixed(2);
-    const trend = macro.dxy > (macro.dxy_ma14 ?? macro.dxy) ? "↑" : "↓";
+    _renderMacroSpark("macro-dxy-spark", macro.dxy_5d || [], /*isInverted=*/false);
+    const rising = macro.dxy > (macro.dxy_ma14 ?? macro.dxy);
     const trendEl = $("macro-dxy-trend");
-    trendEl.textContent = `${trend} ma14 ${macro.dxy_ma14?.toFixed(2) ?? "—"}`;
-    trendEl.className = "macro-trend " + (macro.dxy > (macro.dxy_ma14 ?? 0) ? "neg" : "pos");
+    trendEl.textContent = `${rising ? "↑" : "↓"} MA14 ${macro.dxy_ma14?.toFixed(1) ?? "—"}`;
+    trendEl.className = "macro-cell-foot " + (rising ? "neu" : "pos");
   }
   if (macro.btc_7d_change_pct != null) {
     const el = $("macro-btc7d");
     el.textContent = _fmtPctEdge(macro.btc_7d_change_pct);
-    el.className = "macro-val " + _signCls(macro.btc_7d_change_pct);
+    el.className = "macro-cell-val " + _signCls(macro.btc_7d_change_pct);
   }
   if (macro.btc_30d_change_pct != null) {
     const el = $("macro-btc30d");
     el.textContent = _fmtPctEdge(macro.btc_30d_change_pct);
-    el.className = "macro-val " + _signCls(macro.btc_30d_change_pct);
+    el.className = "macro-cell-val " + _signCls(macro.btc_30d_change_pct);
+  }
+  if (macro.btc_correlation_30d != null) {
+    $("macro-btc-corr").textContent = `corr ${macro.btc_correlation_30d.toFixed(2)}`;
+  }
+  if (macro.btc_price_last_seen != null) {
+    $("macro-btc-price").textContent = `$${Math.round(macro.btc_price_last_seen).toLocaleString()}`;
   }
 
   // Breakdown bar tiles
