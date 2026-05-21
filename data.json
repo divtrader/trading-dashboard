@@ -1,8 +1,8 @@
 {
-  "last_updated_iso": "2026-05-21T08:26:02Z",
+  "last_updated_iso": "2026-05-21T12:18:26Z",
   "mexc_account": {
-    "unrealized_pnl": -24.5006,
-    "equity": 1826.4716,
+    "unrealized_pnl": -50.6496,
+    "equity": 1800.3226,
     "available": 553.2975,
     "position_margin": 398.3574
   },
@@ -43,7 +43,7 @@
       "trading_system": "John",
       "track_only": true,
       "status": "OPEN",
-      "price_at_run": 77974.14,
+      "price_at_run": 77192.96,
       "date_activated": "2026-04-28",
       "time_activated_utc": "12:00",
       "date_opened": "2026-04-28",
@@ -66,7 +66,7 @@
       "trading_system": "John",
       "track_only": true,
       "status": "OPEN",
-      "price_at_run": 1.759,
+      "price_at_run": 1.749,
       "date_activated": "2026-05-16",
       "time_activated_utc": "08:00",
       "date_opened": "2026-05-12",
@@ -89,7 +89,7 @@
       "trading_system": "John",
       "track_only": true,
       "status": "OPEN",
-      "price_at_run": 655.02,
+      "price_at_run": 648.43,
       "date_activated": "2026-05-17",
       "time_activated_utc": "20:00",
       "date_opened": "2026-05-12",
@@ -259,9 +259,45 @@
       "tp1_hit": false,
       "sl_moved_to_be": false,
       "pnl_tp1_realized_usd": null
+    },
+    {
+      "trade_id": "LINKUSDT_20260521_CB_001",
+      "coin": "LINKUSDT",
+      "direction": "Short",
+      "entry_price": 9.63607492,
+      "sl": 9.88548381,
+      "tp1": 8.92838002,
+      "tp2": 7.8779334,
+      "capital_usd": 100,
+      "leverage": 3,
+      "trading_system": "Braam",
+      "track_only": false,
+      "status": "PENDING",
+      "price_at_run": 9.549,
+      "date_activated": null,
+      "time_activated_utc": null,
+      "date_opened": "2026-05-21",
+      "time_opened_utc": "12:17",
+      "conviction": "MEDIUM",
+      "tp1_hit": false,
+      "sl_moved_to_be": false,
+      "pnl_tp1_realized_usd": null
     }
   ],
-  "recent_signals": [],
+  "recent_signals": [
+    {
+      "trade_id": "LINKUSDT_20260521_CB_001",
+      "coin": "LINKUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "entry_price": 9.63607492,
+      "tp1": 8.92838002,
+      "sl": 9.88548381,
+      "conviction": "MEDIUM",
+      "track_only": false,
+      "iso": "2026-05-21T12:17:00Z"
+    }
+  ],
   "recent_opens": [
     {
       "trade_id": "APTUSDT_20260518_CB_001",
@@ -807,20 +843,6 @@
     }
   ],
   "recent_cancels": [
-    {
-      "coin": "CAKEUSDT",
-      "direction": "Short",
-      "trading_system": "Braam",
-      "close_reason": "6/8 signals opposing Short for 2 consecutive 4H bars \u2014 conviction has collapsed,",
-      "iso": "2026-05-20T20:32:00Z"
-    },
-    {
-      "coin": "TAOUSDT",
-      "direction": "Short",
-      "trading_system": "Braam",
-      "close_reason": "6/8 signals opposing Short for 2 consecutive 4H bars \u2014 conviction has collapsed,",
-      "iso": "2026-05-20T20:32:00Z"
-    },
     {
       "coin": "HBARUSDT",
       "direction": "Short",
