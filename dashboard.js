@@ -1861,51 +1861,49 @@ function _renderSystemsRich(systems, decommissioned) {
     const color = SYS_COLORS[s.name] || "#888";
     const pnlCls = s.pnl > 0 ? "pos" : (s.pnl < 0 ? "neg" : "neu");
     const inceptShort = s.inception ? s.inception.slice(5) : "—";
-    const daysTxt = s.days_active != null ? `${s.days_active}d` : "no trades yet";
+    const daysTxt = s.days_active != null ? `${s.days_active}d` : "no trades";
     const liveBadges = [];
-    if (s.open > 0) liveBadges.push(`<span class="sys-live-badge open">${s.open} open</span>`);
-    if (s.pending > 0) liveBadges.push(`<span class="sys-live-badge pending">${s.pending} pending</span>`);
+    if (s.open > 0) liveBadges.push(`<span class="sys-live-badge open">${s.open}O</span>`);
+    if (s.pending > 0) liveBadges.push(`<span class="sys-live-badge pending">${s.pending}P</span>`);
     const ppd = s.pnl_per_day != null
       ? `<span class="sys-ppd ${pnlCls}">${_fmtUsdEdge(s.pnl_per_day)}/d</span>`
       : `<span class="sys-ppd muted">—</span>`;
     const noTrades = s.closed === 0;
     return `
       <div class="sys-rich-row${noTrades ? ' empty' : ''}" data-sys="${s.name}">
-        <div class="sys-rich-dot" style="background:${color};box-shadow:0 0 10px ${color}80"></div>
-        <div class="sys-rich-main">
-          <div class="sys-rich-line1">
-            <span class="sys-rich-name">${s.name}</span>
-            <span class="sys-rich-incept">since ${inceptShort} · ${daysTxt}</span>
-            <span class="sys-rich-pnl ${pnlCls}">${_fmtUsdEdge(s.pnl)}</span>
-          </div>
-          <div class="sys-rich-line2">
-            <div class="sys-rich-bar"><div class="sys-rich-fill ${pnlCls}" style="width:${Math.max(2, s.wr || 0)}%;background:${noTrades ? 'rgba(255,255,255,0.05)' : ''}"></div></div>
-            <span class="sys-rich-wr">${noTrades ? '—' : s.wr.toFixed(0) + '%'}</span>
-            <span class="sys-rich-n">${s.closed}t</span>
-            ${ppd}
-          </div>
-          ${liveBadges.length ? `<div class="sys-rich-live">${liveBadges.join(" ")}</div>` : ""}
-        </div>
+        <div class="sys-rich-dot" style="background:${color};box-shadow:0 0 8px ${color}90"></div>
+        <span class="sys-rich-name">${s.name}</span>
+        <span class="sys-rich-incept">${s.inception ? `since ${inceptShort} · ${daysTxt}` : "no trades yet"}</span>
+        <div class="sys-rich-bar"><div class="sys-rich-fill ${pnlCls}" style="width:${Math.max(2, s.wr || 0)}%;${noTrades ? 'background:rgba(255,255,255,0.05)' : ''}"></div></div>
+        <span class="sys-rich-wr">${noTrades ? '—' : s.wr.toFixed(0) + '%'}</span>
+        <span class="sys-rich-n">${s.closed}t</span>
+        ${ppd}
+        <span class="sys-rich-pnl ${pnlCls}">${_fmtUsdEdge(s.pnl)}</span>
+        <span class="sys-rich-badges">${liveBadges.join("")}</span>
       </div>
     `;
   }).join("");
 
-  // Decommissioned (dimmed footer)
+  // Decommissioned — single dimmed row at the bottom
   let decomHtml = "";
   if (decommissioned && Object.keys(decommissioned).length) {
     const decoms = Object.entries(decommissioned).map(([name, d]) => {
       const color = SYS_COLORS[name] || "#666";
       const pnlCls = d.pnl > 0 ? "pos" : (d.pnl < 0 ? "neg" : "neu");
       return `
-        <div class="sys-decom-row">
+        <div class="sys-rich-row sys-decom" data-sys="${name}">
           <div class="sys-rich-dot" style="background:${color}"></div>
           <span class="sys-rich-name">${name}</span>
-          <span class="sys-decom-badge">DECOM</span>
-          <span class="sys-decom-meta">${d.wr.toFixed(0)}% · ${d.n}t</span>
+          <span class="sys-rich-incept">decommissioned · history</span>
+          <div class="sys-rich-bar"><div class="sys-rich-fill ${pnlCls}" style="width:${Math.max(2, d.wr || 0)}%"></div></div>
+          <span class="sys-rich-wr">${d.wr.toFixed(0)}%</span>
+          <span class="sys-rich-n">${d.n}t</span>
+          <span class="sys-ppd muted">—</span>
           <span class="sys-rich-pnl ${pnlCls}">${_fmtUsdEdge(d.pnl)}</span>
+          <span class="sys-rich-badges"><span class="sys-decom-badge">DECOM</span></span>
         </div>`;
     }).join("");
-    decomHtml = `<div class="sys-decom-wrap">${decoms}</div>`;
+    decomHtml = decoms;
   }
 
   el.innerHTML = active + decomHtml;

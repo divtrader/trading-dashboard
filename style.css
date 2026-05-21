@@ -1884,66 +1884,55 @@ main {
 .bars-pnl.pos { color: var(--green); }
 .bars-pnl.neg { color: var(--red); }
 
-/* Rich BY SYSTEM tile — inception + days + bar + pnl-per-day + live badges */
+/* BY SYSTEM tile — single-line per system, all 4 fit ── */
 .edge-systems {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 2px;
   flex: 1;
   min-height: 0;
   overflow: hidden;
 }
 .sys-rich-row {
   display: grid;
-  grid-template-columns: 10px 1fr;
+  grid-template-columns:
+    10px            /* dot */
+    minmax(56px, auto)  /* name */
+    minmax(96px, auto)  /* inception */
+    minmax(60px, 1fr)   /* bar */
+    34px            /* wr% */
+    32px            /* n */
+    62px            /* pnl/day */
+    72px            /* total pnl */
+    44px;           /* badges */
+  align-items: center;
   gap: 8px;
-  padding: 6px 0;
+  padding: 4px 0;
   border-bottom: 1px solid var(--border);
+  font-size: 11px;
 }
 .sys-rich-row:last-of-type { border-bottom: none; }
 .sys-rich-row.empty { opacity: 0.55; }
+.sys-rich-row.sys-decom { opacity: 0.55; border-top: 1px dashed rgba(255,255,255,0.08); padding-top: 6px; margin-top: 2px; }
 .sys-rich-dot {
-  width: 10px; height: 10px;
+  width: 9px; height: 9px;
   border-radius: 50%;
-  margin-top: 5px;
-}
-.sys-rich-main { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
-.sys-rich-line1 {
-  display: flex;
-  align-items: baseline;
-  gap: 8px;
-  font-size: 11px;
 }
 .sys-rich-name {
   font-weight: 900;
   font-size: 12px;
   color: var(--text);
   letter-spacing: -0.2px;
+  white-space: nowrap;
 }
 .sys-rich-incept {
   color: var(--muted-2);
-  font-size: 9px;
+  font-size: 9.5px;
   font-weight: 600;
-  letter-spacing: 0.3px;
-  flex: 1;
-}
-.sys-rich-pnl {
-  font-size: 13px;
-  font-weight: 900;
-  font-variant-numeric: tabular-nums;
-  letter-spacing: -0.3px;
-}
-.sys-rich-pnl.pos { color: var(--green); }
-.sys-rich-pnl.neg { color: var(--red); }
-.sys-rich-pnl.neu { color: var(--muted); }
-
-.sys-rich-line2 {
-  display: grid;
-  grid-template-columns: 1fr 28px 22px 50px;
-  gap: 6px;
-  align-items: center;
-  font-size: 10px;
-  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .sys-rich-bar {
   height: 6px;
@@ -1959,46 +1948,55 @@ main {
 .sys-rich-fill.pos { background: linear-gradient(90deg, rgba(0,201,167,0.5), var(--green)); }
 .sys-rich-fill.neg { background: linear-gradient(90deg, rgba(255,77,94,0.5), var(--red)); }
 .sys-rich-fill.neu { background: rgba(255,255,255,0.12); }
-.sys-rich-wr { font-weight: 800; text-align: right; color: var(--text); }
-.sys-rich-n { color: var(--muted-2); text-align: right; }
-.sys-ppd { text-align: right; font-weight: 700; }
+.sys-rich-wr {
+  font-size: 11px;
+  font-weight: 800;
+  text-align: right;
+  color: var(--text);
+  font-variant-numeric: tabular-nums;
+}
+.sys-rich-n {
+  font-size: 10px;
+  color: var(--muted-2);
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+.sys-ppd {
+  font-size: 10px;
+  font-weight: 700;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
 .sys-ppd.pos { color: var(--green); }
 .sys-ppd.neg { color: var(--red); }
 .sys-ppd.neu, .sys-ppd.muted { color: var(--muted-2); }
-
-.sys-rich-live {
+.sys-rich-pnl {
+  font-size: 13px;
+  font-weight: 900;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.3px;
+  text-align: right;
+}
+.sys-rich-pnl.pos { color: var(--green); }
+.sys-rich-pnl.neg { color: var(--red); }
+.sys-rich-pnl.neu { color: var(--muted); }
+.sys-rich-badges {
   display: flex;
-  gap: 6px;
-  margin-top: 2px;
+  gap: 3px;
+  justify-content: flex-end;
 }
 .sys-live-badge {
   font-size: 8px;
-  font-weight: 800;
-  letter-spacing: 0.8px;
-  padding: 1px 5px;
+  font-weight: 900;
+  letter-spacing: 0.4px;
+  padding: 1px 4px;
   border-radius: 3px;
   text-transform: uppercase;
 }
 .sys-live-badge.open    { background: rgba(0,201,167,0.18); color: var(--green); }
 .sys-live-badge.pending { background: rgba(255,171,64,0.18); color: var(--orange); }
-
-/* Decommissioned footer */
-.sys-decom-wrap {
-  margin-top: auto;
-  padding-top: 6px;
-  border-top: 1px dashed rgba(255,255,255,0.08);
-}
-.sys-decom-row {
-  display: grid;
-  grid-template-columns: 10px 1fr auto auto auto;
-  align-items: center;
-  gap: 6px;
-  opacity: 0.55;
-  font-size: 10px;
-}
-.sys-decom-row .sys-rich-dot { margin-top: 0; }
 .sys-decom-badge {
-  font-size: 7px;
+  font-size: 8px;
   font-weight: 900;
   letter-spacing: 1px;
   background: rgba(255,255,255,0.06);
@@ -2006,7 +2004,6 @@ main {
   padding: 1px 4px;
   border-radius: 2px;
 }
-.sys-decom-meta { color: var(--muted-2); font-size: 9px; }
 
 /* MONTHLY P&L tile — CSS flex bars (clean, no SVG stretching) */
 .monthly-chart-wrap {
