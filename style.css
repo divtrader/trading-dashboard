@@ -149,11 +149,83 @@ main {
 
 #screen-1 {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 2.2fr 1fr auto;
   gap: 12px;
 }
 #screen-1 .price-bar { grid-column: 1 / -1; }
+
+/* Count tiles (Open / Pending) — center the big number ── */
+.count-tile {
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+.count-tile .label { letter-spacing: 2px; }
+.count-tile .value { margin: 2px 0; }
+.count-tile .sub   { font-size: 13px; }
+
+/* Recent closes mini-list ── */
+.recent-closes-tile {
+  align-items: stretch;
+  justify-content: flex-start;
+  padding: 18px 18px;
+}
+.recent-closes-tile .label { margin-bottom: 8px; }
+.recent-closes-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+  font-variant-numeric: tabular-nums;
+}
+.rc-row {
+  display: grid;
+  grid-template-columns: 14px 50px 18px 1fr auto;
+  align-items: baseline;
+  gap: 8px;
+  padding: 4px 0;
+  font-size: 12px;
+  border-bottom: 1px solid var(--border);
+}
+.rc-row:last-child { border-bottom: none; }
+.rc-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  align-self: center;
+}
+.rc-dot.win  { background: var(--green); box-shadow: 0 0 6px rgba(0,201,167,0.6); }
+.rc-dot.loss { background: var(--red);   box-shadow: 0 0 6px rgba(255,77,94,0.6); }
+.rc-coin { font-weight: 800; color: var(--text); letter-spacing: 0.2px; }
+.rc-dir {
+  font-weight: 900;
+  font-size: 11px;
+  text-align: center;
+}
+.rc-dir.long  { color: var(--green); }
+.rc-dir.short { color: var(--red); }
+.rc-pnl {
+  font-weight: 900;
+  text-align: right;
+}
+.rc-pnl.pos { color: var(--green); }
+.rc-pnl.neg { color: var(--red); }
+.rc-ago {
+  font-size: 10px;
+  color: var(--muted-2);
+  text-align: right;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+.rc-empty {
+  font-size: 11px;
+  color: var(--muted-2);
+  font-style: italic;
+  text-align: center;
+  padding: 8px 0;
+}
 
 /* ── Hero portfolio tile ── */
 .hero-tile {
@@ -2219,11 +2291,13 @@ main {
   /* Screen 1: allow vertical scroll if content overflows */
   #screen-1 {
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto auto auto;
+    grid-template-rows: auto auto auto auto;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
     padding-bottom: 8px;
   }
+  .recent-closes-tile { grid-column: 1 / -1; }
+  .recent-closes-list .rc-row { font-size: 11px; }
 
   /* ── Hero tile ── */
   .hero-tile { padding: 16px 14px; }

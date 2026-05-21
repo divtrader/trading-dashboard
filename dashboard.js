@@ -582,6 +582,34 @@ function render() {
   renderActivity();
   renderPendingTriggers();
   renderMexcCard();
+  renderRecentClosesTile();
+}
+
+function renderRecentClosesTile() {
+  const el = document.getElementById("recent-closes-list");
+  if (!el) return;
+  const closes = [...(state.recentCloses || [])]
+    .sort((a, b) => new Date(b.close_iso || 0) - new Date(a.close_iso || 0))
+    .slice(0, 5);
+  if (!closes.length) {
+    el.innerHTML = '<div class="rc-empty">no closes yet</div>';
+    return;
+  }
+  el.innerHTML = closes.map(c => {
+    const coin = (c.coin || "").replace("USDT", "");
+    const won = c.won != null ? c.won : (c.pnl_usd || 0) > 0;
+    const pnl = c.pnl_usd || 0;
+    const pnlStr = (pnl >= 0 ? "+$" : "-$") + Math.abs(pnl).toFixed(2);
+    const dirShort = c.direction === "Long" ? "▲" : "▼";
+    return `
+      <div class="rc-row">
+        <div class="rc-dot ${won ? 'win' : 'loss'}"></div>
+        <div class="rc-coin">${coin}</div>
+        <div class="rc-dir ${c.direction === "Long" ? 'long' : 'short'}">${dirShort}</div>
+        <div class="rc-pnl ${won ? 'pos' : 'neg'}">${pnlStr}</div>
+        <div class="rc-ago">${fmtAgo(c.close_iso)}</div>
+      </div>`;
+  }).join("");
 }
 
 function renderMexcCard() {

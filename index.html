@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <meta name="robots" content="noindex,nofollow">
 <title>Spyker Trading Inc — Dashboard</title>
-<link rel="stylesheet" href="style.css?v=91">
+<link rel="stylesheet" href="style.css?v=92">
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
@@ -114,15 +114,19 @@
       </div>
     </div>
 
-    <div class="tile">
+    <div class="tile count-tile">
       <div class="label">Open trades</div>
       <div class="value" id="open-count">—</div>
       <div class="sub" id="open-split">—</div>
     </div>
-    <div class="tile">
+    <div class="tile count-tile">
       <div class="label">Pending</div>
       <div class="value" id="pending-count">—</div>
       <div class="sub" id="pending-split">—</div>
+    </div>
+    <div class="tile recent-closes-tile">
+      <div class="label">Recent closes</div>
+      <div class="recent-closes-list" id="recent-closes-list">—</div>
     </div>
     <div class="price-bar" id="price-bar">
       <span class="price-item" id="px-BTC"><span class="px-name">BTC</span> <span class="px-val">—</span> <span class="px-chg">—</span></span>
@@ -385,6 +389,6 @@
   </div>
 </main>
 
-<script src="dashboard.js?v=101"></script>
+<script src="dashboard.js?v=102"></script>
 </body>
 </html>
