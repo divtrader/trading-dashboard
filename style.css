@@ -183,32 +183,126 @@ main {
 }
 .rc-row {
   display: grid;
-  grid-template-columns: 14px 50px 18px 1fr auto;
-  align-items: baseline;
-  gap: 8px;
-  padding: 4px 0;
+  grid-template-columns: 12px 22px auto auto 1fr auto;
+  align-items: center;
+  gap: 9px;
+  padding: 5px 0;
   font-size: 12px;
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+  position: relative;
 }
 .rc-row:last-child { border-bottom: none; }
+
+/* Win/loss dot — glossy gradient orb with glow */
 .rc-dot {
-  width: 8px; height: 8px;
+  width: 10px; height: 10px;
   border-radius: 50%;
-  align-self: center;
+  position: relative;
+  flex-shrink: 0;
 }
-.rc-dot.win  { background: var(--green); box-shadow: 0 0 6px rgba(0,201,167,0.6); }
-.rc-dot.loss { background: var(--red);   box-shadow: 0 0 6px rgba(255,77,94,0.6); }
-.rc-coin { font-weight: 800; color: var(--text); letter-spacing: 0.2px; }
-.rc-dir {
+.rc-dot.win {
+  background: radial-gradient(circle at 32% 30%, #34f5cf 0%, #00c9a7 55%, #00876d 100%);
+  box-shadow:
+    0 0 8px rgba(0,201,167,0.65),
+    inset 0 1px 1px rgba(255,255,255,0.35),
+    inset 0 -1px 1px rgba(0,0,0,0.2);
+}
+.rc-dot.loss {
+  background: radial-gradient(circle at 32% 30%, #ff9aa5 0%, #ff4d5e 55%, #c43545 100%);
+  box-shadow:
+    0 0 8px rgba(255,77,94,0.65),
+    inset 0 1px 1px rgba(255,255,255,0.3),
+    inset 0 -1px 1px rgba(0,0,0,0.2);
+}
+
+/* Direction pill — small filled badge showing L (Long) or S (Short) */
+.rc-dir-pill {
+  font-size: 10px;
   font-weight: 900;
-  font-size: 11px;
+  line-height: 1;
+  letter-spacing: 0.2px;
   text-align: center;
+  padding: 3px 0;
+  border-radius: 4px;
+  text-transform: uppercase;
+  font-family: ui-monospace, "SF Mono", Menlo, monospace;
 }
-.rc-dir.long  { color: var(--green); }
-.rc-dir.short { color: var(--red); }
+.rc-dir-pill.long {
+  background: linear-gradient(180deg, rgba(0,201,167,0.22), rgba(0,201,167,0.12));
+  color: var(--green);
+  border: 1px solid rgba(0,201,167,0.3);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.08);
+}
+.rc-dir-pill.short {
+  background: linear-gradient(180deg, rgba(255,77,94,0.22), rgba(255,77,94,0.12));
+  color: var(--red);
+  border: 1px solid rgba(255,77,94,0.3);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.08);
+}
+
+.rc-coin-block {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  line-height: 1.1;
+  min-width: 0;
+}
+.rc-coin {
+  font-weight: 800;
+  color: var(--text);
+  letter-spacing: 0.2px;
+  font-size: 12px;
+  white-space: nowrap;
+  line-height: 1.05;
+}
+.rc-tid {
+  font-size: 8.5px;
+  font-weight: 600;
+  color: var(--muted-2);
+  font-family: ui-monospace, "SF Mono", Menlo, monospace;
+  letter-spacing: 0.2px;
+  opacity: 0.7;
+  white-space: nowrap;
+  line-height: 1.1;
+}
+/* Close reason badge — TP2/TP1/SL/other */
+.rc-reason {
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  font-family: ui-monospace, "SF Mono", Menlo, monospace;
+  padding: 2px 6px;
+  border-radius: 3px;
+  line-height: 1;
+  white-space: nowrap;
+}
+.rc-reason.tp2 {
+  background: rgba(0,201,167,0.18);
+  color: var(--green);
+  border: 1px solid rgba(0,201,167,0.28);
+}
+.rc-reason.tp1 {
+  background: rgba(255,213,79,0.16);
+  color: #ffd54f;
+  border: 1px solid rgba(255,213,79,0.28);
+}
+.rc-reason.sl {
+  background: rgba(255,77,94,0.16);
+  color: var(--red);
+  border: 1px solid rgba(255,77,94,0.28);
+}
+.rc-reason.other {
+  background: rgba(255,255,255,0.06);
+  color: var(--muted-2);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
 .rc-pnl {
   font-weight: 900;
   text-align: right;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.2px;
 }
 .rc-pnl.pos { color: var(--green); }
 .rc-pnl.neg { color: var(--red); }
@@ -218,6 +312,7 @@ main {
   text-align: right;
   font-weight: 600;
   letter-spacing: 0.3px;
+  min-width: 40px;
 }
 .rc-empty {
   font-size: 11px;

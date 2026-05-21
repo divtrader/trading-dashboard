@@ -600,12 +600,33 @@ function renderRecentClosesTile() {
     const won = c.won != null ? c.won : (c.pnl_usd || 0) > 0;
     const pnl = c.pnl_usd || 0;
     const pnlStr = (pnl >= 0 ? "+$" : "-$") + Math.abs(pnl).toFixed(2);
-    const dirShort = c.direction === "Long" ? "▲" : "▼";
+    const isLong = c.direction === "Long";
+    const dirCls = isLong ? "long" : "short";
+    const dirLetter = isLong ? "L" : "S";
+    // Close reason → short badge: "TP2 hit" → TP2, "TP1 hit" → TP1, "SL hit" → SL,
+    // STOPPED_AFTER_TP1 → "TP1+SL" (closed at BE after TP1 hit), else first word uppercase.
+    const reason = (c.close_reason || "").toString();
+    let rCode, rCls;
+    if (/^tp2/i.test(reason))         { rCode = "TP2"; rCls = "tp2"; }
+    else if (/^tp1/i.test(reason))    { rCode = "TP1"; rCls = "tp1"; }
+    else if (/sl|stop/i.test(reason)) {
+      // "STOPPED_AFTER_TP1" means TP1 was banked then SL hit at breakeven — show TP1
+      if (c.status === "STOPPED_AFTER_TP1") { rCode = "TP1+BE"; rCls = "tp1"; }
+      else                                  { rCode = "SL";     rCls = "sl";  }
+    }
+    else if (reason)                  { rCode = reason.split(" ")[0].toUpperCase().slice(0, 6); rCls = "other"; }
+    else                              { rCode = "—";    rCls = "other"; }
+    // Trade-id subtitle: strip the redundant "COINUSDT_" prefix → "20260427_CWM_001"
+    const tid = (c.trade_id || "").replace(/^[A-Z]+(?:USDT)?_/, "");
     return `
-      <div class="rc-row">
+      <div class="rc-row ${dirCls}" title="${c.trade_id || ""}">
         <div class="rc-dot ${won ? 'win' : 'loss'}"></div>
-        <div class="rc-coin">${coin}</div>
-        <div class="rc-dir ${c.direction === "Long" ? 'long' : 'short'}">${dirShort}</div>
+        <div class="rc-dir-pill ${dirCls}">${dirLetter}</div>
+        <div class="rc-coin-block">
+          <span class="rc-coin">${coin}</span>
+          <span class="rc-tid">${tid || "—"}</span>
+        </div>
+        <div class="rc-reason ${rCls}">${rCode}</div>
         <div class="rc-pnl ${won ? 'pos' : 'neg'}">${pnlStr}</div>
         <div class="rc-ago">${fmtAgo(c.close_iso)}</div>
       </div>`;
