@@ -1388,7 +1388,7 @@ main {
   overflow: hidden;
 }
 .edge-span-2 { grid-column: span 2; }
-.edge-row-4  { grid-template-columns: repeat(3, 1fr); }  /* 3 tiles, no empty cell */
+.edge-row.edge-row-4 { grid-template-columns: repeat(3, 1fr); }  /* 3 tiles, no empty cell */
 
 /* Live insights ticker */
 .edge-insights {
