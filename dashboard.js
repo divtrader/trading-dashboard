@@ -667,7 +667,7 @@ function renderMexcPositions(positions) {
   // Bar shows: SL (actual MEXC stop-loss order, or liquidation fallback) on the
   // left, entry centred, live mark dot, and TP (actual MEXC take-profit) on the
   // right when set.
-  host.innerHTML = positions.map(p => {
+  const newHtml = positions.map(p => {
     const coin = p.coin.replace("USDT", "");
     const isLong = p.direction === "Long";
     const dirCls = isLong ? "long" : "short";
@@ -697,7 +697,7 @@ function renderMexcPositions(positions) {
     const titleAttr = `Entry ${p.entry} · Mark ${p.mark} · SL ${p.sl ?? "(liq " + p.liq + ")"}${p.tp ? " · TP " + p.tp : ""}`;
 
     return `
-      <div class="mexc-pos-row">
+      <div class="mexc-pos-row" data-pos-key="${p.coin}_${p.direction}">
         <div class="mexc-pos-head">
           <span class="mexc-pos-coin">${coin}</span>
           <span class="mexc-pos-dir ${dirCls}">${isLong ? "L" : "S"}${p.leverage ? "·" + p.leverage + "x" : ""}</span>
@@ -712,6 +712,7 @@ function renderMexcPositions(positions) {
         <div class="mexc-pos-pnl ${pnlCls}">${fmtUsd(p.unrealized_pnl)}</div>
       </div>`;
   }).join("");
+  flipReplace(host, newHtml, "data-pos-key");
 }
 
 // === Bloomberg news flash ===
@@ -1355,7 +1356,7 @@ function renderActivity() {
   }
 
   events.sort((a, b) => b.ts - a.ts);
-  $("activity").innerHTML = events.slice(0, 8).map(ev => {
+  const newHtml = events.slice(0, 8).map(ev => {
     const { t } = ev;
     const coin = (t.coin || "").replace("USDT", "");
     const dir  = t.direction || "";
@@ -1363,15 +1364,18 @@ function renderActivity() {
     const px   = t.entry_price ? fmtPrice(t.entry_price) : "";
     const track = t.track_only ? ' <span class="ev-track">track</span>' : "";
     const ago  = `<span class="ev-time">${fmtAgo(t.iso || t.close_iso)}</span>`;
+    // Stable key per event = type + trade_id (one trade can produce multiple event types)
+    const k = `${ev.type}_${t.trade_id || t.iso || ev.ts}`;
     switch (ev.type) {
-      case "signal": return `<div class="ev-row"><span class="ev-chip signal">🔔 SIGNAL</span><span class="ev-body">${coin} ${dir} · ${sys} · $${px}${track}</span>${ago}</div>`;
-      case "open":   return `<div class="ev-row"><span class="ev-chip open">✅ ENTERED</span><span class="ev-body">${coin} ${dir} · ${sys} · $${px}</span>${ago}</div>`;
-      case "win":    return `<div class="ev-row"><span class="ev-chip win">💰 ${t.status === "TP2_HIT" ? "TP2 HIT" : "CLOSED WIN"}</span><span class="ev-body">${coin} ${dir} · ${sys} · <strong>+$${Math.abs(t.pnl_usd||0).toFixed(2)}</strong></span>${ago}</div>`;
-      case "loss":   return `<div class="ev-row"><span class="ev-chip loss">❌ STOPPED</span><span class="ev-body">${coin} ${dir} · ${sys} · -$${Math.abs(t.pnl_usd||0).toFixed(2)}</span>${ago}</div>`;
-      case "cancel": return `<div class="ev-row"><span class="ev-chip cancel">🚫 CANCELLED</span><span class="ev-body">${coin} ${dir} · ${sys}</span>${ago}</div>`;
+      case "signal": return `<div class="ev-row" data-ev-key="${k}"><span class="ev-chip signal">🔔 SIGNAL</span><span class="ev-body">${coin} ${dir} · ${sys} · $${px}${track}</span>${ago}</div>`;
+      case "open":   return `<div class="ev-row" data-ev-key="${k}"><span class="ev-chip open">✅ ENTERED</span><span class="ev-body">${coin} ${dir} · ${sys} · $${px}</span>${ago}</div>`;
+      case "win":    return `<div class="ev-row" data-ev-key="${k}"><span class="ev-chip win">💰 ${t.status === "TP2_HIT" ? "TP2 HIT" : "CLOSED WIN"}</span><span class="ev-body">${coin} ${dir} · ${sys} · <strong>+$${Math.abs(t.pnl_usd||0).toFixed(2)}</strong></span>${ago}</div>`;
+      case "loss":   return `<div class="ev-row" data-ev-key="${k}"><span class="ev-chip loss">❌ STOPPED</span><span class="ev-body">${coin} ${dir} · ${sys} · -$${Math.abs(t.pnl_usd||0).toFixed(2)}</span>${ago}</div>`;
+      case "cancel": return `<div class="ev-row" data-ev-key="${k}"><span class="ev-chip cancel">🚫 CANCELLED</span><span class="ev-body">${coin} ${dir} · ${sys}</span>${ago}</div>`;
       default: return "";
     }
   }).join("");
+  flipReplace($("activity"), newHtml, "data-ev-key");
 }
 
 // System accent colors — read from CSS vars if defined (allows theme overrides), else use defaults
@@ -1428,7 +1432,7 @@ function renderSystems() {
       </div>
     `;
   }).join("");
-  $("systems").innerHTML = html;
+  flipReplace($("systems"), html, "data-sys");
 }
 
 // Screen navigation (swipeable — no auto-rotation)
@@ -1897,7 +1901,7 @@ function _renderBars(containerId, dataObj, opts = {}) {
     const cls = pnl > 0 ? "pos" : (pnl < 0 ? "neg" : "neu");
     const label = opts.labelMap ? (opts.labelMap[key] || key) : key;
     return `
-      <div class="bars-row ${cls}">
+      <div class="bars-row ${cls}" data-bar-key="${key}">
         <div class="bars-key">${label}</div>
         <div class="bars-track"><div class="bars-fill ${cls}" style="width:${Math.max(2, wr)}%"></div></div>
         <div class="bars-wr">${wr.toFixed(0)}%</div>
@@ -1905,7 +1909,7 @@ function _renderBars(containerId, dataObj, opts = {}) {
         <div class="bars-pnl ${cls}">${_fmtUsdEdge(pnl)}</div>
       </div>`;
   }).join("");
-  el.innerHTML = html;
+  flipReplace(el, html, "data-bar-key");
 }
 
 // ── Render: direction tile (Long vs Short) ──
@@ -2019,7 +2023,7 @@ function _renderSystemsRich(systems, decommissioned) {
     decomHtml = decoms;
   }
 
-  el.innerHTML = active + decomHtml;
+  flipReplace(el, active + decomHtml, "data-sys");
 }
 
 // ── Render: MONTHLY P&L — HTML/CSS flex bars (no SVG stretching) ──
