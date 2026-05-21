@@ -1,9 +1,9 @@
 {
-  "last_updated_iso": "2026-05-20T20:32:43Z",
+  "last_updated_iso": "2026-05-21T04:13:31Z",
   "mexc_account": {
-    "unrealized_pnl": -36.3378,
-    "equity": 1814.799,
-    "available": 553.4622,
+    "unrealized_pnl": -20.4452,
+    "equity": 1830.6427,
+    "available": 553.4133,
     "position_margin": 398.3574
   },
   "active_trades": [
@@ -43,7 +43,7 @@
       "trading_system": "John",
       "track_only": true,
       "status": "OPEN",
-      "price_at_run": 77672.35,
+      "price_at_run": 77979.89,
       "date_activated": "2026-04-28",
       "time_activated_utc": "12:00",
       "date_opened": "2026-04-28",
@@ -66,7 +66,7 @@
       "trading_system": "John",
       "track_only": true,
       "status": "OPEN",
-      "price_at_run": 1.685,
+      "price_at_run": 1.733,
       "date_activated": "2026-05-16",
       "time_activated_utc": "08:00",
       "date_opened": "2026-05-12",
@@ -89,7 +89,7 @@
       "trading_system": "John",
       "track_only": true,
       "status": "OPEN",
-      "price_at_run": 650.59,
+      "price_at_run": 654.07,
       "date_activated": "2026-05-17",
       "time_activated_utc": "20:00",
       "date_opened": "2026-05-12",
@@ -341,10 +341,10 @@
       "leverage": 3,
       "trading_system": "Braam",
       "track_only": false,
-      "status": "PENDING",
+      "status": "OPEN",
       "price_at_run": 0.10228,
-      "date_activated": null,
-      "time_activated_utc": null,
+      "date_activated": "2026-05-21",
+      "time_activated_utc": "04:13",
       "date_opened": "2026-05-20",
       "time_opened_utc": "04:36",
       "conviction": "MEDIUM",
@@ -364,6 +364,16 @@
       "tp1_hit": false,
       "iso": "2026-05-20T18:34:00Z",
       "_iso_ms": 1779302040000
+    },
+    {
+      "trade_id": "DOGEUSDT_20260520_CB_001",
+      "coin": "DOGEUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "entry_price": 0.10587577,
+      "tp1_hit": false,
+      "iso": "2026-05-21T04:13:00Z",
+      "_iso_ms": 1779336780000
     }
   ],
   "recent_closes": [
@@ -889,13 +899,6 @@
     }
   ],
   "recent_cancels": [
-    {
-      "coin": "BNBUSDT",
-      "direction": "Short",
-      "trading_system": "Braam",
-      "close_reason": "6/8 signals opposing Short for 2 consecutive 4H bars \u2014 conviction has collapsed,",
-      "iso": "2026-05-20T12:58:00Z"
-    },
     {
       "coin": "CAKEUSDT",
       "direction": "Short",
