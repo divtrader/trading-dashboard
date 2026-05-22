@@ -1,8 +1,8 @@
 {
-  "last_updated_iso": "2026-05-22T12:20:29Z",
+  "last_updated_iso": "2026-05-22T12:54:47Z",
   "mexc_account": {
-    "unrealized_pnl": -8.8771,
-    "equity": 1841.937,
+    "unrealized_pnl": 0.433,
+    "equity": 1851.2471,
     "available": 553.1395,
     "position_margin": 398.3574
   },
@@ -43,7 +43,7 @@
       "trading_system": "John",
       "track_only": true,
       "status": "OPEN",
-      "price_at_run": 77539.13,
+      "price_at_run": 77525.83,
       "date_activated": "2026-04-28",
       "time_activated_utc": "12:00",
       "date_opened": "2026-04-28",
@@ -66,7 +66,7 @@
       "trading_system": "John",
       "track_only": true,
       "status": "OPEN",
-      "price_at_run": 659.17,
+      "price_at_run": 660.51,
       "date_activated": "2026-05-17",
       "time_activated_utc": "20:00",
       "date_opened": "2026-05-12",
@@ -140,29 +140,6 @@
       "time_activated_utc": null,
       "date_opened": "2026-05-18",
       "time_opened_utc": "05:22",
-      "conviction": "MEDIUM",
-      "tp1_hit": false,
-      "sl_moved_to_be": false,
-      "pnl_tp1_realized_usd": null
-    },
-    {
-      "trade_id": "APTUSDT_20260518_CB_001",
-      "coin": "APTUSDT",
-      "direction": "Short",
-      "entry_price": 0.96050184,
-      "sl": 0.997453,
-      "tp1": 0.91,
-      "tp2": 0.826,
-      "capital_usd": 100,
-      "leverage": 3,
-      "trading_system": "Braam",
-      "track_only": false,
-      "status": "OPEN",
-      "price_at_run": 0.929,
-      "date_activated": "2026-05-20",
-      "time_activated_utc": "18:34",
-      "date_opened": "2026-05-18",
-      "time_opened_utc": "17:48",
       "conviction": "MEDIUM",
       "tp1_hit": false,
       "sl_moved_to_be": false,
@@ -351,19 +328,6 @@
     }
   ],
   "recent_closes": [
-    {
-      "trade_id": "BNBUSDT_20260504_J_M_002",
-      "coin": "BNBUSDT",
-      "direction": "Short",
-      "status": "STOPPED",
-      "pnl_usd": -4.68,
-      "close_reason": "SL hit",
-      "date_closed": "2026-05-06",
-      "time_closed_utc": "12:00",
-      "trading_system": "John",
-      "won": false,
-      "close_iso": "2026-05-06T12:00:00Z"
-    },
     {
       "trade_id": "BNBUSDT_20260504_W_M_001",
       "coin": "BNBUSDT",
@@ -870,6 +834,19 @@
       "trading_system": "Braam",
       "won": false,
       "close_iso": "2026-05-22T08:00:00Z"
+    },
+    {
+      "trade_id": "APTUSDT_20260518_CB_001",
+      "coin": "APTUSDT",
+      "direction": "Short",
+      "status": "STOPPED",
+      "pnl_usd": -11.11,
+      "close_reason": "SL hit",
+      "date_closed": "2026-05-22",
+      "time_closed_utc": "12:00",
+      "trading_system": "Braam",
+      "won": false,
+      "close_iso": "2026-05-22T12:00:00Z"
     }
   ],
   "recent_cancels": [
@@ -890,9 +867,9 @@
     }
   ],
   "stats": {
-    "realized_pnl_usd": 119.22,
-    "win_rate_pct": 34.1,
-    "closed_count": 85,
+    "realized_pnl_usd": 108.11,
+    "win_rate_pct": 33.7,
+    "closed_count": 86,
     "per_system": {
       "John": {
         "realized_pnl_usd": 99.31,
@@ -905,9 +882,9 @@
         "closed_count": 22
       },
       "Braam": {
-        "realized_pnl_usd": -31.18,
-        "win_rate_pct": 12.5,
-        "closed_count": 8
+        "realized_pnl_usd": -42.29,
+        "win_rate_pct": 11.1,
+        "closed_count": 9
       }
     }
   }
