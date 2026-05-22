@@ -1,21 +1,42 @@
 :root {
-  --bg:          #07090f;
-  --panel:       #0d1120;
-  --panel-2:     #111827;
+  --bg:          #050811;
+  --panel:       rgba(20, 28, 48, 0.55);   /* iOS 26.5 Liquid Glass — base translucent panel */
+  --panel-2:     rgba(28, 38, 62, 0.62);   /* slightly brighter elevated glass for heroes */
   --text:        #e2e8f8;
-  --muted:       #5a6585;
-  --muted-2:     #3d4a6a;
+  --muted:       #6c779a;
+  --muted-2:     #475275;
   --green:       #00c9a7;
-  --green-dim:   rgba(0,201,167,0.12);
-  --green-glow:  rgba(0,201,167,0.35);
+  --green-dim:   rgba(0,201,167,0.14);
+  --green-glow:  rgba(0,201,167,0.45);
   --green-bright:#00e5b0;
   --red:         #ff4d5e;
-  --red-dim:     rgba(255,77,94,0.12);
-  --red-glow:    rgba(255,77,94,0.35);
+  --red-dim:     rgba(255,77,94,0.14);
+  --red-glow:    rgba(255,77,94,0.45);
   --orange:      #ffab40;
-  --orange-dim:  rgba(255,171,64,0.12);
-  --border:      #1a2338;
-  --border-hi:   #243050;
+  --orange-dim:  rgba(255,171,64,0.14);
+  --border:      rgba(255,255,255,0.06);
+  --border-hi:   rgba(255,255,255,0.10);
+
+  /* ── Liquid Glass material system ───────────────────────────────────────── */
+  --glass-blur:        blur(28px) saturate(180%);
+  --glass-blur-light:  blur(20px) saturate(160%);
+  --glass-highlight:   rgba(255, 255, 255, 0.09);
+  --glass-edge:        rgba(255, 255, 255, 0.05);
+  --glass-shadow:
+    0 16px 40px -12px rgba(0, 0, 0, 0.55),
+    0 2px 8px -2px rgba(0, 0, 0, 0.35),
+    0 0 0 1px var(--glass-edge),
+    inset 0 1px 0 var(--glass-highlight),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.25);
+  --glass-shadow-elevated:
+    0 24px 60px -16px rgba(0, 0, 0, 0.7),
+    0 4px 12px -2px rgba(0, 0, 0, 0.4),
+    0 0 0 1px rgba(255, 255, 255, 0.07),
+    inset 0 1px 0 rgba(255, 255, 255, 0.12),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.3);
+  --glass-radius:      20px;
+  --glass-radius-sm:   14px;
+  --glass-radius-pill: 999px;
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -27,6 +48,23 @@ html, body {
   font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", system-ui, sans-serif;
   font-variant-numeric: tabular-nums;
   overflow: hidden;
+}
+
+/* ── iOS 26.5 ambient backdrop ───────────────────────────────────────────────
+   Subtle aurora gradient behind all glass tiles. Two soft radial pools (teal
+   top-left, orange bottom-right) give the backdrop-filter blur something to
+   refract over — without this, glass tiles look flat on solid black. */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(60% 50% at 15% 10%,  rgba(0, 201, 167, 0.10), transparent 60%),
+    radial-gradient(50% 40% at 85% 90%,  rgba(255, 171, 64, 0.07), transparent 65%),
+    radial-gradient(45% 35% at 75% 20%,  rgba(91, 141, 239, 0.06), transparent 60%),
+    linear-gradient(180deg, #060912 0%, #050811 50%, #03060c 100%);
+  pointer-events: none;
 }
 
 body { display: flex; flex-direction: column; }
@@ -2493,4 +2531,199 @@ main {
   .edge-strip { grid-template-columns: 1fr 1fr 1fr; row-gap: 10px; }
   .strip-cell:nth-child(3n) { border-right: none; padding-right: 0; }
   .strip-cell { border-right: 1px solid var(--border); padding-right: 8px; }
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+   iOS 26.5 — Liquid Glass surface system
+   Override the existing tile aesthetics in one focused block at the end so
+   the structural CSS above is untouched and easy to roll back to.
+   ══════════════════════════════════════════════════════════════════════════ */
+
+/* Header bar — glass strip with subtle bottom edge */
+.top {
+  background: rgba(8, 12, 22, 0.55);
+  backdrop-filter: var(--glass-blur-light);
+  -webkit-backdrop-filter: var(--glass-blur-light);
+  border-bottom: 1px solid var(--glass-edge);
+}
+
+/* === Tiles — universal Liquid Glass treatment === */
+.tile,
+.edge-tile,
+.edge-strip,
+.recent-closes-tile {
+  background: var(--panel) !important;
+  border: none !important;
+  border-radius: var(--glass-radius) !important;
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  box-shadow: var(--glass-shadow);
+}
+.hero-tile,
+.edge-perf {
+  background: var(--panel-2) !important;
+  box-shadow: var(--glass-shadow-elevated) !important;
+  border-radius: 24px !important;
+}
+
+/* Soft inner top highlight — layered as a gradient on the background itself so
+   it doesn't break absolutely-positioned children (e.g. equity-curve SVG). */
+.tile,
+.edge-tile,
+.recent-closes-tile {
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.045) 0%, transparent 38%),
+    rgba(20, 28, 48, 0.55) !important;
+}
+.hero-tile,
+.edge-perf {
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.06) 0%, transparent 32%),
+    rgba(28, 38, 62, 0.62) !important;
+}
+
+/* === Capsule pills — fully rounded === */
+.rc-dir-pill,
+.rc-reason,
+.sys-live-badge,
+.sys-decom-badge,
+.pb-dir,
+.pb-be,
+.pb-sys,
+.ev-chip,
+.ev-track,
+.dir-vbar-tag,
+.pb-tid-inline,
+.fg-label {
+  border-radius: var(--glass-radius-pill) !important;
+  padding-left: 8px !important;
+  padding-right: 8px !important;
+  letter-spacing: 0.5px;
+}
+
+/* === Bars (paper bars, edge bars, etc.) — glass row with capsule fills === */
+.paper-bar-row {
+  background: rgba(16, 22, 38, 0.5);
+  backdrop-filter: blur(14px) saturate(150%);
+  -webkit-backdrop-filter: blur(14px) saturate(150%);
+  border-radius: var(--glass-radius-sm);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.05),
+    0 1px 0 rgba(0, 0, 0, 0.3),
+    0 4px 14px -4px rgba(0, 0, 0, 0.45),
+    0 0 0 1px var(--glass-edge);
+  border: none !important;
+}
+
+/* Equity curve background — soften the outline */
+.spark-wrap {
+  background: rgba(255, 255, 255, 0.015);
+  border-radius: var(--glass-radius-sm);
+}
+
+/* Donut + WR donut — softer rings */
+.donut-track { stroke: rgba(255, 255, 255, 0.045); }
+.wr-track    { stroke: rgba(255, 255, 255, 0.045); }
+
+/* Gauges & sparklines pop more over the glass */
+.fg-gauge, .wr-big-donut { filter: drop-shadow(0 6px 16px rgba(0, 0, 0, 0.35)); }
+
+/* Mexc positions — capsule rows */
+.mexc-pos-row {
+  border-radius: var(--glass-radius-sm);
+  background: rgba(255, 255, 255, 0.02);
+  padding: 6px 10px;
+}
+
+/* Price ticker — glass strip */
+.price-bar {
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.04) 0%, transparent 50%),
+    rgba(12, 18, 32, 0.65) !important;
+  backdrop-filter: var(--glass-blur-light);
+  -webkit-backdrop-filter: var(--glass-blur-light);
+  border-radius: var(--glass-radius-sm);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.06),
+    0 8px 24px -8px rgba(0, 0, 0, 0.5),
+    0 0 0 1px var(--glass-edge);
+}
+
+/* Bloomberg news flash — iOS 26.5 glass alert (full-bleed bottom strip) */
+.news-flash {
+  background:
+    linear-gradient(180deg, rgba(255, 30, 40, 0.12) 0%, rgba(8, 12, 22, 0.0) 50%),
+    rgba(10, 12, 18, 0.72) !important;
+  backdrop-filter: blur(32px) saturate(180%);
+  -webkit-backdrop-filter: blur(32px) saturate(180%);
+  border-top: 1px solid rgba(229, 28, 28, 0.55) !important;
+  box-shadow:
+    0 -20px 40px -10px rgba(229, 28, 28, 0.18),
+    0 -8px 24px -4px rgba(0, 0, 0, 0.6),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+.nf-breaking {
+  background: linear-gradient(180deg, #ff2733 0%, #c41616 100%) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.18),
+    inset 0 -1px 0 rgba(0,0,0,0.18),
+    0 2px 8px rgba(229, 28, 28, 0.35);
+}
+.nf-divider {
+  background: linear-gradient(180deg, transparent 0%, rgba(229, 28, 28, 0.6) 50%, transparent 100%) !important;
+  width: 1px !important;
+}
+.nf-headline {
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.6);
+}
+.nf-brand {
+  border-left: 1px solid rgba(255, 255, 255, 0.06) !important;
+}
+
+/* Dots/screen indicator — capsules */
+.dots .d {
+  border-radius: 999px;
+  transition: width 0.4s cubic-bezier(0.22, 1, 0.36, 1), background 0.4s ease;
+}
+.dots .d.active {
+  width: 28px;
+  background: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.25);
+}
+
+/* === Hero values — gradient text === */
+.hero-value, .edge-big {
+  background: linear-gradient(180deg, currentColor 0%, color-mix(in srgb, currentColor 75%, transparent) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  /* Keep the glow via filter so the gradient text still has presence */
+  filter: drop-shadow(0 2px 14px color-mix(in srgb, currentColor 28%, transparent));
+}
+
+/* === Win/loss orbs — slightly more luminous === */
+.rc-dot.win, .streak-pill.win, .spark-dot.win {
+  box-shadow:
+    0 0 12px rgba(0, 201, 167, 0.8),
+    inset 0 1px 1px rgba(255, 255, 255, 0.45),
+    inset 0 -1px 1px rgba(0, 0, 0, 0.2);
+}
+.rc-dot.loss, .streak-pill.loss, .spark-dot.loss {
+  box-shadow:
+    0 0 12px rgba(255, 77, 94, 0.8),
+    inset 0 1px 1px rgba(255, 255, 255, 0.4),
+    inset 0 -1px 1px rgba(0, 0, 0, 0.2);
+}
+
+/* === System scoreboard rows on Screen 3 — glass capsule cards === */
+.sys-row {
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: var(--glass-radius-sm);
+  padding: 10px 14px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+/* === Edge breakdown bar rows (Screen 4) — capsule fills === */
+.bars-fill, .sys-rich-fill, .dir-vbar-fill, .dir-fill {
+  border-radius: 999px !important;
 }
