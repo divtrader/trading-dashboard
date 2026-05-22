@@ -1,8 +1,8 @@
 {
-  "last_updated_iso": "2026-05-22T18:45:46Z",
+  "last_updated_iso": "2026-05-22T18:51:58Z",
   "mexc_account": {
-    "unrealized_pnl": -59.7478,
-    "equity": 1791.0051,
+    "unrealized_pnl": -57.122,
+    "equity": 1793.6309,
     "available": 553.0782,
     "position_margin": 398.3574
   },
@@ -43,7 +43,7 @@
       "trading_system": "John",
       "track_only": true,
       "status": "OPEN",
-      "price_at_run": 76542.98,
+      "price_at_run": 76414.99,
       "date_activated": "2026-04-28",
       "time_activated_utc": "12:00",
       "date_opened": "2026-04-28",
@@ -66,7 +66,7 @@
       "trading_system": "John",
       "track_only": true,
       "status": "OPEN",
-      "price_at_run": 654.34,
+      "price_at_run": 652.16,
       "date_activated": "2026-05-17",
       "time_activated_utc": "20:00",
       "date_opened": "2026-05-12",
@@ -196,7 +196,7 @@
       "coin": "LTCUSDT",
       "direction": "Short",
       "entry_price": 54.32608033,
-      "sl": 54.73,
+      "sl": 54.32608033,
       "tp1": 53.53,
       "tp2": 52.82,
       "capital_usd": 100,
@@ -210,8 +210,8 @@
       "date_opened": "2026-05-22",
       "time_opened_utc": "09:20",
       "conviction": "HIGH",
-      "tp1_hit": false,
-      "sl_moved_to_be": false,
+      "tp1_hit": true,
+      "sl_moved_to_be": true,
       "pnl_tp1_realized_usd": null
     },
     {
@@ -242,7 +242,7 @@
       "coin": "CAKEUSDT",
       "direction": "Short",
       "entry_price": 1.44469249,
-      "sl": 1.47412829,
+      "sl": 1.44469249,
       "tp1": 1.424,
       "tp2": 1.396,
       "capital_usd": 100,
@@ -256,8 +256,8 @@
       "date_opened": "2026-05-22",
       "time_opened_utc": "11:24",
       "conviction": "MEDIUM",
-      "tp1_hit": false,
-      "sl_moved_to_be": false,
+      "tp1_hit": true,
+      "sl_moved_to_be": true,
       "pnl_tp1_realized_usd": null
     },
     {
@@ -278,6 +278,52 @@
       "time_activated_utc": null,
       "date_opened": "2026-05-22",
       "time_opened_utc": "18:45",
+      "conviction": "MEDIUM",
+      "tp1_hit": false,
+      "sl_moved_to_be": false,
+      "pnl_tp1_realized_usd": null
+    },
+    {
+      "trade_id": "HBARUSDT_20260522_CB_001",
+      "coin": "HBARUSDT",
+      "direction": "Short",
+      "entry_price": 0.08961008,
+      "sl": 0.09151192,
+      "tp1": 0.083236,
+      "tp2": 0.07499811,
+      "capital_usd": 100,
+      "leverage": 3,
+      "trading_system": "Braam",
+      "track_only": false,
+      "status": "PENDING",
+      "price_at_run": 0.08857,
+      "date_activated": null,
+      "time_activated_utc": null,
+      "date_opened": "2026-05-22",
+      "time_opened_utc": "18:51",
+      "conviction": "MEDIUM",
+      "tp1_hit": false,
+      "sl_moved_to_be": false,
+      "pnl_tp1_realized_usd": null
+    },
+    {
+      "trade_id": "LINKUSDT_20260522_CB_001",
+      "coin": "LINKUSDT",
+      "direction": "Short",
+      "entry_price": 9.72076818,
+      "sl": 9.97357347,
+      "tp1": 9.26590098,
+      "tp2": 8.13103107,
+      "capital_usd": 100,
+      "leverage": 3,
+      "trading_system": "Braam",
+      "track_only": false,
+      "status": "PENDING",
+      "price_at_run": 9.594,
+      "date_activated": null,
+      "time_activated_utc": null,
+      "date_opened": "2026-05-22",
+      "time_opened_utc": "18:51",
       "conviction": "MEDIUM",
       "tp1_hit": false,
       "sl_moved_to_be": false,
@@ -308,6 +354,30 @@
       "conviction": "MEDIUM",
       "track_only": false,
       "iso": "2026-05-22T18:45:00Z"
+    },
+    {
+      "trade_id": "HBARUSDT_20260522_CB_001",
+      "coin": "HBARUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "entry_price": 0.08961008,
+      "tp1": 0.083236,
+      "sl": 0.09151192,
+      "conviction": "MEDIUM",
+      "track_only": false,
+      "iso": "2026-05-22T18:51:00Z"
+    },
+    {
+      "trade_id": "LINKUSDT_20260522_CB_001",
+      "coin": "LINKUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "entry_price": 9.72076818,
+      "tp1": 9.26590098,
+      "sl": 9.97357347,
+      "conviction": "MEDIUM",
+      "track_only": false,
+      "iso": "2026-05-22T18:51:00Z"
     }
   ],
   "recent_opens": [
@@ -337,7 +407,7 @@
       "direction": "Short",
       "trading_system": "Braam",
       "entry_price": 1.44469249,
-      "tp1_hit": false,
+      "tp1_hit": true,
       "iso": "2026-05-22T11:44:00Z",
       "_iso_ms": 1779450240000
     },
@@ -347,7 +417,7 @@
       "direction": "Short",
       "trading_system": "Braam",
       "entry_price": 54.32608033,
-      "tp1_hit": false,
+      "tp1_hit": true,
       "iso": "2026-05-22T12:13:00Z",
       "_iso_ms": 1779451980000
     }
@@ -881,6 +951,18 @@
       "direction": "Long",
       "trading_system": "John",
       "entry_price": 75838.91889335
+    },
+    {
+      "coin": "LTCUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "entry_price": 54.32608033
+    },
+    {
+      "coin": "CAKEUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "entry_price": 1.44469249
     }
   ],
   "stats": {
