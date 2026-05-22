@@ -1,8 +1,8 @@
 {
-  "last_updated_iso": "2026-05-22T11:50:58Z",
+  "last_updated_iso": "2026-05-22T11:56:07Z",
   "mexc_account": {
-    "unrealized_pnl": -13.4017,
-    "equity": 1837.4124,
+    "unrealized_pnl": -12.8722,
+    "equity": 1837.9419,
     "available": 553.1395,
     "position_margin": 398.3574
   },
@@ -43,7 +43,7 @@
       "trading_system": "John",
       "track_only": true,
       "status": "OPEN",
-      "price_at_run": 77413.01,
+      "price_at_run": 77379.29,
       "date_activated": "2026-04-28",
       "time_activated_utc": "12:00",
       "date_opened": "2026-04-28",
@@ -215,29 +215,6 @@
       "pnl_tp1_realized_usd": null
     },
     {
-      "trade_id": "LINKUSDT_20260521_CB_001",
-      "coin": "LINKUSDT",
-      "direction": "Short",
-      "entry_price": 9.63607492,
-      "sl": 9.88548381,
-      "tp1": 9.354,
-      "tp2": 9.102,
-      "capital_usd": 100,
-      "leverage": 3,
-      "trading_system": "Braam",
-      "track_only": false,
-      "status": "OPEN",
-      "price_at_run": 9.549,
-      "date_activated": "2026-05-21",
-      "time_activated_utc": "14:53",
-      "date_opened": "2026-05-21",
-      "time_opened_utc": "12:17",
-      "conviction": "MEDIUM",
-      "tp1_hit": false,
-      "sl_moved_to_be": false,
-      "pnl_tp1_realized_usd": null
-    },
-    {
       "trade_id": "LTCUSDT_20260522_CB_001",
       "coin": "LTCUSDT",
       "direction": "Short",
@@ -289,8 +266,8 @@
       "direction": "Short",
       "entry_price": 1.44469249,
       "sl": 1.47412829,
-      "tp1": 1.36033215,
-      "tp2": 1.19786998,
+      "tp1": 1.424,
+      "tp2": 1.396,
       "capital_usd": 100,
       "leverage": 3,
       "trading_system": "Braam",
@@ -376,19 +353,6 @@
     }
   ],
   "recent_closes": [
-    {
-      "trade_id": "NEARUSDT_20260505_W_M_001",
-      "coin": "NEARUSDT",
-      "direction": "Short",
-      "status": "STOPPED",
-      "pnl_usd": -9.09,
-      "close_reason": "SL hit",
-      "date_closed": "2026-05-06",
-      "time_closed_utc": "08:00",
-      "trading_system": "William",
-      "won": false,
-      "close_iso": "2026-05-06T08:00:00Z"
-    },
     {
       "trade_id": "BNBUSDT_20260504_J_M_002",
       "coin": "BNBUSDT",
@@ -895,6 +859,19 @@
       "trading_system": "John",
       "won": true,
       "close_iso": "2026-05-21T12:00:00Z"
+    },
+    {
+      "trade_id": "LINKUSDT_20260521_CB_001",
+      "coin": "LINKUSDT",
+      "direction": "Short",
+      "status": "STOPPED",
+      "pnl_usd": -7.57,
+      "close_reason": "SL hit",
+      "date_closed": "2026-05-22",
+      "time_closed_utc": "08:00",
+      "trading_system": "Braam",
+      "won": false,
+      "close_iso": "2026-05-22T08:00:00Z"
     }
   ],
   "recent_cancels": [
@@ -915,9 +892,9 @@
     }
   ],
   "stats": {
-    "realized_pnl_usd": 126.79,
-    "win_rate_pct": 34.5,
-    "closed_count": 84,
+    "realized_pnl_usd": 119.22,
+    "win_rate_pct": 34.1,
+    "closed_count": 85,
     "per_system": {
       "John": {
         "realized_pnl_usd": 99.31,
@@ -930,9 +907,9 @@
         "closed_count": 22
       },
       "Braam": {
-        "realized_pnl_usd": -23.61,
-        "win_rate_pct": 14.3,
-        "closed_count": 7
+        "realized_pnl_usd": -31.18,
+        "win_rate_pct": 12.5,
+        "closed_count": 8
       }
     }
   }
