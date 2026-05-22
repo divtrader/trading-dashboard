@@ -2879,16 +2879,31 @@ main {
   .hero-value { margin: 8px 0 16px; }
   .spark-wrap { height: 80px; }
 
-  /* Screen 3: compact sys rows so all 5 trigger rows fit */
+  /* Screen 3 systems: compact so triggers get maximum space */
   .systems { gap: 4px; }
   .sys-row  { padding: 5px 14px 5px 0; }
   .sys-ring-wrap { width: 36px; height: 36px; }
   .sys-ring-svg  { width: 36px; height: 36px; }
   .sys-name { font-size: 15px; }
   .sys-row .metric .v { font-size: 13px; }
-  .triggers-body .paper-bar-row { min-height: 62px; }
-  .activity { padding: 6px 14px; flex-shrink: 1; }
-  .activity-title { margin-bottom: 4px; }
-  .ev-row   { margin-bottom: 1px; }
-  .activity-body  { font-size: 12px; }
+
+  /* Screen 3 triggers: no min-height — rows flex-fill available space
+     so 5 rows get more height, 8 rows get less, all always visible */
+  .triggers-body .paper-bar-row { min-height: 0; }
+  .triggers-body .pb-coin   { font-size: 16px; }
+  .triggers-body .pb-bar    { padding: 8px 0 14px; }
+  .triggers-body .pb-prices { top: calc(50% + 9px); }
+
+  /* Screen 3 activity: fixed 2-line height, rest scrollable */
+  .activity {
+    padding: 6px 14px;
+    flex-shrink: 0;
+    max-height: 70px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  .activity-title { margin-bottom: 3px; flex-shrink: 0; }
+  .activity-body  { font-size: 12px; line-height: 1.3; overflow-y: auto; }
+  .ev-row { margin-bottom: 1px; }
 }
