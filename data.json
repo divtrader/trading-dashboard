@@ -1,8 +1,8 @@
 {
-  "last_updated_iso": "2026-05-22T20:19:47Z",
+  "last_updated_iso": "2026-05-22T23:54:26Z",
   "mexc_account": {
-    "unrealized_pnl": -58.9543,
-    "equity": 1791.7339,
+    "unrealized_pnl": -84.0235,
+    "equity": 1766.6647,
     "available": 553.2724,
     "position_margin": 528.053
   },
@@ -43,7 +43,7 @@
       "trading_system": "John",
       "track_only": true,
       "status": "OPEN",
-      "price_at_run": 653.08,
+      "price_at_run": 650.5,
       "date_activated": "2026-05-17",
       "time_activated_utc": "20:00",
       "date_opened": "2026-05-12",
@@ -150,7 +150,7 @@
       "coin": "DOGEUSDT",
       "direction": "Short",
       "entry_price": 0.10587577,
-      "sl": 0.10891693,
+      "sl": 0.10587577,
       "tp1": 0.1025,
       "tp2": 0.09281,
       "capital_usd": 100,
@@ -164,8 +164,8 @@
       "date_opened": "2026-05-20",
       "time_opened_utc": "04:36",
       "conviction": "MEDIUM",
-      "tp1_hit": false,
-      "sl_moved_to_be": false,
+      "tp1_hit": true,
+      "sl_moved_to_be": true,
       "pnl_tp1_realized_usd": null
     },
     {
@@ -351,21 +351,32 @@
       "tp1_hit": false,
       "sl_moved_to_be": false,
       "pnl_tp1_realized_usd": null
+    },
+    {
+      "trade_id": "SUIUSDT_20260522_CB_001",
+      "coin": "SUIUSDT",
+      "direction": "Short",
+      "entry_price": 1.09188343,
+      "sl": 1.14847297,
+      "tp1": 0.91532365,
+      "tp2": 0.72806915,
+      "capital_usd": 100,
+      "leverage": 3,
+      "trading_system": "Braam",
+      "track_only": false,
+      "status": "PENDING",
+      "price_at_run": 1.0496,
+      "date_activated": null,
+      "time_activated_utc": null,
+      "date_opened": "2026-05-22",
+      "time_opened_utc": "23:53",
+      "conviction": "MEDIUM",
+      "tp1_hit": false,
+      "sl_moved_to_be": false,
+      "pnl_tp1_realized_usd": null
     }
   ],
   "recent_signals": [
-    {
-      "trade_id": "XRPUSDT_20260522_CB_001",
-      "coin": "XRPUSDT",
-      "direction": "Short",
-      "trading_system": "Braam",
-      "entry_price": 1.37560844,
-      "tp1": 1.28904106,
-      "sl": 1.40340936,
-      "conviction": "MEDIUM",
-      "track_only": false,
-      "iso": "2026-05-22T11:24:00Z"
-    },
     {
       "trade_id": "APTUSDT_20260522_CB_001",
       "coin": "APTUSDT",
@@ -449,6 +460,18 @@
       "conviction": "MEDIUM",
       "track_only": false,
       "iso": "2026-05-22T19:56:00Z"
+    },
+    {
+      "trade_id": "SUIUSDT_20260522_CB_001",
+      "coin": "SUIUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "entry_price": 1.09188343,
+      "tp1": 0.91532365,
+      "sl": 1.14847297,
+      "conviction": "MEDIUM",
+      "track_only": false,
+      "iso": "2026-05-22T23:53:00Z"
     }
   ],
   "recent_opens": [
@@ -458,7 +481,7 @@
       "direction": "Short",
       "trading_system": "Braam",
       "entry_price": 0.10587577,
-      "tp1_hit": false,
+      "tp1_hit": true,
       "iso": "2026-05-21T04:13:00Z",
       "_iso_ms": 1779336780000
     },
@@ -1016,7 +1039,14 @@
     }
   ],
   "recent_cancels": [],
-  "tp1_hits_open": [],
+  "tp1_hits_open": [
+    {
+      "coin": "DOGEUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "entry_price": 0.10587577
+    }
+  ],
   "stats": {
     "realized_pnl_usd": 134.69,
     "win_rate_pct": 36.0,
