@@ -158,6 +158,25 @@ function maybeSpeak(key, text) {
 // Coin name helper: strip USDT suffix
 function coinName(t) { return t.coin.replace(/USDT$/i, ""); }
 
+// ── TTS formatters ──
+// Format a price so the speech synth pronounces it cleanly. For big numbers
+// (BTC, ETH) it speaks "seventy-seven thousand, two hundred fifty"; for low-
+// priced coins (DOGE, XRP) it speaks the decimal value.
+function _priceForTts(p) {
+  if (p == null || isNaN(p)) return "";
+  if (p >= 1000) return Math.round(p).toLocaleString("en-US");
+  if (p >= 100)  return p.toFixed(0);
+  if (p >= 1)    return p.toFixed(2);
+  if (p >= 0.01) return p.toFixed(4);
+  return p.toPrecision(2);
+}
+// Format a P&L amount: rounded to whole dollars for natural speech.
+function _amountForTts(usd) {
+  if (usd == null || isNaN(usd)) return "";
+  const rounded = Math.round(Math.abs(usd));
+  return rounded === 1 ? "1 dollar" : `${rounded} dollars`;
+}
+
 // Mute toggle wired to header button
 function toggleMute() {
   _voiceMuted = !_voiceMuted;
@@ -209,7 +228,7 @@ function checkLiveLevels() {
       const atEntry = isLong ? live <= t.entry_price : live >= t.entry_price;
       if (atEntry) {
         maybeSpeak(`voice:entry:${t.trade_id}`,
-          `${coinName(t)} ${t.direction}. Entry hit. Trade is now live.`);
+          `${coinName(t)} ${t.direction}. Entry hit at ${_priceForTts(t.entry_price)}. Trade is now live.`);
       }
 
     } else if (t.status === "OPEN") {
@@ -308,10 +327,10 @@ async function fetchData() {
     // Voice test events — injected via data.json for testing, always unique IDs (timestamp-type-step)
     const _testPhrases = {
       signal: "New trade signal. Ethereum Long. John system.",
-      entry:  "Entry hit. Bitcoin Short is now live.",
-      tp1:    "Take profit one hit. Eighty percent banked.",
-      sl:     "Stop loss hit. Solana Long closed.",
-      tp2:    "Take profit two hit. Trade fully closed.",
+      entry:  "Bitcoin Short. Entry hit at 77,250. Trade is now live.",
+      tp1:    "Take profit one hit. Eighty percent banked. 18 dollars locked in.",
+      sl:     "Solana Long. Stop loss hit. Lost 12 dollars.",
+      tp2:    "Take profit two hit. Trade fully closed. Won 86 dollars.",
       ready:  "Voice alerts active.",
     };
     for (const e of (d.voice_test_events || [])) {
@@ -331,7 +350,7 @@ async function fetchData() {
     // Voice: PENDING → OPEN activations (entry hit, confirmed by data.json)
     for (const t of recentOpens) {
       maybeSpeak(`voice:entry:${t.trade_id}`,
-        `${coinName(t)} ${t.direction}. Entry hit. Trade is now live.`);
+        `${coinName(t)} ${t.direction}. Entry hit at ${_priceForTts(t.entry_price)}. Trade is now live.`);
     }
 
     subscribeWs();
@@ -351,8 +370,11 @@ function detectEvents(newTrades, newCloses, testEvents) {
       const evId = `tp1:${t.trade_id}`;
       if (!seen.has(evId)) events.push({ id: evId, type: "tp1", trade: t });
       // Voice — confirmed by data.json (fires once, deduped against live detection key too)
+      const banked = t.pnl_tp1_realized_usd;
       maybeSpeak(`voice:tp1live:${t.trade_id}`,
-        `${coinName(t)} ${t.direction}. Take profit one hit. Eighty percent banked.`);
+        `${coinName(t)} ${t.direction}. Take profit one hit. Eighty percent banked.${
+          banked ? ` ${_amountForTts(banked)} locked in.` : ""
+        }`);
     }
   }
 
@@ -360,14 +382,20 @@ function detectEvents(newTrades, newCloses, testEvents) {
   for (const t of newCloses) {
     const evId = `close:${t.trade_id}`;
     if (!seen.has(evId)) events.push({ id: evId, type: t.won ? "win" : "loss", trade: t });
-    // Voice for SL / TP2
+    // Voice for SL / TP2 — include the realised P&L
     const status = t.status || "";
-    if (status === "STOPPED" || status === "STOPPED_AFTER_TP1") {
+    const amount = _amountForTts(t.pnl_usd);
+    if (status === "STOPPED_AFTER_TP1") {
+      // TP1 was banked, trail stopped at breakeven → net WIN
       maybeSpeak(`voice:sl:${t.trade_id}`,
-        `${coinName(t)} ${t.direction}. Stop loss hit. Trade closed.`);
+        `${coinName(t)} ${t.direction}. Stopped after take profit one. Won ${amount}.`);
+    } else if (status === "STOPPED") {
+      // Pure stop-loss → loss
+      maybeSpeak(`voice:sl:${t.trade_id}`,
+        `${coinName(t)} ${t.direction}. Stop loss hit. Lost ${amount}.`);
     } else if (status === "TP2_HIT") {
       maybeSpeak(`voice:tp2:${t.trade_id}`,
-        `${coinName(t)} ${t.direction}. Take profit two hit. Trade fully closed.`);
+        `${coinName(t)} ${t.direction}. Take profit two hit. Trade fully closed. Won ${amount}.`);
     }
   }
 
