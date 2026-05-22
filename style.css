@@ -2840,3 +2840,34 @@ main {
   background: radial-gradient(circle at 30% 30%, #b0b8d4 0%, #6c779a 60%, #475275 100%);
   box-shadow: 0 0 4px rgba(108,119,154,0.4), inset 0 1px 1px rgba(255,255,255,0.2);
 }
+
+/* ── Row 4 tighten — 4 tiles share the row so each is narrower; content
+   needs to fit 5-6 bar rows or 4 economic-event rows per tile ──────────── */
+.edge-row-4 .edge-tile         { padding: 8px 10px; }
+.edge-row-4 .edge-tile .edge-label { font-size: 8.5px; margin-bottom: 1px; letter-spacing: 1.5px; }
+.edge-row-4 .edge-tile .edge-desc  { font-size: 8px; margin-bottom: 3px; opacity: 0.6; line-height: 1.2; }
+
+.edge-row-4 .edge-bars { gap: 1px; }
+.edge-row-4 .bars-row {
+  font-size: 9.5px;
+  gap: 5px;
+  grid-template-columns: 50px 1fr 30px 24px 48px;
+  padding: 0;
+}
+.edge-row-4 .bars-key { font-size: 9.5px; }
+.edge-row-4 .bars-wr, .edge-row-4 .bars-pnl { font-size: 9.5px; }
+.edge-row-4 .bars-n   { font-size: 8.5px; }
+.edge-row-4 .bars-track { height: 5px; }
+
+/* Economic events — compact for the 4-tile row */
+.edge-row-4 .econ-body            { gap: 3px; }
+.edge-row-4 .econ-featured        { padding: 5px 8px; }
+.edge-row-4 .econ-featured-name   { font-size: 12px; }
+.edge-row-4 .econ-featured-when   { font-size: 8.5px; margin-top: 1px; }
+.edge-row-4 .econ-cd-big          { font-size: 10.5px; padding: 1px 7px; }
+.edge-row-4 .econ-row             { font-size: 9.5px; padding: 2px 1px; gap: 5px; grid-template-columns: 7px auto auto 1fr auto; }
+.edge-row-4 .econ-name,
+.edge-row-4 .econ-when-small      { font-size: 9.5px; }
+.edge-row-4 .econ-cd              { font-size: 9px; }
+.edge-row-4 .econ-flag            { font-size: 10px; }
+.edge-row-4 .econ-dot             { width: 7px; height: 7px; }
