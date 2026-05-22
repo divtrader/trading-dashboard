@@ -1,8 +1,8 @@
 {
-  "last_updated_iso": "2026-05-22T10:08:29Z",
+  "last_updated_iso": "2026-05-22T11:25:14Z",
   "mexc_account": {
-    "unrealized_pnl": -21.6541,
-    "equity": 1829.16,
+    "unrealized_pnl": -22.6614,
+    "equity": 1828.1527,
     "available": 553.1395,
     "position_margin": 398.3574
   },
@@ -43,7 +43,7 @@
       "trading_system": "John",
       "track_only": true,
       "status": "OPEN",
-      "price_at_run": 77331.92,
+      "price_at_run": 77251.75,
       "date_activated": "2026-04-28",
       "time_activated_utc": "12:00",
       "date_opened": "2026-04-28",
@@ -66,7 +66,7 @@
       "trading_system": "John",
       "track_only": true,
       "status": "OPEN",
-      "price_at_run": 656.44,
+      "price_at_run": 655.71,
       "date_activated": "2026-05-17",
       "time_activated_utc": "20:00",
       "date_opened": "2026-05-12",
@@ -259,6 +259,52 @@
       "tp1_hit": false,
       "sl_moved_to_be": false,
       "pnl_tp1_realized_usd": null
+    },
+    {
+      "trade_id": "XRPUSDT_20260522_CB_001",
+      "coin": "XRPUSDT",
+      "direction": "Short",
+      "entry_price": 1.37560844,
+      "sl": 1.40340936,
+      "tp1": 1.28904106,
+      "tp2": 1.17608603,
+      "capital_usd": 100,
+      "leverage": 3,
+      "trading_system": "Braam",
+      "track_only": false,
+      "status": "PENDING",
+      "price_at_run": 1.3569,
+      "date_activated": null,
+      "time_activated_utc": null,
+      "date_opened": "2026-05-22",
+      "time_opened_utc": "11:24",
+      "conviction": "MEDIUM",
+      "tp1_hit": false,
+      "sl_moved_to_be": false,
+      "pnl_tp1_realized_usd": null
+    },
+    {
+      "trade_id": "CAKEUSDT_20260522_CB_001",
+      "coin": "CAKEUSDT",
+      "direction": "Short",
+      "entry_price": 1.44469249,
+      "sl": 1.47412829,
+      "tp1": 1.36033215,
+      "tp2": 1.19786998,
+      "capital_usd": 100,
+      "leverage": 3,
+      "trading_system": "Braam",
+      "track_only": false,
+      "status": "PENDING",
+      "price_at_run": 1.442,
+      "date_activated": null,
+      "time_activated_utc": null,
+      "date_opened": "2026-05-22",
+      "time_opened_utc": "11:24",
+      "conviction": "MEDIUM",
+      "tp1_hit": false,
+      "sl_moved_to_be": false,
+      "pnl_tp1_realized_usd": null
     }
   ],
   "recent_signals": [
@@ -273,6 +319,30 @@
       "conviction": "HIGH",
       "track_only": false,
       "iso": "2026-05-22T09:20:00Z"
+    },
+    {
+      "trade_id": "XRPUSDT_20260522_CB_001",
+      "coin": "XRPUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "entry_price": 1.37560844,
+      "tp1": 1.28904106,
+      "sl": 1.40340936,
+      "conviction": "MEDIUM",
+      "track_only": false,
+      "iso": "2026-05-22T11:24:00Z"
+    },
+    {
+      "trade_id": "CAKEUSDT_20260522_CB_001",
+      "coin": "CAKEUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "entry_price": 1.44469249,
+      "tp1": 1.36033215,
+      "sl": 1.47412829,
+      "conviction": "MEDIUM",
+      "track_only": false,
+      "iso": "2026-05-22T11:24:00Z"
     }
   ],
   "recent_opens": [
