@@ -88,6 +88,171 @@ const _rootStyle = getComputedStyle(document.documentElement);
 const cssVar = (name) => _rootStyle.getPropertyValue(name).trim();
 const cls = (n) => (n >= 0 ? "pos" : "neg");
 
+// ── Voice — Professional TTS alerts ──────────────────────────────────────────
+// Uses Web Speech API. All alerts deduplicated by key in localStorage.
+
+const MUTE_KEY  = "dashMute_v1";
+const VSEEN_KEY = "dashVoiceSeen_v1";
+let _voiceMuted = localStorage.getItem(MUTE_KEY) === "1";
+let _selVoice   = null;
+const _ttsQueue = [];
+let _ttsBusy    = false;
+
+// Voice priority: female voices on Chrome OS / desktop
+const VOICE_PREFS = [
+  "Google UK English Female",
+  "Google US English Female",
+  "Microsoft Zira",
+  "Samantha",
+  "Google UK English Male",
+  "Google US English",
+];
+
+function _pickVoice() {
+  if (_selVoice) return _selVoice;
+  const voices = speechSynthesis.getVoices();
+  if (!voices.length) return null;
+  for (const pref of VOICE_PREFS) {
+    const v = voices.find(v => v.name.includes(pref));
+    if (v) { _selVoice = v; console.log("[voice]", v.name); return v; }
+  }
+  _selVoice = voices.find(v => v.lang.startsWith("en")) || null;
+  return _selVoice;
+}
+
+if (window.speechSynthesis) {
+  speechSynthesis.getVoices();
+  speechSynthesis.onvoiceschanged = _pickVoice;
+}
+
+function _ttsNext() {
+  if (_ttsBusy || !_ttsQueue.length || _voiceMuted) return;
+  _ttsBusy = true;
+  const text = _ttsQueue.shift();
+  const utt = new SpeechSynthesisUtterance(text);
+  const v = _pickVoice();
+  if (v) utt.voice = v;
+  utt.rate = 0.92; utt.pitch = 1.0; utt.volume = 1.0;
+  utt.onend = utt.onerror = () => { _ttsBusy = false; setTimeout(_ttsNext, 250); };
+  try { speechSynthesis.speak(utt); } catch { _ttsBusy = false; }
+}
+
+function speak(text) {
+  if (!window.speechSynthesis || _voiceMuted || !text) return;
+  _ttsQueue.push(text);
+  _ttsNext();
+}
+
+// Dedup: each alert key fires only once (persists across reloads)
+let vseen = new Set(JSON.parse(localStorage.getItem(VSEEN_KEY) || "[]"));
+function saveVseen() {
+  localStorage.setItem(VSEEN_KEY, JSON.stringify([...vseen].slice(-800)));
+}
+function maybeSpeak(key, text) {
+  if (vseen.has(key)) return false;
+  vseen.add(key); saveVseen();
+  speak(text);
+  return true;
+}
+
+// Coin name helper: strip USDT suffix
+function coinName(t) { return t.coin.replace(/USDT$/i, ""); }
+
+// ── TTS formatters ──
+// Format a price so the speech synth pronounces it cleanly. For big numbers
+// (BTC, ETH) it speaks "seventy-seven thousand, two hundred fifty"; for low-
+// priced coins (DOGE, XRP) it speaks the decimal value.
+function _priceForTts(p) {
+  if (p == null || isNaN(p)) return "";
+  if (p >= 1000) return Math.round(p).toLocaleString("en-US");
+  if (p >= 100)  return p.toFixed(0);
+  if (p >= 1)    return p.toFixed(2);
+  if (p >= 0.01) return p.toFixed(4);
+  return p.toPrecision(2);
+}
+// Format a P&L amount: rounded to whole dollars for natural speech.
+function _amountForTts(usd) {
+  if (usd == null || isNaN(usd)) return "";
+  const rounded = Math.round(Math.abs(usd));
+  return rounded === 1 ? "1 dollar" : `${rounded} dollars`;
+}
+
+// Mute toggle wired to header button
+function toggleMute() {
+  _voiceMuted = !_voiceMuted;
+  localStorage.setItem(MUTE_KEY, _voiceMuted ? "1" : "0");
+  const btn = document.getElementById("mute-btn");
+  if (btn) btn.textContent = _voiceMuted ? "🔇" : "🔊";
+  if (_voiceMuted) {
+    speechSynthesis.cancel();
+  } else {
+    setTimeout(() => {
+      const v = _pickVoice();
+      _showVoiceToast(v ? v.name.replace("Google ","") : "Voice active");
+      speak("Voice alerts active.");
+    }, 200);
+  }
+}
+
+function _showVoiceToast(msg) {
+  let t = document.getElementById("voice-toast");
+  if (!t) {
+    t = document.createElement("div");
+    t.id = "voice-toast";
+    t.style.cssText = `
+      position:fixed; bottom:60px; left:50%; transform:translateX(-50%);
+      background:rgba(0,201,167,0.92); color:#fff; font-size:13px; font-weight:700;
+      padding:8px 18px; border-radius:20px; z-index:200; white-space:nowrap;
+      box-shadow:0 4px 16px rgba(0,0,0,0.4); pointer-events:none;
+      transition:opacity 0.4s ease;
+    `;
+    document.body.appendChild(t);
+  }
+  t.textContent = `🔊 ${msg}`;
+  t.style.opacity = "1";
+  clearTimeout(t._hide);
+  t._hide = setTimeout(() => { t.style.opacity = "0"; }, 3000);
+}
+
+// Real-time level monitoring — runs on every WS price tick.
+// Detects TP1, SL, and entry zone hits without waiting for the 4H GHA job.
+function checkLiveLevels() {
+  const now = Date.now();
+  for (const t of state.trades) {
+    if (t.track_only) continue;
+    const live = state.prices[t.coin];
+    if (!live) continue;
+    const isLong = t.direction === "Long";
+
+    if (t.status === "PENDING") {
+      const atEntry = isLong ? live <= t.entry_price : live >= t.entry_price;
+      if (atEntry) {
+        maybeSpeak(`voice:entry:${t.trade_id}`,
+          `${coinName(t)} ${t.direction}. Entry hit at ${_priceForTts(t.entry_price)}. Trade is now live.`);
+      }
+
+    } else if (t.status === "OPEN") {
+      // TP1 — real-time, before data.json updates
+      if (!t.tp1_hit && t.tp1) {
+        const tp1Hit = isLong ? live >= t.tp1 : live <= t.tp1;
+        if (tp1Hit) {
+          maybeSpeak(`voice:tp1live:${t.trade_id}`,
+            `${coinName(t)} ${t.direction}. Take profit one hit. Eighty percent banked.`);
+        }
+      }
+      // SL hit
+      if (t.sl) {
+        const slHit = isLong ? live <= t.sl : live >= t.sl;
+        if (slHit) {
+          maybeSpeak(`voice:sllive:${t.trade_id}`,
+            `${coinName(t)} ${t.direction}. Stop loss hit. Trade closed.`);
+        }
+      }
+    }
+  }
+}
+// ─────────────────────────────────────────────────────────────────────────────
+
 // Animated number counter — smoothly transitions displayed value over ~600ms
 const _animTargets = new Map();
 function animateValue(el, toVal, formatter) {
@@ -132,6 +297,12 @@ function saveSeen(set) {
 let seen = loadSeen();
 let firstRun = !localStorage.getItem(FIRST_RUN_KEY);
 
+// Set correct mute icon on load
+document.addEventListener("DOMContentLoaded", () => {
+  const btn = document.getElementById("mute-btn");
+  if (btn) btn.textContent = _voiceMuted ? "🔇" : "🔊";
+});
+
 async function fetchData() {
   try {
     const r = await fetch(DATA_URL + "?t=" + Date.now(), { cache: "no-store" });
@@ -152,6 +323,36 @@ async function fetchData() {
     state.mexcAccount = d.mexc_account || null;
     state.lastCronIso = d.last_updated_iso || null;
     state.lastFetch = Date.now();
+
+    // Voice test events — injected via data.json for testing, always unique IDs (timestamp-type-step)
+    const _testPhrases = {
+      signal: "New trade signal. Ethereum Long. John system.",
+      entry:  "Bitcoin Short. Entry hit at 77,250. Trade is now live.",
+      tp1:    "Take profit one hit. Eighty percent banked. 18 dollars locked in.",
+      sl:     "Solana Long. Stop loss hit. Lost 12 dollars.",
+      tp2:    "Take profit two hit. Trade fully closed. Won 86 dollars.",
+      ready:  "Voice alerts active.",
+    };
+    for (const e of (d.voice_test_events || [])) {
+      const evType = e.id.split("-")[1] || "signal";
+      maybeSpeak(`voice:test:${e.id}`, _testPhrases[evType] || e.text || "Alert.");
+    }
+
+    // Voice: new pending signals (only fire for signals ≤30min old to avoid replaying history)
+    const _sigCutoff = Date.now() - 30 * 60_000;
+    for (const t of state.recentSignals) {
+      const age = t.iso ? new Date(t.iso).getTime() : 0;
+      if (age >= _sigCutoff) {
+        maybeSpeak(`voice:signal:${t.trade_id}`,
+          `New signal. ${coinName(t)} ${t.direction}. ${t.trading_system} system.`);
+      }
+    }
+    // Voice: PENDING → OPEN activations (entry hit, confirmed by data.json)
+    for (const t of recentOpens) {
+      maybeSpeak(`voice:entry:${t.trade_id}`,
+        `${coinName(t)} ${t.direction}. Entry hit at ${_priceForTts(t.entry_price)}. Trade is now live.`);
+    }
+
     subscribeWs();
     render();
   } catch (e) {
@@ -168,6 +369,12 @@ function detectEvents(newTrades, newCloses, testEvents) {
     if (t.tp1_hit) {
       const evId = `tp1:${t.trade_id}`;
       if (!seen.has(evId)) events.push({ id: evId, type: "tp1", trade: t });
+      // Voice — confirmed by data.json (fires once, deduped against live detection key too)
+      const banked = t.pnl_tp1_realized_usd;
+      maybeSpeak(`voice:tp1live:${t.trade_id}`,
+        `${coinName(t)} ${t.direction}. Take profit one hit. Eighty percent banked.${
+          banked ? ` ${_amountForTts(banked)} locked in.` : ""
+        }`);
     }
   }
 
@@ -175,6 +382,21 @@ function detectEvents(newTrades, newCloses, testEvents) {
   for (const t of newCloses) {
     const evId = `close:${t.trade_id}`;
     if (!seen.has(evId)) events.push({ id: evId, type: t.won ? "win" : "loss", trade: t });
+    // Voice for SL / TP2 — include the realised P&L
+    const status = t.status || "";
+    const amount = _amountForTts(t.pnl_usd);
+    if (status === "STOPPED_AFTER_TP1") {
+      // TP1 was banked, trail stopped at breakeven → net WIN
+      maybeSpeak(`voice:sl:${t.trade_id}`,
+        `${coinName(t)} ${t.direction}. Stopped after take profit one. Won ${amount}.`);
+    } else if (status === "STOPPED") {
+      // Pure stop-loss → loss
+      maybeSpeak(`voice:sl:${t.trade_id}`,
+        `${coinName(t)} ${t.direction}. Stop loss hit. Lost ${amount}.`);
+    } else if (status === "TP2_HIT") {
+      maybeSpeak(`voice:tp2:${t.trade_id}`,
+        `${coinName(t)} ${t.direction}. Take profit two hit. Trade fully closed. Won ${amount}.`);
+    }
   }
 
   // Manual test events (always fire, even on first run — pushed deliberately)
@@ -333,11 +555,13 @@ function subscribeWs() {
   ws.onmessage = (ev) => {
     try {
       const msg = JSON.parse(ev.data);
-      const p = parseFloat(msg.data.c);
+      const c   = parseFloat(msg.data.c); // close
+      const o   = parseFloat(msg.data.o); // open 24h ago
       const sym = msg.data.s;
-      state.prices[sym] = p;
+      state.prices[sym] = c;
       renderLive();
       renderPendingTriggers();
+      checkLiveLevels();
     } catch {}
   };
   ws.onclose = () => setTimeout(subscribeWs, 5000);
@@ -348,8 +572,11 @@ function computeUnrealized(t) {
   const dir = t.direction === "Long" ? 1 : -1;
   const pricePct = ((live - t.entry_price) / t.entry_price) * 100 * dir;
   const leveragedPct = pricePct * (t.leverage || 1);
-  const usd = (t.capital_usd || 100) * (leveragedPct / 100);
-  return { live, pricePct, leveragedPct, usd };
+  // When TP1 is hit, 80% was already closed — only 20% of the position remains open
+  const remainingFraction = (t.tp1_hit && t.pnl_tp1_realized_usd != null) ? 0.2 : 1.0;
+  const usd = (t.capital_usd || 100) * remainingFraction * (leveragedPct / 100);
+  const tp1BankedUsd = (t.tp1_hit && t.pnl_tp1_realized_usd != null) ? (t.pnl_tp1_realized_usd || 0) : 0;
+  return { live, pricePct, leveragedPct, usd, tp1BankedUsd };
 }
 
 function render() {
@@ -383,6 +610,56 @@ function render() {
   renderActivity();
   renderPendingTriggers();
   renderMexcCard();
+  renderRecentClosesTile();
+}
+
+function renderRecentClosesTile() {
+  const el = document.getElementById("recent-closes-list");
+  if (!el) return;
+  const closes = [...(state.recentCloses || [])]
+    .sort((a, b) => new Date(b.close_iso || 0) - new Date(a.close_iso || 0))
+    .slice(0, 5);
+  if (!closes.length) {
+    el.innerHTML = '<div class="rc-empty">no closes yet</div>';
+    return;
+  }
+  const newHtml = closes.map(c => {
+    const coin = (c.coin || "").replace("USDT", "");
+    const won = c.won != null ? c.won : (c.pnl_usd || 0) > 0;
+    const pnl = c.pnl_usd || 0;
+    const pnlStr = (pnl >= 0 ? "+$" : "-$") + Math.abs(pnl).toFixed(2);
+    const isLong = c.direction === "Long";
+    const dirCls = isLong ? "long" : "short";
+    const dirLetter = isLong ? "L" : "S";
+    // Close reason → short badge: "TP2 hit" → TP2, "TP1 hit" → TP1, "SL hit" → SL,
+    // STOPPED_AFTER_TP1 → "TP1+SL" (closed at BE after TP1 hit), else first word uppercase.
+    const reason = (c.close_reason || "").toString();
+    let rCode, rCls;
+    if (/^tp2/i.test(reason))         { rCode = "TP2"; rCls = "tp2"; }
+    else if (/^tp1/i.test(reason))    { rCode = "TP1"; rCls = "tp1"; }
+    else if (/sl|stop/i.test(reason)) {
+      // "STOPPED_AFTER_TP1" means TP1 was banked then SL hit at breakeven — show TP1
+      if (c.status === "STOPPED_AFTER_TP1") { rCode = "TP1+BE"; rCls = "tp1"; }
+      else                                  { rCode = "SL";     rCls = "sl";  }
+    }
+    else if (reason)                  { rCode = reason.split(" ")[0].toUpperCase().slice(0, 6); rCls = "other"; }
+    else                              { rCode = "—";    rCls = "other"; }
+    // Trade-id subtitle: strip the redundant "COINUSDT_" prefix → "20260427_CWM_001"
+    const tid = (c.trade_id || "").replace(/^[A-Z]+(?:USDT)?_/, "");
+    return `
+      <div class="rc-row ${dirCls}" data-trade-id="${c.trade_id || ""}" title="${c.trade_id || ""}">
+        <div class="rc-dot ${won ? 'win' : 'loss'}"></div>
+        <div class="rc-dir-pill ${dirCls}">${dirLetter}</div>
+        <div class="rc-coin-block">
+          <span class="rc-coin">${coin}</span>
+          <span class="rc-tid">${tid || "—"}</span>
+        </div>
+        <div class="rc-reason ${rCls}">${rCode}</div>
+        <div class="rc-pnl ${won ? 'pos' : 'neg'}">${pnlStr}</div>
+        <div class="rc-ago">${fmtAgo(c.close_iso, { detectedAtIso: state.lastCronIso })}</div>
+      </div>`;
+  }).join("");
+  flipReplace(el, newHtml);
 }
 
 function renderMexcCard() {
@@ -418,7 +695,7 @@ function renderMexcPositions(positions) {
   // Bar shows: SL (actual MEXC stop-loss order, or liquidation fallback) on the
   // left, entry centred, live mark dot, and TP (actual MEXC take-profit) on the
   // right when set.
-  host.innerHTML = positions.map(p => {
+  const newHtml = positions.map(p => {
     const coin = p.coin.replace("USDT", "");
     const isLong = p.direction === "Long";
     const dirCls = isLong ? "long" : "short";
@@ -448,7 +725,7 @@ function renderMexcPositions(positions) {
     const titleAttr = `Entry ${p.entry} · Mark ${p.mark} · SL ${p.sl ?? "(liq " + p.liq + ")"}${p.tp ? " · TP " + p.tp : ""}`;
 
     return `
-      <div class="mexc-pos-row">
+      <div class="mexc-pos-row" data-pos-key="${p.coin}_${p.direction}">
         <div class="mexc-pos-head">
           <span class="mexc-pos-coin">${coin}</span>
           <span class="mexc-pos-dir ${dirCls}">${isLong ? "L" : "S"}${p.leverage ? "·" + p.leverage + "x" : ""}</span>
@@ -463,6 +740,7 @@ function renderMexcPositions(positions) {
         <div class="mexc-pos-pnl ${pnlCls}">${fmtUsd(p.unrealized_pnl)}</div>
       </div>`;
   }).join("");
+  flipReplace(host, newHtml, "data-pos-key");
 }
 
 // === Bloomberg news flash ===
@@ -547,6 +825,8 @@ function renderLive() {
   const enriched = open.map(t => ({ ...t, ...computeUnrealized(t) }));
   renderPaperBars(enriched);
   renderHero(enriched);
+  // Keep Screen 4 hero P&L in sync with live prices (cheap incremental update)
+  if (typeof updateEdgeLivePnL === "function") updateEdgeLivePnL();
 }
 
 function renderPaperBars(enrichedOpen) {
@@ -559,7 +839,7 @@ function renderPaperBars(enrichedOpen) {
   // Winners on top, losers below — sorted by leveraged % P&L descending.
   const sorted = [...enrichedOpen].sort((a, b) => (b.leveragedPct || 0) - (a.leveragedPct || 0));
 
-  host.innerHTML = sorted.map(t => {
+  const newHtml = sorted.map(t => {
     const isLong = t.direction === "Long";
     const dirCls = isLong ? "long" : "short";
     const coin = (t.coin || "").replace("USDT", "");
@@ -589,14 +869,26 @@ function renderPaperBars(enrichedOpen) {
     const liveColor = lPct < 33 ? cssVar("--red") : lPct > 66 ? cssVar("--green") : cssVar("--orange");
 
     const pct = t.leveragedPct ?? 0;
-    const usd = t.usd ?? 0;
-    const pctCls = cls(pct);
+    // For tp1_hit trades: show total blended P&L (banked TP1 portion + remaining 20% live)
+    const usd = (t.tp1BankedUsd || 0) + (t.usd ?? 0);
+    const pctCls = cls(usd);
+    // Breakdown line: TP1-hit shows banked + live; non-TP1 shows live only (same format for consistency)
+    const liveUsd = t.usd ?? 0;
+    const bankedUsd = t.tp1BankedUsd || 0;
+    const breakdownHtml = tp1Hit
+      ? `<div class="pb-pnl-breakdown">
+           <div class="pb-bd-row"><span class="pb-bd-k">banked</span><span class="pb-bd-v pos">${fmtUsd(bankedUsd)}</span></div>
+           <div class="pb-bd-row"><span class="pb-bd-k">live</span><span class="pb-bd-v ${cls(liveUsd)}">${fmtUsd(liveUsd)}</span></div>
+         </div>`
+      : `<div class="pb-pnl-breakdown">
+           <div class="pb-bd-row"><span class="pb-bd-k">live</span><span class="pb-bd-v ${cls(liveUsd)}">${fmtUsd(liveUsd)}</span></div>
+         </div>`;
 
     // Filled segment showing TP1-achieved range
     const achieved = tp1Hit ? `<div class="pb-achieved" style="left:${Math.min(ePct,t1Pct).toFixed(1)}%;width:${Math.abs(t1Pct-ePct).toFixed(1)}%"></div>` : "";
 
     return `
-      <div class="paper-bar-row ${dirCls}" title="${t.trade_id}">
+      <div class="paper-bar-row ${dirCls}" data-trade-id="${t.trade_id}" title="${t.trade_id}">
         <div class="pb-head">
           <div class="pb-coin">${coin}</div>
           <div class="pb-meta">
@@ -628,16 +920,20 @@ function renderPaperBars(enrichedOpen) {
         <div class="pb-pnl">
           <div class="pb-pnl-pct ${pctCls}">${fmtPct(pct)}</div>
           <div class="pb-pnl-usd">${fmtUsd(usd)}</div>
+          ${breakdownHtml}
         </div>
       </div>`;
   }).join("");
+  flipReplace(host, newHtml);
 }
 
 function renderHero(enrichedOpen) {
   const enriched = enrichedOpen || state.trades.filter(t => t.status === "OPEN").map(t => ({ ...t, ...computeUnrealized(t) }));
   const unrealized = enriched.reduce((s, t) => s + t.usd, 0);
   const totalCap   = enriched.reduce((s, t) => s + (t.capital_usd || 100), 0);
-  const realized   = state.stats.realized_pnl_usd ?? 0;
+  // realized = fully-closed trades + banked TP1 portion from still-open tp1_hit trades
+  const tp1Banked  = enriched.reduce((s, t) => s + (t.tp1BankedUsd || 0), 0);
+  const realized   = (state.stats.realized_pnl_usd ?? 0) + tp1Banked;
   const total      = realized + unrealized;
 
   const pEl = $("portfolio-total");
@@ -806,11 +1102,26 @@ function renderEquitySparkline(recentCloses) {
   `;
 }
 
-function fmtAgo(iso) {
+function fmtAgo(iso, opts) {
   if (!iso) return "";
-  const d = new Date(iso);
+  let d = new Date(iso);
+  // Source-data quirk: time_closed_utc is set to the 4H bar's OPEN time
+  // (e.g. "12:00") even though the actual close detection happens at the next
+  // cron run, which can be up to 4 hours later. For very-recent closes, the
+  // bar-open timestamp makes the display say "3h ago" when the user just saw
+  // it happen. If the close falls inside the most-recent 4H bar window (i.e.
+  // bar_open + 4h >= lastCronIso > bar_open), the cron run time is a much
+  // better approximation of "when this was actually detected".
+  if (opts && opts.detectedAtIso) {
+    const detected = new Date(opts.detectedAtIso);
+    const fourH = 4 * 3600 * 1000;
+    if (detected.getTime() > d.getTime() && detected.getTime() - d.getTime() <= fourH) {
+      d = detected;
+    }
+  }
   const diffMs = Date.now() - d.getTime();
   const diffM = Math.floor(diffMs / 60000);
+  if (diffM < 1)  return "just now";
   if (diffM < 60) return `${diffM}m ago`;
   const diffH = Math.floor(diffMs / 3600000);
   if (diffH < 24) return `${diffH}h ago`;
@@ -998,7 +1309,7 @@ function renderPendingTriggers() {
     return { ...t, live, distPct, inZone: distPct < 0.1 };
   }).sort((a, b) => a.distPct - b.distPct).slice(0, 5);
 
-  host.innerHTML = enriched.map(t => {
+  const newHtml = enriched.map(t => {
     const isLong = t.direction === "Long";
     const dirCls = isLong ? "long" : "short";
     const coin = (t.coin || "").replace("USDT", "");
@@ -1019,7 +1330,7 @@ function renderPendingTriggers() {
     const distCls   = t.inZone ? "pos" : "muted-val";
 
     return `
-      <div class="paper-bar-row ${dirCls}${t.inZone ? " trig-in-zone" : ""}" title="${t.trade_id}">
+      <div class="paper-bar-row ${dirCls}${t.inZone ? " trig-in-zone" : ""}" data-trade-id="${t.trade_id}" title="${t.trade_id}">
         <div class="pb-head">
           <div class="pb-coin-row">
             <span class="pb-coin">${coin}</span>
@@ -1054,6 +1365,7 @@ function renderPendingTriggers() {
         </div>
       </div>`;
   }).join("");
+  flipReplace(host, newHtml);
 }
 
 function renderActivity() {
@@ -1087,7 +1399,7 @@ function renderActivity() {
   }
 
   events.sort((a, b) => b.ts - a.ts);
-  $("activity").innerHTML = events.slice(0, 8).map(ev => {
+  const newHtml = events.slice(0, 8).map(ev => {
     const { t } = ev;
     const coin = (t.coin || "").replace("USDT", "");
     const dir  = t.direction || "";
@@ -1095,41 +1407,51 @@ function renderActivity() {
     const px   = t.entry_price ? fmtPrice(t.entry_price) : "";
     const track = t.track_only ? ' <span class="ev-track">track</span>' : "";
     const ago  = `<span class="ev-time">${fmtAgo(t.iso || t.close_iso)}</span>`;
+    // Stable key per event = type + trade_id (one trade can produce multiple event types)
+    const k = `${ev.type}_${t.trade_id || t.iso || ev.ts}`;
     switch (ev.type) {
-      case "signal": return `<div class="ev-row"><span class="ev-chip signal">🔔 SIGNAL</span><span class="ev-body">${coin} ${dir} · ${sys} · $${px}${track}</span>${ago}</div>`;
-      case "open":   return `<div class="ev-row"><span class="ev-chip open">✅ ENTERED</span><span class="ev-body">${coin} ${dir} · ${sys} · $${px}</span>${ago}</div>`;
-      case "win":    return `<div class="ev-row"><span class="ev-chip win">💰 ${t.status === "TP2_HIT" ? "TP2 HIT" : "CLOSED WIN"}</span><span class="ev-body">${coin} ${dir} · ${sys} · <strong>+$${Math.abs(t.pnl_usd||0).toFixed(2)}</strong></span>${ago}</div>`;
-      case "loss":   return `<div class="ev-row"><span class="ev-chip loss">❌ STOPPED</span><span class="ev-body">${coin} ${dir} · ${sys} · -$${Math.abs(t.pnl_usd||0).toFixed(2)}</span>${ago}</div>`;
-      case "cancel": return `<div class="ev-row"><span class="ev-chip cancel">🚫 CANCELLED</span><span class="ev-body">${coin} ${dir} · ${sys}</span>${ago}</div>`;
+      case "signal": return `<div class="ev-row" data-ev-key="${k}"><span class="ev-chip signal">🔔 SIGNAL</span><span class="ev-body">${coin} ${dir} · ${sys} · $${px}${track}</span>${ago}</div>`;
+      case "open":   return `<div class="ev-row" data-ev-key="${k}"><span class="ev-chip open">✅ ENTERED</span><span class="ev-body">${coin} ${dir} · ${sys} · $${px}</span>${ago}</div>`;
+      case "win":    return `<div class="ev-row" data-ev-key="${k}"><span class="ev-chip win">💰 ${t.status === "TP2_HIT" ? "TP2 HIT" : "CLOSED WIN"}</span><span class="ev-body">${coin} ${dir} · ${sys} · <strong>+$${Math.abs(t.pnl_usd||0).toFixed(2)}</strong></span>${ago}</div>`;
+      case "loss":   return `<div class="ev-row" data-ev-key="${k}"><span class="ev-chip loss">❌ STOPPED</span><span class="ev-body">${coin} ${dir} · ${sys} · -$${Math.abs(t.pnl_usd||0).toFixed(2)}</span>${ago}</div>`;
+      case "cancel": return `<div class="ev-row" data-ev-key="${k}"><span class="ev-chip cancel">🚫 CANCELLED</span><span class="ev-body">${coin} ${dir} · ${sys}</span>${ago}</div>`;
       default: return "";
     }
   }).join("");
+  flipReplace($("activity"), newHtml, "data-ev-key");
 }
 
 // System accent colors — read from CSS vars if defined (allows theme overrides), else use defaults
 const SYS_COLOR = {
-  John:  cssVar("--sys-john")  || "#5B8DEF",
-  Braam: cssVar("--sys-braam") || "#ffab40",
-  Mong:  cssVar("--sys-mong")  || "#a76adb"
+  John:    cssVar("--sys-john")  || "#5B8DEF",
+  Braam:   cssVar("--sys-braam") || "#ffab40",
+  Mong:    cssVar("--sys-mong")  || "#a76adb",
+  William: "#5a5a6e",
 };
-const SYS_TAG   = { John: "Trend · Breakout", Braam: "EMA Pullback", Mong: "Mean Reversion" };
+const SYS_TAG = {
+  John: "Trend · Breakout", Braam: "EMA Pullback",
+  Mong: "Mean Reversion",   William: "Decommissioned",
+};
 
 function renderSystems() {
-  const systems = ["John", "Braam", "Mong"];
+  const systems = ["John", "Braam", "Mong", "William"];
   const open = state.trades.filter(t => t.status === "OPEN");
   const r = 18, circ = 2 * Math.PI * r;
   const html = systems.map(name => {
     const sysOpen = open.filter(t => t.trading_system === name);
-    const sysUnreal = sysOpen.reduce((s, t) => s + computeUnrealized(t).usd, 0);
+    const sysComputed = sysOpen.map(t => computeUnrealized(t));
+    const sysUnreal = sysComputed.reduce((s, c) => s + c.usd, 0);
+    const sysTp1Banked = sysComputed.reduce((s, c) => s + (c.tp1BankedUsd || 0), 0);
     const stats = state.stats.per_system?.[name] || {};
-    const realized = stats.realized_pnl_usd ?? 0;
+    const realized = (stats.realized_pnl_usd ?? 0) + sysTp1Banked;
     const wr = stats.win_rate_pct ?? 0;
     const closed = stats.closed_count ?? 0;
     const color = SYS_COLOR[name] || "#7280B5";
     const dash = circ * Math.min(1, wr / 100);
     const offset = circ - dash;
+    const decom = name === "William";
     return `
-      <div class="sys-row" data-sys="${name}">
+      <div class="sys-row" data-sys="${name}" style="${decom ? 'opacity:0.45' : ''}">
         <div class="sys-name-block">
           <div class="sys-ring-wrap">
             <svg class="sys-ring-svg" viewBox="0 0 44 44">
@@ -1147,18 +1469,19 @@ function renderSystems() {
           </div>
         </div>
         <div class="metric"><span class="k">Open</span><span class="v">${sysOpen.length}</span></div>
+        <div class="metric"><span class="k">Closed</span><span class="v">${closed}</span></div>
         <div class="metric"><span class="k">Unrealized</span><span class="v ${cls(sysUnreal)}">${fmtUsd(sysUnreal)}</span></div>
-        <div class="metric"><span class="k">Realized · ${closed}t</span><span class="v ${cls(realized)}">${fmtUsd(realized)}</span></div>
+        <div class="metric"><span class="k">Realized</span><span class="v ${cls(realized)}">${fmtUsd(realized)}</span></div>
       </div>
     `;
   }).join("");
-  $("systems").innerHTML = html;
+  flipReplace($("systems"), html, "data-sys");
 }
 
 // Screen navigation (swipeable — no auto-rotation)
 let screenIdx = 0;
 let screenTransitioning = false;
-const screens = ["screen-1", "screen-2", "screen-3"];
+const screens = ["screen-1", "screen-2", "screen-3", "screen-4"];
 
 function goToScreen(targetIdx, dir) {
   targetIdx = Math.max(0, Math.min(screens.length - 1, targetIdx));
@@ -1295,3 +1618,730 @@ async function fetchBloombergNews() {
 }
 fetchBloombergNews();
 setInterval(fetchBloombergNews, 60_000);
+
+// ════════════════════════════════════════════════════════════════════════
+// SCREEN 4 — EDGE INTELLIGENCE
+// Fetches analytics.json (pre-computed deep stats from publish_analytics.py)
+// + live Fear & Greed from alternative.me (CORS-friendly, no key).
+// ════════════════════════════════════════════════════════════════════════
+
+const ANALYTICS_URL = "analytics.json";
+const FNG_URL       = "https://api.alternative.me/fng/?limit=1";
+let _edgeAnalytics = null;
+let _edgeFng = null;
+
+function _fmtUsdEdge(v) {
+  if (v == null || isNaN(v)) return "—";
+  const sign = v > 0 ? "+" : (v < 0 ? "−" : "");
+  return sign + "$" + Math.abs(v).toLocaleString("en-US", { maximumFractionDigits: 2 });
+}
+function _fmtPctEdge(v, d = 1) {
+  if (v == null || isNaN(v)) return "—";
+  const sign = v > 0 ? "+" : "";
+  return sign + Number(v).toFixed(d) + "%";
+}
+function _signCls(v) { return v > 0 ? "pos" : (v < 0 ? "neg" : "neu"); }
+
+// ── FLIP animation: replace innerHTML and smoothly slide rows that changed rank ──
+// Each row must have a [data-trade-id] attribute (or pass a different keyAttr).
+function flipReplace(host, newHtml, keyAttr = "data-trade-id") {
+  if (!host) return;
+  // 1. FIRST — capture every existing row's top position
+  const old = new Map();
+  host.querySelectorAll(`[${keyAttr}]`).forEach(el => {
+    old.set(el.getAttribute(keyAttr), el.getBoundingClientRect().top);
+  });
+  // 2. LAST — apply new HTML
+  host.innerHTML = newHtml;
+  // 3 + 4. INVERT + PLAY
+  // Read all new positions in one pass first (avoids layout thrashing),
+  // then write transforms in a separate pass.
+  const rows = host.querySelectorAll(`[${keyAttr}]`);
+  const work = [];
+  rows.forEach(el => {
+    const key = el.getAttribute(keyAttr);
+    const newTop = el.getBoundingClientRect().top;
+    const oldTop = old.get(key);
+    work.push({ el, key, newTop, oldTop });
+  });
+  for (const w of work) {
+    if (w.oldTop != null) {
+      const delta = w.oldTop - w.newTop;
+      if (Math.abs(delta) > 0.5) {
+        // Invert: put it visually back where it was
+        w.el.style.transform = `translateY(${delta.toFixed(2)}px)`;
+        w.el.style.transition = "none";
+        // Play: next frame, animate to natural position
+        requestAnimationFrame(() => {
+          w.el.style.transition = "transform 0.55s cubic-bezier(0.22, 1, 0.36, 1)";
+          w.el.style.transform = "";
+        });
+      }
+    } else {
+      // New row — gentle fade-in from below
+      w.el.style.opacity = "0";
+      w.el.style.transform = "translateY(6px) scale(0.985)";
+      w.el.style.transition = "none";
+      requestAnimationFrame(() => {
+        w.el.style.transition = "opacity 0.4s ease, transform 0.4s cubic-bezier(0.22, 1, 0.36, 1)";
+        w.el.style.opacity = "";
+        w.el.style.transform = "";
+      });
+    }
+  }
+}
+
+async function fetchAnalytics() {
+  try {
+    const r = await fetch(ANALYTICS_URL + "?t=" + Date.now(), { cache: "no-store" });
+    if (!r.ok) throw new Error("HTTP " + r.status);
+    _edgeAnalytics = await r.json();
+    renderEdgeScreen();
+  } catch (e) {
+    console.warn("analytics fetch failed:", e);
+  }
+}
+
+async function fetchFearGreed() {
+  try {
+    const r = await fetch(FNG_URL + "&t=" + Date.now(), { cache: "no-store" });
+    const d = await r.json();
+    const item = (d.data || [])[0];
+    if (item) {
+      _edgeFng = {
+        value: parseInt(item.value, 10),
+        label: item.value_classification,
+      };
+      renderEdgeFng();
+    }
+  } catch (e) { console.warn("F&G fetch failed:", e); }
+}
+
+// ── Render: F&G gauge ──
+function renderEdgeFng() {
+  if (!_edgeFng) return;
+  const v = _edgeFng.value;
+  $("fg-value").textContent = v;
+  $("fg-label").textContent = (_edgeFng.label || "").toUpperCase();
+
+  // Needle: map 0..100 → angle −90° to +90° (180° arc). Updated for viewBox 220×130.
+  const angleDeg = -90 + (v / 100) * 180;
+  const rad = angleDeg * Math.PI / 180;
+  const cx = 110, cy = 110, len = 78;
+  const x2 = cx + Math.sin(rad) * len;
+  const y2 = cy - Math.cos(rad) * len;
+  const needle = document.getElementById("fg-needle");
+  if (needle) {
+    needle.setAttribute("x1", cx);
+    needle.setAttribute("y1", cy);
+    needle.setAttribute("x2", x2.toFixed(1));
+    needle.setAttribute("y2", y2.toFixed(1));
+  }
+
+  // Colour the value based on bucket
+  const fgValEl = $("fg-value");
+  fgValEl.classList.remove("fg-fear", "fg-greed", "fg-neutral");
+  if (v < 35) fgValEl.classList.add("fg-fear");
+  else if (v > 65) fgValEl.classList.add("fg-greed");
+  else fgValEl.classList.add("fg-neutral");
+}
+
+// ── Catmull-Rom → cubic Bézier smoothing ──
+function _smoothPath(points) {
+  if (!points.length) return "";
+  if (points.length === 1) return `M ${points[0][0]} ${points[0][1]}`;
+  const path = [`M ${points[0][0]} ${points[0][1]}`];
+  for (let i = 0; i < points.length - 1; i++) {
+    const p0 = points[i - 1] || points[i];
+    const p1 = points[i];
+    const p2 = points[i + 1];
+    const p3 = points[i + 2] || p2;
+    const c1x = p1[0] + (p2[0] - p0[0]) / 6;
+    const c1y = p1[1] + (p2[1] - p0[1]) / 6;
+    const c2x = p2[0] - (p3[0] - p1[0]) / 6;
+    const c2y = p2[1] - (p3[1] - p1[1]) / 6;
+    path.push(`C ${c1x.toFixed(2)} ${c1y.toFixed(2)}, ${c2x.toFixed(2)} ${c2y.toFixed(2)}, ${p2[0]} ${p2[1]}`);
+  }
+  return path.join(" ");
+}
+
+// ── Render: smooth equity curve area chart ──
+function _renderEquityCurve(curve) {
+  const svg = document.getElementById("equity-curve-svg");
+  if (!svg || !curve || curve.length < 2) {
+    if (svg) svg.innerHTML = "";
+    return;
+  }
+  const W = 800, H = 200;
+  const padX = 8, padTop = 80, padBottom = 14;  // padTop leaves room for the overlay text
+  const innerW = W - 2 * padX;
+  const innerH = H - padTop - padBottom;
+  const N = curve.length;
+  const vals = curve.map(p => p.cumulative);
+  const vMin = Math.min(0, ...vals);
+  const vMax = Math.max(0, ...vals);
+  const range = (vMax - vMin) || 1;
+  const yFor = v => padTop + innerH - ((v - vMin) / range) * innerH;
+  const xFor = i => padX + (i / (N - 1)) * innerW;
+  const zeroY = yFor(0);
+
+  const pts = curve.map((p, i) => [xFor(i), yFor(p.cumulative)]);
+  const linePath = _smoothPath(pts);
+  // Area: extend path to bottom corners
+  const areaPath = linePath + ` L ${pts[N-1][0]} ${H} L ${pts[0][0]} ${H} Z`;
+
+  const finalVal = vals[N - 1];
+  const isPositive = finalVal >= 0;
+  const stroke = isPositive ? "#00e6c0" : "#ff6b7a";
+  const gradId = isPositive ? "eqAreaPos" : "eqAreaNeg";
+
+  svg.innerHTML = `
+    <defs>
+      <linearGradient id="eqAreaPos" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#00e6c0" stop-opacity="0.45"/>
+        <stop offset="40%" stop-color="#00c9a7" stop-opacity="0.2"/>
+        <stop offset="100%" stop-color="#00c9a7" stop-opacity="0"/>
+      </linearGradient>
+      <linearGradient id="eqAreaNeg" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#ff4d5e" stop-opacity="0.4"/>
+        <stop offset="40%" stop-color="#ff4d5e" stop-opacity="0.18"/>
+        <stop offset="100%" stop-color="#ff4d5e" stop-opacity="0"/>
+      </linearGradient>
+      <filter id="eqGlow"><feGaussianBlur stdDeviation="3"/></filter>
+    </defs>
+    <line x1="${padX}" y1="${zeroY}" x2="${W - padX}" y2="${zeroY}"
+          stroke="rgba(255,255,255,0.08)" stroke-width="1" stroke-dasharray="3,4"/>
+    <path d="${areaPath}" fill="url(#${gradId})"/>
+    <path d="${linePath}" fill="none" stroke="${stroke}" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" filter="url(#eqGlow)" opacity="0.55"/>
+    <path d="${linePath}" fill="none" stroke="${stroke}" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="${pts[N-1][0]}" cy="${pts[N-1][1]}" r="4" fill="${stroke}" filter="url(#eqGlow)"/>
+    <circle cx="${pts[N-1][0]}" cy="${pts[N-1][1]}" r="2.5" fill="#fff"/>
+  `;
+}
+
+// ── Render: vertical Long/Short bars with glow ──
+function _renderDirectionVbars(d) {
+  if (!d) return;
+  const long = d.Long || { n: 0, wr: 0, pnl: 0 };
+  const short = d.Short || { n: 0, wr: 0, pnl: 0 };
+
+  // Heights scale by PnL magnitude (winner reaches 100%)
+  const maxAbsPnl = Math.max(1, Math.abs(long.pnl), Math.abs(short.pnl));
+  const longH = Math.max(8, Math.abs(long.pnl) / maxAbsPnl * 100);
+  const shortH = Math.max(8, Math.abs(short.pnl) / maxAbsPnl * 100);
+
+  // Apply with a small delay for animation feel
+  requestAnimationFrame(() => {
+    $("dir-long-fill").style.height = longH + "%";
+    $("dir-short-fill").style.height = shortH + "%";
+  });
+
+  const longEl = $("dir-long-pnl");
+  longEl.textContent = _fmtUsdEdge(long.pnl);
+  longEl.className = "dir-vbar-pnl " + _signCls(long.pnl);
+  const shortEl = $("dir-short-pnl");
+  shortEl.textContent = _fmtUsdEdge(short.pnl);
+  shortEl.className = "dir-vbar-pnl " + _signCls(short.pnl);
+
+  $("dir-long-wr").textContent = (long.wr || 0).toFixed(0) + "%";
+  $("dir-short-wr").textContent = (short.wr || 0).toFixed(0) + "%";
+  $("dir-long-n").textContent = long.n + "t";
+  $("dir-short-n").textContent = short.n + "t";
+}
+
+// ── Render: macro sparklines (smooth area for VIX & DXY 5d) ──
+function _renderMacroSpark(svgId, values, isInverted) {
+  const svg = document.getElementById(svgId);
+  if (!svg || !values || values.length < 2) {
+    if (svg) svg.innerHTML = "";
+    return;
+  }
+  const W = 120, H = 32, padX = 2, padY = 4;
+  const vMin = Math.min(...values), vMax = Math.max(...values);
+  const range = (vMax - vMin) || 1;
+  const pts = values.map((v, i) => [
+    padX + (i / (values.length - 1)) * (W - 2 * padX),
+    padY + (1 - (v - vMin) / range) * (H - 2 * padY),
+  ]);
+  const path = _smoothPath(pts);
+  const rising = values[values.length - 1] >= values[0];
+  // For VIX, rising = risk-off (red). For DXY, rising = USD strength (neutral/amber).
+  // For neutral coloring on DXY, just use the rising direction.
+  const color = isInverted
+    ? (rising ? "#ff8a80" : "#00e6c0")  // higher VIX is bad (red)
+    : (rising ? "#ffd54f" : "#9ccc65"); // higher DXY = amber, falling = green
+  const areaPath = path + ` L ${pts[pts.length-1][0]} ${H} L ${pts[0][0]} ${H} Z`;
+  const fillGrad = isInverted
+    ? (rising ? "macroRedFill" : "macroGreenFill")
+    : (rising ? "macroAmberFill" : "macroLightGreenFill");
+  svg.innerHTML = `
+    <defs>
+      <linearGradient id="macroRedFill" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#ff4d5e" stop-opacity="0.35"/><stop offset="100%" stop-color="#ff4d5e" stop-opacity="0"/></linearGradient>
+      <linearGradient id="macroGreenFill" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#00c9a7" stop-opacity="0.35"/><stop offset="100%" stop-color="#00c9a7" stop-opacity="0"/></linearGradient>
+      <linearGradient id="macroAmberFill" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#ffd54f" stop-opacity="0.35"/><stop offset="100%" stop-color="#ffd54f" stop-opacity="0"/></linearGradient>
+      <linearGradient id="macroLightGreenFill" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#9ccc65" stop-opacity="0.35"/><stop offset="100%" stop-color="#9ccc65" stop-opacity="0"/></linearGradient>
+    </defs>
+    <path d="${areaPath}" fill="url(#${fillGrad})"/>
+    <path d="${path}" fill="none" stroke="${color}" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  `;
+}
+
+// ── Refresh just the Edge hero P&L number — called from renderLive on every WS tick ──
+function updateEdgeLivePnL() {
+  if (!_edgeAnalytics) return;
+  const pnlEl = document.getElementById("edge-pnl");
+  if (!pnlEl) return;
+  const at = _edgeAnalytics.all_time || {};
+  const openTrades = (state.trades || []).filter(t => t.status === "OPEN");
+  const liveEnriched = openTrades.map(t => ({ ...t, ...computeUnrealized(t) }));
+  const liveUnreal = liveEnriched.reduce((s, t) => s + (t.usd || 0), 0);
+  const liveTp1Banked = liveEnriched.reduce((s, t) => s + (t.tp1BankedUsd || 0), 0);
+  const realizedTotal = (at.total_pnl_usd || 0) + liveTp1Banked;
+  const liveTotalPnl = realizedTotal + liveUnreal;
+  pnlEl.textContent = _fmtUsdEdge(liveTotalPnl);
+  pnlEl.classList.remove("pos", "neg", "neu");
+  pnlEl.classList.add(_signCls(liveTotalPnl));
+  const subEl = document.getElementById("edge-perf-sub");
+  if (subEl) {
+    const unrealTxt = openTrades.length
+      ? ` · <span class="${_signCls(liveUnreal)}">${_fmtUsdEdge(liveUnreal)} unreal</span>`
+      : "";
+    subEl.innerHTML =
+      `<span class="${_signCls(realizedTotal)}">${_fmtUsdEdge(realizedTotal)} realized</span>${unrealTxt} · ${at.total_trades ?? 0} closed · ${at.win_rate ?? 0}% WR`;
+  }
+}
+
+// ── Economic events calendar (static, hardcoded for now) ──
+// TODO swap for a live feed: pre-fetch from a paid API (Finnhub /
+// Trading Economics) in publish_analytics.py and expose it through
+// analytics.json. Until then this list is maintained by hand.
+const ECONOMIC_EVENTS = [
+  { iso: "2026-05-28T12:30:00Z", name: "GDP",          country: "US", flag: "🇺🇸", importance: "high", note: "Q1 advance"            },
+  { iso: "2026-05-29T12:30:00Z", name: "PCE",          country: "US", flag: "🇺🇸", importance: "high", note: "Core PCE (Fed's gauge)" },
+  { iso: "2026-06-04T13:30:00Z", name: "ISM Services", country: "US", flag: "🇺🇸", importance: "med",  note: "Services PMI"          },
+  { iso: "2026-06-05T12:30:00Z", name: "NFP",          country: "US", flag: "🇺🇸", importance: "high", note: "Non-Farm Payrolls"     },
+  { iso: "2026-06-11T12:30:00Z", name: "CPI",          country: "US", flag: "🇺🇸", importance: "high", note: "Consumer Price Index"  },
+  { iso: "2026-06-17T12:30:00Z", name: "Retail Sales", country: "US", flag: "🇺🇸", importance: "med",  note: "May retail"            },
+  { iso: "2026-06-17T18:00:00Z", name: "FOMC",         country: "US", flag: "🇺🇸", importance: "high", note: "Rate decision + presser"},
+  { iso: "2026-06-19T11:00:00Z", name: "BoE",          country: "UK", flag: "🇬🇧", importance: "med",  note: "BoE rate decision"     },
+  { iso: "2026-06-26T12:30:00Z", name: "PCE",          country: "US", flag: "🇺🇸", importance: "high", note: "May core PCE"          },
+  { iso: "2026-07-03T12:30:00Z", name: "NFP",          country: "US", flag: "🇺🇸", importance: "high", note: "Non-Farm Payrolls"     },
+];
+
+function _fmtCountdown(ms) {
+  if (ms <= 0) {
+    const past = -ms;
+    if (past < 60 * 60 * 1000) return "live now";
+    return null; // signal: drop from list
+  }
+  const m = Math.floor(ms / 60000);
+  if (m < 60) return `in ${m}m`;
+  const h = Math.floor(ms / 3600000);
+  if (h < 24) {
+    const remM = Math.floor((ms - h * 3600000) / 60000);
+    return remM > 0 ? `in ${h}h ${remM}m` : `in ${h}h`;
+  }
+  const d = Math.floor(ms / 86400000);
+  const remH = Math.floor((ms - d * 86400000) / 3600000);
+  return remH > 0 ? `in ${d}d ${remH}h` : `in ${d}d`;
+}
+
+function _renderEconomicEvents() {
+  const host = $("edge-econ-events");
+  if (!host) return;
+  const now = Date.now();
+  const upcoming = ECONOMIC_EVENTS
+    .map(ev => ({ ...ev, _t: new Date(ev.iso).getTime() }))
+    .filter(ev => ev._t > now - 60 * 60 * 1000) // keep events up to 1h after they happen
+    .sort((a, b) => a._t - b._t);
+
+  if (!upcoming.length) {
+    host.innerHTML = '<div class="econ-empty">no upcoming events</div>';
+    return;
+  }
+
+  const featured = upcoming[0];
+  const rest     = upcoming.slice(1, 4);
+
+  const fmtWhen = ev => {
+    const d = new Date(ev._t);
+    const day = d.toLocaleDateString("en-GB", { weekday: "short", day: "numeric", month: "short", timeZone: "UTC" });
+    const t   = d.toLocaleTimeString("en-GB", { hour: "2-digit", minute: "2-digit", timeZone: "UTC" });
+    return `${day} · ${t} UTC`;
+  };
+
+  const featuredCd = _fmtCountdown(featured._t - now) || "live now";
+  const featuredHtml = `
+    <div class="econ-featured" data-ev-key="${featured.iso}_${featured.name}">
+      <div class="econ-featured-top">
+        <span class="econ-dot ${featured.importance}"></span>
+        <span class="econ-featured-name">${featured.name}</span>
+        <span class="econ-flag">${featured.flag}</span>
+        <span class="econ-cd-big">${featuredCd}</span>
+      </div>
+      <div class="econ-featured-when">${fmtWhen(featured)} · ${featured.note}</div>
+    </div>`;
+
+  const restHtml = rest.map(ev => {
+    const cd = _fmtCountdown(ev._t - now) || "live now";
+    return `
+      <div class="econ-row" data-ev-key="${ev.iso}_${ev.name}">
+        <span class="econ-dot ${ev.importance}"></span>
+        <span class="econ-name">${ev.name}</span>
+        <span class="econ-flag">${ev.flag}</span>
+        <span class="econ-when-small">${fmtWhen(ev)}</span>
+        <span class="econ-cd">${cd}</span>
+      </div>`;
+  }).join("");
+
+  flipReplace(host, featuredHtml + restHtml, "data-ev-key");
+}
+
+// ── Render: streak pills (last 10 closes as W/L dots) ──
+function _renderStreakPills(recentCloses) {
+  const el = $("edge-streak-pills");
+  if (!el) return;
+  const last10 = (recentCloses || []).slice(0, 10).reverse();  // chronological L→R
+  if (!last10.length) { el.innerHTML = ""; return; }
+  el.innerHTML = last10.map(t => {
+    return `<span class="streak-pill ${t.won ? 'win' : 'loss'}" title="${t.coin} ${t.direction} · ${_fmtUsdEdge(t.pnl_usd)}"></span>`;
+  }).join("");
+}
+
+// ── Render: stacked horizontal bars (used for system/conviction/entry/etc.) ──
+function _renderBars(containerId, dataObj, opts = {}) {
+  const el = document.getElementById(containerId);
+  if (!el) return;
+  const entries = Object.entries(dataObj || {});
+  if (!entries.length) { el.innerHTML = '<div class="bars-empty">no data</div>'; return; }
+
+  // Sort: by pnl desc by default, or by key if numeric
+  if (opts.sortByKey) {
+    entries.sort((a, b) => Number(a[0]) - Number(b[0]));
+  } else {
+    entries.sort((a, b) => (b[1].pnl ?? 0) - (a[1].pnl ?? 0));
+  }
+
+  // For bar fill width: scale by win rate (0–100%)
+  const html = entries.map(([key, v]) => {
+    const wr = v.wr ?? 0;
+    const pnl = v.pnl ?? 0;
+    const n = v.n ?? 0;
+    const cls = pnl > 0 ? "pos" : (pnl < 0 ? "neg" : "neu");
+    const label = opts.labelMap ? (opts.labelMap[key] || key) : key;
+    return `
+      <div class="bars-row ${cls}" data-bar-key="${key}">
+        <div class="bars-key">${label}</div>
+        <div class="bars-track"><div class="bars-fill ${cls}" style="width:${Math.max(2, wr)}%"></div></div>
+        <div class="bars-wr">${wr.toFixed(0)}%</div>
+        <div class="bars-n">${n}t</div>
+        <div class="bars-pnl ${cls}">${_fmtUsdEdge(pnl)}</div>
+      </div>`;
+  }).join("");
+  flipReplace(el, html, "data-bar-key");
+}
+
+// ── Render: direction tile (Long vs Short) ──
+function _renderDirection(d) {
+  const el = $("edge-direction");
+  if (!el || !d) return;
+  const long = d.Long || { n: 0, wr: 0, pnl: 0 };
+  const short = d.Short || { n: 0, wr: 0, pnl: 0 };
+  el.innerHTML = `
+    <div class="dir-row">
+      <div class="dir-label dir-long">LONG</div>
+      <div class="dir-bar"><div class="dir-fill" style="width:${Math.max(2, long.wr)}%"></div></div>
+      <div class="dir-stat"><span class="dir-wr">${long.wr.toFixed(0)}%</span><span class="dir-pnl ${_signCls(long.pnl)}">${_fmtUsdEdge(long.pnl)}</span></div>
+    </div>
+    <div class="dir-row">
+      <div class="dir-label dir-short">SHORT</div>
+      <div class="dir-bar"><div class="dir-fill short" style="width:${Math.max(2, short.wr)}%"></div></div>
+      <div class="dir-stat"><span class="dir-wr">${short.wr.toFixed(0)}%</span><span class="dir-pnl ${_signCls(short.pnl)}">${_fmtUsdEdge(short.pnl)}</span></div>
+    </div>
+    <div class="dir-meta">
+      <span>${long.n} long · ${short.n} short trades</span>
+    </div>
+  `;
+}
+
+// ── Render: insights ticker ──
+function _renderEdgeInsights(a) {
+  const at = a.all_time || {};
+  const macro = a.macro || {};
+  const fng = _edgeFng;
+  const pieces = [];
+
+  if (at.win_rate != null) pieces.push(`<span><strong>${at.win_rate}%</strong> WR · ${at.total_trades}t</span>`);
+  if (at.profit_factor != null) pieces.push(`<span>PF <strong>${at.profit_factor}</strong></span>`);
+  if (at.current_streak_type && at.current_streak_count) {
+    const cls = at.current_streak_type === "win" ? "pos" : "neg";
+    pieces.push(`<span>Streak: <strong class="${cls}">${at.current_streak_count}${at.current_streak_type === "win" ? "W" : "L"}</strong></span>`);
+  }
+  if (macro.btc_7d_change_pct != null) {
+    pieces.push(`<span>BTC 7d <strong class="${_signCls(macro.btc_7d_change_pct)}">${_fmtPctEdge(macro.btc_7d_change_pct)}</strong></span>`);
+  }
+  if (fng) {
+    pieces.push(`<span>F&amp;G <strong>${fng.value}</strong> ${fng.label}</span>`);
+  }
+  if (macro.vix != null) pieces.push(`<span>VIX <strong>${macro.vix}</strong></span>`);
+  if (a.live_positions) {
+    pieces.push(`<span>${a.live_positions.open_count} open · ${a.live_positions.pending_count} pending</span>`);
+  }
+
+  const el = $("edge-insights");
+  el.innerHTML = `<span class="edge-ins-label">EDGE INSIGHTS</span>` +
+    pieces.map(p => `<span class="edge-ins-sep">·</span>${p}`).join("");
+}
+
+// ── Render: BY SYSTEM (rich, with inception + days active + decommissioned) ──
+const SYS_COLORS = {
+  John:    "#5B8DEF",
+  Braam:   "#ffab40",
+  Mong:    "#a76adb",
+  William: "#6a7390",
+};
+function _renderSystemsRich(systems, decommissioned) {
+  const el = $("edge-systems");
+  if (!el) return;
+  const active = (systems || []).map(s => {
+    const color = SYS_COLORS[s.name] || "#888";
+    const pnlCls = s.pnl > 0 ? "pos" : (s.pnl < 0 ? "neg" : "neu");
+    const inceptShort = s.inception ? s.inception.slice(5) : "—";
+    const daysTxt = s.days_active != null ? `${s.days_active}d` : "no trades";
+    const liveBadges = [];
+    if (s.open > 0) liveBadges.push(`<span class="sys-live-badge open">${s.open}O</span>`);
+    if (s.pending > 0) liveBadges.push(`<span class="sys-live-badge pending">${s.pending}P</span>`);
+    const ppd = s.pnl_per_day != null
+      ? `<span class="sys-ppd ${pnlCls}">${_fmtUsdEdge(s.pnl_per_day)}/d</span>`
+      : `<span class="sys-ppd muted">—</span>`;
+    const noTrades = s.closed === 0;
+    return `
+      <div class="sys-rich-row${noTrades ? ' empty' : ''}" data-sys="${s.name}">
+        <div class="sys-rich-dot" style="background:${color};box-shadow:0 0 8px ${color}90"></div>
+        <span class="sys-rich-name">${s.name}</span>
+        <span class="sys-rich-incept">${s.inception ? `since ${inceptShort} · ${daysTxt}` : "no trades yet"}</span>
+        <div class="sys-rich-bar"><div class="sys-rich-fill ${pnlCls}" style="width:${Math.max(2, s.wr || 0)}%;${noTrades ? 'background:rgba(255,255,255,0.05)' : ''}"></div></div>
+        <span class="sys-rich-wr">${noTrades ? '—' : s.wr.toFixed(0) + '%'}</span>
+        <span class="sys-rich-n">${s.closed}t</span>
+        ${ppd}
+        <span class="sys-rich-pnl ${pnlCls}">${_fmtUsdEdge(s.pnl)}</span>
+        <span class="sys-rich-badges">${liveBadges.join("")}</span>
+      </div>
+    `;
+  }).join("");
+
+  // Decommissioned — single dimmed row at the bottom
+  let decomHtml = "";
+  if (decommissioned && Object.keys(decommissioned).length) {
+    const decoms = Object.entries(decommissioned).map(([name, d]) => {
+      const color = SYS_COLORS[name] || "#666";
+      const pnlCls = d.pnl > 0 ? "pos" : (d.pnl < 0 ? "neg" : "neu");
+      return `
+        <div class="sys-rich-row sys-decom" data-sys="${name}">
+          <div class="sys-rich-dot" style="background:${color}"></div>
+          <span class="sys-rich-name">${name}</span>
+          <span class="sys-rich-incept">decommissioned · history</span>
+          <div class="sys-rich-bar"><div class="sys-rich-fill ${pnlCls}" style="width:${Math.max(2, d.wr || 0)}%"></div></div>
+          <span class="sys-rich-wr">${d.wr.toFixed(0)}%</span>
+          <span class="sys-rich-n">${d.n}t</span>
+          <span class="sys-ppd muted">—</span>
+          <span class="sys-rich-pnl ${pnlCls}">${_fmtUsdEdge(d.pnl)}</span>
+          <span class="sys-rich-badges"><span class="sys-decom-badge">DECOM</span></span>
+        </div>`;
+    }).join("");
+    decomHtml = decoms;
+  }
+
+  flipReplace(el, active + decomHtml, "data-sys");
+}
+
+// ── Render: MONTHLY P&L — HTML/CSS flex bars (no SVG stretching) ──
+const MONTH_NAMES = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+function _renderMonthly(monthly) {
+  const host = document.getElementById("monthly-bars");
+  const meta = $("monthly-meta");
+  if (!host || !monthly || !monthly.length) {
+    if (host) host.innerHTML = "";
+    if (meta) meta.textContent = "no closed trades yet";
+    return;
+  }
+  const maxAbs = Math.max(1, ...monthly.map(m => Math.abs(m.pnl)));
+  // Each half (above/below zero line) maps maxAbs to ~85% of that half's height
+  const html = monthly.map(m => {
+    const heightPct = (Math.abs(m.pnl) / maxAbs) * 85;
+    const cls = m.pnl >= 0 ? "pos" : "neg";
+    const monIdx = parseInt(m.month.slice(5), 10) - 1;
+    const monShort = MONTH_NAMES[monIdx] || m.month.slice(5);
+    const yr = m.month.slice(2, 4);
+    const pnlTxt = (m.pnl >= 0 ? "+" : "−") + "$" + Math.abs(m.pnl).toFixed(0);
+    const sub = `${m.n}t · ${m.wr.toFixed(0)}% WR`;
+    return `
+      <div class="mbar ${cls}" title="${monShort} ${yr} · ${pnlTxt} · ${sub}">
+        <div class="mbar-pnl">${pnlTxt}</div>
+        <div class="mbar-half top">
+          <div class="mbar-fill" style="height:${m.pnl >= 0 ? heightPct : 0}%"></div>
+        </div>
+        <div class="mbar-baseline"></div>
+        <div class="mbar-half bot">
+          <div class="mbar-fill" style="height:${m.pnl < 0 ? heightPct : 0}%"></div>
+        </div>
+        <div class="mbar-month">${monShort} '${yr}</div>
+        <div class="mbar-sub">${sub}</div>
+      </div>
+    `;
+  }).join("");
+  host.innerHTML = html;
+
+  // Meta line
+  const totalN = monthly.reduce((s, m) => s + m.n, 0);
+  const cum = monthly[monthly.length - 1]?.cumulative_pnl ?? 0;
+  const last = monthly[monthly.length - 1];
+  const lastCls = (last?.pnl ?? 0) > 0 ? "pos" : ((last?.pnl ?? 0) < 0 ? "neg" : "neu");
+  meta.innerHTML = `
+    <span>${monthly.length}mo · ${totalN}t</span>
+    <span class="monthly-cum ${cum > 0 ? 'pos' : (cum < 0 ? 'neg' : 'neu')}">cumulative ${_fmtUsdEdge(cum)}</span>
+    <span class="monthly-now ${lastCls}">${last?.month?.slice(5)}: ${_fmtUsdEdge(last?.pnl)}</span>
+  `;
+}
+
+// ── Render: full screen 4 ──
+function renderEdgeScreen() {
+  if (!_edgeAnalytics) return;
+  const a = _edgeAnalytics;
+  const at = a.all_time || {};
+  const macro = a.macro || {};
+
+  // Hero P&L tile + equity curve
+  // Compute LIVE portfolio total (matches Screen 1): realized + unrealized + tp1_banked
+  // realized = closed-trade P&L; tp1_banked = banked TP1 from still-open trades; unrealized = mark-to-market on open
+  const openTrades = (state.trades || []).filter(t => t.status === "OPEN");
+  const liveEnriched = openTrades.map(t => ({ ...t, ...computeUnrealized(t) }));
+  const liveUnreal = liveEnriched.reduce((s, t) => s + (t.usd || 0), 0);
+  const liveTp1Banked = liveEnriched.reduce((s, t) => s + (t.tp1BankedUsd || 0), 0);
+  const realizedTotal = (at.total_pnl_usd || 0) + liveTp1Banked;
+  const liveTotalPnl = realizedTotal + liveUnreal;
+
+  const pnlEl = $("edge-pnl");
+  pnlEl.textContent = _fmtUsdEdge(liveTotalPnl);
+  pnlEl.classList.remove("pos", "neg", "neu");
+  pnlEl.classList.add(_signCls(liveTotalPnl));
+  // Sub-line: show the breakdown so realized vs unrealized vs WR is clear
+  const unrealTxt = openTrades.length
+    ? ` · <span class="${_signCls(liveUnreal)}">${_fmtUsdEdge(liveUnreal)} unreal</span>`
+    : "";
+  $("edge-perf-sub").innerHTML =
+    `<span class="${_signCls(realizedTotal)}">${_fmtUsdEdge(realizedTotal)} realized</span>${unrealTxt} · ${at.total_trades ?? 0} closed · ${at.win_rate ?? 0}% WR`;
+  $("edge-best-usd").textContent = _fmtUsdEdge(at.best_usd);
+  $("edge-worst-usd").textContent = _fmtUsdEdge(at.worst_usd);
+  $("edge-avg-win").textContent = _fmtUsdEdge(at.avg_win_usd);
+  $("edge-avg-loss").textContent = _fmtUsdEdge(at.avg_loss_usd);
+  $("edge-pf-mini").textContent = at.profit_factor ?? "—";
+  $("edge-exp-mini").textContent = _fmtUsdEdge(at.expectancy_usd);
+  _renderEquityCurve(a.equity_curve);
+
+  // WR big donut (radius 64, circumference = 2π·64 = 402.124)
+  const wr = at.win_rate ?? 0;
+  $("edge-wr-pct").textContent = wr.toFixed(1) + "%";
+  $("edge-wl").textContent = `${at.wins ?? 0}W · ${at.losses ?? 0}L`;
+  const C = 2 * Math.PI * 64;
+  const fill = document.getElementById("edge-donut-fill");
+  const glow = document.getElementById("edge-donut-glow");
+  if (fill && glow) {
+    const gradId = wr >= 50 ? "wrGradGreen" : (wr >= 35 ? "wrGradAmber" : "wrGradRed");
+    fill.setAttribute("stroke-dasharray", C);
+    fill.setAttribute("stroke-dashoffset", C * (1 - wr / 100));
+    fill.style.stroke = `url(#${gradId})`;
+    glow.setAttribute("stroke-dasharray", C);
+    glow.setAttribute("stroke-dashoffset", C * (1 - wr / 100));
+    glow.style.stroke = `url(#${gradId})`;
+  }
+
+  // Direction (vertical bars)
+  _renderDirectionVbars(a.by_direction);
+
+  // Streak: big number + pills + longest meta
+  const streakBig = $("edge-streak-big");
+  if (at.current_streak_count != null) {
+    streakBig.textContent = at.current_streak_count + (at.current_streak_type === "win" ? "W" : "L");
+    streakBig.classList.remove("pos", "neg");
+    streakBig.classList.add(at.current_streak_type === "win" ? "pos" : "neg");
+  }
+  _renderStreakPills(a.recent_closes);
+  $("edge-longest-w").textContent = at.longest_win_streak ?? "—";
+  $("edge-longest-l").textContent = at.longest_loss_streak ?? "—";
+
+  // Macro: number + mini sparkline + trend label
+  if (macro.vix != null) {
+    $("macro-vix").textContent = macro.vix.toFixed(2);
+    _renderMacroSpark("macro-vix-spark", macro.vix_5d || [], /*isInverted=*/true);
+    const rising = macro.vix > (macro.vix_ma14 ?? macro.vix);
+    const trendEl = $("macro-vix-trend");
+    trendEl.textContent = `${rising ? "↑" : "↓"} MA14 ${macro.vix_ma14?.toFixed(1) ?? "—"}`;
+    trendEl.className = "macro-cell-foot " + (rising ? "neg" : "pos");
+  }
+  if (macro.dxy != null) {
+    $("macro-dxy").textContent = macro.dxy.toFixed(2);
+    _renderMacroSpark("macro-dxy-spark", macro.dxy_5d || [], /*isInverted=*/false);
+    const rising = macro.dxy > (macro.dxy_ma14 ?? macro.dxy);
+    const trendEl = $("macro-dxy-trend");
+    trendEl.textContent = `${rising ? "↑" : "↓"} MA14 ${macro.dxy_ma14?.toFixed(1) ?? "—"}`;
+    trendEl.className = "macro-cell-foot " + (rising ? "neu" : "pos");
+  }
+  if (macro.btc_7d_change_pct != null) {
+    const el = $("macro-btc7d");
+    el.textContent = _fmtPctEdge(macro.btc_7d_change_pct);
+    el.className = "macro-cell-val " + _signCls(macro.btc_7d_change_pct);
+  }
+  if (macro.btc_30d_change_pct != null) {
+    const el = $("macro-btc30d");
+    el.textContent = _fmtPctEdge(macro.btc_30d_change_pct);
+    el.className = "macro-cell-val " + _signCls(macro.btc_30d_change_pct);
+  }
+  if (macro.btc_correlation_30d != null) {
+    $("macro-btc-corr").textContent = `corr ${macro.btc_correlation_30d.toFixed(2)}`;
+  }
+  if (macro.btc_price_last_seen != null) {
+    $("macro-btc-price").textContent = `$${Math.round(macro.btc_price_last_seen).toLocaleString()}`;
+  }
+
+  // Breakdown bar tiles
+  _renderSystemsRich(a.system_summary, a.decommissioned_systems);
+  _renderMonthly(a.monthly);
+  _renderBars("edge-by-conviction", a.by_conviction, {
+    labelMap: { "VERY HIGH": "V.HIGH", "HIGH": "HIGH", "MEDIUM": "MED", "LOW": "LOW" }
+  });
+  _renderBars("edge-by-entry", a.by_entry_type, {
+    labelMap: {
+      "at_support": "@ Support", "near_support": "Near Sup",
+      "at_resistance": "@ Resist", "ema20_rejection": "EMA20 Rej",
+      "breakout_chase": "Brkout", "structural_limit": "Struct"
+    }
+  });
+  _renderBars("edge-by-session", a.by_session, {
+    labelMap: { "asia": "Asia", "europe": "Europe", "us": "US" }
+  });
+  _renderBars("edge-by-confluence", a.by_confluence_score, {
+    sortByKey: true,
+    labelMap: { "4": "4/8", "5": "5/8", "6": "6/8", "7": "7/8", "8": "8/8" }
+  });
+  _renderEconomicEvents();
+
+  // Bottom strip
+  const bc = (a.best_coins || [])[0];
+  if (bc) $("strip-best-coin").innerHTML = `<span class="strip-name">${bc.coin}</span> <span class="pos">${_fmtUsdEdge(bc.pnl)}</span> <span class="strip-sub">${bc.n}t</span>`;
+  const wc = (a.worst_coins || [])[0];
+  if (wc) $("strip-worst-coin").innerHTML = `<span class="strip-name">${wc.coin}</span> <span class="neg">${_fmtUsdEdge(wc.pnl)}</span> <span class="strip-sub">${wc.n}t</span>`;
+  if (a.best_trade) $("strip-best-trade").innerHTML = `<span class="strip-name">${a.best_trade.coin} ${a.best_trade.direction}</span> <span class="pos">${_fmtUsdEdge(a.best_trade.pnl_usd)}</span>`;
+  if (a.worst_trade) $("strip-worst-trade").innerHTML = `<span class="strip-name">${a.worst_trade.coin} ${a.worst_trade.direction}</span> <span class="neg">${_fmtUsdEdge(a.worst_trade.pnl_usd)}</span>`;
+  if (at.avg_hold_hours != null) $("strip-avg-hold").innerHTML = `<span class="strip-name">${at.avg_hold_hours.toFixed(1)}h</span> <span class="strip-sub">median ${at.median_hold_hours?.toFixed(1) ?? "—"}h</span>`;
+  if (a.live_positions) $("strip-live").innerHTML = `<span class="strip-name">${a.live_positions.open_count} open</span> <span class="strip-sub">${a.live_positions.open_long}L · ${a.live_positions.open_short}S</span>`;
+
+  // Live insights ticker
+  _renderEdgeInsights(a);
+}
+
+fetchAnalytics();
+fetchFearGreed();
+setInterval(fetchAnalytics, 5 * 60_000);    // analytics: every 5 min
+setInterval(fetchFearGreed, 30 * 60_000);   // F&G: every 30 min (updates daily anyway)
+setInterval(_renderEconomicEvents, 60_000); // econ countdown: tick every 60s
