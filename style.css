@@ -1403,6 +1403,7 @@ main {
   flex-direction: column;
   gap: 10px;
   min-height: 0;
+  overflow-y: auto;
 }
 .trig-live {
   color: var(--green);
@@ -1415,7 +1416,7 @@ main {
 .pb-pnl-pct.muted-val { color: var(--muted); }
 
 /* Compact overrides for trigger bars (they're shorter than Screen 2 bars) */
-.triggers-body .paper-bar-row { padding: 4px 20px; }
+.triggers-body .paper-bar-row { padding: 4px 20px; flex: 0 0 auto; }
 .triggers-body .pb-bar { padding: 14px 0 22px; }
 .triggers-body .pb-coin { font-size: 20px; }
 .triggers-body .pb-pnl-pct { font-size: 15px; letter-spacing: 0; }
