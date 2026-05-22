@@ -1415,7 +1415,7 @@ main {
 .pb-pnl-pct.muted-val { color: var(--muted); }
 
 /* Compact overrides for trigger bars (they're shorter than Screen 2 bars) */
-.triggers-body .paper-bar-row { padding: 4px 20px; min-height: 70px; }
+.triggers-body .paper-bar-row { padding: 4px 20px; }
 .triggers-body .pb-bar { padding: 14px 0 22px; }
 .triggers-body .pb-coin { font-size: 20px; }
 .triggers-body .pb-pnl-pct { font-size: 15px; letter-spacing: 0; }
@@ -2871,3 +2871,8 @@ main {
 .edge-row-4 .econ-cd              { font-size: 9px; }
 .edge-row-4 .econ-flag            { font-size: 10px; }
 .edge-row-4 .econ-dot             { width: 7px; height: 7px; }
+
+/* ── Desktop (≥1401px) — prevent trigger rows collapsing on large monitors ── */
+@media (min-width: 1401px) {
+  .triggers-body .paper-bar-row { min-height: 70px; }
+}
