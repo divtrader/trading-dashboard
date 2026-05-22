@@ -2880,9 +2880,9 @@ main {
   .hero-value { margin: 8px 0 16px; }
   .spark-wrap { height: 80px; }
 
-  /* Screen 3 systems: compact so triggers get maximum space */
-  .systems { gap: 4px; }
-  .sys-row  { padding: 5px 14px 5px 0; }
+  /* Screen 3 systems: flex-grow so rows fill space equally alongside triggers */
+  .systems { flex: 0.7 0 0; gap: 6px; }
+  .sys-row  { flex: 1 1 0; min-height: 0; padding: 8px 14px 8px 0; }
   .sys-ring-wrap { width: 36px; height: 36px; }
   .sys-ring-svg  { width: 36px; height: 36px; }
   .sys-name { font-size: 15px; }
