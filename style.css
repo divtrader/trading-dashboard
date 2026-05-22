@@ -2886,7 +2886,9 @@ main {
   .sys-ring-svg  { width: 36px; height: 36px; }
   .sys-name { font-size: 15px; }
   .sys-row .metric .v { font-size: 13px; }
-  .triggers-body .paper-bar-row { min-height: 70px; }
-  .activity { padding: 7px 14px; }
-  .ev-row   { margin-bottom: 2px; }
+  .triggers-body .paper-bar-row { min-height: 62px; }
+  .activity { padding: 6px 14px; flex-shrink: 1; }
+  .activity-title { margin-bottom: 4px; }
+  .ev-row   { margin-bottom: 1px; }
+  .activity-body  { font-size: 12px; }
 }
