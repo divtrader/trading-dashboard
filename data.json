@@ -1,8 +1,8 @@
 {
-  "last_updated_iso": "2026-05-22T08:03:21Z",
+  "last_updated_iso": "2026-05-22T09:21:08Z",
   "mexc_account": {
-    "unrealized_pnl": -19.0893,
-    "equity": 1831.7248,
+    "unrealized_pnl": -20.4217,
+    "equity": 1830.3924,
     "available": 553.1395,
     "position_margin": 398.3574
   },
@@ -43,7 +43,7 @@
       "trading_system": "John",
       "track_only": true,
       "status": "OPEN",
-      "price_at_run": 77463.05,
+      "price_at_run": 77237.86,
       "date_activated": "2026-04-28",
       "time_activated_utc": "12:00",
       "date_opened": "2026-04-28",
@@ -66,7 +66,7 @@
       "trading_system": "John",
       "track_only": true,
       "status": "OPEN",
-      "price_at_run": 660.26,
+      "price_at_run": 658.02,
       "date_activated": "2026-05-17",
       "time_activated_utc": "20:00",
       "date_opened": "2026-05-12",
@@ -236,9 +236,45 @@
       "tp1_hit": false,
       "sl_moved_to_be": false,
       "pnl_tp1_realized_usd": null
+    },
+    {
+      "trade_id": "LTCUSDT_20260522_CB_001",
+      "coin": "LTCUSDT",
+      "direction": "Short",
+      "entry_price": 54.32608033,
+      "sl": 55.31936625,
+      "tp1": 51.27769902,
+      "tp2": 46.94054913,
+      "capital_usd": 100,
+      "leverage": 3,
+      "trading_system": "Braam",
+      "track_only": false,
+      "status": "PENDING",
+      "price_at_run": 54.17,
+      "date_activated": null,
+      "time_activated_utc": null,
+      "date_opened": "2026-05-22",
+      "time_opened_utc": "09:20",
+      "conviction": "HIGH",
+      "tp1_hit": false,
+      "sl_moved_to_be": false,
+      "pnl_tp1_realized_usd": null
     }
   ],
-  "recent_signals": [],
+  "recent_signals": [
+    {
+      "trade_id": "LTCUSDT_20260522_CB_001",
+      "coin": "LTCUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "entry_price": 54.32608033,
+      "tp1": 51.27769902,
+      "sl": 55.31936625,
+      "conviction": "HIGH",
+      "track_only": false,
+      "iso": "2026-05-22T09:20:00Z"
+    }
+  ],
   "recent_opens": [
     {
       "trade_id": "APTUSDT_20260518_CB_001",
