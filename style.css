@@ -1625,7 +1625,7 @@ main {
   overflow: hidden;
 }
 .edge-span-2 { grid-column: span 2; }
-.edge-row.edge-row-4 { grid-template-columns: repeat(3, 1fr); }  /* 3 tiles, no empty cell */
+.edge-row.edge-row-4 { grid-template-columns: repeat(4, 1fr); }  /* breakdowns + economic calendar */
 
 /* Live insights ticker */
 .edge-insights {
@@ -2726,4 +2726,117 @@ main {
 /* === Edge breakdown bar rows (Screen 4) — capsule fills === */
 .bars-fill, .sys-rich-fill, .dir-vbar-fill, .dir-fill {
   border-radius: 999px !important;
+}
+
+/* ── ECONOMIC EVENTS tile (Screen 4 row 5) ─────────────────────────────────── */
+.econ-tile {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.econ-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+  gap: 6px;
+}
+.econ-empty {
+  font-size: 11px;
+  color: var(--muted);
+  font-style: italic;
+  text-align: center;
+  padding: 14px 0;
+}
+
+/* Featured next-event card */
+.econ-featured {
+  background: linear-gradient(180deg, rgba(255,255,255,0.04), transparent), rgba(255,255,255,0.025);
+  border-radius: 12px;
+  padding: 8px 10px;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.06),
+    0 0 0 1px rgba(255,255,255,0.05);
+}
+.econ-featured-top {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+.econ-featured-name {
+  font-size: 14px;
+  font-weight: 900;
+  color: var(--text);
+  letter-spacing: -0.3px;
+}
+.econ-featured-when {
+  font-size: 9.5px;
+  color: var(--muted-2);
+  margin-top: 3px;
+  letter-spacing: 0.2px;
+  font-variant-numeric: tabular-nums;
+}
+.econ-cd-big {
+  margin-left: auto;
+  font-size: 12px;
+  font-weight: 900;
+  font-variant-numeric: tabular-nums;
+  color: var(--orange);
+  background: rgba(255,171,64,0.14);
+  border: 1px solid rgba(255,171,64,0.30);
+  padding: 3px 9px;
+  border-radius: 999px;
+  letter-spacing: 0.2px;
+  white-space: nowrap;
+}
+
+/* Row list (compact upcoming events) */
+.econ-row {
+  display: grid;
+  grid-template-columns: 10px auto auto 1fr auto;
+  align-items: center;
+  gap: 7px;
+  padding: 4px 2px;
+  font-size: 10.5px;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+.econ-row:last-child { border-bottom: none; }
+.econ-name {
+  font-weight: 800;
+  color: var(--text);
+  letter-spacing: 0.2px;
+}
+.econ-flag { font-size: 13px; line-height: 1; }
+.econ-when-small {
+  font-size: 9.5px;
+  color: var(--muted-2);
+  font-variant-numeric: tabular-nums;
+  text-align: left;
+}
+.econ-cd {
+  font-size: 10px;
+  font-weight: 800;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+  letter-spacing: 0.2px;
+}
+
+/* Importance dots — glossy orbs matching the win/loss style */
+.econ-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.econ-dot.high {
+  background: radial-gradient(circle at 30% 30%, #ff9aa5 0%, #ff4d5e 60%, #c43545 100%);
+  box-shadow: 0 0 6px rgba(255,77,94,0.55), inset 0 1px 1px rgba(255,255,255,0.3);
+}
+.econ-dot.med {
+  background: radial-gradient(circle at 30% 30%, #ffe082 0%, #ffab40 60%, #d68a1f 100%);
+  box-shadow: 0 0 6px rgba(255,171,64,0.55), inset 0 1px 1px rgba(255,255,255,0.3);
+}
+.econ-dot.low {
+  background: radial-gradient(circle at 30% 30%, #b0b8d4 0%, #6c779a 60%, #475275 100%);
+  box-shadow: 0 0 4px rgba(108,119,154,0.4), inset 0 1px 1px rgba(255,255,255,0.2);
 }

@@ -1883,6 +1883,92 @@ function updateEdgeLivePnL() {
   }
 }
 
+// ── Economic events calendar (static, hardcoded for now) ──
+// TODO swap for a live feed: pre-fetch from a paid API (Finnhub /
+// Trading Economics) in publish_analytics.py and expose it through
+// analytics.json. Until then this list is maintained by hand.
+const ECONOMIC_EVENTS = [
+  { iso: "2026-05-28T12:30:00Z", name: "GDP",          country: "US", flag: "🇺🇸", importance: "high", note: "Q1 advance"            },
+  { iso: "2026-05-29T12:30:00Z", name: "PCE",          country: "US", flag: "🇺🇸", importance: "high", note: "Core PCE (Fed's gauge)" },
+  { iso: "2026-06-04T13:30:00Z", name: "ISM Services", country: "US", flag: "🇺🇸", importance: "med",  note: "Services PMI"          },
+  { iso: "2026-06-05T12:30:00Z", name: "NFP",          country: "US", flag: "🇺🇸", importance: "high", note: "Non-Farm Payrolls"     },
+  { iso: "2026-06-11T12:30:00Z", name: "CPI",          country: "US", flag: "🇺🇸", importance: "high", note: "Consumer Price Index"  },
+  { iso: "2026-06-17T12:30:00Z", name: "Retail Sales", country: "US", flag: "🇺🇸", importance: "med",  note: "May retail"            },
+  { iso: "2026-06-17T18:00:00Z", name: "FOMC",         country: "US", flag: "🇺🇸", importance: "high", note: "Rate decision + presser"},
+  { iso: "2026-06-19T11:00:00Z", name: "BoE",          country: "UK", flag: "🇬🇧", importance: "med",  note: "BoE rate decision"     },
+  { iso: "2026-06-26T12:30:00Z", name: "PCE",          country: "US", flag: "🇺🇸", importance: "high", note: "May core PCE"          },
+  { iso: "2026-07-03T12:30:00Z", name: "NFP",          country: "US", flag: "🇺🇸", importance: "high", note: "Non-Farm Payrolls"     },
+];
+
+function _fmtCountdown(ms) {
+  if (ms <= 0) {
+    const past = -ms;
+    if (past < 60 * 60 * 1000) return "live now";
+    return null; // signal: drop from list
+  }
+  const m = Math.floor(ms / 60000);
+  if (m < 60) return `in ${m}m`;
+  const h = Math.floor(ms / 3600000);
+  if (h < 24) {
+    const remM = Math.floor((ms - h * 3600000) / 60000);
+    return remM > 0 ? `in ${h}h ${remM}m` : `in ${h}h`;
+  }
+  const d = Math.floor(ms / 86400000);
+  const remH = Math.floor((ms - d * 86400000) / 3600000);
+  return remH > 0 ? `in ${d}d ${remH}h` : `in ${d}d`;
+}
+
+function _renderEconomicEvents() {
+  const host = $("edge-econ-events");
+  if (!host) return;
+  const now = Date.now();
+  const upcoming = ECONOMIC_EVENTS
+    .map(ev => ({ ...ev, _t: new Date(ev.iso).getTime() }))
+    .filter(ev => ev._t > now - 60 * 60 * 1000) // keep events up to 1h after they happen
+    .sort((a, b) => a._t - b._t);
+
+  if (!upcoming.length) {
+    host.innerHTML = '<div class="econ-empty">no upcoming events</div>';
+    return;
+  }
+
+  const featured = upcoming[0];
+  const rest     = upcoming.slice(1, 4);
+
+  const fmtWhen = ev => {
+    const d = new Date(ev._t);
+    const day = d.toLocaleDateString("en-GB", { weekday: "short", day: "numeric", month: "short", timeZone: "UTC" });
+    const t   = d.toLocaleTimeString("en-GB", { hour: "2-digit", minute: "2-digit", timeZone: "UTC" });
+    return `${day} · ${t} UTC`;
+  };
+
+  const featuredCd = _fmtCountdown(featured._t - now) || "live now";
+  const featuredHtml = `
+    <div class="econ-featured" data-ev-key="${featured.iso}_${featured.name}">
+      <div class="econ-featured-top">
+        <span class="econ-dot ${featured.importance}"></span>
+        <span class="econ-featured-name">${featured.name}</span>
+        <span class="econ-flag">${featured.flag}</span>
+        <span class="econ-cd-big">${featuredCd}</span>
+      </div>
+      <div class="econ-featured-when">${fmtWhen(featured)} · ${featured.note}</div>
+    </div>`;
+
+  const restHtml = rest.map(ev => {
+    const cd = _fmtCountdown(ev._t - now) || "live now";
+    return `
+      <div class="econ-row" data-ev-key="${ev.iso}_${ev.name}">
+        <span class="econ-dot ${ev.importance}"></span>
+        <span class="econ-name">${ev.name}</span>
+        <span class="econ-flag">${ev.flag}</span>
+        <span class="econ-when-small">${fmtWhen(ev)}</span>
+        <span class="econ-cd">${cd}</span>
+      </div>`;
+  }).join("");
+
+  flipReplace(host, featuredHtml + restHtml, "data-ev-key");
+}
+
 // ── Render: streak pills (last 10 closes as W/L dots) ──
 function _renderStreakPills(recentCloses) {
   const el = $("edge-streak-pills");
@@ -2210,6 +2296,7 @@ function renderEdgeScreen() {
     sortByKey: true,
     labelMap: { "4": "4/8", "5": "5/8", "6": "6/8", "7": "7/8", "8": "8/8" }
   });
+  _renderEconomicEvents();
 
   // Bottom strip
   const bc = (a.best_coins || [])[0];
@@ -2229,3 +2316,4 @@ fetchAnalytics();
 fetchFearGreed();
 setInterval(fetchAnalytics, 5 * 60_000);    // analytics: every 5 min
 setInterval(fetchFearGreed, 30 * 60_000);   // F&G: every 30 min (updates daily anyway)
+setInterval(_renderEconomicEvents, 60_000); // econ countdown: tick every 60s
