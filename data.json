@@ -1,8 +1,8 @@
 {
-  "last_updated_iso": "2026-05-22T11:37:42Z",
+  "last_updated_iso": "2026-05-22T11:50:58Z",
   "mexc_account": {
-    "unrealized_pnl": -18.2423,
-    "equity": 1832.5718,
+    "unrealized_pnl": -13.4017,
+    "equity": 1837.4124,
     "available": 553.1395,
     "position_margin": 398.3574
   },
@@ -43,7 +43,7 @@
       "trading_system": "John",
       "track_only": true,
       "status": "OPEN",
-      "price_at_run": 77340.08,
+      "price_at_run": 77413.01,
       "date_activated": "2026-04-28",
       "time_activated_utc": "12:00",
       "date_opened": "2026-04-28",
@@ -66,7 +66,7 @@
       "trading_system": "John",
       "track_only": true,
       "status": "OPEN",
-      "price_at_run": 656.88,
+      "price_at_run": 657.3,
       "date_activated": "2026-05-17",
       "time_activated_utc": "20:00",
       "date_opened": "2026-05-12",
@@ -295,10 +295,10 @@
       "leverage": 3,
       "trading_system": "Braam",
       "track_only": false,
-      "status": "PENDING",
+      "status": "OPEN",
       "price_at_run": 1.442,
-      "date_activated": null,
-      "time_activated_utc": null,
+      "date_activated": "2026-05-22",
+      "time_activated_utc": "11:44",
       "date_opened": "2026-05-22",
       "time_opened_utc": "11:24",
       "conviction": "MEDIUM",
@@ -328,18 +328,6 @@
       "entry_price": 1.37560844,
       "tp1": 1.28904106,
       "sl": 1.40340936,
-      "conviction": "MEDIUM",
-      "track_only": false,
-      "iso": "2026-05-22T11:24:00Z"
-    },
-    {
-      "trade_id": "CAKEUSDT_20260522_CB_001",
-      "coin": "CAKEUSDT",
-      "direction": "Short",
-      "trading_system": "Braam",
-      "entry_price": 1.44469249,
-      "tp1": 1.36033215,
-      "sl": 1.47412829,
       "conviction": "MEDIUM",
       "track_only": false,
       "iso": "2026-05-22T11:24:00Z"
@@ -375,6 +363,16 @@
       "tp1_hit": false,
       "iso": "2026-05-21T14:53:00Z",
       "_iso_ms": 1779375180000
+    },
+    {
+      "trade_id": "CAKEUSDT_20260522_CB_001",
+      "coin": "CAKEUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "entry_price": 1.44469249,
+      "tp1_hit": false,
+      "iso": "2026-05-22T11:44:00Z",
+      "_iso_ms": 1779450240000
     }
   ],
   "recent_closes": [
