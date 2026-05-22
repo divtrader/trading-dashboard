@@ -1,8 +1,8 @@
 {
-  "last_updated_iso": "2026-05-22T18:25:01Z",
+  "last_updated_iso": "2026-05-22T18:45:46Z",
   "mexc_account": {
-    "unrealized_pnl": -29.8021,
-    "equity": 1820.9508,
+    "unrealized_pnl": -59.7478,
+    "equity": 1791.0051,
     "available": 553.0782,
     "position_margin": 398.3574
   },
@@ -43,7 +43,7 @@
       "trading_system": "John",
       "track_only": true,
       "status": "OPEN",
-      "price_at_run": 76882.54,
+      "price_at_run": 76542.98,
       "date_activated": "2026-04-28",
       "time_activated_utc": "12:00",
       "date_opened": "2026-04-28",
@@ -66,7 +66,7 @@
       "trading_system": "John",
       "track_only": true,
       "status": "OPEN",
-      "price_at_run": 658.47,
+      "price_at_run": 654.34,
       "date_activated": "2026-05-17",
       "time_activated_utc": "20:00",
       "date_opened": "2026-05-12",
@@ -259,6 +259,29 @@
       "tp1_hit": false,
       "sl_moved_to_be": false,
       "pnl_tp1_realized_usd": null
+    },
+    {
+      "trade_id": "APTUSDT_20260522_CB_001",
+      "coin": "APTUSDT",
+      "direction": "Short",
+      "entry_price": 0.96511202,
+      "sl": 0.99566557,
+      "tp1": 0.90471275,
+      "tp2": 0.75958856,
+      "capital_usd": 100,
+      "leverage": 3,
+      "trading_system": "Braam",
+      "track_only": false,
+      "status": "PENDING",
+      "price_at_run": 0.964,
+      "date_activated": null,
+      "time_activated_utc": null,
+      "date_opened": "2026-05-22",
+      "time_opened_utc": "18:45",
+      "conviction": "MEDIUM",
+      "tp1_hit": false,
+      "sl_moved_to_be": false,
+      "pnl_tp1_realized_usd": null
     }
   ],
   "recent_signals": [
@@ -273,19 +296,21 @@
       "conviction": "MEDIUM",
       "track_only": false,
       "iso": "2026-05-22T11:24:00Z"
-    }
-  ],
-  "recent_opens": [
+    },
     {
-      "trade_id": "APTUSDT_20260518_CB_001",
+      "trade_id": "APTUSDT_20260522_CB_001",
       "coin": "APTUSDT",
       "direction": "Short",
       "trading_system": "Braam",
-      "entry_price": 0.96050184,
-      "tp1_hit": false,
-      "iso": "2026-05-20T18:34:00Z",
-      "_iso_ms": 1779302040000
-    },
+      "entry_price": 0.96511202,
+      "tp1": 0.90471275,
+      "sl": 0.99566557,
+      "conviction": "MEDIUM",
+      "track_only": false,
+      "iso": "2026-05-22T18:45:00Z"
+    }
+  ],
+  "recent_opens": [
     {
       "trade_id": "DOGEUSDT_20260520_CB_001",
       "coin": "DOGEUSDT",
