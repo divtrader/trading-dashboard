@@ -2872,7 +2872,21 @@ main {
 .edge-row-4 .econ-flag            { font-size: 10px; }
 .edge-row-4 .econ-dot             { width: 7px; height: 7px; }
 
-/* ── Desktop (≥1401px) — prevent trigger rows collapsing on large monitors ── */
+/* ── Desktop (≥1401px) — fit Screen 1 equity curve + Screen 3 in windowed browsers ── */
 @media (min-width: 1401px) {
+  /* Screen 1: reduce large margins so equity curve stays visible */
+  .hero-tile  { padding: 22px 44px; }
+  .hero-value { margin: 8px 0 16px; }
+  .spark-wrap { height: 80px; }
+
+  /* Screen 3: compact sys rows so all 5 trigger rows fit */
+  .systems { gap: 4px; }
+  .sys-row  { padding: 5px 14px 5px 0; }
+  .sys-ring-wrap { width: 36px; height: 36px; }
+  .sys-ring-svg  { width: 36px; height: 36px; }
+  .sys-name { font-size: 15px; }
+  .sys-row .metric .v { font-size: 13px; }
   .triggers-body .paper-bar-row { min-height: 70px; }
+  .activity { padding: 7px 14px; }
+  .ev-row   { margin-bottom: 2px; }
 }
