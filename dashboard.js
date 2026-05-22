@@ -1439,6 +1439,7 @@ function renderSystems() {
   const r = 18, circ = 2 * Math.PI * r;
   const html = systems.map(name => {
     const sysOpen = open.filter(t => t.trading_system === name);
+    const sysPending = state.trades.filter(t => t.status === "PENDING" && t.trading_system === name).length;
     const sysComputed = sysOpen.map(t => computeUnrealized(t));
     const sysUnreal = sysComputed.reduce((s, c) => s + c.usd, 0);
     const sysTp1Banked = sysComputed.reduce((s, c) => s + (c.tp1BankedUsd || 0), 0);
@@ -1469,6 +1470,7 @@ function renderSystems() {
           </div>
         </div>
         <div class="metric"><span class="k">Open</span><span class="v">${sysOpen.length}</span></div>
+        <div class="metric"><span class="k">Pending</span><span class="v">${sysPending}</span></div>
         <div class="metric"><span class="k">Closed</span><span class="v">${closed}</span></div>
         <div class="metric"><span class="k">Unrealized</span><span class="v ${cls(sysUnreal)}">${fmtUsd(sysUnreal)}</span></div>
         <div class="metric"><span class="k">Realized</span><span class="v ${cls(realized)}">${fmtUsd(realized)}</span></div>
