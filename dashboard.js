@@ -1434,7 +1434,7 @@ const SYS_TAG = {
 };
 
 function renderSystems() {
-  const systems = ["John", "Braam", "Mong", "William"];
+  const systems = ["John", "Braam", "Mong"];
   const open = state.trades.filter(t => t.status === "OPEN");
   const r = 18, circ = 2 * Math.PI * r;
   const html = systems.map(name => {
