@@ -1,9 +1,9 @@
 {
-  "last_updated_iso": "2026-05-22T23:54:26Z",
+  "last_updated_iso": "2026-05-23T05:19:12Z",
   "mexc_account": {
-    "unrealized_pnl": -84.0235,
-    "equity": 1766.6647,
-    "available": 553.2724,
+    "unrealized_pnl": -92.0731,
+    "equity": 1758.6364,
+    "available": 553.2937,
     "position_margin": 528.053
   },
   "active_trades": [
@@ -43,7 +43,7 @@
       "trading_system": "John",
       "track_only": true,
       "status": "OPEN",
-      "price_at_run": 650.5,
+      "price_at_run": 649.97,
       "date_activated": "2026-05-17",
       "time_activated_utc": "20:00",
       "date_opened": "2026-05-12",
@@ -150,7 +150,7 @@
       "coin": "DOGEUSDT",
       "direction": "Short",
       "entry_price": 0.10587577,
-      "sl": 0.10587577,
+      "sl": 0.10523041,
       "tp1": 0.1025,
       "tp2": 0.09281,
       "capital_usd": 100,
@@ -374,6 +374,29 @@
       "tp1_hit": false,
       "sl_moved_to_be": false,
       "pnl_tp1_realized_usd": null
+    },
+    {
+      "trade_id": "ALGOUSDT_20260523_CB_001",
+      "coin": "ALGOUSDT",
+      "direction": "Short",
+      "entry_price": 0.114243,
+      "sl": 0.11887645,
+      "tp1": 0.105,
+      "tp2": 0.09010645,
+      "capital_usd": 100,
+      "leverage": 3,
+      "trading_system": "Braam",
+      "track_only": false,
+      "status": "PENDING",
+      "price_at_run": 0.1114,
+      "date_activated": null,
+      "time_activated_utc": null,
+      "date_opened": "2026-05-23",
+      "time_opened_utc": "05:18",
+      "conviction": "MEDIUM",
+      "tp1_hit": false,
+      "sl_moved_to_be": false,
+      "pnl_tp1_realized_usd": null
     }
   ],
   "recent_signals": [
@@ -472,19 +495,21 @@
       "conviction": "MEDIUM",
       "track_only": false,
       "iso": "2026-05-22T23:53:00Z"
+    },
+    {
+      "trade_id": "ALGOUSDT_20260523_CB_001",
+      "coin": "ALGOUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "entry_price": 0.114243,
+      "tp1": 0.105,
+      "sl": 0.11887645,
+      "conviction": "MEDIUM",
+      "track_only": false,
+      "iso": "2026-05-23T05:18:00Z"
     }
   ],
   "recent_opens": [
-    {
-      "trade_id": "DOGEUSDT_20260520_CB_001",
-      "coin": "DOGEUSDT",
-      "direction": "Short",
-      "trading_system": "Braam",
-      "entry_price": 0.10587577,
-      "tp1_hit": true,
-      "iso": "2026-05-21T04:13:00Z",
-      "_iso_ms": 1779336780000
-    },
     {
       "trade_id": "LINKUSDT_20260521_CB_001",
       "coin": "LINKUSDT",
