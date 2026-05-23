@@ -1417,10 +1417,10 @@ main {
 /* ── pt-row: new proximity trigger row ── */
 .pt-row {
   display: grid;
-  grid-template-columns: 110px 1fr 72px;
+  grid-template-columns: 140px 1fr 72px;
   align-items: center;
   gap: 14px;
-  padding: 9px 20px;
+  padding: 7px 20px;
   border-left: 3px solid transparent;
   border-radius: 8px;
   transition: background 0.2s, border-color 0.2s;
@@ -1433,7 +1433,7 @@ main {
 .pt-info {
   display: flex;
   align-items: center;
-  gap: 9px;
+  gap: 8px;
   min-width: 0;
 }
 .pt-coin {
@@ -1442,19 +1442,23 @@ main {
   letter-spacing: 0.04em;
   color: var(--fg);
   line-height: 1;
+  min-width: 52px;
 }
 .pt-badges {
   display: flex;
-  flex-direction: column;
-  gap: 3px;
+  flex-direction: row;
+  align-items: center;
+  gap: 5px;
 }
 .pt-dir {
-  font-size: 8px;
+  font-size: 9px;
   font-weight: 800;
   letter-spacing: 0.07em;
-  padding: 2px 5px;
+  padding: 2px 6px;
   border-radius: 3px;
-  line-height: 1.2;
+  line-height: 1.4;
+  min-width: 18px;
+  text-align: center;
 }
 .pt-dir.long  { background: rgba(0,201,167,0.15); color: var(--green); }
 .pt-dir.short { background: rgba(255,77,94,0.15);  color: var(--red); }
