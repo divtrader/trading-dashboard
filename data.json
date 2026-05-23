@@ -1,9 +1,9 @@
 {
-  "last_updated_iso": "2026-05-23T15:49:25Z",
+  "last_updated_iso": "2026-05-23T16:12:52Z",
   "mexc_account": {
-    "unrealized_pnl": -93.2215,
-    "equity": 1757.6575,
-    "available": 553.4632,
+    "unrealized_pnl": -92.4076,
+    "equity": 1758.4706,
+    "available": 553.4624,
     "position_margin": 528.053
   },
   "active_trades": [
@@ -284,29 +284,6 @@
       "pnl_tp1_realized_usd": null
     },
     {
-      "trade_id": "ALGOUSDT_20260523_CB_001",
-      "coin": "ALGOUSDT",
-      "direction": "Short",
-      "entry_price": 0.114243,
-      "sl": 0.11887645,
-      "tp1": 0.105,
-      "tp2": 0.09010645,
-      "capital_usd": 100,
-      "leverage": 3,
-      "trading_system": "Braam",
-      "track_only": false,
-      "status": "PENDING",
-      "price_at_run": 0.1114,
-      "date_activated": null,
-      "time_activated_utc": null,
-      "date_opened": "2026-05-23",
-      "time_opened_utc": "05:18",
-      "conviction": "MEDIUM",
-      "tp1_hit": false,
-      "sl_moved_to_be": false,
-      "pnl_tp1_realized_usd": null
-    },
-    {
       "trade_id": "RENDERUSDT_20260523_CB_001",
       "coin": "RENDERUSDT",
       "direction": "Short",
@@ -320,29 +297,6 @@
       "track_only": false,
       "status": "PENDING",
       "price_at_run": 1.779,
-      "date_activated": null,
-      "time_activated_utc": null,
-      "date_opened": "2026-05-23",
-      "time_opened_utc": "08:12",
-      "conviction": "MEDIUM",
-      "tp1_hit": false,
-      "sl_moved_to_be": false,
-      "pnl_tp1_realized_usd": null
-    },
-    {
-      "trade_id": "BNBUSDT_20260523_CB_001",
-      "coin": "BNBUSDT",
-      "direction": "Short",
-      "entry_price": 651.21731747,
-      "sl": 662.35266375,
-      "tp1": 616.66097988,
-      "tp2": 573.86387039,
-      "capital_usd": 100.0,
-      "leverage": 3,
-      "trading_system": "Braam",
-      "track_only": false,
-      "status": "PENDING",
-      "price_at_run": 638.69,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-05-23",
@@ -401,18 +355,6 @@
   ],
   "recent_signals": [
     {
-      "trade_id": "ALGOUSDT_20260523_CB_001",
-      "coin": "ALGOUSDT",
-      "direction": "Short",
-      "trading_system": "Braam",
-      "entry_price": 0.114243,
-      "tp1": 0.105,
-      "sl": 0.11887645,
-      "conviction": "MEDIUM",
-      "track_only": false,
-      "iso": "2026-05-23T05:18:00Z"
-    },
-    {
       "trade_id": "RENDERUSDT_20260523_CB_001",
       "coin": "RENDERUSDT",
       "direction": "Short",
@@ -420,18 +362,6 @@
       "entry_price": 1.89776744,
       "tp1": 1.62308974,
       "sl": 1.98866948,
-      "conviction": "MEDIUM",
-      "track_only": false,
-      "iso": "2026-05-23T08:12:00Z"
-    },
-    {
-      "trade_id": "BNBUSDT_20260523_CB_001",
-      "coin": "BNBUSDT",
-      "direction": "Short",
-      "trading_system": "Braam",
-      "entry_price": 651.21731747,
-      "tp1": 616.66097988,
-      "sl": 662.35266375,
       "conviction": "MEDIUM",
       "track_only": false,
       "iso": "2026-05-23T08:12:00Z"
@@ -1012,6 +942,20 @@
       "trading_system": "Braam",
       "close_reason": "Signal direction flipped to Long (5/8 signals) \u2014 original setup no longer valid",
       "iso": "2026-05-23T14:47:00Z"
+    },
+    {
+      "coin": "ALGOUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "close_reason": "6/8 signals opposing Short for 2 consecutive 4H bars \u2014 conviction has collapsed,",
+      "iso": "2026-05-23T16:12:00Z"
+    },
+    {
+      "coin": "BNBUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "close_reason": "7/8 signals opposing Short for 2 consecutive 4H bars \u2014 conviction has collapsed,",
+      "iso": "2026-05-23T16:12:00Z"
     }
   ],
   "tp1_hits_open": [],
