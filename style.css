@@ -1480,13 +1480,13 @@ main {
   height: 100%;
   border-radius: 3px;
   background: linear-gradient(90deg,
-    rgba(80,100,200,0.45) 0%,
-    rgba(255,152,0,0.85) 100%);
+    rgba(80,100,140,0.35) 0%,
+    rgba(0,201,167,0.9) 100%);
   transition: width 0.6s cubic-bezier(0.25,0.8,0.25,1);
 }
 .pt-in-zone .pt-fill {
-  background: var(--orange);
-  box-shadow: 0 0 10px rgba(255,152,0,0.6);
+  background: var(--green);
+  box-shadow: 0 0 10px rgba(0,201,167,0.7);
 }
 .pt-axis {
   display: flex;
