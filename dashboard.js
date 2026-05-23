@@ -715,28 +715,41 @@ function renderMexcPositions(positions) {
     const dirCls = isLong ? "long" : "short";
     const pnlCls = cls(p.unrealized_pnl);
 
-    // Use the actual SL order if MEXC has one attached; otherwise liquidation.
-    const slPrice = (p.sl != null && p.sl > 0) ? p.sl : p.liq;
-    const slIsLiq = (p.sl == null || p.sl <= 0);
-    // Right edge = actual TP order if set; otherwise mirror the SL distance.
-    const rightPrice = (p.tp != null && p.tp > 0)
-      ? p.tp
+    // Support legacy single p.tp + new p.tp1/p.tp2; same for SL
+    const tp1Price = (p.tp1 != null && p.tp1 > 0) ? p.tp1 : ((p.tp != null && p.tp > 0) ? p.tp : null);
+    const tp2Price = (p.tp2 != null && p.tp2 > 0) ? p.tp2 : null;
+    const sl1Price = (p.sl  != null && p.sl  > 0) ? p.sl  : null;
+    const sl2Price = (p.sl2 != null && p.sl2 > 0) ? p.sl2 : null;
+
+    // Left edge = worst SL (furthest from entry). Right edge = furthest TP.
+    const slPrice = sl1Price ?? p.liq;
+    const slIsLiq = !sl1Price;
+    const furthestTp = tp2Price ?? tp1Price;
+    const rightPrice = furthestTp != null
+      ? furthestTp
       : (isLong ? p.entry + Math.abs(p.entry - slPrice)
                 : p.entry - Math.abs(p.entry - slPrice));
 
-    // Scale: SL at 0%, TP (or symmetric fallback) at 100%, entry/mark in between.
     const posOf = price => {
       const v = (price - slPrice) / (rightPrice - slPrice);
       return Math.max(0, Math.min(1, v)) * 100;
     };
 
-    const slPct = posOf(slPrice);            // = 0
-    const ePct  = posOf(p.entry);
-    const mPct  = posOf(p.mark);
-    const tpPct = (p.tp != null && p.tp > 0) ? posOf(p.tp) : null;   // = 100 when set
+    const slPct  = posOf(slPrice);
+    const sl2Pct = sl2Price != null ? posOf(sl2Price) : null;
+    const ePct   = posOf(p.entry);
+    const mPct   = posOf(p.mark);
+    const tp1Pct = tp1Price != null ? posOf(tp1Price) : null;
+    const tp2Pct = tp2Price != null ? posOf(tp2Price) : null;
     const liveColor = p.unrealized_pnl >= 0 ? cssVar("--green") : cssVar("--red");
 
-    const titleAttr = `Entry ${p.entry} · Mark ${p.mark} · SL ${p.sl ?? "(liq " + p.liq + ")"}${p.tp ? " · TP " + p.tp : ""}`;
+    const titleAttr = [
+      `Entry ${p.entry}`, `Mark ${p.mark}`,
+      sl1Price  ? `SL  ${sl1Price}`  : `Liq ${p.liq}`,
+      sl2Price  ? `SL2 ${sl2Price}`  : null,
+      tp1Price  ? `TP1 ${tp1Price}`  : null,
+      tp2Price  ? `TP2 ${tp2Price}`  : null,
+    ].filter(Boolean).join(" · ");
 
     return `
       <div class="mexc-pos-row" data-pos-key="${p.coin}_${p.direction}">
@@ -747,8 +760,10 @@ function renderMexcPositions(positions) {
         <div class="mexc-pos-bar" title="${titleAttr}">
           <div class="mexc-pos-track"></div>
           <div class="mexc-pos-marker sl${slIsLiq ? " liq-fallback" : ""}" style="left:${slPct.toFixed(1)}%"></div>
+          ${sl2Pct !== null ? `<div class="mexc-pos-marker sl2" style="left:${sl2Pct.toFixed(1)}%"></div>` : ""}
           <div class="mexc-pos-marker entry" style="left:${ePct.toFixed(1)}%"></div>
-          ${tpPct !== null ? `<div class="mexc-pos-marker tp1" style="left:${tpPct.toFixed(1)}%"></div>` : ""}
+          ${tp1Pct !== null ? `<div class="mexc-pos-marker tp1" style="left:${tp1Pct.toFixed(1)}%"></div>` : ""}
+          ${tp2Pct !== null ? `<div class="mexc-pos-marker tp2" style="left:${tp2Pct.toFixed(1)}%"></div>` : ""}
           <div class="mexc-pos-dot" style="left:${mPct.toFixed(1)}%;background:${liveColor};box-shadow:0 0 8px ${liveColor}"></div>
         </div>
         <div class="mexc-pos-pnl ${pnlCls}">${fmtUsd(p.unrealized_pnl)}</div>
