@@ -572,10 +572,24 @@ function computeUnrealized(t) {
   const dir = t.direction === "Long" ? 1 : -1;
   const pricePct = ((live - t.entry_price) / t.entry_price) * 100 * dir;
   const leveragedPct = pricePct * (t.leverage || 1);
-  // When TP1 is hit, 80% was already closed — only 20% of the position remains open
-  const remainingFraction = (t.tp1_hit && t.pnl_tp1_realized_usd != null) ? 0.2 : 1.0;
-  const usd = (t.capital_usd || 100) * remainingFraction * (leveragedPct / 100);
-  const tp1BankedUsd = (t.tp1_hit && t.pnl_tp1_realized_usd != null) ? (t.pnl_tp1_realized_usd || 0) : 0;
+  const cap = t.capital_usd || 100;
+
+  const tp1WasHit = !!t.tp1_hit;
+  // After TP1 hit, 80% of position is closed — only 20% remains live
+  const remainingFraction = tp1WasHit ? 0.2 : 1.0;
+  const usd = cap * remainingFraction * (leveragedPct / 100);
+
+  let tp1BankedUsd = 0;
+  if (tp1WasHit) {
+    if (t.pnl_tp1_realized_usd != null) {
+      tp1BankedUsd = t.pnl_tp1_realized_usd || 0;
+    } else if (t.tp1 && t.entry_price) {
+      // Backend hasn't written pnl yet — estimate from TP1 price
+      const tp1PricePct = ((t.tp1 - t.entry_price) / t.entry_price) * 100 * dir;
+      tp1BankedUsd = cap * 0.8 * (tp1PricePct * (t.leverage || 1) / 100);
+    }
+  }
+
   return { live, pricePct, leveragedPct, usd, tp1BankedUsd };
 }
 
@@ -868,9 +882,9 @@ function renderPaperBars(enrichedOpen) {
 
     const liveColor = lPct < 33 ? cssVar("--red") : lPct > 66 ? cssVar("--green") : cssVar("--orange");
 
-    const pct = t.leveragedPct ?? 0;
-    // For tp1_hit trades: show total blended P&L (banked TP1 portion + remaining 20% live)
+    // For tp1_hit trades: blended % = total P&L / capital (not raw price move)
     const usd = (t.tp1BankedUsd || 0) + (t.usd ?? 0);
+    const pct = tp1Hit ? (usd / (t.capital_usd || 100) * 100) : (t.leveragedPct ?? 0);
     const pctCls = cls(usd);
     // Breakdown line: TP1-hit shows banked + live; non-TP1 shows live only (same format for consistency)
     const liveUsd = t.usd ?? 0;
