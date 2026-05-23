@@ -1,8 +1,8 @@
 {
-  "last_updated_iso": "2026-05-23T14:13:47Z",
+  "last_updated_iso": "2026-05-23T15:49:25Z",
   "mexc_account": {
-    "unrealized_pnl": -105.6589,
-    "equity": 1745.2201,
+    "unrealized_pnl": -93.2215,
+    "equity": 1757.6575,
     "available": 553.4632,
     "position_margin": 528.053
   },
@@ -205,29 +205,6 @@
       "track_only": false,
       "status": "PENDING",
       "price_at_run": 3.466,
-      "date_activated": null,
-      "time_activated_utc": null,
-      "date_opened": "2026-05-22",
-      "time_opened_utc": "19:31",
-      "conviction": "MEDIUM",
-      "tp1_hit": false,
-      "sl_moved_to_be": false,
-      "pnl_tp1_realized_usd": null
-    },
-    {
-      "trade_id": "TONUSDT_20260522_CB_001",
-      "coin": "TONUSDT",
-      "direction": "Short",
-      "entry_price": 2.01063815,
-      "sl": 2.10520169,
-      "tp1": 1.43068861,
-      "tp2": 1.04650391,
-      "capital_usd": 100,
-      "leverage": 3,
-      "trading_system": "Braam",
-      "track_only": false,
-      "status": "PENDING",
-      "price_at_run": 1.898,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-05-22",
@@ -485,16 +462,6 @@
     }
   ],
   "recent_opens": [
-    {
-      "trade_id": "LINKUSDT_20260521_CB_001",
-      "coin": "LINKUSDT",
-      "direction": "Short",
-      "trading_system": "Braam",
-      "entry_price": 9.63607492,
-      "tp1_hit": false,
-      "iso": "2026-05-21T14:53:00Z",
-      "_iso_ms": 1779375180000
-    },
     {
       "trade_id": "CAKEUSDT_20260522_CB_001",
       "coin": "CAKEUSDT",
@@ -1038,7 +1005,15 @@
       "close_iso": "2026-05-23T04:00:00Z"
     }
   ],
-  "recent_cancels": [],
+  "recent_cancels": [
+    {
+      "coin": "TONUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "close_reason": "Signal direction flipped to Long (5/8 signals) \u2014 original setup no longer valid",
+      "iso": "2026-05-23T14:47:00Z"
+    }
+  ],
   "tp1_hits_open": [],
   "stats": {
     "realized_pnl_usd": 150.53,
