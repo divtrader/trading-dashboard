@@ -1,8 +1,8 @@
 {
-  "last_updated_iso": "2026-05-23T17:21:15Z",
+  "last_updated_iso": "2026-05-23T18:22:23Z",
   "mexc_account": {
-    "unrealized_pnl": -91.1188,
-    "equity": 1759.7594,
+    "unrealized_pnl": -72.6836,
+    "equity": 1778.1946,
     "available": 553.4624,
     "position_margin": 528.053
   },
@@ -134,10 +134,10 @@
       "leverage": 3,
       "trading_system": "Braam",
       "track_only": false,
-      "status": "PENDING",
+      "status": "OPEN",
       "price_at_run": 0.964,
-      "date_activated": null,
-      "time_activated_utc": null,
+      "date_activated": "2026-05-23",
+      "time_activated_utc": "18:21",
       "date_opened": "2026-05-22",
       "time_opened_utc": "18:45",
       "conviction": "MEDIUM",
@@ -374,6 +374,29 @@
       "tp1_hit": false,
       "sl_moved_to_be": false,
       "pnl_tp1_realized_usd": null
+    },
+    {
+      "trade_id": "TONUSDT_20260523_CB_001",
+      "coin": "TONUSDT",
+      "direction": "Short",
+      "entry_price": 1.91784765,
+      "sl": 2.01783067,
+      "tp1": 1.44648944,
+      "tp2": 0.99615692,
+      "capital_usd": 100.0,
+      "leverage": 3,
+      "trading_system": "Braam",
+      "track_only": false,
+      "status": "PENDING",
+      "price_at_run": 1.804,
+      "date_activated": null,
+      "time_activated_utc": null,
+      "date_opened": "2026-05-23",
+      "time_opened_utc": "18:21",
+      "conviction": "MEDIUM",
+      "tp1_hit": false,
+      "sl_moved_to_be": false,
+      "pnl_tp1_realized_usd": null
     }
   ],
   "recent_signals": [
@@ -412,6 +435,18 @@
       "conviction": "MEDIUM",
       "track_only": false,
       "iso": "2026-05-23T17:20:00Z"
+    },
+    {
+      "trade_id": "TONUSDT_20260523_CB_001",
+      "coin": "TONUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "entry_price": 1.91784765,
+      "tp1": 1.44648944,
+      "sl": 2.01783067,
+      "conviction": "MEDIUM",
+      "track_only": false,
+      "iso": "2026-05-23T18:21:00Z"
     }
   ],
   "recent_opens": [
@@ -444,6 +479,16 @@
       "tp1_hit": false,
       "iso": "2026-05-23T17:20:00Z",
       "_iso_ms": 1779556800000
+    },
+    {
+      "trade_id": "APTUSDT_20260522_CB_001",
+      "coin": "APTUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "entry_price": 0.96511202,
+      "tp1_hit": false,
+      "iso": "2026-05-23T18:21:00Z",
+      "_iso_ms": 1779560460000
     }
   ],
   "recent_closes": [
