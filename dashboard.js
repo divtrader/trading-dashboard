@@ -1342,55 +1342,32 @@ function renderPendingTriggers() {
     const isLong = t.direction === "Long";
     const dirCls = isLong ? "long" : "short";
     const coin = (t.coin || "").replace("USDT", "");
-    const sl = t.sl, tp1 = t.tp1, tp2 = t.tp2;
-    const hasTP2 = !!(tp2 && tp2 !== tp1);
-    const furthest = hasTP2 ? (isLong ? Math.max(tp1, tp2) : Math.min(tp1, tp2)) : tp1;
-    const span = isLong ? (furthest - sl) : (sl - furthest);
-    const posOf = p => Math.max(0, Math.min(1, isLong ? (p - sl) / span : (sl - p) / span)) * 100;
 
-    const slPct = 0;
-    const ePct  = posOf(t.entry_price);
-    const lPct  = posOf(t.live);
-    const t1Pct = posOf(tp1);
-    const t2Pct = hasTP2 ? posOf(tp2) : null;
-
-    const liveColor = t.inZone ? cssVar("--orange") : cssVar("--muted");
-    const distLabel = t.inZone ? "IN ZONE" : `${t.distPct.toFixed(1)}% away`;
-    const distCls   = t.inZone ? "pos" : "muted-val";
+    // proximity: 0% = far, 100% = at entry zone edge
+    const MAX_DIST = 6;
+    const proximity = t.inZone ? 100 : Math.max(0, 100 - (t.distPct / MAX_DIST) * 100);
+    const distLabel = t.inZone ? "IN ZONE" : `${t.distPct.toFixed(1)}%`;
 
     return `
-      <div class="paper-bar-row ${dirCls}${t.inZone ? " trig-in-zone" : ""}" data-trade-id="${t.trade_id}" title="${t.trade_id}">
-        <div class="pb-head">
-          <div class="pb-coin-row">
-            <span class="pb-coin">${coin}</span>
-            <span class="pb-tid-inline">${t.trade_id || ""}</span>
-          </div>
-          <div class="pb-meta">
-            <span class="pb-dir ${dirCls}">${isLong ? "▲ LONG" : "▼ SHORT"}</span>
-            <span class="pb-sys">${t.trading_system || ""}</span>
+      <div class="pt-row ${dirCls}${t.inZone ? " pt-in-zone" : ""}" data-trade-id="${t.trade_id}" title="${t.trade_id}">
+        <div class="pt-info">
+          <span class="pt-coin">${coin}</span>
+          <div class="pt-badges">
+            <span class="pt-dir ${dirCls}">${isLong ? "▲ L" : "▼ S"}</span>
+            <span class="pt-sys">${t.trading_system || ""}</span>
           </div>
         </div>
-        <div class="pb-bar">
-          <div class="pb-track"></div>
-          <span class="pb-flag sl"    style="left:${slPct}%">SL</span>
-          <span class="pb-flag entry" style="left:${ePct.toFixed(1)}%">ENTRY</span>
-          <span class="pb-flag tp1"   style="left:${t1Pct.toFixed(1)}%">TP1</span>
-          ${t2Pct !== null ? `<span class="pb-flag tp2" style="left:${t2Pct.toFixed(1)}%">TP2</span>` : ""}
-          <div class="pb-marker sl"    style="left:${slPct}%"></div>
-          <div class="pb-marker entry" style="left:${ePct.toFixed(1)}%"></div>
-          <div class="pb-marker tp1"   style="left:${t1Pct.toFixed(1)}%"></div>
-          ${t2Pct !== null ? `<div class="pb-marker tp2" style="left:${t2Pct.toFixed(1)}%"></div>` : ""}
-          <div class="pb-dot" style="left:${lPct.toFixed(1)}%;background:${liveColor};box-shadow:0 0 12px ${liveColor},0 0 4px ${liveColor}"></div>
-          <div class="pb-prices">
-            <span class="pb-price-val sl"    style="left:${slPct}%">${fmtPrice(sl)}</span>
-            <span class="pb-price-val entry" style="left:${ePct.toFixed(1)}%">${fmtPrice(t.entry_price)}</span>
-            <span class="pb-price-val tp1"   style="left:${t1Pct.toFixed(1)}%">${fmtPrice(tp1)}</span>
-            ${t2Pct !== null ? `<span class="pb-price-val tp2" style="left:${t2Pct.toFixed(1)}%">${fmtPrice(tp2)}</span>` : ""}
+        <div class="pt-approach">
+          <div class="pt-track">
+            <div class="pt-fill" style="width:${proximity.toFixed(1)}%"></div>
+          </div>
+          <div class="pt-axis">
+            <span>FAR</span><span>ENTRY</span>
           </div>
         </div>
-        <div class="pb-pnl">
-          <div class="pb-pnl-pct ${distCls}">${distLabel}</div>
-          <div class="pb-pnl-usd">${fmtPrice(t.live)}</div>
+        <div class="pt-stat">
+          <span class="pt-pct${t.inZone ? " in-zone" : ""}">${distLabel}</span>
+          <span class="pt-price">${fmtPrice(t.live)}</span>
         </div>
       </div>`;
   }).join("");
