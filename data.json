@@ -1,58 +1,12 @@
 {
-  "last_updated_iso": "2026-05-23T08:03:13Z",
+  "last_updated_iso": "2026-05-23T08:13:19Z",
   "mexc_account": {
-    "unrealized_pnl": -140.8425,
-    "equity": 1710.0365,
+    "unrealized_pnl": -132.4958,
+    "equity": 1718.3832,
     "available": 553.4632,
     "position_margin": 528.053
   },
   "active_trades": [
-    {
-      "trade_id": "BTCUSDT_20260427_CWM_001",
-      "coin": "BTCUSDT",
-      "direction": "Long",
-      "entry_price": 75838.91889335,
-      "sl": 74360.05997493,
-      "tp1": 81493,
-      "tp2": 84530,
-      "capital_usd": 100,
-      "leverage": 3,
-      "trading_system": "William",
-      "track_only": true,
-      "status": "OPEN",
-      "price_at_run": 80414.05,
-      "date_activated": "2026-04-28",
-      "time_activated_utc": "12:00",
-      "date_opened": "2026-04-27",
-      "time_opened_utc": "12:40",
-      "conviction": "MEDIUM",
-      "tp1_hit": false,
-      "sl_moved_to_be": false,
-      "pnl_tp1_realized_usd": null
-    },
-    {
-      "trade_id": "BNBUSDT_20260512_CJ_M_001",
-      "coin": "BNBUSDT",
-      "direction": "Long",
-      "entry_price": 644.39689375,
-      "sl": 644.39689375,
-      "tp1": 656.9,
-      "tp2": 687,
-      "capital_usd": 100,
-      "leverage": 3,
-      "trading_system": "John",
-      "track_only": true,
-      "status": "OPEN",
-      "price_at_run": 636.56,
-      "date_activated": "2026-05-17",
-      "time_activated_utc": "20:00",
-      "date_opened": "2026-05-12",
-      "time_opened_utc": "04:56",
-      "conviction": "MEDIUM",
-      "tp1_hit": true,
-      "sl_moved_to_be": true,
-      "pnl_tp1_realized_usd": 4.66
-    },
     {
       "trade_id": "ADAUSDT_20260515_CB_001",
       "coin": "ADAUSDT",
@@ -374,6 +328,52 @@
       "tp1_hit": false,
       "sl_moved_to_be": false,
       "pnl_tp1_realized_usd": null
+    },
+    {
+      "trade_id": "RENDERUSDT_20260523_CB_001",
+      "coin": "RENDERUSDT",
+      "direction": "Short",
+      "entry_price": 1.89776744,
+      "sl": 1.98866948,
+      "tp1": 1.62308974,
+      "tp2": 1.32505554,
+      "capital_usd": 100.0,
+      "leverage": 3,
+      "trading_system": "Braam",
+      "track_only": false,
+      "status": "PENDING",
+      "price_at_run": 1.779,
+      "date_activated": null,
+      "time_activated_utc": null,
+      "date_opened": "2026-05-23",
+      "time_opened_utc": "08:12",
+      "conviction": "MEDIUM",
+      "tp1_hit": false,
+      "sl_moved_to_be": false,
+      "pnl_tp1_realized_usd": null
+    },
+    {
+      "trade_id": "BNBUSDT_20260523_CB_001",
+      "coin": "BNBUSDT",
+      "direction": "Short",
+      "entry_price": 651.21731747,
+      "sl": 662.35266375,
+      "tp1": 616.66097988,
+      "tp2": 573.86387039,
+      "capital_usd": 100.0,
+      "leverage": 3,
+      "trading_system": "Braam",
+      "track_only": false,
+      "status": "PENDING",
+      "price_at_run": 638.69,
+      "date_activated": null,
+      "time_activated_utc": null,
+      "date_opened": "2026-05-23",
+      "time_opened_utc": "08:12",
+      "conviction": "MEDIUM",
+      "tp1_hit": false,
+      "sl_moved_to_be": false,
+      "pnl_tp1_realized_usd": null
     }
   ],
   "recent_signals": [
@@ -400,6 +400,30 @@
       "conviction": "MEDIUM",
       "track_only": false,
       "iso": "2026-05-23T05:18:00Z"
+    },
+    {
+      "trade_id": "RENDERUSDT_20260523_CB_001",
+      "coin": "RENDERUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "entry_price": 1.89776744,
+      "tp1": 1.62308974,
+      "sl": 1.98866948,
+      "conviction": "MEDIUM",
+      "track_only": false,
+      "iso": "2026-05-23T08:12:00Z"
+    },
+    {
+      "trade_id": "BNBUSDT_20260523_CB_001",
+      "coin": "BNBUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "entry_price": 651.21731747,
+      "tp1": 616.66097988,
+      "sl": 662.35266375,
+      "conviction": "MEDIUM",
+      "track_only": false,
+      "iso": "2026-05-23T08:12:00Z"
     }
   ],
   "recent_opens": [
@@ -435,32 +459,6 @@
     }
   ],
   "recent_closes": [
-    {
-      "trade_id": "XRPUSDT_20260508_CB_001",
-      "coin": "XRPUSDT",
-      "direction": "Short",
-      "status": "STOPPED",
-      "pnl_usd": -5.31,
-      "close_reason": "SL hit",
-      "date_closed": "2026-05-09",
-      "time_closed_utc": "00:00",
-      "trading_system": "Braam",
-      "won": false,
-      "close_iso": "2026-05-09T00:00:00Z"
-    },
-    {
-      "trade_id": "UNIUSDT_20260501_CW_M_001",
-      "coin": "UNIUSDT",
-      "direction": "Long",
-      "status": "TP2_HIT",
-      "pnl_usd": 39.48,
-      "close_reason": "TP2 hit",
-      "date_closed": "2026-05-10",
-      "time_closed_utc": "04:00",
-      "trading_system": "William",
-      "won": true,
-      "close_iso": "2026-05-10T04:00:00Z"
-    },
     {
       "trade_id": "ADAUSDT_20260429_CWM_001",
       "coin": "ADAUSDT",
@@ -813,6 +811,19 @@
       "close_iso": "2026-05-16T08:00:00Z"
     },
     {
+      "trade_id": "BNBUSDT_20260512_CJ_M_001",
+      "coin": "BNBUSDT",
+      "direction": "Long",
+      "status": "STOPPED_AFTER_TP1",
+      "pnl_usd": 4.66,
+      "close_reason": "SL hit",
+      "date_closed": "2026-05-17",
+      "time_closed_utc": "20:00",
+      "trading_system": "John",
+      "won": true,
+      "close_iso": "2026-05-17T20:00:00Z"
+    },
+    {
       "trade_id": "XLMUSDT_20260514_CJ_M_002",
       "coin": "XLMUSDT",
       "direction": "Long",
@@ -943,6 +954,19 @@
       "close_iso": "2026-05-22T16:00:00Z"
     },
     {
+      "trade_id": "BTCUSDT_20260427_CWM_001",
+      "coin": "BTCUSDT",
+      "direction": "Long",
+      "status": "STOPPED",
+      "pnl_usd": -5.85,
+      "close_reason": "SL hit (manual close \u2014 William decommissioned)",
+      "date_closed": "2026-05-23",
+      "time_closed_utc": "04:00",
+      "trading_system": "William",
+      "won": false,
+      "close_iso": "2026-05-23T04:00:00Z"
+    },
+    {
       "trade_id": "DOGEUSDT_20260520_CB_001",
       "coin": "DOGEUSDT",
       "direction": "Short",
@@ -957,28 +981,21 @@
     }
   ],
   "recent_cancels": [],
-  "tp1_hits_open": [
-    {
-      "coin": "BNBUSDT",
-      "direction": "Long",
-      "trading_system": "John",
-      "entry_price": 644.39689375
-    }
-  ],
+  "tp1_hits_open": [],
   "stats": {
-    "realized_pnl_usd": 151.72,
-    "win_rate_pct": 36.7,
-    "closed_count": 90,
+    "realized_pnl_usd": 150.53,
+    "win_rate_pct": 37.0,
+    "closed_count": 92,
     "per_system": {
       "John": {
-        "realized_pnl_usd": 117.2,
-        "win_rate_pct": 35.7,
-        "closed_count": 56
+        "realized_pnl_usd": 121.86,
+        "win_rate_pct": 36.8,
+        "closed_count": 57
       },
       "William": {
-        "realized_pnl_usd": 51.09,
-        "win_rate_pct": 40.9,
-        "closed_count": 22
+        "realized_pnl_usd": 45.24,
+        "win_rate_pct": 39.1,
+        "closed_count": 23
       },
       "Braam": {
         "realized_pnl_usd": -16.57,
