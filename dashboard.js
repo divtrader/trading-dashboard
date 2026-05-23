@@ -1353,7 +1353,7 @@ function renderPendingTriggers() {
         <div class="pt-info">
           <span class="pt-coin">${coin}</span>
           <div class="pt-badges">
-            <span class="pt-dir ${dirCls}">${isLong ? "▲ L" : "▼ S"}</span>
+            <span class="pt-dir ${dirCls}">${isLong ? "L" : "S"}</span>
             <span class="pt-sys">${t.trading_system || ""}</span>
           </div>
         </div>
