@@ -265,7 +265,7 @@ function animateValue(el, toVal, formatter) {
   const prev = _animTargets.get(el) ?? toVal;
   _animTargets.set(el, toVal);
   const start = performance.now();
-  const dur = 650;
+  const dur = 2000;
   const from = parseFloat(el.dataset.rawVal ?? toVal);
   el.dataset.rawVal = toVal;
   if (Math.abs(toVal - from) < 0.005) { el.textContent = formatter(toVal); return; }
