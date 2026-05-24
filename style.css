@@ -1396,6 +1396,117 @@ main {
 .sys-row .metric .k { font-size: 9px; color: var(--muted); text-transform: uppercase; letter-spacing: 1.2px; font-weight: 700; }
 .sys-row .metric .v { font-size: 16px; font-weight: 700; margin-top: 1px; letter-spacing: -0.3px; }
 
+/* ══════════════════════════════════════════════
+   Screen 0 — P&L Overview (iPhone-first)
+   ══════════════════════════════════════════════ */
+#screen-0 { overflow-y: auto; }
+
+.s0-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 16px;
+  min-height: 100%;
+  box-sizing: border-box;
+}
+
+.s0-card {
+  flex: 1;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 24px 22px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.s0-paper-card { border-left: 3px solid rgba(0,201,167,0.5); }
+.s0-mexc-card  { border-left: 3px solid rgba(255,152,0,0.5); }
+
+.s0-card-label {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 10px;
+}
+
+.s0-big {
+  font-size: 52px;
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -1px;
+  font-variant-numeric: tabular-nums;
+}
+
+.s0-return {
+  font-size: 13px;
+  margin-top: 6px;
+  letter-spacing: 0.02em;
+}
+
+.s0-divider {
+  height: 1px;
+  background: var(--border);
+  margin: 16px 0;
+}
+
+.s0-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px 12px;
+}
+.s0-grid-3 { grid-template-columns: 1fr 1fr 1fr; }
+
+.s0-stat { display: flex; flex-direction: column; gap: 4px; }
+.s0-k {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.s0-v {
+  font-size: 20px;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+  color: var(--fg);
+}
+.s0-v.warn { color: var(--orange); }
+
+/* MEXC positions list */
+.s0-positions { margin-top: 16px; display: flex; flex-direction: column; gap: 8px; }
+.s0-pos-empty { font-size: 12px; color: var(--muted); text-align: center; padding: 8px 0; }
+.s0-pos-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 14px;
+  background: rgba(255,255,255,0.04);
+  border-radius: 10px;
+}
+.s0-pos-left  { display: flex; align-items: center; gap: 8px; }
+.s0-pos-right { display: flex; flex-direction: column; align-items: flex-end; gap: 2px; }
+.s0-pos-coin  { font-size: 15px; font-weight: 800; letter-spacing: 0.03em; }
+.s0-pos-dir {
+  font-size: 9px; font-weight: 800;
+  padding: 2px 6px; border-radius: 4px;
+  letter-spacing: 0.05em;
+}
+.s0-pos-dir.long  { background: rgba(0,201,167,0.15); color: var(--green); }
+.s0-pos-dir.short { background: rgba(255,77,94,0.15);  color: var(--red); }
+.s0-pos-pnl  { font-size: 15px; font-weight: 800; }
+.s0-pos-px   { font-size: 10px; color: var(--muted); }
+
+/* Desktop: side-by-side cards */
+@media (min-width: 700px) {
+  .s0-wrap { flex-direction: row; padding: 20px; }
+  .s0-big  { font-size: 56px; }
+  .s0-v    { font-size: 22px; }
+}
+
 /* ── Pending triggers (screen 3) — proximity design ── */
 .triggers {
   flex: 1;
