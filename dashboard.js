@@ -699,8 +699,8 @@ function renderMexcCard() {
   const pnl = m.unrealized_pnl;
   pnlEl.className = "value hero-value " + cls(pnl);
   animateValue(pnlEl, pnl, fmtUsd);
-  if (eqEl) eqEl.textContent = "$" + m.equity.toLocaleString("en-US", {maximumFractionDigits: 0});
-  if (avEl) avEl.textContent = "$" + m.available.toLocaleString("en-US", {maximumFractionDigits: 0});
+  if (eqEl) animateValue(eqEl, m.equity,    v => "$" + Math.round(v).toLocaleString("en-US"));
+  if (avEl) animateValue(avEl, m.available, v => "$" + Math.round(v).toLocaleString("en-US"));
   renderMexcPositions(m.positions || []);
 }
 
@@ -1046,16 +1046,18 @@ function renderHero(enrichedOpen) {
   const uEl = $("hero-unrealized");
   const cEl = $("hero-capital");
   if (rEl) {
-    rEl.textContent = fmtUsd(realized);
     rEl.className = "hero-stat-val " + cls(realized);
+    animateValue(rEl, realized, fmtUsd);
   }
   if (uEl) {
-    uEl.textContent = enriched.length ? fmtUsd(unrealized) : "—";
     uEl.className = "hero-stat-val " + (enriched.length ? cls(unrealized) : "");
+    if (enriched.length) animateValue(uEl, unrealized, fmtUsd);
+    else uEl.textContent = "—";
   }
   if (cEl) {
-    cEl.textContent = enriched.length ? "$" + totalCap.toFixed(0) : "—";
     cEl.className = "hero-stat-val";
+    if (enriched.length) animateValue(cEl, totalCap, v => "$" + v.toFixed(0));
+    else cEl.textContent = "—";
   }
   const pctEl2 = $("hero-pct");
   if (pctEl2) {
