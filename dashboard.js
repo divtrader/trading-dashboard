@@ -1560,7 +1560,7 @@ function renderSystems() {
 // Screen navigation (swipeable — no auto-rotation)
 let screenIdx = 0;
 let screenTransitioning = false;
-const screens = ["screen-0", "screen-1", "screen-2", "screen-3", "screen-4"];
+const screens = ["screen-0", "screen-2", "screen-3", "screen-4"];
 
 function goToScreen(targetIdx, dir) {
   targetIdx = Math.max(0, Math.min(screens.length - 1, targetIdx));
