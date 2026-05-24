@@ -9,15 +9,16 @@ const MEXC_URL = "https://mexc-proxy.braamdeclerk.workers.dev";
 
 // -- Colours --
 const C = {
-  bg:     new Color("#0d1117"),
-  panel:  new Color("#161b22"),
-  panel2: new Color("#1c2128"),
-  green:  new Color("#00c9a7"),
-  red:    new Color("#ff4d5e"),
-  orange: new Color("#ff9800"),
-  muted:  new Color("#8892a4"),
-  fg:     new Color("#e8eaf0"),
-  border: new Color("#ffffff", 0.07),
+  bg:      new Color("#0d1117"),
+  panel:   new Color("#161b22"),
+  panel2:  new Color("#1c2128"),
+  green:   new Color("#00c9a7"),
+  red:     new Color("#ff4d5e"),
+  orange:  new Color("#ff9800"),
+  muted:   new Color("#8892a4"),
+  fg:      new Color("#e8eaf0"),
+  border:  new Color("#ffffff", 0.07),
+  dimFg:   new Color("#c8cdd8"),
 };
 
 // -- Helpers
@@ -25,11 +26,22 @@ function fmtUsd(v) {
   if (v == null || isNaN(v)) return "--";
   const abs = Math.abs(v);
   const sign = v >= 0 ? "+" : "-";
+  if (abs >= 1000) return sign + "$" + (abs / 1000).toFixed(1) + "k";
+  return sign + "$" + abs.toFixed(0);
+}
+function fmtUsdFull(v) {
+  if (v == null || isNaN(v)) return "--";
+  const abs = Math.abs(v);
+  const sign = v >= 0 ? "+" : "-";
   if (abs >= 1000) return sign + "$" + (abs / 1000).toFixed(2) + "k";
   return sign + "$" + abs.toFixed(2);
 }
 function colorFor(v) { return v > 0 ? C.green : v < 0 ? C.red : C.muted; }
-function clamp(v, lo, hi) { return Math.max(lo, Math.min(hi, v)); }
+function fmtTime(d) {
+  const h = d.getHours().toString().padStart(2, "0");
+  const m = d.getMinutes().toString().padStart(2, "0");
+  return h + ":" + m;
+}
 
 // -- Fetch
 async function loadData() {
@@ -45,6 +57,7 @@ async function loadData() {
 }
 
 // Compute paper P&L from data.json active_trades
+// Note: uses price_at_run (last run), not live prices -- shown as "~"
 function computePaper(dash) {
   const stats  = dash.stats         || {};
   const trades = dash.active_trades || [];
@@ -54,7 +67,8 @@ function computePaper(dash) {
     if (t.status !== "OPEN") continue;
     const live = t.price_at_run ?? t.entry_price;
     const dir  = t.direction === "Long" ? 1 : -1;
-    const pct  = ((live - t.entry_price) / t.entry_price) * dir;
+    const ep   = t.entry_price || 0;
+    const pct  = ep ? ((live - ep) / ep) * dir : 0;
     const cap  = t.capital_usd || 100;
     const lev  = t.leverage    || 1;
     const remaining = t.tp1_hit ? 0.2 : 1.0;
@@ -73,7 +87,7 @@ function computePaper(dash) {
 }
 
 // -- Widget builders
-function addLabel(stack, text, size, color, bold) {
+function txt(stack, text, size, color, bold) {
   const el = stack.addText(text);
   el.textColor = color ?? C.fg;
   el.font = bold ? Font.boldSystemFont(size) : Font.systemFont(size);
@@ -81,107 +95,142 @@ function addLabel(stack, text, size, color, bold) {
   return el;
 }
 
-function addStat(col, label, value, valColor) {
-  const row = col.addStack();
-  row.layoutVertically();
-  const k = row.addText(label);
-  k.textColor = C.muted;
-  k.font = Font.boldSystemFont(7);
-  const v = row.addText(value);
-  v.textColor = valColor ?? C.fg;
-  v.font = Font.boldSystemFont(12);
-  v.minimumScaleFactor = 0.5;
-  return row;
+function statBlock(col, label, value, valColor) {
+  const b = col.addStack();
+  b.layoutVertically();
+  const lbl = b.addText(label);
+  lbl.textColor = C.muted;
+  lbl.font = Font.boldSystemFont(7);
+  const val = b.addText(value);
+  val.textColor = valColor ?? C.fg;
+  val.font = Font.boldSystemFont(13);
+  val.minimumScaleFactor = 0.5;
+  return b;
 }
 
-function makeCard(parent, flex) {
+function makeCard(parent, width) {
   const card = parent.addStack();
   card.layoutVertically();
   card.backgroundColor = C.panel;
-  card.cornerRadius = 12;
-  card.setPadding(11, 11, 11, 11);
-  if (flex) card.size = new Size(flex, -1);
+  card.cornerRadius = 14;
+  card.setPadding(12, 13, 12, 13);
+  if (width) card.size = new Size(width, -1);
   return card;
 }
 
 // -- SMALL
 function buildSmall(w, paper, mexc) {
-  w.setPadding(14, 14, 14, 14);
+  w.setPadding(16, 16, 16, 16);
 
-  addLabel(w, "PAPER", 8, C.muted, true);
-  w.addSpacer(2);
-  addLabel(w, fmtUsd(paper.total), 26, colorFor(paper.total), true);
+  txt(w, "PAPER", 8, C.muted, true);
+  w.addSpacer(3);
+  txt(w, fmtUsdFull(paper.total), 28, colorFor(paper.total), true);
 
-  w.addSpacer(10);
+  w.addSpacer(12);
 
-  addLabel(w, "MEXC LIVE", 8, C.muted, true);
-  w.addSpacer(2);
+  txt(w, "MEXC LIVE", 8, C.muted, true);
+  w.addSpacer(3);
   const mexcPnl = mexc?.unrealized_pnl ?? null;
-  addLabel(w, fmtUsd(mexcPnl), 26, colorFor(mexcPnl), true);
+  txt(w, fmtUsd(mexcPnl), 28, colorFor(mexcPnl), true);
 
   w.addSpacer();
-  addLabel(w, "WR " + paper.wr.toFixed(0) + "%  " + paper.openCnt + " open  " + paper.pendCnt + " pending", 9, C.muted, false);
+  const now = new Date();
+  txt(w, fmtTime(now), 9, C.muted, false);
 }
 
 // -- MEDIUM
-function buildMedium(w, paper, mexc) {
-  w.setPadding(12, 12, 12, 12);
+function buildMedium(w, paper, mexc, now) {
+  w.setPadding(13, 13, 13, 13);
 
   const row = w.addStack();
   row.layoutHorizontally();
-  row.spacing = 8;
+  row.spacing = 9;
 
-  // Paper card
+  // ---- Paper card ----
   const left = makeCard(row);
-  addLabel(left, "📄 PAPER", 8, C.muted, true);
+
+  // Header row
+  const lh = left.addStack();
+  lh.layoutHorizontally();
+  txt(lh, "PAPER", 8, C.muted, true);
+  lh.addSpacer();
+  txt(lh, "~est", 7, C.muted, false); // price_at_run, not live
   left.addSpacer(5);
-  addLabel(left, fmtUsd(paper.total), 22, colorFor(paper.total), true);
-  left.addSpacer(6);
 
-  const s1 = left.addStack();
-  s1.layoutHorizontally();
-  s1.spacing = 10;
-  addStat(s1, "REALIZED",   fmtUsd(paper.realized),   colorFor(paper.realized));
-  addStat(s1, "UNREALIZED", fmtUsd(paper.unrealized), colorFor(paper.unrealized));
-  left.addSpacer(4);
+  // Big number
+  txt(left, fmtUsdFull(paper.total), 28, colorFor(paper.total), true);
+  left.addSpacer(7);
 
-  const s2 = left.addStack();
-  s2.layoutHorizontally();
-  s2.spacing = 10;
-  addStat(s2, "WIN RATE", paper.wr.toFixed(1) + "%", paper.wr >= 50 ? C.green : paper.wr >= 30 ? C.orange : C.red);
-  addStat(s2, "OPEN",     String(paper.openCnt),     C.fg);
-  addStat(s2, "PENDING",  String(paper.pendCnt),     C.muted);
+  // Stats row 1: realized / unrealized
+  const sr1 = left.addStack();
+  sr1.layoutHorizontally();
+  sr1.spacing = 12;
+  statBlock(sr1, "REALIZED",   fmtUsd(paper.realized),   colorFor(paper.realized));
+  statBlock(sr1, "UNREALIZED", fmtUsd(paper.unrealized), colorFor(paper.unrealized));
+  left.addSpacer(5);
 
-  // MEXC card
+  // Stats row 2: WR / open / pending
+  const sr2 = left.addStack();
+  sr2.layoutHorizontally();
+  sr2.spacing = 12;
+  statBlock(sr2, "WIN RATE", paper.wr.toFixed(1) + "%",
+    paper.wr >= 50 ? C.green : paper.wr >= 30 ? C.orange : C.red);
+  statBlock(sr2, "OPEN",    String(paper.openCnt),  C.fg);
+  statBlock(sr2, "PENDING", String(paper.pendCnt),  C.muted);
+
+  // ---- MEXC card ----
   const right = makeCard(row);
-  addLabel(right, "⚡ MEXC LIVE", 8, C.muted, true);
-  right.addSpacer(5);
-  const mp = mexc?.unrealized_pnl ?? null;
-  addLabel(right, fmtUsd(mp), 22, colorFor(mp), true);
-  right.addSpacer(6);
 
-  const eq  = mexc?.equity          ?? 0;
-  const av  = mexc?.available        ?? 0;
-  const mg  = mexc?.position_margin  ?? 0;
-  addStat(right, "EQUITY",    "$" + eq.toFixed(0), C.fg);
-  right.addSpacer(4);
-  addStat(right, "AVAILABLE", "$" + av.toFixed(0), C.fg);
-  right.addSpacer(4);
-  addStat(right, "MARGIN",    "$" + mg.toFixed(0), C.muted);
+  // Header
+  txt(right, "MEXC LIVE", 8, C.muted, true);
+  right.addSpacer(5);
+
+  // Big number
+  const mp = mexc?.unrealized_pnl ?? null;
+  txt(right, fmtUsd(mp), 28, colorFor(mp), true);
+  right.addSpacer(7);
+
+  // Equity / available
+  const eq = mexc?.equity          ?? 0;
+  const av = mexc?.available        ?? 0;
+  const mg = mexc?.position_margin  ?? 0;
+  const mr1 = right.addStack();
+  mr1.layoutHorizontally();
+  mr1.spacing = 12;
+  statBlock(mr1, "EQUITY",    "$" + Math.round(eq), C.fg);
+  statBlock(mr1, "AVAILABLE", "$" + Math.round(av), C.fg);
+  right.addSpacer(5);
+
+  // Margin + refresh time
+  const mr2 = right.addStack();
+  mr2.layoutHorizontally();
+  statBlock(mr2, "MARGIN", "$" + Math.round(mg), C.muted);
+  mr2.addSpacer();
+
+  // Timestamp + next refresh
+  const nextT = new Date(now.getTime() + 5 * 60 * 1000);
+  const tsStack = right.addStack();
+  tsStack.layoutVertically();
+  right.addSpacer(5);
+  const ts2 = right.addStack();
+  ts2.layoutHorizontally();
+  ts2.addSpacer();
+  const tsLbl = ts2.addText(fmtTime(now) + " · next " + fmtTime(nextT));
+  tsLbl.textColor = C.muted;
+  tsLbl.font = Font.systemFont(8);
 }
 
 // -- LARGE
-function buildLarge(w, paper, mexc) {
-  buildMedium(w, paper, mexc);
+function buildLarge(w, paper, mexc, now) {
+  buildMedium(w, paper, mexc, now);
 
-  // Show recent closes
   w.addSpacer(10);
-  addLabel(w, "PAPER - RECENT CLOSES", 8, C.muted, true);
+  txt(w, "RECENT CLOSES", 8, C.muted, true);
   w.addSpacer(6);
 
   const closes = (w._dash?.recent_closes || []).slice(0, 5);
   if (!closes.length) {
-    addLabel(w, "No recent closes", 11, C.muted, false);
+    txt(w, "No recent closes", 11, C.muted, false);
   }
   for (const c of closes) {
     const row = w.addStack();
@@ -190,24 +239,26 @@ function buildLarge(w, paper, mexc) {
     row.cornerRadius = 8;
     row.setPadding(6, 10, 6, 10);
     const coin = (c.coin || "").replace("USDT", "");
-    addLabel(row, coin, 12, C.fg, true);
+    txt(row, coin, 12, C.fg, true);
     row.addSpacer(4);
-    addLabel(row, c.direction === "Long" ? "L" : "S", 10, c.direction === "Long" ? C.green : C.red, true);
+    txt(row, c.direction === "Long" ? "L" : "S", 10,
+        c.direction === "Long" ? C.green : C.red, true);
     row.addSpacer();
-    addLabel(row, fmtUsd(c.pnl_usd), 12, colorFor(c.pnl_usd ?? 0), true);
+    txt(row, fmtUsdFull(c.pnl_usd), 12, colorFor(c.pnl_usd ?? 0), true);
     w.addSpacer(4);
   }
 }
 
 // -- MAIN
+const now    = new Date();
 const data   = await loadData();
 const widget = new ListWidget();
 widget.backgroundColor = C.bg;
-widget.refreshAfterDate = new Date(Date.now() + 5 * 60 * 1000); // refresh every 5 min
+widget.refreshAfterDate = new Date(now.getTime() + 5 * 60 * 1000);
 
 if (!data) {
   widget.setPadding(14, 14, 14, 14);
-  const t = widget.addText("⚠️ Could not load data");
+  const t = widget.addText("Could not load data");
   t.textColor = C.muted;
   t.font = Font.systemFont(13);
 } else {
@@ -216,8 +267,8 @@ if (!data) {
   const size  = config.widgetFamily ?? "medium";
 
   if      (size === "small") buildSmall (widget, paper, mexc);
-  else if (size === "large") { widget._dash = data.dash; buildLarge(widget, paper, mexc); }
-  else                       buildMedium(widget, paper, mexc);
+  else if (size === "large") { widget._dash = data.dash; buildLarge(widget, paper, mexc, now); }
+  else                       buildMedium(widget, paper, mexc, now);
 }
 
 Script.setWidget(widget);
