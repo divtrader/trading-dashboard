@@ -1,9 +1,9 @@
 {
-  "last_updated_iso": "2026-05-24T15:50:06Z",
+  "last_updated_iso": "2026-05-24T16:56:39Z",
   "mexc_account": {
-    "unrealized_pnl": -78.1027,
-    "equity": 1772.5228,
-    "available": 553.2098,
+    "unrealized_pnl": -77.2391,
+    "equity": 1773.3666,
+    "available": 553.1899,
     "position_margin": 528.053
   },
   "active_trades": [
@@ -48,29 +48,6 @@
       "time_activated_utc": null,
       "date_opened": "2026-05-16",
       "time_opened_utc": "08:04",
-      "conviction": "MEDIUM",
-      "tp1_hit": false,
-      "sl_moved_to_be": false,
-      "pnl_tp1_realized_usd": null
-    },
-    {
-      "trade_id": "XLMUSDT_20260518_CB_001",
-      "coin": "XLMUSDT",
-      "direction": "Short",
-      "entry_price": 0.15675947,
-      "sl": 0.16192612,
-      "tp1": 0.12811557,
-      "tp2": 0.12374776,
-      "capital_usd": 100,
-      "leverage": 3,
-      "trading_system": "Braam",
-      "track_only": false,
-      "status": "PENDING",
-      "price_at_run": 0.1492,
-      "date_activated": null,
-      "time_activated_utc": null,
-      "date_opened": "2026-05-18",
-      "time_opened_utc": "05:22",
       "conviction": "MEDIUM",
       "tp1_hit": false,
       "sl_moved_to_be": false,
@@ -1024,7 +1001,15 @@
       "close_iso": "2026-05-24T00:00:00Z"
     }
   ],
-  "recent_cancels": [],
+  "recent_cancels": [
+    {
+      "coin": "XLMUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "close_reason": "6/8 signals opposing Short for 2 consecutive 4H bars \u2014 conviction has collapsed,",
+      "iso": "2026-05-24T16:56:00Z"
+    }
+  ],
   "tp1_hits_open": [],
   "stats": {
     "realized_pnl_usd": 115.89,
