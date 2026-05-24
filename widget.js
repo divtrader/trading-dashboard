@@ -43,6 +43,21 @@ function fmtTime(d) {
   return h + ":" + m;
 }
 
+// -- Fetch live Binance prices for a list of symbols
+async function fetchLivePrices(symbols) {
+  if (!symbols.length) return {};
+  try {
+    const encoded = encodeURIComponent(JSON.stringify(symbols));
+    const url = `https://api.binance.com/api/v3/ticker/price?symbols=${encoded}`;
+    const data = await new Request(url).loadJSON();
+    const map = {};
+    for (const item of data) map[item.symbol] = parseFloat(item.price);
+    return map;
+  } catch (e) {
+    return {};
+  }
+}
+
 // -- Fetch
 async function loadData() {
   try {
@@ -50,22 +65,28 @@ async function loadData() {
       new Request(DATA_URL).loadJSON(),
       new Request(MEXC_URL).loadJSON(),
     ]);
-    return { dash, mexc };
+
+    // Fetch live prices for all open paper trades
+    const openTrades = (dash.active_trades || []).filter(t => t.status === "OPEN");
+    const symbols = [...new Set(openTrades.map(t => t.coin).filter(Boolean))];
+    const livePx = await fetchLivePrices(symbols);
+
+    return { dash, mexc, livePx };
   } catch (e) {
     return null;
   }
 }
 
-// Compute paper P&L from data.json active_trades
-// Note: uses price_at_run (last run), not live prices -- shown as "~"
-function computePaper(dash) {
+// Compute paper P&L from data.json active_trades using live Binance prices
+function computePaper(dash, livePx) {
   const stats  = dash.stats         || {};
   const trades = dash.active_trades || [];
 
   let unrealized = 0;
   for (const t of trades) {
     if (t.status !== "OPEN") continue;
-    const live = t.price_at_run ?? t.entry_price;
+    // Use live Binance price, fall back to price_at_run, then entry_price
+    const live = (livePx && livePx[t.coin]) ?? t.price_at_run ?? t.entry_price;
     const dir  = t.direction === "Long" ? 1 : -1;
     const ep   = t.entry_price || 0;
     const pct  = ep ? ((live - ep) / ep) * dir : 0;
@@ -154,7 +175,7 @@ function buildMedium(w, paper, mexc, now) {
   lh.layoutHorizontally();
   txt(lh, "PAPER", 8, C.muted, true);
   lh.addSpacer();
-  txt(lh, "~est", 7, C.muted, false); // price_at_run, not live
+  txt(lh, "LIVE", 7, C.green, false);
   left.addSpacer(5);
 
   // Big number
@@ -259,7 +280,7 @@ if (!data) {
   t.textColor = C.muted;
   t.font = Font.systemFont(13);
 } else {
-  const paper = computePaper(data.dash);
+  const paper = computePaper(data.dash, data.livePx);
   const mexc  = data.mexc?.error ? null : data.mexc;
   const size  = config.widgetFamily ?? "medium";
 
