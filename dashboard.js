@@ -629,6 +629,7 @@ function render() {
   renderActivity();
   renderPendingTriggers();
   renderMexcCard();
+  renderS0();
   renderRecentClosesTile();
 }
 
@@ -962,6 +963,68 @@ function renderPaperBars(enrichedOpen) {
       </div>`;
   }).join("");
   flipReplace(host, newHtml);
+}
+
+// ── Screen 0: P&L overview (iPhone-first) ──
+function renderS0() {
+  // --- Paper ---
+  const enriched = state.trades.filter(t => t.status === "OPEN").map(t => ({ ...t, ...computeUnrealized(t) }));
+  const unrealized = enriched.reduce((s, t) => s + t.usd, 0);
+  const tp1Banked  = enriched.reduce((s, t) => s + (t.tp1BankedUsd || 0), 0);
+  const realized   = (state.stats.realized_pnl_usd ?? 0) + tp1Banked;
+  const total      = realized + unrealized;
+  const totalCap   = enriched.reduce((s, t) => s + (t.capital_usd || 100), 0);
+  const closedCap  = (state.stats.closed_count ?? 0) * 100;
+  const totalDeployed = closedCap + totalCap;
+  const retPct = totalDeployed > 0 ? (total / totalDeployed) * 100 : 0;
+  const wr  = state.stats.win_rate_pct ?? 0;
+  const cl  = state.stats.closed_count ?? 0;
+
+  const s0tot = $("s0-paper-total");
+  if (s0tot) { s0tot.className = "s0-big " + cls(total); animateValue(s0tot, total, fmtUsd); }
+  const s0pct = $("s0-paper-pct");
+  if (s0pct) { s0pct.textContent = (retPct >= 0 ? "+" : "") + retPct.toFixed(2) + "% return on capital"; s0pct.className = "s0-return " + cls(total); }
+  const s0r = $("s0-realized");   if (s0r) { s0r.textContent = fmtUsd(realized);   s0r.className = "s0-v " + cls(realized); }
+  const s0u = $("s0-unrealized"); if (s0u) { s0u.textContent = enriched.length ? fmtUsd(unrealized) : "—"; s0u.className = "s0-v " + (enriched.length ? cls(unrealized) : ""); }
+  const s0w = $("s0-winrate");    if (s0w) { s0w.textContent = cl ? wr.toFixed(1) + "%" : "—"; s0w.className = "s0-v " + (wr >= 50 ? "pos" : wr >= 30 ? "warn" : cl ? "neg" : ""); }
+  const s0c = $("s0-capital");    if (s0c) { s0c.textContent = totalCap ? "$" + totalCap.toFixed(0) : "—"; s0c.className = "s0-v"; }
+
+  // --- MEXC ---
+  const m = state.mexcAccount;
+  const s0mp = $("s0-mexc-pnl");
+  if (s0mp) {
+    if (!m) { s0mp.textContent = "—"; s0mp.className = "s0-big"; }
+    else { s0mp.className = "s0-big " + cls(m.unrealized_pnl); animateValue(s0mp, m.unrealized_pnl, fmtUsd); }
+  }
+  const s0eq  = $("s0-equity"); if (s0eq) s0eq.textContent = m ? "$" + m.equity.toLocaleString("en-US", {maximumFractionDigits: 0}) : "—";
+  const s0av  = $("s0-avail");  if (s0av) s0av.textContent = m ? "$" + m.available.toLocaleString("en-US", {maximumFractionDigits: 0}) : "—";
+  const s0mg  = $("s0-margin"); if (s0mg) s0mg.textContent = m ? "$" + (m.position_margin || 0).toLocaleString("en-US", {maximumFractionDigits: 0}) : "—";
+
+  const posHost = $("s0-positions");
+  if (posHost) {
+    const positions = m?.positions || [];
+    if (!positions.length) {
+      posHost.innerHTML = '<div class="s0-pos-empty">No open positions</div>';
+    } else {
+      posHost.innerHTML = positions.map(p => {
+        const coin = (p.coin || p.symbol || "").replace("_USDT", "").replace("USDT", "");
+        const isLong = p.direction === "Long";
+        const dirCls = isLong ? "long" : "short";
+        const pnl = p.unrealized_pnl ?? 0;
+        const pnlCls = pnl >= 0 ? "pos" : "neg";
+        return `<div class="s0-pos-row">
+          <div class="s0-pos-left">
+            <span class="s0-pos-coin">${coin}</span>
+            <span class="s0-pos-dir ${dirCls}">${isLong ? "L" : "S"}${p.leverage ? " · " + p.leverage + "x" : ""}</span>
+          </div>
+          <div class="s0-pos-right">
+            <span class="s0-pos-pnl ${pnlCls}">${fmtUsd(pnl)}</span>
+            <span class="s0-pos-px">${fmtPrice(p.mark || p.entry)}</span>
+          </div>
+        </div>`;
+      }).join("");
+    }
+  }
 }
 
 function renderHero(enrichedOpen) {
@@ -1497,7 +1560,7 @@ function renderSystems() {
 // Screen navigation (swipeable — no auto-rotation)
 let screenIdx = 0;
 let screenTransitioning = false;
-const screens = ["screen-1", "screen-2", "screen-3", "screen-4"];
+const screens = ["screen-0", "screen-1", "screen-2", "screen-3", "screen-4"];
 
 function goToScreen(targetIdx, dir) {
   targetIdx = Math.max(0, Math.min(screens.length - 1, targetIdx));
@@ -1598,6 +1661,7 @@ async function fetchMexcLive() {
     state.mexcAccount = m;
     mexcWorkerFailing = false;
     renderMexcCard();
+    renderS0();
   } catch (e) {
     if (!mexcWorkerFailing) console.warn("MEXC worker:", e.message);
     mexcWorkerFailing = true;
