@@ -1,8 +1,8 @@
 {
-  "last_updated_iso": "2026-05-24T14:27:22Z",
+  "last_updated_iso": "2026-05-24T14:53:55Z",
   "mexc_account": {
-    "unrealized_pnl": -82.9038,
-    "equity": 1767.7217,
+    "unrealized_pnl": -78.0391,
+    "equity": 1772.5864,
     "available": 553.2098,
     "position_margin": 528.053
   },
@@ -341,12 +341,35 @@
       "leverage": 3,
       "trading_system": "Braam",
       "track_only": false,
-      "status": "PENDING",
+      "status": "OPEN",
       "price_at_run": 273.1,
+      "date_activated": "2026-05-24",
+      "time_activated_utc": "14:53",
+      "date_opened": "2026-05-24",
+      "time_opened_utc": "14:26",
+      "conviction": "MEDIUM",
+      "tp1_hit": false,
+      "sl_moved_to_be": false,
+      "pnl_tp1_realized_usd": null
+    },
+    {
+      "trade_id": "APTUSDT_20260524_CB_001",
+      "coin": "APTUSDT",
+      "direction": "Short",
+      "entry_price": 0.95539897,
+      "sl": 0.99084493,
+      "tp1": 0.8815169,
+      "tp2": 0.70501405,
+      "capital_usd": 100.0,
+      "leverage": 3,
+      "trading_system": "Braam",
+      "track_only": false,
+      "status": "PENDING",
+      "price_at_run": 0.949,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-05-24",
-      "time_opened_utc": "14:26",
+      "time_opened_utc": "14:49",
       "conviction": "MEDIUM",
       "tp1_hit": false,
       "sl_moved_to_be": false,
@@ -355,16 +378,16 @@
   ],
   "recent_signals": [
     {
-      "trade_id": "TAOUSDT_20260524_CB_001",
-      "coin": "TAOUSDT",
+      "trade_id": "APTUSDT_20260524_CB_001",
+      "coin": "APTUSDT",
       "direction": "Short",
       "trading_system": "Braam",
-      "entry_price": 274.51335738,
-      "tp1": 252.86153064,
-      "sl": 286.97762025,
+      "entry_price": 0.95539897,
+      "tp1": 0.8815169,
+      "sl": 0.99084493,
       "conviction": "MEDIUM",
       "track_only": false,
-      "iso": "2026-05-24T14:26:00Z"
+      "iso": "2026-05-24T14:49:00Z"
     }
   ],
   "recent_opens": [
@@ -467,6 +490,16 @@
       "tp1_hit": false,
       "iso": "2026-05-23T21:01:00Z",
       "_iso_ms": 1779570060000
+    },
+    {
+      "trade_id": "TAOUSDT_20260524_CB_001",
+      "coin": "TAOUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "entry_price": 274.51335738,
+      "tp1_hit": false,
+      "iso": "2026-05-24T14:53:00Z",
+      "_iso_ms": 1779634380000
     }
   ],
   "recent_closes": [
