@@ -46,7 +46,62 @@
 
   <div id="screen-wrap">
 
-  <section id="screen-1" class="screen active">
+  <!-- ── Screen 0 · P&L Overview (iPhone-first) ── -->
+  <section id="screen-0" class="screen active">
+    <div class="s0-wrap">
+
+      <!-- Paper card -->
+      <div class="s0-card s0-paper-card">
+        <div class="s0-card-label">📄 Paper Portfolio</div>
+        <div class="s0-big pos" id="s0-paper-total">—</div>
+        <div class="s0-return" id="s0-paper-pct">—</div>
+        <div class="s0-divider"></div>
+        <div class="s0-grid">
+          <div class="s0-stat">
+            <span class="s0-k">Realized</span>
+            <span class="s0-v" id="s0-realized">—</span>
+          </div>
+          <div class="s0-stat">
+            <span class="s0-k">Unrealized</span>
+            <span class="s0-v" id="s0-unrealized">—</span>
+          </div>
+          <div class="s0-stat">
+            <span class="s0-k">Win Rate</span>
+            <span class="s0-v" id="s0-winrate">—</span>
+          </div>
+          <div class="s0-stat">
+            <span class="s0-k">Capital In</span>
+            <span class="s0-v" id="s0-capital">—</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- MEXC card -->
+      <div class="s0-card s0-mexc-card">
+        <div class="s0-card-label">⚡ MEXC Live <span class="live-pulse"></span></div>
+        <div class="s0-big" id="s0-mexc-pnl">—</div>
+        <div class="s0-divider"></div>
+        <div class="s0-grid s0-grid-3">
+          <div class="s0-stat">
+            <span class="s0-k">Equity</span>
+            <span class="s0-v" id="s0-equity">—</span>
+          </div>
+          <div class="s0-stat">
+            <span class="s0-k">Available</span>
+            <span class="s0-v" id="s0-avail">—</span>
+          </div>
+          <div class="s0-stat">
+            <span class="s0-k">Margin</span>
+            <span class="s0-v" id="s0-margin">—</span>
+          </div>
+        </div>
+        <div class="s0-positions" id="s0-positions"></div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="screen-1" class="screen">
     <div class="hero-tile tile">
       <div class="hero-main">
         <div class="hero-pnls">
@@ -391,6 +446,7 @@
     <span class="d" data-i="1"></span>
     <span class="d" data-i="2"></span>
     <span class="d" data-i="3"></span>
+    <span class="d" data-i="4"></span>
   </div>
 </main>
 
