@@ -44,10 +44,10 @@ async function loadData() {
   }
 }
 
-// Compute paper P&L from data.json trades
+// Compute paper P&L from data.json active_trades
 function computePaper(dash) {
-  const stats  = dash.stats  || {};
-  const trades = dash.trades || [];
+  const stats  = dash.stats         || {};
+  const trades = dash.active_trades || [];
 
   let unrealized = 0;
   for (const t of trades) {
@@ -62,13 +62,14 @@ function computePaper(dash) {
     if (t.tp1_hit && t.pnl_tp1_realized_usd != null) unrealized += t.pnl_tp1_realized_usd;
   }
 
-  const realized = stats.realized_pnl_usd ?? 0;
-  const total    = realized + unrealized;
-  const wr       = stats.win_rate_pct   ?? 0;
-  const closed   = stats.closed_count   ?? 0;
-  const openCnt  = trades.filter(t => t.status === "OPEN").length;
+  const realized  = stats.realized_pnl_usd ?? 0;
+  const total     = realized + unrealized;
+  const wr        = stats.win_rate_pct  ?? 0;
+  const closed    = stats.closed_count  ?? 0;
+  const openCnt   = trades.filter(t => t.status === "OPEN").length;
+  const pendCnt   = trades.filter(t => t.status === "PENDING").length;
 
-  return { total, realized, unrealized, wr, closed, openCnt };
+  return { total, realized, unrealized, wr, closed, openCnt, pendCnt };
 }
 
 // -- Widget builders
@@ -119,7 +120,7 @@ function buildSmall(w, paper, mexc) {
   addLabel(w, fmtUsd(mexcPnl), 26, colorFor(mexcPnl), true);
 
   w.addSpacer();
-  addLabel(w, "WR " + paper.wr.toFixed(0) + "%  ·  " + paper.closed + " closed", 9, C.muted, false);
+  addLabel(w, "WR " + paper.wr.toFixed(0) + "%  " + paper.openCnt + " open  " + paper.pendCnt + " pending", 9, C.muted, false);
 }
 
 // -- MEDIUM
@@ -147,52 +148,53 @@ function buildMedium(w, paper, mexc) {
   const s2 = left.addStack();
   s2.layoutHorizontally();
   s2.spacing = 10;
-  addStat(s2, "WIN RATE", paper.wr.toFixed(1) + "%",    paper.wr >= 50 ? C.green : paper.wr >= 30 ? C.orange : C.red);
-  addStat(s2, "OPEN",     paper.openCnt + " trades",    C.muted);
+  addStat(s2, "WIN RATE", paper.wr.toFixed(1) + "%", paper.wr >= 50 ? C.green : paper.wr >= 30 ? C.orange : C.red);
+  addStat(s2, "OPEN",     String(paper.openCnt),     C.fg);
+  addStat(s2, "PENDING",  String(paper.pendCnt),     C.muted);
 
   // MEXC card
   const right = makeCard(row);
-  addLabel(right, "⚡ MEXC", 8, C.muted, true);
+  addLabel(right, "⚡ MEXC LIVE", 8, C.muted, true);
   right.addSpacer(5);
   const mp = mexc?.unrealized_pnl ?? null;
   addLabel(right, fmtUsd(mp), 22, colorFor(mp), true);
   right.addSpacer(6);
 
-  const eq = mexc?.equity    ?? 0;
-  const av = mexc?.available ?? 0;
+  const eq  = mexc?.equity          ?? 0;
+  const av  = mexc?.available        ?? 0;
+  const mg  = mexc?.position_margin  ?? 0;
   addStat(right, "EQUITY",    "$" + eq.toFixed(0), C.fg);
   right.addSpacer(4);
   addStat(right, "AVAILABLE", "$" + av.toFixed(0), C.fg);
+  right.addSpacer(4);
+  addStat(right, "MARGIN",    "$" + mg.toFixed(0), C.muted);
 }
 
 // -- LARGE
 function buildLarge(w, paper, mexc) {
   buildMedium(w, paper, mexc);
 
-  const positions = mexc?.positions ?? [];
-  if (!positions.length) return;
-
+  // Show recent closes
   w.addSpacer(10);
-  addLabel(w, "MEXC POSITIONS", 8, C.muted, true);
+  addLabel(w, "PAPER - RECENT CLOSES", 8, C.muted, true);
   w.addSpacer(6);
 
-  for (const p of positions.slice(0, 5)) {
+  const closes = (w._dash?.recent_closes || []).slice(0, 5);
+  if (!closes.length) {
+    addLabel(w, "No recent closes", 11, C.muted, false);
+  }
+  for (const c of closes) {
     const row = w.addStack();
     row.layoutHorizontally();
     row.backgroundColor = C.panel2;
     row.cornerRadius = 8;
-    row.setPadding(7, 10, 7, 10);
-
-    const coin = (p.coin || "").replace("USDT", "");
-    const isLong = p.direction === "Long";
-
-    addLabel(row, coin, 13, C.fg, true);
-    row.addSpacer(5);
-    addLabel(row, isLong ? "L" : "S", 10, isLong ? C.green : C.red, true);
-    addLabel(row, " " + (p.leverage || "") + "x", 9, C.muted, false);
+    row.setPadding(6, 10, 6, 10);
+    const coin = (c.coin || "").replace("USDT", "");
+    addLabel(row, coin, 12, C.fg, true);
+    row.addSpacer(4);
+    addLabel(row, c.direction === "Long" ? "L" : "S", 10, c.direction === "Long" ? C.green : C.red, true);
     row.addSpacer();
-    addLabel(row, fmtUsd(p.unrealized_pnl), 13, colorFor(p.unrealized_pnl ?? 0), true);
-
+    addLabel(row, fmtUsd(c.pnl_usd), 12, colorFor(c.pnl_usd ?? 0), true);
     w.addSpacer(4);
   }
 }
@@ -214,7 +216,7 @@ if (!data) {
   const size  = config.widgetFamily ?? "medium";
 
   if      (size === "small") buildSmall (widget, paper, mexc);
-  else if (size === "large") buildLarge (widget, paper, mexc);
+  else if (size === "large") { widget._dash = data.dash; buildLarge(widget, paper, mexc); }
   else                       buildMedium(widget, paper, mexc);
 }
 
