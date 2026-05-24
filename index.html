@@ -101,96 +101,6 @@
     </div>
   </section>
 
-  <section id="screen-1" class="screen">
-    <div class="hero-tile tile">
-      <div class="hero-main">
-        <div class="hero-pnls">
-          <div class="pnl-block paper-block">
-            <div class="pnl-block-label">Portfolio P&amp;L · Paper</div>
-            <div class="value hero-value" id="portfolio-total">—</div>
-            <div class="hero-return" id="hero-pct">—</div>
-            <div class="hero-breakdown">
-              <div class="hero-stat">
-                <div class="hero-stat-label">Realized</div>
-                <div class="hero-stat-val" id="hero-realized">—</div>
-              </div>
-              <div class="hero-stat-sep"></div>
-              <div class="hero-stat">
-                <div class="hero-stat-label">Unrealized</div>
-                <div class="hero-stat-val" id="hero-unrealized">—</div>
-              </div>
-              <div class="hero-stat-sep"></div>
-              <div class="hero-stat">
-                <div class="hero-stat-label">Capital</div>
-                <div class="hero-stat-val" id="hero-capital">—</div>
-              </div>
-              <div class="hero-stat-sep"></div>
-              <div class="hero-donut-inline">
-                <div class="donut-wrap">
-                  <svg viewBox="0 0 120 120" class="donut-svg">
-                    <circle class="donut-track" cx="60" cy="60" r="50"/>
-                    <circle class="donut-fill" cx="60" cy="60" r="50" id="donut-fill-circle"/>
-                  </svg>
-                  <div class="donut-center">
-                    <div class="donut-pct" id="donut-pct">—</div>
-                    <div class="donut-label">WIN RATE</div>
-                  </div>
-                </div>
-                <div class="donut-sub" id="donut-sub">— closed</div>
-              </div>
-            </div>
-          </div>
-          <div class="pnl-divider"></div>
-          <div class="pnl-block mexc-block" id="mexc-card">
-            <div class="pnl-block-label">MEXC Live <span class="live-pulse"></span></div>
-            <div class="value hero-value" id="mexc-pnl">—</div>
-            <div class="hero-breakdown">
-              <div class="hero-stat">
-                <div class="hero-stat-label">Equity</div>
-                <div class="hero-stat-val" id="mexc-equity">—</div>
-              </div>
-              <div class="hero-stat-sep"></div>
-              <div class="hero-stat">
-                <div class="hero-stat-label">Available</div>
-                <div class="hero-stat-val" id="mexc-avail">—</div>
-              </div>
-            </div>
-            <div class="mexc-positions" id="mexc-positions"></div>
-          </div>
-        </div>
-        <div class="hero-spark">
-          <div class="hero-spark-label">Equity curve · last 20 closes</div>
-          <div class="spark-wrap">
-            <svg id="equity-spark" viewBox="0 0 400 80" preserveAspectRatio="none"></svg>
-            <div class="spark-overlay" id="equity-spark-overlay"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="tile count-tile">
-      <div class="label">Open trades</div>
-      <div class="value" id="open-count">—</div>
-      <div class="sub" id="open-split">—</div>
-    </div>
-    <div class="tile count-tile">
-      <div class="label">Pending</div>
-      <div class="value" id="pending-count">—</div>
-      <div class="sub" id="pending-split">—</div>
-    </div>
-    <div class="tile recent-closes-tile">
-      <div class="label">Recent closes</div>
-      <div class="recent-closes-list" id="recent-closes-list">—</div>
-    </div>
-    <div class="price-bar" id="price-bar">
-      <span class="price-item" id="px-BTC"><span class="px-name">BTC</span> <span class="px-val">—</span> <span class="px-chg">—</span></span>
-      <span class="px-sep">·</span>
-      <span class="price-item" id="px-ETH"><span class="px-name">ETH</span> <span class="px-val">—</span> <span class="px-chg">—</span></span>
-      <span class="px-sep">·</span>
-      <span class="price-item" id="px-SOL"><span class="px-name">SOL</span> <span class="px-val">—</span> <span class="px-chg">—</span></span>
-    </div>
-  </section>
-
   <section id="screen-2" class="screen">
     <div class="screen-title">Open paper trades · live levels</div>
     <div id="paper-bars" class="paper-bars"></div>
@@ -446,7 +356,6 @@
     <span class="d" data-i="1"></span>
     <span class="d" data-i="2"></span>
     <span class="d" data-i="3"></span>
-    <span class="d" data-i="4"></span>
   </div>
 </main>
 
