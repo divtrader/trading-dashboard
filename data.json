@@ -1,9 +1,9 @@
 {
-  "last_updated_iso": "2026-05-23T21:02:25Z",
+  "last_updated_iso": "2026-05-24T03:04:35Z",
   "mexc_account": {
-    "unrealized_pnl": -8.7864,
-    "equity": 1842.0918,
-    "available": 553.4624,
+    "unrealized_pnl": -51.2784,
+    "equity": 1799.4925,
+    "available": 553.3551,
     "position_margin": 528.053
   },
   "active_trades": [
@@ -192,29 +192,6 @@
       "pnl_tp1_realized_usd": null
     },
     {
-      "trade_id": "TAOUSDT_20260522_CB_001",
-      "coin": "TAOUSDT",
-      "direction": "Short",
-      "entry_price": 276.54854259,
-      "sl": 287.7944195,
-      "tp1": 253.1899379,
-      "tp2": 200.60036271,
-      "capital_usd": 100,
-      "leverage": 3,
-      "trading_system": "Braam",
-      "track_only": false,
-      "status": "OPEN",
-      "price_at_run": 270.8,
-      "date_activated": "2026-05-23",
-      "time_activated_utc": "18:35",
-      "date_opened": "2026-05-22",
-      "time_opened_utc": "19:31",
-      "conviction": "MEDIUM",
-      "tp1_hit": false,
-      "sl_moved_to_be": false,
-      "pnl_tp1_realized_usd": null
-    },
-    {
       "trade_id": "CAKEUSDT_20260522_CB_002",
       "coin": "CAKEUSDT",
       "direction": "Short",
@@ -255,29 +232,6 @@
       "time_activated_utc": "21:01",
       "date_opened": "2026-05-22",
       "time_opened_utc": "23:53",
-      "conviction": "MEDIUM",
-      "tp1_hit": false,
-      "sl_moved_to_be": false,
-      "pnl_tp1_realized_usd": null
-    },
-    {
-      "trade_id": "RENDERUSDT_20260523_CB_001",
-      "coin": "RENDERUSDT",
-      "direction": "Short",
-      "entry_price": 1.89776744,
-      "sl": 1.98866948,
-      "tp1": 1.62308974,
-      "tp2": 1.32505554,
-      "capital_usd": 100.0,
-      "leverage": 3,
-      "trading_system": "Braam",
-      "track_only": false,
-      "status": "OPEN",
-      "price_at_run": 1.779,
-      "date_activated": "2026-05-23",
-      "time_activated_utc": "17:20",
-      "date_opened": "2026-05-23",
-      "time_opened_utc": "08:12",
       "conviction": "MEDIUM",
       "tp1_hit": false,
       "sl_moved_to_be": false,
@@ -513,32 +467,6 @@
     }
   ],
   "recent_closes": [
-    {
-      "trade_id": "ADAUSDT_20260429_J_M_001",
-      "coin": "ADAUSDT",
-      "direction": "Long",
-      "status": "TP2_HIT",
-      "pnl_usd": 35.78,
-      "close_reason": "TP2 hit",
-      "date_closed": "2026-05-10",
-      "time_closed_utc": "16:00",
-      "trading_system": "John",
-      "won": true,
-      "close_iso": "2026-05-10T16:00:00Z"
-    },
-    {
-      "trade_id": "XRPUSDT_20260505_W_M_001",
-      "coin": "XRPUSDT",
-      "direction": "Long",
-      "status": "TP2_HIT",
-      "pnl_usd": 18.77,
-      "close_reason": "TP2 hit",
-      "date_closed": "2026-05-10",
-      "time_closed_utc": "16:00",
-      "trading_system": "William",
-      "won": true,
-      "close_iso": "2026-05-10T16:00:00Z"
-    },
     {
       "trade_id": "XLMUSDT_20260506_J_M_001",
       "coin": "XLMUSDT",
@@ -1032,16 +960,35 @@
       "trading_system": "Braam",
       "won": false,
       "close_iso": "2026-05-23T20:00:00Z"
+    },
+    {
+      "trade_id": "TAOUSDT_20260522_CB_001",
+      "coin": "TAOUSDT",
+      "direction": "Short",
+      "status": "STOPPED",
+      "pnl_usd": -11.72,
+      "close_reason": "SL hit",
+      "date_closed": "2026-05-23",
+      "time_closed_utc": "20:00",
+      "trading_system": "Braam",
+      "won": false,
+      "close_iso": "2026-05-23T20:00:00Z"
+    },
+    {
+      "trade_id": "RENDERUSDT_20260523_CB_001",
+      "coin": "RENDERUSDT",
+      "direction": "Short",
+      "status": "STOPPED",
+      "pnl_usd": -13.71,
+      "close_reason": "SL hit",
+      "date_closed": "2026-05-24",
+      "time_closed_utc": "00:00",
+      "trading_system": "Braam",
+      "won": false,
+      "close_iso": "2026-05-24T00:00:00Z"
     }
   ],
   "recent_cancels": [
-    {
-      "coin": "TONUSDT",
-      "direction": "Short",
-      "trading_system": "Braam",
-      "close_reason": "Signal direction flipped to Long (5/8 signals) \u2014 original setup no longer valid",
-      "iso": "2026-05-23T14:47:00Z"
-    },
     {
       "coin": "ALGOUSDT",
       "direction": "Short",
@@ -1059,9 +1006,9 @@
   ],
   "tp1_hits_open": [],
   "stats": {
-    "realized_pnl_usd": 141.32,
-    "win_rate_pct": 36.6,
-    "closed_count": 93,
+    "realized_pnl_usd": 115.89,
+    "win_rate_pct": 35.8,
+    "closed_count": 95,
     "per_system": {
       "John": {
         "realized_pnl_usd": 121.86,
@@ -1074,9 +1021,9 @@
         "closed_count": 23
       },
       "Braam": {
-        "realized_pnl_usd": -25.78,
-        "win_rate_pct": 30.8,
-        "closed_count": 13
+        "realized_pnl_usd": -51.21,
+        "win_rate_pct": 26.7,
+        "closed_count": 15
       }
     }
   }
