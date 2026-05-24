@@ -207,15 +207,12 @@ function buildMedium(w, paper, mexc, now) {
   statBlock(mr2, "MARGIN", "$" + Math.round(mg), C.muted);
   mr2.addSpacer();
 
-  // Timestamp + next refresh
-  const nextT = new Date(now.getTime() + 5 * 60 * 1000);
-  const tsStack = right.addStack();
-  tsStack.layoutVertically();
+  // Updated timestamp
   right.addSpacer(5);
   const ts2 = right.addStack();
   ts2.layoutHorizontally();
   ts2.addSpacer();
-  const tsLbl = ts2.addText(fmtTime(now) + " · next " + fmtTime(nextT));
+  const tsLbl = ts2.addText("updated " + fmtTime(now));
   tsLbl.textColor = C.muted;
   tsLbl.font = Font.systemFont(8);
 }
@@ -254,7 +251,7 @@ const now    = new Date();
 const data   = await loadData();
 const widget = new ListWidget();
 widget.backgroundColor = C.bg;
-widget.refreshAfterDate = new Date(now.getTime() + 5 * 60 * 1000);
+widget.refreshAfterDate = new Date(now.getTime() + 2 * 60 * 1000);
 
 if (!data) {
   widget.setPadding(14, 14, 14, 14);
