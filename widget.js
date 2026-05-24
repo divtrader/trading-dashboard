@@ -1,13 +1,13 @@
-// ══════════════════════════════════════
-//  Spyker Trading — iPhone Widget
+// ======================================
+//  Spyker Trading - iPhone Widget
 //  App: Scriptable (free on App Store)
 //  Supports: small, medium, large
-// ══════════════════════════════════════
+// ======================================
 
 const DATA_URL = "https://divtrader.github.io/trading-dashboard/data.json";
 const MEXC_URL = "https://mexc-proxy.braamdeclerk.workers.dev";
 
-// ── Colours ──
+// -- Colours --
 const C = {
   bg:     new Color("#0d1117"),
   panel:  new Color("#161b22"),
@@ -20,9 +20,9 @@ const C = {
   border: new Color("#ffffff", 0.07),
 };
 
-// ── Helpers ──
+// -- Helpers
 function fmtUsd(v) {
-  if (v == null || isNaN(v)) return "—";
+  if (v == null || isNaN(v)) return "--";
   const abs = Math.abs(v);
   const sign = v >= 0 ? "+" : "-";
   if (abs >= 1000) return sign + "$" + (abs / 1000).toFixed(2) + "k";
@@ -31,7 +31,7 @@ function fmtUsd(v) {
 function colorFor(v) { return v > 0 ? C.green : v < 0 ? C.red : C.muted; }
 function clamp(v, lo, hi) { return Math.max(lo, Math.min(hi, v)); }
 
-// ── Fetch ──
+// -- Fetch
 async function loadData() {
   try {
     const [dash, mexc] = await Promise.all([
@@ -71,7 +71,7 @@ function computePaper(dash) {
   return { total, realized, unrealized, wr, closed, openCnt };
 }
 
-// ── Widget builders ──
+// -- Widget builders
 function addLabel(stack, text, size, color, bold) {
   const el = stack.addText(text);
   el.textColor = color ?? C.fg;
@@ -103,7 +103,7 @@ function makeCard(parent, flex) {
   return card;
 }
 
-// ── SMALL ──
+// -- SMALL
 function buildSmall(w, paper, mexc) {
   w.setPadding(14, 14, 14, 14);
 
@@ -122,7 +122,7 @@ function buildSmall(w, paper, mexc) {
   addLabel(w, "WR " + paper.wr.toFixed(0) + "%  ·  " + paper.closed + " closed", 9, C.muted, false);
 }
 
-// ── MEDIUM ──
+// -- MEDIUM
 function buildMedium(w, paper, mexc) {
   w.setPadding(12, 12, 12, 12);
 
@@ -165,7 +165,7 @@ function buildMedium(w, paper, mexc) {
   addStat(right, "AVAILABLE", "$" + av.toFixed(0), C.fg);
 }
 
-// ── LARGE ──
+// -- LARGE
 function buildLarge(w, paper, mexc) {
   buildMedium(w, paper, mexc);
 
@@ -197,7 +197,7 @@ function buildLarge(w, paper, mexc) {
   }
 }
 
-// ── MAIN ──
+// -- MAIN
 const data   = await loadData();
 const widget = new ListWidget();
 widget.backgroundColor = C.bg;
