@@ -236,16 +236,21 @@ function checkLiveLevels() {
       if (!t.tp1_hit && t.tp1) {
         const tp1Hit = isLong ? live >= t.tp1 : live <= t.tp1;
         if (tp1Hit) {
+          const tp1PricePct = isLong ? (t.tp1 - t.entry_price) / t.entry_price : (t.entry_price - t.tp1) / t.entry_price;
+          const estBanked = (t.capital_usd || 100) * 0.8 * tp1PricePct * (t.leverage || 1);
           maybeSpeak(`voice:tp1live:${t.trade_id}`,
-            `${coinName(t)} ${t.direction}. Take profit one hit. Eighty percent banked.`);
+            `${coinName(t)} ${t.direction}. Take profit one hit. Eighty percent banked. ${_amountForTts(estBanked)} locked in.`);
         }
       }
       // SL hit
       if (t.sl) {
         const slHit = isLong ? live <= t.sl : live >= t.sl;
         if (slHit) {
+          const remaining = t.tp1_hit ? 0.2 : 1.0;
+          const pricePct = isLong ? (live - t.entry_price) / t.entry_price : (t.entry_price - live) / t.entry_price;
+          const estPnl = (t.capital_usd || 100) * remaining * pricePct * (t.leverage || 1);
           maybeSpeak(`voice:sllive:${t.trade_id}`,
-            `${coinName(t)} ${t.direction}. Stop loss hit. Trade closed.`);
+            `${coinName(t)} ${t.direction}. Stop loss hit. Lost ${_amountForTts(Math.abs(estPnl))} dollars.`);
         }
       }
     }
@@ -344,7 +349,7 @@ async function fetchData() {
       const age = t.iso ? new Date(t.iso).getTime() : 0;
       if (age >= _sigCutoff) {
         maybeSpeak(`voice:signal:${t.trade_id}`,
-          `New signal. ${coinName(t)} ${t.direction}. ${t.trading_system} system.`);
+          `New ${t.trading_system} signal. ${coinName(t)} ${t.direction}. Entry at ${_priceForTts(t.entry_price)}.`);
       }
     }
     // Voice: PENDING → OPEN activations (entry hit, confirmed by data.json)
