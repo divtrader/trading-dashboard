@@ -919,7 +919,10 @@ function renderPaperBars(enrichedOpen) {
     return `
       <div class="paper-bar-row ${dirCls}" data-trade-id="${t.trade_id}" title="${t.trade_id}">
         <div class="pb-head">
-          <div class="pb-coin">${coin}</div>
+          <div class="pb-coin-row">
+            <span class="pb-coin">${coin}</span>
+            <span class="pb-live-px">${fmtPrice(t.live)}</span>
+          </div>
           <div class="pb-meta">
             <span class="pb-dir ${dirCls}">${isLong ? "▲ LONG" : "▼ SHORT"}</span>
             <span class="pb-sys">${sys}</span>
