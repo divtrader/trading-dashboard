@@ -1,8 +1,8 @@
 {
-  "last_updated_iso": "2026-05-24T18:25:19Z",
+  "last_updated_iso": "2026-05-24T20:15:22Z",
   "mexc_account": {
-    "unrealized_pnl": -79.3737,
-    "equity": 1771.232,
+    "unrealized_pnl": -86.5528,
+    "equity": 1764.0529,
     "available": 553.1899,
     "position_margin": 528.053
   },
@@ -351,6 +351,29 @@
       "tp1_hit": false,
       "sl_moved_to_be": false,
       "pnl_tp1_realized_usd": null
+    },
+    {
+      "trade_id": "ALGOUSDT_20260524_CB_001",
+      "coin": "ALGOUSDT",
+      "direction": "Short",
+      "entry_price": 0.11315525,
+      "sl": 0.1170794,
+      "tp1": 0.1007,
+      "tp2": 0.08422428,
+      "capital_usd": 100.0,
+      "leverage": 3,
+      "trading_system": "Braam",
+      "track_only": false,
+      "status": "PENDING",
+      "price_at_run": 0.1116,
+      "date_activated": null,
+      "time_activated_utc": null,
+      "date_opened": "2026-05-24",
+      "time_opened_utc": "20:14",
+      "conviction": "MEDIUM",
+      "tp1_hit": false,
+      "sl_moved_to_be": false,
+      "pnl_tp1_realized_usd": null
     }
   ],
   "recent_signals": [
@@ -365,6 +388,18 @@
       "conviction": "MEDIUM",
       "track_only": false,
       "iso": "2026-05-24T14:49:00Z"
+    },
+    {
+      "trade_id": "ALGOUSDT_20260524_CB_001",
+      "coin": "ALGOUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "entry_price": 0.11315525,
+      "tp1": 0.1007,
+      "sl": 0.1170794,
+      "conviction": "MEDIUM",
+      "track_only": false,
+      "iso": "2026-05-24T20:14:00Z"
     }
   ],
   "recent_opens": [
