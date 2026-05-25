@@ -1,8 +1,8 @@
 {
-  "last_updated_iso": "2026-05-25T10:53:58Z",
+  "last_updated_iso": "2026-05-25T12:17:26Z",
   "mexc_account": {
-    "unrealized_pnl": -56.7823,
-    "equity": 1793.8605,
+    "unrealized_pnl": -63.6893,
+    "equity": 1786.9535,
     "available": 553.227,
     "position_margin": 528.053
   },
@@ -25,29 +25,6 @@
       "time_activated_utc": null,
       "date_opened": "2026-05-15",
       "time_opened_utc": "16:22",
-      "conviction": "MEDIUM",
-      "tp1_hit": false,
-      "sl_moved_to_be": false,
-      "pnl_tp1_realized_usd": null
-    },
-    {
-      "trade_id": "AVAXUSDT_20260516_CB_001",
-      "coin": "AVAXUSDT",
-      "direction": "Short",
-      "entry_price": 10.05638035,
-      "sl": 10.43509833,
-      "tp1": 8.32828833,
-      "tp2": 6.93980333,
-      "capital_usd": 100,
-      "leverage": 3,
-      "trading_system": "Braam",
-      "track_only": false,
-      "status": "PENDING",
-      "price_at_run": 9.36,
-      "date_activated": null,
-      "time_activated_utc": null,
-      "date_opened": "2026-05-16",
-      "time_opened_utc": "08:04",
       "conviction": "MEDIUM",
       "tp1_hit": false,
       "sl_moved_to_be": false,
@@ -278,29 +255,6 @@
       "time_activated_utc": "20:41",
       "date_opened": "2026-05-23",
       "time_opened_utc": "17:20",
-      "conviction": "MEDIUM",
-      "tp1_hit": false,
-      "sl_moved_to_be": false,
-      "pnl_tp1_realized_usd": null
-    },
-    {
-      "trade_id": "TONUSDT_20260523_CB_001",
-      "coin": "TONUSDT",
-      "direction": "Short",
-      "entry_price": 1.91784765,
-      "sl": 2.01783067,
-      "tp1": 1.44648944,
-      "tp2": 0.99615692,
-      "capital_usd": 100.0,
-      "leverage": 3,
-      "trading_system": "Braam",
-      "track_only": false,
-      "status": "PENDING",
-      "price_at_run": 1.804,
-      "date_activated": null,
-      "time_activated_utc": null,
-      "date_opened": "2026-05-23",
-      "time_opened_utc": "18:21",
       "conviction": "MEDIUM",
       "tp1_hit": false,
       "sl_moved_to_be": false,
@@ -1031,7 +985,22 @@
       "close_iso": "2026-05-24T00:00:00Z"
     }
   ],
-  "recent_cancels": [],
+  "recent_cancels": [
+    {
+      "coin": "AVAXUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "close_reason": "6/8 signals opposing Short for 2 consecutive 4H bars \u2014 conviction has collapsed,",
+      "iso": "2026-05-25T12:01:00Z"
+    },
+    {
+      "coin": "TONUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "close_reason": "6/8 signals opposing Short for 2 consecutive 4H bars \u2014 conviction has collapsed,",
+      "iso": "2026-05-25T12:01:00Z"
+    }
+  ],
   "tp1_hits_open": [],
   "stats": {
     "realized_pnl_usd": 115.89,
