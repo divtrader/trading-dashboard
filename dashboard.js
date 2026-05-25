@@ -1411,13 +1411,15 @@ function renderPendingTriggers() {
     return { ...t, live, distPct, inZone: distPct < 0.1 };
   }).sort((a, b) => a.distPct - b.distPct).slice(0, 5);
 
+  // Scale bars relative to the farthest trade, with a minimum scale of 8%
+  const MAX_DIST = Math.max(8, ...enriched.map(t => t.distPct));
+
   const newHtml = enriched.map(t => {
     const isLong = t.direction === "Long";
     const dirCls = isLong ? "long" : "short";
     const coin = (t.coin || "").replace("USDT", "");
 
     // proximity: 0% = far, 100% = at entry zone edge
-    const MAX_DIST = 6;
     const proximity = t.inZone ? 100 : Math.max(0, 100 - (t.distPct / MAX_DIST) * 100);
     const distLabel = t.inZone ? "IN ZONE" : `${t.distPct.toFixed(1)}%`;
 
