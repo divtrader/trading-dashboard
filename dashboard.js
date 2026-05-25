@@ -1411,8 +1411,9 @@ function renderPendingTriggers() {
     return { ...t, live, distPct, inZone: distPct < 0.1 };
   }).sort((a, b) => a.distPct - b.distPct).slice(0, 5);
 
-  // Scale bars relative to the farthest trade, with a minimum scale of 8%
-  const MAX_DIST = Math.max(8, ...enriched.map(t => t.distPct));
+  // Scale bars relative to the farthest trade + 25% headroom so the farthest
+  // trade always gets ~20% bar instead of collapsing to 0
+  const MAX_DIST = Math.max(8, ...enriched.map(t => t.distPct)) * 1.25;
 
   const newHtml = enriched.map(t => {
     const isLong = t.direction === "Long";
