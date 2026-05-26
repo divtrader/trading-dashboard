@@ -1,8 +1,8 @@
 {
-  "last_updated_iso": "2026-05-26T04:40:00Z",
+  "last_updated_iso": "2026-05-26T04:55:58Z",
   "mexc_account": {
-    "unrealized_pnl": -94.1081,
-    "equity": 1756.2534,
+    "unrealized_pnl": -95.5231,
+    "equity": 1754.8384,
     "available": 552.9457,
     "position_margin": 528.053
   },
@@ -261,29 +261,6 @@
       "pnl_tp1_realized_usd": null
     },
     {
-      "trade_id": "TAOUSDT_20260524_CB_001",
-      "coin": "TAOUSDT",
-      "direction": "Short",
-      "entry_price": 274.51335738,
-      "sl": 286.97762025,
-      "tp1": 252.86153064,
-      "tp2": 200.364354,
-      "capital_usd": 100.0,
-      "leverage": 3,
-      "trading_system": "Braam",
-      "track_only": false,
-      "status": "OPEN",
-      "price_at_run": 273.1,
-      "date_activated": "2026-05-24",
-      "time_activated_utc": "14:53",
-      "date_opened": "2026-05-24",
-      "time_opened_utc": "14:26",
-      "conviction": "MEDIUM",
-      "tp1_hit": false,
-      "sl_moved_to_be": false,
-      "pnl_tp1_realized_usd": null
-    },
-    {
       "trade_id": "APTUSDT_20260524_CB_001",
       "coin": "APTUSDT",
       "direction": "Short",
@@ -443,19 +420,6 @@
     }
   ],
   "recent_closes": [
-    {
-      "trade_id": "XLMUSDT_20260506_J_M_001",
-      "coin": "XLMUSDT",
-      "direction": "Long",
-      "status": "TP2_HIT",
-      "pnl_usd": 13.48,
-      "close_reason": "TP2 hit",
-      "date_closed": "2026-05-10",
-      "time_closed_utc": "16:00",
-      "trading_system": "John",
-      "won": true,
-      "close_iso": "2026-05-10T16:00:00Z"
-    },
     {
       "trade_id": "XRPUSDT_20260507_CJ_M_001",
       "coin": "XRPUSDT",
@@ -962,14 +926,27 @@
       "trading_system": "Braam",
       "won": false,
       "close_iso": "2026-05-24T00:00:00Z"
+    },
+    {
+      "trade_id": "TAOUSDT_20260524_CB_001",
+      "coin": "TAOUSDT",
+      "direction": "Short",
+      "status": "STOPPED",
+      "pnl_usd": -13.03,
+      "close_reason": "SL hit",
+      "date_closed": "2026-05-26",
+      "time_closed_utc": "04:00",
+      "trading_system": "Braam",
+      "won": false,
+      "close_iso": "2026-05-26T04:00:00Z"
     }
   ],
   "recent_cancels": [],
   "tp1_hits_open": [],
   "stats": {
-    "realized_pnl_usd": 115.89,
-    "win_rate_pct": 35.8,
-    "closed_count": 95,
+    "realized_pnl_usd": 102.86,
+    "win_rate_pct": 35.4,
+    "closed_count": 96,
     "per_system": {
       "John": {
         "realized_pnl_usd": 121.86,
@@ -982,9 +959,9 @@
         "closed_count": 23
       },
       "Braam": {
-        "realized_pnl_usd": -51.21,
-        "win_rate_pct": 26.7,
-        "closed_count": 15
+        "realized_pnl_usd": -64.24,
+        "win_rate_pct": 25.0,
+        "closed_count": 16
       }
     }
   }
