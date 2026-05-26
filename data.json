@@ -1,9 +1,9 @@
 {
-  "last_updated_iso": "2026-05-26T07:50:57Z",
+  "last_updated_iso": "2026-05-26T08:11:37Z",
   "mexc_account": {
-    "unrealized_pnl": -93.9522,
-    "equity": 1756.4093,
-    "available": 552.9457,
+    "unrealized_pnl": -87.7485,
+    "equity": 1762.6667,
+    "available": 552.9994,
     "position_margin": 528.053
   },
   "active_trades": [
@@ -25,29 +25,6 @@
       "time_activated_utc": null,
       "date_opened": "2026-05-15",
       "time_opened_utc": "16:22",
-      "conviction": "MEDIUM",
-      "tp1_hit": false,
-      "sl_moved_to_be": false,
-      "pnl_tp1_realized_usd": null
-    },
-    {
-      "trade_id": "ETHUSDT_20260519_CB_001",
-      "coin": "ETHUSDT",
-      "direction": "Short",
-      "entry_price": 2164.98668396,
-      "sl": 2211.77374066,
-      "tp1": 2050.43447549,
-      "tp2": 1846.2594219,
-      "capital_usd": 100,
-      "leverage": 3,
-      "trading_system": "Braam",
-      "track_only": false,
-      "status": "PENDING",
-      "price_at_run": 2129.01,
-      "date_activated": null,
-      "time_activated_utc": null,
-      "date_opened": "2026-05-19",
-      "time_opened_utc": "04:28",
       "conviction": "MEDIUM",
       "tp1_hit": false,
       "sl_moved_to_be": false,
@@ -312,8 +289,8 @@
       "direction": "Short",
       "entry_price": 9.2938074,
       "sl": 9.51992469,
-      "tp1": 8.7076737,
-      "tp2": 7.71658604,
+      "tp1": 8.89,
+      "tp2": 8.485,
       "capital_usd": 100.0,
       "leverage": 3,
       "trading_system": "Braam",
@@ -938,7 +915,15 @@
       "close_iso": "2026-05-26T04:00:00Z"
     }
   ],
-  "recent_cancels": [],
+  "recent_cancels": [
+    {
+      "coin": "ETHUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "close_reason": "6/8 signals opposing Short for 2 consecutive 4H bars \u2014 conviction has collapsed,",
+      "iso": "2026-05-26T08:11:00Z"
+    }
+  ],
   "tp1_hits_open": [],
   "stats": {
     "realized_pnl_usd": 102.86,
