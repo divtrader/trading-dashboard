@@ -1,8 +1,8 @@
 {
-  "last_updated_iso": "2026-05-26T07:37:48Z",
+  "last_updated_iso": "2026-05-26T07:50:57Z",
   "mexc_account": {
-    "unrealized_pnl": -100.9211,
-    "equity": 1749.4404,
+    "unrealized_pnl": -93.9522,
+    "equity": 1756.4093,
     "available": 552.9457,
     "position_margin": 528.053
   },
@@ -173,7 +173,7 @@
       "coin": "SUIUSDT",
       "direction": "Short",
       "entry_price": 1.09188343,
-      "sl": 1.08071568,
+      "sl": 1.14847297,
       "tp1": 1.0071,
       "tp2": 0.9633,
       "capital_usd": 100,
@@ -187,8 +187,8 @@
       "date_opened": "2026-05-22",
       "time_opened_utc": "23:53",
       "conviction": "MEDIUM",
-      "tp1_hit": true,
-      "sl_moved_to_be": true,
+      "tp1_hit": false,
+      "sl_moved_to_be": false,
       "pnl_tp1_realized_usd": null
     },
     {
@@ -939,14 +939,7 @@
     }
   ],
   "recent_cancels": [],
-  "tp1_hits_open": [
-    {
-      "coin": "SUIUSDT",
-      "direction": "Short",
-      "trading_system": "Braam",
-      "entry_price": 1.09188343
-    }
-  ],
+  "tp1_hits_open": [],
   "stats": {
     "realized_pnl_usd": 102.86,
     "win_rate_pct": 35.4,
