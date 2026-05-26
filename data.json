@@ -1,8 +1,8 @@
 {
-  "last_updated_iso": "2026-05-26T04:55:58Z",
+  "last_updated_iso": "2026-05-26T07:37:48Z",
   "mexc_account": {
-    "unrealized_pnl": -95.5231,
-    "equity": 1754.8384,
+    "unrealized_pnl": -100.9211,
+    "equity": 1749.4404,
     "available": 552.9457,
     "position_margin": 528.053
   },
@@ -173,9 +173,9 @@
       "coin": "SUIUSDT",
       "direction": "Short",
       "entry_price": 1.09188343,
-      "sl": 1.14847297,
-      "tp1": 0.9975,
-      "tp2": 0.8592,
+      "sl": 1.08071568,
+      "tp1": 1.0071,
+      "tp2": 0.9633,
       "capital_usd": 100,
       "leverage": 3,
       "trading_system": "Braam",
@@ -187,8 +187,8 @@
       "date_opened": "2026-05-22",
       "time_opened_utc": "23:53",
       "conviction": "MEDIUM",
-      "tp1_hit": false,
-      "sl_moved_to_be": false,
+      "tp1_hit": true,
+      "sl_moved_to_be": true,
       "pnl_tp1_realized_usd": null
     },
     {
@@ -318,10 +318,10 @@
       "leverage": 3,
       "trading_system": "Braam",
       "track_only": false,
-      "status": "PENDING",
+      "status": "OPEN",
       "price_at_run": 9.215,
-      "date_activated": null,
-      "time_activated_utc": null,
+      "date_activated": "2026-05-26",
+      "time_activated_utc": "07:37",
       "date_opened": "2026-05-26",
       "time_opened_utc": "04:17",
       "conviction": "MEDIUM",
@@ -336,7 +336,7 @@
       "entry_price": 0.14831089,
       "sl": 0.15220167,
       "tp1": 0.142,
-      "tp2": 0.12809378,
+      "tp2": 0.1376,
       "capital_usd": 100.0,
       "leverage": 3,
       "trading_system": "Braam",
@@ -353,20 +353,7 @@
       "pnl_tp1_realized_usd": null
     }
   ],
-  "recent_signals": [
-    {
-      "trade_id": "AVAXUSDT_20260526_CB_001",
-      "coin": "AVAXUSDT",
-      "direction": "Short",
-      "trading_system": "Braam",
-      "entry_price": 9.2938074,
-      "tp1": 8.7076737,
-      "sl": 9.51992469,
-      "conviction": "MEDIUM",
-      "track_only": false,
-      "iso": "2026-05-26T04:17:00Z"
-    }
-  ],
+  "recent_signals": [],
   "recent_opens": [
     {
       "trade_id": "TAOUSDT_20260524_CB_001",
@@ -417,6 +404,16 @@
       "tp1_hit": false,
       "iso": "2026-05-26T04:39:00Z",
       "_iso_ms": 1779770340000
+    },
+    {
+      "trade_id": "AVAXUSDT_20260526_CB_001",
+      "coin": "AVAXUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "entry_price": 9.2938074,
+      "tp1_hit": false,
+      "iso": "2026-05-26T07:37:00Z",
+      "_iso_ms": 1779781020000
     }
   ],
   "recent_closes": [
@@ -942,7 +939,14 @@
     }
   ],
   "recent_cancels": [],
-  "tp1_hits_open": [],
+  "tp1_hits_open": [
+    {
+      "coin": "SUIUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "entry_price": 1.09188343
+    }
+  ],
   "stats": {
     "realized_pnl_usd": 102.86,
     "win_rate_pct": 35.4,
