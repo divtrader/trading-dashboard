@@ -893,6 +893,7 @@ function renderPaperBars(enrichedOpen) {
     const sys  = t.trading_system || "";
     const tp1Hit = !!t.tp1_hit;
     const beActive = tp1Hit || !!t.sl_moved_to_be;
+    const tp1Cls = tp1Hit ? " tp1-hit" : "";
 
     // Scale: SL = 0%, furthest TP = 100%. Both TP1 + TP2 always land on the bar.
     const sl = t.sl;
@@ -935,7 +936,7 @@ function renderPaperBars(enrichedOpen) {
     const achieved = tp1Hit ? `<div class="pb-achieved" style="left:${Math.min(ePct,t1Pct).toFixed(1)}%;width:${Math.abs(t1Pct-ePct).toFixed(1)}%"></div>` : "";
 
     return `
-      <div class="paper-bar-row ${dirCls}" data-trade-id="${t.trade_id}" title="${t.trade_id}">
+      <div class="paper-bar-row ${dirCls}${tp1Cls}" data-trade-id="${t.trade_id}" title="${t.trade_id}">
         <div class="pb-head">
           <div class="pb-coin-row">
             <span class="pb-coin">${coin}</span>
