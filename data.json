@@ -1,8 +1,8 @@
 {
-  "last_updated_iso": "2026-05-27T12:19:17Z",
+  "last_updated_iso": "2026-05-27T12:24:53Z",
   "mexc_account": {
-    "unrealized_pnl": -107.6658,
-    "equity": 1742.6865,
+    "unrealized_pnl": -104.0822,
+    "equity": 1746.2701,
     "available": 552.9365,
     "position_margin": 528.053
   },
@@ -341,10 +341,10 @@
       "leverage": 3,
       "trading_system": "Braam",
       "track_only": false,
-      "status": "PENDING",
+      "status": "OPEN",
       "price_at_run": 2066.08,
-      "date_activated": null,
-      "time_activated_utc": null,
+      "date_activated": "2026-05-27",
+      "time_activated_utc": "12:23",
       "date_opened": "2026-05-27",
       "time_opened_utc": "04:45",
       "conviction": "MEDIUM",
@@ -376,20 +376,7 @@
       "pnl_tp1_realized_usd": null
     }
   ],
-  "recent_signals": [
-    {
-      "trade_id": "ETHUSDT_20260527_CB_001",
-      "coin": "ETHUSDT",
-      "direction": "Short",
-      "trading_system": "Braam",
-      "entry_price": 2096.91511053,
-      "tp1": 1912.89877137,
-      "sl": 2139.34598205,
-      "conviction": "MEDIUM",
-      "track_only": false,
-      "iso": "2026-05-27T04:45:00Z"
-    }
-  ],
+  "recent_signals": [],
   "recent_opens": [
     {
       "trade_id": "CAKEUSDT_20260522_CB_002",
@@ -440,6 +427,16 @@
       "tp1_hit": false,
       "iso": "2026-05-27T11:34:00Z",
       "_iso_ms": 1779881640000
+    },
+    {
+      "trade_id": "ETHUSDT_20260527_CB_001",
+      "coin": "ETHUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "entry_price": 2096.91511053,
+      "tp1_hit": false,
+      "iso": "2026-05-27T12:23:00Z",
+      "_iso_ms": 1779884580000
     }
   ],
   "recent_closes": [
