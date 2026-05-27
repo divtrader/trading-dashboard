@@ -1,8 +1,8 @@
 {
-  "last_updated_iso": "2026-05-27T18:13:42Z",
+  "last_updated_iso": "2026-05-27T18:34:20Z",
   "mexc_account": {
-    "unrealized_pnl": -130.9003,
-    "equity": 1719.3671,
+    "unrealized_pnl": -127.2592,
+    "equity": 1723.0082,
     "available": 552.8516,
     "position_margin": 528.053
   },
@@ -143,29 +143,6 @@
       "conviction": "MEDIUM",
       "tp1_hit": false,
       "sl_moved_to_be": false,
-      "pnl_tp1_realized_usd": null
-    },
-    {
-      "trade_id": "SUIUSDT_20260522_CB_001",
-      "coin": "SUIUSDT",
-      "direction": "Short",
-      "entry_price": 1.09188343,
-      "sl": 1.02542442,
-      "tp1": 1.0071,
-      "tp2": 0.9633,
-      "capital_usd": 100,
-      "leverage": 3,
-      "trading_system": "Braam",
-      "track_only": false,
-      "status": "OPEN",
-      "price_at_run": 1.0496,
-      "date_activated": "2026-05-23",
-      "time_activated_utc": "21:01",
-      "date_opened": "2026-05-22",
-      "time_opened_utc": "23:53",
-      "conviction": "MEDIUM",
-      "tp1_hit": true,
-      "sl_moved_to_be": true,
       "pnl_tp1_realized_usd": null
     },
     {
@@ -384,19 +361,6 @@
     }
   ],
   "recent_closes": [
-    {
-      "trade_id": "RENDERUSDT_20260505_CJ_M_002",
-      "coin": "RENDERUSDT",
-      "direction": "Long",
-      "status": "STOPPED_AFTER_TP1",
-      "pnl_usd": 23.43,
-      "close_reason": "SL hit",
-      "date_closed": "2026-05-12",
-      "time_closed_utc": "12:00",
-      "trading_system": "John",
-      "won": true,
-      "close_iso": "2026-05-12T12:00:00Z"
-    },
     {
       "trade_id": "XLMUSDT_20260510_J_M_001",
       "coin": "XLMUSDT",
@@ -879,6 +843,19 @@
       "close_iso": "2026-05-26T08:00:00Z"
     },
     {
+      "trade_id": "SUIUSDT_20260522_CB_001",
+      "coin": "SUIUSDT",
+      "direction": "Short",
+      "status": "STOPPED_AFTER_TP1",
+      "pnl_usd": 22.35,
+      "close_reason": "SL hit",
+      "date_closed": "2026-05-26",
+      "time_closed_utc": "16:00",
+      "trading_system": "Braam",
+      "won": true,
+      "close_iso": "2026-05-26T16:00:00Z"
+    },
+    {
       "trade_id": "XLMUSDT_20260526_CB_001",
       "coin": "XLMUSDT",
       "direction": "Short",
@@ -914,12 +891,6 @@
       "entry_price": 0.08961008
     },
     {
-      "coin": "SUIUSDT",
-      "direction": "Short",
-      "trading_system": "Braam",
-      "entry_price": 1.09188343
-    },
-    {
       "coin": "LTCUSDT",
       "direction": "Short",
       "trading_system": "Braam",
@@ -927,9 +898,9 @@
     }
   ],
   "stats": {
-    "realized_pnl_usd": 74.56,
-    "win_rate_pct": 34.3,
-    "closed_count": 99,
+    "realized_pnl_usd": 96.91,
+    "win_rate_pct": 35.0,
+    "closed_count": 100,
     "per_system": {
       "John": {
         "realized_pnl_usd": 121.86,
@@ -942,9 +913,9 @@
         "closed_count": 23
       },
       "Braam": {
-        "realized_pnl_usd": -92.54,
-        "win_rate_pct": 21.1,
-        "closed_count": 19
+        "realized_pnl_usd": -70.19,
+        "win_rate_pct": 25.0,
+        "closed_count": 20
       }
     }
   }
