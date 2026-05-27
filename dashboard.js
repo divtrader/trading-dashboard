@@ -871,8 +871,13 @@ function renderPaperBars(enrichedOpen) {
     host.innerHTML = '<div class="paper-bars-empty">No open paper trades</div>';
     return;
   }
-  // Winners on top, losers below — sorted by leveraged % P&L descending.
-  const sorted = [...enrichedOpen].sort((a, b) => (b.leveragedPct || 0) - (a.leveragedPct || 0));
+  // Winners on top, losers below — sorted by total blended % P&L descending.
+  // TP1-hit trades use (banked + live) / capital so they sort correctly alongside non-TP1 trades.
+  function totalPct(t) {
+    if (t.tp1_hit) return ((t.tp1BankedUsd || 0) + (t.usd ?? 0)) / (t.capital_usd || 100) * 100;
+    return t.leveragedPct || 0;
+  }
+  const sorted = [...enrichedOpen].sort((a, b) => totalPct(b) - totalPct(a));
 
   const newHtml = sorted.map(t => {
     const isLong = t.direction === "Long";
