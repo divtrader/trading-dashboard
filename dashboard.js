@@ -66,6 +66,9 @@ const STALE_MS   = 5 * 60 * 60_000;
 // Leave empty to rely on the 5-minute GHA snapshot fallback.
 const MEXC_WORKER_URL      = "https://mexc-proxy.braamdeclerk.workers.dev";
 const BLOOMBERG_WORKER_URL = "https://bloomberg-news.braamdeclerk.workers.dev";
+
+// Shared secret for the worker's /trigger endpoint. Must match Cloudflare env.TRIGGER_TOKEN.
+const TRIGGER_TOKEN = "tk_dash_8XmK9pNzQ4vR2wL7";
 // ─────────────────────────────────────────────────────────────────────────
 
 const params = new URLSearchParams(location.search);
@@ -1686,6 +1689,58 @@ async function fetchMexcLive() {
     // card keeps showing last known value — no blank-out
   }
 }
+
+// ── Manual workflow trigger button ───────────────────────────────────────
+async function triggerWorkflow() {
+  const btn  = document.getElementById("trigger-btn");
+  if (!btn) return;
+  const icon = btn.querySelector(".trigger-icon");
+  const text = btn.querySelector(".trigger-text");
+  if (btn.classList.contains("loading") || btn.classList.contains("success")) return;
+
+  btn.classList.remove("error");
+  btn.classList.add("loading");
+  text.textContent = "Triggering…";
+
+  try {
+    const resp = await fetch(MEXC_WORKER_URL + "/trigger", {
+      method: "POST",
+      headers: { "Content-Type": "application/json", "X-Trigger-Token": TRIGGER_TOKEN },
+    });
+    const data = await resp.json().catch(() => ({}));
+
+    if (resp.ok && data.ok) {
+      btn.classList.remove("loading");
+      btn.classList.add("success");
+      icon.textContent = "✓";
+      text.textContent = "Running on cloud";
+      // Reset after 10 minutes (the heavy run takes ~10 min — by then a refresh has happened)
+      setTimeout(() => {
+        btn.classList.remove("success");
+        icon.textContent = "↻";
+        text.textContent = "Run analysis";
+      }, 10 * 60 * 1000);
+    } else {
+      throw new Error(data.message || `${resp.status}`);
+    }
+  } catch (e) {
+    console.error("trigger failed", e);
+    btn.classList.remove("loading");
+    btn.classList.add("error");
+    icon.textContent = "✗";
+    text.textContent = "Failed — retry";
+    setTimeout(() => {
+      btn.classList.remove("error");
+      icon.textContent = "↻";
+      text.textContent = "Run analysis";
+    }, 5000);
+  }
+}
+document.getElementById("trigger-btn")?.addEventListener("click", () => {
+  if (confirm("Trigger Watchlist Analysis on the cloud now? Takes ~10 minutes.")) {
+    triggerWorkflow();
+  }
+});
 
 // Init
 $(screens[0]).classList.add("active");
