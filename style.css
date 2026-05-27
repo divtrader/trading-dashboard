@@ -815,6 +815,58 @@ main {
   flex: 1 1 0;
   min-height: 0;
 }
+
+/* ── Density tiers — set via .pb-compact / .pb-mini / .pb-tiny on #paper-bars ── */
+
+/* 7-9 trades */
+.pb-compact { gap: 6px; }
+.pb-compact .paper-bar-row { padding: 8px 18px; gap: 20px; border-radius: 10px; grid-template-columns: 190px 1fr 120px; }
+.pb-compact .pb-coin        { font-size: 20px; }
+.pb-compact .pb-meta        { font-size: 9px; }
+.pb-compact .pb-live-px     { font-size: 10px; }
+.pb-compact .pb-bar         { padding: 12px 0 20px; }
+.pb-compact .pb-flag        { font-size: 9px; padding: 1px 5px; }
+.pb-compact .pb-price-val   { font-size: 9px; }
+.pb-compact .pb-pnl-pct     { font-size: 22px; }
+.pb-compact .pb-pnl-usd     { font-size: 12px; }
+.pb-compact .pb-pnl-breakdown { display: none; }
+.pb-compact .pb-tid         { font-size: 8px; }
+
+/* 10-12 trades */
+.pb-mini { gap: 4px; }
+.pb-mini .paper-bar-row { padding: 5px 14px; gap: 16px; border-radius: 8px; grid-template-columns: 160px 1fr 105px; }
+.pb-mini .pb-coin        { font-size: 16px; }
+.pb-mini .pb-meta        { font-size: 8px; gap: 4px; }
+.pb-mini .pb-live-px     { font-size: 9px; }
+.pb-mini .pb-bar         { padding: 8px 0 14px; height: 12px; }
+.pb-mini .pb-track       { height: 7px; }
+.pb-mini .pb-achieved    { height: 7px; }
+.pb-mini .pb-dot         { width: 10px; height: 10px; margin-top: -5px; }
+.pb-mini .pb-marker      { height: 14px; margin-top: -7px; }
+.pb-mini .pb-flag        { font-size: 8px; padding: 1px 4px; top: -12px; }
+.pb-mini .pb-price-val   { font-size: 8px; top: 16px; }
+.pb-mini .pb-pnl-pct     { font-size: 17px; }
+.pb-mini .pb-pnl-usd     { font-size: 11px; }
+.pb-mini .pb-pnl-breakdown { display: none; }
+.pb-mini .pb-tid         { display: none; }
+
+/* 13+ trades */
+.pb-tiny { gap: 3px; }
+.pb-tiny .paper-bar-row { padding: 4px 12px; gap: 12px; border-radius: 7px; grid-template-columns: 130px 1fr 90px; }
+.pb-tiny .pb-coin        { font-size: 13px; }
+.pb-tiny .pb-meta        { font-size: 7px; gap: 3px; }
+.pb-tiny .pb-live-px     { display: none; }
+.pb-tiny .pb-bar         { padding: 6px 0 10px; height: 10px; }
+.pb-tiny .pb-track       { height: 6px; }
+.pb-tiny .pb-achieved    { height: 6px; }
+.pb-tiny .pb-dot         { width: 8px; height: 8px; margin-top: -4px; }
+.pb-tiny .pb-marker      { height: 12px; margin-top: -6px; }
+.pb-tiny .pb-flag        { font-size: 7px; padding: 1px 3px; top: -10px; }
+.pb-tiny .pb-price-val   { font-size: 7px; top: 13px; }
+.pb-tiny .pb-pnl-pct     { font-size: 14px; }
+.pb-tiny .pb-pnl-usd     { font-size: 10px; }
+.pb-tiny .pb-pnl-breakdown { display: none; }
+.pb-tiny .pb-tid         { display: none; }
 .paper-bar-row.long  { border-left-color: rgba(0,201,167,0.7); }
 .paper-bar-row.short { border-left-color: rgba(255,77,94,0.7); }
 
