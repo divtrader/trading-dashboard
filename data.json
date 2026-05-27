@@ -1,8 +1,8 @@
 {
-  "last_updated_iso": "2026-05-27T10:42:03Z",
+  "last_updated_iso": "2026-05-27T11:35:19Z",
   "mexc_account": {
-    "unrealized_pnl": -114.4549,
-    "equity": 1735.8974,
+    "unrealized_pnl": -110.6689,
+    "equity": 1739.6834,
     "available": 552.9365,
     "position_margin": 528.053
   },
@@ -364,10 +364,10 @@
       "leverage": 3,
       "trading_system": "Braam",
       "track_only": false,
-      "status": "PENDING",
+      "status": "OPEN",
       "price_at_run": 273.1,
-      "date_activated": null,
-      "time_activated_utc": null,
+      "date_activated": "2026-05-27",
+      "time_activated_utc": "11:34",
       "date_opened": "2026-05-27",
       "time_opened_utc": "04:45",
       "conviction": "MEDIUM",
@@ -385,18 +385,6 @@
       "entry_price": 2096.91511053,
       "tp1": 1912.89877137,
       "sl": 2139.34598205,
-      "conviction": "MEDIUM",
-      "track_only": false,
-      "iso": "2026-05-27T04:45:00Z"
-    },
-    {
-      "trade_id": "TAOUSDT_20260527_CB_001",
-      "coin": "TAOUSDT",
-      "direction": "Short",
-      "trading_system": "Braam",
-      "entry_price": 278.44793589,
-      "tp1": 253.03172731,
-      "sl": 291.21647804,
       "conviction": "MEDIUM",
       "track_only": false,
       "iso": "2026-05-27T04:45:00Z"
@@ -442,6 +430,16 @@
       "tp1_hit": false,
       "iso": "2026-05-27T05:31:00Z",
       "_iso_ms": 1779859860000
+    },
+    {
+      "trade_id": "TAOUSDT_20260527_CB_001",
+      "coin": "TAOUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "entry_price": 278.44793589,
+      "tp1_hit": false,
+      "iso": "2026-05-27T11:34:00Z",
+      "_iso_ms": 1779881640000
     }
   ],
   "recent_closes": [
