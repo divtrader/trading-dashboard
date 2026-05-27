@@ -879,6 +879,13 @@ function renderPaperBars(enrichedOpen) {
   }
   const sorted = [...enrichedOpen].sort((a, b) => totalPct(b) - totalPct(a));
 
+  // Density tier: shrink rows so all trades fit without scrolling
+  const n = sorted.length;
+  host.classList.remove("pb-compact", "pb-mini", "pb-tiny");
+  if      (n >= 13) host.classList.add("pb-tiny");
+  else if (n >= 10) host.classList.add("pb-mini");
+  else if (n >= 7)  host.classList.add("pb-compact");
+
   const newHtml = sorted.map(t => {
     const isLong = t.direction === "Long";
     const dirCls = isLong ? "long" : "short";
