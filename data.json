@@ -1,8 +1,8 @@
 {
-  "last_updated_iso": "2026-05-27T12:24:53Z",
+  "last_updated_iso": "2026-05-27T13:49:37Z",
   "mexc_account": {
-    "unrealized_pnl": -104.0822,
-    "equity": 1746.2701,
+    "unrealized_pnl": -126.2396,
+    "equity": 1724.1127,
     "available": 552.9365,
     "position_margin": 528.053
   },
@@ -150,7 +150,7 @@
       "coin": "SUIUSDT",
       "direction": "Short",
       "entry_price": 1.09188343,
-      "sl": 1.04615344,
+      "sl": 1.04580322,
       "tp1": 1.0071,
       "tp2": 0.9633,
       "capital_usd": 100,
@@ -284,29 +284,6 @@
       "pnl_tp1_realized_usd": null
     },
     {
-      "trade_id": "XLMUSDT_20260526_CB_001",
-      "coin": "XLMUSDT",
-      "direction": "Short",
-      "entry_price": 0.14831089,
-      "sl": 0.15220167,
-      "tp1": 0.142,
-      "tp2": 0.1376,
-      "capital_usd": 100.0,
-      "leverage": 3,
-      "trading_system": "Braam",
-      "track_only": false,
-      "status": "OPEN",
-      "price_at_run": 0.1474,
-      "date_activated": "2026-05-26",
-      "time_activated_utc": "04:39",
-      "date_opened": "2026-05-26",
-      "time_opened_utc": "04:17",
-      "conviction": "MEDIUM",
-      "tp1_hit": false,
-      "sl_moved_to_be": false,
-      "pnl_tp1_realized_usd": null
-    },
-    {
       "trade_id": "APTUSDT_20260527_CB_001",
       "coin": "APTUSDT",
       "direction": "Short",
@@ -335,8 +312,8 @@
       "direction": "Short",
       "entry_price": 2096.91511053,
       "sl": 2139.34598205,
-      "tp1": 1912.89877137,
-      "tp2": 1706.26213831,
+      "tp1": 2027.65,
+      "tp2": 1948.0,
       "capital_usd": 100.0,
       "leverage": 3,
       "trading_system": "Braam",
@@ -378,16 +355,6 @@
   ],
   "recent_signals": [],
   "recent_opens": [
-    {
-      "trade_id": "CAKEUSDT_20260522_CB_002",
-      "coin": "CAKEUSDT",
-      "direction": "Short",
-      "trading_system": "Braam",
-      "entry_price": 1.44558727,
-      "tp1_hit": false,
-      "iso": "2026-05-25T13:28:00Z",
-      "_iso_ms": 1779715680000
-    },
     {
       "trade_id": "XLMUSDT_20260526_CB_001",
       "coin": "XLMUSDT",
@@ -440,19 +407,6 @@
     }
   ],
   "recent_closes": [
-    {
-      "trade_id": "LTCUSDT_20260430_J_M_001",
-      "coin": "LTCUSDT",
-      "direction": "Long",
-      "status": "TP2_HIT",
-      "pnl_usd": 13.71,
-      "close_reason": "TP2 hit",
-      "date_closed": "2026-05-10",
-      "time_closed_utc": "20:00",
-      "trading_system": "John",
-      "won": true,
-      "close_iso": "2026-05-10T20:00:00Z"
-    },
     {
       "trade_id": "BNBUSDT_20260504_J_M_001",
       "coin": "BNBUSDT",
@@ -959,6 +913,19 @@
       "trading_system": "Braam",
       "won": false,
       "close_iso": "2026-05-26T08:00:00Z"
+    },
+    {
+      "trade_id": "XLMUSDT_20260526_CB_001",
+      "coin": "XLMUSDT",
+      "direction": "Short",
+      "status": "STOPPED",
+      "pnl_usd": -7.67,
+      "close_reason": "SL hit",
+      "date_closed": "2026-05-27",
+      "time_closed_utc": "12:00",
+      "trading_system": "Braam",
+      "won": false,
+      "close_iso": "2026-05-27T12:00:00Z"
     }
   ],
   "recent_cancels": [],
@@ -983,9 +950,9 @@
     }
   ],
   "stats": {
-    "realized_pnl_usd": 92.13,
-    "win_rate_pct": 35.1,
-    "closed_count": 97,
+    "realized_pnl_usd": 84.46,
+    "win_rate_pct": 34.7,
+    "closed_count": 98,
     "per_system": {
       "John": {
         "realized_pnl_usd": 121.86,
@@ -998,9 +965,9 @@
         "closed_count": 23
       },
       "Braam": {
-        "realized_pnl_usd": -74.97,
-        "win_rate_pct": 23.5,
-        "closed_count": 17
+        "realized_pnl_usd": -82.64,
+        "win_rate_pct": 22.2,
+        "closed_count": 18
       }
     }
   }
