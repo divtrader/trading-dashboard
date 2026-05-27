@@ -830,7 +830,8 @@ main {
 .pb-compact .pb-pnl-pct     { font-size: 22px; }
 .pb-compact .pb-pnl-usd     { font-size: 12px; }
 .pb-compact .pb-pnl-breakdown { display: none; }
-.pb-compact .tp1-hit .pb-pnl-breakdown { display: flex; margin-top: 3px; padding-top: 3px; }
+.pb-compact .tp1-hit .pb-pnl-breakdown { display: flex; margin-top: 2px; padding-top: 2px; border-top: none; }
+.pb-compact .tp1-hit .pb-bd-row:last-child { display: none; }
 .pb-compact .pb-tid         { font-size: 8px; }
 
 /* 10-12 trades */
@@ -849,7 +850,8 @@ main {
 .pb-mini .pb-pnl-pct     { font-size: 17px; }
 .pb-mini .pb-pnl-usd     { font-size: 11px; }
 .pb-mini .pb-pnl-breakdown { display: none; }
-.pb-mini .tp1-hit .pb-pnl-breakdown { display: flex; margin-top: 2px; padding-top: 2px; font-size: 9px; }
+.pb-mini .tp1-hit .pb-pnl-breakdown { display: flex; margin-top: 1px; padding-top: 1px; border-top: none; font-size: 9px; }
+.pb-mini .tp1-hit .pb-bd-row:last-child { display: none; }
 .pb-mini .pb-tid         { display: none; }
 
 /* 13+ trades */
@@ -868,7 +870,8 @@ main {
 .pb-tiny .pb-pnl-pct     { font-size: 14px; }
 .pb-tiny .pb-pnl-usd     { font-size: 10px; }
 .pb-tiny .pb-pnl-breakdown { display: none; }
-.pb-tiny .tp1-hit .pb-pnl-breakdown { display: flex; margin-top: 2px; padding-top: 2px; font-size: 8px; }
+.pb-tiny .tp1-hit .pb-pnl-breakdown { display: flex; margin-top: 1px; padding-top: 1px; border-top: none; font-size: 8px; }
+.pb-tiny .tp1-hit .pb-bd-row:last-child { display: none; }
 .pb-tiny .pb-tid         { display: none; }
 .paper-bar-row.long  { border-left-color: rgba(0,201,167,0.7); }
 .paper-bar-row.short { border-left-color: rgba(255,77,94,0.7); }
