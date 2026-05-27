@@ -1,8 +1,8 @@
 {
-  "last_updated_iso": "2026-05-27T04:46:13Z",
+  "last_updated_iso": "2026-05-27T05:31:47Z",
   "mexc_account": {
-    "unrealized_pnl": -119.9028,
-    "equity": 1730.4424,
+    "unrealized_pnl": -105.4708,
+    "equity": 1744.8744,
     "available": 552.9294,
     "position_margin": 528.053
   },
@@ -318,10 +318,10 @@
       "leverage": 3,
       "trading_system": "Braam",
       "track_only": false,
-      "status": "PENDING",
+      "status": "OPEN",
       "price_at_run": 0.958,
-      "date_activated": null,
-      "time_activated_utc": null,
+      "date_activated": "2026-05-27",
+      "time_activated_utc": "05:31",
       "date_opened": "2026-05-27",
       "time_opened_utc": "04:45",
       "conviction": "MEDIUM",
@@ -377,18 +377,6 @@
     }
   ],
   "recent_signals": [
-    {
-      "trade_id": "APTUSDT_20260527_CB_001",
-      "coin": "APTUSDT",
-      "direction": "Short",
-      "trading_system": "Braam",
-      "entry_price": 0.96757412,
-      "tp1": 0.90426106,
-      "sl": 1.00059195,
-      "conviction": "MEDIUM",
-      "track_only": false,
-      "iso": "2026-05-27T04:45:00Z"
-    },
     {
       "trade_id": "ETHUSDT_20260527_CB_001",
       "coin": "ETHUSDT",
@@ -464,6 +452,16 @@
       "tp1_hit": false,
       "iso": "2026-05-26T07:37:00Z",
       "_iso_ms": 1779781020000
+    },
+    {
+      "trade_id": "APTUSDT_20260527_CB_001",
+      "coin": "APTUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "entry_price": 0.96757412,
+      "tp1_hit": false,
+      "iso": "2026-05-27T05:31:00Z",
+      "_iso_ms": 1779859860000
     }
   ],
   "recent_closes": [
