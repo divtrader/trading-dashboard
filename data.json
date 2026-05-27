@@ -1,10 +1,10 @@
 {
-  "last_updated_iso": "2026-05-27T20:54:09Z",
+  "last_updated_iso": "2026-05-27T22:07:01Z",
   "mexc_account": {
-    "unrealized_pnl": -110.7415,
-    "equity": 1739.5259,
+    "unrealized_pnl": -131.0779,
+    "equity": 1719.18,
     "available": 552.8516,
-    "position_margin": 528.053
+    "position_margin": 559.6888
   },
   "active_trades": [
     {
@@ -219,7 +219,7 @@
       "coin": "ALGOUSDT",
       "direction": "Short",
       "entry_price": 0.11315525,
-      "sl": 0.1170794,
+      "sl": 0.11163042,
       "tp1": 0.1059,
       "tp2": 0.1011,
       "capital_usd": 100.0,
@@ -233,8 +233,8 @@
       "date_opened": "2026-05-24",
       "time_opened_utc": "20:14",
       "conviction": "MEDIUM",
-      "tp1_hit": false,
-      "sl_moved_to_be": false,
+      "tp1_hit": true,
+      "sl_moved_to_be": true,
       "pnl_tp1_realized_usd": null
     },
     {
@@ -265,7 +265,7 @@
       "coin": "ETHUSDT",
       "direction": "Short",
       "entry_price": 2096.91511053,
-      "sl": 2139.34598205,
+      "sl": 2091.59279629,
       "tp1": 2027.65,
       "tp2": 1948.0,
       "capital_usd": 100.0,
@@ -279,8 +279,8 @@
       "date_opened": "2026-05-27",
       "time_opened_utc": "04:45",
       "conviction": "MEDIUM",
-      "tp1_hit": false,
-      "sl_moved_to_be": false,
+      "tp1_hit": true,
+      "sl_moved_to_be": true,
       "pnl_tp1_realized_usd": null
     },
     {
@@ -305,9 +305,80 @@
       "tp1_hit": false,
       "sl_moved_to_be": false,
       "pnl_tp1_realized_usd": null
+    },
+    {
+      "trade_id": "SUIUSDT_20260527_CB_001",
+      "coin": "SUIUSDT",
+      "direction": "Short",
+      "entry_price": 1.02168996,
+      "sl": 1.06212661,
+      "tp1": 0.89957913,
+      "tp2": 0.72000218,
+      "capital_usd": 100.0,
+      "leverage": 3,
+      "trading_system": "Braam",
+      "track_only": false,
+      "status": "PENDING",
+      "price_at_run": 0.9686,
+      "date_activated": null,
+      "time_activated_utc": null,
+      "date_opened": "2026-05-27",
+      "time_opened_utc": "22:06",
+      "conviction": "MEDIUM",
+      "tp1_hit": false,
+      "sl_moved_to_be": false,
+      "pnl_tp1_realized_usd": null
+    },
+    {
+      "trade_id": "APTUSDT_20260527_CB_002",
+      "coin": "APTUSDT",
+      "direction": "Short",
+      "entry_price": 0.97142139,
+      "sl": 1.01056724,
+      "tp1": 0.90331803,
+      "tp2": 0.75043824,
+      "capital_usd": 100.0,
+      "leverage": 3,
+      "trading_system": "Braam",
+      "track_only": false,
+      "status": "PENDING",
+      "price_at_run": 0.956,
+      "date_activated": null,
+      "time_activated_utc": null,
+      "date_opened": "2026-05-27",
+      "time_opened_utc": "22:06",
+      "conviction": "MEDIUM",
+      "tp1_hit": false,
+      "sl_moved_to_be": false,
+      "pnl_tp1_realized_usd": null
     }
   ],
-  "recent_signals": [],
+  "recent_signals": [
+    {
+      "trade_id": "SUIUSDT_20260527_CB_001",
+      "coin": "SUIUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "entry_price": 1.02168996,
+      "tp1": 0.89957913,
+      "sl": 1.06212661,
+      "conviction": "MEDIUM",
+      "track_only": false,
+      "iso": "2026-05-27T22:06:00Z"
+    },
+    {
+      "trade_id": "APTUSDT_20260527_CB_002",
+      "coin": "APTUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "entry_price": 0.97142139,
+      "tp1": 0.90331803,
+      "sl": 1.01056724,
+      "conviction": "MEDIUM",
+      "track_only": false,
+      "iso": "2026-05-27T22:06:00Z"
+    }
+  ],
   "recent_opens": [
     {
       "trade_id": "XLMUSDT_20260526_CB_001",
@@ -355,7 +426,7 @@
       "direction": "Short",
       "trading_system": "Braam",
       "entry_price": 2096.91511053,
-      "tp1_hit": false,
+      "tp1_hit": true,
       "iso": "2026-05-27T12:23:00Z",
       "_iso_ms": 1779884580000
     }
@@ -895,6 +966,18 @@
       "direction": "Short",
       "trading_system": "Braam",
       "entry_price": 53.74629002
+    },
+    {
+      "coin": "ALGOUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "entry_price": 0.11315525
+    },
+    {
+      "coin": "ETHUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "entry_price": 2096.91511053
     }
   ],
   "stats": {
