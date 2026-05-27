@@ -78,26 +78,41 @@ async function loadData() {
 }
 
 // Compute paper P&L from data.json active_trades using live Binance prices
+// Mirrors dashboard.js computeUnrealized + tp1Banked logic exactly
 function computePaper(dash, livePx) {
   const stats  = dash.stats         || {};
   const trades = dash.active_trades || [];
 
   let unrealized = 0;
+  let tp1Banked  = 0;
+
   for (const t of trades) {
     if (t.status !== "OPEN") continue;
-    // Use live Binance price, fall back to price_at_run, then entry_price
     const live = (livePx && livePx[t.coin]) ?? t.price_at_run ?? t.entry_price;
-    const dir  = t.direction === "Long" ? 1 : -1;
-    const ep   = t.entry_price || 0;
-    const pct  = ep ? ((live - ep) / ep) * dir : 0;
-    const cap  = t.capital_usd || 100;
-    const lev  = t.leverage    || 1;
-    const remaining = t.tp1_hit ? 0.2 : 1.0;
-    unrealized += cap * remaining * pct * lev;
-    if (t.tp1_hit && t.pnl_tp1_realized_usd != null) unrealized += t.pnl_tp1_realized_usd;
+    const isLong = t.direction === "Long";
+    const dir    = isLong ? 1 : -1;
+    const ep     = t.entry_price || 0;
+    const cap    = t.capital_usd || 100;
+    const lev    = t.leverage    || 1;
+
+    if (t.tp1_hit) {
+      // 80% banked at TP1 — use recorded value if available, else calculate
+      if (t.pnl_tp1_realized_usd != null) {
+        tp1Banked += t.pnl_tp1_realized_usd;
+      } else if (t.tp1 && ep) {
+        const tp1Pct = ((t.tp1 - ep) / ep) * dir;
+        tp1Banked += cap * 0.8 * tp1Pct * lev;
+      }
+      // Remaining 20% still live
+      const pct20 = ep ? ((live - ep) / ep) * dir : 0;
+      unrealized += cap * 0.2 * pct20 * lev;
+    } else {
+      const pct = ep ? ((live - ep) / ep) * dir : 0;
+      unrealized += cap * pct * lev;
+    }
   }
 
-  const realized  = stats.realized_pnl_usd ?? 0;
+  const realized  = (stats.realized_pnl_usd ?? 0) + tp1Banked;
   const total     = realized + unrealized;
   const wr        = stats.win_rate_pct  ?? 0;
   const closed    = stats.closed_count  ?? 0;
