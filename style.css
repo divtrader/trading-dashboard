@@ -553,6 +553,52 @@ main {
 .hero-return.neg { color: var(--red); }
 .hero-return.neu { color: var(--muted); }
 
+/* Scope tag in the P&L label header */
+.hero-scope-tag {
+  display: inline-block;
+  margin-left: 8px;
+  padding: 1px 7px;
+  font-size: 9px;
+  font-weight: 700;
+  color: var(--muted);
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.10);
+  border-radius: 4px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  vertical-align: middle;
+}
+
+/* Real-only breakdown line under the hero return */
+.hero-real-only {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin: -10px 0 18px 0;
+  font-size: 13px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.1px;
+}
+.hero-real-only .hr-label {
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #ffb74d;
+  background: rgba(255,183,77,0.10);
+  border: 1px solid rgba(255,183,77,0.30);
+  border-radius: 4px;
+  padding: 2px 7px;
+}
+.hero-real-only .hr-pnl     { font-weight: 800; }
+.hero-real-only .hr-pnl.pos { color: var(--green); }
+.hero-real-only .hr-pnl.neg { color: var(--red); }
+.hero-real-only .hr-pnl.neu { color: var(--muted); }
+.hero-real-only .hr-sep     { color: var(--muted-2); opacity: 0.5; }
+.hero-real-only .hr-wr,
+.hero-real-only .hr-count   { color: var(--muted); }
+
 .hero-spark {
   display: flex;
   flex-direction: column;
@@ -1656,34 +1702,6 @@ main {
   text-transform: uppercase;
   letter-spacing: 0.06em;
 }
-.pt-track-tag {
-  font-size: 8px;
-  font-weight: 700;
-  color: #ffb74d;
-  background: rgba(255,183,77,0.14);
-  border: 1px solid rgba(255,183,77,0.35);
-  border-radius: 4px;
-  padding: 1px 5px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-.pt-row.pt-track-only { opacity: 0.55; }
-.pt-row.pt-track-only:hover { opacity: 0.85; }
-
-/* Track-only marker for paper-bar rows on screen 2 */
-.pb-track-tag {
-  font-size: 8px;
-  font-weight: 700;
-  color: #ffb74d;
-  background: rgba(255,183,77,0.14);
-  border: 1px solid rgba(255,183,77,0.35);
-  border-radius: 4px;
-  padding: 1px 5px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-.paper-bar-row.pb-track-only { opacity: 0.65; }
-.paper-bar-row.pb-track-only:hover { opacity: 0.95; }
 
 .pt-approach { display: flex; flex-direction: column; gap: 4px; }
 .pt-track {
