@@ -1457,11 +1457,14 @@ function renderPendingTriggers() {
     return `
       <div class="pt-row ${dirCls}${t.inZone ? " pt-in-zone" : ""}${t.track_only ? " pt-track-only" : ""}" data-trade-id="${t.trade_id}" title="${t.trade_id}${t.track_only ? " (track-only)" : ""}">
         <div class="pt-info">
-          <span class="pt-coin">${coin}</span>
-          <div class="pt-badges">
-            <span class="pt-dir ${dirCls}">${isLong ? "L" : "S"}</span>
-            <span class="pt-sys">${t.trading_system || ""}</span>
+          <div class="pt-info-top">
+            <span class="pt-coin">${coin}</span>
+            <div class="pt-badges">
+              <span class="pt-dir ${dirCls}">${isLong ? "L" : "S"}</span>
+              <span class="pt-sys">${t.trading_system || ""}</span>
+            </div>
           </div>
+          <div class="pt-tid">${t.trade_id || ""}</div>
         </div>
         <div class="pt-approach">
           <div class="pt-track">
