@@ -1,8 +1,8 @@
 {
-  "last_updated_iso": "2026-05-28T08:26:16Z",
+  "last_updated_iso": "2026-05-28T08:33:20Z",
   "mexc_account": {
-    "unrealized_pnl": -189.4924,
-    "equity": 1618.8085,
+    "unrealized_pnl": -193.2564,
+    "equity": 1615.0445,
     "available": 605.9576,
     "position_margin": 562.9706
   },
@@ -25,29 +25,6 @@
       "time_activated_utc": null,
       "date_opened": "2026-05-15",
       "time_opened_utc": "16:22",
-      "conviction": "MEDIUM",
-      "tp1_hit": false,
-      "sl_moved_to_be": false,
-      "pnl_tp1_realized_usd": null
-    },
-    {
-      "trade_id": "UNIUSDT_20260522_CB_001",
-      "coin": "UNIUSDT",
-      "direction": "Short",
-      "entry_price": 3.58669178,
-      "sl": 3.70561616,
-      "tp1": 3.12689575,
-      "tp2": 2.66099483,
-      "capital_usd": 100,
-      "leverage": 3,
-      "trading_system": "Braam",
-      "track_only": false,
-      "status": "PENDING",
-      "price_at_run": 3.466,
-      "date_activated": null,
-      "time_activated_utc": null,
-      "date_opened": "2026-05-22",
-      "time_opened_utc": "19:31",
       "conviction": "MEDIUM",
       "tp1_hit": false,
       "sl_moved_to_be": false,
@@ -795,7 +772,15 @@
       "close_iso": "2026-05-28T04:00:00Z"
     }
   ],
-  "recent_cancels": [],
+  "recent_cancels": [
+    {
+      "coin": "UNIUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "close_reason": "Stale: price drifted >15% below entry zone for >24h (move ran without fill \u2014 re-",
+      "iso": "2026-05-28T08:31:00Z"
+    }
+  ],
   "tp1_hits_open": [
     {
       "coin": "DOGEUSDT",
