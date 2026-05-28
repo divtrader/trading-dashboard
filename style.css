@@ -1670,6 +1670,21 @@ main {
 .pt-row.pt-track-only { opacity: 0.55; }
 .pt-row.pt-track-only:hover { opacity: 0.85; }
 
+/* Track-only marker for paper-bar rows on screen 2 */
+.pb-track-tag {
+  font-size: 8px;
+  font-weight: 700;
+  color: #ffb74d;
+  background: rgba(255,183,77,0.14);
+  border: 1px solid rgba(255,183,77,0.35);
+  border-radius: 4px;
+  padding: 1px 5px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.paper-bar-row.pb-track-only { opacity: 0.65; }
+.paper-bar-row.pb-track-only:hover { opacity: 0.95; }
+
 .pt-approach { display: flex; flex-direction: column; gap: 4px; }
 .pt-track {
   height: 5px;
