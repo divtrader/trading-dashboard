@@ -1424,7 +1424,7 @@ function renderMovers(list, kind) {
 
 function renderPendingTriggers() {
   const host = $("triggers");
-  const pending = state.trades.filter(t => t.status === "PENDING" && !t.track_only);
+  const pending = state.trades.filter(t => t.status === "PENDING");
   if (!pending.length) {
     host.innerHTML = '<span class="empty">No pending triggers</span>';
     return;
@@ -1442,7 +1442,7 @@ function renderPendingTriggers() {
         ? (((t.entry_lo ?? t.entry_price) - live) / live * 100) : 0;
     }
     return { ...t, live, distPct, inZone: distPct < 0.1 };
-  }).sort((a, b) => a.distPct - b.distPct).slice(0, 5);
+  }).sort((a, b) => a.distPct - b.distPct).slice(0, 20);
 
   // Scale bars relative to the farthest trade + 25% headroom so the farthest
   // trade always gets ~20% bar instead of collapsing to 0
@@ -1457,13 +1457,15 @@ function renderPendingTriggers() {
     const proximity = t.inZone ? 100 : Math.max(0, 100 - (t.distPct / MAX_DIST) * 100);
     const distLabel = t.inZone ? "IN ZONE" : `${t.distPct.toFixed(1)}%`;
 
+    const trackBadge = t.track_only ? `<span class="pt-track-tag">TRACK</span>` : "";
     return `
-      <div class="pt-row ${dirCls}${t.inZone ? " pt-in-zone" : ""}" data-trade-id="${t.trade_id}" title="${t.trade_id}">
+      <div class="pt-row ${dirCls}${t.inZone ? " pt-in-zone" : ""}${t.track_only ? " pt-track-only" : ""}" data-trade-id="${t.trade_id}" title="${t.trade_id}${t.track_only ? " (track-only)" : ""}">
         <div class="pt-info">
           <span class="pt-coin">${coin}</span>
           <div class="pt-badges">
             <span class="pt-dir ${dirCls}">${isLong ? "L" : "S"}</span>
             <span class="pt-sys">${t.trading_system || ""}</span>
+            ${trackBadge}
           </div>
         </div>
         <div class="pt-approach">
