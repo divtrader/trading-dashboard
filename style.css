@@ -386,15 +386,24 @@ main {
 }
 .hero-pnls {
   display: grid;
-  grid-template-columns: 1fr 1px 1fr;
-  gap: 44px;
+  grid-template-columns: 1fr 1px 1.1fr;
+  gap: 32px;
   align-items: start;
 }
-/* Paper dashboard: only paper-block visible (MEXC moved to live dashboard) — full width */
-body:not(.live-mode) .hero-pnls:not(:has(.mexc-block)) {
-  grid-template-columns: 1fr;
+
+/* Systems block when embedded in the hero tile — compact rows */
+.hero-systems { width: 100%; gap: 8px; }
+.hero-systems .sys-row {
+  padding: 8px 14px 8px 0;
+  grid-template-columns: 130px 0.55fr 0.55fr 0.55fr 0.9fr 1.1fr;
+  gap: 8px;
 }
-body:not(.live-mode) .hero-pnls:not(:has(.mexc-block)) .pnl-divider { display: none; }
+.hero-systems .sys-name { font-size: 14px; }
+.hero-systems .sys-tag  { font-size: 9px; }
+.hero-systems .metric .v { font-size: 14px; }
+.hero-systems .metric .k { font-size: 8px; }
+.hero-systems .sys-ring-wrap { width: 36px; height: 36px; }
+.hero-systems .sys-ring-label { font-size: 9px; }
 .hero-donut-inline {
   display: flex;
   flex-direction: column;
