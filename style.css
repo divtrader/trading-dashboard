@@ -1632,6 +1632,63 @@ main {
   flex-direction: column;
   gap: 8px;
 }
+/* Two-column layout: real trades | track-only */
+.pt-cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+  flex: 1;
+  min-height: 0;
+}
+.pt-col {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  gap: 6px;
+}
+.pt-col-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  padding: 0 4px 6px;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.pt-col-label {
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.pt-col:nth-child(2) .pt-col-label { color: #ffb74d; }
+.pt-col-count {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text);
+  background: rgba(255,255,255,0.06);
+  padding: 1px 7px;
+  border-radius: 8px;
+  font-variant-numeric: tabular-nums;
+}
+.pt-col-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  gap: 4px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  min-height: 0;
+}
+.pt-col-empty {
+  color: var(--muted);
+  opacity: 0.55;
+  font-size: 12px;
+  font-style: italic;
+  text-align: center;
+  padding: 18px;
+}
+
 .triggers-body {
   flex: 1;
   display: flex;
