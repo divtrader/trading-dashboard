@@ -1723,9 +1723,25 @@ main {
 
 .pt-info {
   display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
+}
+.pt-info-top {
+  display: flex;
   align-items: center;
   gap: 8px;
   min-width: 0;
+}
+.pt-tid {
+  font-family: ui-monospace, "SF Mono", Menlo, monospace;
+  font-size: 9px;
+  color: var(--muted);
+  opacity: 0.55;
+  letter-spacing: 0.3px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .pt-coin {
   font-size: 17px;
