@@ -1797,13 +1797,52 @@ main {
   display: flex;
   flex: 1;
   min-width: 0;
-  gap: 18px;
-  overflow-x: auto;
-  overflow-y: hidden;
-  scrollbar-width: none;
+  overflow: hidden;
   align-items: center;
+  position: relative;
 }
-.activity-banner .ab-events::-webkit-scrollbar { display: none; }
+
+/* Marquee track — duplicated content scrolls right→left, seamless loop */
+.activity-banner .ab-track {
+  display: flex;
+  width: max-content;
+  animation: ab-scroll 80s linear infinite;
+  will-change: transform;
+}
+.activity-banner:hover .ab-track {
+  animation-play-state: paused;
+}
+.activity-banner .ab-group {
+  display: flex;
+  gap: 26px;
+  padding-right: 26px;
+  align-items: center;
+  flex-shrink: 0;
+}
+@keyframes ab-scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Soft fade on left/right edges so events don't pop in/out abruptly */
+.activity-banner .ab-events::before,
+.activity-banner .ab-events::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 36px;
+  pointer-events: none;
+  z-index: 2;
+}
+.activity-banner .ab-events::before {
+  left: 0;
+  background: linear-gradient(90deg, rgba(22,27,34,0.95), rgba(22,27,34,0));
+}
+.activity-banner .ab-events::after {
+  right: 0;
+  background: linear-gradient(270deg, rgba(22,27,34,0.95), rgba(22,27,34,0));
+}
 
 /* Compact inline event rows when inside the banner */
 .activity-banner .ev-row {
