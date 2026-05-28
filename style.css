@@ -2789,6 +2789,30 @@ main {
   padding: 10px 14px;
   flex-shrink: 0;
 }
+
+/* Housekeeping tile (API key expiries) on screen 4 */
+.housekeeping-tile {
+  margin-top: 10px;
+  flex-shrink: 0;
+}
+.housekeeping-body {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 8px;
+}
+.housekeeping-body .ev-row {
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.04);
+  border-radius: 8px;
+  padding: 8px 12px;
+  margin: 0;
+}
+.housekeeping-body .empty {
+  color: var(--muted);
+  font-size: 12px;
+  opacity: 0.7;
+}
 .strip-cell {
   display: flex;
   flex-direction: column;
