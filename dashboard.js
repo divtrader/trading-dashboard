@@ -938,7 +938,7 @@ function renderPaperBars(enrichedOpen) {
     const achieved = tp1Hit ? `<div class="pb-achieved" style="left:${Math.min(ePct,t1Pct).toFixed(1)}%;width:${Math.abs(t1Pct-ePct).toFixed(1)}%"></div>` : "";
 
     return `
-      <div class="paper-bar-row ${dirCls}${tp1Cls}${t.track_only ? " pb-track-only" : ""}" data-trade-id="${t.trade_id}" title="${t.trade_id}${t.track_only ? " (track-only)" : ""}">
+      <div class="paper-bar-row ${dirCls}${tp1Cls}" data-trade-id="${t.trade_id}" title="${t.trade_id}">
         <div class="pb-head">
           <div class="pb-coin-row">
             <span class="pb-coin">${coin}</span>
@@ -948,7 +948,6 @@ function renderPaperBars(enrichedOpen) {
             <span class="pb-dir ${dirCls}">${isLong ? "▲ LONG" : "▼ SHORT"}</span>
             <span class="pb-sys">${sys}</span>
             ${beActive ? '<span class="pb-be">BE</span>' : ""}
-            ${t.track_only ? '<span class="pb-track-tag">TRACK</span>' : ""}
           </div>
           <div class="pb-tid">${t.trade_id || ""}</div>
         </div>
@@ -1082,6 +1081,24 @@ function renderHero(enrichedOpen) {
     const retPct = totalDeployed > 0 ? (total / totalDeployed) * 100 : 0;
     pctEl2.textContent = (retPct >= 0 ? "+" : "") + retPct.toFixed(2) + "% on all capital deployed";
     pctEl2.className = "hero-return " + cls(total);
+  }
+
+  // Real-only breakdown (excludes track_only signals)
+  const realStats = state.stats.real_only;
+  if (realStats) {
+    const realOpen   = enriched.filter(t => !t.track_only);
+    const realUnreal = realOpen.reduce((s, t) => s + t.usd, 0);
+    const realTp1Bk  = realOpen.reduce((s, t) => s + (t.tp1BankedUsd || 0), 0);
+    const realRealiz = (realStats.realized_pnl_usd ?? 0) + realTp1Bk;
+    const realTotal  = realRealiz + realUnreal;
+    const rwr        = realStats.win_rate_pct ?? 0;
+    const rcl        = realStats.closed_count ?? 0;
+    const pnlEl   = $("hr-pnl");
+    const wrEl    = $("hr-wr");
+    const cntEl   = $("hr-count");
+    if (pnlEl) { pnlEl.textContent = fmtUsd(realTotal); pnlEl.className = "hr-pnl " + cls(realTotal); }
+    if (wrEl)  { wrEl.textContent  = rwr.toFixed(1) + "% WR"; }
+    if (cntEl) { cntEl.textContent = rcl + " closed"; }
   }
 
   // Donut
@@ -1407,7 +1424,7 @@ function renderMovers(list, kind) {
 
 function renderPendingTriggers() {
   const host = $("triggers");
-  const pending = state.trades.filter(t => t.status === "PENDING");
+  const pending = state.trades.filter(t => t.status === "PENDING" && !t.track_only);
   if (!pending.length) {
     host.innerHTML = '<span class="empty">No pending triggers</span>';
     return;
@@ -1425,7 +1442,7 @@ function renderPendingTriggers() {
         ? (((t.entry_lo ?? t.entry_price) - live) / live * 100) : 0;
     }
     return { ...t, live, distPct, inZone: distPct < 0.1 };
-  }).sort((a, b) => a.distPct - b.distPct).slice(0, 20);
+  }).sort((a, b) => a.distPct - b.distPct).slice(0, 5);
 
   // Scale bars relative to the farthest trade + 25% headroom so the farthest
   // trade always gets ~20% bar instead of collapsing to 0
@@ -1440,15 +1457,13 @@ function renderPendingTriggers() {
     const proximity = t.inZone ? 100 : Math.max(0, 100 - (t.distPct / MAX_DIST) * 100);
     const distLabel = t.inZone ? "IN ZONE" : `${t.distPct.toFixed(1)}%`;
 
-    const trackBadge = t.track_only ? `<span class="pt-track-tag">TRACK</span>` : "";
     return `
-      <div class="pt-row ${dirCls}${t.inZone ? " pt-in-zone" : ""}${t.track_only ? " pt-track-only" : ""}" data-trade-id="${t.trade_id}" title="${t.trade_id}${t.track_only ? " (track-only)" : ""}">
+      <div class="pt-row ${dirCls}${t.inZone ? " pt-in-zone" : ""}" data-trade-id="${t.trade_id}" title="${t.trade_id}">
         <div class="pt-info">
           <span class="pt-coin">${coin}</span>
           <div class="pt-badges">
             <span class="pt-dir ${dirCls}">${isLong ? "L" : "S"}</span>
             <span class="pt-sys">${t.trading_system || ""}</span>
-            ${trackBadge}
           </div>
         </div>
         <div class="pt-approach">
