@@ -1514,7 +1514,7 @@ function renderActivity() {
   }
 
   events.sort((a, b) => b.ts - a.ts);
-  const newHtml = events.slice(0, 8).map(ev => {
+  const eventsHtml = events.slice(0, 8).map(ev => {
     const { t } = ev;
     const coin = (t.coin || "").replace("USDT", "");
     const dir  = t.direction || "";
@@ -1533,7 +1533,9 @@ function renderActivity() {
       default: return "";
     }
   }).join("");
-  flipReplace($("activity"), newHtml, "data-ev-key");
+  // Marquee track — duplicate events for seamless infinite scroll
+  const wrapped = `<div class="ab-track"><div class="ab-group">${eventsHtml}</div><div class="ab-group" aria-hidden="true">${eventsHtml}</div></div>`;
+  $("activity").innerHTML = wrapped;
 }
 
 function renderApiKeys() {
