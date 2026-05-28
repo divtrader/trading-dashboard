@@ -1448,16 +1448,12 @@ function renderPendingTriggers() {
   // trade always gets ~20% bar instead of collapsing to 0
   const MAX_DIST = Math.max(8, ...enriched.map(t => t.distPct)) * 1.25;
 
-  const newHtml = enriched.map(t => {
+  const rowHtml = (t) => {
     const isLong = t.direction === "Long";
     const dirCls = isLong ? "long" : "short";
     const coin = (t.coin || "").replace("USDT", "");
-
-    // proximity: 0% = far, 100% = at entry zone edge
     const proximity = t.inZone ? 100 : Math.max(0, 100 - (t.distPct / MAX_DIST) * 100);
     const distLabel = t.inZone ? "IN ZONE" : `${t.distPct.toFixed(1)}%`;
-
-    const trackBadge = t.track_only ? `<span class="pt-track-tag">TRACK</span>` : "";
     return `
       <div class="pt-row ${dirCls}${t.inZone ? " pt-in-zone" : ""}${t.track_only ? " pt-track-only" : ""}" data-trade-id="${t.trade_id}" title="${t.trade_id}${t.track_only ? " (track-only)" : ""}">
         <div class="pt-info">
@@ -1465,7 +1461,6 @@ function renderPendingTriggers() {
           <div class="pt-badges">
             <span class="pt-dir ${dirCls}">${isLong ? "L" : "S"}</span>
             <span class="pt-sys">${t.trading_system || ""}</span>
-            ${trackBadge}
           </div>
         </div>
         <div class="pt-approach">
@@ -1481,8 +1476,30 @@ function renderPendingTriggers() {
           <span class="pt-price">${fmtPrice(t.live)}</span>
         </div>
       </div>`;
-  }).join("");
-  flipReplace(host, newHtml);
+  };
+
+  const realRows  = enriched.filter(t => !t.track_only);
+  const trackRows = enriched.filter(t =>  t.track_only);
+
+  const colHtml = (rows, label, count) => {
+    const body = rows.length
+      ? rows.map(rowHtml).join("")
+      : '<div class="pt-col-empty">no pending</div>';
+    return `
+      <div class="pt-col">
+        <div class="pt-col-head">
+          <span class="pt-col-label">${label}</span>
+          <span class="pt-col-count">${count}</span>
+        </div>
+        <div class="pt-col-body">${body}</div>
+      </div>`;
+  };
+
+  host.innerHTML = `
+    <div class="pt-cols">
+      ${colHtml(realRows,  "REAL TRADES", realRows.length)}
+      ${colHtml(trackRows, "TRACK ONLY",  trackRows.length)}
+    </div>`;
 }
 
 function renderActivity() {
