@@ -938,7 +938,7 @@ function renderPaperBars(enrichedOpen) {
     const achieved = tp1Hit ? `<div class="pb-achieved" style="left:${Math.min(ePct,t1Pct).toFixed(1)}%;width:${Math.abs(t1Pct-ePct).toFixed(1)}%"></div>` : "";
 
     return `
-      <div class="paper-bar-row ${dirCls}${tp1Cls}" data-trade-id="${t.trade_id}" title="${t.trade_id}">
+      <div class="paper-bar-row ${dirCls}${tp1Cls}${t.track_only ? " pb-track-only" : ""}" data-trade-id="${t.trade_id}" title="${t.trade_id}${t.track_only ? " (track-only)" : ""}">
         <div class="pb-head">
           <div class="pb-coin-row">
             <span class="pb-coin">${coin}</span>
@@ -948,6 +948,7 @@ function renderPaperBars(enrichedOpen) {
             <span class="pb-dir ${dirCls}">${isLong ? "▲ LONG" : "▼ SHORT"}</span>
             <span class="pb-sys">${sys}</span>
             ${beActive ? '<span class="pb-be">BE</span>' : ""}
+            ${t.track_only ? '<span class="pb-track-tag">TRACK</span>' : ""}
           </div>
           <div class="pb-tid">${t.trade_id || ""}</div>
         </div>
