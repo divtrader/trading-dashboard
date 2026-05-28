@@ -390,6 +390,11 @@ main {
   gap: 44px;
   align-items: start;
 }
+/* Paper dashboard: only paper-block visible (MEXC moved to live dashboard) — full width */
+body:not(.live-mode) .hero-pnls:not(:has(.mexc-block)) {
+  grid-template-columns: 1fr;
+}
+body:not(.live-mode) .hero-pnls:not(:has(.mexc-block)) .pnl-divider { display: none; }
 .hero-donut-inline {
   display: flex;
   flex-direction: column;
