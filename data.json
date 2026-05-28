@@ -1,10 +1,10 @@
 {
-  "last_updated_iso": "2026-05-27T23:03:55Z",
+  "last_updated_iso": "2026-05-28T01:25:22Z",
   "mexc_account": {
-    "unrealized_pnl": -143.5491,
-    "equity": 1706.7088,
-    "available": 552.8516,
-    "position_margin": 559.6888
+    "unrealized_pnl": -165.632,
+    "equity": 1684.6285,
+    "available": 553.0003,
+    "position_margin": 657.8874
   },
   "active_trades": [
     {
@@ -35,7 +35,7 @@
       "coin": "XRPUSDT",
       "direction": "Short",
       "entry_price": 1.37560844,
-      "sl": 1.40340936,
+      "sl": 1.34206549,
       "tp1": 1.3087,
       "tp2": 1.17608603,
       "capital_usd": 100,
@@ -49,8 +49,8 @@
       "date_opened": "2026-05-22",
       "time_opened_utc": "11:24",
       "conviction": "MEDIUM",
-      "tp1_hit": false,
-      "sl_moved_to_be": false,
+      "tp1_hit": true,
+      "sl_moved_to_be": true,
       "pnl_tp1_realized_usd": null
     },
     {
@@ -81,7 +81,7 @@
       "coin": "LINKUSDT",
       "direction": "Short",
       "entry_price": 9.72076818,
-      "sl": 9.97357347,
+      "sl": 9.46873961,
       "tp1": 9.12,
       "tp2": 8.577,
       "capital_usd": 100,
@@ -95,8 +95,8 @@
       "date_opened": "2026-05-22",
       "time_opened_utc": "18:51",
       "conviction": "MEDIUM",
-      "tp1_hit": false,
-      "sl_moved_to_be": false,
+      "tp1_hit": true,
+      "sl_moved_to_be": true,
       "pnl_tp1_realized_usd": null
     },
     {
@@ -956,10 +956,22 @@
   "recent_cancels": [],
   "tp1_hits_open": [
     {
+      "coin": "XRPUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "entry_price": 1.37560844
+    },
+    {
       "coin": "HBARUSDT",
       "direction": "Short",
       "trading_system": "Braam",
       "entry_price": 0.08961008
+    },
+    {
+      "coin": "LINKUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "entry_price": 9.72076818
     },
     {
       "coin": "LTCUSDT",
