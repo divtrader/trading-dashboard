@@ -1442,7 +1442,7 @@ function renderPendingTriggers() {
         ? (((t.entry_lo ?? t.entry_price) - live) / live * 100) : 0;
     }
     return { ...t, live, distPct, inZone: distPct < 0.1 };
-  }).sort((a, b) => a.distPct - b.distPct).slice(0, 20);
+  }).sort((a, b) => a.distPct - b.distPct); // no cap — both columns scroll independently
 
   // Scale bars relative to the farthest trade + 25% headroom so the farthest
   // trade always gets ~20% bar instead of collapsing to 0
