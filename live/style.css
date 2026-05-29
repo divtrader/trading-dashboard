@@ -2650,22 +2650,48 @@ main {
 }
 .housekeeping-body {
   display: flex;
-  flex-direction: column;
-  gap: 6px;
+  flex-wrap: wrap;
+  gap: 8px;
   margin-top: 8px;
+  align-items: center;
 }
-.housekeeping-body .ev-row {
-  background: rgba(255,255,255,0.02);
-  border: 1px solid rgba(255,255,255,0.04);
-  border-radius: 8px;
-  padding: 8px 12px;
-  margin: 0;
-}
-.housekeeping-body .empty {
+.hk-empty {
+  font-size: 11px;
   color: var(--muted);
-  font-size: 12px;
-  opacity: 0.7;
+  opacity: 0.6;
 }
+.hk-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px 4px 7px;
+  border-radius: 20px;
+  border: 1px solid transparent;
+  background: rgba(255,255,255,0.03);
+  font-size: 11px;
+  white-space: nowrap;
+}
+.hk-pill.hk-ok     { border-color: rgba(38,166,154,0.25); }
+.hk-pill.hk-warn   { border-color: rgba(255,167,38,0.35); }
+.hk-pill.hk-urgent { border-color: rgba(239,83,80,0.45); background: rgba(239,83,80,0.07); }
+.hk-dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.hk-name {
+  color: var(--muted);
+  font-weight: 600;
+  letter-spacing: 0.1px;
+}
+.hk-days {
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+  font-size: 11px;
+}
+.hk-pill.hk-ok     .hk-days { color: #26A69A; }
+.hk-pill.hk-warn   .hk-days { color: #FFA726; }
+.hk-pill.hk-urgent .hk-days { color: #EF5350; }
 .strip-cell {
   display: flex;
   flex-direction: column;
