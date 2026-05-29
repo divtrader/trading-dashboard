@@ -326,6 +326,7 @@ async function fetchData() {
     checkBloombergNews(d.bloomberg_news || []);
     state.stats = d.stats || {};
     state.mexcAccount = d.mexc_account || null;
+    state.apiKeys = d.api_keys || [];
     state.lastCronIso = d.last_updated_iso || null;
     state.lastFetch = Date.now();
 
@@ -631,6 +632,7 @@ function render() {
   renderMexcCard();
   renderS0();
   renderRecentClosesTile();
+  renderApiKeys();
 }
 
 function renderRecentClosesTile() {
@@ -1516,6 +1518,31 @@ function renderActivity() {
   flipReplace($("activity"), newHtml, "data-ev-key");
 }
 
+function renderApiKeys() {
+  const host = $("api-keys");
+  if (!host) return;
+  const keys = state.apiKeys || [];
+  if (!keys.length) {
+    host.innerHTML = '<span class="empty">No key data available</span>';
+    return;
+  }
+  const rows = keys.map(k => {
+    const statusColor = k.status === "urgent" ? "#EF5350"
+                      : k.status === "warn"   ? "#FFA726"
+                      : "#26A69A";
+    const statusIcon  = k.status === "urgent" ? "🔴"
+                      : k.status === "warn"   ? "🟡"
+                      : "✅";
+    return `
+      <div class="ev-row" style="display:flex;justify-content:space-between;align-items:center;gap:8px">
+        <span style="font-size:11px;color:#ccc;flex:1">${statusIcon} ${k.label}</span>
+        <span style="font-size:10px;color:#888">${k.expires}</span>
+        <span style="font-size:12px;font-weight:bold;color:${statusColor};min-width:55px;text-align:right">${k.days_left}d left</span>
+      </div>`;
+  }).join("");
+  host.innerHTML = rows;
+}
+
 // System accent colors — read from CSS vars if defined (allows theme overrides), else use defaults
 const SYS_COLOR = {
   John:    cssVar("--sys-john")  || "#5B8DEF",
@@ -1723,7 +1750,7 @@ setInterval(fetchBloombergNews, 60_000);
 // + live Fear & Greed from alternative.me (CORS-friendly, no key).
 // ════════════════════════════════════════════════════════════════════════
 
-const ANALYTICS_URL = "analytics.json";
+const ANALYTICS_URL = "../analytics.json"; // live dashboard is in /live/ subdirectory
 const FNG_URL       = "https://api.alternative.me/fng/?limit=1";
 let _edgeAnalytics = null;
 let _edgeFng = null;
