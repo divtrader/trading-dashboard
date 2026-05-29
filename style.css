@@ -960,6 +960,16 @@ main {
   background: rgba(255,183,77,0.15);
   padding: 2px 6px; border-radius: 4px;
 }
+.pb-track-tag {
+  font-size: 8px; font-weight: 800;
+  color: #ffb74d;
+  background: rgba(255,183,77,0.12);
+  border: 1px solid rgba(255,183,77,0.3);
+  padding: 1px 5px; border-radius: 4px;
+  letter-spacing: 0.08em; text-transform: uppercase;
+}
+.paper-bar-row.pb-track-only { opacity: 0.55; }
+.paper-bar-row.pb-track-only:hover { opacity: 1; transition: opacity 0.2s; }
 .pb-coin-row {
   display: flex;
   align-items: baseline;
