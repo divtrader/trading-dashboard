@@ -1565,24 +1565,23 @@ function renderApiKeys() {
   if (!host) return;
   const keys = state.apiKeys || [];
   if (!keys.length) {
-    host.innerHTML = '<span class="empty">No key data available</span>';
+    host.innerHTML = '<span class="hk-empty">No key data</span>';
     return;
   }
-  const rows = keys.map(k => {
-    const statusColor = k.status === "urgent" ? "#EF5350"
-                      : k.status === "warn"   ? "#FFA726"
-                      : "#26A69A";
-    const statusIcon  = k.status === "urgent" ? "🔴"
-                      : k.status === "warn"   ? "🟡"
-                      : "✅";
-    return `
-      <div class="ev-row" style="display:flex;justify-content:space-between;align-items:center;gap:8px">
-        <span style="font-size:11px;color:#ccc;flex:1">${statusIcon} ${k.label}</span>
-        <span style="font-size:10px;color:#888">${k.expires}</span>
-        <span style="font-size:12px;font-weight:bold;color:${statusColor};min-width:55px;text-align:right">${k.days_left}d left</span>
-      </div>`;
+  host.innerHTML = keys.map(k => {
+    const cls = k.status === "urgent" ? "hk-urgent"
+              : k.status === "warn"   ? "hk-warn"
+              : "hk-ok";
+    const dot = k.status === "urgent" ? "#EF5350"
+              : k.status === "warn"   ? "#FFA726"
+              : "#26A69A";
+    const daysText = k.days_left > 9000 ? "∞" : `${k.days_left}d`;
+    return `<div class="hk-pill ${cls}">
+      <span class="hk-dot" style="background:${dot}"></span>
+      <span class="hk-name">${k.label}</span>
+      <span class="hk-days">${daysText}</span>
+    </div>`;
   }).join("");
-  host.innerHTML = rows;
 }
 
 // System accent colors — read from CSS vars if defined (allows theme overrides), else use defaults
