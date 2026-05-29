@@ -1678,6 +1678,9 @@ function goToScreen(targetIdx, dir) {
   screenIdx = targetIdx;
   document.querySelectorAll(".dots .d").forEach(d => d.classList.remove("active"));
   document.querySelector(`.dots .d[data-i="${screenIdx}"]`).classList.add("active");
+  // Activity banner visible on screens 3 + 4 only (index 2 and 3)
+  const banner = document.getElementById("activity-banner");
+  if (banner) banner.classList.toggle("ab-hidden", screenIdx < 2);
 }
 
 function nextScreen() { goToScreen((screenIdx + 1) % screens.length, 1); }
@@ -1758,6 +1761,9 @@ async function fetchMexcLive() {
 
 // Init
 $(screens[0]).classList.add("active");
+// Banner hidden on screens 1+2 by default
+const _initBanner = document.getElementById("activity-banner");
+if (_initBanner) _initBanner.classList.add("ab-hidden");
 fetchData();
 fetchSpotlightPrices();
 setInterval(fetchData, REFRESH_MS);
