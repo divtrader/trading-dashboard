@@ -1837,6 +1837,9 @@ main {
 }
 
 /* ── Floating "Since last run" banner — shown above every screen ── */
+.activity-banner.ab-hidden {
+  display: none !important;
+}
 .activity-banner {
   position: sticky;
   top: 0;
