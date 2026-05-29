@@ -1820,8 +1820,44 @@ async function fetchAnalytics() {
   try {
     const r = await fetch(ANALYTICS_URL + "?t=" + Date.now(), { cache: "no-store" });
     if (!r.ok) throw new Error("HTTP " + r.status);
-    _edgeAnalytics = await r.json();
-    renderEdgeScreen();
+    const raw = await r.json();
+    // Live dashboard: only take shared-infrastructure fields from analytics.json.
+    // Trade-derived stats (equity_curve, by_system, monthly, conviction, streak,
+    // direction, by_entry, by_session, by_confluence) must NOT be pulled from
+    // the paper analytics — they will populate from live data_live.json over time.
+    // Live dashboard: only take shared-infrastructure fields.
+    // Deliberately exclude all_time, by_system, monthly, conviction, streak,
+    // direction, by_entry, by_session, by_confluence — those come from paper
+    // trades and must not show on the live dashboard.
+    _edgeAnalytics = {
+      macro:       raw.macro       || {},
+      econ_events: raw.econ_events || [],
+    };
+    state.apiKeys = raw.api_keys || [];
+    renderApiKeys();
+    // Render only the safe shared tiles (macro + econ events)
+    // renderEdgeScreen() is intentionally NOT called here — it renders
+    // paper trade analytics. Live trade analytics will populate once
+    // live_executed trades accumulate in data_live.json.
+    const macro = _edgeAnalytics.macro;
+    if (macro.vix != null) {
+      $("macro-vix") && ($("macro-vix").textContent = macro.vix.toFixed(2));
+      _renderMacroSpark("macro-vix-spark", macro.vix_5d || [], true);
+      const vt = $("macro-vix-trend");
+      if (vt) { const r = macro.vix > (macro.vix_ma14 || macro.vix); vt.textContent = `${r?"↑":"↓"} MA14 ${macro.vix_ma14?.toFixed(1)??"—"}`; vt.className = "macro-cell-foot " + (r ? "neg" : "pos"); }
+    }
+    if (macro.dxy != null) {
+      $("macro-dxy") && ($("macro-dxy").textContent = macro.dxy.toFixed(2));
+      _renderMacroSpark("macro-dxy-spark", macro.dxy_5d || [], false);
+      const dt = $("macro-dxy-trend");
+      if (dt) { const r = macro.dxy > (macro.dxy_ma14 || macro.dxy); dt.textContent = `${r?"↑":"↓"} MA14 ${macro.dxy_ma14?.toFixed(1)??"—"}`; dt.className = "macro-cell-foot " + (r ? "neg" : "pos"); }
+    }
+    if (macro.btc_7d_change_pct != null) {
+      $("macro-btc7d") && ($("macro-btc7d").textContent = (macro.btc_7d_change_pct >= 0 ? "+" : "") + macro.btc_7d_change_pct.toFixed(1) + "%");
+      $("macro-btc30d") && ($("macro-btc30d").textContent = (macro.btc_30d_change_pct >= 0 ? "+" : "") + (macro.btc_30d_change_pct ?? 0).toFixed(1) + "%");
+      $("macro-btc-price") && ($("macro-btc-price").textContent = macro.btc_price ? "$" + Math.round(macro.btc_price).toLocaleString() : "—");
+    }
+    _renderEconomicEvents();
   } catch (e) {
     console.warn("analytics fetch failed:", e);
   }
