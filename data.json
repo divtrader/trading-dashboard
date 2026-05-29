@@ -1,8 +1,8 @@
 {
-  "last_updated_iso": "2026-05-29T14:32:57Z",
+  "last_updated_iso": "2026-05-29T14:41:29Z",
   "mexc_account": {
-    "unrealized_pnl": -169.5496,
-    "equity": 1605.776,
+    "unrealized_pnl": -171.5644,
+    "equity": 1603.7612,
     "available": 665.4781,
     "position_margin": 470.4747
   },
@@ -1021,19 +1021,6 @@
   ],
   "recent_closes": [
     {
-      "trade_id": "ADAUSDT_20260512_CJ_M_001",
-      "coin": "ADAUSDT",
-      "direction": "Long",
-      "status": "STOPPED",
-      "pnl_usd": -11.76,
-      "close_reason": "SL hit",
-      "date_closed": "2026-05-16",
-      "time_closed_utc": "04:00",
-      "trading_system": "John",
-      "won": false,
-      "close_iso": "2026-05-16T04:00:00Z"
-    },
-    {
       "trade_id": "CAKEUSDT_20260513_CJ_001",
       "coin": "CAKEUSDT",
       "direction": "Long",
@@ -1539,6 +1526,19 @@
       "trading_system": "John",
       "won": false,
       "close_iso": "2026-05-29T08:00:00Z"
+    },
+    {
+      "trade_id": "TAOUSDT_20260527_CB_001",
+      "coin": "TAOUSDT",
+      "direction": "Short",
+      "status": "EARLY_CLOSE",
+      "pnl_usd": 30.98,
+      "close_reason": "Manual take-profit (early close after TP1, above TP2)",
+      "date_closed": "2026-05-29",
+      "time_closed_utc": "14:30",
+      "trading_system": "Braam",
+      "won": true,
+      "close_iso": "2026-05-29T14:30:00Z"
     }
   ],
   "recent_cancels": [],
@@ -1557,9 +1557,9 @@
     }
   ],
   "stats": {
-    "realized_pnl_usd": 192.5,
-    "win_rate_pct": 38.9,
-    "closed_count": 113,
+    "realized_pnl_usd": 223.48,
+    "win_rate_pct": 39.5,
+    "closed_count": 114,
     "per_system": {
       "John": {
         "realized_pnl_usd": 91.82,
@@ -1572,15 +1572,15 @@
         "closed_count": 23
       },
       "Braam": {
-        "realized_pnl_usd": 55.44,
-        "win_rate_pct": 48.3,
-        "closed_count": 29
+        "realized_pnl_usd": 86.42,
+        "win_rate_pct": 50.0,
+        "closed_count": 30
       }
     },
     "real_only": {
-      "realized_pnl_usd": 53.75,
-      "win_rate_pct": 47.1,
-      "closed_count": 34
+      "realized_pnl_usd": 84.73,
+      "win_rate_pct": 48.6,
+      "closed_count": 35
     },
     "track_only": {
       "realized_pnl_usd": 138.75,
