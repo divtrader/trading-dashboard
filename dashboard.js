@@ -573,6 +573,15 @@ function subscribeWs() {
   ws.onclose = () => setTimeout(subscribeWs, 5000);
 }
 
+// Per-system TP split — fraction banked at TP1 and fraction still riding after.
+// John/William 80/20 · Braam 50/50 · Mong 30/30/40 (after TP1 70% rides; after TP2 40%).
+function splitFractions(t) {
+  const sys = t.trading_system || "";
+  if (sys === "Braam") return { banked: 0.5, remaining: 0.5 };
+  if (sys === "Mong")  return { banked: 0.3, remaining: t.tp2_hit ? 0.4 : 0.7 };
+  return { banked: 0.8, remaining: 0.2 };  // John / William default
+}
+
 function computeUnrealized(t) {
   const live = state.prices[t.coin] ?? t.price_at_run ?? t.entry_price;
   const dir = t.direction === "Long" ? 1 : -1;
@@ -581,8 +590,9 @@ function computeUnrealized(t) {
   const cap = t.capital_usd || 100;
 
   const tp1WasHit = !!t.tp1_hit;
-  // After TP1 hit, 80% of position is closed — only 20% remains live
-  const remainingFraction = tp1WasHit ? 0.2 : 1.0;
+  const { banked: bankedFraction, remaining: remainingFractionAfterTp1 } = splitFractions(t);
+  // After TP1 hit, only the riding fraction remains live (system-specific).
+  const remainingFraction = tp1WasHit ? remainingFractionAfterTp1 : 1.0;
   const usd = cap * remainingFraction * (leveragedPct / 100);
 
   let tp1BankedUsd = 0;
@@ -590,9 +600,10 @@ function computeUnrealized(t) {
     if (t.pnl_tp1_realized_usd != null) {
       tp1BankedUsd = t.pnl_tp1_realized_usd || 0;
     } else if (t.tp1 && t.entry_price) {
-      // Backend hasn't written pnl yet — estimate from TP1 price
+      // Backend hasn't written pnl yet — estimate from TP1 price using the
+      // correct per-system banked fraction (was hardcoded 0.8 = John only).
       const tp1PricePct = ((t.tp1 - t.entry_price) / t.entry_price) * 100 * dir;
-      tp1BankedUsd = cap * 0.8 * (tp1PricePct * (t.leverage || 1) / 100);
+      tp1BankedUsd = cap * bankedFraction * (tp1PricePct * (t.leverage || 1) / 100);
     }
   }
 
@@ -938,7 +949,7 @@ function renderPaperBars(enrichedOpen) {
     const achieved = tp1Hit ? `<div class="pb-achieved" style="left:${Math.min(ePct,t1Pct).toFixed(1)}%;width:${Math.abs(t1Pct-ePct).toFixed(1)}%"></div>` : "";
 
     return `
-      <div class="paper-bar-row ${dirCls}${tp1Cls}" data-trade-id="${t.trade_id}" title="${t.trade_id}">
+      <div class="paper-bar-row ${dirCls}${tp1Cls}${t.track_only ? " pb-track-only" : ""}" data-trade-id="${t.trade_id}" title="${t.trade_id}">
         <div class="pb-head">
           <div class="pb-coin-row">
             <span class="pb-coin">${coin}</span>
@@ -948,6 +959,7 @@ function renderPaperBars(enrichedOpen) {
             <span class="pb-dir ${dirCls}">${isLong ? "▲ LONG" : "▼ SHORT"}</span>
             <span class="pb-sys">${sys}</span>
             ${beActive ? '<span class="pb-be">BE</span>' : ""}
+            ${t.track_only ? '<span class="pb-track-tag">TRACK</span>' : ""}
           </div>
           <div class="pb-tid">${t.trade_id || ""}</div>
         </div>
