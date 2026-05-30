@@ -885,21 +885,22 @@ function renderPaperBars(enrichedOpen) {
     return;
   }
   // Winners on top, losers below — sorted by total blended % P&L descending.
-  // TP1-hit trades use (banked + live) / capital so they sort correctly alongside non-TP1 trades.
   function totalPct(t) {
     if (t.tp1_hit) return ((t.tp1BankedUsd || 0) + (t.usd ?? 0)) / (t.capital_usd || 100) * 100;
     return t.leveragedPct || 0;
   }
   const sorted = [...enrichedOpen].sort((a, b) => totalPct(b) - totalPct(a));
+  const realTrades  = sorted.filter(t => !t.track_only);
+  const trackTrades = sorted.filter(t =>  t.track_only);
 
-  // Density tier: shrink rows so all trades fit without scrolling
-  const n = sorted.length;
+  // Density tier based on per-column count (the larger column drives the tier)
+  const maxCol = Math.max(realTrades.length, trackTrades.length);
   host.classList.remove("pb-compact", "pb-mini", "pb-tiny");
-  if      (n >= 13) host.classList.add("pb-tiny");
-  else if (n >= 10) host.classList.add("pb-mini");
-  else if (n >= 7)  host.classList.add("pb-compact");
+  if      (maxCol >= 13) host.classList.add("pb-tiny");
+  else if (maxCol >= 10) host.classList.add("pb-mini");
+  else if (maxCol >= 7)  host.classList.add("pb-compact");
 
-  const newHtml = sorted.map(t => {
+  const barHtml = t => {
     const isLong = t.direction === "Long";
     const dirCls = isLong ? "long" : "short";
     const coin = (t.coin || "").replace("USDT", "");
@@ -988,8 +989,27 @@ function renderPaperBars(enrichedOpen) {
           ${breakdownHtml}
         </div>
       </div>`;
-  }).join("");
-  flipReplace(host, newHtml);
+  };
+
+  const colHtml = (trades, label, count) => {
+    const body = trades.length
+      ? trades.map(barHtml).join("")
+      : `<div class="paper-bars-empty">No ${label.toLowerCase()} open</div>`;
+    return `
+      <div class="pb-col">
+        <div class="pb-col-head">
+          <span class="pb-col-label">${label}</span>
+          <span class="pb-col-count">${count}</span>
+        </div>
+        <div class="pb-col-body">${body}</div>
+      </div>`;
+  };
+
+  host.innerHTML = `
+    <div class="pb-cols">
+      ${colHtml(realTrades,  "REAL TRADES", realTrades.length)}
+      ${colHtml(trackTrades, "TRACK ONLY",  trackTrades.length)}
+    </div>`;
 }
 
 // ── Screen 0: P&L overview (iPhone-first) ──
