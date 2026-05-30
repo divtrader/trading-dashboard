@@ -684,7 +684,10 @@ function renderRecentClosesTile() {
         <div class="rc-dot ${won ? 'win' : 'loss'}"></div>
         <div class="rc-dir-pill ${dirCls}">${dirLetter}</div>
         <div class="rc-coin-block">
-          <span class="rc-coin">${coin}</span>
+          <div class="rc-coin-row">
+            <span class="rc-coin">${coin}</span>
+            <span class="rc-sys">${c.trading_system || ""}</span>
+          </div>
           <span class="rc-tid">${tid || "—"}</span>
         </div>
         <div class="rc-reason ${rCls}">${rCode}</div>
