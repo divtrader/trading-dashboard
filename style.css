@@ -2064,13 +2064,13 @@ main {
 #mexc-pnl.neg { color: var(--red);   text-shadow: 0 0 24px var(--red-glow); }
 
 /* ── Dot navigation ── */
-.dots { display: flex; justify-content: center; gap: 6px; padding: 10px 0 12px; flex-shrink: 0; }
+.dots { display: flex; justify-content: center; gap: 4px; padding: 6px 0 8px; flex-shrink: 0; }
 .dots .d {
-  width: 6px; height: 6px; border-radius: 3px;
+  width: 4px; height: 4px; border-radius: 2px;
   background: var(--border-hi);
   transition: width 0.35s cubic-bezier(0.4,0,0.2,1), background 0.35s ease;
 }
-.dots .d.active { width: 22px; background: var(--muted); }
+.dots .d.active { width: 14px; background: var(--muted); }
 
 /* ── Bloomberg news flash — TV lower-third style ── */
 .news-flash {
