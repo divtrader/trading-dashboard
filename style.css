@@ -857,6 +857,55 @@ main {
   flex: 1;
   min-height: 0;
 }
+
+/* Two-column split: real trades | track-only (mirrors pending triggers layout) */
+.pb-cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+  flex: 1;
+  min-height: 0;
+}
+.pb-col {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  gap: 6px;
+}
+.pb-col-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  padding: 0 4px 6px;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  flex-shrink: 0;
+}
+.pb-col-label {
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.pb-col:nth-child(2) .pb-col-label { color: #ffb74d; }
+.pb-col-count {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text);
+  background: rgba(255,255,255,0.06);
+  padding: 1px 7px;
+  border-radius: 8px;
+  font-variant-numeric: tabular-nums;
+}
+.pb-col-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  min-height: 0;
+}
 .paper-bar-row {
   display: grid;
   grid-template-columns: 240px 1fr 140px;
