@@ -684,10 +684,7 @@ function renderRecentClosesTile() {
         <div class="rc-dot ${won ? 'win' : 'loss'}"></div>
         <div class="rc-dir-pill ${dirCls}">${dirLetter}</div>
         <div class="rc-coin-block">
-          <div class="rc-coin-row">
-            <span class="rc-coin">${coin}</span>
-            <span class="rc-sys">${c.trading_system || ""}</span>
-          </div>
+          <span class="rc-coin">${coin}</span>
           <span class="rc-tid">${tid || "—"}</span>
         </div>
         <div class="rc-reason ${rCls}">${rCode}</div>
@@ -1511,7 +1508,7 @@ function renderPendingTriggers() {
         </div>
         <div class="pt-stat">
           <span class="pt-pct${t.inZone ? " in-zone" : ""}">${distLabel}</span>
-          <span class="pt-price">${fmtPrice(t.live)}</span>
+          <span class="pt-price">${fmtPrice(t.entry_price)}</span>
         </div>
       </div>`;
   };
