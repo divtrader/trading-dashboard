@@ -1458,7 +1458,7 @@ function renderPendingTriggers() {
         </div>
         <div class="pt-stat">
           <span class="pt-pct${t.inZone ? " in-zone" : ""}">${distLabel}</span>
-          <span class="pt-price">${fmtPrice(t.live)}</span>
+          <span class="pt-price">${fmtPrice(t.entry_price)}</span>
         </div>
       </div>`;
   }).join("");
