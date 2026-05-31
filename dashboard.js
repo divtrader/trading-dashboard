@@ -1005,11 +1005,11 @@ function renderPaperBars(enrichedOpen) {
       </div>`;
   };
 
-  host.innerHTML = `
+  flipReplace(host, `
     <div class="pb-cols">
       ${colHtml(realTrades,  "REAL TRADES", realTrades.length)}
       ${colHtml(trackTrades, "TRACK ONLY",  trackTrades.length)}
-    </div>`;
+    </div>`);
 }
 
 // ── Screen 0: P&L overview (iPhone-first) ──
@@ -1530,11 +1530,11 @@ function renderPendingTriggers() {
       </div>`;
   };
 
-  host.innerHTML = `
+  flipReplace(host, `
     <div class="pt-cols">
       ${colHtml(realRows,  "REAL TRADES", realRows.length)}
       ${colHtml(trackRows, "TRACK ONLY",  trackRows.length)}
-    </div>`;
+    </div>`);
 }
 
 function renderActivity() {
