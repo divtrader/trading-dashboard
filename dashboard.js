@@ -1136,37 +1136,43 @@ function renderHero(enrichedOpen) {
     else uEl.textContent = "—";
   }
   // --- Daily deltas (since 00:00 UTC today) ---
+  // Both REALIZED and UNREALIZED snapshot at first render of the UTC day so
+  // the deltas reconcile to actual day P&L change. Earlier version enumerated
+  // closes for realizedToday — that missed TP1 banks on still-open trades
+  // (e.g. THETA hits TP1 mid-day → $16.68 banked but daily realized stayed flat).
+  // Snapshot approach catches: new full closes, new TP1 banks, anything that
+  // moves the realized total.
   const utcDayKey = new Date().toISOString().slice(0, 10); // YYYY-MM-DD UTC
-  // Realized today = sum of pnl_usd over closes whose close_iso is in today's UTC day
-  const realizedToday = (state.recentCloses || []).reduce((s, c) => {
-    if (!c.close_iso) return s;
-    return c.close_iso.slice(0, 10) === utcDayKey ? s + (c.pnl_usd || 0) : s;
-  }, 0);
-  // Unrealized delta = current unrealized minus the unrealized snapshotted at first
-  // render of the UTC day (kept in localStorage; older keys pruned).
-  let unrealDayDelta = null;
-  try {
-    const SNAP_KEY = "unrealSnap_" + utcDayKey;
-    // Prune yesterday/older keys
-    for (let i = localStorage.length - 1; i >= 0; i--) {
-      const k = localStorage.key(i);
-      if (k && k.startsWith("unrealSnap_") && k !== SNAP_KEY) localStorage.removeItem(k);
-    }
-    const existing = localStorage.getItem(SNAP_KEY);
-    let baseline;
-    if (existing == null) {
-      baseline = unrealized;
-      localStorage.setItem(SNAP_KEY, String(baseline));
-    } else {
-      baseline = parseFloat(existing);
-    }
-    unrealDayDelta = unrealized - baseline;
-  } catch (e) { /* localStorage blocked — leave null */ }
+  function _readDaySnapshot(prefix, currentValue) {
+    try {
+      const KEY = prefix + utcDayKey;
+      // Prune yesterday/older keys for this prefix
+      for (let i = localStorage.length - 1; i >= 0; i--) {
+        const k = localStorage.key(i);
+        if (k && k.startsWith(prefix) && k !== KEY) localStorage.removeItem(k);
+      }
+      const existing = localStorage.getItem(KEY);
+      if (existing == null) {
+        localStorage.setItem(KEY, String(currentValue));
+        return currentValue;
+      }
+      return parseFloat(existing);
+    } catch (e) { return null; /* localStorage blocked */ }
+  }
+  const realizedBaseline = _readDaySnapshot("realSnap_",   realized);
+  const unrealBaseline   = _readDaySnapshot("unrealSnap_", unrealized);
+  const realizedDayDelta = realizedBaseline == null ? null : realized - realizedBaseline;
+  const unrealDayDelta   = unrealBaseline   == null ? null : unrealized - unrealBaseline;
 
   const rDayEl = $("hero-realized-day");
   if (rDayEl) {
-    rDayEl.textContent = fmtUsd(realizedToday);
-    rDayEl.className = "hero-stat-sub " + cls(realizedToday);
+    if (realizedDayDelta == null) {
+      rDayEl.textContent = "—";
+      rDayEl.className = "hero-stat-sub";
+    } else {
+      rDayEl.textContent = fmtUsd(realizedDayDelta);
+      rDayEl.className = "hero-stat-sub " + cls(realizedDayDelta);
+    }
   }
   const uDayEl = $("hero-unrealized-day");
   if (uDayEl) {
