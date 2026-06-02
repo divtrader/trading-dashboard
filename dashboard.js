@@ -260,8 +260,18 @@ function checkLiveLevels() {
 
 // Animated number counter — smoothly transitions displayed value over ~600ms
 const _animTargets = new Map();
+// PERF: when true, animateValue sets the value immediately instead of tweening.
+// Flipped on for renders driven by the high-frequency WS price stream; the 2s
+// tween was designed for cron-driven refreshes, not 25Hz ticks.
+let _animSkip = false;
 function animateValue(el, toVal, formatter) {
   if (!el) return;
+  if (_animSkip) {
+    _animTargets.set(el, toVal);
+    el.dataset.rawVal = toVal;
+    el.textContent = formatter(toVal);
+    return;
+  }
   const prev = _animTargets.get(el) ?? toVal;
   _animTargets.set(el, toVal);
   const start = performance.now();
@@ -549,6 +559,33 @@ function launchConfetti() {
 
 let ws = null;
 let wsSymbols = "";
+// PERF: coalesce 25Hz WS ticks → at most one render per requestAnimationFrame.
+// Without this each ws message fired a full renderLive + renderPendingTriggers
+// + animateValue rAF chain — enough to stall the Chromebook's main thread and
+// jam screen-swipe transitions.
+let _wsRenderScheduled = false;
+let _wsLastTriggersAt = 0;
+const TRIGGERS_THROTTLE_MS = 2000;
+function _scheduleWsRender() {
+  if (_wsRenderScheduled) return;
+  _wsRenderScheduled = true;
+  requestAnimationFrame(() => {
+    _wsRenderScheduled = false;
+    _animSkip = true;
+    try {
+      renderLive();
+      // Triggers panel rank rarely changes between ticks — throttle to 2s.
+      const now = Date.now();
+      if (now - _wsLastTriggersAt > TRIGGERS_THROTTLE_MS) {
+        _wsLastTriggersAt = now;
+        renderPendingTriggers();
+      }
+      checkLiveLevels();
+    } finally {
+      _animSkip = false;
+    }
+  });
+}
 function subscribeWs() {
   const symbols = [...new Set(state.trades.map(t => t.coin.toLowerCase()))];
   const key = symbols.sort().join(",");
@@ -562,12 +599,9 @@ function subscribeWs() {
     try {
       const msg = JSON.parse(ev.data);
       const c   = parseFloat(msg.data.c); // close
-      const o   = parseFloat(msg.data.o); // open 24h ago
       const sym = msg.data.s;
       state.prices[sym] = c;
-      renderLive();
-      renderPendingTriggers();
-      checkLiveLevels();
+      _scheduleWsRender();
     } catch {}
   };
   ws.onclose = () => setTimeout(subscribeWs, 5000);
