@@ -998,8 +998,8 @@ function renderPaperBars(enrichedOpen) {
             <span class="pb-sys">${sys}</span>
             ${beActive ? '<span class="pb-be">BE</span>' : ""}
             ${t.track_only ? '<span class="pb-track-tag">TRACK</span>' : ""}
+            <span class="pb-tid-inline" title="${t.trade_id || ""}">${tidShort || "—"}</span>
           </div>
-          <div class="pb-tid" title="${t.trade_id || ""}">${tidShort || "—"}</div>
         </div>
         <div class="pb-bar">
           <div class="pb-track"></div>
