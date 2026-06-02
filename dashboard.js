@@ -683,9 +683,14 @@ function render() {
 function renderRecentClosesTile() {
   const el = document.getElementById("recent-closes-list");
   if (!el) return;
+  // Use the same ascending source the equity curve uses, take the last 5,
+  // then reverse for newest-first display. Guarantees Recent Closes ≡ the 5
+  // rightmost points on the equity curve when many trades close at the same
+  // 4H timestamp (stable-sort tie ordering would otherwise diverge).
   const closes = [...(state.recentCloses || [])]
-    .sort((a, b) => new Date(b.close_iso || 0) - new Date(a.close_iso || 0))
-    .slice(0, 5);
+    .sort((a, b) => new Date(a.close_iso || 0) - new Date(b.close_iso || 0))
+    .slice(-5)
+    .reverse();
   if (!closes.length) {
     el.innerHTML = '<div class="rc-empty">no closes yet</div>';
     return;
@@ -1345,7 +1350,6 @@ function renderEquitySparkline(recentCloses) {
 
   overlay.innerHTML = `
     ${dotsHtml}
-    <div class="spark-final ${finalCls}">${finalLabel}</div>
     <div class="spark-date left">${firstDate}</div>
     ${datesHtml}
     <div class="spark-date right">${lastDate}</div>
