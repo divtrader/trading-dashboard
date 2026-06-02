@@ -1,8 +1,8 @@
 {
-  "last_updated_iso": "2026-06-02T06:21:23Z",
+  "last_updated_iso": "2026-06-02T06:37:53Z",
   "mexc_account": {
-    "unrealized_pnl": -201.5651,
-    "equity": 1573.1943,
+    "unrealized_pnl": -192.2388,
+    "equity": 1582.5206,
     "available": 665.0671,
     "position_margin": 599.9082
   },
@@ -104,29 +104,6 @@
       "track_only": true,
       "status": "PENDING",
       "price_at_run": 1991.59,
-      "date_activated": null,
-      "time_activated_utc": null,
-      "date_opened": "2026-05-28",
-      "time_opened_utc": "11:49",
-      "conviction": "MEDIUM",
-      "tp1_hit": false,
-      "sl_moved_to_be": null,
-      "pnl_tp1_realized_usd": null
-    },
-    {
-      "trade_id": "SOLUSDT_20260528_CJ_M_001",
-      "coin": "SOLUSDT",
-      "direction": "Short",
-      "entry_price": 81.4825408,
-      "sl": 82.80671063,
-      "tp1": 73.13657847,
-      "tp2": 69.01313232,
-      "capital_usd": 100,
-      "leverage": 3,
-      "trading_system": "John",
-      "track_only": true,
-      "status": "PENDING",
-      "price_at_run": 80.09,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-05-28",
@@ -1209,19 +1186,6 @@
   ],
   "recent_closes": [
     {
-      "trade_id": "SUIUSDT_20260522_CB_001",
-      "coin": "SUIUSDT",
-      "direction": "Short",
-      "status": "STOPPED_AFTER_TP1",
-      "pnl_usd": 22.35,
-      "close_reason": "SL hit",
-      "date_closed": "2026-05-26",
-      "time_closed_utc": "16:00",
-      "trading_system": "Braam",
-      "won": true,
-      "close_iso": "2026-05-26T16:00:00Z"
-    },
-    {
       "trade_id": "LTCUSDT_20260523_CB_001",
       "coin": "LTCUSDT",
       "direction": "Short",
@@ -1415,6 +1379,19 @@
       "trading_system": "John",
       "won": false,
       "close_iso": "2026-05-28T16:00:00Z"
+    },
+    {
+      "trade_id": "SOLUSDT_20260528_CJ_M_001",
+      "coin": "SOLUSDT",
+      "direction": "Short",
+      "status": "STOPPED",
+      "pnl_usd": -4.8,
+      "close_reason": "Retro-reconcile 2026-06-02: real Binance bars wicked through entry 81.483 on May-28 16:00 UTC (H 81.66) and through SL 82.807 on May-28 20:00 UTC (H 83.01). Telegram fired today from a worker run that detected the SL retroactively but the JSON commit/push did not land on origin/main. Activation was missed in real-time because update_open_trades skips trades whose coin is not in the current run's analyses dict \u2014 SOL was evidently absent during the runs that would have caught the May-28 16:00 wick. Closing manually to match real price action and journal truth.",
+      "date_closed": "2026-05-28",
+      "time_closed_utc": "20:00",
+      "trading_system": "John",
+      "won": false,
+      "close_iso": "2026-05-28T20:00:00Z"
     },
     {
       "trade_id": "ALGOUSDT_20260528_CJ_M_001",
@@ -1799,14 +1776,14 @@
     }
   ],
   "stats": {
-    "realized_pnl_usd": 229.42,
-    "win_rate_pct": 38.0,
-    "closed_count": 137,
+    "realized_pnl_usd": 224.62,
+    "win_rate_pct": 37.7,
+    "closed_count": 138,
     "per_system": {
       "John": {
-        "realized_pnl_usd": 121.3,
-        "win_rate_pct": 33.3,
-        "closed_count": 78
+        "realized_pnl_usd": 116.5,
+        "win_rate_pct": 32.9,
+        "closed_count": 79
       },
       "William": {
         "realized_pnl_usd": 45.24,
@@ -1825,9 +1802,9 @@
       "closed_count": 41
     },
     "track_only": {
-      "realized_pnl_usd": 168.23,
-      "win_rate_pct": 34.4,
-      "closed_count": 96
+      "realized_pnl_usd": 163.43,
+      "win_rate_pct": 34.0,
+      "closed_count": 97
     }
   }
 }
