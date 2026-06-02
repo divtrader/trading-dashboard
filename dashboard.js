@@ -939,6 +939,9 @@ function renderPaperBars(enrichedOpen) {
     const dirCls = isLong ? "long" : "short";
     const coin = (t.coin || "").replace("USDT", "");
     const sys  = t.trading_system || "";
+    // Strip redundant "COINUSDT_" prefix from displayed trade_id — same treatment
+    // as recent-closes (e.g. "ONDOUSDT_20260529_CB_001" → "20260529_CB_001").
+    const tidShort = (t.trade_id || "").replace(/^[A-Z]+(?:USDT)?_/, "");
     const tp1Hit = !!t.tp1_hit;
     const beActive = tp1Hit || !!t.sl_moved_to_be;
     const tp1Cls = tp1Hit ? " tp1-hit" : "";
@@ -996,7 +999,7 @@ function renderPaperBars(enrichedOpen) {
             ${beActive ? '<span class="pb-be">BE</span>' : ""}
             ${t.track_only ? '<span class="pb-track-tag">TRACK</span>' : ""}
           </div>
-          <div class="pb-tid">${t.trade_id || ""}</div>
+          <div class="pb-tid" title="${t.trade_id || ""}">${tidShort || "—"}</div>
         </div>
         <div class="pb-bar">
           <div class="pb-track"></div>
