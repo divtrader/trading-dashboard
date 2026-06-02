@@ -1055,6 +1055,15 @@ main {
   overflow: hidden;
   text-overflow: ellipsis;
   max-width: 100%;
+  cursor: copy;
+  user-select: none;
+}
+.pt-tid, .rc-tid { cursor: copy; user-select: none; }
+.tid-copied-flash {
+  color: var(--green) !important;
+  opacity: 1 !important;
+  font-weight: 700 !important;
+  transition: color 0.2s ease;
 }
 .pb-tid-inline {
   font-family: ui-monospace, "SF Mono", Menlo, monospace;
