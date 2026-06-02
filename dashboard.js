@@ -1101,6 +1101,17 @@ function renderHero(enrichedOpen) {
     if (enriched.length) animateValue(uEl, unrealized, fmtUsd);
     else uEl.textContent = "—";
   }
+  const uPctEl = $("hero-unrealized-pct");
+  if (uPctEl) {
+    if (enriched.length && totalCap > 0) {
+      const upct = (unrealized / totalCap) * 100;
+      uPctEl.textContent = (upct >= 0 ? "+" : "") + upct.toFixed(2) + "%";
+      uPctEl.className = "hero-stat-sub " + cls(unrealized);
+    } else {
+      uPctEl.textContent = "—";
+      uPctEl.className = "hero-stat-sub";
+    }
+  }
   if (cEl) {
     cEl.className = "hero-stat-val";
     if (enriched.length) animateValue(cEl, totalCap, v => "$" + v.toFixed(0));
