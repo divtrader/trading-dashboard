@@ -1101,15 +1101,47 @@ function renderHero(enrichedOpen) {
     if (enriched.length) animateValue(uEl, unrealized, fmtUsd);
     else uEl.textContent = "—";
   }
-  const uPctEl = $("hero-unrealized-pct");
-  if (uPctEl) {
-    if (enriched.length && totalCap > 0) {
-      const upct = (unrealized / totalCap) * 100;
-      uPctEl.textContent = (upct >= 0 ? "+" : "") + upct.toFixed(2) + "%";
-      uPctEl.className = "hero-stat-sub " + cls(unrealized);
+  // --- Daily deltas (since 00:00 UTC today) ---
+  const utcDayKey = new Date().toISOString().slice(0, 10); // YYYY-MM-DD UTC
+  // Realized today = sum of pnl_usd over closes whose close_iso is in today's UTC day
+  const realizedToday = (state.recentCloses || []).reduce((s, c) => {
+    if (!c.close_iso) return s;
+    return c.close_iso.slice(0, 10) === utcDayKey ? s + (c.pnl_usd || 0) : s;
+  }, 0);
+  // Unrealized delta = current unrealized minus the unrealized snapshotted at first
+  // render of the UTC day (kept in localStorage; older keys pruned).
+  let unrealDayDelta = null;
+  try {
+    const SNAP_KEY = "unrealSnap_" + utcDayKey;
+    // Prune yesterday/older keys
+    for (let i = localStorage.length - 1; i >= 0; i--) {
+      const k = localStorage.key(i);
+      if (k && k.startsWith("unrealSnap_") && k !== SNAP_KEY) localStorage.removeItem(k);
+    }
+    const existing = localStorage.getItem(SNAP_KEY);
+    let baseline;
+    if (existing == null) {
+      baseline = unrealized;
+      localStorage.setItem(SNAP_KEY, String(baseline));
     } else {
-      uPctEl.textContent = "—";
-      uPctEl.className = "hero-stat-sub";
+      baseline = parseFloat(existing);
+    }
+    unrealDayDelta = unrealized - baseline;
+  } catch (e) { /* localStorage blocked — leave null */ }
+
+  const rDayEl = $("hero-realized-day");
+  if (rDayEl) {
+    rDayEl.textContent = fmtUsd(realizedToday);
+    rDayEl.className = "hero-stat-sub " + cls(realizedToday);
+  }
+  const uDayEl = $("hero-unrealized-day");
+  if (uDayEl) {
+    if (unrealDayDelta == null) {
+      uDayEl.textContent = "—";
+      uDayEl.className = "hero-stat-sub";
+    } else {
+      uDayEl.textContent = fmtUsd(unrealDayDelta);
+      uDayEl.className = "hero-stat-sub " + cls(unrealDayDelta);
     }
   }
   if (cEl) {
