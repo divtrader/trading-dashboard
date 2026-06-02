@@ -510,10 +510,12 @@ main {
 }
 .hero-breakdown {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 26px;
   flex-wrap: wrap;
 }
+.hero-stat-sub-spacer { visibility: hidden; }
+.hero-donut-inline { align-self: center; }
 .hero-stat {
   display: flex;
   flex-direction: column;
@@ -550,6 +552,7 @@ main {
   width: 1px;
   height: 38px;
   background: var(--border-hi);
+  align-self: center;
 }
 .hero-return {
   font-size: 15px;
