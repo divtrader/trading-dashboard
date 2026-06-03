@@ -3560,3 +3560,200 @@ main {
   .activity-body  { font-size: 12px; line-height: 1.3; overflow-y: auto; }
   .ev-row { margin-bottom: 1px; }
 }
+
+/* ═══════════════════════════════════════════════════════════════════
+   SCREEN 4 REDESIGN — tighter rhythm, no wasted space, slicker tiles.
+   CSS-only override block (no JS/ID changes). Wide view ≥1401px first;
+   tablet (601–1400) inherits via its own scroll block.
+   ═══════════════════════════════════════════════════════════════════ */
+@media (min-width: 601px) {
+  /* Declutter: drop the verbose per-tile description sentences entirely */
+  #screen-4 .edge-desc { display: none; }
+
+  /* Tighter overall grid + breathing room only where it counts */
+  #screen-4 { gap: 7px; padding: 0; }
+  #screen-4 .edge-row { gap: 7px; }
+  #screen-4 .edge-tile { padding: 11px 14px; border-radius: 11px; }
+  #screen-4 .edge-tile .edge-label {
+    font-size: 9px; letter-spacing: 1.8px; margin-bottom: 6px; color: var(--muted-2);
+  }
+
+  /* Insights ticker — slimmer */
+  #screen-4 .edge-insights { padding: 6px 14px; border-radius: 9px; }
+
+  /* ── HERO: stop the equity curve colliding with the numbers ──
+     Left half gets a scrim so the big number + mini stats read cleanly,
+     curve breathes on the right. */
+  #screen-4 .edge-perf-overlay::before {
+    content: ""; position: absolute; inset: 0; z-index: -1;
+    background: linear-gradient(90deg,
+      rgba(10,14,24,0.92) 0%, rgba(10,14,24,0.78) 38%,
+      rgba(10,14,24,0.25) 62%, rgba(10,14,24,0) 100%);
+  }
+  #screen-4 .edge-perf .edge-big { font-size: 46px; margin-top: 0; }
+  #screen-4 .edge-perf .edge-sub { margin: 5px 0 0; }
+  /* Mini stats: sit on a solid bar so the curve never crosses the digits */
+  #screen-4 .edge-mini-row {
+    margin-top: auto; padding: 8px 10px; gap: 6px;
+    background: rgba(8,12,20,0.82);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 9px;
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+  }
+  #screen-4 .edge-mv { font-size: 14px; }
+  #screen-4 .edge-mk { font-size: 8px; }
+
+  /* Focal tiles: let the donut + gauge actually fill their tile */
+  #screen-4 .wr-donut-svg { max-width: 132px; max-height: 132px; }
+  #screen-4 .wr-big-pct { font-size: 30px; }
+
+  /* Direction towers: wider, taller, less dead air */
+  #screen-4 .dir-vbar-frame { max-width: 72px; }
+}
+
+@media (min-width: 601px) {
+  /* ── DIRECTION: slim, clean towers (not blobs) ── */
+  #screen-4 .dir-vbars { gap: 22px; padding: 2px 8px 0; }
+  #screen-4 .dir-vbar-frame {
+    max-width: 46px; border-radius: 6px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.07);
+  }
+  #screen-4 .dir-vbar-fill { border-radius: 5px; }
+  #screen-4 .dir-vbar-fill::after {
+    content: ""; position: absolute; top: 0; left: 0; right: 0; height: 40%;
+    background: linear-gradient(180deg, rgba(255,255,255,0.18), rgba(255,255,255,0));
+    border-radius: 5px 5px 0 0;
+  }
+  #screen-4 .dir-vbar-pnl { font-size: 15px; }
+  #screen-4 .dir-vbar-wr  { font-size: 17px; }
+
+  /* ── BY SYSTEM + BY CONVICTION: spread rows to fill the tall tile ── */
+  #screen-4 .edge-systems { flex: 1; display: flex; flex-direction: column; justify-content: space-evenly; }
+  #screen-4 .sys-rich-row { padding: 5px 0; }
+  #screen-4 .edge-bars { flex: 1; display: flex; flex-direction: column; justify-content: space-evenly; gap: 0; }
+
+  /* ── MACRO: compact the data-less BTC cells, give VIX/DXY the room ── */
+  #screen-4 .macro-grid { gap: 8px; }
+  #screen-4 .macro-cell[data-key="btc7"],
+  #screen-4 .macro-cell[data-key="btc30"] { opacity: 0.72; }
+  #screen-4 .macro-cell[data-key="btc7"] .macro-cell-foot,
+  #screen-4 .macro-cell[data-key="btc30"] .macro-cell-foot { margin-top: 2px; }
+
+  /* ── FEAR & GREED: let the gauge fill the tile ── */
+  #screen-4 .fg-gauge { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+  #screen-4 .fg-svg { max-width: 240px; height: auto; }
+}
+
+@media (min-width: 601px) {
+  /* DIRECTION: kill the pill/egg radius; compact chrome so towers get height */
+  #screen-4 .dir-vbar-fill { border-radius: 4px !important; }
+  #screen-4 .dir-vbars { gap: 26px; padding: 0 10px; }
+  #screen-4 .dir-vbar-col { gap: 6px; justify-content: flex-end; }
+  #screen-4 .dir-vbar-frame { max-width: 40px; min-height: 78px; }
+  #screen-4 .dir-vbar-pnl { font-size: 14px; order: 0; }
+  #screen-4 .dir-vbar-foot { gap: 1px; }
+  #screen-4 .dir-vbar-wr { font-size: 15px; }
+  #screen-4 .dir-vbar-tag { font-size: 8px; padding: 1px 7px; }
+}
+
+@media (min-width: 601px) {
+  /* DIRECTION v4: keep P&L below the label, frame fills remaining height */
+  #screen-4 .dir-vbar-col { justify-content: flex-start; }
+  #screen-4 .dir-vbar-frame { min-height: 0; flex: 1; }
+  #screen-4 .edge-dir .dir-vbars { margin-top: 2px; }
+  #screen-4 .dir-vbar-pnl { order: 0; line-height: 1.1; }
+
+  /* MACRO: shrink the (mostly empty) BTC row so VIX/DXY get the space */
+  #screen-4 .macro-grid { grid-template-rows: 1.25fr 0.75fr; }
+  #screen-4 .macro-cell[data-key="btc7"],
+  #screen-4 .macro-cell[data-key="btc30"] { padding: 6px 10px; }
+}
+
+/* ── SCREEN 4 — tablet (1280×800) fit tuning: recover vertical height so the
+   hero mini-stats and the 4th system row stop clipping. ── */
+@media (min-width: 601px) and (max-width: 1400px) {
+  #screen-4 { gap: 6px; }
+  #screen-4 .edge-row { gap: 6px; }
+  #screen-4 .edge-tile { padding: 9px 12px; }
+  #screen-4 .edge-tile .edge-label { margin-bottom: 4px; }
+
+  /* Hero: smaller number so the mini-stats band fits inside the tile */
+  #screen-4 .edge-perf .edge-big { font-size: 34px; }
+  #screen-4 .edge-perf .edge-sub { font-size: 11px; margin-top: 3px; }
+  #screen-4 .edge-mini-row { padding: 5px 9px; gap: 5px; }
+  #screen-4 .edge-mv { font-size: 12px; }
+  #screen-4 .edge-mk { font-size: 7.5px; }
+
+  /* By System: compact rows so all four fit */
+  #screen-4 .sys-rich-row { padding: 3px 0; font-size: 10.5px; }
+  #screen-4 .sys-rich-name { font-size: 11px; }
+  #screen-4 .sys-rich-pnl { font-size: 12px; }
+
+  /* Streak / WR a touch smaller to balance */
+  #screen-4 .edge-streak-big { font-size: 46px; }
+  #screen-4 .wr-donut-svg { max-width: 118px; max-height: 118px; }
+  #screen-4 .wr-big-pct { font-size: 26px; }
+}
+
+@media (min-width: 601px) and (max-width: 1400px) {
+  /* Streak: don't let the big number eat all the height — keep the W/L footer visible */
+  #screen-4 .edge-streak-big { flex: 0 0 auto; font-size: 42px; margin: 2px 0 4px; }
+  #screen-4 .edge-streak { justify-content: space-between; }
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   SCREEN 2 + 3 — prominent, consistent headers
+   Open-trades and pending-triggers titles were small/muted and styled
+   differently. Unify them: bright title + colored accent bar, and make
+   the REAL (green) / TRACK (amber) column heads pop with bigger pills.
+   ═══════════════════════════════════════════════════════════════════ */
+.screen-title,
+.triggers .activity-title {
+  font-size: 17px;
+  font-weight: 900;
+  letter-spacing: 1.2px;
+  color: var(--text);
+  text-transform: uppercase;
+  display: flex; align-items: center; gap: 10px;
+  position: relative;
+  padding-left: 13px;
+  margin-bottom: 11px;
+}
+.screen-title::before,
+.triggers .activity-title::before {
+  content: "";
+  position: absolute; left: 0; top: 50%; transform: translateY(-50%);
+  width: 4px; height: 19px; border-radius: 3px;
+  background: var(--green); box-shadow: 0 0 10px rgba(0,201,167,0.5);
+}
+/* Both screens use the same green "live" accent for full consistency */
+.triggers .activity-title::before {
+  background: var(--green); box-shadow: 0 0 10px rgba(0,201,167,0.5);
+}
+/* ● LIVE badge — consistent pill on both screen titles */
+.screen-title .trig-live,
+.triggers .activity-title .trig-live {
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 1.2px;
+  color: var(--green);
+  background: rgba(0,201,167,0.12);
+  border: 1px solid rgba(0,201,167,0.28);
+  padding: 2px 9px;
+  border-radius: 999px;
+  text-transform: uppercase;
+}
+
+/* Column heads — bigger, color-coded, consistent across both screens */
+.pb-col-label, .pt-col-label { font-size: 13px; letter-spacing: 1.5px; }
+.pb-col:nth-child(1) .pb-col-label,
+.pt-col:nth-child(1) .pt-col-label { color: var(--green); }
+.pb-col:nth-child(2) .pb-col-label,
+.pt-col:nth-child(2) .pt-col-label { color: #ffb74d; }
+.pb-col-count, .pt-col-count { font-size: 13px; font-weight: 900; padding: 2px 10px; }
+.pb-col:nth-child(1) .pb-col-count,
+.pt-col:nth-child(1) .pt-col-count { background: rgba(0,201,167,0.16); color: var(--green); }
+.pb-col:nth-child(2) .pb-col-count,
+.pt-col:nth-child(2) .pt-col-count { background: rgba(255,183,77,0.16); color: #ffb74d; }
