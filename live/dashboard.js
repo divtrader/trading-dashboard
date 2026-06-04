@@ -1229,34 +1229,42 @@ function renderEquitySparkline(recentCloses) {
   const baseY = yFor(Math.max(yMin, 0)).toFixed(2);
   const bdcArea = bdcLine + ` L${bdcLastX.toFixed(2)} ${baseY} L${bdcFirstX.toFixed(2)} ${baseY} Z`;
 
-  const final = closes[closes.length - 1].cum;
-  const bdcColor    = final >= 0 ? "78,195,255" : "255,107,122";
-  const lineCore    = `rgba(${bdcColor},0.55)`;
-  const lineHalo    = `rgba(${bdcColor},0.18)`;
-  const lineHi      = `rgba(255,255,255,0.55)`;
-  const lineGlowCss = `rgba(${bdcColor},0.45)`;
+  // Green-above-zero / red-below-zero vertical gradient.
+  const GREEN_RGB = "0,201,167";
+  const RED_RGB   = "255,77,94";
+  const zeroY = Math.max(PAD_T, Math.min(PAD_T + innerH, yFor(0)));
+  const zeroOffset = Math.max(0, Math.min(1, zeroY / H));
+  const EPS = 0.0005;
+  const offAbove = Math.max(0, zeroOffset - EPS).toFixed(6);
+  const offBelow = Math.min(1, zeroOffset + EPS).toFixed(6);
 
   svg.setAttribute("viewBox", `0 0 ${W} ${H}`);
   svg.setAttribute("preserveAspectRatio", "none");
   svg.setAttribute("width", W);
   svg.setAttribute("height", H);
-  // Glassy line: wide soft halo → translucent core → thin bright highlight.
   svg.innerHTML = `
     <defs>
-      <linearGradient id="bdc-area-grad" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0%"  stop-color="rgb(${bdcColor})" stop-opacity="0.22"/>
-        <stop offset="100%" stop-color="rgb(${bdcColor})" stop-opacity="0"/>
+      <linearGradient id="bdc-line-grad" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="${H}">
+        <stop offset="0"          stop-color="rgb(${GREEN_RGB})"/>
+        <stop offset="${offAbove}" stop-color="rgb(${GREEN_RGB})"/>
+        <stop offset="${offBelow}" stop-color="rgb(${RED_RGB})"/>
+        <stop offset="1"          stop-color="rgb(${RED_RGB})"/>
+      </linearGradient>
+      <linearGradient id="bdc-area-grad" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="${H}">
+        <stop offset="0"          stop-color="rgb(${GREEN_RGB})" stop-opacity="0.28"/>
+        <stop offset="${offAbove}" stop-color="rgb(${GREEN_RGB})" stop-opacity="0.04"/>
+        <stop offset="${offBelow}" stop-color="rgb(${RED_RGB})"   stop-opacity="0.04"/>
+        <stop offset="1"          stop-color="rgb(${RED_RGB})"   stop-opacity="0.28"/>
       </linearGradient>
     </defs>
     ${gridHtml}
     <path d="${bdcArea}" fill="url(#bdc-area-grad)"/>
-    <path d="${bdcLine}" fill="none" stroke="${lineHalo}" stroke-width="9"
+    <path d="${bdcLine}" fill="none" stroke="url(#bdc-line-grad)" stroke-width="9"
           stroke-linecap="round" stroke-linejoin="round"
-          style="filter: blur(2.5px)"/>
-    <path d="${bdcLine}" fill="none" stroke="${lineCore}" stroke-width="3.5"
-          stroke-linecap="round" stroke-linejoin="round"
-          style="filter: drop-shadow(0 0 10px ${lineGlowCss})"/>
-    <path d="${bdcLine}" fill="none" stroke="${lineHi}" stroke-width="0.8"
+          opacity="0.22" style="filter: blur(2.5px)"/>
+    <path d="${bdcLine}" fill="none" stroke="url(#bdc-line-grad)" stroke-width="3.5"
+          stroke-linecap="round" stroke-linejoin="round" opacity="0.65"/>
+    <path d="${bdcLine}" fill="none" stroke="rgba(255,255,255,0.55)" stroke-width="0.8"
           stroke-linecap="round" stroke-linejoin="round" opacity="0.7"/>
   `;
 
