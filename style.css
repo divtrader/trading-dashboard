@@ -979,8 +979,8 @@ main {
 }
 .paper-bar-row {
   display: grid;
-  grid-template-columns: 240px 1fr 140px;
-  gap: 28px;
+  grid-template-columns: 170px 1fr 110px;
+  gap: 18px;
   align-items: center;
   background: var(--panel);
   border: 1px solid var(--border);
@@ -997,7 +997,7 @@ main {
 
 /* 7-9 trades */
 .pb-compact { gap: 6px; }
-.pb-compact .paper-bar-row { padding: 8px 18px; gap: 20px; border-radius: 10px; grid-template-columns: 190px 1fr 120px; }
+.pb-compact .paper-bar-row { padding: 8px 18px; gap: 14px; border-radius: 10px; grid-template-columns: 150px 1fr 95px; }
 .pb-compact .pb-coin        { font-size: 20px; }
 .pb-compact .pb-meta        { font-size: 9px; }
 .pb-compact .pb-live-px     { font-size: 10px; }
@@ -1013,7 +1013,7 @@ main {
 
 /* 10-12 trades */
 .pb-mini { gap: 4px; }
-.pb-mini .paper-bar-row { padding: 5px 14px; gap: 16px; border-radius: 8px; grid-template-columns: 160px 1fr 105px; }
+.pb-mini .paper-bar-row { padding: 5px 14px; gap: 12px; border-radius: 8px; grid-template-columns: 130px 1fr 85px; }
 .pb-mini .pb-coin        { font-size: 16px; }
 .pb-mini .pb-meta        { font-size: 8px; gap: 4px; }
 .pb-mini .pb-live-px     { font-size: 9px; }
@@ -1033,7 +1033,7 @@ main {
 
 /* 13+ trades */
 .pb-tiny { gap: 3px; }
-.pb-tiny .paper-bar-row { padding: 4px 12px; gap: 12px; border-radius: 7px; grid-template-columns: 130px 1fr 90px; }
+.pb-tiny .paper-bar-row { padding: 4px 12px; gap: 10px; border-radius: 7px; grid-template-columns: 110px 1fr 75px; }
 .pb-tiny .pb-coin        { font-size: 13px; }
 .pb-tiny .pb-meta        { font-size: 7px; gap: 3px; }
 .pb-tiny .pb-live-px     { display: none; }

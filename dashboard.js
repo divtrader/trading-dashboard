@@ -999,7 +999,6 @@ function renderPaperBars(enrichedOpen) {
             <span class="pb-dir ${dirCls}">${isLong ? "▲ LONG" : "▼ SHORT"}</span>
             <span class="pb-sys">${sys}</span>
             ${beActive ? '<span class="pb-be">BE</span>' : ""}
-            ${t.track_only ? '<span class="pb-track-tag">TRACK</span>' : ""}
           </div>
           <div class="pb-tid">${t.trade_id || ""}</div>
         </div>
