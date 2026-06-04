@@ -1004,8 +1004,8 @@ main {
 .pb-compact .pb-bar         { padding: 12px 0 20px; }
 .pb-compact .pb-flag        { font-size: 9px; padding: 1px 5px; }
 .pb-compact .pb-price-val   { font-size: 9px; }
-.pb-compact .pb-pnl-pct     { font-size: 22px; }
-.pb-compact .pb-pnl-usd     { font-size: 12px; }
+.pb-compact .pb-pnl-pct     { font-size: 18px; }
+.pb-compact .pb-pnl-usd     { font-size: 11px; }
 .pb-compact .pb-pnl-breakdown { display: none; }
 .pb-compact .tp1-hit .pb-pnl-breakdown { display: flex; margin-top: 2px; padding-top: 2px; border-top: none; }
 .pb-compact .tp1-hit .pb-bd-row:last-child { display: none; }
@@ -1024,8 +1024,8 @@ main {
 .pb-mini .pb-marker      { height: 14px; margin-top: -7px; }
 .pb-mini .pb-flag        { font-size: 8px; padding: 1px 4px; top: -12px; }
 .pb-mini .pb-price-val   { font-size: 8px; top: 16px; }
-.pb-mini .pb-pnl-pct     { font-size: 17px; }
-.pb-mini .pb-pnl-usd     { font-size: 11px; }
+.pb-mini .pb-pnl-pct     { font-size: 15px; }
+.pb-mini .pb-pnl-usd     { font-size: 10px; }
 .pb-mini .pb-pnl-breakdown { display: none; }
 .pb-mini .tp1-hit .pb-pnl-breakdown { display: flex; margin-top: 1px; padding-top: 1px; border-top: none; font-size: 9px; }
 .pb-mini .tp1-hit .pb-bd-row:last-child { display: none; }
@@ -1044,8 +1044,8 @@ main {
 .pb-tiny .pb-marker      { height: 12px; margin-top: -6px; }
 .pb-tiny .pb-flag        { font-size: 7px; padding: 1px 3px; top: -10px; }
 .pb-tiny .pb-price-val   { font-size: 7px; top: 13px; }
-.pb-tiny .pb-pnl-pct     { font-size: 14px; }
-.pb-tiny .pb-pnl-usd     { font-size: 10px; }
+.pb-tiny .pb-pnl-pct     { font-size: 12px; }
+.pb-tiny .pb-pnl-usd     { font-size: 9px; }
 .pb-tiny .pb-pnl-breakdown { display: none; }
 .pb-tiny .tp1-hit .pb-pnl-breakdown { display: flex; margin-top: 1px; padding-top: 1px; border-top: none; font-size: 8px; }
 .pb-tiny .tp1-hit .pb-bd-row:last-child { display: none; }
@@ -1216,14 +1216,14 @@ main {
   text-align: right;
 }
 .pb-pnl-pct {
-  font-size: 28px; font-weight: 800; letter-spacing: -0.5px;
+  font-size: 22px; font-weight: 800; letter-spacing: -0.5px;
   font-variant-numeric: tabular-nums;
   line-height: 1;
 }
 .pb-pnl-pct.pos { color: var(--green); }
 .pb-pnl-pct.neg { color: var(--red); }
 .pb-pnl-usd {
-  font-size: 14px; font-weight: 700;
+  font-size: 12px; font-weight: 700;
   font-variant-numeric: tabular-nums;
   color: var(--muted);
 }
