@@ -206,7 +206,7 @@ main {
 #screen-1 {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 2.2fr 1fr auto;
+  grid-template-rows: 3.1fr 0.7fr auto;
   gap: 12px;
 }
 #screen-1 .price-bar { grid-column: 1 / -1; }
@@ -407,6 +407,7 @@ main {
   grid-template-columns: 1fr 1px 1fr;
   gap: 44px;
   align-items: start;
+  flex: 0 0 auto;
 }
 .hero-donut-inline {
   display: flex;
@@ -563,12 +564,20 @@ main {
 .hero-spark {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 8px;
   padding-top: 4px;
+  flex: 1 1 auto;
+  min-height: 0;
+}
+.hero-spark-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
 }
 .hero-spark-label {
   font-size: 10px;
-  color: var(--muted);
+  color: #4ec3ff;
   text-transform: uppercase;
   letter-spacing: 1.8px;
   font-weight: 700;
@@ -576,12 +585,14 @@ main {
 .spark-wrap {
   position: relative;
   width: 100%;
-  height: 90px;
+  flex: 1 1 auto;
+  min-height: 220px;
 }
 #equity-spark {
   position: absolute; inset: 0;
   width: 100%; height: 100%;
   display: block;
+  overflow: visible;
 }
 .spark-overlay {
   position: absolute; inset: 0;
@@ -603,6 +614,26 @@ main {
   transform: translateX(-50%);
   color: rgba(255,255,255,0.32);
 }
+.spark-overlay .spark-date.axis {
+  transform: translateX(-50%);
+  color: rgba(255,255,255,0.45);
+  font-size: 10px;
+  letter-spacing: 0.6px;
+  text-transform: none;
+}
+.spark-overlay .spark-ytick {
+  position: absolute;
+  left: 0;
+  width: 42px;
+  text-align: right;
+  transform: translateY(-50%);
+  font-size: 10px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.5);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.3px;
+  pointer-events: none;
+}
 .spark-overlay .spark-final {
   position: absolute;
   top: 0;
@@ -617,13 +648,13 @@ main {
 .spark-overlay .spark-final.neg { color: var(--red);          text-shadow: 0 0 6px rgba(255,77,94,0.5); }
 .spark-overlay .spark-dot {
   position: absolute;
-  width: 8px; height: 8px;
+  width: 5px; height: 5px;
   border-radius: 50%;
   transform: translate(-50%, -50%);
   pointer-events: auto;
 }
-.spark-overlay .spark-dot.win  { background: var(--green); box-shadow: 0 0 6px rgba(0,201,167,0.6); }
-.spark-overlay .spark-dot.loss { background: var(--red);   box-shadow: 0 0 6px rgba(255,77,94,0.6); }
+.spark-overlay .spark-dot.win  { background: var(--green); }
+.spark-overlay .spark-dot.loss { background: var(--red); }
 .spark-overlay .spark-tid {
   position: absolute;
   font-size: 9px;

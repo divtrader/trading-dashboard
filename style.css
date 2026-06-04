@@ -188,7 +188,7 @@ main {
 #screen-1 {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 2.2fr 1fr auto;
+  grid-template-rows: 3.1fr 0.7fr auto;
   gap: 12px;
 }
 #screen-1 .price-bar { grid-column: 1 / -1; }
@@ -389,6 +389,7 @@ main {
   grid-template-columns: 0.85fr 1px 1.15fr;
   gap: 32px;
   align-items: stretch;
+  flex: 0 0 auto;
 }
 
 /* Systems block embedded in the hero tile — full original size, fills height */
@@ -615,25 +616,62 @@ main {
 .hero-spark {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 8px;
   padding-top: 4px;
+  flex: 1 1 auto;
+  min-height: 0;
+}
+.hero-spark-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
 }
 .hero-spark-label {
   font-size: 10px;
-  color: var(--muted);
+  color: #4ec3ff;
   text-transform: uppercase;
   letter-spacing: 1.8px;
   font-weight: 700;
 }
+.hero-spark-legend {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 10px;
+  letter-spacing: 0.8px;
+  color: rgba(255,255,255,0.7);
+  font-weight: 600;
+  text-transform: none;
+}
+.hero-spark-legend .legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.hero-spark-legend .legend-swatch {
+  display: inline-block;
+  width: 14px;
+  height: 10px;
+  border: 1.5px solid #4ec3ff;
+  border-radius: 2px;
+  background: transparent;
+}
+.hero-spark-legend .swatch-spx {
+  border-color: rgba(220,220,220,0.65);
+  border-style: dashed;
+}
 .spark-wrap {
   position: relative;
   width: 100%;
-  height: 90px;
+  flex: 1 1 auto;
+  min-height: 220px;
 }
 #equity-spark {
   position: absolute; inset: 0;
   width: 100%; height: 100%;
   display: block;
+  overflow: visible;
 }
 .spark-overlay {
   position: absolute; inset: 0;
@@ -655,6 +693,26 @@ main {
   transform: translateX(-50%);
   color: rgba(255,255,255,0.32);
 }
+.spark-overlay .spark-date.axis {
+  transform: translateX(-50%);
+  color: rgba(255,255,255,0.45);
+  font-size: 10px;
+  letter-spacing: 0.6px;
+  text-transform: none;
+}
+.spark-overlay .spark-ytick {
+  position: absolute;
+  left: 0;
+  width: 42px;
+  text-align: right;
+  transform: translateY(-50%);
+  font-size: 10px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.5);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.3px;
+  pointer-events: none;
+}
 .spark-overlay .spark-final {
   position: absolute;
   top: 0;
@@ -669,13 +727,13 @@ main {
 .spark-overlay .spark-final.neg { color: var(--red);          text-shadow: 0 0 6px rgba(255,77,94,0.5); }
 .spark-overlay .spark-dot {
   position: absolute;
-  width: 8px; height: 8px;
+  width: 5px; height: 5px;
   border-radius: 50%;
   transform: translate(-50%, -50%);
   pointer-events: auto;
 }
-.spark-overlay .spark-dot.win  { background: var(--green); box-shadow: 0 0 6px rgba(0,201,167,0.6); }
-.spark-overlay .spark-dot.loss { background: var(--red);   box-shadow: 0 0 6px rgba(255,77,94,0.6); }
+.spark-overlay .spark-dot.win  { background: var(--green); }
+.spark-overlay .spark-dot.loss { background: var(--red); }
 .spark-overlay .spark-tid {
   position: absolute;
   font-size: 9px;
