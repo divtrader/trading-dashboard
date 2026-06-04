@@ -1394,25 +1394,35 @@ function renderEquitySparkline(recentCloses) {
   const bdcArea = bdcLine + ` L${bdcLastX.toFixed(2)} ${baseY} L${bdcFirstX.toFixed(2)} ${baseY} Z`;
 
   const final = closes[closes.length - 1].cum;
-  const bdcColor = final >= 0 ? "#4ec3ff" : "#ff6b7a";
-  const bdcGlow  = final >= 0 ? "rgba(78,195,255,0.55)" : "rgba(255,107,122,0.55)";
+  const bdcColor    = final >= 0 ? "78,195,255" : "255,107,122";   // rgb triples
+  const lineCore    = `rgba(${bdcColor},0.55)`;                    // main translucent stroke
+  const lineHalo    = `rgba(${bdcColor},0.18)`;                    // wider soft halo behind
+  const lineHi      = `rgba(255,255,255,0.55)`;                    // inner highlight
+  const lineGlowCss = `rgba(${bdcColor},0.45)`;
 
   svg.setAttribute("viewBox", `0 0 ${W} ${H}`);
   svg.setAttribute("preserveAspectRatio", "none");
   svg.setAttribute("width", W);
   svg.setAttribute("height", H);
+  // Glassy line = three stacked strokes: wide soft halo → translucent core →
+  // thin bright highlight on top. Area fill underneath stays very faint.
   svg.innerHTML = `
     <defs>
       <linearGradient id="bdc-area-grad" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0%"  stop-color="${bdcColor}" stop-opacity="0.32"/>
-        <stop offset="100%" stop-color="${bdcColor}" stop-opacity="0"/>
+        <stop offset="0%"  stop-color="rgb(${bdcColor})" stop-opacity="0.22"/>
+        <stop offset="100%" stop-color="rgb(${bdcColor})" stop-opacity="0"/>
       </linearGradient>
     </defs>
     ${gridHtml}
     <path d="${bdcArea}" fill="url(#bdc-area-grad)"/>
-    <path d="${bdcLine}" fill="none" stroke="${bdcColor}" stroke-width="4"
+    <path d="${bdcLine}" fill="none" stroke="${lineHalo}" stroke-width="9"
           stroke-linecap="round" stroke-linejoin="round"
-          style="filter: drop-shadow(0 0 8px ${bdcGlow})"/>
+          style="filter: blur(2.5px)"/>
+    <path d="${bdcLine}" fill="none" stroke="${lineCore}" stroke-width="3.5"
+          stroke-linecap="round" stroke-linejoin="round"
+          style="filter: drop-shadow(0 0 10px ${lineGlowCss})"/>
+    <path d="${bdcLine}" fill="none" stroke="${lineHi}" stroke-width="0.8"
+          stroke-linecap="round" stroke-linejoin="round" opacity="0.7"/>
   `;
 
   // HTML overlay: Y-axis $ labels, X-axis dates, win/loss dots (no coin labels).
