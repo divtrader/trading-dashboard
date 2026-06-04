@@ -3639,15 +3639,6 @@ main {
   /* Insights ticker — slimmer */
   #screen-4 .edge-insights { padding: 6px 14px; border-radius: 9px; }
 
-  /* ── HERO: stop the equity curve colliding with the numbers ──
-     Left half gets a scrim so the big number + mini stats read cleanly,
-     curve breathes on the right. */
-  #screen-4 .edge-perf-overlay::before {
-    content: ""; position: absolute; inset: 0; z-index: -1;
-    background: linear-gradient(90deg,
-      rgba(10,14,24,0.92) 0%, rgba(10,14,24,0.78) 38%,
-      rgba(10,14,24,0.25) 62%, rgba(10,14,24,0) 100%);
-  }
   #screen-4 .edge-perf .edge-big { font-size: 46px; margin-top: 0; }
   #screen-4 .edge-perf .edge-sub { margin: 5px 0 0; }
 
