@@ -1105,6 +1105,50 @@ function renderHero(enrichedOpen) {
   renderEquitySparkline(state.recentCloses || []);
 }
 
+// Monotone-cubic Hermite (Fritsch–Carlson) — smooth curve through points
+// that NEVER overshoots in x and never overshoots in y where the source
+// data is monotone. Use this instead of Catmull–Rom for time-series where
+// any backward fold would be visually wrong. Input/output: [[x,y], ...].
+function _monotoneCubicPath(pts) {
+  const n = pts.length;
+  if (n === 0) return "";
+  if (n === 1) return `M${pts[0][0]} ${pts[0][1]}`;
+  if (n === 2) return `M${pts[0][0]} ${pts[0][1]} L${pts[1][0]} ${pts[1][1]}`;
+  const dx = new Array(n - 1), dy = new Array(n - 1), d = new Array(n - 1);
+  for (let i = 0; i < n - 1; i++) {
+    dx[i] = pts[i + 1][0] - pts[i][0];
+    dy[i] = pts[i + 1][1] - pts[i][1];
+    d[i]  = dx[i] === 0 ? 0 : dy[i] / dx[i];
+  }
+  const m = new Array(n);
+  m[0] = d[0];
+  m[n - 1] = d[n - 2];
+  for (let i = 1; i < n - 1; i++) {
+    if (d[i - 1] * d[i] <= 0) m[i] = 0;
+    else m[i] = (d[i - 1] + d[i]) / 2;
+  }
+  for (let i = 0; i < n - 1; i++) {
+    if (d[i] === 0) { m[i] = 0; m[i + 1] = 0; continue; }
+    const a = m[i] / d[i], b = m[i + 1] / d[i];
+    const h = a * a + b * b;
+    if (h > 9) {
+      const t = 3 / Math.sqrt(h);
+      m[i]     = t * a * d[i];
+      m[i + 1] = t * b * d[i];
+    }
+  }
+  let out = `M${pts[0][0].toFixed(2)} ${pts[0][1].toFixed(2)}`;
+  for (let i = 0; i < n - 1; i++) {
+    const h = dx[i];
+    const c1x = pts[i][0]     + h / 3;
+    const c1y = pts[i][1]     + h * m[i]     / 3;
+    const c2x = pts[i + 1][0] - h / 3;
+    const c2y = pts[i + 1][1] - h * m[i + 1] / 3;
+    out += ` C${c1x.toFixed(2)} ${c1y.toFixed(2)} ${c2x.toFixed(2)} ${c2y.toFixed(2)} ${pts[i + 1][0].toFixed(2)} ${pts[i + 1][1].toFixed(2)}`;
+  }
+  return out;
+}
+
 function renderEquitySparkline(recentCloses) {
   const svg = document.getElementById("equity-spark");
   const overlay = document.getElementById("equity-spark-overlay");
@@ -1177,9 +1221,9 @@ function renderEquitySparkline(recentCloses) {
     yTicks.push({ v, yPct: (y / H) * 100 });
   }
 
-  // _smoothPath (defined later in this file) expects [[x,y]] arrays.
+  // Monotone-cubic — no backward folds, no y-overshoot.
   const bdcPts = series.map(p => [xFor(p.iso), yFor(p.cum)]);
-  const bdcLine = _smoothPath(bdcPts);
+  const bdcLine = _monotoneCubicPath(bdcPts);
   const bdcLastX = bdcPts[bdcPts.length - 1][0];
   const bdcFirstX = bdcPts[0][0];
   const baseY = yFor(Math.max(yMin, 0)).toFixed(2);
