@@ -694,13 +694,15 @@ function renderMexcCard() {
   const avEl   = $("mexc-avail-v");
   if (!wallEl && !eqEl && !avEl) return;
   const m = state.mexcAccount;
+  // Value rendered as bold number + small uppercase USDT unit pill.
   const fmtU = v => (v == null || isNaN(v))
     ? "—"
-    : v.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + " USDT";
+    : v.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 })
+      + '<span class="mexc-unit">USDT</span>';
   if (!m) {
-    if (wallEl) wallEl.textContent = "—";
-    if (eqEl)   eqEl.textContent   = "—";
-    if (avEl)   avEl.textContent   = "—";
+    if (wallEl) wallEl.innerHTML = "—";
+    if (eqEl)   eqEl.innerHTML   = "—";
+    if (avEl)   avEl.innerHTML   = "—";
     return;
   }
   // Wallet balance = equity − unrealized PnL (cash settled, ignores
@@ -708,9 +710,9 @@ function renderMexcCard() {
   const wallet = (m.equity != null && m.unrealized_pnl != null)
     ? m.equity - m.unrealized_pnl
     : null;
-  if (wallEl) wallEl.textContent = fmtU(wallet);
-  if (eqEl)   eqEl.textContent   = fmtU(m.equity);
-  if (avEl)   avEl.textContent   = fmtU(m.available);
+  if (wallEl) wallEl.innerHTML = fmtU(wallet);
+  if (eqEl)   eqEl.innerHTML   = fmtU(m.equity);
+  if (avEl)   avEl.innerHTML   = fmtU(m.available);
 }
 
 function renderMexcPositions(positions) {
