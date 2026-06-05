@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <meta name="robots" content="noindex,nofollow">
 <title>Spyker Trading Inc — Live MEXC Dashboard</title>
-<link rel="stylesheet" href="style.css?v=106">
+<link rel="stylesheet" href="style.css?v=107">
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
@@ -51,40 +51,26 @@
       <div class="hero-main">
         <div class="hero-pnls">
           <div class="pnl-block mexc-block" id="mexc-card">
-            <div class="pnl-block-label">MEXC Live <span class="live-pulse"></span></div>
-            <div class="value hero-value" id="mexc-pnl">—</div>
-            <div class="hero-breakdown">
-              <div class="hero-stat">
-                <div class="hero-stat-label">Equity</div>
-                <div class="hero-stat-val" id="mexc-equity">—</div>
-              </div>
-              <div class="hero-stat-sep"></div>
-              <div class="hero-stat">
-                <div class="hero-stat-label">Available</div>
-                <div class="hero-stat-val" id="mexc-avail">—</div>
-              </div>
-            </div>
-            <div class="mexc-positions" id="mexc-positions"></div>
-          </div>
-          <div class="pnl-divider"></div>
-          <div class="pnl-block paper-block">
-            <div class="pnl-block-label">Portfolio P&amp;L · Live System</div>
+            <div class="pnl-block-label">Portfolio P&amp;L · Live MEXC <span class="live-pulse"></span></div>
             <div class="value hero-value" id="portfolio-total">—</div>
             <div class="hero-return" id="hero-pct">—</div>
             <div class="hero-breakdown">
               <div class="hero-stat">
                 <div class="hero-stat-label">Realized</div>
                 <div class="hero-stat-val" id="hero-realized">—</div>
+                <div class="hero-stat-sub" id="hero-realized-day">—</div>
               </div>
               <div class="hero-stat-sep"></div>
               <div class="hero-stat">
                 <div class="hero-stat-label">Unrealized</div>
                 <div class="hero-stat-val" id="hero-unrealized">—</div>
+                <div class="hero-stat-sub" id="hero-unrealized-day">—</div>
               </div>
               <div class="hero-stat-sep"></div>
               <div class="hero-stat">
                 <div class="hero-stat-label">Capital</div>
                 <div class="hero-stat-val" id="hero-capital">—</div>
+                <div class="hero-stat-sub hero-stat-sub-spacer" aria-hidden="true">&nbsp;</div>
               </div>
               <div class="hero-stat-sep"></div>
               <div class="hero-donut-inline">
@@ -102,6 +88,8 @@
               </div>
             </div>
           </div>
+          <div class="pnl-divider"></div>
+          <div id="systems" class="systems hero-systems"></div>
         </div>
         <div class="hero-spark">
           <div class="hero-spark-header">
@@ -144,14 +132,9 @@
   </section>
 
   <section id="screen-3" class="screen">
-    <div id="systems" class="systems"></div>
     <div class="triggers">
       <div class="activity-title">Pending trades <span class="trig-live">● LIVE</span></div>
       <div id="triggers" class="triggers-body"></div>
-    </div>
-    <div class="activity">
-      <div class="activity-title">Since last run</div>
-      <div id="activity" class="activity-body">—</div>
     </div>
   </section>
 
@@ -395,6 +378,6 @@
   </div>
 </main>
 
-<script src="dashboard.js?v=205"></script>
+<script src="dashboard.js?v=206"></script>
 </body>
 </html>
