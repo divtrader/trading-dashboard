@@ -1,13 +1,50 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-06-05T11:36:19Z",
+  "last_updated_iso": "2026-06-05T11:51:23Z",
   "mexc_account": {
-    "unrealized_pnl": -95.8543,
-    "equity": 1401.692,
+    "unrealized_pnl": -97.3458,
+    "equity": 1400.2005,
     "available": 979.0056,
     "position_margin": 138.642
   },
+  "api_keys": [
+    {
+      "label": "MEXC Master (dashboard read-only)",
+      "name": "MEXC_API_KEY",
+      "expires": "2026-08-03",
+      "days_left": 59,
+      "status": "ok"
+    },
+    {
+      "label": "MEXC AlgoTrading sub-account (live orders)",
+      "name": "MEXC_ALGO_KEY",
+      "expires": "2026-08-27",
+      "days_left": 83,
+      "status": "ok"
+    },
+    {
+      "label": "GitHub PAT (dashboard deploy)",
+      "name": "DASHBOARD_PAT",
+      "expires": "2026-07-30",
+      "days_left": 55,
+      "status": "ok"
+    },
+    {
+      "label": "Google Drive OAuth (journal sync)",
+      "name": "GDRIVE_OAUTH_TOKEN",
+      "expires": "2026-07-30",
+      "days_left": 55,
+      "status": "ok"
+    },
+    {
+      "label": "Telegram Bot (trade alerts)",
+      "name": "TELEGRAM_TOKEN",
+      "expires": "2126-01-01",
+      "days_left": 36369,
+      "status": "ok"
+    }
+  ],
   "active_trades": [],
   "recent_signals": [],
   "recent_opens": [],
