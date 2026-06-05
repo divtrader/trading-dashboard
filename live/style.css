@@ -556,6 +556,38 @@ main {
 }
 .hero-stat-sub.pos { color: var(--green); }
 .hero-stat-sub.neg { color: var(--red); }
+
+/* MEXC account mini-table (replaces "Capital" stat on live screen 1) */
+.hero-mexc-acct {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  align-self: center;
+  min-width: 0;
+}
+.hero-mexc-acct .mexc-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 18px;
+  font-variant-numeric: tabular-nums;
+}
+.hero-mexc-acct .mexc-k {
+  font-size: 10px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 1.4px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+.hero-mexc-acct .mexc-v {
+  font-size: 14px;
+  font-weight: 800;
+  color: var(--text);
+  letter-spacing: -0.2px;
+  white-space: nowrap;
+}
+
 .hero-stat-sep {
   width: 1px;
   height: 38px;

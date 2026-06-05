@@ -685,25 +685,32 @@ function renderRecentClosesTile() {
 }
 
 function renderMexcCard() {
-  const pnlEl = $("mexc-pnl");
-  const eqEl  = $("mexc-equity");
-  const avEl  = $("mexc-avail");
-  if (!pnlEl) return;
+  // Populates the MEXC account mini-table on screen 1 (Wallet / Equity / Avail).
+  // The old large mexc-pnl/mexc-equity/mexc-avail nodes were removed when
+  // screen 1 was restructured to mirror paper; this writes to the three
+  // mini-table cells inside .hero-mexc-acct instead.
+  const wallEl = $("mexc-wallet-v");
+  const eqEl   = $("mexc-equity-v");
+  const avEl   = $("mexc-avail-v");
+  if (!wallEl && !eqEl && !avEl) return;
   const m = state.mexcAccount;
+  const fmtU = v => (v == null || isNaN(v))
+    ? "—"
+    : v.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + " USDT";
   if (!m) {
-    pnlEl.textContent = "—";
-    pnlEl.className = "value hero-value";
-    if (eqEl) eqEl.textContent = "—";
-    if (avEl) avEl.textContent = "—";
-    renderMexcPositions([]);
+    if (wallEl) wallEl.textContent = "—";
+    if (eqEl)   eqEl.textContent   = "—";
+    if (avEl)   avEl.textContent   = "—";
     return;
   }
-  const pnl = m.unrealized_pnl;
-  pnlEl.className = "value hero-value " + cls(pnl);
-  animateValue(pnlEl, pnl, fmtUsd);
-  if (eqEl) animateValue(eqEl, m.equity,    v => "$" + Math.round(v).toLocaleString("en-US"));
-  if (avEl) animateValue(avEl, m.available, v => "$" + Math.round(v).toLocaleString("en-US"));
-  renderMexcPositions(m.positions || []);
+  // Wallet balance = equity − unrealized PnL (cash settled, ignores
+  // mark-to-market on open positions). Matches MEXC's "Wallet Balance" tile.
+  const wallet = (m.equity != null && m.unrealized_pnl != null)
+    ? m.equity - m.unrealized_pnl
+    : null;
+  if (wallEl) wallEl.textContent = fmtU(wallet);
+  if (eqEl)   eqEl.textContent   = fmtU(m.equity);
+  if (avEl)   avEl.textContent   = fmtU(m.available);
 }
 
 function renderMexcPositions(positions) {
