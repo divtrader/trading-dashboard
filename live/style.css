@@ -403,11 +403,8 @@ main {
   transition: color 1.8s ease;
 }
 .hero-pnls {
-  /* Live: paper-block (Portfolio P&L + breakdown + MEXC card + donut) is
-     wider than paper's because of the MEXC mini-card; give it more
-     horizontal space than the systems block. */
   display: grid;
-  grid-template-columns: 1.5fr 1px 1fr;
+  grid-template-columns: 0.85fr 1px 1.15fr;
   gap: 32px;
   align-items: stretch;
   flex: 0 0 auto;
