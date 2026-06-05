@@ -395,9 +395,12 @@ main {
   gap: 18px;
 }
 .hero-value {
-  font-size: 128px !important;
+  /* Responsive: scales with viewport so 6-7 digit P&L values + the
+     inline pct still fit beside the donut column. Was 128px fixed
+     which caused overflow into the donut on paper once $XXX.XX hit. */
+  font-size: clamp(52px, 4vw, 76px) !important;
   font-weight: 900 !important;
-  letter-spacing: -4px !important;
+  letter-spacing: -2px !important;
   line-height: 0.88 !important;
   margin: 12px 0 26px;
   transition: color 1.8s ease;
@@ -415,9 +418,9 @@ main {
 .hero-value-row .hero-value { margin-bottom: 14px !important; flex: 0 0 auto; }
 .hero-value-row .hero-pct-inline { flex: 0 0 auto; }
 .hero-pct-inline {
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 700;
-  letter-spacing: -0.3px;
+  letter-spacing: -0.2px;
   font-variant-numeric: tabular-nums;
   color: var(--muted);
   opacity: 0.85;
@@ -780,8 +783,8 @@ main {
 }
 .donut-wrap {
   position: relative;
-  width: 280px;
-  height: 280px;
+  width: 220px;
+  height: 220px;
 }
 .donut-svg {
   width: 100%;
@@ -811,19 +814,19 @@ main {
   justify-content: center;
 }
 .donut-pct {
-  font-size: 60px;
+  font-size: 48px;
   font-weight: 800;
   color: var(--text);
-  letter-spacing: -2.2px;
+  letter-spacing: -1.6px;
   font-variant-numeric: tabular-nums;
 }
 .donut-label {
-  font-size: 13px;
+  font-size: 11px;
   color: var(--muted);
   text-transform: uppercase;
-  letter-spacing: 2.4px;
+  letter-spacing: 2.2px;
   font-weight: 700;
-  margin-top: 6px;
+  margin-top: 5px;
 }
 .donut-sub {
   font-size: 12px;
