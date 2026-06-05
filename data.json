@@ -1,8 +1,8 @@
 {
-  "last_updated_iso": "2026-06-05T15:01:46Z",
+  "last_updated_iso": "2026-06-05T15:15:50Z",
   "mexc_account": {
-    "unrealized_pnl": -111.1618,
-    "equity": 1386.3845,
+    "unrealized_pnl": -118.8548,
+    "equity": 1378.6915,
     "available": 979.0056,
     "position_margin": 138.642
   },
@@ -50,7 +50,7 @@
       "trading_system": "John",
       "track_only": true,
       "status": "PENDING",
-      "price_at_run": 0.3234,
+      "price_at_run": 0.3223,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-06-02",
@@ -130,29 +130,6 @@
       "pnl_tp1_realized_usd": null
     },
     {
-      "trade_id": "ONDOUSDT_20260604_CJ_M_001",
-      "coin": "ONDOUSDT",
-      "direction": "Long",
-      "entry_price": 0.36282079,
-      "sl": 0.34103977,
-      "tp1": 0.4239,
-      "tp2": 0.446,
-      "capital_usd": 100,
-      "leverage": 3,
-      "trading_system": "John",
-      "track_only": true,
-      "status": "OPEN",
-      "price_at_run": 0.3468,
-      "date_activated": "2026-06-04",
-      "time_activated_utc": "08:00",
-      "date_opened": "2026-06-04",
-      "time_opened_utc": "05:11",
-      "conviction": "MEDIUM",
-      "tp1_hit": false,
-      "sl_moved_to_be": null,
-      "pnl_tp1_realized_usd": null
-    },
-    {
       "trade_id": "TRXUSDT_20260604_CB_001",
       "coin": "TRXUSDT",
       "direction": "Short",
@@ -188,7 +165,7 @@
       "trading_system": "John",
       "track_only": true,
       "status": "PENDING",
-      "price_at_run": 60792.49,
+      "price_at_run": 60589.16,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-06-04",
@@ -211,7 +188,7 @@
       "trading_system": "John",
       "track_only": true,
       "status": "PENDING",
-      "price_at_run": 0.1528,
+      "price_at_run": 0.1506,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-06-04",
@@ -220,29 +197,6 @@
       "tp1_hit": false,
       "sl_moved_to_be": null,
       "pnl_tp1_realized_usd": null
-    },
-    {
-      "trade_id": "ONDOUSDT_20260604_CJ_M_002",
-      "coin": "ONDOUSDT",
-      "direction": "Short",
-      "entry_price": 0.392775,
-      "sl": 0.392775,
-      "tp1": 0.350128,
-      "tp2": 0.3387,
-      "capital_usd": 100,
-      "leverage": 3,
-      "trading_system": "John",
-      "track_only": true,
-      "status": "OPEN",
-      "price_at_run": 0.3468,
-      "date_activated": "2026-06-04",
-      "time_activated_utc": "16:00",
-      "date_opened": "2026-06-04",
-      "time_opened_utc": "12:15",
-      "conviction": "MEDIUM",
-      "tp1_hit": true,
-      "sl_moved_to_be": true,
-      "pnl_tp1_realized_usd": 29.23
     },
     {
       "trade_id": "CAKEUSDT_20260604_CB_001",
@@ -280,7 +234,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 582.72,
+      "price_at_run": 577.99,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-06-04",
@@ -418,7 +372,7 @@
       "trading_system": "John",
       "track_only": true,
       "status": "PENDING",
-      "price_at_run": 0.0917,
+      "price_at_run": 0.0908,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-06-05",
@@ -487,7 +441,7 @@
       "trading_system": "John",
       "track_only": true,
       "status": "PENDING",
-      "price_at_run": 1597.43,
+      "price_at_run": 1583.3,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-06-05",
@@ -533,7 +487,7 @@
       "trading_system": "John",
       "track_only": true,
       "status": "PENDING",
-      "price_at_run": 0.08266,
+      "price_at_run": 0.08161,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-06-05",
@@ -579,7 +533,7 @@
       "trading_system": "John",
       "track_only": true,
       "status": "PENDING",
-      "price_at_run": 0.1601,
+      "price_at_run": 0.1583,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-06-05",
@@ -602,11 +556,80 @@
       "trading_system": "John",
       "track_only": true,
       "status": "PENDING",
-      "price_at_run": 1.668,
+      "price_at_run": 1.643,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-06-05",
       "time_opened_utc": "15:01",
+      "conviction": "MEDIUM",
+      "tp1_hit": false,
+      "sl_moved_to_be": null,
+      "pnl_tp1_realized_usd": null
+    },
+    {
+      "trade_id": "SOLUSDT_20260605_CJ_M_001",
+      "coin": "SOLUSDT",
+      "direction": "Short",
+      "entry_price": 67.84663224,
+      "sl": 70.05812755,
+      "tp1": 53.34188737,
+      "tp2": 51.2236253,
+      "capital_usd": 100,
+      "leverage": 3,
+      "trading_system": "John",
+      "track_only": true,
+      "status": "PENDING",
+      "price_at_run": 64.38,
+      "date_activated": null,
+      "time_activated_utc": null,
+      "date_opened": "2026-06-05",
+      "time_opened_utc": "15:15",
+      "conviction": "MEDIUM",
+      "tp1_hit": false,
+      "sl_moved_to_be": null,
+      "pnl_tp1_realized_usd": null
+    },
+    {
+      "trade_id": "UNIUSDT_20260605_CJ_M_001",
+      "coin": "UNIUSDT",
+      "direction": "Short",
+      "entry_price": 2.52941585,
+      "sl": 2.62690263,
+      "tp1": 2.06953791,
+      "tp2": 1.85090415,
+      "capital_usd": 100,
+      "leverage": 3,
+      "trading_system": "John",
+      "track_only": true,
+      "status": "PENDING",
+      "price_at_run": 2.437,
+      "date_activated": null,
+      "time_activated_utc": null,
+      "date_opened": "2026-06-05",
+      "time_opened_utc": "15:15",
+      "conviction": "MEDIUM",
+      "tp1_hit": false,
+      "sl_moved_to_be": null,
+      "pnl_tp1_realized_usd": null
+    },
+    {
+      "trade_id": "TONUSDT_20260605_CJ_M_001",
+      "coin": "TONUSDT",
+      "direction": "Short",
+      "entry_price": 1.60978954,
+      "sl": 1.7025485,
+      "tp1": 1.38028143,
+      "tp2": 1.05290299,
+      "capital_usd": 100,
+      "leverage": 3,
+      "trading_system": "John",
+      "track_only": true,
+      "status": "PENDING",
+      "price_at_run": 1.486,
+      "date_activated": null,
+      "time_activated_utc": null,
+      "date_opened": "2026-06-05",
+      "time_opened_utc": "15:15",
       "conviction": "MEDIUM",
       "tp1_hit": false,
       "sl_moved_to_be": null,
@@ -721,6 +744,42 @@
       "conviction": "MEDIUM",
       "track_only": true,
       "iso": "2026-06-05T15:01:00Z"
+    },
+    {
+      "trade_id": "SOLUSDT_20260605_CJ_M_001",
+      "coin": "SOLUSDT",
+      "direction": "Short",
+      "trading_system": "John",
+      "entry_price": 67.84663224,
+      "tp1": 53.34188737,
+      "sl": 70.05812755,
+      "conviction": "MEDIUM",
+      "track_only": true,
+      "iso": "2026-06-05T15:15:00Z"
+    },
+    {
+      "trade_id": "UNIUSDT_20260605_CJ_M_001",
+      "coin": "UNIUSDT",
+      "direction": "Short",
+      "trading_system": "John",
+      "entry_price": 2.52941585,
+      "tp1": 2.06953791,
+      "sl": 2.62690263,
+      "conviction": "MEDIUM",
+      "track_only": true,
+      "iso": "2026-06-05T15:15:00Z"
+    },
+    {
+      "trade_id": "TONUSDT_20260605_CJ_M_001",
+      "coin": "TONUSDT",
+      "direction": "Short",
+      "trading_system": "John",
+      "entry_price": 1.60978954,
+      "tp1": 1.38028143,
+      "sl": 1.7025485,
+      "conviction": "MEDIUM",
+      "track_only": true,
+      "iso": "2026-06-05T15:15:00Z"
     }
   ],
   "recent_opens": [
@@ -786,32 +845,6 @@
     }
   ],
   "recent_closes": [
-    {
-      "trade_id": "RENDERUSDT_20260601_CJ_M_001",
-      "coin": "RENDERUSDT",
-      "direction": "Short",
-      "status": "STOPPED",
-      "pnl_usd": -10.97,
-      "close_reason": "SL hit",
-      "date_closed": "2026-06-01",
-      "time_closed_utc": "16:00",
-      "trading_system": "John",
-      "won": false,
-      "close_iso": "2026-06-01T16:00:00Z"
-    },
-    {
-      "trade_id": "DOGEUSDT_20260528_CB_001",
-      "coin": "DOGEUSDT",
-      "direction": "Short",
-      "status": "STOPPED_AFTER_TP1",
-      "pnl_usd": 4.56,
-      "close_reason": "SL hit",
-      "date_closed": "2026-06-01",
-      "time_closed_utc": "20:00",
-      "trading_system": "Braam",
-      "won": true,
-      "close_iso": "2026-06-01T20:00:00Z"
-    },
     {
       "trade_id": "SOLUSDT_20260529_CB_001",
       "coin": "SOLUSDT",
@@ -1305,6 +1338,32 @@
       "trading_system": "John",
       "won": true,
       "close_iso": "2026-06-05T04:00:00Z"
+    },
+    {
+      "trade_id": "ONDOUSDT_20260604_CJ_M_001",
+      "coin": "ONDOUSDT",
+      "direction": "Long",
+      "status": "STOPPED",
+      "pnl_usd": -18.01,
+      "close_reason": "SL hit",
+      "date_closed": "2026-06-05",
+      "time_closed_utc": "12:00",
+      "trading_system": "John",
+      "won": false,
+      "close_iso": "2026-06-05T12:00:00Z"
+    },
+    {
+      "trade_id": "ONDOUSDT_20260604_CJ_M_002",
+      "coin": "ONDOUSDT",
+      "direction": "Short",
+      "status": "TP2_HIT",
+      "pnl_usd": 38.81,
+      "close_reason": "TP2 hit",
+      "date_closed": "2026-06-05",
+      "time_closed_utc": "12:00",
+      "trading_system": "John",
+      "won": true,
+      "close_iso": "2026-06-05T12:00:00Z"
     }
   ],
   "recent_cancels": [
@@ -1407,23 +1466,16 @@
       "iso": "2026-06-05T14:09:00Z"
     }
   ],
-  "tp1_hits_open": [
-    {
-      "coin": "ONDOUSDT",
-      "direction": "Short",
-      "trading_system": "John",
-      "entry_price": 0.392775
-    }
-  ],
+  "tp1_hits_open": [],
   "stats": {
-    "realized_pnl_usd": 429.34,
-    "win_rate_pct": 41.0,
-    "closed_count": 173,
+    "realized_pnl_usd": 450.14,
+    "win_rate_pct": 41.1,
+    "closed_count": 175,
     "per_system": {
       "John": {
-        "realized_pnl_usd": 183.5,
-        "win_rate_pct": 35.5,
-        "closed_count": 107
+        "realized_pnl_usd": 204.3,
+        "win_rate_pct": 35.8,
+        "closed_count": 109
       },
       "William": {
         "realized_pnl_usd": 45.24,
@@ -1442,9 +1494,9 @@
       "closed_count": 52
     },
     "track_only": {
-      "realized_pnl_usd": 215.63,
-      "win_rate_pct": 35.5,
-      "closed_count": 121
+      "realized_pnl_usd": 236.43,
+      "win_rate_pct": 35.8,
+      "closed_count": 123
     }
   }
 }
