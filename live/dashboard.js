@@ -1723,9 +1723,9 @@ function goToScreen(targetIdx, dir) {
   screenIdx = targetIdx;
   document.querySelectorAll(".dots .d").forEach(d => d.classList.remove("active"));
   document.querySelector(`.dots .d[data-i="${screenIdx}"]`).classList.add("active");
-  // Activity banner visible on screens 3 + 4 only (index 2 and 3) — mirrors paper.
+  // Activity banner visible on screen 4 only (index 3) — mirrors paper.
   const banner = document.getElementById("activity-banner");
-  if (banner) banner.classList.toggle("ab-hidden", screenIdx < 2);
+  if (banner) banner.classList.toggle("ab-hidden", screenIdx !== 3);
 }
 
 function nextScreen() { goToScreen((screenIdx + 1) % screens.length, 1); }
