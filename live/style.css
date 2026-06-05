@@ -740,8 +740,8 @@ main {
 }
 .donut-wrap {
   position: relative;
-  width: 116px;
-  height: 116px;
+  width: 180px;
+  height: 180px;
 }
 .donut-svg {
   width: 100%;
@@ -771,19 +771,19 @@ main {
   justify-content: center;
 }
 .donut-pct {
-  font-size: 26px;
+  font-size: 38px;
   font-weight: 800;
   color: var(--text);
-  letter-spacing: -1px;
+  letter-spacing: -1.4px;
   font-variant-numeric: tabular-nums;
 }
 .donut-label {
-  font-size: 9px;
+  font-size: 10px;
   color: var(--muted);
   text-transform: uppercase;
-  letter-spacing: 1.8px;
+  letter-spacing: 2px;
   font-weight: 700;
-  margin-top: 3px;
+  margin-top: 4px;
 }
 .donut-sub {
   font-size: 12px;
@@ -1169,6 +1169,7 @@ main {
 
 .paper-bars-empty {
   display: flex; align-items: center; justify-content: center;
+  flex: 1;                                /* fill the open-trades tile so text vertically centers in the full screen, matching .triggers-body > .empty */
   color: var(--muted); font-size: 12px; opacity: 0.65;
   padding: 40px;
   letter-spacing: 0.1px;
