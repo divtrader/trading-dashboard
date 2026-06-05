@@ -1169,7 +1169,9 @@ main {
 
 .paper-bars-empty {
   display: flex; align-items: center; justify-content: center;
-  color: var(--muted); font-size: 14px; padding: 40px;
+  color: var(--muted); font-size: 12px; opacity: 0.65;
+  padding: 40px;
+  letter-spacing: 0.1px;
 }
 
 .mover {
@@ -1706,18 +1708,19 @@ main {
   justify-content: space-evenly;
   min-height: 0;
 }
-/* Empty-state inside the pending tile — same calm voice/typography as
-   .paper-bars-empty and .activity-banner .empty. */
+/* Empty-state inside the pending tile — unified with all other empties
+   (same 12px muted 0.65 used by .paper-bars-empty and .activity-banner .empty). */
 .triggers-body > .empty {
   display: flex;
   align-items: center;
   justify-content: center;
   flex: 1;
-  font-size: 14px;
+  font-size: 12px;
   color: var(--muted);
-  opacity: 0.7;
+  opacity: 0.65;
   text-align: center;
   padding: 40px;
+  letter-spacing: 0.1px;
 }
 .trig-live {
   color: var(--green);
