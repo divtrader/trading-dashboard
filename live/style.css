@@ -126,6 +126,22 @@ main {
   0%, 100% { box-shadow: 0 0 0 0 rgba(255, 77, 94, 0.4); }
   50%      { box-shadow: 0 0 0 6px rgba(255, 77, 94, 0); }
 }
+/* Rehearsal-mode banner chip in the brand header — only visible when
+   the backend reports rehearsal_mode=true (no real MEXC fills yet). */
+.brand-rehearsal {
+  display: inline-block;
+  margin-left: 10px;
+  padding: 3px 9px;
+  background: rgba(255, 183, 77, 0.16);
+  color: #ffb74d;
+  border: 1px solid rgba(255, 183, 77, 0.5);
+  border-radius: 6px;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.2px;
+  vertical-align: middle;
+}
+.brand-rehearsal.hidden { display: none; }
 .meta {
   display: flex;
   gap: 14px;
@@ -1031,6 +1047,24 @@ main {
 .paper-bar-row.long  { border-left-color: rgba(0,201,167,0.7); }
 .paper-bar-row.short { border-left-color: rgba(255,77,94,0.7); }
 
+/* Rehearsal row: dry-run trade (broker would have placed but didn't).
+   Subtle amber accent + slight dim so it reads as "not real". */
+.paper-bar-row.pb-rehearsal-row {
+  border-left-color: rgba(255,183,77,0.6) !important;
+  background: linear-gradient(90deg, rgba(255,183,77,0.04), transparent 50%);
+}
+.pb-rehearsal {
+  padding: 1px 6px;
+  background: rgba(255,183,77,0.14);
+  color: #ffb74d;
+  border: 1px solid rgba(255,183,77,0.4);
+  border-radius: 4px;
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 1.1px;
+  text-transform: uppercase;
+}
+
 .pb-head {
   display: flex; flex-direction: column; gap: 4px;
   min-width: 0;
@@ -1828,6 +1862,32 @@ main {
   color: var(--muted);
   text-transform: uppercase;
   letter-spacing: 0.06em;
+}
+/* Rehearsal markers on the pending tile + in the activity feed */
+.pt-rehearsal {
+  padding: 1px 5px;
+  background: rgba(255,183,77,0.14);
+  color: #ffb74d;
+  border: 1px solid rgba(255,183,77,0.4);
+  border-radius: 3px;
+  font-size: 7.5px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.pt-row.pt-rehearsal-row {
+  background: linear-gradient(90deg, rgba(255,183,77,0.05), transparent 60%);
+}
+.ev-rehearsal {
+  padding: 1px 5px;
+  background: rgba(255,183,77,0.14);
+  color: #ffb74d;
+  border: 1px solid rgba(255,183,77,0.4);
+  border-radius: 3px;
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 0.9px;
+  text-transform: uppercase;
 }
 
 .pt-approach { display: flex; flex-direction: column; gap: 4px; }

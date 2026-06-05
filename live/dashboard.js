@@ -88,6 +88,14 @@ const _rootStyle = getComputedStyle(document.documentElement);
 const cssVar = (name) => _rootStyle.getPropertyValue(name).trim();
 const cls = (n) => (n >= 0 ? "pos" : "neg");
 
+// Brand-area "REHEARSAL" badge toggle. Active when state.rehearsalMode
+// is true (no real MEXC fills yet, only dry-run trades).
+function _applyRehearsalBadge() {
+  const chip = document.getElementById("brand-rehearsal");
+  if (!chip) return;
+  chip.classList.toggle("hidden", !state || !state.rehearsalMode);
+}
+
 // ── Voice — Professional TTS alerts ──────────────────────────────────────────
 // Uses Web Speech API. All alerts deduplicated by key in localStorage.
 
@@ -329,6 +337,11 @@ async function fetchData() {
     state.apiKeys = d.api_keys || [];
     state.lastCronIso = d.last_updated_iso || null;
     state.lastFetch = Date.now();
+    // Rehearsal mode: true while we're observing dry-runs only (no real
+    // MEXC fills yet). Backend sets it; frontend uses it to flip the
+    // brand badge to amber "REHEARSAL".
+    state.rehearsalMode = !!d.rehearsal_mode;
+    _applyRehearsalBadge();
 
     // Voice test events — injected via data.json for testing, always unique IDs (timestamp-type-step)
     const _testPhrases = {
@@ -946,8 +959,11 @@ function renderPaperBars(enrichedOpen) {
     // Filled segment showing TP1-achieved range
     const achieved = tp1Hit ? `<div class="pb-achieved" style="left:${Math.min(ePct,t1Pct).toFixed(1)}%;width:${Math.abs(t1Pct-ePct).toFixed(1)}%"></div>` : "";
 
+    const isRehearsal = !!t.rehearsal;
+    const rehearsalCls = isRehearsal ? " pb-rehearsal-row" : "";
+    const rehearsalPill = isRehearsal ? '<span class="pb-rehearsal">REHEARSAL</span>' : "";
     return `
-      <div class="paper-bar-row ${dirCls}${tp1Cls}" data-trade-id="${t.trade_id}" title="${t.trade_id}">
+      <div class="paper-bar-row ${dirCls}${tp1Cls}${rehearsalCls}" data-trade-id="${t.trade_id}" title="${t.trade_id}">
         <div class="pb-head">
           <div class="pb-coin-row">
             <span class="pb-coin">${coin}</span>
@@ -957,6 +973,7 @@ function renderPaperBars(enrichedOpen) {
             <span class="pb-dir ${dirCls}">${isLong ? "▲ LONG" : "▼ SHORT"}</span>
             <span class="pb-sys">${sys}</span>
             ${beActive ? '<span class="pb-be">BE</span>' : ""}
+            ${rehearsalPill}
           </div>
           <div class="pb-tid">${t.trade_id || ""}</div>
         </div>
@@ -1527,13 +1544,17 @@ function renderPendingTriggers() {
     const proximity = t.inZone ? 100 : Math.max(0, 100 - (t.distPct / MAX_DIST) * 100);
     const distLabel = t.inZone ? "IN ZONE" : `${t.distPct.toFixed(1)}%`;
 
+    const isRehearsal = !!t.rehearsal;
+    const rehearsalCls = isRehearsal ? " pt-rehearsal-row" : "";
+    const rehearsalPill = isRehearsal ? '<span class="pt-rehearsal">REHEARSAL</span>' : "";
     return `
-      <div class="pt-row ${dirCls}${t.inZone ? " pt-in-zone" : ""}" data-trade-id="${t.trade_id}" title="${t.trade_id}">
+      <div class="pt-row ${dirCls}${t.inZone ? " pt-in-zone" : ""}${rehearsalCls}" data-trade-id="${t.trade_id}" title="${t.trade_id}">
         <div class="pt-info">
           <span class="pt-coin">${coin}</span>
           <div class="pt-badges">
             <span class="pt-dir ${dirCls}">${isLong ? "L" : "S"}</span>
             <span class="pt-sys">${t.trading_system || ""}</span>
+            ${rehearsalPill}
           </div>
         </div>
         <div class="pt-approach">
@@ -1591,15 +1612,16 @@ function renderActivity() {
     const sys  = t.trading_system || "";
     const px   = t.entry_price ? fmtPrice(t.entry_price) : "";
     const track = t.track_only ? ' <span class="ev-track">track</span>' : "";
+    const rehearsal = t.rehearsal ? ' <span class="ev-rehearsal">REHEARSAL</span>' : "";
     const ago  = `<span class="ev-time">${fmtAgo(t.iso || t.close_iso)}</span>`;
     // Stable key per event = type + trade_id (one trade can produce multiple event types)
     const k = `${ev.type}_${t.trade_id || t.iso || ev.ts}`;
     switch (ev.type) {
-      case "signal": return `<div class="ev-row" data-ev-key="${k}"><span class="ev-chip signal">🔔 SIGNAL</span><span class="ev-body">${coin} ${dir} · ${sys} · $${px}${track}</span>${ago}</div>`;
-      case "open":   return `<div class="ev-row" data-ev-key="${k}"><span class="ev-chip open">✅ ENTERED</span><span class="ev-body">${coin} ${dir} · ${sys} · $${px}</span>${ago}</div>`;
-      case "win":    return `<div class="ev-row" data-ev-key="${k}"><span class="ev-chip win">💰 ${t.status === "TP2_HIT" ? "TP2 HIT" : "CLOSED WIN"}</span><span class="ev-body">${coin} ${dir} · ${sys} · <strong>+$${Math.abs(t.pnl_usd||0).toFixed(2)}</strong></span>${ago}</div>`;
-      case "loss":   return `<div class="ev-row" data-ev-key="${k}"><span class="ev-chip loss">❌ STOPPED</span><span class="ev-body">${coin} ${dir} · ${sys} · -$${Math.abs(t.pnl_usd||0).toFixed(2)}</span>${ago}</div>`;
-      case "cancel": return `<div class="ev-row" data-ev-key="${k}"><span class="ev-chip cancel">🚫 CANCELLED</span><span class="ev-body">${coin} ${dir} · ${sys}</span>${ago}</div>`;
+      case "signal": return `<div class="ev-row" data-ev-key="${k}"><span class="ev-chip signal">🔔 SIGNAL</span><span class="ev-body">${coin} ${dir} · ${sys} · $${px}${track}${rehearsal}</span>${ago}</div>`;
+      case "open":   return `<div class="ev-row" data-ev-key="${k}"><span class="ev-chip open">✅ ENTERED</span><span class="ev-body">${coin} ${dir} · ${sys} · $${px}${rehearsal}</span>${ago}</div>`;
+      case "win":    return `<div class="ev-row" data-ev-key="${k}"><span class="ev-chip win">💰 ${t.status === "TP2_HIT" ? "TP2 HIT" : "CLOSED WIN"}</span><span class="ev-body">${coin} ${dir} · ${sys} · <strong>+$${Math.abs(t.pnl_usd||0).toFixed(2)}</strong>${rehearsal}</span>${ago}</div>`;
+      case "loss":   return `<div class="ev-row" data-ev-key="${k}"><span class="ev-chip loss">❌ STOPPED</span><span class="ev-body">${coin} ${dir} · ${sys} · -$${Math.abs(t.pnl_usd||0).toFixed(2)}${rehearsal}</span>${ago}</div>`;
+      case "cancel": return `<div class="ev-row" data-ev-key="${k}"><span class="ev-chip cancel">🚫 CANCELLED</span><span class="ev-body">${coin} ${dir} · ${sys}${rehearsal}</span>${ago}</div>`;
       default: return "";
     }
   }).join("");
