@@ -1088,8 +1088,10 @@ function renderHero(enrichedOpen) {
     const closedCap = (state.stats.closed_count ?? 0) * 100;
     const totalDeployed = closedCap + totalCap;
     const retPct = totalDeployed > 0 ? (total / totalDeployed) * 100 : 0;
-    pctEl2.textContent = (retPct >= 0 ? "+" : "") + retPct.toFixed(2) + "% on all capital deployed";
-    pctEl2.className = "hero-return " + cls(total);
+    // Bracketed % rendered inline next to the big $ value (no longer a
+    // separate "on all capital deployed" sentence).
+    pctEl2.textContent = "(" + (retPct >= 0 ? "+" : "") + retPct.toFixed(2) + "%)";
+    pctEl2.className = "hero-pct-inline " + cls(total);
   }
 
   // Donut
