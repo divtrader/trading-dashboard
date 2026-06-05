@@ -1,38 +1,38 @@
 {
-  "generated_at_utc": "2026-06-05T05:12:27+00:00",
+  "generated_at_utc": "2026-06-05T06:15:03+00:00",
   "all_time": {
-    "total_trades": 171,
-    "wins": 67,
+    "total_trades": 172,
+    "wins": 68,
     "losses": 104,
-    "win_rate": 39.2,
-    "total_pnl_usd": 380.84,
-    "avg_pnl_usd": 2.23,
+    "win_rate": 39.5,
+    "total_pnl_usd": 402.4,
+    "avg_pnl_usd": 2.34,
     "best_usd": 85.94,
     "worst_usd": -44.29,
-    "avg_win_usd": 20.08,
+    "avg_win_usd": 20.1,
     "avg_loss_usd": -9.85,
-    "expectancy_usd": 2.23,
-    "profit_factor": 1.38,
+    "expectancy_usd": 2.34,
+    "profit_factor": 1.4,
     "longest_win_streak": 5,
     "longest_loss_streak": 11,
-    "current_streak_type": "loss",
+    "current_streak_type": "win",
     "current_streak_count": 1,
-    "avg_hold_hours": 64.4,
-    "median_hold_hours": 37.1
+    "avg_hold_hours": 64.1,
+    "median_hold_hours": 36.6
   },
   "by_system": {
     "John": {
-      "n": 105,
-      "wins": 35,
-      "wr": 33.3,
-      "pnl": 135.0,
-      "avg": 1.29,
+      "n": 106,
+      "wins": 36,
+      "wr": 34.0,
+      "pnl": 156.56,
+      "avg": 1.48,
       "inception": "2026-04-25",
       "days_active": 41,
-      "pnl_per_day": 3.29,
+      "pnl_per_day": 3.82,
       "status": "active",
-      "open": 4,
-      "pending": 10
+      "open": 3,
+      "pending": 11
     },
     "Braam": {
       "n": 43,
@@ -76,13 +76,13 @@
       "name": "John",
       "inception": "2026-04-25",
       "days_active": 41,
-      "closed": 105,
-      "wins": 35,
-      "wr": 33.3,
-      "pnl": 135.0,
-      "pnl_per_day": 3.29,
-      "open": 4,
-      "pending": 10
+      "closed": 106,
+      "wins": 36,
+      "wr": 34.0,
+      "pnl": 156.56,
+      "pnl_per_day": 3.82,
+      "open": 3,
+      "pending": 11
     },
     {
       "name": "Braam",
@@ -128,11 +128,11 @@
     },
     {
       "month": "2026-06",
-      "n": 42,
-      "wins": 20,
-      "wr": 47.6,
-      "pnl": 142.88,
-      "cumulative_pnl": 380.84
+      "n": 43,
+      "wins": 21,
+      "wr": 48.8,
+      "pnl": 164.44,
+      "cumulative_pnl": 402.4
     }
   ],
   "equity_curve": [
@@ -1161,6 +1161,12 @@
       "pnl": -23.73,
       "cumulative": 380.84,
       "won": false
+    },
+    {
+      "iso": "2026-06-05T04:00:00+00:00",
+      "pnl": 21.56,
+      "cumulative": 402.4,
+      "won": true
     }
   ],
   "by_direction": {
@@ -1172,20 +1178,20 @@
       "avg": 3.61
     },
     "Short": {
-      "n": 95,
-      "wins": 36,
-      "wr": 37.9,
-      "pnl": 106.11,
-      "avg": 1.12
+      "n": 96,
+      "wins": 37,
+      "wr": 38.5,
+      "pnl": 127.67,
+      "avg": 1.33
     }
   },
   "by_conviction": {
     "MEDIUM": {
-      "n": 161,
-      "wins": 62,
-      "wr": 38.5,
-      "pnl": 361.22,
-      "avg": 2.24
+      "n": 162,
+      "wins": 63,
+      "wr": 38.9,
+      "pnl": 382.78,
+      "avg": 2.36
     },
     "VERY HIGH": {
       "n": 1,
@@ -1246,20 +1252,20 @@
       "avg": 2.6
     },
     "near_resistance": {
-      "n": 19,
-      "wins": 6,
-      "wr": 31.6,
-      "pnl": 73.2,
-      "avg": 3.85
+      "n": 20,
+      "wins": 7,
+      "wr": 35.0,
+      "pnl": 94.76,
+      "avg": 4.74
     }
   },
   "by_confluence_score": {
     "5": {
-      "n": 28,
-      "wins": 8,
-      "wr": 28.6,
-      "pnl": -84.17,
-      "avg": -3.01
+      "n": 29,
+      "wins": 9,
+      "wr": 31.0,
+      "pnl": -62.61,
+      "avg": -2.16
     },
     "8": {
       "n": 1,
@@ -1306,11 +1312,11 @@
   },
   "by_session": {
     "europe": {
-      "n": 68,
-      "wins": 26,
-      "wr": 38.2,
-      "pnl": 36.32,
-      "avg": 0.53
+      "n": 69,
+      "wins": 27,
+      "wr": 39.1,
+      "pnl": 57.88,
+      "avg": 0.84
     },
     "asia": {
       "n": 45,
@@ -1329,11 +1335,11 @@
   },
   "by_audit_verdict": {
     "PASS": {
-      "n": 154,
-      "wins": 61,
-      "wr": 39.6,
-      "pnl": 438.04,
-      "avg": 2.84
+      "n": 155,
+      "wins": 62,
+      "wr": 40.0,
+      "pnl": 459.6,
+      "avg": 2.97
     },
     "DEGRADED": {
       "n": 14,
@@ -1387,11 +1393,11 @@
       "avg": 6.72
     },
     "Thursday": {
-      "n": 24,
-      "wins": 12,
-      "wr": 50.0,
-      "pnl": 179.37,
-      "avg": 7.47
+      "n": 25,
+      "wins": 13,
+      "wr": 52.0,
+      "pnl": 200.93,
+      "avg": 8.04
     },
     "Friday": {
       "n": 21,
@@ -1424,11 +1430,11 @@
       "avg": 6.47
     },
     "12": {
-      "n": 41,
-      "wins": 18,
-      "wr": 43.9,
-      "pnl": 57.41,
-      "avg": 1.4
+      "n": 42,
+      "wins": 19,
+      "wr": 45.2,
+      "pnl": 78.97,
+      "avg": 1.88
     },
     "0": {
       "n": 25,
@@ -1616,6 +1622,16 @@
   },
   "recent_closes": [
     {
+      "trade_id": "RENDERUSDT_20260604_CJ_M_001",
+      "coin": "RENDER",
+      "direction": "Short",
+      "system": "John",
+      "pnl_usd": 21.56,
+      "won": true,
+      "close_reason": "TP2 hit",
+      "iso": "2026-06-05T04:00:00+00:00"
+    },
+    {
       "trade_id": "NEARUSDT_20260604_CJ_M_002",
       "coin": "NEAR",
       "direction": "Long",
@@ -1704,25 +1720,15 @@
       "won": false,
       "close_reason": "SL hit",
       "iso": "2026-06-04T00:00:00+00:00"
-    },
-    {
-      "trade_id": "THETAUSDT_20260529_CJ_M_001",
-      "coin": "THETA",
-      "direction": "Short",
-      "system": "John",
-      "pnl_usd": 23.02,
-      "won": true,
-      "close_reason": "TP2 hit",
-      "iso": "2026-06-04T00:00:00+00:00"
     }
   ],
   "live_positions": {
-    "open_count": 4,
+    "open_count": 3,
     "open_long": 1,
-    "open_short": 3,
-    "pending_count": 26,
-    "capital_open_usd": 400,
-    "capital_pending_usd": 2600.0
+    "open_short": 2,
+    "pending_count": 27,
+    "capital_open_usd": 300,
+    "capital_pending_usd": 2700.0
   },
   "macro": {
     "vix": 16.06,
@@ -1734,13 +1740,13 @@
       16.06
     ],
     "vix_ma14": 16.59,
-    "dxy": 99.4,
+    "dxy": 99.42,
     "dxy_5d": [
       98.91,
       99.2,
       99.22,
       99.53,
-      99.4
+      99.42
     ],
     "dxy_ma14": 99.21,
     "btc_price_last_seen": 63825.48,
