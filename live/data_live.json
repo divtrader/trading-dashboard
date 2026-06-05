@@ -1,21 +1,14 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-06-05T12:00:07Z",
+  "last_updated_iso": "2026-06-05T12:04:52Z",
   "mexc_account": {
-    "unrealized_pnl": -98.7588,
-    "equity": 1398.7875,
+    "unrealized_pnl": -103.3118,
+    "equity": 1394.2345,
     "available": 979.0056,
     "position_margin": 138.642
   },
   "api_keys": [
-    {
-      "label": "MEXC Master (dashboard read-only)",
-      "name": "MEXC_API_KEY",
-      "expires": "2026-08-03",
-      "days_left": 59,
-      "status": "ok"
-    },
     {
       "label": "MEXC AlgoTrading sub-account (live orders)",
       "name": "MEXC_ALGO_KEY",
@@ -52,7 +45,7 @@
       "label": "Live Trading",
       "value": "DISABLED (dry-run)",
       "status": "info",
-      "action": "Rehearsing \u2014 flip the GH secret to go live."
+      "action": null
     },
     {
       "key": "cron_watchlist",
@@ -82,7 +75,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$1,398.79",
+      "value": "$1,394.23",
       "status": "ok",
       "action": null
     },
@@ -93,14 +86,6 @@
       "value": "version unknown",
       "status": "info",
       "action": "Add a GET /version endpoint to mexc_worker.js to enable deploy-freshness check."
-    },
-    {
-      "key": "apikey_MEXC_API_KEY",
-      "tier": 1,
-      "label": "MEXC Master (dashboard read-only)",
-      "value": "59d left (2026-08-03)",
-      "status": "ok",
-      "action": null
     },
     {
       "key": "apikey_MEXC_ALGO_KEY",
