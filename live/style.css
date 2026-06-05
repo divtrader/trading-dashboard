@@ -1746,6 +1746,61 @@ main {
   margin-top: 2px;
 }
 
+/* ── Floating "Since last run" banner — shown above every screen ── */
+.activity-banner.ab-hidden { display: none !important; }
+.activity-banner {
+  position: sticky; top: 0; z-index: 50;
+  display: flex; align-items: center; gap: 14px;
+  margin: 8px 0 12px 0; padding: 8px 18px;
+  background: linear-gradient(90deg, rgba(22,27,34,0.92) 0%, rgba(22,27,34,0.75) 100%);
+  backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+  border: 1px solid var(--border); border-radius: 12px;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.35);
+  min-height: 38px; flex-shrink: 0;
+}
+.activity-banner .ab-label {
+  font-size: 9px; font-weight: 800; letter-spacing: 2px;
+  text-transform: uppercase; color: var(--muted);
+  padding-right: 14px; border-right: 1px solid rgba(255,255,255,0.10);
+  white-space: nowrap; flex-shrink: 0;
+}
+.activity-banner .ab-events {
+  display: flex; flex: 1; min-width: 0; overflow: hidden;
+  align-items: center; position: relative;
+}
+.activity-banner .ab-track {
+  display: flex; width: max-content;
+  animation: ab-scroll 80s linear infinite; will-change: transform;
+}
+.activity-banner:hover .ab-track { animation-play-state: paused; }
+.activity-banner .ab-group {
+  display: flex; gap: 26px; padding-right: 26px;
+  align-items: center; flex-shrink: 0;
+}
+@keyframes ab-scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.activity-banner .ab-events::before,
+.activity-banner .ab-events::after {
+  content: ""; position: absolute; top: 0; bottom: 0; width: 36px;
+  pointer-events: none; z-index: 2;
+}
+.activity-banner .ab-events::before {
+  left: 0; background: linear-gradient(90deg, rgba(22,27,34,0.95), rgba(22,27,34,0));
+}
+.activity-banner .ab-events::after {
+  right: 0; background: linear-gradient(270deg, rgba(22,27,34,0.95), rgba(22,27,34,0));
+}
+.activity-banner .ev-row {
+  display: inline-flex; align-items: center; gap: 6px; margin: 0;
+  white-space: nowrap; font-size: 12px; line-height: 1.2; flex-shrink: 0;
+}
+.activity-banner .ev-chip { font-size: 9px; padding: 2px 6px; }
+.activity-banner .ev-body { color: var(--text); }
+.activity-banner .ev-time { font-size: 10px; color: var(--muted); opacity: 0.7; }
+.activity-banner .empty { font-size: 12px; color: var(--muted); opacity: 0.65; }
+
 /* ── Activity feed ── */
 .activity {
   background: var(--panel);
