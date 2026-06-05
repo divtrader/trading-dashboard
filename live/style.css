@@ -3300,28 +3300,8 @@ main {
   /* Insights ticker — slimmer */
   #screen-4 .edge-insights { padding: 6px 14px; border-radius: 9px; }
 
-  /* ── HERO: stop the equity curve colliding with the numbers ──
-     Left half gets a scrim so the big number + mini stats read cleanly,
-     curve breathes on the right. */
-  #screen-4 .edge-perf-overlay::before {
-    content: ""; position: absolute; inset: 0; z-index: -1;
-    background: linear-gradient(90deg,
-      rgba(10,14,24,0.92) 0%, rgba(10,14,24,0.78) 38%,
-      rgba(10,14,24,0.25) 62%, rgba(10,14,24,0) 100%);
-  }
   #screen-4 .edge-perf .edge-big { font-size: 46px; margin-top: 0; }
   #screen-4 .edge-perf .edge-sub { margin: 5px 0 0; }
-  /* Mini stats: sit on a solid bar so the curve never crosses the digits */
-  #screen-4 .edge-mini-row {
-    margin-top: auto; padding: 8px 10px; gap: 6px;
-    background: rgba(8,12,20,0.82);
-    border: 1px solid rgba(255,255,255,0.06);
-    border-radius: 9px;
-    backdrop-filter: blur(3px);
-    -webkit-backdrop-filter: blur(3px);
-  }
-  #screen-4 .edge-mv { font-size: 14px; }
-  #screen-4 .edge-mk { font-size: 8px; }
 
   /* Focal tiles: let the donut + gauge actually fill their tile */
   #screen-4 .wr-donut-svg { max-width: 132px; max-height: 132px; }
@@ -3401,9 +3381,6 @@ main {
   /* Hero: smaller number so the mini-stats band fits inside the tile */
   #screen-4 .edge-perf .edge-big { font-size: 34px; }
   #screen-4 .edge-perf .edge-sub { font-size: 11px; margin-top: 3px; }
-  #screen-4 .edge-mini-row { padding: 5px 9px; gap: 5px; }
-  #screen-4 .edge-mv { font-size: 12px; }
-  #screen-4 .edge-mk { font-size: 7.5px; }
 
   /* By System: compact rows so all four fit */
   #screen-4 .sys-rich-row { padding: 3px 0; font-size: 10.5px; }

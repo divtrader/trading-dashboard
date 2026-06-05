@@ -2469,12 +2469,6 @@ function renderEdgeScreen() {
     : "";
   $("edge-perf-sub").innerHTML =
     `<span class="${_signCls(realizedTotal)}">${_fmtUsdEdge(realizedTotal)} realized</span>${unrealTxt} · ${at.total_trades ?? 0} closed · ${at.win_rate ?? 0}% WR`;
-  $("edge-best-usd").textContent = _fmtUsdEdge(at.best_usd);
-  $("edge-worst-usd").textContent = _fmtUsdEdge(at.worst_usd);
-  $("edge-avg-win").textContent = _fmtUsdEdge(at.avg_win_usd);
-  $("edge-avg-loss").textContent = _fmtUsdEdge(at.avg_loss_usd);
-  $("edge-pf-mini").textContent = at.profit_factor ?? "—";
-  $("edge-exp-mini").textContent = _fmtUsdEdge(at.expectancy_usd);
   _renderEquityCurve(a.equity_curve);
 
   // WR big donut (radius 64, circumference = 2π·64 = 402.124)
