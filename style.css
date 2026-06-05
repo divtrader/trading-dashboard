@@ -1843,6 +1843,19 @@ main {
   justify-content: space-evenly;
   min-height: 0;
 }
+/* Empty-state inside the pending tile — same calm voice/typography as
+   .paper-bars-empty and .activity-banner .empty. */
+.triggers-body > .empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  font-size: 14px;
+  color: var(--muted);
+  opacity: 0.7;
+  text-align: center;
+  padding: 40px;
+}
 .trig-live {
   color: var(--green);
   font-size: 9px;
