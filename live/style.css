@@ -1654,7 +1654,23 @@ main {
   font-size: 10px; font-weight: 800; color: var(--text);
 }
 .sys-name { font-size: 18px; font-weight: 900; letter-spacing: -0.3px; }
-.sys-tag  { font-size: 10px; color: var(--muted); font-weight: 600; margin-top: 1px; }
+/* Subtitle text under each system name ("Trend · Breakout" etc).
+   Resets the earlier .sys-tag rule (~line 1364) which targets a small
+   18x18 badge in a different context — its background + border-radius
+   + fixed size were bleeding through here as grey squares behind the
+   subtitle text. */
+.sys-tag  {
+  font-size: 10px;
+  color: var(--muted);
+  font-weight: 600;
+  margin-top: 1px;
+  background: transparent;
+  border-radius: 0;
+  width: auto;
+  height: auto;
+  padding: 0;
+  display: block;
+}
 
 .sys-row .metric { display: flex; flex-direction: column; gap: 1px; }
 .sys-row .metric .k { font-size: 9px; color: var(--muted); text-transform: uppercase; letter-spacing: 1.2px; font-weight: 700; }
