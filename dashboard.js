@@ -920,7 +920,7 @@ function renderPaperBars(enrichedOpen) {
   const host = $("paper-bars");
   if (!host) return;
   if (!enrichedOpen.length) {
-    host.innerHTML = '<div class="paper-bars-empty">No open paper trades</div>';
+    host.innerHTML = '<div class="paper-bars-empty">No open paper trades — system is watching.</div>';
     return;
   }
   // Winners on top, losers below — sorted by total blended % P&L descending.
@@ -1662,7 +1662,7 @@ function renderPendingTriggers() {
   const host = $("triggers");
   const pending = state.trades.filter(t => t.status === "PENDING");
   if (!pending.length) {
-    host.innerHTML = '<span class="empty">No pending triggers</span>';
+    host.innerHTML = '<span class="empty">No pending trades — system is watching.</span>';
     return;
   }
 
