@@ -335,6 +335,7 @@ async function fetchData() {
     state.stats = d.stats || {};
     state.mexcAccount = d.mexc_account || null;
     state.apiKeys = d.api_keys || [];
+    state.housekeeping = d.housekeeping || [];
     state.lastCronIso = d.last_updated_iso || null;
     state.lastFetch = Date.now();
     // Rehearsal mode: true while we're observing dry-runs only (no real
@@ -1629,29 +1630,87 @@ function renderActivity() {
   $("activity").innerHTML = `<div class="ab-track"><div class="ab-group">${newHtml}</div><div class="ab-group" aria-hidden="true">${newHtml}</div></div>`;
 }
 
+// Housekeeping renderer — formerly renderApiKeys.
+// Reads state.housekeeping (rich Tier-1 health items) if present, falls
+// back to state.apiKeys legacy shape. Collapse-when-nominal pattern:
+// when nothing is warn/urgent, show a calm "all nominal" line; when
+// something needs attention, surface those items first.
 function renderApiKeys() {
-  const host = $("api-keys");
+  const host    = $("api-keys");
+  const summary = $("hk-summary");
   if (!host) return;
-  const keys = state.apiKeys || [];
-  if (!keys.length) {
-    host.innerHTML = '<span class="empty">No key data available</span>';
+
+  // Prefer rich housekeeping; fall back to legacy api_keys
+  let items = state.housekeeping || [];
+  if (!items.length && (state.apiKeys || []).length) {
+    items = state.apiKeys.map(k => ({
+      key: "apikey_" + k.name, label: k.label,
+      value: `${k.days_left}d left (${k.expires})`,
+      status: k.status, action: null, tier: 1,
+    }));
+  }
+
+  if (!items.length) {
+    host.innerHTML = '<span class="empty">No housekeeping data yet — publisher pending.</span>';
+    if (summary) summary.textContent = "";
     return;
   }
-  const rows = keys.map(k => {
-    const statusColor = k.status === "urgent" ? "#EF5350"
-                      : k.status === "warn"   ? "#FFA726"
-                      : "#26A69A";
-    const statusIcon  = k.status === "urgent" ? "🔴"
-                      : k.status === "warn"   ? "🟡"
-                      : "✅";
+
+  const rank = { urgent: 0, warn: 1, info: 2, ok: 3 };
+  const sorted = [...items].sort((a, b) => (rank[a.status] ?? 9) - (rank[b.status] ?? 9));
+
+  const urgent = sorted.filter(i => i.status === "urgent");
+  const warn   = sorted.filter(i => i.status === "warn");
+  const info   = sorted.filter(i => i.status === "info");
+  const okay   = sorted.filter(i => i.status === "ok");
+  const attentionN = urgent.length + warn.length + info.length;
+
+  // Summary chip
+  if (summary) {
+    if (attentionN === 0) {
+      summary.textContent = "✓ ALL NOMINAL";
+      summary.className = "hk-status-summary hk-summary-ok";
+    } else {
+      const bits = [];
+      if (urgent.length) bits.push(`${urgent.length} URGENT`);
+      if (warn.length)   bits.push(`${warn.length} WARN`);
+      if (info.length)   bits.push(`${info.length} INFO`);
+      summary.textContent = bits.join(" · ");
+      summary.className = "hk-status-summary " + (urgent.length ? "hk-summary-urgent" : warn.length ? "hk-summary-warn" : "hk-summary-info");
+    }
+  }
+
+  function row(item) {
+    const icon = item.status === "urgent" ? "🔴"
+               : item.status === "warn"   ? "🟡"
+               : item.status === "info"   ? "ℹ️"
+               : "✅";
+    const action = item.action ? `<div class="hk-action">↳ ${item.action}</div>` : "";
     return `
-      <div class="ev-row" style="display:flex;justify-content:space-between;align-items:center;gap:8px">
-        <span style="font-size:11px;color:#ccc;flex:1">${statusIcon} ${k.label}</span>
-        <span style="font-size:10px;color:#888">${k.expires}</span>
-        <span style="font-size:12px;font-weight:bold;color:${statusColor};min-width:55px;text-align:right">${k.days_left}d left</span>
+      <div class="hk-row hk-${item.status}" data-key="${item.key}">
+        <span class="hk-icon">${icon}</span>
+        <span class="hk-label">${item.label}</span>
+        <span class="hk-value">${item.value}</span>
+        ${action}
       </div>`;
-  }).join("");
-  host.innerHTML = rows;
+  }
+
+  // Build the rendered list.
+  // When nothing needs attention: collapsed "all nominal" view (compact strip of ✓ ticks).
+  // When something does: render urgent + warn + info first; show ok items in a
+  // dimmer collapsible "show OK (N)" section below.
+  let html = "";
+  if (attentionN === 0) {
+    html = `<div class="hk-nominal">All ${okay.length} checks passing — system is watching.</div>`;
+  } else {
+    html += urgent.map(row).join("");
+    html += warn.map(row).join("");
+    html += info.map(row).join("");
+    if (okay.length) {
+      html += `<details class="hk-okay-fold"><summary>${okay.length} passing checks</summary>${okay.map(row).join("")}</details>`;
+    }
+  }
+  host.innerHTML = html;
 }
 
 // System accent colors — read from CSS vars if defined (allows theme overrides), else use defaults

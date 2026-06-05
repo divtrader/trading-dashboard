@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <meta name="robots" content="noindex,nofollow">
 <title>Spyker Trading Inc — Live MEXC Dashboard</title>
-<link rel="stylesheet" href="style.css?v=128">
+<link rel="stylesheet" href="style.css?v=129">
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
@@ -367,10 +367,12 @@
       <div class="strip-cell"><div class="strip-k">LIVE</div><div class="strip-v" id="strip-live">—</div></div>
     </div>
 
-    <!-- Housekeeping — API key expiries + system health items -->
+    <!-- Housekeeping — system health items that need human action -->
     <div class="edge-tile housekeeping-tile">
-      <div class="edge-label">🧹 HOUSEKEEPING</div>
-      <div class="edge-desc">API key expiries · operational reminders</div>
+      <div class="hk-header">
+        <div class="edge-label">🧹 HOUSEKEEPING</div>
+        <div class="hk-status-summary" id="hk-summary">—</div>
+      </div>
       <div id="api-keys" class="housekeeping-body">—</div>
     </div>
   </section>
@@ -386,6 +388,6 @@
   </div>
 </main>
 
-<script src="dashboard.js?v=214"></script>
+<script src="dashboard.js?v=215"></script>
 </body>
 </html>

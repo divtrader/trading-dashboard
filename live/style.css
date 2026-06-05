@@ -2924,55 +2924,103 @@ main {
   flex-shrink: 0;
 }
 
-/* Housekeeping tile (API key expiries) on screen 4 */
+/* Housekeeping tile (system health + key expiries) on screen 4.
+   Collapse-when-nominal: when nothing needs attention, shows a calm
+   "all checks passing" line; when something does, urgent/warn/info
+   surface first and OK items fold behind a <details> toggle. */
 .housekeeping-tile {
   margin-top: 10px;
   flex-shrink: 0;
 }
+.hk-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.hk-status-summary {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.4px;
+  padding: 3px 8px;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+.hk-summary-ok     { color: #26A69A; background: rgba(38,166,154,0.10); border: 1px solid rgba(38,166,154,0.3); }
+.hk-summary-info   { color: #4ec3ff; background: rgba(78,195,255,0.10); border: 1px solid rgba(78,195,255,0.3); }
+.hk-summary-warn   { color: #FFA726; background: rgba(255,167,38,0.10); border: 1px solid rgba(255,167,38,0.35); }
+.hk-summary-urgent { color: #EF5350; background: rgba(239,83,80,0.12);  border: 1px solid rgba(239,83,80,0.45); }
 .housekeeping-body {
   display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
+  flex-direction: column;
+  gap: 4px;
   margin-top: 8px;
-  align-items: center;
 }
 .hk-empty {
   font-size: 11px;
   color: var(--muted);
   opacity: 0.6;
 }
-.hk-pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 4px 10px 4px 7px;
-  border-radius: 20px;
-  border: 1px solid transparent;
-  background: rgba(255,255,255,0.03);
-  font-size: 11px;
-  white-space: nowrap;
-}
-.hk-pill.hk-ok     { border-color: rgba(38,166,154,0.25); }
-.hk-pill.hk-warn   { border-color: rgba(255,167,38,0.35); }
-.hk-pill.hk-urgent { border-color: rgba(239,83,80,0.45); background: rgba(239,83,80,0.07); }
-.hk-dot {
-  width: 6px; height: 6px;
-  border-radius: 50%;
-  flex-shrink: 0;
-}
-.hk-name {
+.hk-nominal {
+  font-size: 12px;
   color: var(--muted);
-  font-weight: 600;
+  opacity: 0.65;
+  text-align: center;
+  padding: 8px 0;
   letter-spacing: 0.1px;
 }
-.hk-days {
+.hk-row {
+  display: grid;
+  grid-template-columns: 22px 1fr auto;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 11px;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.05);
+}
+.hk-row.hk-urgent { background: rgba(239,83,80,0.07);  border-color: rgba(239,83,80,0.35); }
+.hk-row.hk-warn   { background: rgba(255,167,38,0.05); border-color: rgba(255,167,38,0.3); }
+.hk-row.hk-info   { background: rgba(78,195,255,0.04); border-color: rgba(78,195,255,0.2); }
+.hk-icon  { font-size: 11px; text-align: center; }
+.hk-label { color: var(--muted); font-weight: 600; letter-spacing: 0.1px; }
+.hk-value {
   font-weight: 800;
   font-variant-numeric: tabular-nums;
-  font-size: 11px;
+  letter-spacing: 0.1px;
+  color: var(--text);
 }
-.hk-pill.hk-ok     .hk-days { color: #26A69A; }
-.hk-pill.hk-warn   .hk-days { color: #FFA726; }
-.hk-pill.hk-urgent .hk-days { color: #EF5350; }
+.hk-row.hk-urgent .hk-value { color: #EF5350; }
+.hk-row.hk-warn   .hk-value { color: #FFA726; }
+.hk-row.hk-info   .hk-value { color: #4ec3ff; }
+.hk-row.hk-ok     .hk-value { color: #26A69A; opacity: 0.9; }
+.hk-action {
+  grid-column: 2 / -1;
+  font-size: 10px;
+  color: rgba(255,255,255,0.55);
+  margin-top: 3px;
+  font-style: italic;
+}
+.hk-okay-fold {
+  margin-top: 4px;
+  border-radius: 6px;
+}
+.hk-okay-fold > summary {
+  font-size: 10px;
+  color: var(--muted);
+  opacity: 0.6;
+  cursor: pointer;
+  padding: 4px 10px;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  user-select: none;
+  list-style: none;
+}
+.hk-okay-fold > summary::before { content: "▸ "; }
+.hk-okay-fold[open] > summary::before { content: "▾ "; }
+.hk-okay-fold[open] { margin-bottom: 4px; }
+.hk-okay-fold .hk-row { opacity: 0.55; }
 .strip-cell {
   display: flex;
   flex-direction: column;
