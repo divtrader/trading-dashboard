@@ -628,6 +628,11 @@ function render() {
   const pS = pending.length - pL;
   $("pending-split").textContent = `${pL} Long · ${pS} Short`;
 
+  // Mirror counts into the screen-2 + screen-3 title chips so the user
+  // sees how many rows are about to render (matches paper's pattern).
+  const olc = $("open-live-count");    if (olc) olc.textContent = open.length;
+  const plc = $("pending-live-count"); if (plc) plc.textContent = pending.length;
+
   // Hero portfolio P&L tile (realized + unrealized + donut + sparkline) — rendered in renderLive()
 
   // Last-cron meta

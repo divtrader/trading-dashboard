@@ -1823,6 +1823,22 @@ main {
   letter-spacing: 1px;
   animation: pulse-dot 2s ease-in-out infinite;
 }
+/* Count chip on screen 2 + 3 titles — sits between the title text and
+   the green LIVE dot. */
+.trig-count {
+  display: inline-block;
+  margin-left: 6px;
+  padding: 2px 8px;
+  background: rgba(0,201,167,0.10);
+  color: var(--green);
+  border: 1px solid rgba(0,201,167,0.30);
+  border-radius: 10px;
+  font-size: 10px;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.5px;
+  vertical-align: middle;
+}
 .pb-pnl-pct.muted-val { color: var(--muted); }
 
 /* ── pt-row: new proximity trigger row ── */

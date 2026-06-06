@@ -996,6 +996,7 @@ function renderPaperBars(enrichedOpen) {
             <span class="pb-live-px">${fmtPrice(t.live)}</span>
           </div>
           <div class="pb-meta">
+            ${_isMexcRelevant(t) ? '<span class="pb-mexc">mexc</span>' : ""}
             <span class="pb-dir ${dirCls}">${isLong ? "▲ LONG" : "▼ SHORT"}</span>
             <span class="pb-sys">${sys}</span>
             ${beActive ? '<span class="pb-be">BE</span>' : ""}
@@ -1660,6 +1661,20 @@ function renderMovers(list, kind) {
   }).join("");
 }
 
+// Live MEXC coin universe (commit e6775f5 — 19 coins). A paper pending
+// trade is "MEXC-relevant" if (a) coin is in this set, AND (b) it's a
+// real trade (not track-only). Used to label pending rows on screen 3
+// so the user can see at a glance which signals route to live.
+const LIVE_COINS = new Set([
+  "BTC","ETH","SOL","XRP","DOGE","SUI","BNB","ADA","LINK","AVAX",
+  "TAO","TRX","NEAR","UNI","XLM","LTC","ALGO","HBAR","ONDO",
+]);
+function _isMexcRelevant(t) {
+  if (t.track_only) return false;
+  const c = (t.coin || "").replace("USDT", "");
+  return LIVE_COINS.has(c);
+}
+
 function renderPendingTriggers() {
   const host = $("triggers");
   const pending = state.trades.filter(t => t.status === "PENDING");
@@ -1697,6 +1712,7 @@ function renderPendingTriggers() {
         <div class="pt-info">
           <div class="pt-info-top">
             <span class="pt-coin">${coin}</span>
+            ${_isMexcRelevant(t) ? '<span class="pt-mexc">mexc</span>' : ''}
             <div class="pt-badges">
               <span class="pt-dir ${dirCls}">${isLong ? "L" : "S"}</span>
               <span class="pt-sys">${t.trading_system || ""}</span>

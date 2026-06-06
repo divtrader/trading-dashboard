@@ -2021,9 +2021,25 @@ main {
 .pt-axis {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   font-size: 8px;
   color: rgba(255,255,255,0.2);
   letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+/* "mexc" pill — marks pending OR open paper trades the live engine
+   would route to MEXC. Same styling on both screens for consistency. */
+.pt-info-top .pt-mexc,
+.pb-meta .pb-mexc {
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+  color: #ffb74d;
+  background: rgba(255,183,77,0.10);
+  border: 1px solid rgba(255,183,77,0.4);
+  border-radius: 3px;
+  padding: 1px 5px;
+  line-height: 1;
   text-transform: uppercase;
 }
 
