@@ -1530,7 +1530,10 @@ function renderPendingTriggers() {
         ? (((t.entry_lo ?? t.entry_price) - live) / live * 100) : 0;
     }
     return { ...t, live, distPct, inZone: distPct < 0.1 };
-  }).sort((a, b) => a.distPct - b.distPct).slice(0, 5);
+  }).sort((a, b) => a.distPct - b.distPct);
+  // (no slice — render every pending trade so screen 3's list count
+  // matches the PENDING count tile on screen 1. Live universe is 19 coins,
+  // so max pending count is bounded.)
 
   // Scale bars relative to the farthest trade + 25% headroom so the farthest
   // trade always gets ~20% bar instead of collapsing to 0
