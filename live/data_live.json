@@ -1,7 +1,7 @@
 {
   "mode": "live",
   "rehearsal_mode": true,
-  "last_updated_iso": "2026-06-06T08:15:32Z",
+  "last_updated_iso": "2026-06-06T08:41:48Z",
   "mexc_account": {
     "unrealized_pnl": 0.0,
     "equity": 0.0,
@@ -67,7 +67,7 @@
       "key": "state_file",
       "tier": 1,
       "label": "Trade journal",
-      "value": "OK (386 records)",
+      "value": "OK (387 records)",
       "status": "ok",
       "action": null
     },
@@ -121,38 +121,6 @@
     }
   ],
   "active_trades": [
-    {
-      "trade_id": "NEARUSDT_20260605_CB_001",
-      "coin": "NEARUSDT",
-      "direction": "Short",
-      "entry_price": 2.33632339,
-      "sl": 2.60563921,
-      "tp1": 1.69031892,
-      "tp2": 0.85353286,
-      "capital_usd": 100.0,
-      "leverage": 3,
-      "trading_system": "Braam",
-      "track_only": false,
-      "status": "PENDING",
-      "price_at_run": 2.005,
-      "date_activated": null,
-      "time_activated_utc": null,
-      "date_opened": "2026-06-05",
-      "time_opened_utc": "20:17",
-      "conviction": "MEDIUM",
-      "tp1_hit": false,
-      "sl_moved_to_be": false,
-      "pnl_tp1_realized_usd": null,
-      "live_executed": null,
-      "live_entry_fill": null,
-      "live_exit_fill": null,
-      "live_entry_slippage_pct": null,
-      "live_fees_usd": null,
-      "live_funding_usd": null,
-      "rehearsal": true,
-      "rehearsal_size_usd": 100.0,
-      "rehearsal_vol": 128
-    },
     {
       "trade_id": "SUIUSDT_20260605_CB_001",
       "coin": "SUIUSDT",
@@ -376,61 +344,41 @@
       "rehearsal": true,
       "rehearsal_size_usd": 100.0,
       "rehearsal_vol": 33
+    },
+    {
+      "trade_id": "NEARUSDT_20260606_CB_001",
+      "coin": "NEARUSDT",
+      "direction": "Short",
+      "entry_price": 2.23602226,
+      "sl": 2.48399342,
+      "tp1": 1.69320329,
+      "tp2": 0.88031623,
+      "capital_usd": 100.0,
+      "leverage": 3,
+      "trading_system": "Braam",
+      "track_only": false,
+      "status": "PENDING",
+      "price_at_run": 1.939,
+      "date_activated": null,
+      "time_activated_utc": null,
+      "date_opened": "2026-06-06",
+      "time_opened_utc": "08:41",
+      "conviction": "MEDIUM",
+      "tp1_hit": false,
+      "sl_moved_to_be": false,
+      "pnl_tp1_realized_usd": null,
+      "live_executed": null,
+      "live_entry_fill": null,
+      "live_exit_fill": null,
+      "live_entry_slippage_pct": null,
+      "live_fees_usd": null,
+      "live_funding_usd": null,
+      "rehearsal": true,
+      "rehearsal_size_usd": 68.68,
+      "rehearsal_vol": 92
     }
   ],
   "recent_signals": [
-    {
-      "trade_id": "NEARUSDT_20260605_CB_001",
-      "coin": "NEARUSDT",
-      "direction": "Short",
-      "trading_system": "Braam",
-      "entry_price": 2.33632339,
-      "tp1": 1.69031892,
-      "sl": 2.60563921,
-      "conviction": "MEDIUM",
-      "track_only": false,
-      "iso": "2026-06-05T20:17:00Z",
-      "rehearsal": true
-    },
-    {
-      "trade_id": "SUIUSDT_20260605_CB_001",
-      "coin": "SUIUSDT",
-      "direction": "Short",
-      "trading_system": "Braam",
-      "entry_price": 0.77446212,
-      "tp1": 0.6588927,
-      "sl": 0.82890005,
-      "conviction": "MEDIUM",
-      "track_only": false,
-      "iso": "2026-06-05T20:20:00Z",
-      "rehearsal": true
-    },
-    {
-      "trade_id": "XRPUSDT_20260605_CB_001",
-      "coin": "XRPUSDT",
-      "direction": "Short",
-      "trading_system": "Braam",
-      "entry_price": 1.17715419,
-      "tp1": 0.98287107,
-      "sl": 1.22955612,
-      "conviction": "MEDIUM",
-      "track_only": false,
-      "iso": "2026-06-05T20:33:00Z",
-      "rehearsal": true
-    },
-    {
-      "trade_id": "TAOUSDT_20260605_CB_001",
-      "coin": "TAOUSDT",
-      "direction": "Short",
-      "trading_system": "Braam",
-      "entry_price": 216.46427656,
-      "tp1": 166.48053812,
-      "sl": 231.62877085,
-      "conviction": "MEDIUM",
-      "track_only": false,
-      "iso": "2026-06-05T20:33:00Z",
-      "rehearsal": true
-    },
     {
       "trade_id": "UNIUSDT_20260605_CB_001",
       "coin": "UNIUSDT",
@@ -482,19 +430,40 @@
       "track_only": false,
       "iso": "2026-06-05T21:42:00Z",
       "rehearsal": true
+    },
+    {
+      "trade_id": "NEARUSDT_20260606_CB_001",
+      "coin": "NEARUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "entry_price": 2.23602226,
+      "tp1": 1.69320329,
+      "sl": 2.48399342,
+      "conviction": "MEDIUM",
+      "track_only": false,
+      "iso": "2026-06-06T08:41:00Z",
+      "rehearsal": true
     }
   ],
   "recent_opens": [],
   "recent_closes": [],
-  "recent_cancels": [],
+  "recent_cancels": [
+    {
+      "coin": "NEARUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "close_reason": "Stale 12.3h \u2265 12h grace: Price $1.9390 is 20.5% below entry $2.3363",
+      "iso": "2026-06-06T08:41:00Z"
+    }
+  ],
   "tp1_hits_open": [],
   "stats": {
     "realized_pnl_usd": 0,
     "win_rate_pct": 0.0,
     "closed_count": 0,
     "per_system": {},
-    "live_trade_count_total": 8,
+    "live_trade_count_total": 9,
     "live_real_count": 0,
-    "live_rehearsal_count": 8
+    "live_rehearsal_count": 9
   }
 }
