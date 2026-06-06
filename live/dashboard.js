@@ -1862,6 +1862,53 @@ document.addEventListener("keydown", e => {
   else if (e.key === "ArrowLeft") prevScreen();
 });
 
+// Double-click trade_id → copy to clipboard. Delegated so it survives
+// flipReplace re-renders. Looks for .pb-tid (open trades), .pt-tid (pending
+// triggers), or .rc-tid (recent closes); reads the full trade_id from the
+// nearest [data-trade-id] ancestor (handles cases where the displayed text
+// is a stripped prefix).
+function _copyTidFlash(el, full) {
+  const prev = el.textContent;
+  const cls = "tid-copied-flash";
+  el.classList.add(cls);
+  el.textContent = "✓ COPIED";
+  setTimeout(() => {
+    el.classList.remove(cls);
+    el.textContent = prev;
+  }, 900);
+}
+document.addEventListener("dblclick", e => {
+  const tidEl = e.target.closest(".pb-tid, .pt-tid, .rc-tid");
+  if (!tidEl) return;
+  const row = tidEl.closest("[data-trade-id]");
+  const full = (row && row.getAttribute("data-trade-id")) || tidEl.textContent || "";
+  if (!full) return;
+  // Modern path
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(full)
+      .then(() => _copyTidFlash(tidEl, full))
+      .catch(() => {
+        // Fallback for browsers without clipboard permission in iframe/kiosk
+        _legacyCopy(full); _copyTidFlash(tidEl, full);
+      });
+  } else {
+    _legacyCopy(full); _copyTidFlash(tidEl, full);
+  }
+  // Prevent accidental text selection on double-click
+  window.getSelection && window.getSelection().removeAllRanges();
+});
+function _legacyCopy(text) {
+  try {
+    const ta = document.createElement("textarea");
+    ta.value = text;
+    ta.style.position = "fixed"; ta.style.opacity = "0";
+    document.body.appendChild(ta);
+    ta.focus(); ta.select();
+    document.execCommand("copy");
+    document.body.removeChild(ta);
+  } catch {}
+}
+
 // Clock — CET/CEST (Europe/Paris, DST-aware)
 function tickClock() {
   const d = new Date();

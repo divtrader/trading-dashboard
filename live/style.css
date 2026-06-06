@@ -1863,7 +1863,13 @@ main {
   overflow: hidden;
   text-overflow: ellipsis;
 }
-.pt-tid, .rc-tid { cursor: copy; user-select: none; }
+.pb-tid, .pt-tid, .rc-tid { cursor: copy; user-select: none; }
+.tid-copied-flash {
+  color: var(--green) !important;
+  opacity: 1 !important;
+  font-weight: 700 !important;
+  transition: color 0.2s ease;
+}
 .pt-coin {
   font-size: 17px;
   font-weight: 700;
