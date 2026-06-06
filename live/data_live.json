@@ -1,7 +1,7 @@
 {
   "mode": "live",
   "rehearsal_mode": true,
-  "last_updated_iso": "2026-06-06T09:23:57Z",
+  "last_updated_iso": "2026-06-06T10:19:10Z",
   "mexc_account": {
     "unrealized_pnl": 0.0,
     "equity": 0.0,
@@ -67,7 +67,7 @@
       "key": "state_file",
       "tier": 1,
       "label": "Trade journal",
-      "value": "OK (387 records)",
+      "value": "OK (388 records)",
       "status": "ok",
       "action": null
     },
@@ -376,61 +376,41 @@
       "rehearsal": true,
       "rehearsal_size_usd": 68.68,
       "rehearsal_vol": 92
+    },
+    {
+      "trade_id": "LTCUSDT_20260606_CB_001",
+      "coin": "LTCUSDT",
+      "direction": "Short",
+      "entry_price": 45.32042702,
+      "sl": 47.49225856,
+      "tp1": 41.33105975,
+      "tp2": 35.75655767,
+      "capital_usd": 100.0,
+      "leverage": 3,
+      "trading_system": "Braam",
+      "track_only": false,
+      "status": "PENDING",
+      "price_at_run": 42.44,
+      "date_activated": null,
+      "time_activated_utc": null,
+      "date_opened": "2026-06-06",
+      "time_opened_utc": "10:18",
+      "conviction": "MEDIUM",
+      "tp1_hit": false,
+      "sl_moved_to_be": false,
+      "pnl_tp1_realized_usd": null,
+      "live_executed": null,
+      "live_entry_fill": null,
+      "live_exit_fill": null,
+      "live_entry_slippage_pct": null,
+      "live_fees_usd": null,
+      "live_funding_usd": null,
+      "rehearsal": true,
+      "rehearsal_size_usd": 68.68,
+      "rehearsal_vol": 454
     }
   ],
   "recent_signals": [
-    {
-      "trade_id": "UNIUSDT_20260605_CB_001",
-      "coin": "UNIUSDT",
-      "direction": "Short",
-      "trading_system": "Braam",
-      "entry_price": 2.67676168,
-      "tp1": 2.3398183,
-      "sl": 2.83261065,
-      "conviction": "MEDIUM",
-      "track_only": false,
-      "iso": "2026-06-05T21:42:00Z",
-      "rehearsal": true
-    },
-    {
-      "trade_id": "ALGOUSDT_20260605_CB_001",
-      "coin": "ALGOUSDT",
-      "direction": "Short",
-      "trading_system": "Braam",
-      "entry_price": 0.10308172,
-      "tp1": 0.08477758,
-      "sl": 0.110103,
-      "conviction": "MEDIUM",
-      "track_only": false,
-      "iso": "2026-06-05T21:42:00Z",
-      "rehearsal": true
-    },
-    {
-      "trade_id": "LINKUSDT_20260605_CB_001",
-      "coin": "LINKUSDT",
-      "direction": "Short",
-      "trading_system": "Braam",
-      "entry_price": 8.03459972,
-      "tp1": 7.25300135,
-      "sl": 8.45778846,
-      "conviction": "MEDIUM",
-      "track_only": false,
-      "iso": "2026-06-05T21:42:00Z",
-      "rehearsal": true
-    },
-    {
-      "trade_id": "DOGEUSDT_20260605_CB_001",
-      "coin": "DOGEUSDT",
-      "direction": "Short",
-      "trading_system": "Braam",
-      "entry_price": 0.08902659,
-      "tp1": 0.07949032,
-      "sl": 0.09323288,
-      "conviction": "MEDIUM",
-      "track_only": false,
-      "iso": "2026-06-05T21:42:00Z",
-      "rehearsal": true
-    },
     {
       "trade_id": "NEARUSDT_20260606_CB_001",
       "coin": "NEARUSDT",
@@ -442,6 +422,19 @@
       "conviction": "MEDIUM",
       "track_only": false,
       "iso": "2026-06-06T08:41:00Z",
+      "rehearsal": true
+    },
+    {
+      "trade_id": "LTCUSDT_20260606_CB_001",
+      "coin": "LTCUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "entry_price": 45.32042702,
+      "tp1": 41.33105975,
+      "sl": 47.49225856,
+      "conviction": "MEDIUM",
+      "track_only": false,
+      "iso": "2026-06-06T10:18:00Z",
       "rehearsal": true
     }
   ],
@@ -462,8 +455,8 @@
     "win_rate_pct": 0.0,
     "closed_count": 0,
     "per_system": {},
-    "live_trade_count_total": 9,
+    "live_trade_count_total": 10,
     "live_real_count": 0,
-    "live_rehearsal_count": 9
+    "live_rehearsal_count": 10
   }
 }
