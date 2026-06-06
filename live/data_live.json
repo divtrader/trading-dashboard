@@ -1,7 +1,7 @@
 {
   "mode": "live",
   "rehearsal_mode": true,
-  "last_updated_iso": "2026-06-06T15:02:01Z",
+  "last_updated_iso": "2026-06-06T16:06:33Z",
   "mexc_account": {
     "unrealized_pnl": 0.0,
     "equity": 0.0,
@@ -67,7 +67,7 @@
       "key": "state_file",
       "tier": 1,
       "label": "Trade journal",
-      "value": "OK (390 records)",
+      "value": "OK (391 records)",
       "status": "ok",
       "action": null
     },
@@ -440,6 +440,38 @@
       "rehearsal": true,
       "rehearsal_size_usd": 68.68,
       "rehearsal_vol": 30
+    },
+    {
+      "trade_id": "AVAXUSDT_20260606_CB_001",
+      "coin": "AVAXUSDT",
+      "direction": "Short",
+      "entry_price": 7.2994548,
+      "sl": 7.76699994,
+      "tp1": 6.44988783,
+      "tp2": 5.19895303,
+      "capital_usd": 100.0,
+      "leverage": 3,
+      "trading_system": "Braam",
+      "track_only": false,
+      "status": "PENDING",
+      "price_at_run": 6.711,
+      "date_activated": null,
+      "time_activated_utc": null,
+      "date_opened": "2026-06-06",
+      "time_opened_utc": "16:05",
+      "conviction": "MEDIUM",
+      "tp1_hit": false,
+      "sl_moved_to_be": false,
+      "pnl_tp1_realized_usd": null,
+      "live_executed": null,
+      "live_entry_fill": null,
+      "live_exit_fill": null,
+      "live_entry_slippage_pct": null,
+      "live_fees_usd": null,
+      "live_funding_usd": null,
+      "rehearsal": true,
+      "rehearsal_size_usd": 68.68,
+      "rehearsal_vol": 282
     }
   ],
   "recent_signals": [
@@ -481,6 +513,19 @@
       "track_only": false,
       "iso": "2026-06-06T13:04:00Z",
       "rehearsal": true
+    },
+    {
+      "trade_id": "AVAXUSDT_20260606_CB_001",
+      "coin": "AVAXUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "entry_price": 7.2994548,
+      "tp1": 6.44988783,
+      "sl": 7.76699994,
+      "conviction": "MEDIUM",
+      "track_only": false,
+      "iso": "2026-06-06T16:05:00Z",
+      "rehearsal": true
     }
   ],
   "recent_opens": [],
@@ -500,8 +545,8 @@
     "win_rate_pct": 0.0,
     "closed_count": 0,
     "per_system": {},
-    "live_trade_count_total": 11,
+    "live_trade_count_total": 12,
     "live_real_count": 0,
-    "live_rehearsal_count": 11
+    "live_rehearsal_count": 12
   }
 }
