@@ -1,13 +1,8 @@
 {
   "mode": "live",
   "rehearsal_mode": true,
-  "last_updated_iso": "2026-06-07T10:36:25Z",
-  "mexc_account": {
-    "unrealized_pnl": 0.0,
-    "equity": 0.0,
-    "available": 0.0,
-    "position_margin": 0.0
-  },
+  "last_updated_iso": "2026-06-07T12:12:08Z",
+  "mexc_account": null,
   "api_keys": [
     {
       "label": "MEXC AlgoTrading sub-account (live orders)",
@@ -59,9 +54,9 @@
       "key": "daily_summary",
       "tier": 1,
       "label": "Daily summary",
-      "value": "overdue 1d",
-      "status": "warn",
-      "action": "Run daily_summary.yml manually from Actions."
+      "value": "sent today",
+      "status": "ok",
+      "action": null
     },
     {
       "key": "state_file",
@@ -75,9 +70,9 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$0.00",
-      "status": "ok",
-      "action": null
+      "value": "unavailable",
+      "status": "warn",
+      "action": "Worker fetch failed \u2014 check mexc-proxy + ALGO key."
     },
     {
       "key": "worker_deploy",
@@ -490,15 +485,7 @@
     }
   ],
   "recent_closes": [],
-  "recent_cancels": [
-    {
-      "coin": "NEARUSDT",
-      "direction": "Short",
-      "trading_system": "Braam",
-      "close_reason": "Stale 13.3h \u2265 12h grace: Price $1.8550 is 20.5% below entry $2.2360",
-      "iso": "2026-06-06T22:43:00Z"
-    }
-  ],
+  "recent_cancels": [],
   "tp1_hits_open": [],
   "stats": {
     "realized_pnl_usd": 0,
