@@ -1,7 +1,7 @@
 {
   "mode": "live",
   "rehearsal_mode": true,
-  "last_updated_iso": "2026-06-07T14:40:46Z",
+  "last_updated_iso": "2026-06-07T14:47:58Z",
   "mexc_account": {
     "unrealized_pnl": 0.0,
     "equity": 0.0,
@@ -509,7 +509,7 @@
       "coin": "ONDOUSDT",
       "direction": "Short",
       "status": "STOPPED",
-      "pnl_usd": -26.17,
+      "pnl_usd": -17.97,
       "close_reason": "Retro-reconcile 2026-06-07: engine missed same-bar entry+SL wick. 1-min Binance bar at 06:22 UTC: O 0.3403 H 0.3914 L 0.3359 C 0.3431 \u2014 a 15% wick in 60 seconds that punched through both entry 0.3534 AND SL 0.3872 simultaneously. Engine stamped activation at 06:45 UTC but never fired SL detection on the activation bar. In real exchange terms (sized $68.68 \u00d7 3x leverage), this trade would have stopped out for ~-$19.73 real-$ loss. Legacy journal P&L (capital \u00d7 leverage formula): $-26.17. Closing at SL.",
       "date_closed": "2026-06-07",
       "time_closed_utc": "06:22",
@@ -527,12 +527,12 @@
   "recent_cancels": [],
   "tp1_hits_open": [],
   "stats": {
-    "realized_pnl_usd": -26.17,
+    "realized_pnl_usd": -17.97,
     "win_rate_pct": 0.0,
     "closed_count": 1,
     "per_system": {
       "Braam": {
-        "realized_pnl_usd": -26.17,
+        "realized_pnl_usd": -17.97,
         "win_rate_pct": 0.0,
         "closed_count": 1
       }
