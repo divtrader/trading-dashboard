@@ -1,7 +1,7 @@
 {
   "mode": "live",
   "rehearsal_mode": true,
-  "last_updated_iso": "2026-06-07T14:18:36Z",
+  "last_updated_iso": "2026-06-07T14:40:46Z",
   "mexc_account": {
     "unrealized_pnl": 0.0,
     "equity": 0.0,
@@ -67,7 +67,7 @@
       "key": "state_file",
       "tier": 1,
       "label": "Trade journal",
-      "value": "OK (398 records)",
+      "value": "OK (399 records)",
       "status": "ok",
       "action": null
     },
@@ -442,26 +442,26 @@
       "rehearsal_vol": 282
     },
     {
-      "trade_id": "ONDOUSDT_20260606_CB_001",
-      "coin": "ONDOUSDT",
+      "trade_id": "BTCUSDT_20260607_CJ_001",
+      "coin": "BTCUSDT",
       "direction": "Short",
-      "entry_price": 0.35343721,
-      "sl": 0.3872211,
-      "tp1": 0.3211,
-      "tp2": 0.2807,
+      "entry_price": 66090.24127085,
+      "sl": 67370.05838484,
+      "tp1": 52074.4665297,
+      "tp2": 50111.8773884,
       "capital_usd": 68.68,
       "leverage": 3,
-      "trading_system": "Braam",
+      "trading_system": "John",
       "track_only": false,
-      "status": "OPEN",
-      "price_at_run": 0.3294,
-      "date_activated": "2026-06-07",
-      "time_activated_utc": "06:45",
-      "date_opened": "2026-06-06",
-      "time_opened_utc": "16:54",
-      "conviction": "MEDIUM",
+      "status": "PENDING",
+      "price_at_run": 62168.0,
+      "date_activated": null,
+      "time_activated_utc": null,
+      "date_opened": "2026-06-07",
+      "time_opened_utc": "14:40",
+      "conviction": "HIGH",
       "tp1_hit": false,
-      "sl_moved_to_be": false,
+      "sl_moved_to_be": null,
       "pnl_tp1_realized_usd": null,
       "live_executed": null,
       "live_entry_fill": null,
@@ -471,10 +471,24 @@
       "live_funding_usd": null,
       "rehearsal": true,
       "rehearsal_size_usd": 68.68,
-      "rehearsal_vol": 58
+      "rehearsal_vol": 31
     }
   ],
-  "recent_signals": [],
+  "recent_signals": [
+    {
+      "trade_id": "BTCUSDT_20260607_CJ_001",
+      "coin": "BTCUSDT",
+      "direction": "Short",
+      "trading_system": "John",
+      "entry_price": 66090.24127085,
+      "tp1": 52074.4665297,
+      "sl": 67370.05838484,
+      "conviction": "HIGH",
+      "track_only": false,
+      "iso": "2026-06-07T14:40:00Z",
+      "rehearsal": true
+    }
+  ],
   "recent_opens": [
     {
       "trade_id": "ONDOUSDT_20260606_CB_001",
@@ -489,16 +503,42 @@
       "rehearsal": true
     }
   ],
-  "recent_closes": [],
+  "recent_closes": [
+    {
+      "trade_id": "ONDOUSDT_20260606_CB_001",
+      "coin": "ONDOUSDT",
+      "direction": "Short",
+      "status": "STOPPED",
+      "pnl_usd": -26.17,
+      "close_reason": "Retro-reconcile 2026-06-07: engine missed same-bar entry+SL wick. 1-min Binance bar at 06:22 UTC: O 0.3403 H 0.3914 L 0.3359 C 0.3431 \u2014 a 15% wick in 60 seconds that punched through both entry 0.3534 AND SL 0.3872 simultaneously. Engine stamped activation at 06:45 UTC but never fired SL detection on the activation bar. In real exchange terms (sized $68.68 \u00d7 3x leverage), this trade would have stopped out for ~-$19.73 real-$ loss. Legacy journal P&L (capital \u00d7 leverage formula): $-26.17. Closing at SL.",
+      "date_closed": "2026-06-07",
+      "time_closed_utc": "06:22",
+      "trading_system": "Braam",
+      "live_entry_fill": null,
+      "live_exit_fill": null,
+      "live_entry_slippage_pct": null,
+      "live_fees_usd": null,
+      "live_funding_usd": null,
+      "won": false,
+      "close_iso": "2026-06-07T06:22:00Z",
+      "rehearsal": true
+    }
+  ],
   "recent_cancels": [],
   "tp1_hits_open": [],
   "stats": {
-    "realized_pnl_usd": 0,
+    "realized_pnl_usd": -26.17,
     "win_rate_pct": 0.0,
-    "closed_count": 0,
-    "per_system": {},
-    "live_trade_count_total": 13,
+    "closed_count": 1,
+    "per_system": {
+      "Braam": {
+        "realized_pnl_usd": -26.17,
+        "win_rate_pct": 0.0,
+        "closed_count": 1
+      }
+    },
+    "live_trade_count_total": 14,
     "live_real_count": 0,
-    "live_rehearsal_count": 13
+    "live_rehearsal_count": 14
   }
 }
