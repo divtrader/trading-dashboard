@@ -997,7 +997,7 @@ function renderPaperBars(enrichedOpen) {
           </div>
           <div class="pb-meta">
             ${_isMexcRelevant(t) ? '<span class="pb-mexc">mexc</span>' : ""}
-            <span class="pb-dir ${dirCls}">${isLong ? "▲ LONG" : "▼ SHORT"}</span>
+            <span class="pb-dir ${dirCls}" title="${isLong ? "Long" : "Short"}">${isLong ? "L" : "S"}</span>
             <span class="pb-sys">${sys}</span>
             ${beActive ? '<span class="pb-be">BE</span>' : ""}
           </div>

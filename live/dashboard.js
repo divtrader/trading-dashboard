@@ -976,7 +976,7 @@ function renderPaperBars(enrichedOpen) {
             <span class="pb-live-px">${fmtPrice(t.live)}</span>
           </div>
           <div class="pb-meta">
-            <span class="pb-dir ${dirCls}">${isLong ? "▲ LONG" : "▼ SHORT"}</span>
+            <span class="pb-dir ${dirCls}" title="${isLong ? "Long" : "Short"}">${isLong ? "L" : "S"}</span>
             <span class="pb-sys">${sys}</span>
             ${beActive ? '<span class="pb-be">BE</span>' : ""}
             ${rehearsalPill}

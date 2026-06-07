@@ -1109,7 +1109,16 @@ main {
   font-size: 10px; font-weight: 700; letter-spacing: 0.5px;
 }
 .pb-meta .pb-dir {
-  padding: 2px 7px; border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 18px;
+  height: 16px;
+  padding: 0 4px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.4px;
   text-transform: uppercase;
 }
 .pb-meta .pb-dir.long  { background: rgba(0,201,167,0.18); color: var(--green); }
