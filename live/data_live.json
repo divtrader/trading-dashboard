@@ -1,8 +1,13 @@
 {
   "mode": "live",
   "rehearsal_mode": true,
-  "last_updated_iso": "2026-06-07T12:12:08Z",
-  "mexc_account": null,
+  "last_updated_iso": "2026-06-07T12:12:27Z",
+  "mexc_account": {
+    "unrealized_pnl": 0.0,
+    "equity": 0.0,
+    "available": 0.0,
+    "position_margin": 0.0
+  },
   "api_keys": [
     {
       "label": "MEXC AlgoTrading sub-account (live orders)",
@@ -70,9 +75,9 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "unavailable",
-      "status": "warn",
-      "action": "Worker fetch failed \u2014 check mexc-proxy + ALGO key."
+      "value": "$0.00",
+      "status": "ok",
+      "action": null
     },
     {
       "key": "worker_deploy",
