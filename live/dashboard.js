@@ -2282,16 +2282,19 @@ function _renderMacroSpark(svgId, values, isInverted) {
 }
 
 // ── Refresh just the Edge hero P&L number — called from renderLive on every WS tick ──
+// Live dashboard pulls realized/closed/WR from state.stats (the live
+// publisher's OWN stats — already scaled to broker capital). Paper's
+// _edgeAnalytics.all_time is deliberately excluded on /live (memory rule)
+// so we can't use it here.
 function updateEdgeLivePnL() {
-  if (!_edgeAnalytics) return;
   const pnlEl = document.getElementById("edge-pnl");
   if (!pnlEl) return;
-  const at = _edgeAnalytics.all_time || {};
+  const stats = state.stats || {};
   const openTrades = (state.trades || []).filter(t => t.status === "OPEN");
   const liveEnriched = openTrades.map(t => ({ ...t, ...computeUnrealized(t) }));
   const liveUnreal = liveEnriched.reduce((s, t) => s + (t.usd || 0), 0);
   const liveTp1Banked = liveEnriched.reduce((s, t) => s + (t.tp1BankedUsd || 0), 0);
-  const realizedTotal = (at.total_pnl_usd || 0) + liveTp1Banked;
+  const realizedTotal = (stats.realized_pnl_usd || 0) + liveTp1Banked;
   const liveTotalPnl = realizedTotal + liveUnreal;
   pnlEl.textContent = _fmtUsdEdge(liveTotalPnl);
   pnlEl.classList.remove("pos", "neg", "neu");
@@ -2302,7 +2305,7 @@ function updateEdgeLivePnL() {
       ? ` · <span class="${_signCls(liveUnreal)}">${_fmtUsdEdge(liveUnreal)} unreal</span>`
       : "";
     subEl.innerHTML =
-      `<span class="${_signCls(realizedTotal)}">${_fmtUsdEdge(realizedTotal)} realized</span>${unrealTxt} · ${at.total_trades ?? 0} closed · ${at.win_rate ?? 0}% WR`;
+      `<span class="${_signCls(realizedTotal)}">${_fmtUsdEdge(realizedTotal)} realized</span>${unrealTxt} · ${stats.closed_count ?? 0} closed · ${stats.win_rate_pct ?? 0}% WR`;
   }
 }
 
