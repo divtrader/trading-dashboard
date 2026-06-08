@@ -1,7 +1,7 @@
 {
   "mode": "live",
   "rehearsal_mode": true,
-  "last_updated_iso": "2026-06-08T20:20:34Z",
+  "last_updated_iso": "2026-06-08T21:10:05Z",
   "mexc_account": {
     "unrealized_pnl": 0.0,
     "equity": 0.0,
@@ -454,7 +454,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 63204.0,
+      "price_at_run": 63709.99,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-06-07",
@@ -485,10 +485,10 @@
       "leverage": 3,
       "trading_system": "John",
       "track_only": false,
-      "status": "PENDING",
-      "price_at_run": 66.98,
-      "date_activated": null,
-      "time_activated_utc": null,
+      "status": "OPEN",
+      "price_at_run": 67.85,
+      "date_activated": "2026-06-08",
+      "time_activated_utc": "20:00",
       "date_opened": "2026-06-08",
       "time_opened_utc": "07:22",
       "conviction": "HIGH",
@@ -578,6 +578,18 @@
       "tp1_hit": false,
       "iso": "2026-06-08T15:10:00Z",
       "_iso_ms": 1780931400000,
+      "rehearsal": true
+    },
+    {
+      "trade_id": "SOLUSDT_20260608_CJ_001",
+      "coin": "SOLUSDT",
+      "direction": "Short",
+      "trading_system": "John",
+      "entry_price": 67.88567566,
+      "live_entry_fill": null,
+      "tp1_hit": false,
+      "iso": "2026-06-08T20:00:00Z",
+      "_iso_ms": 1780948800000,
       "rehearsal": true
     }
   ],
