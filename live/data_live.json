@@ -1,7 +1,7 @@
 {
   "mode": "live",
   "rehearsal_mode": true,
-  "last_updated_iso": "2026-06-08T07:17:04Z",
+  "last_updated_iso": "2026-06-08T07:23:06Z",
   "mexc_account": {
     "unrealized_pnl": 0.0,
     "equity": 0.0,
@@ -67,7 +67,7 @@
       "key": "state_file",
       "tier": 1,
       "label": "Trade journal",
-      "value": "OK (402 records)",
+      "value": "OK (403 records)",
       "status": "ok",
       "action": null
     },
@@ -454,7 +454,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 63021.59,
+      "price_at_run": 63208.0,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-06-07",
@@ -472,9 +472,55 @@
       "rehearsal": true,
       "rehearsal_size_usd": 68.68,
       "rehearsal_vol": 31
+    },
+    {
+      "trade_id": "SOLUSDT_20260608_CJ_001",
+      "coin": "SOLUSDT",
+      "direction": "Short",
+      "entry_price": 68.35854053,
+      "sl": 70.58538028,
+      "tp1": 56.86841488,
+      "tp2": 53.64057682,
+      "capital_usd": 68.68,
+      "leverage": 3,
+      "trading_system": "John",
+      "track_only": false,
+      "status": "PENDING",
+      "price_at_run": 65.9,
+      "date_activated": null,
+      "time_activated_utc": null,
+      "date_opened": "2026-06-08",
+      "time_opened_utc": "07:22",
+      "conviction": "HIGH",
+      "tp1_hit": false,
+      "sl_moved_to_be": null,
+      "pnl_tp1_realized_usd": null,
+      "live_executed": null,
+      "live_entry_fill": null,
+      "live_exit_fill": null,
+      "live_entry_slippage_pct": null,
+      "live_fees_usd": null,
+      "live_funding_usd": null,
+      "rehearsal": true,
+      "rehearsal_size_usd": 68.68,
+      "rehearsal_vol": 30
     }
   ],
-  "recent_signals": [],
+  "recent_signals": [
+    {
+      "trade_id": "SOLUSDT_20260608_CJ_001",
+      "coin": "SOLUSDT",
+      "direction": "Short",
+      "trading_system": "John",
+      "entry_price": 68.35854053,
+      "tp1": 56.86841488,
+      "sl": 70.58538028,
+      "conviction": "HIGH",
+      "track_only": false,
+      "iso": "2026-06-08T07:22:00Z",
+      "rehearsal": true
+    }
+  ],
   "recent_opens": [
     {
       "trade_id": "ONDOUSDT_20260606_CB_001",
@@ -571,8 +617,8 @@
         "closed_count": 1
       }
     },
-    "live_trade_count_total": 14,
+    "live_trade_count_total": 15,
     "live_real_count": 0,
-    "live_rehearsal_count": 14
+    "live_rehearsal_count": 15
   }
 }
