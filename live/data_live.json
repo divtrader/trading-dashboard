@@ -1,7 +1,7 @@
 {
   "mode": "live",
   "rehearsal_mode": true,
-  "last_updated_iso": "2026-06-07T22:45:41Z",
+  "last_updated_iso": "2026-06-08T01:59:59Z",
   "mexc_account": {
     "unrealized_pnl": 0.0,
     "equity": 0.0,
@@ -13,28 +13,28 @@
       "label": "MEXC AlgoTrading sub-account (live orders)",
       "name": "MEXC_ALGO_KEY",
       "expires": "2026-08-27",
-      "days_left": 81,
+      "days_left": 80,
       "status": "ok"
     },
     {
       "label": "GitHub PAT (dashboard deploy)",
       "name": "DASHBOARD_PAT",
       "expires": "2026-07-30",
-      "days_left": 53,
+      "days_left": 52,
       "status": "ok"
     },
     {
       "label": "Google Drive OAuth (journal sync)",
       "name": "GDRIVE_OAUTH_TOKEN",
       "expires": "2026-07-30",
-      "days_left": 53,
+      "days_left": 52,
       "status": "ok"
     },
     {
       "label": "Telegram Bot (trade alerts)",
       "name": "TELEGRAM_TOKEN",
       "expires": "2126-01-01",
-      "days_left": 36367,
+      "days_left": 36366,
       "status": "ok"
     }
   ],
@@ -59,9 +59,9 @@
       "key": "daily_summary",
       "tier": 1,
       "label": "Daily summary",
-      "value": "sent today",
-      "status": "ok",
-      "action": null
+      "value": "overdue 1d",
+      "status": "warn",
+      "action": "Run daily_summary.yml manually from Actions."
     },
     {
       "key": "state_file",
@@ -91,7 +91,7 @@
       "key": "apikey_MEXC_ALGO_KEY",
       "tier": 1,
       "label": "MEXC AlgoTrading sub-account (live orders)",
-      "value": "81d left (2026-08-27)",
+      "value": "80d left (2026-08-27)",
       "status": "ok",
       "action": null
     },
@@ -99,7 +99,7 @@
       "key": "apikey_DASHBOARD_PAT",
       "tier": 1,
       "label": "GitHub PAT (dashboard deploy)",
-      "value": "53d left (2026-07-30)",
+      "value": "52d left (2026-07-30)",
       "status": "ok",
       "action": null
     },
@@ -107,7 +107,7 @@
       "key": "apikey_GDRIVE_OAUTH_TOKEN",
       "tier": 1,
       "label": "Google Drive OAuth (journal sync)",
-      "value": "53d left (2026-07-30)",
+      "value": "52d left (2026-07-30)",
       "status": "ok",
       "action": null
     },
@@ -115,7 +115,7 @@
       "key": "apikey_TELEGRAM_TOKEN",
       "tier": 1,
       "label": "Telegram Bot (trade alerts)",
-      "value": "36367d left (2126-01-01)",
+      "value": "36366d left (2126-01-01)",
       "status": "ok",
       "action": null
     }
@@ -454,7 +454,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 63164.45,
+      "price_at_run": 63143.9,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-06-07",
