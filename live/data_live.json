@@ -1,7 +1,7 @@
 {
   "mode": "live",
   "rehearsal_mode": true,
-  "last_updated_iso": "2026-06-09T04:42:12Z",
+  "last_updated_iso": "2026-06-09T05:52:53Z",
   "mexc_account": {
     "unrealized_pnl": 0.0,
     "equity": 0.0,
@@ -250,38 +250,6 @@
       "rehearsal_vol": 769
     },
     {
-      "trade_id": "ALGOUSDT_20260605_CB_001",
-      "coin": "ALGOUSDT",
-      "direction": "Short",
-      "entry_price": 0.10308172,
-      "sl": 0.110103,
-      "tp1": 0.08477758,
-      "tp2": 0.06220283,
-      "capital_usd": 68.68,
-      "leverage": 3,
-      "trading_system": "Braam",
-      "track_only": false,
-      "status": "PENDING",
-      "price_at_run": 0.0952,
-      "date_activated": null,
-      "time_activated_utc": null,
-      "date_opened": "2026-06-05",
-      "time_opened_utc": "21:42",
-      "conviction": "MEDIUM",
-      "tp1_hit": false,
-      "sl_moved_to_be": false,
-      "pnl_tp1_realized_usd": null,
-      "live_executed": null,
-      "live_entry_fill": null,
-      "live_exit_fill": null,
-      "live_entry_slippage_pct": null,
-      "live_fees_usd": null,
-      "live_funding_usd": null,
-      "rehearsal": true,
-      "rehearsal_size_usd": 68.68,
-      "rehearsal_vol": 1998
-    },
-    {
       "trade_id": "LINKUSDT_20260605_CB_001",
       "coin": "LINKUSDT",
       "direction": "Short",
@@ -454,7 +422,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 63314.01,
+      "price_at_run": 63381.35,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-06-07",
@@ -543,8 +511,8 @@
       "direction": "Short",
       "entry_price": 1666.46521465,
       "sl": 1734.27939251,
-      "tp1": 1545.65845366,
-      "tp2": 1352.10412391,
+      "tp1": 1555.0,
+      "tp2": 1425.0,
       "capital_usd": 68.68,
       "leverage": 3,
       "trading_system": "Braam",
@@ -702,7 +670,15 @@
       "rehearsal": true
     }
   ],
-  "recent_cancels": [],
+  "recent_cancels": [
+    {
+      "coin": "ALGOUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "close_reason": "Stale 12.9h \u2265 12h grace: Price $0.0929 is 11.0% below entry $0.1031",
+      "iso": "2026-06-09T05:52:00Z"
+    }
+  ],
   "tp1_hits_open": [],
   "stats": {
     "realized_pnl_usd": -17.97,
