@@ -188,8 +188,10 @@ function buildSmall(w, paper, mexc) {
 
   txt(w, "MEXC LIVE", 8, C.muted, true);
   w.addSpacer(3);
+  // Worker emits unrealized_pct as percentage points already
+  // (e.g. -3.5 = -3.5%). Don't multiply by 100.
   const mexcPnl = mexc?.unrealized_pnl ?? null;
-  const mexcPct = mexc?.unrealized_pct != null ? mexc.unrealized_pct * 100 : null;
+  const mexcPct = mexc?.unrealized_pct ?? null;
   txt(w, fmtUsdPct(mexcPnl, mexcPct), 20, colorFor(mexcPnl), true, true);
 
   w.addSpacer();
@@ -244,10 +246,10 @@ function buildMedium(w, paper, mexc, now) {
   txt(right, "MEXC LIVE", 8, C.muted, true);
   right.addSpacer(5);
 
-  // Big number — MEXC's unrealized_pct already comes as a decimal
-  // (e.g. 0.0186 → 1.86%); convert to % for display.
+  // Worker emits unrealized_pct as percentage points already
+  // (e.g. -3.5 = -3.5%). Don't multiply by 100.
   const mp    = mexc?.unrealized_pnl ?? null;
-  const mpPct = mexc?.unrealized_pct != null ? mexc.unrealized_pct * 100 : null;
+  const mpPct = mexc?.unrealized_pct ?? null;
   txt(right, fmtUsdPct(mp, mpPct), 20, colorFor(mp), true, true);
   right.addSpacer(7);
 
