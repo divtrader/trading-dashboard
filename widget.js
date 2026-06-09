@@ -174,7 +174,7 @@ function buildSmall(w, paper, mexc) {
 
   txt(w, "PAPER", 8, C.muted, true);
   w.addSpacer(3);
-  txt(w, fmtUsdPct(paper.total, paper.pct), 22, colorFor(paper.total), true);
+  txt(w, fmtUsdPct(paper.total, paper.pct), 20, colorFor(paper.total), true);
 
   w.addSpacer(12);
 
@@ -182,7 +182,7 @@ function buildSmall(w, paper, mexc) {
   w.addSpacer(3);
   const mexcPnl = mexc?.unrealized_pnl ?? null;
   const mexcPct = mexc?.unrealized_pct != null ? mexc.unrealized_pct * 100 : null;
-  txt(w, fmtUsdPct(mexcPnl, mexcPct), 22, colorFor(mexcPnl), true);
+  txt(w, fmtUsdPct(mexcPnl, mexcPct), 20, colorFor(mexcPnl), true);
 
   w.addSpacer();
   const now = new Date();
@@ -209,7 +209,7 @@ function buildMedium(w, paper, mexc, now) {
   left.addSpacer(5);
 
   // Big number + canonical realized % (publisher-emitted)
-  txt(left, fmtUsdPct(paper.total, paper.pct), 22, colorFor(paper.total), true);
+  txt(left, fmtUsdPct(paper.total, paper.pct), 20, colorFor(paper.total), true);
   left.addSpacer(7);
 
   // Stats row 1: realized / unrealized
@@ -240,7 +240,7 @@ function buildMedium(w, paper, mexc, now) {
   // (e.g. 0.0186 → 1.86%); convert to % for display.
   const mp    = mexc?.unrealized_pnl ?? null;
   const mpPct = mexc?.unrealized_pct != null ? mexc.unrealized_pct * 100 : null;
-  txt(right, fmtUsdPct(mp, mpPct), 22, colorFor(mp), true);
+  txt(right, fmtUsdPct(mp, mpPct), 20, colorFor(mp), true);
   right.addSpacer(7);
 
   // Equity / available
