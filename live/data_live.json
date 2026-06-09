@@ -1,7 +1,7 @@
 {
   "mode": "live",
   "rehearsal_mode": true,
-  "last_updated_iso": "2026-06-09T04:27:29Z",
+  "last_updated_iso": "2026-06-09T04:32:57Z",
   "mexc_account": {
     "unrealized_pnl": 0.0,
     "equity": 0.0,
@@ -67,7 +67,7 @@
       "key": "state_file",
       "tier": 1,
       "label": "Trade journal",
-      "value": "OK (408 records)",
+      "value": "OK (409 records)",
       "status": "ok",
       "action": null
     },
@@ -454,7 +454,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 62849.4,
+      "price_at_run": 62770.85,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-06-07",
@@ -486,7 +486,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "OPEN",
-      "price_at_run": 66.07,
+      "price_at_run": 65.89,
       "date_activated": "2026-06-08",
       "time_activated_utc": "20:00",
       "date_opened": "2026-06-08",
@@ -517,10 +517,10 @@
       "leverage": 3,
       "trading_system": "Braam",
       "track_only": false,
-      "status": "PENDING",
+      "status": "OPEN",
       "price_at_run": 597.8,
-      "date_activated": null,
-      "time_activated_utc": null,
+      "date_activated": "2026-06-09",
+      "time_activated_utc": "04:32",
       "date_opened": "2026-06-09",
       "time_opened_utc": "04:26",
       "conviction": "MEDIUM",
@@ -536,20 +536,52 @@
       "rehearsal": true,
       "rehearsal_size_usd": 68.68,
       "rehearsal_vol": 34
+    },
+    {
+      "trade_id": "ETHUSDT_20260609_CB_001",
+      "coin": "ETHUSDT",
+      "direction": "Short",
+      "entry_price": 1666.46521465,
+      "sl": 1734.27939251,
+      "tp1": 1545.65845366,
+      "tp2": 1352.10412391,
+      "capital_usd": 68.68,
+      "leverage": 3,
+      "trading_system": "Braam",
+      "track_only": false,
+      "status": "PENDING",
+      "price_at_run": 1665.01,
+      "date_activated": null,
+      "time_activated_utc": null,
+      "date_opened": "2026-06-09",
+      "time_opened_utc": "04:32",
+      "conviction": "MEDIUM",
+      "tp1_hit": false,
+      "sl_moved_to_be": false,
+      "pnl_tp1_realized_usd": null,
+      "live_executed": null,
+      "live_entry_fill": null,
+      "live_exit_fill": null,
+      "live_entry_slippage_pct": null,
+      "live_fees_usd": null,
+      "live_funding_usd": null,
+      "rehearsal": true,
+      "rehearsal_size_usd": 68.68,
+      "rehearsal_vol": 12
     }
   ],
   "recent_signals": [
     {
-      "trade_id": "BNBUSDT_20260609_CB_001",
-      "coin": "BNBUSDT",
+      "trade_id": "ETHUSDT_20260609_CB_001",
+      "coin": "ETHUSDT",
       "direction": "Short",
       "trading_system": "Braam",
-      "entry_price": 597.84359647,
-      "tp1": 562.00978394,
-      "sl": 616.40168407,
+      "entry_price": 1666.46521465,
+      "tp1": 1545.65845366,
+      "sl": 1734.27939251,
       "conviction": "MEDIUM",
       "track_only": false,
-      "iso": "2026-06-09T04:26:00Z",
+      "iso": "2026-06-09T04:32:00Z",
       "rehearsal": true
     }
   ],
@@ -637,6 +669,18 @@
       "iso": "2026-06-08T20:00:00Z",
       "_iso_ms": 1780948800000,
       "rehearsal": true
+    },
+    {
+      "trade_id": "BNBUSDT_20260609_CB_001",
+      "coin": "BNBUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "entry_price": 597.84359647,
+      "live_entry_fill": null,
+      "tp1_hit": false,
+      "iso": "2026-06-09T04:32:00Z",
+      "_iso_ms": 1780979520000,
+      "rehearsal": true
     }
   ],
   "recent_closes": [
@@ -673,8 +717,8 @@
         "closed_count": 1
       }
     },
-    "live_trade_count_total": 16,
+    "live_trade_count_total": 17,
     "live_real_count": 0,
-    "live_rehearsal_count": 16
+    "live_rehearsal_count": 17
   }
 }
