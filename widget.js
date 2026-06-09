@@ -116,10 +116,24 @@ function computePaper(dash, livePx) {
   const total     = realized + unrealized;
   const wr        = stats.win_rate_pct  ?? 0;
   const closed    = stats.closed_count  ?? 0;
+  // Canonical realized-P&L % — emitted by publish_dashboard.py /
+  // publish_live_dashboard.py. Widget never computes its own %; reads
+  // this so widget + dashboard never drift.
+  const pct       = stats.realized_pnl_pct ?? 0;
   const openCnt   = trades.filter(t => t.status === "OPEN").length;
   const pendCnt   = trades.filter(t => t.status === "PENDING").length;
 
-  return { total, realized, unrealized, wr, closed, openCnt, pendCnt };
+  return { total, realized, unrealized, pct, wr, closed, openCnt, pendCnt };
+}
+
+// "+$X.XX (+P.PP%)" — matches dashboard's hero format. Drops to just
+// the $ figure if pct is null/undefined (legacy data).
+function fmtUsdPct(v, pct) {
+  if (v == null || isNaN(v)) return "--";
+  const $ = fmtUsdFull(v);
+  if (pct == null || isNaN(pct)) return $;
+  const sign = pct >= 0 ? "+" : "";
+  return `${$} (${sign}${pct.toFixed(2)}%)`;
 }
 
 // -- Widget builders
@@ -160,14 +174,15 @@ function buildSmall(w, paper, mexc) {
 
   txt(w, "PAPER", 8, C.muted, true);
   w.addSpacer(3);
-  txt(w, fmtUsdFull(paper.total), 28, colorFor(paper.total), true);
+  txt(w, fmtUsdPct(paper.total, paper.pct), 22, colorFor(paper.total), true);
 
   w.addSpacer(12);
 
   txt(w, "MEXC LIVE", 8, C.muted, true);
   w.addSpacer(3);
   const mexcPnl = mexc?.unrealized_pnl ?? null;
-  txt(w, fmtUsd(mexcPnl), 28, colorFor(mexcPnl), true);
+  const mexcPct = mexc?.unrealized_pct != null ? mexc.unrealized_pct * 100 : null;
+  txt(w, fmtUsdPct(mexcPnl, mexcPct), 22, colorFor(mexcPnl), true);
 
   w.addSpacer();
   const now = new Date();
@@ -193,8 +208,8 @@ function buildMedium(w, paper, mexc, now) {
   txt(lh, "LIVE", 7, C.green, false);
   left.addSpacer(5);
 
-  // Big number
-  txt(left, fmtUsdFull(paper.total), 28, colorFor(paper.total), true);
+  // Big number + canonical realized % (publisher-emitted)
+  txt(left, fmtUsdPct(paper.total, paper.pct), 22, colorFor(paper.total), true);
   left.addSpacer(7);
 
   // Stats row 1: realized / unrealized
@@ -221,9 +236,11 @@ function buildMedium(w, paper, mexc, now) {
   txt(right, "MEXC LIVE", 8, C.muted, true);
   right.addSpacer(5);
 
-  // Big number
-  const mp = mexc?.unrealized_pnl ?? null;
-  txt(right, fmtUsd(mp), 28, colorFor(mp), true);
+  // Big number — MEXC's unrealized_pct already comes as a decimal
+  // (e.g. 0.0186 → 1.86%); convert to % for display.
+  const mp    = mexc?.unrealized_pnl ?? null;
+  const mpPct = mexc?.unrealized_pct != null ? mexc.unrealized_pct * 100 : null;
+  txt(right, fmtUsdPct(mp, mpPct), 22, colorFor(mp), true);
   right.addSpacer(7);
 
   // Equity / available
