@@ -128,12 +128,15 @@ function computePaper(dash, livePx) {
 
 // "+$X.XX (+P.PP%)" — matches dashboard's hero format. Drops to just
 // the $ figure if pct is null/undefined (legacy data).
+// Uses a non-breaking space ( ) between $ and (%) so iOS
+// Scriptable can't word-wrap the bracketed % onto a second line
+// on Medium-width cards.
 function fmtUsdPct(v, pct) {
   if (v == null || isNaN(v)) return "--";
   const $ = fmtUsdFull(v);
   if (pct == null || isNaN(pct)) return $;
   const sign = pct >= 0 ? "+" : "";
-  return `${$} (${sign}${pct.toFixed(2)}%)`;
+  return `${$} (${sign}${pct.toFixed(2)}%)`;
 }
 
 // -- Widget builders
