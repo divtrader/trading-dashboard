@@ -831,7 +831,11 @@ function renderMexcPositions(positions) {
 }
 
 // === Bloomberg news flash ===
-const BLOOMBERG_SEEN_KEY = "bloombergSeenIds_v2";
+// Per-dashboard storage keys: paper + live share localStorage (same origin)
+// but track "seen" articles independently. Otherwise whichever tab polls
+// first consumes the news for the other.
+const BLOOMBERG_SEEN_KEY = "bloombergSeenIds_v2_paper";
+const BLOOMBERG_FIRSTRUN_KEY = "bloombergFirstRun_v2_paper";
 function loadBloombergSeen() {
   try { return new Set(JSON.parse(localStorage.getItem(BLOOMBERG_SEEN_KEY) || "[]")); }
   catch { return new Set(); }
@@ -840,7 +844,7 @@ function saveBloombergSeen(s) {
   localStorage.setItem(BLOOMBERG_SEEN_KEY, JSON.stringify([...s].slice(-50)));
 }
 let bloombergSeen = loadBloombergSeen();
-let bloombergFirstRun = !localStorage.getItem("bloombergFirstRun_v2");
+let bloombergFirstRun = !localStorage.getItem(BLOOMBERG_FIRSTRUN_KEY);
 
 function checkBloombergNews(articles) {
   if (!articles) return;
@@ -850,7 +854,7 @@ function checkBloombergNews(articles) {
     // is set to false before new articles can arrive on the next fetch.
     articles.forEach(a => bloombergSeen.add(a.id));
     saveBloombergSeen(bloombergSeen);
-    localStorage.setItem("bloombergFirstRun_v2", "1");
+    localStorage.setItem(BLOOMBERG_FIRSTRUN_KEY, "1");
     bloombergFirstRun = false;
     return;
   }
