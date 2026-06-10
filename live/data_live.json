@@ -1,13 +1,8 @@
 {
   "mode": "live",
   "rehearsal_mode": true,
-  "last_updated_iso": "2026-06-10T16:04:46Z",
-  "mexc_account": {
-    "unrealized_pnl": 0.0,
-    "equity": 0.0,
-    "available": 0.0,
-    "position_margin": 0.0
-  },
+  "last_updated_iso": "2026-06-10T17:00:14Z",
+  "mexc_account": null,
   "api_keys": [
     {
       "label": "MEXC AlgoTrading sub-account (live orders)",
@@ -75,9 +70,9 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$0.00",
-      "status": "ok",
-      "action": null
+      "value": "unavailable",
+      "status": "warn",
+      "action": "Worker fetch failed \u2014 check mexc-proxy + ALGO key."
     },
     {
       "key": "worker_deploy",
@@ -442,51 +437,19 @@
       "rehearsal_vol": 30
     },
     {
-      "trade_id": "AVAXUSDT_20260606_CB_001",
-      "coin": "AVAXUSDT",
-      "direction": "Short",
-      "entry_price": 7.2994548,
-      "sl": 7.76699994,
-      "tp1": 6.44988783,
-      "tp2": 5.19895303,
-      "capital_usd": 68.68,
-      "leverage": 3,
-      "trading_system": "Braam",
-      "track_only": false,
-      "status": "PENDING",
-      "price_at_run": 6.711,
-      "date_activated": null,
-      "time_activated_utc": null,
-      "date_opened": "2026-06-06",
-      "time_opened_utc": "16:05",
-      "conviction": "MEDIUM",
-      "tp1_hit": false,
-      "sl_moved_to_be": false,
-      "pnl_tp1_realized_usd": null,
-      "live_executed": null,
-      "live_entry_fill": null,
-      "live_exit_fill": null,
-      "live_entry_slippage_pct": null,
-      "live_fees_usd": null,
-      "live_funding_usd": null,
-      "rehearsal": true,
-      "rehearsal_size_usd": 68.68,
-      "rehearsal_vol": 282
-    },
-    {
       "trade_id": "BTCUSDT_20260607_CJ_001",
       "coin": "BTCUSDT",
       "direction": "Short",
-      "entry_price": 65682.02154923,
-      "sl": 66842.01798223,
-      "tp1": 54139.64449976,
-      "tp2": 50912.47172605,
+      "entry_price": 66093.31296944,
+      "sl": 67253.30940244,
+      "tp1": 52351.5873023,
+      "tp2": 50068.65021195,
       "capital_usd": 68.68,
       "leverage": 3,
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 62500.26,
+      "price_at_run": 62181.99,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-06-07",
@@ -518,7 +481,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "OPEN",
-      "price_at_run": 65.3,
+      "price_at_run": 64.58,
       "date_activated": "2026-06-08",
       "time_activated_utc": "20:00",
       "date_opened": "2026-06-08",
@@ -696,6 +659,38 @@
       "rehearsal": true,
       "rehearsal_size_usd": 83.03,
       "rehearsal_vol": 1491
+    },
+    {
+      "trade_id": "DOGEUSDT_20260610_CJ_001",
+      "coin": "DOGEUSDT",
+      "direction": "Short",
+      "entry_price": 0.08962368,
+      "sl": 0.09158671,
+      "tp1": 0.07007608,
+      "tp2": 0.06921659,
+      "capital_usd": 83.03,
+      "leverage": 3,
+      "trading_system": "John",
+      "track_only": false,
+      "status": "PENDING",
+      "price_at_run": 0.08413,
+      "date_activated": null,
+      "time_activated_utc": null,
+      "date_opened": "2026-06-10",
+      "time_opened_utc": "16:03",
+      "conviction": "HIGH",
+      "tp1_hit": false,
+      "sl_moved_to_be": null,
+      "pnl_tp1_realized_usd": null,
+      "live_executed": null,
+      "live_entry_fill": null,
+      "live_exit_fill": null,
+      "live_entry_slippage_pct": null,
+      "live_fees_usd": null,
+      "live_funding_usd": null,
+      "rehearsal": true,
+      "rehearsal_size_usd": 83.03,
+      "rehearsal_vol": 27
     }
   ],
   "recent_signals": [
@@ -710,6 +705,19 @@
       "conviction": "MEDIUM",
       "track_only": false,
       "iso": "2026-06-10T06:08:00Z",
+      "rehearsal": true
+    },
+    {
+      "trade_id": "DOGEUSDT_20260610_CJ_001",
+      "coin": "DOGEUSDT",
+      "direction": "Short",
+      "trading_system": "John",
+      "entry_price": 0.08962368,
+      "tp1": 0.07007608,
+      "sl": 0.09158671,
+      "conviction": "HIGH",
+      "track_only": false,
+      "iso": "2026-06-10T16:03:00Z",
       "rehearsal": true
     }
   ],
@@ -772,7 +780,15 @@
       "rehearsal": true
     }
   ],
-  "recent_cancels": [],
+  "recent_cancels": [
+    {
+      "coin": "AVAXUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "close_reason": "Stale 12.3h \u2265 12h grace: Price $6.5030 is 12.2% below entry $7.2995",
+      "iso": "2026-06-10T16:59:00Z"
+    }
+  ],
   "tp1_hits_open": [],
   "stats": {
     "realized_pnl_usd": -17.97,
@@ -786,8 +802,8 @@
         "closed_count": 1
       }
     },
-    "live_trade_count_total": 22,
+    "live_trade_count_total": 23,
     "live_real_count": 0,
-    "live_rehearsal_count": 22
+    "live_rehearsal_count": 23
   }
 }
