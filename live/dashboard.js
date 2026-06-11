@@ -797,11 +797,60 @@ function renderOrderHealth() {
     lines.push(`🟡 ${liqWatch.map(x => `${x.coin} ${x.pct.toFixed(0)}% from liq`).join(" · ")}`);
   }
 
+  // ── Mover health (section 3) — from mover_health in Worker GET / ──
+  const mh = m.mover_health;
+  let moverLine = null;
+  if (mh) {
+    const moverNaked  = mh.naked      || [];
+    const moverNeeds  = mh.needs_move || [];
+    const runners     = mh.runners    ?? 0;
+    const inSync      = mh.in_sync    ?? 0;
+
+    // Debounce needs_move per coin (2 consecutive polls before flagging)
+    const needsKey = c => "mv_needs_" + c;
+    for (const c of moverNeeds) {
+      _ohBadPolls[needsKey(c)] = (_ohBadPolls[needsKey(c)] || 0) + 1;
+    }
+    // Debounce mover naked per coin
+    const nakedKey = c => "mv_naked_" + c;
+    for (const c of moverNaked) {
+      _ohBadPolls[nakedKey(c)] = (_ohBadPolls[nakedKey(c)] || 0) + 1;
+    }
+    // Reset coins that cleared
+    for (const k of Object.keys(_ohBadPolls)) {
+      if (k.startsWith("mv_needs_") && !moverNeeds.includes(k.slice(9))) _ohBadPolls[k] = 0;
+      if (k.startsWith("mv_naked_") && !moverNaked.includes(k.slice(9))) _ohBadPolls[k] = 0;
+    }
+
+    const confirmedNaked = moverNaked.filter(c => (_ohBadPolls[nakedKey(c)] || 0) >= 2);
+    const confirmedNeeds = moverNeeds.filter(c => (_ohBadPolls[needsKey(c)] || 0) >= 2);
+
+    if (confirmedNaked.length) {
+      moverLine = `🔴 Mover NAKED: ${confirmedNaked.join(" · ")}`;
+    } else if (confirmedNeeds.length) {
+      moverLine = `🟡 ${confirmedNeeds.join(", ")}: TP1 hit, SL move pending`;
+    } else if (runners > 0) {
+      // Healthy — fold into green line or show inline
+      moverLine = `mover ✅ ${inSync}/${runners}`;
+    }
+  }
+
+  // Fold healthy mover status into the green line; show as separate line when alarming
+  const moverIsAlarm = moverLine && (moverLine.startsWith("🔴") || moverLine.startsWith("🟡"));
+
+  if (!critical.length && !degraded.length && !liqDanger.length && !liqWatch.length) {
+    // All healthy — single compact line with mover folded in
+    const moverSuffix = moverLine && !moverIsAlarm ? ` · ${moverLine}` : "";
+    lines[0] = `🟢 Order Health: ${total}/${total} protected${liqSuffix}${moverSuffix}`;
+  }
+
+  if (moverIsAlarm) lines.push(moverLine);
+
   el.innerHTML = lines.join('<br>');
 
-  // Class driven by worst state across both checks
-  const hasCritical = critical.length > 0 || liqDanger.length > 0;
-  const hasWarning  = degraded.length > 0 || liqWatch.length > 0;
+  // Class driven by worst state across all three checks
+  const hasCritical = critical.length > 0 || liqDanger.length > 0 || (moverLine || "").startsWith("🔴");
+  const hasWarning  = degraded.length > 0 || liqWatch.length > 0  || (moverLine || "").startsWith("🟡");
   el.className = "order-health-strip" + (hasCritical ? " critical" : hasWarning ? " degraded" : " healthy");
 }
 
