@@ -225,7 +225,7 @@ main {
   grid-template-rows: 3.6fr 0.5fr auto;
   gap: 12px;
 }
-#screen-1 .price-bar { grid-column: 1 / -1; }
+/* price-bar removed from screen-1; order-health-strip takes the bottom row */
 
 /* Count tiles (Open / Pending) — center the big number ── */
 .count-tile {
@@ -493,6 +493,26 @@ main {
 .mexc-block { align-items: flex-end; text-align: right; }
 .mexc-block .hero-breakdown { justify-content: flex-end; }
 .mexc-block .pnl-block-label { color: #ffb74d; }
+
+/* ── Order Health strip ── */
+.order-health-strip {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 14px;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.06);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  color: var(--muted);
+  transition: background 0.4s, color 0.4s, border-color 0.4s;
+}
+.order-health-strip.healthy  { color: var(--green);  background: rgba(0,201,167,0.07);  border-color: rgba(0,201,167,0.2); }
+.order-health-strip.degraded { color: var(--orange); background: rgba(255,152,0,0.07);  border-color: rgba(255,152,0,0.2); }
+.order-health-strip.critical { color: var(--red);    background: rgba(255,77,94,0.12);  border-color: rgba(255,77,94,0.3); }
 
 /* ── MEXC mini position bars ── */
 .mexc-positions {

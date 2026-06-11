@@ -649,6 +649,7 @@ function render() {
   renderActivity();
   renderPendingTriggers();
   renderMexcCard();
+  renderOrderHealth();
   renderS0();
   renderRecentClosesTile();
   renderApiKeys();
@@ -701,6 +702,107 @@ function renderRecentClosesTile() {
       </div>`;
   }).join("");
   flipReplace(el, newHtml);
+}
+
+// Order Health — per-coin consecutive bad-poll counter (debounce before alarming)
+const _ohBadPolls = {};
+
+function renderOrderHealth() {
+  const el = $("order-health");
+  if (!el) return;
+
+  const m = state.mexcAccount;
+  if (!m || m.error) {
+    el.innerHTML = "⚪ Order Health: unavailable";
+    el.className = "order-health-strip";
+    return;
+  }
+
+  const positions = m.positions || [];
+  if (!positions.length) {
+    el.innerHTML = "🟢 Order Health: no open positions";
+    el.className = "order-health-strip healthy";
+    return;
+  }
+
+  const critical = [], degraded = [];
+  const seenCoins = new Set();
+
+  // Liq proximity: track worst (closest) position
+  let worstLiqPct = Infinity, worstLiqCoin = null;
+  const liqWatch = [], liqDanger = [];
+
+  for (const p of positions) {
+    const coin = (p.coin || "").replace("USDT", "");
+    seenCoins.add(coin);
+    const hasSL  = p.sl  != null && p.sl  > 0;
+    const hasTP1 = p.tp1 != null && p.tp1 > 0;
+
+    // Primary health: SL / TP checks (debounced)
+    if (!hasSL || !hasTP1) {
+      _ohBadPolls[coin] = (_ohBadPolls[coin] || 0) + 1;
+      if (_ohBadPolls[coin] >= 2) {
+        if (!hasSL)       critical.push(`${coin} (no SL)`);
+        else if (!hasTP1) degraded.push(`${coin} (no TP1)`);
+      }
+    } else {
+      _ohBadPolls[coin] = 0;
+    }
+
+    // Secondary health: liq proximity (immediate — informational, no debounce)
+    if (p.liq != null && p.mark != null && p.mark > 0) {
+      const liqPct = Math.abs(p.liq - p.mark) / p.mark * 100;
+      if (liqPct < worstLiqPct) { worstLiqPct = liqPct; worstLiqCoin = coin; }
+      if      (liqPct < 8)  liqDanger.push({ coin, pct: liqPct });
+      else if (liqPct < 15) liqWatch.push({ coin, pct: liqPct });
+
+      // Sanity: SL placed beyond liq (liq would fire before SL)
+      const isLong = p.direction === "Long";
+      const slBeyondLiq = hasSL && (isLong ? p.sl <= p.liq : p.sl >= p.liq);
+      if (slBeyondLiq) degraded.push(`${coin} (SL past liq)`);
+    }
+  }
+
+  // Clean up counters for positions that closed
+  for (const k of Object.keys(_ohBadPolls)) {
+    if (!seenCoins.has(k)) delete _ohBadPolls[k];
+  }
+
+  const total = positions.length;
+  const liqSuffix = worstLiqCoin != null
+    ? ` · nearest liq ${worstLiqPct.toFixed(0)}%`
+    : "";
+
+  // Build lines: primary alarm first, secondary liq info second
+  const lines = [];
+
+  if (critical.length) {
+    lines.push(`🔴 ${critical.length} NAKED: ${critical.join(" · ")}`);
+  } else if (degraded.length) {
+    lines.push(`🟡 ${degraded.length} order issue: ${degraded.join(" · ")}`);
+  } else {
+    lines.push(`🟢 Order Health: ${total}/${total} protected${liqSuffix}`);
+  }
+
+  // Liq alerts as separate line when not folded into green
+  if (critical.length || degraded.length) {
+    if (liqDanger.length) {
+      lines.push(`🔴 ${liqDanger.map(x => `${x.coin} ${x.pct.toFixed(0)}% from liq`).join(" · ")}`);
+    } else if (liqWatch.length) {
+      lines.push(`🟡 ${liqWatch.map(x => `${x.coin} ${x.pct.toFixed(0)}% from liq`).join(" · ")}`);
+    }
+  } else if (liqDanger.length) {
+    lines.push(`🔴 ${liqDanger.map(x => `${x.coin} ${x.pct.toFixed(0)}% from liq`).join(" · ")}`);
+  } else if (liqWatch.length) {
+    lines.push(`🟡 ${liqWatch.map(x => `${x.coin} ${x.pct.toFixed(0)}% from liq`).join(" · ")}`);
+  }
+
+  el.innerHTML = lines.join('<br>');
+
+  // Class driven by worst state across both checks
+  const hasCritical = critical.length > 0 || liqDanger.length > 0;
+  const hasWarning  = degraded.length > 0 || liqWatch.length > 0;
+  el.className = "order-health-strip" + (hasCritical ? " critical" : hasWarning ? " degraded" : " healthy");
 }
 
 function renderMexcCard() {
@@ -1946,6 +2048,7 @@ async function fetchMexcLive() {
     state.mexcAccount = m;
     mexcWorkerFailing = false;
     renderMexcCard();
+    renderOrderHealth();
     renderS0();
   } catch (e) {
     if (!mexcWorkerFailing) console.warn("MEXC worker:", e.message);
