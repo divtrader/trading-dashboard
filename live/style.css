@@ -551,6 +551,23 @@ main {
 .mexc-pos-marker.entry { background: rgba(255,255,255,0.85); }
 .mexc-pos-marker.tp1   { background: var(--green); opacity: 0.85; }
 .mexc-pos-marker.tp2   { background: var(--green); }
+.mexc-pos-prices {
+  position: relative;
+  height: 14px;
+  margin-top: 3px;
+}
+.mexc-lvl {
+  position: absolute;
+  transform: translateX(-50%);
+  font-size: 9px;
+  font-weight: 600;
+  line-height: 1;
+  white-space: nowrap;
+  color: var(--muted);
+}
+.mexc-lvl.sl  { color: var(--red);   opacity: 0.75; }
+.mexc-lvl.tp1 { color: var(--green); opacity: 0.75; }
+.mexc-lvl.tp2 { color: var(--green); opacity: 0.95; }
 .mexc-pos-dot {
   position: absolute; top: 50%;
   width: 9px; height: 9px; border-radius: 50%;

@@ -801,6 +801,11 @@ function renderMexcPositions(positions) {
           ${tp1Pct !== null ? `<div class="mexc-pos-marker tp1" style="left:${tp1Pct.toFixed(1)}%"></div>` : ""}
           ${tp2Pct !== null ? `<div class="mexc-pos-marker tp2" style="left:${tp2Pct.toFixed(1)}%"></div>` : ""}
           <div class="mexc-pos-dot" style="left:${mPct.toFixed(1)}%;background:${liveColor};box-shadow:0 0 8px ${liveColor}"></div>
+          <div class="mexc-pos-prices">
+            <span class="mexc-lvl sl"  style="left:${slPct.toFixed(1)}%">${fmtPrice(slPrice)}</span>
+            ${tp1Pct !== null ? `<span class="mexc-lvl tp1" style="left:${tp1Pct.toFixed(1)}%">${fmtPrice(tp1Price)}</span>` : ""}
+            ${tp2Pct !== null ? `<span class="mexc-lvl tp2" style="left:${tp2Pct.toFixed(1)}%">${fmtPrice(tp2Price)}</span>` : ""}
+          </div>
         </div>
         <div class="mexc-pos-pnl ${pnlCls}">${fmtUsd(p.unrealized_pnl)}</div>
       </div>`;
