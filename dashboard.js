@@ -1005,7 +1005,6 @@ function renderPaperBars(enrichedOpen) {
             <span class="pb-sys">${sys}</span>
             ${beActive ? '<span class="pb-be">BE</span>' : ""}
           </div>
-          <div class="pb-tid">${t.trade_id || ""}</div>
         </div>
         <div class="pb-bar">
           <div class="pb-track"></div>
@@ -1031,6 +1030,7 @@ function renderPaperBars(enrichedOpen) {
           <div class="pb-pnl-usd">${fmtUsd(usd)}</div>
           ${breakdownHtml}
         </div>
+        <div class="pb-tid pb-tid-foot" title="Double-click to copy">${t.trade_id || ""}</div>
       </div>`;
   };
 
