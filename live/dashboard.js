@@ -935,14 +935,11 @@ function renderPaperBars(enrichedOpen) {
     const beActive = tp1Hit || !!t.sl_moved_to_be;
     const tp1Cls = tp1Hit ? " tp1-hit" : "";
 
-    // Scale: SL = 0%, TP1 = 100%. Phase-1 live trading is 100%-close-at-TP1
-    // (per MEMORY: no TP2 runner on live). Force hasTP2=false here so TP2
-    // never renders even if the underlying paper engine wrote a tp2 value.
     const sl = t.sl;
     const tp1 = t.tp1;
     const tp2 = t.tp2;
-    const hasTP2 = false;
-    const furthest = tp1;
+    const hasTP2 = !!(tp2 && tp2 !== tp1);
+    const furthest = hasTP2 ? (isLong ? Math.max(tp1, tp2) : Math.min(tp1, tp2)) : tp1;
     const span = isLong ? (furthest - sl) : (sl - furthest);
     const posOf = price => {
       const v = isLong ? (price - sl) / span : (sl - price) / span;
