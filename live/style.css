@@ -222,7 +222,7 @@ main {
 #screen-1 {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 3.1fr 0.7fr auto;
+  grid-template-rows: 3.6fr 0.5fr auto;
   gap: 12px;
 }
 #screen-1 .price-bar { grid-column: 1 / -1; }
@@ -233,9 +233,9 @@ main {
   text-align: center;
   justify-content: center;
 }
-.count-tile .label { letter-spacing: 2px; }
-.count-tile .value { margin: 2px 0; }
-.count-tile .sub   { font-size: 13px; }
+.count-tile .label { letter-spacing: 2px; font-size: 10px; }
+.count-tile .value { margin: 0; font-size: 28px !important; }
+.count-tile .sub   { font-size: 11px; }
 
 /* Recent closes mini-list ── */
 .recent-closes-tile {
