@@ -246,17 +246,15 @@ function buildMedium(w, paper, mexc, now) {
   txt(right, "MEXC LIVE", 8, C.muted, true);
   right.addSpacer(5);
 
-  // Worker emits unrealized_pct as percentage points already
-  // (e.g. -3.5 = -3.5%). Don't multiply by 100.
-  const mp    = mexc?.unrealized_pnl ?? null;
-  const mpPct = mexc?.unrealized_pct ?? null;
+  const mp = mexc?.unrealized_pnl ?? null;
+  const eq = mexc?.equity         ?? 0;
+  const av = mexc?.available      ?? 0;
+  // Return-on-equity: unrealized / equity (fixes ~100× inflation from margin denominator)
+  const mpPct = eq > 0 && mp != null ? (mp / eq) * 100 : null;
   txt(right, fmtUsdPct(mp, mpPct), 20, colorFor(mp), true, true);
   right.addSpacer(7);
 
   // Equity / available
-  const eq = mexc?.equity          ?? 0;
-  const av = mexc?.available        ?? 0;
-  const mg = mexc?.position_margin  ?? 0;
   const mr1 = right.addStack();
   mr1.layoutHorizontally();
   mr1.spacing = 12;
@@ -264,10 +262,13 @@ function buildMedium(w, paper, mexc, now) {
   statBlock(mr1, "AVAILABLE", "$" + Math.round(av), C.fg);
   right.addSpacer(5);
 
-  // Margin + refresh time
+  // Win rate / open / pending — mirrors paper side
   const mr2 = right.addStack();
   mr2.layoutHorizontally();
-  statBlock(mr2, "MARGIN", "$" + Math.round(mg), C.muted);
+  mr2.spacing = 12;
+  statBlock(mr2, "WIN RATE", paper.wr.toFixed(1) + "%", paper.wr >= 50 ? C.green : paper.wr >= 30 ? C.orange : C.red);
+  statBlock(mr2, "OPEN",    String(paper.openCnt),  C.fg);
+  statBlock(mr2, "PENDING", String(paper.pendCnt),  C.muted);
   mr2.addSpacer();
 
   // Updated timestamp

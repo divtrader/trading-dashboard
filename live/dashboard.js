@@ -1113,11 +1113,10 @@ function renderHero(enrichedOpen) {
   }
   const pctEl2 = $("hero-pct");
   if (pctEl2) {
-    const closedCap = (state.stats.closed_count ?? 0) * 100;
-    const totalDeployed = closedCap + totalCap;
-    const retPct = totalDeployed > 0 ? (total / totalDeployed) * 100 : 0;
-    // Bracketed % rendered inline next to the big $ value (no longer a
-    // separate "on all capital deployed" sentence).
+    // Return-on-equity: total P&L / MEXC wallet equity.
+    // Using per-trade margin as denominator gave ~100× inflated % (margin << equity).
+    const equity = state.mexcAccount?.equity;
+    const retPct = equity > 0 ? (total / equity) * 100 : 0;
     pctEl2.textContent = "(" + (retPct >= 0 ? "+" : "") + retPct.toFixed(2) + "%)";
     pctEl2.className = "hero-pct-inline " + cls(total);
   }
