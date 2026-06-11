@@ -5,6 +5,7 @@
 // ======================================
 
 const DATA_URL = "https://divtrader.github.io/trading-dashboard/data.json";
+const LIVE_URL = "https://divtrader.github.io/trading-dashboard/live/data_live.json";
 const MEXC_URL = "https://mexc-proxy.braamdeclerk.workers.dev";
 
 // -- Colours --
@@ -61,9 +62,10 @@ async function fetchLivePrices(symbols) {
 // -- Fetch
 async function loadData() {
   try {
-    const [dash, mexc] = await Promise.all([
+    const [dash, mexc, liveData] = await Promise.all([
       new Request(DATA_URL).loadJSON(),
       new Request(MEXC_URL).loadJSON(),
+      new Request(LIVE_URL).loadJSON().catch(() => null),
     ]);
 
     // Fetch live prices for all open paper trades
@@ -71,7 +73,7 @@ async function loadData() {
     const symbols = [...new Set(openTrades.map(t => t.coin).filter(Boolean))];
     const livePx = await fetchLivePrices(symbols);
 
-    return { dash, mexc, livePx };
+    return { dash, mexc, livePx, liveData };
   } catch (e) {
     return null;
   }
@@ -139,6 +141,15 @@ function fmtUsdPct(v, pct) {
   return `${$} (${sign}${pct.toFixed(2)}%)`;
 }
 
+function computeLive(liveData) {
+  const trades = (liveData?.active_trades || []);
+  const stats  = liveData?.stats || {};
+  const openCnt = trades.filter(t => t.status === "OPEN").length;
+  const pendCnt = trades.filter(t => t.status === "PENDING").length;
+  const wr = stats.win_rate_pct ?? 0;
+  return { openCnt, pendCnt, wr };
+}
+
 // -- Widget builders
 // oneLine=true forces lineLimit=1 + a more aggressive scale floor so
 // long strings (like "+$X.XX (+P.PP%)") shrink to fit rather than
@@ -200,7 +211,7 @@ function buildSmall(w, paper, mexc) {
 }
 
 // -- MEDIUM
-function buildMedium(w, paper, mexc, now) {
+function buildMedium(w, paper, mexc, live, now) {
   w.setPadding(13, 13, 13, 13);
 
   const row = w.addStack();
@@ -268,19 +279,19 @@ function buildMedium(w, paper, mexc, now) {
   statBlock(mr1, "AVAILABLE", "$" + Math.round(av), C.fg);
   right.addSpacer(5);
 
-  // Win rate / open / pending — mirrors paper side (no trailing spacer = no truncation)
+  // Win rate / open / pending — live MEXC counts from data_live.json
   const mr2 = right.addStack();
   mr2.layoutHorizontally();
   mr2.spacing = 12;
-  statBlock(mr2, "WIN RATE", paper.wr.toFixed(1) + "%", paper.wr >= 50 ? C.green : paper.wr >= 30 ? C.orange : C.red);
-  statBlock(mr2, "OPEN",    String(paper.openCnt),  C.fg);
-  statBlock(mr2, "PENDING", String(paper.pendCnt),  C.muted);
+  statBlock(mr2, "WIN RATE", live.wr.toFixed(1) + "%", live.wr >= 50 ? C.green : live.wr >= 30 ? C.orange : C.red);
+  statBlock(mr2, "OPEN",    String(live.openCnt),  C.fg);
+  statBlock(mr2, "PENDING", String(live.pendCnt),  C.muted);
 
 }
 
 // -- LARGE
-function buildLarge(w, paper, mexc, now) {
-  buildMedium(w, paper, mexc, now);
+function buildLarge(w, paper, mexc, live, now) {
+  buildMedium(w, paper, mexc, live, now);
 
   w.addSpacer(10);
   txt(w, "RECENT CLOSES", 8, C.muted, true);
@@ -321,12 +332,13 @@ if (!data) {
   t.font = Font.systemFont(13);
 } else {
   const paper = computePaper(data.dash, data.livePx);
+  const live  = computeLive(data.liveData);
   const mexc  = data.mexc?.error ? null : data.mexc;
   const size  = config.widgetFamily ?? "medium";
 
   if      (size === "small") buildSmall (widget, paper, mexc);
-  else if (size === "large") { widget._dash = data.dash; buildLarge(widget, paper, mexc, now); }
-  else                       buildMedium(widget, paper, mexc, now);
+  else if (size === "large") { widget._dash = data.dash; buildLarge(widget, paper, mexc, live, now); }
+  else                       buildMedium(widget, paper, mexc, live, now);
 }
 
 Script.setWidget(widget);
