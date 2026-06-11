@@ -262,17 +262,16 @@ function buildMedium(w, paper, mexc, now) {
   statBlock(mr1, "AVAILABLE", "$" + Math.round(av), C.fg);
   right.addSpacer(5);
 
-  // Win rate / open / pending — mirrors paper side
+  // Win rate / open / pending — mirrors paper side (no trailing spacer = no truncation)
   const mr2 = right.addStack();
   mr2.layoutHorizontally();
   mr2.spacing = 12;
   statBlock(mr2, "WIN RATE", paper.wr.toFixed(1) + "%", paper.wr >= 50 ? C.green : paper.wr >= 30 ? C.orange : C.red);
   statBlock(mr2, "OPEN",    String(paper.openCnt),  C.fg);
   statBlock(mr2, "PENDING", String(paper.pendCnt),  C.muted);
-  mr2.addSpacer();
 
-  // Updated timestamp
-  right.addSpacer(5);
+  // Updated timestamp — right-aligned, flush with bottom
+  right.addSpacer();
   const ts2 = right.addStack();
   ts2.layoutHorizontally();
   ts2.addSpacer();
