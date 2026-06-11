@@ -1086,7 +1086,10 @@ function renderS0() {
 
 function renderHero(enrichedOpen) {
   const enriched = enrichedOpen || state.trades.filter(t => t.status === "OPEN").map(t => ({ ...t, ...computeUnrealized(t) }));
-  const unrealized = enriched.reduce((s, t) => s + t.usd, 0);
+  // Use MEXC's own unrealized figure (mark-price, correct sizing) when available.
+  // Fall back to paper-computed estimate only if Worker hasn't polled yet.
+  const mexcUnrealized = state.mexcAccount?.unrealized_pnl ?? null;
+  const unrealized = mexcUnrealized != null ? mexcUnrealized : enriched.reduce((s, t) => s + t.usd, 0);
   const totalCap   = enriched.reduce((s, t) => s + (t.capital_usd || 100), 0);
   // realized = fully-closed trades + banked TP1 portion from still-open tp1_hit trades
   const tp1Banked  = enriched.reduce((s, t) => s + (t.tp1BankedUsd || 0), 0);
