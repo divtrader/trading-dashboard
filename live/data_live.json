@@ -1,7 +1,7 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-06-11T05:29:29Z",
+  "last_updated_iso": "2026-06-11T05:47:02Z",
   "mexc_account": {
     "unrealized_pnl": 0.0,
     "equity": 0.0,
@@ -157,7 +157,7 @@
       "direction": "Short",
       "entry_price": 65.43768094,
       "sl": 68.12057756,
-      "tp1": 61.5,
+      "tp1": 61.0,
       "tp2": 50.72874226,
       "capital_usd": 83.03,
       "leverage": 3,
@@ -600,6 +600,36 @@
       "live_fees_usd": 0.1493,
       "live_funding_usd": null,
       "rehearsal": false
+    },
+    {
+      "trade_id": "DOGEUSDT_20260611_CJ_001",
+      "coin": "DOGEUSDT",
+      "direction": "Short",
+      "entry_price": 0.0884749,
+      "sl": 0.09044813,
+      "tp1": 0.07336659,
+      "tp2": 0.0689308,
+      "capital_usd": 83.19,
+      "leverage": 3,
+      "trading_system": "John",
+      "track_only": false,
+      "status": "PENDING",
+      "price_at_run": 0.08511,
+      "date_activated": null,
+      "time_activated_utc": null,
+      "date_opened": "2026-06-11",
+      "time_opened_utc": "05:28",
+      "conviction": "HIGH",
+      "tp1_hit": false,
+      "sl_moved_to_be": null,
+      "pnl_tp1_realized_usd": null,
+      "live_executed": null,
+      "live_entry_fill": null,
+      "live_exit_fill": null,
+      "live_entry_slippage_pct": null,
+      "live_fees_usd": null,
+      "live_funding_usd": null,
+      "rehearsal": false
     }
   ],
   "recent_signals": [
@@ -705,6 +735,19 @@
       "conviction": "MEDIUM",
       "track_only": false,
       "iso": "2026-06-10T21:09:00Z",
+      "rehearsal": false
+    },
+    {
+      "trade_id": "DOGEUSDT_20260611_CJ_001",
+      "coin": "DOGEUSDT",
+      "direction": "Short",
+      "trading_system": "John",
+      "entry_price": 0.0884749,
+      "tp1": 0.07336659,
+      "sl": 0.09044813,
+      "conviction": "HIGH",
+      "track_only": false,
+      "iso": "2026-06-11T05:28:00Z",
       "rehearsal": false
     }
   ],
@@ -815,8 +858,8 @@
     "win_rate_pct": 0.0,
     "closed_count": 0,
     "per_system": {},
-    "live_trade_count_total": 39,
-    "live_real_count": 16,
+    "live_trade_count_total": 40,
+    "live_real_count": 17,
     "live_rehearsal_count": 23
   }
 }
