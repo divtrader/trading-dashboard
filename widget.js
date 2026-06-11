@@ -242,8 +242,14 @@ function buildMedium(w, paper, mexc, now) {
   // ---- MEXC card ----
   const right = makeCard(row);
 
-  // Header
-  txt(right, "MEXC LIVE", 8, C.muted, true);
+  // Header row: "MEXC LIVE" left, "updated HH:MM" right
+  const rh = right.addStack();
+  rh.layoutHorizontally();
+  txt(rh, "MEXC LIVE", 8, C.muted, true);
+  rh.addSpacer();
+  const tsLbl = rh.addText("updated " + fmtTime(now));
+  tsLbl.textColor = C.muted;
+  tsLbl.font = Font.systemFont(8);
   right.addSpacer(5);
 
   const mp = mexc?.unrealized_pnl ?? null;
@@ -270,14 +276,6 @@ function buildMedium(w, paper, mexc, now) {
   statBlock(mr2, "OPEN",    String(paper.openCnt),  C.fg);
   statBlock(mr2, "PENDING", String(paper.pendCnt),  C.muted);
 
-  // Updated timestamp — right-aligned, flush with bottom
-  right.addSpacer();
-  const ts2 = right.addStack();
-  ts2.layoutHorizontally();
-  ts2.addSpacer();
-  const tsLbl = ts2.addText("updated " + fmtTime(now));
-  tsLbl.textColor = C.muted;
-  tsLbl.font = Font.systemFont(8);
 }
 
 // -- LARGE
