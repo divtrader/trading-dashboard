@@ -334,6 +334,7 @@ async function fetchData() {
     checkBloombergNews(d.bloomberg_news || []);
     state.stats = d.stats || {};
     state.mexcAccount = d.mexc_account || null;
+    state.orderLevels = d.order_levels || null;
     state.apiKeys = d.api_keys || [];
     state.housekeeping = d.housekeeping || [];
     state.lastCronIso = d.last_updated_iso || null;
@@ -835,22 +836,42 @@ function renderOrderHealth() {
     }
   }
 
-  // Fold healthy mover status into the green line; show as separate line when alarming
   const moverIsAlarm = moverLine && (moverLine.startsWith("🔴") || moverLine.startsWith("🟡"));
 
+  // ── Level sync (section 4) — from order_levels in data_live.json ──
+  // The Worker (sections 1-3) validates order STRUCTURE: legs exist + right
+  // volume. It can't see INTENT — it has no journal access. The publisher
+  // does: it compares each live trade's journal tp1/tp2/sl against the levels
+  // actually resting on MEXC (_mexc_result snapshot) and emits order_levels.
+  // This catches a journal level edit that silently failed to sync to the
+  // exchange (HBAR, 2026-06-11) — which stays green on structure alone.
+  const ol = state.orderLevels;
+  let levelsLine = null;
+  if (ol && ol.checked > 0) {
+    if (ol.drifted && ol.drifted.length) {
+      levelsLine = `🟡 ${ol.drifted.length} level drift: ${ol.drifted.join(" · ")} (edit not synced)`;
+    } else {
+      levelsLine = `levels ✅ ${ol.in_sync}/${ol.checked}`;
+    }
+  }
+  const levelsIsAlarm = levelsLine && levelsLine.startsWith("🟡");
+
+  // Fold healthy mover + levels status into the green line; alarms get their
+  // own line below.
   if (!critical.length && !degraded.length && !liqDanger.length && !liqWatch.length) {
-    // All healthy — single compact line with mover folded in
-    const moverSuffix = moverLine && !moverIsAlarm ? ` · ${moverLine}` : "";
-    lines[0] = `🟢 Order Health: ${total}/${total} protected${liqSuffix}${moverSuffix}`;
+    const moverSuffix  = moverLine  && !moverIsAlarm  ? ` · ${moverLine}`  : "";
+    const levelsSuffix = levelsLine && !levelsIsAlarm ? ` · ${levelsLine}` : "";
+    lines[0] = `🟢 Order Health: ${total}/${total} protected${liqSuffix}${moverSuffix}${levelsSuffix}`;
   }
 
-  if (moverIsAlarm) lines.push(moverLine);
+  if (moverIsAlarm)  lines.push(moverLine);
+  if (levelsIsAlarm) lines.push(levelsLine);
 
   el.innerHTML = lines.join('<br>');
 
-  // Class driven by worst state across all three checks
+  // Class driven by worst state across all four checks
   const hasCritical = critical.length > 0 || liqDanger.length > 0 || (moverLine || "").startsWith("🔴");
-  const hasWarning  = degraded.length > 0 || liqWatch.length > 0  || (moverLine || "").startsWith("🟡");
+  const hasWarning  = degraded.length > 0 || liqWatch.length > 0  || (moverLine || "").startsWith("🟡") || levelsIsAlarm;
   el.className = "order-health-strip" + (hasCritical ? " critical" : hasWarning ? " degraded" : " healthy");
 }
 
