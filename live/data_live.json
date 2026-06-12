@@ -1,7 +1,7 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-06-12T13:13:13Z",
+  "last_updated_iso": "2026-06-12T14:21:46Z",
   "mexc_account": {
     "unrealized_pnl": 0.0,
     "equity": 0.0,
@@ -9,8 +9,8 @@
     "position_margin": 0.0
   },
   "order_levels": {
-    "checked": 18,
-    "in_sync": 18,
+    "checked": 17,
+    "in_sync": 17,
     "drifted": [],
     "detail": []
   },
@@ -73,7 +73,7 @@
       "key": "state_file",
       "tier": 1,
       "label": "Trade journal",
-      "value": "OK (445 records)",
+      "value": "OK (446 records)",
       "status": "ok",
       "action": null
     },
@@ -458,36 +458,6 @@
       "rehearsal": false
     },
     {
-      "trade_id": "DOGEUSDT_20260610_CB_001",
-      "coin": "DOGEUSDT",
-      "direction": "Short",
-      "entry_price": 0.08499925,
-      "sl": 0.08794379,
-      "tp1": 0.08233,
-      "tp2": 0.07961,
-      "capital_usd": 83.03,
-      "leverage": 3,
-      "trading_system": "Braam",
-      "track_only": false,
-      "status": "OPEN",
-      "price_at_run": 0.08363,
-      "date_activated": "2026-06-11",
-      "time_activated_utc": "04:55",
-      "date_opened": "2026-06-10",
-      "time_opened_utc": "18:40",
-      "conviction": "MEDIUM",
-      "tp1_hit": false,
-      "sl_moved_to_be": false,
-      "pnl_tp1_realized_usd": null,
-      "live_executed": true,
-      "live_entry_fill": 0.085,
-      "live_exit_fill": null,
-      "live_entry_slippage_pct": -0.0009,
-      "live_fees_usd": 0.1479,
-      "live_funding_usd": null,
-      "rehearsal": false
-    },
-    {
       "trade_id": "ONDOUSDT_20260610_CB_001",
       "coin": "ONDOUSDT",
       "direction": "Short",
@@ -620,7 +590,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 63428.82,
+      "price_at_run": 63432.54,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-06-11",
@@ -851,15 +821,41 @@
       "rehearsal": false
     }
   ],
-  "recent_closes": [],
+  "recent_closes": [
+    {
+      "trade_id": "DOGEUSDT_20260610_CB_001",
+      "coin": "DOGEUSDT",
+      "direction": "Short",
+      "status": "STOPPED",
+      "pnl_usd": -8.34,
+      "close_reason": "SL hit",
+      "date_closed": "2026-06-12",
+      "time_closed_utc": "12:00",
+      "trading_system": "Braam",
+      "live_entry_fill": 0.085,
+      "live_exit_fill": null,
+      "live_entry_slippage_pct": -0.0009,
+      "live_fees_usd": 0.3519,
+      "live_funding_usd": null,
+      "won": false,
+      "close_iso": "2026-06-12T12:00:00Z",
+      "rehearsal": false
+    }
+  ],
   "recent_cancels": [],
   "tp1_hits_open": [],
   "stats": {
-    "realized_pnl_usd": 0,
-    "realized_pnl_pct": 0.0,
+    "realized_pnl_usd": -8.34,
+    "realized_pnl_pct": -10.04,
     "win_rate_pct": 0.0,
-    "closed_count": 0,
-    "per_system": {},
+    "closed_count": 1,
+    "per_system": {
+      "Braam": {
+        "realized_pnl_usd": -8.34,
+        "win_rate_pct": 0.0,
+        "closed_count": 1
+      }
+    },
     "live_trade_count_total": 41,
     "live_real_count": 18,
     "live_rehearsal_count": 23
