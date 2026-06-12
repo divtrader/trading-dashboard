@@ -707,6 +707,10 @@ function renderRecentClosesTile() {
 
 // Order Health — per-coin consecutive bad-poll counter (debounce before alarming)
 const _ohBadPolls = {};
+// Order-Health legend: hover shows it (title attr); tapping the strip expands
+// it inline. State persists across polls so a re-render doesn't collapse it.
+let _ohLegendOpen = false;
+let _ohLegendWired = false;
 
 function renderOrderHealth() {
   const el = $("order-health");
@@ -771,31 +775,31 @@ function renderOrderHealth() {
 
   const total = positions.length;
   const liqSuffix = worstLiqCoin != null
-    ? ` · nearest liq ${worstLiqPct.toFixed(0)}%`
+    ? ` · Liquidation ${worstLiqPct.toFixed(0)}% away`
     : "";
 
   // Build lines: primary alarm first, secondary liq info second
   const lines = [];
 
   if (critical.length) {
-    lines.push(`🔴 ${critical.length} NAKED: ${critical.join(" · ")}`);
+    lines.push(`🔴 ${critical.length} unprotected: ${critical.join(" · ")}`);
   } else if (degraded.length) {
-    lines.push(`🟡 ${degraded.length} order issue: ${degraded.join(" · ")}`);
+    lines.push(`🟡 ${degraded.length} stop issue: ${degraded.join(" · ")}`);
   } else {
-    lines.push(`🟢 Order Health: ${total}/${total} protected${liqSuffix}`);
+    lines.push(`🟢 Order Health · Stops set ${total}/${total}${liqSuffix}`);
   }
 
   // Liq alerts as separate line when not folded into green
   if (critical.length || degraded.length) {
     if (liqDanger.length) {
-      lines.push(`🔴 ${liqDanger.map(x => `${x.coin} ${x.pct.toFixed(0)}% from liq`).join(" · ")}`);
+      lines.push(`🔴 ${liqDanger.map(x => `${x.coin} ${x.pct.toFixed(0)}% from liquidation`).join(" · ")}`);
     } else if (liqWatch.length) {
-      lines.push(`🟡 ${liqWatch.map(x => `${x.coin} ${x.pct.toFixed(0)}% from liq`).join(" · ")}`);
+      lines.push(`🟡 ${liqWatch.map(x => `${x.coin} ${x.pct.toFixed(0)}% from liquidation`).join(" · ")}`);
     }
   } else if (liqDanger.length) {
-    lines.push(`🔴 ${liqDanger.map(x => `${x.coin} ${x.pct.toFixed(0)}% from liq`).join(" · ")}`);
+    lines.push(`🔴 ${liqDanger.map(x => `${x.coin} ${x.pct.toFixed(0)}% from liquidation`).join(" · ")}`);
   } else if (liqWatch.length) {
-    lines.push(`🟡 ${liqWatch.map(x => `${x.coin} ${x.pct.toFixed(0)}% from liq`).join(" · ")}`);
+    lines.push(`🟡 ${liqWatch.map(x => `${x.coin} ${x.pct.toFixed(0)}% from liquidation`).join(" · ")}`);
   }
 
   // ── Mover health (section 3) — from mover_health in Worker GET / ──
@@ -827,12 +831,12 @@ function renderOrderHealth() {
     const confirmedNeeds = moverNeeds.filter(c => (_ohBadPolls[needsKey(c)] || 0) >= 2);
 
     if (confirmedNaked.length) {
-      moverLine = `🔴 Mover NAKED: ${confirmedNaked.join(" · ")}`;
+      moverLine = `🔴 Profit-lock stop missing: ${confirmedNaked.join(" · ")}`;
     } else if (confirmedNeeds.length) {
-      moverLine = `🟡 ${confirmedNeeds.join(", ")}: TP1 hit, SL move pending`;
+      moverLine = `🟡 ${confirmedNeeds.join(", ")}: TP1 hit, profit-lock pending`;
     } else if (runners > 0) {
       // Healthy — fold into green line or show inline
-      moverLine = `mover ✅ ${inSync}/${runners}`;
+      moverLine = `Profit-lock ${inSync}/${runners}`;
     }
   }
 
@@ -849,9 +853,9 @@ function renderOrderHealth() {
   let levelsLine = null;
   if (ol && ol.checked > 0) {
     if (ol.drifted && ol.drifted.length) {
-      levelsLine = `🟡 ${ol.drifted.length} level drift: ${ol.drifted.join(" · ")} (edit not synced)`;
+      levelsLine = `🟡 ${ol.drifted.length} not synced to MEXC: ${ol.drifted.join(" · ")} (edit didn't reach exchange)`;
     } else {
-      levelsLine = `levels ✅ ${ol.in_sync}/${ol.checked}`;
+      levelsLine = `Synced to MEXC ${ol.in_sync}/${ol.checked}`;
     }
   }
   const levelsIsAlarm = levelsLine && levelsLine.startsWith("🟡");
@@ -861,13 +865,35 @@ function renderOrderHealth() {
   if (!critical.length && !degraded.length && !liqDanger.length && !liqWatch.length) {
     const moverSuffix  = moverLine  && !moverIsAlarm  ? ` · ${moverLine}`  : "";
     const levelsSuffix = levelsLine && !levelsIsAlarm ? ` · ${levelsLine}` : "";
-    lines[0] = `🟢 Order Health: ${total}/${total} protected${liqSuffix}${moverSuffix}${levelsSuffix}`;
+    lines[0] = `🟢 Order Health · Stops set ${total}/${total}${liqSuffix}${moverSuffix}${levelsSuffix}`;
   }
 
   if (moverIsAlarm)  lines.push(moverLine);
   if (levelsIsAlarm) lines.push(levelsLine);
 
-  el.innerHTML = lines.join('<br>');
+  // Legend — explains each segment + why the counts differ. Available on
+  // hover (title attr) and on tap (toggles the inline panel). Tap-wiring is
+  // attached once; the open/closed state survives re-renders.
+  const legend = [
+    "Stops set — open positions with BOTH a stop-loss and take-profit resting on MEXC.",
+    "Liquidation — how far the nearest position is from a forced liquidation (higher % = safer).",
+    "Profit-lock — runners whose stop auto-moves up to TP1 once TP1 hits, banking a profit floor.",
+    "Synced to MEXC — live trades whose journal TP/SL match the orders actually on the exchange.",
+    "Counts differ: Stops & Profit-lock count OPEN positions; Synced counts ALL live trades incl. pending entries.",
+  ];
+  el.title = legend.join("\n");
+
+  let html = lines.join('<br>') + ' <span class="oh-info" title="What do these mean?">ⓘ</span>';
+  if (_ohLegendOpen) {
+    html += '<div class="oh-legend">' + legend.map(l => "· " + l).join("<br>") + '</div>';
+  }
+  el.innerHTML = html;
+
+  if (!_ohLegendWired) {
+    el.addEventListener("click", () => { _ohLegendOpen = !_ohLegendOpen; renderOrderHealth(); });
+    el.style.cursor = "pointer";
+    _ohLegendWired = true;
+  }
 
   // Class driven by worst state across all four checks
   const hasCritical = critical.length > 0 || liqDanger.length > 0 || (moverLine || "").startsWith("🔴");
