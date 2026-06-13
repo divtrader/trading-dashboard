@@ -1,7 +1,7 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-06-13T01:52:53Z",
+  "last_updated_iso": "2026-06-13T04:47:37Z",
   "mexc_account": {
     "unrealized_pnl": 0.0,
     "equity": 0.0,
@@ -10,9 +10,21 @@
   },
   "order_levels": {
     "checked": 15,
-    "in_sync": 15,
-    "drifted": [],
-    "detail": []
+    "in_sync": 14,
+    "drifted": [
+      "HBAR"
+    ],
+    "detail": [
+      {
+        "coin": "HBAR",
+        "trade_id": "HBARUSDT_20260610_CB_001",
+        "status": "OPEN",
+        "fields": [
+          "sl"
+        ],
+        "synced_at": "2026-06-12T05:39:51.328647+00:00"
+      }
+    ]
   },
   "api_keys": [
     {
@@ -132,7 +144,7 @@
       "coin": "HBARUSDT",
       "direction": "Short",
       "entry_price": 0.08022166,
-      "sl": 0.08269875,
+      "sl": 0.08022166,
       "tp1": 0.07748,
       "tp2": 0.07448,
       "capital_usd": 83.03,
@@ -146,9 +158,9 @@
       "date_opened": "2026-06-10",
       "time_opened_utc": "18:12",
       "conviction": "MEDIUM",
-      "tp1_hit": false,
-      "sl_moved_to_be": false,
-      "pnl_tp1_realized_usd": null,
+      "tp1_hit": true,
+      "sl_moved_to_be": true,
+      "pnl_tp1_realized_usd": 4.41,
       "live_executed": true,
       "live_entry_fill": 0.08022,
       "live_exit_fill": null,
@@ -312,7 +324,7 @@
       "coin": "XLMUSDT",
       "direction": "Short",
       "entry_price": 0.19601495,
-      "sl": 0.20775274,
+      "sl": 0.19601495,
       "tp1": 0.184,
       "tp2": 0.1719,
       "capital_usd": 83.03,
@@ -326,14 +338,14 @@
       "date_opened": "2026-06-10",
       "time_opened_utc": "18:28",
       "conviction": "MEDIUM",
-      "tp1_hit": false,
-      "sl_moved_to_be": false,
-      "pnl_tp1_realized_usd": null,
+      "tp1_hit": true,
+      "sl_moved_to_be": true,
+      "pnl_tp1_realized_usd": 8.13,
       "live_executed": true,
       "live_entry_fill": 0.19601,
       "live_exit_fill": null,
       "live_entry_slippage_pct": 0.0025,
-      "live_fees_usd": 0.1493,
+      "live_fees_usd": 0.2435,
       "live_funding_usd": null,
       "rehearsal": false
     },
@@ -530,7 +542,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 63792.04,
+      "price_at_run": 63617.99,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-06-11",
@@ -731,7 +743,7 @@
       "trading_system": "Braam",
       "entry_price": 0.08022166,
       "live_entry_fill": 0.08022,
-      "tp1_hit": false,
+      "tp1_hit": true,
       "iso": "2026-06-11T23:10:00Z",
       "_iso_ms": 1781219400000,
       "rehearsal": false
@@ -743,7 +755,7 @@
       "trading_system": "Braam",
       "entry_price": 0.19601495,
       "live_entry_fill": 0.19601,
-      "tp1_hit": false,
+      "tp1_hit": true,
       "iso": "2026-06-12T03:31:00Z",
       "_iso_ms": 1781235060000,
       "rehearsal": false
@@ -822,6 +834,18 @@
   ],
   "recent_cancels": [],
   "tp1_hits_open": [
+    {
+      "coin": "HBARUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "entry_price": 0.08022166
+    },
+    {
+      "coin": "XLMUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "entry_price": 0.19601495
+    },
     {
       "coin": "NEARUSDT",
       "direction": "Short",
