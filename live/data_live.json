@@ -1,7 +1,7 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-06-13T05:18:04Z",
+  "last_updated_iso": "2026-06-13T05:54:11Z",
   "mexc_account": {
     "unrealized_pnl": 0.0,
     "equity": 0.0,
@@ -9,22 +9,24 @@
     "position_margin": 0.0
   },
   "order_levels": {
-    "checked": 15,
-    "in_sync": 14,
-    "drifted": [
-      "HBAR"
+    "checked": 3,
+    "in_sync": 3,
+    "drifted": [],
+    "reconciling": [
+      "HBAR",
+      "XRP",
+      "UNI",
+      "ETH",
+      "LTC",
+      "XLM",
+      "TAO",
+      "ONDO",
+      "NEAR",
+      "LINK",
+      "SUI",
+      "AVAX"
     ],
-    "detail": [
-      {
-        "coin": "HBAR",
-        "trade_id": "HBARUSDT_20260610_CB_001",
-        "status": "OPEN",
-        "fields": [
-          "sl"
-        ],
-        "synced_at": "2026-06-12T05:39:51.328647+00:00"
-      }
-    ]
+    "detail": []
   },
   "api_keys": [
     {
