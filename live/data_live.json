@@ -1,29 +1,18 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-06-13T09:41:00Z",
+  "last_updated_iso": "2026-06-13T09:44:27Z",
   "mexc_account": {
-    "unrealized_pnl": 0.0,
-    "equity": 0.0,
-    "available": 0.0,
+    "unrealized_pnl": -18.8997,
+    "equity": 1614.9959,
+    "available": 557.3044,
     "position_margin": 0.0
   },
   "order_levels": {
-    "checked": 4,
-    "in_sync": 4,
+    "checked": 14,
+    "in_sync": 14,
     "drifted": [],
-    "reconciling": [
-      "XRP",
-      "UNI",
-      "ETH",
-      "LTC",
-      "XLM",
-      "ONDO",
-      "NEAR",
-      "LINK",
-      "SUI",
-      "AVAX"
-    ],
+    "reconciling": [],
     "detail": []
   },
   "api_keys": [
@@ -93,9 +82,9 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$0.00",
-      "status": "urgent",
-      "action": "Sub-wallet too low to size a 5% trade. Transfer USDT master\u2192sub."
+      "value": "$1,615.00",
+      "status": "ok",
+      "action": null
     },
     {
       "key": "worker_deploy",
