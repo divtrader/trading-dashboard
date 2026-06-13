@@ -1,7 +1,7 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-06-13T09:37:55Z",
+  "last_updated_iso": "2026-06-13T09:41:00Z",
   "mexc_account": {
     "unrealized_pnl": 0.0,
     "equity": 0.0,
@@ -61,8 +61,8 @@
       "key": "trading_enabled",
       "tier": 1,
       "label": "Live Trading",
-      "value": "DISABLED (dry-run)",
-      "status": "info",
+      "value": "ENABLED",
+      "status": "ok",
       "action": null
     },
     {
@@ -94,8 +94,8 @@
       "tier": 1,
       "label": "Sub wallet (algo)",
       "value": "$0.00",
-      "status": "ok",
-      "action": null
+      "status": "urgent",
+      "action": "Sub-wallet too low to size a 5% trade. Transfer USDT master\u2192sub."
     },
     {
       "key": "worker_deploy",
