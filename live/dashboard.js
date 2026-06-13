@@ -2192,7 +2192,8 @@ setInterval(fetchBloombergNews, 60_000);
 // + live Fear & Greed from alternative.me (CORS-friendly, no key).
 // ════════════════════════════════════════════════════════════════════════
 
-const ANALYTICS_URL = "../analytics.json"; // live dashboard is in /live/ subdirectory
+const ANALYTICS_URL      = "../analytics.json"; // PAPER analytics (root) — used only for shared infra (macro/econ/api_keys)
+const LIVE_ANALYTICS_URL = "analytics.json";    // LIVE analytics (live/analytics.json) — trade-derived stats over live_executed trades
 const FNG_URL       = "https://api.alternative.me/fng/?limit=1";
 let _edgeAnalytics = null;
 let _edgeFng = null;
@@ -2260,46 +2261,54 @@ function flipReplace(host, newHtml, keyAttr = "data-trade-id") {
 
 async function fetchAnalytics() {
   try {
+    // 1) PAPER analytics (root) — shared infrastructure ONLY: macro (VIX/DXY/BTC),
+    //    econ events, api_keys. Its trade-derived stats are paper and must NOT
+    //    show on /live.
     const r = await fetch(ANALYTICS_URL + "?t=" + Date.now(), { cache: "no-store" });
-    if (!r.ok) throw new Error("HTTP " + r.status);
-    const raw = await r.json();
-    // Live dashboard: only take shared-infrastructure fields from analytics.json.
-    // Trade-derived stats (equity_curve, by_system, monthly, conviction, streak,
-    // direction, by_entry, by_session, by_confluence) must NOT be pulled from
-    // the paper analytics — they will populate from live data_live.json over time.
-    // Live dashboard: only take shared-infrastructure fields.
-    // Deliberately exclude all_time, by_system, monthly, conviction, streak,
-    // direction, by_entry, by_session, by_confluence — those come from paper
-    // trades and must not show on the live dashboard.
-    _edgeAnalytics = {
-      macro:       raw.macro       || {},
-      econ_events: raw.econ_events || [],
-    };
+    const raw = r.ok ? await r.json() : {};
     state.apiKeys = raw.api_keys || [];
     renderApiKeys();
-    // Render only the safe shared tiles (macro + econ events)
-    // renderEdgeScreen() is intentionally NOT called here — it renders
-    // paper trade analytics. Live trade analytics will populate once
-    // live_executed trades accumulate in data_live.json.
-    const macro = _edgeAnalytics.macro;
-    if (macro.vix != null) {
-      $("macro-vix") && ($("macro-vix").textContent = macro.vix.toFixed(2));
-      _renderMacroSpark("macro-vix-spark", macro.vix_5d || [], true);
-      const vt = $("macro-vix-trend");
-      if (vt) { const r = macro.vix > (macro.vix_ma14 || macro.vix); vt.textContent = `${r?"↑":"↓"} MA14 ${macro.vix_ma14?.toFixed(1)??"—"}`; vt.className = "macro-cell-foot " + (r ? "neg" : "pos"); }
+
+    // 2) LIVE analytics (live/analytics.json) — trade-derived stats computed
+    //    over live_executed trades (net broker P&L), produced by
+    //    publish_analytics.py --live. May be absent on first deploy.
+    let liveA = null;
+    try {
+      const lr = await fetch(LIVE_ANALYTICS_URL + "?t=" + Date.now(), { cache: "no-store" });
+      if (lr.ok) liveA = await lr.json();
+    } catch { /* not present yet */ }
+
+    if (liveA && liveA.all_time) {
+      // Full Edge screen from LIVE trades + shared macro/econ from paper analytics.
+      _edgeAnalytics = {
+        ...liveA,
+        macro:       raw.macro       || liveA.macro || {},
+        econ_events: raw.econ_events || liveA.econ_events || [],
+      };
+      renderEdgeScreen();
+    } else {
+      // Fallback (no live analytics yet): render shared tiles only — macro + econ.
+      _edgeAnalytics = { macro: raw.macro || {}, econ_events: raw.econ_events || [] };
+      const macro = _edgeAnalytics.macro;
+      if (macro.vix != null) {
+        $("macro-vix") && ($("macro-vix").textContent = macro.vix.toFixed(2));
+        _renderMacroSpark("macro-vix-spark", macro.vix_5d || [], true);
+        const vt = $("macro-vix-trend");
+        if (vt) { const rr = macro.vix > (macro.vix_ma14 || macro.vix); vt.textContent = `${rr?"↑":"↓"} MA14 ${macro.vix_ma14?.toFixed(1)??"—"}`; vt.className = "macro-cell-foot " + (rr ? "neg" : "pos"); }
+      }
+      if (macro.dxy != null) {
+        $("macro-dxy") && ($("macro-dxy").textContent = macro.dxy.toFixed(2));
+        _renderMacroSpark("macro-dxy-spark", macro.dxy_5d || [], false);
+        const dt = $("macro-dxy-trend");
+        if (dt) { const rr = macro.dxy > (macro.dxy_ma14 || macro.dxy); dt.textContent = `${rr?"↑":"↓"} MA14 ${macro.dxy_ma14?.toFixed(1)??"—"}`; dt.className = "macro-cell-foot " + (rr ? "neg" : "pos"); }
+      }
+      if (macro.btc_7d_change_pct != null) {
+        $("macro-btc7d") && ($("macro-btc7d").textContent = (macro.btc_7d_change_pct >= 0 ? "+" : "") + macro.btc_7d_change_pct.toFixed(1) + "%");
+        $("macro-btc30d") && ($("macro-btc30d").textContent = (macro.btc_30d_change_pct >= 0 ? "+" : "") + (macro.btc_30d_change_pct ?? 0).toFixed(1) + "%");
+        $("macro-btc-price") && ($("macro-btc-price").textContent = macro.btc_price ? "$" + Math.round(macro.btc_price).toLocaleString() : "—");
+      }
+      _renderEconomicEvents();
     }
-    if (macro.dxy != null) {
-      $("macro-dxy") && ($("macro-dxy").textContent = macro.dxy.toFixed(2));
-      _renderMacroSpark("macro-dxy-spark", macro.dxy_5d || [], false);
-      const dt = $("macro-dxy-trend");
-      if (dt) { const r = macro.dxy > (macro.dxy_ma14 || macro.dxy); dt.textContent = `${r?"↑":"↓"} MA14 ${macro.dxy_ma14?.toFixed(1)??"—"}`; dt.className = "macro-cell-foot " + (r ? "neg" : "pos"); }
-    }
-    if (macro.btc_7d_change_pct != null) {
-      $("macro-btc7d") && ($("macro-btc7d").textContent = (macro.btc_7d_change_pct >= 0 ? "+" : "") + macro.btc_7d_change_pct.toFixed(1) + "%");
-      $("macro-btc30d") && ($("macro-btc30d").textContent = (macro.btc_30d_change_pct >= 0 ? "+" : "") + (macro.btc_30d_change_pct ?? 0).toFixed(1) + "%");
-      $("macro-btc-price") && ($("macro-btc-price").textContent = macro.btc_price ? "$" + Math.round(macro.btc_price).toLocaleString() : "—");
-    }
-    _renderEconomicEvents();
   } catch (e) {
     console.warn("analytics fetch failed:", e);
   }
