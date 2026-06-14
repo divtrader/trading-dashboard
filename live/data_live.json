@@ -1,16 +1,16 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-06-14T12:42:20Z",
+  "last_updated_iso": "2026-06-14T14:26:10Z",
   "mexc_account": {
-    "unrealized_pnl": 3.8345,
-    "equity": 1628.0812,
-    "available": 591.7105,
+    "unrealized_pnl": 18.4144,
+    "equity": 1642.6612,
+    "available": 510.4448,
     "position_margin": 0.0
   },
   "order_levels": {
-    "checked": 13,
-    "in_sync": 13,
+    "checked": 14,
+    "in_sync": 14,
     "drifted": [],
     "reconciling": [],
     "detail": []
@@ -74,7 +74,7 @@
       "key": "state_file",
       "tier": 1,
       "label": "Trade journal",
-      "value": "OK (455 records)",
+      "value": "OK (457 records)",
       "status": "ok",
       "action": null
     },
@@ -82,7 +82,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$1,628.08",
+      "value": "$1,642.66",
       "status": "ok",
       "action": null
     },
@@ -399,36 +399,6 @@
       "rehearsal": false
     },
     {
-      "trade_id": "BTCUSDT_20260611_CJ_001",
-      "coin": "BTCUSDT",
-      "direction": "Short",
-      "entry_price": 66078.26554954,
-      "sl": 67071.32540562,
-      "tp1": 57459.18908436,
-      "tp2": 56531.34918876,
-      "capital_usd": 83.31,
-      "leverage": 3,
-      "trading_system": "John",
-      "track_only": false,
-      "status": "PENDING",
-      "price_at_run": 64350.89,
-      "date_activated": null,
-      "time_activated_utc": null,
-      "date_opened": "2026-06-11",
-      "time_opened_utc": "06:04",
-      "conviction": "HIGH",
-      "tp1_hit": false,
-      "sl_moved_to_be": null,
-      "pnl_tp1_realized_usd": null,
-      "live_executed": null,
-      "live_entry_fill": null,
-      "live_exit_fill": null,
-      "live_entry_slippage_pct": null,
-      "live_fees_usd": null,
-      "live_funding_usd": null,
-      "rehearsal": false
-    },
-    {
       "trade_id": "AVAXUSDT_20260612_CB_001",
       "coin": "AVAXUSDT",
       "direction": "Short",
@@ -517,6 +487,66 @@
       "live_fees_usd": null,
       "live_funding_usd": null,
       "rehearsal": false
+    },
+    {
+      "trade_id": "BNBUSDT_20260614_CJ_001",
+      "coin": "BNBUSDT",
+      "direction": "Short",
+      "entry_price": 641.55876929,
+      "sl": 648.03317417,
+      "tp1": 595.76109844,
+      "tp2": 536.66365165,
+      "capital_usd": 82.18,
+      "leverage": 3,
+      "trading_system": "John",
+      "track_only": false,
+      "status": "PENDING",
+      "price_at_run": 610.91,
+      "date_activated": null,
+      "time_activated_utc": null,
+      "date_opened": "2026-06-14",
+      "time_opened_utc": "14:25",
+      "conviction": "HIGH",
+      "tp1_hit": false,
+      "sl_moved_to_be": null,
+      "pnl_tp1_realized_usd": null,
+      "live_executed": null,
+      "live_entry_fill": null,
+      "live_exit_fill": null,
+      "live_entry_slippage_pct": null,
+      "live_fees_usd": null,
+      "live_funding_usd": null,
+      "rehearsal": false
+    },
+    {
+      "trade_id": "DOGEUSDT_20260614_CB_001",
+      "coin": "DOGEUSDT",
+      "direction": "Short",
+      "entry_price": 0.08682439,
+      "sl": 0.08910781,
+      "tp1": 0.08183,
+      "tp2": 0.0708148,
+      "capital_usd": 82.18,
+      "leverage": 3,
+      "trading_system": "Braam",
+      "track_only": false,
+      "status": "PENDING",
+      "price_at_run": 0.08637,
+      "date_activated": null,
+      "time_activated_utc": null,
+      "date_opened": "2026-06-14",
+      "time_opened_utc": "14:25",
+      "conviction": "MEDIUM",
+      "tp1_hit": false,
+      "sl_moved_to_be": false,
+      "pnl_tp1_realized_usd": null,
+      "live_executed": null,
+      "live_entry_fill": null,
+      "live_exit_fill": null,
+      "live_entry_slippage_pct": null,
+      "live_fees_usd": null,
+      "live_funding_usd": null,
+      "rehearsal": false
     }
   ],
   "recent_signals": [
@@ -532,21 +562,35 @@
       "track_only": false,
       "iso": "2026-06-14T10:41:00Z",
       "rehearsal": false
+    },
+    {
+      "trade_id": "BNBUSDT_20260614_CJ_001",
+      "coin": "BNBUSDT",
+      "direction": "Short",
+      "trading_system": "John",
+      "entry_price": 641.55876929,
+      "tp1": 595.76109844,
+      "sl": 648.03317417,
+      "conviction": "HIGH",
+      "track_only": false,
+      "iso": "2026-06-14T14:25:00Z",
+      "rehearsal": false
+    },
+    {
+      "trade_id": "DOGEUSDT_20260614_CB_001",
+      "coin": "DOGEUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "entry_price": 0.08682439,
+      "tp1": 0.08183,
+      "sl": 0.08910781,
+      "conviction": "MEDIUM",
+      "track_only": false,
+      "iso": "2026-06-14T14:25:00Z",
+      "rehearsal": false
     }
   ],
   "recent_opens": [
-    {
-      "trade_id": "AVAXUSDT_20260612_CB_001",
-      "coin": "AVAXUSDT",
-      "direction": "Short",
-      "trading_system": "Braam",
-      "entry_price": 6.63004705,
-      "live_entry_fill": 6.63,
-      "tp1_hit": false,
-      "iso": "2026-06-12T13:06:00Z",
-      "_iso_ms": 1781269560000,
-      "rehearsal": false
-    },
     {
       "trade_id": "HBARUSDT_20260613_CB_001",
       "coin": "HBARUSDT",
@@ -707,7 +751,15 @@
       "rehearsal": false
     }
   ],
-  "recent_cancels": [],
+  "recent_cancels": [
+    {
+      "coin": "BTCUSDT",
+      "direction": "Short",
+      "trading_system": "John",
+      "close_reason": "Entry window expired: unfilled 3.3d \u2265 20\u00d74H (80h) \u2014 mirrors backtest ENTRY_WINDO",
+      "iso": "2026-06-14T14:25:00Z"
+    }
+  ],
   "tp1_hits_open": [
     {
       "coin": "XLMUSDT",
@@ -728,8 +780,8 @@
         "closed_count": 7
       }
     },
-    "live_trade_count_total": 43,
-    "live_real_count": 20,
+    "live_trade_count_total": 45,
+    "live_real_count": 22,
     "live_rehearsal_count": 23
   }
 }
