@@ -1,10 +1,10 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-06-14T21:40:49Z",
+  "last_updated_iso": "2026-06-14T21:42:27Z",
   "mexc_account": {
-    "unrealized_pnl": -44.8975,
-    "equity": 1565.1742,
+    "unrealized_pnl": -43.1127,
+    "equity": 1566.959,
     "available": 581.4653,
     "position_margin": 0.0
   },
@@ -12,9 +12,7 @@
     "checked": 13,
     "in_sync": 13,
     "drifted": [],
-    "reconciling": [
-      "ETH"
-    ],
+    "reconciling": [],
     "detail": []
   },
   "api_keys": [
@@ -84,7 +82,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$1,565.17",
+      "value": "$1,566.96",
       "status": "ok",
       "action": null
     },
@@ -217,36 +215,6 @@
       "live_exit_fill": null,
       "live_entry_slippage_pct": -0.0128,
       "live_fees_usd": 0.1494,
-      "live_funding_usd": null,
-      "rehearsal": false
-    },
-    {
-      "trade_id": "ETHUSDT_20260610_CB_001",
-      "coin": "ETHUSDT",
-      "direction": "Short",
-      "entry_price": 1654.10091923,
-      "sl": 1714.88590571,
-      "tp1": 1556,
-      "tp2": 1440.0,
-      "capital_usd": 83.03,
-      "leverage": 3,
-      "trading_system": "Braam",
-      "track_only": false,
-      "status": "OPEN",
-      "price_at_run": 1629.4,
-      "date_activated": "2026-06-11",
-      "time_activated_utc": "04:55",
-      "date_opened": "2026-06-10",
-      "time_opened_utc": "18:28",
-      "conviction": "MEDIUM",
-      "tp1_hit": false,
-      "sl_moved_to_be": false,
-      "pnl_tp1_realized_usd": null,
-      "live_executed": true,
-      "live_entry_fill": 1654.1,
-      "live_exit_fill": null,
-      "live_entry_slippage_pct": 0.0001,
-      "live_fees_usd": 0.1488,
       "live_funding_usd": null,
       "rehearsal": false
     },
@@ -473,7 +441,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 614.3,
+      "price_at_run": 614.99,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-06-14",
@@ -533,7 +501,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 64999.0,
+      "price_at_run": 65238.78,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-06-14",
@@ -776,6 +744,25 @@
       "rehearsal": false
     },
     {
+      "trade_id": "ETHUSDT_20260610_CB_001",
+      "coin": "ETHUSDT",
+      "direction": "Short",
+      "status": "STOPPED",
+      "pnl_usd": -8.83,
+      "close_reason": "SL hit",
+      "date_closed": "2026-06-14",
+      "time_closed_utc": "20:00",
+      "trading_system": "Braam",
+      "live_entry_fill": 1654.1,
+      "live_exit_fill": 1715.13,
+      "live_entry_slippage_pct": 0.0001,
+      "live_fees_usd": 0.3546,
+      "live_funding_usd": -0.024546,
+      "won": false,
+      "close_iso": "2026-06-14T20:00:00Z",
+      "rehearsal": false
+    },
+    {
       "trade_id": "HBARUSDT_20260613_CB_001",
       "coin": "HBARUSDT",
       "direction": "Short",
@@ -832,15 +819,15 @@
     }
   ],
   "stats": {
-    "realized_pnl_usd": -46.92,
-    "realized_pnl_pct": -6.28,
-    "win_rate_pct": 33.3,
-    "closed_count": 9,
+    "realized_pnl_usd": -56.41,
+    "realized_pnl_pct": -6.8,
+    "win_rate_pct": 30.0,
+    "closed_count": 10,
     "per_system": {
       "Braam": {
-        "realized_pnl_usd": -46.92,
-        "win_rate_pct": 33.3,
-        "closed_count": 9
+        "realized_pnl_usd": -56.41,
+        "win_rate_pct": 30.0,
+        "closed_count": 10
       }
     },
     "live_trade_count_total": 47,
