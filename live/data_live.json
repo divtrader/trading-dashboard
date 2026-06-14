@@ -1,18 +1,20 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-06-14T22:01:31Z",
+  "last_updated_iso": "2026-06-14T22:50:48Z",
   "mexc_account": {
-    "unrealized_pnl": -29.4262,
-    "equity": 1557.7708,
-    "available": 725.118,
+    "unrealized_pnl": -28.0891,
+    "equity": 1550.2703,
+    "available": 797.0131,
     "position_margin": 0.0
   },
   "order_levels": {
-    "checked": 11,
-    "in_sync": 11,
+    "checked": 10,
+    "in_sync": 10,
     "drifted": [],
-    "reconciling": [],
+    "reconciling": [
+      "ADA"
+    ],
     "detail": []
   },
   "api_keys": [
@@ -82,7 +84,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$1,557.77",
+      "value": "$1,550.27",
       "status": "ok",
       "action": null
     },
@@ -381,7 +383,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "OPEN",
-      "price_at_run": 614.63,
+      "price_at_run": 613.43,
       "date_activated": "2026-06-14",
       "time_activated_utc": "20:00",
       "date_opened": "2026-06-14",
@@ -441,7 +443,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 65322.0,
+      "price_at_run": 65440.01,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-06-14",
