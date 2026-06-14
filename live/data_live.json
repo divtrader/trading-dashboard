@@ -1,33 +1,19 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-06-14T21:24:39Z",
+  "last_updated_iso": "2026-06-14T21:36:55Z",
   "mexc_account": {
-    "unrealized_pnl": -18.2686,
-    "equity": 1601.2623,
-    "available": 466.6212,
+    "unrealized_pnl": -34.415,
+    "equity": 1585.017,
+    "available": 507.8659,
     "position_margin": 0.0
   },
   "order_levels": {
-    "checked": 15,
+    "checked": 14,
     "in_sync": 14,
-    "drifted": [
-      "ADA"
-    ],
-    "reconciling": [
-      "SOL"
-    ],
-    "detail": [
-      {
-        "coin": "ADA",
-        "trade_id": "ADAUSDT_20260614_CB_001",
-        "status": "OPEN",
-        "fields": [
-          "tp2"
-        ],
-        "synced_at": null
-      }
-    ]
+    "drifted": [],
+    "reconciling": [],
+    "detail": []
   },
   "api_keys": [
     {
@@ -88,7 +74,7 @@
       "key": "state_file",
       "tier": 1,
       "label": "Trade journal",
-      "value": "OK (463 records)",
+      "value": "OK (465 records)",
       "status": "ok",
       "action": null
     },
@@ -96,7 +82,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$1,601.26",
+      "value": "$1,585.02",
       "status": "ok",
       "action": null
     },
@@ -443,36 +429,6 @@
       "rehearsal": false
     },
     {
-      "trade_id": "HBARUSDT_20260613_CB_001",
-      "coin": "HBARUSDT",
-      "direction": "Short",
-      "entry_price": 0.07890336,
-      "sl": 0.07890336,
-      "tp1": 0.07714,
-      "tp2": 0.07471,
-      "capital_usd": 82.47,
-      "leverage": 3,
-      "trading_system": "Braam",
-      "track_only": false,
-      "status": "OPEN",
-      "price_at_run": 0.07719,
-      "date_activated": "2026-06-13",
-      "time_activated_utc": "14:22",
-      "date_opened": "2026-06-13",
-      "time_opened_utc": "06:28",
-      "conviction": "MEDIUM",
-      "tp1_hit": true,
-      "sl_moved_to_be": true,
-      "pnl_tp1_realized_usd": 2.83,
-      "live_executed": true,
-      "live_entry_fill": 0.0789,
-      "live_exit_fill": null,
-      "live_entry_slippage_pct": 0.0043,
-      "live_fees_usd": 0.2452,
-      "live_funding_usd": null,
-      "rehearsal": false
-    },
-    {
       "trade_id": "ADAUSDT_20260614_CB_001",
       "coin": "ADAUSDT",
       "direction": "Short",
@@ -515,7 +471,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 610.56,
+      "price_at_run": 614.1,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-06-14",
@@ -575,7 +531,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 64734.0,
+      "price_at_run": 64881.11,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-06-14",
@@ -589,36 +545,6 @@
       "live_exit_fill": null,
       "live_entry_slippage_pct": null,
       "live_fees_usd": null,
-      "live_funding_usd": null,
-      "rehearsal": false
-    },
-    {
-      "trade_id": "SOLUSDT_20260614_CB_001",
-      "coin": "SOLUSDT",
-      "direction": "Short",
-      "entry_price": 67.37190645,
-      "sl": 69.17598739,
-      "tp1": 62.40662612,
-      "tp2": 54.12107084,
-      "capital_usd": 83.03,
-      "leverage": 3,
-      "trading_system": "Braam",
-      "track_only": false,
-      "status": "OPEN",
-      "price_at_run": 67.01,
-      "date_activated": "2026-06-14",
-      "time_activated_utc": "15:28",
-      "date_opened": "2026-06-14",
-      "time_opened_utc": "14:43",
-      "conviction": "MEDIUM",
-      "tp1_hit": false,
-      "sl_moved_to_be": false,
-      "pnl_tp1_realized_usd": null,
-      "live_executed": true,
-      "live_entry_fill": 67.37,
-      "live_exit_fill": null,
-      "live_entry_slippage_pct": 0.0028,
-      "live_fees_usd": 0.1455,
       "live_funding_usd": null,
       "rehearsal": false
     }
@@ -846,6 +772,44 @@
       "won": false,
       "close_iso": "2026-06-13T20:00:00Z",
       "rehearsal": false
+    },
+    {
+      "trade_id": "HBARUSDT_20260613_CB_001",
+      "coin": "HBARUSDT",
+      "direction": "Short",
+      "status": "STOPPED_AFTER_TP1",
+      "pnl_usd": 2.83,
+      "close_reason": "SL hit",
+      "date_closed": "2026-06-14",
+      "time_closed_utc": "20:00",
+      "trading_system": "Braam",
+      "live_entry_fill": 0.0789,
+      "live_exit_fill": 0.0789,
+      "live_entry_slippage_pct": 0.0043,
+      "live_fees_usd": 0.3441,
+      "live_funding_usd": 0.039319,
+      "won": true,
+      "close_iso": "2026-06-14T20:00:00Z",
+      "rehearsal": false
+    },
+    {
+      "trade_id": "SOLUSDT_20260614_CB_001",
+      "coin": "SOLUSDT",
+      "direction": "Short",
+      "status": "STOPPED",
+      "pnl_usd": -6.49,
+      "close_reason": "SL hit",
+      "date_closed": "2026-06-14",
+      "time_closed_utc": "20:00",
+      "trading_system": "Braam",
+      "live_entry_fill": 67.37,
+      "live_exit_fill": 69.19,
+      "live_entry_slippage_pct": 0.0028,
+      "live_fees_usd": 0.3447,
+      "live_funding_usd": -0.022562,
+      "won": false,
+      "close_iso": "2026-06-14T20:00:00Z",
+      "rehearsal": false
     }
   ],
   "recent_cancels": [
@@ -863,24 +827,18 @@
       "direction": "Short",
       "trading_system": "Braam",
       "entry_price": 0.19601495
-    },
-    {
-      "coin": "HBARUSDT",
-      "direction": "Short",
-      "trading_system": "Braam",
-      "entry_price": 0.07890336
     }
   ],
   "stats": {
-    "realized_pnl_usd": -42.36,
-    "realized_pnl_pct": -7.29,
-    "win_rate_pct": 28.6,
-    "closed_count": 7,
+    "realized_pnl_usd": -46.92,
+    "realized_pnl_pct": -6.28,
+    "win_rate_pct": 33.3,
+    "closed_count": 9,
     "per_system": {
       "Braam": {
-        "realized_pnl_usd": -42.36,
-        "win_rate_pct": 28.6,
-        "closed_count": 7
+        "realized_pnl_usd": -46.92,
+        "win_rate_pct": 33.3,
+        "closed_count": 9
       }
     },
     "live_trade_count_total": 47,
