@@ -1,11 +1,11 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-06-14T17:28:36Z",
+  "last_updated_iso": "2026-06-14T17:43:46Z",
   "mexc_account": {
-    "unrealized_pnl": 23.8414,
-    "equity": 1647.834,
-    "available": 347.1709,
+    "unrealized_pnl": 26.0325,
+    "equity": 1652.6252,
+    "available": 391.141,
     "position_margin": 0.0
   },
   "order_levels": {
@@ -82,7 +82,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$1,647.83",
+      "value": "$1,652.63",
       "status": "ok",
       "action": null
     },
@@ -433,7 +433,7 @@
       "coin": "HBARUSDT",
       "direction": "Short",
       "entry_price": 0.07890336,
-      "sl": 0.0810658,
+      "sl": 0.07890336,
       "tp1": 0.07714,
       "tp2": 0.07471,
       "capital_usd": 82.47,
@@ -447,14 +447,14 @@
       "date_opened": "2026-06-13",
       "time_opened_utc": "06:28",
       "conviction": "MEDIUM",
-      "tp1_hit": false,
-      "sl_moved_to_be": false,
-      "pnl_tp1_realized_usd": null,
+      "tp1_hit": true,
+      "sl_moved_to_be": true,
+      "pnl_tp1_realized_usd": 2.83,
       "live_executed": true,
       "live_entry_fill": 0.0789,
       "live_exit_fill": null,
       "live_entry_slippage_pct": 0.0043,
-      "live_fees_usd": 0.1484,
+      "live_fees_usd": 0.2452,
       "live_funding_usd": null,
       "rehearsal": false
     },
@@ -501,7 +501,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 606.26,
+      "price_at_run": 605.52,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-06-14",
@@ -561,7 +561,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 63904.13,
+      "price_at_run": 63852.48,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-06-14",
@@ -671,7 +671,7 @@
       "trading_system": "Braam",
       "entry_price": 0.07890336,
       "live_entry_fill": 0.0789,
-      "tp1_hit": false,
+      "tp1_hit": true,
       "iso": "2026-06-13T14:22:00Z",
       "_iso_ms": 1781360520000,
       "rehearsal": false
@@ -851,6 +851,12 @@
       "direction": "Short",
       "trading_system": "Braam",
       "entry_price": 0.19601495
+    },
+    {
+      "coin": "HBARUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "entry_price": 0.07890336
     }
   ],
   "stats": {
