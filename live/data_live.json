@@ -1,31 +1,19 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-06-14T02:00:45Z",
+  "last_updated_iso": "2026-06-14T04:39:25Z",
   "mexc_account": {
-    "unrealized_pnl": -25.5492,
-    "equity": 1598.8681,
-    "available": 672.8071,
+    "unrealized_pnl": -13.2384,
+    "equity": 1611.1742,
+    "available": 672.8023,
     "position_margin": 0.0
   },
   "order_levels": {
     "checked": 12,
-    "in_sync": 11,
-    "drifted": [
-      "ALGO"
-    ],
+    "in_sync": 12,
+    "drifted": [],
     "reconciling": [],
-    "detail": [
-      {
-        "coin": "ALGO",
-        "trade_id": "ALGOUSDT_20260610_CB_001",
-        "status": "OPEN",
-        "fields": [
-          "tp2"
-        ],
-        "synced_at": null
-      }
-    ]
+    "detail": []
   },
   "api_keys": [
     {
@@ -94,7 +82,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$1,598.87",
+      "value": "$1,611.17",
       "status": "ok",
       "action": null
     },
@@ -423,7 +411,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 64595.92,
+      "price_at_run": 64435.66,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-06-11",
@@ -503,18 +491,6 @@
   ],
   "recent_signals": [],
   "recent_opens": [
-    {
-      "trade_id": "XLMUSDT_20260610_CB_001",
-      "coin": "XLMUSDT",
-      "direction": "Short",
-      "trading_system": "Braam",
-      "entry_price": 0.19601495,
-      "live_entry_fill": 0.19601,
-      "tp1_hit": true,
-      "iso": "2026-06-12T03:31:00Z",
-      "_iso_ms": 1781235060000,
-      "rehearsal": false
-    },
     {
       "trade_id": "AVAXUSDT_20260612_CB_001",
       "coin": "AVAXUSDT",
