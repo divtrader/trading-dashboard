@@ -1,16 +1,16 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-06-14T20:10:21Z",
+  "last_updated_iso": "2026-06-14T20:34:33Z",
   "mexc_account": {
-    "unrealized_pnl": 33.6692,
-    "equity": 1660.2421,
+    "unrealized_pnl": 23.257,
+    "equity": 1649.8299,
     "available": 472.845,
     "position_margin": 0.0
   },
   "order_levels": {
-    "checked": 16,
-    "in_sync": 16,
+    "checked": 15,
+    "in_sync": 15,
     "drifted": [],
     "reconciling": [],
     "detail": []
@@ -58,7 +58,7 @@
       "key": "cron_watchlist",
       "tier": 1,
       "label": "Last cloud run",
-      "value": "1.2h ago",
+      "value": "0.0h ago",
       "status": "ok",
       "action": null
     },
@@ -74,7 +74,7 @@
       "key": "state_file",
       "tier": 1,
       "label": "Trade journal",
-      "value": "OK (461 records)",
+      "value": "OK (462 records)",
       "status": "ok",
       "action": null
     },
@@ -82,7 +82,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$1,660.24",
+      "value": "$1,649.83",
       "status": "ok",
       "action": null
     },
@@ -489,36 +489,6 @@
       "rehearsal": false
     },
     {
-      "trade_id": "BNBUSDT_20260614_CJ_001",
-      "coin": "BNBUSDT",
-      "direction": "Short",
-      "entry_price": 617.07501929,
-      "sl": 623.59839525,
-      "tp1": 570.90099152,
-      "tp2": 528.74535134,
-      "capital_usd": 82.18,
-      "leverage": 3,
-      "trading_system": "John",
-      "track_only": false,
-      "status": "PENDING",
-      "price_at_run": 604.7,
-      "date_activated": null,
-      "time_activated_utc": null,
-      "date_opened": "2026-06-14",
-      "time_opened_utc": "14:25",
-      "conviction": "HIGH",
-      "tp1_hit": false,
-      "sl_moved_to_be": null,
-      "pnl_tp1_realized_usd": null,
-      "live_executed": null,
-      "live_entry_fill": null,
-      "live_exit_fill": null,
-      "live_entry_slippage_pct": null,
-      "live_fees_usd": null,
-      "live_funding_usd": null,
-      "rehearsal": false
-    },
-    {
       "trade_id": "DOGEUSDT_20260614_CB_001",
       "coin": "DOGEUSDT",
       "direction": "Short",
@@ -561,7 +531,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 63803.53,
+      "price_at_run": 63947.5,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-06-14",
@@ -621,19 +591,6 @@
       "conviction": "MEDIUM",
       "track_only": false,
       "iso": "2026-06-14T10:41:00Z",
-      "rehearsal": false
-    },
-    {
-      "trade_id": "BNBUSDT_20260614_CJ_001",
-      "coin": "BNBUSDT",
-      "direction": "Short",
-      "trading_system": "John",
-      "entry_price": 617.07501929,
-      "tp1": 570.90099152,
-      "sl": 623.59839525,
-      "conviction": "HIGH",
-      "track_only": false,
-      "iso": "2026-06-14T14:25:00Z",
       "rehearsal": false
     },
     {
@@ -871,8 +828,8 @@
         "closed_count": 7
       }
     },
-    "live_trade_count_total": 47,
-    "live_real_count": 24,
+    "live_trade_count_total": 46,
+    "live_real_count": 23,
     "live_rehearsal_count": 23
   }
 }
