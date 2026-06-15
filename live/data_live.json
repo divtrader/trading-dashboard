@@ -1,31 +1,19 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-06-15T11:20:21Z",
+  "last_updated_iso": "2026-06-15T11:28:15Z",
   "mexc_account": {
-    "unrealized_pnl": -10.3803,
-    "equity": 1516.6907,
+    "unrealized_pnl": -12.0911,
+    "equity": 1514.9798,
     "available": 1198.9629,
     "position_margin": 0.0
   },
   "order_levels": {
     "checked": 4,
-    "in_sync": 3,
-    "drifted": [
-      "BTC"
-    ],
+    "in_sync": 4,
+    "drifted": [],
     "reconciling": [],
-    "detail": [
-      {
-        "coin": "BTC",
-        "trade_id": "BTCUSDT_20260614_CJ_001",
-        "status": "OPEN",
-        "fields": [
-          "tp2"
-        ],
-        "synced_at": null
-      }
-    ]
+    "detail": []
   },
   "api_keys": [
     {
@@ -86,7 +74,7 @@
       "key": "state_file",
       "tier": 1,
       "label": "Trade journal",
-      "value": "OK (471 records)",
+      "value": "OK (472 records)",
       "status": "ok",
       "action": null
     },
@@ -94,7 +82,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$1,516.69",
+      "value": "$1,514.98",
       "status": "ok",
       "action": null
     },
@@ -213,7 +201,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "OPEN",
-      "price_at_run": 618.72,
+      "price_at_run": 622.11,
       "date_activated": "2026-06-14",
       "time_activated_utc": "20:00",
       "date_opened": "2026-06-14",
@@ -236,14 +224,14 @@
       "direction": "Short",
       "entry_price": 66057.75098659,
       "sl": 66722.86367224,
-      "tp1": 58652.23719145,
-      "tp2": 57433.53338904,
+      "tp1": 63906,
+      "tp2": 61300,
       "capital_usd": 83.03,
       "leverage": 3,
       "trading_system": "John",
       "track_only": false,
       "status": "OPEN",
-      "price_at_run": 66103.99,
+      "price_at_run": 66289.76,
       "date_activated": "2026-06-15",
       "time_activated_utc": "08:00",
       "date_opened": "2026-06-14",
