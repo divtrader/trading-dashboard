@@ -1,16 +1,16 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-06-15T12:03:23Z",
+  "last_updated_iso": "2026-06-15T12:56:51Z",
   "mexc_account": {
-    "unrealized_pnl": -9.6958,
-    "equity": 1517.3752,
-    "available": 1198.9629,
+    "unrealized_pnl": -10.9667,
+    "equity": 1513.2186,
+    "available": 1276.5562,
     "position_margin": 0.0
   },
   "order_levels": {
-    "checked": 4,
-    "in_sync": 4,
+    "checked": 3,
+    "in_sync": 3,
     "drifted": [],
     "reconciling": [],
     "detail": []
@@ -82,7 +82,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$1,517.38",
+      "value": "$1,513.22",
       "status": "ok",
       "action": null
     },
@@ -189,36 +189,6 @@
       "rehearsal": false
     },
     {
-      "trade_id": "BNBUSDT_20260614_CJ_001",
-      "coin": "BNBUSDT",
-      "direction": "Short",
-      "entry_price": 617.07501929,
-      "sl": 623.59839525,
-      "tp1": 570.90099152,
-      "tp2": 528.74535134,
-      "capital_usd": 82.18,
-      "leverage": 3,
-      "trading_system": "John",
-      "track_only": false,
-      "status": "OPEN",
-      "price_at_run": 620.07,
-      "date_activated": "2026-06-14",
-      "time_activated_utc": "20:00",
-      "date_opened": "2026-06-14",
-      "time_opened_utc": "14:25",
-      "conviction": "HIGH",
-      "tp1_hit": false,
-      "sl_moved_to_be": null,
-      "pnl_tp1_realized_usd": null,
-      "live_executed": true,
-      "live_entry_fill": 617.1,
-      "live_exit_fill": null,
-      "live_entry_slippage_pct": -0.004,
-      "live_fees_usd": 0.1444,
-      "live_funding_usd": null,
-      "rehearsal": false
-    },
-    {
       "trade_id": "BTCUSDT_20260614_CJ_001",
       "coin": "BTCUSDT",
       "direction": "Short",
@@ -231,7 +201,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "OPEN",
-      "price_at_run": 66198.0,
+      "price_at_run": 66575.88,
       "date_activated": "2026-06-15",
       "time_activated_utc": "08:00",
       "date_opened": "2026-06-14",
@@ -697,20 +667,44 @@
       "won": false,
       "close_iso": "2026-06-15T08:00:00Z",
       "rehearsal": false
+    },
+    {
+      "trade_id": "BNBUSDT_20260614_CJ_001",
+      "coin": "BNBUSDT",
+      "direction": "Short",
+      "status": "STOPPED",
+      "pnl_usd": -2.58,
+      "close_reason": "SL hit",
+      "date_closed": "2026-06-15",
+      "time_closed_utc": "12:00",
+      "trading_system": "John",
+      "live_entry_fill": 617.1,
+      "live_exit_fill": 624.0,
+      "live_entry_slippage_pct": -0.004,
+      "live_fees_usd": 0.339,
+      "live_funding_usd": 0.012967,
+      "won": false,
+      "close_iso": "2026-06-15T12:00:00Z",
+      "rehearsal": false
     }
   ],
   "recent_cancels": [],
   "tp1_hits_open": [],
   "stats": {
-    "realized_pnl_usd": -132.9,
-    "realized_pnl_pct": -8.46,
-    "win_rate_pct": 21.1,
-    "closed_count": 19,
+    "realized_pnl_usd": -135.94,
+    "realized_pnl_pct": -8.22,
+    "win_rate_pct": 20.0,
+    "closed_count": 20,
     "per_system": {
       "Braam": {
         "realized_pnl_usd": -132.9,
         "win_rate_pct": 21.1,
         "closed_count": 19
+      },
+      "John": {
+        "realized_pnl_usd": -3.04,
+        "win_rate_pct": 0.0,
+        "closed_count": 1
       }
     },
     "live_trade_count_total": 47,
