@@ -1,16 +1,16 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-06-15T02:05:22Z",
+  "last_updated_iso": "2026-06-15T05:08:02Z",
   "mexc_account": {
-    "unrealized_pnl": -12.3844,
-    "equity": 1549.9985,
-    "available": 945.619,
+    "unrealized_pnl": -6.0349,
+    "equity": 1538.2852,
+    "available": 1010.5368,
     "position_margin": 0.0
   },
   "order_levels": {
-    "checked": 7,
-    "in_sync": 7,
+    "checked": 6,
+    "in_sync": 6,
     "drifted": [],
     "reconciling": [],
     "detail": []
@@ -74,7 +74,7 @@
       "key": "state_file",
       "tier": 1,
       "label": "Trade journal",
-      "value": "OK (465 records)",
+      "value": "OK (466 records)",
       "status": "ok",
       "action": null
     },
@@ -82,7 +82,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$1,550.00",
+      "value": "$1,538.29",
       "status": "ok",
       "action": null
     },
@@ -219,36 +219,6 @@
       "rehearsal": false
     },
     {
-      "trade_id": "ONDOUSDT_20260610_CB_001",
-      "coin": "ONDOUSDT",
-      "direction": "Short",
-      "entry_price": 0.35445529,
-      "sl": 0.37994905,
-      "tp1": 0.3339,
-      "tp2": 0.3205,
-      "capital_usd": 83.03,
-      "leverage": 3,
-      "trading_system": "Braam",
-      "track_only": false,
-      "status": "OPEN",
-      "price_at_run": 0.3367,
-      "date_activated": "2026-06-11",
-      "time_activated_utc": "13:50",
-      "date_opened": "2026-06-10",
-      "time_opened_utc": "19:16",
-      "conviction": "MEDIUM",
-      "tp1_hit": false,
-      "sl_moved_to_be": false,
-      "pnl_tp1_realized_usd": null,
-      "live_executed": true,
-      "live_entry_fill": 0.3545,
-      "live_exit_fill": null,
-      "live_entry_slippage_pct": -0.0126,
-      "live_fees_usd": 0.1488,
-      "live_funding_usd": null,
-      "rehearsal": false
-    },
-    {
       "trade_id": "AVAXUSDT_20260612_CB_001",
       "coin": "AVAXUSDT",
       "direction": "Short",
@@ -291,7 +261,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "OPEN",
-      "price_at_run": 613.6,
+      "price_at_run": 616.34,
       "date_activated": "2026-06-14",
       "time_activated_utc": "20:00",
       "date_opened": "2026-06-14",
@@ -321,7 +291,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 65495.88,
+      "price_at_run": 65633.89,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-06-14",
@@ -339,21 +309,7 @@
       "rehearsal": false
     }
   ],
-  "recent_signals": [
-    {
-      "trade_id": "BTCUSDT_20260614_CJ_001",
-      "coin": "BTCUSDT",
-      "direction": "Short",
-      "trading_system": "John",
-      "entry_price": 66057.75098659,
-      "tp1": 58652.23719145,
-      "sl": 66722.86367224,
-      "conviction": "HIGH",
-      "track_only": false,
-      "iso": "2026-06-14T14:43:00Z",
-      "rehearsal": false
-    }
-  ],
+  "recent_signals": [],
   "recent_opens": [
     {
       "trade_id": "HBARUSDT_20260613_CB_001",
@@ -696,6 +652,25 @@
       "rehearsal": false
     },
     {
+      "trade_id": "ONDOUSDT_20260610_CB_001",
+      "coin": "ONDOUSDT",
+      "direction": "Short",
+      "status": "STOPPED",
+      "pnl_usd": -16.71,
+      "close_reason": "SL hit",
+      "date_closed": "2026-06-15",
+      "time_closed_utc": "00:00",
+      "trading_system": "Braam",
+      "live_entry_fill": 0.3545,
+      "live_exit_fill": 0.38,
+      "live_entry_slippage_pct": -0.0126,
+      "live_fees_usd": 0.3616,
+      "live_funding_usd": 0.056519,
+      "won": false,
+      "close_iso": "2026-06-15T00:00:00Z",
+      "rehearsal": false
+    },
+    {
       "trade_id": "ADAUSDT_20260614_CB_001",
       "coin": "ADAUSDT",
       "direction": "Short",
@@ -734,15 +709,7 @@
       "rehearsal": false
     }
   ],
-  "recent_cancels": [
-    {
-      "coin": "BTCUSDT",
-      "direction": "Short",
-      "trading_system": "John",
-      "close_reason": "Entry window expired: unfilled 3.3d \u2265 20\u00d74H (80h) \u2014 mirrors backtest ENTRY_WINDO",
-      "iso": "2026-06-14T14:25:00Z"
-    }
-  ],
+  "recent_cancels": [],
   "tp1_hits_open": [
     {
       "coin": "XLMUSDT",
@@ -752,15 +719,15 @@
     }
   ],
   "stats": {
-    "realized_pnl_usd": -114.6,
-    "realized_pnl_pct": -8.65,
-    "win_rate_pct": 18.8,
-    "closed_count": 16,
+    "realized_pnl_usd": -132.87,
+    "realized_pnl_pct": -9.44,
+    "win_rate_pct": 17.6,
+    "closed_count": 17,
     "per_system": {
       "Braam": {
-        "realized_pnl_usd": -114.6,
-        "win_rate_pct": 18.8,
-        "closed_count": 16
+        "realized_pnl_usd": -132.87,
+        "win_rate_pct": 17.6,
+        "closed_count": 17
       }
     },
     "live_trade_count_total": 47,
