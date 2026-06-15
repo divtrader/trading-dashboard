@@ -1,16 +1,16 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-06-15T22:04:57Z",
+  "last_updated_iso": "2026-06-15T22:27:54Z",
   "mexc_account": {
-    "unrealized_pnl": -0.306,
-    "equity": 1508.9385,
-    "available": 1280.7545,
+    "unrealized_pnl": -3.2946,
+    "equity": 1505.9499,
+    "available": 1205.2793,
     "position_margin": 0.0
   },
   "order_levels": {
-    "checked": 3,
-    "in_sync": 3,
+    "checked": 4,
+    "in_sync": 4,
     "drifted": [],
     "reconciling": [],
     "detail": []
@@ -74,7 +74,7 @@
       "key": "state_file",
       "tier": 1,
       "label": "Trade journal",
-      "value": "OK (484 records)",
+      "value": "OK (485 records)",
       "status": "ok",
       "action": null
     },
@@ -82,7 +82,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$1,508.94",
+      "value": "$1,505.95",
       "status": "ok",
       "action": null
     },
@@ -171,7 +171,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 1812.77,
+      "price_at_run": 1790.61,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-06-15",
@@ -201,7 +201,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "OPEN",
-      "price_at_run": 0.2193,
+      "price_at_run": 0.2164,
       "date_activated": "2026-06-15",
       "time_activated_utc": "16:00",
       "date_opened": "2026-06-15",
@@ -215,6 +215,36 @@
       "live_exit_fill": null,
       "live_entry_slippage_pct": -0.0013,
       "live_fees_usd": 0.1346,
+      "live_funding_usd": null,
+      "rehearsal": false
+    },
+    {
+      "trade_id": "ONDOUSDT_20260615_CJ_001",
+      "coin": "ONDOUSDT",
+      "direction": "Long",
+      "entry_price": 0.3521,
+      "sl": 0.33960271,
+      "tp1": 0.3832864,
+      "tp2": 0.42269458,
+      "capital_usd": 75.27,
+      "leverage": 3,
+      "trading_system": "John",
+      "track_only": false,
+      "status": "PENDING",
+      "price_at_run": 0.3673,
+      "date_activated": null,
+      "time_activated_utc": null,
+      "date_opened": "2026-06-15",
+      "time_opened_utc": "22:27",
+      "conviction": "HIGH",
+      "tp1_hit": false,
+      "sl_moved_to_be": null,
+      "pnl_tp1_realized_usd": null,
+      "live_executed": null,
+      "live_entry_fill": null,
+      "live_exit_fill": null,
+      "live_entry_slippage_pct": null,
+      "live_fees_usd": null,
       "live_funding_usd": null,
       "rehearsal": false
     }
@@ -231,6 +261,19 @@
       "conviction": "HIGH",
       "track_only": false,
       "iso": "2026-06-15T15:28:00Z",
+      "rehearsal": false
+    },
+    {
+      "trade_id": "ONDOUSDT_20260615_CJ_001",
+      "coin": "ONDOUSDT",
+      "direction": "Long",
+      "trading_system": "John",
+      "entry_price": 0.3521,
+      "tp1": 0.3832864,
+      "sl": 0.33960271,
+      "conviction": "HIGH",
+      "track_only": false,
+      "iso": "2026-06-15T22:27:00Z",
       "rehearsal": false
     }
   ],
@@ -759,8 +802,8 @@
         "closed_count": 2
       }
     },
-    "live_trade_count_total": 49,
-    "live_real_count": 26,
+    "live_trade_count_total": 50,
+    "live_real_count": 27,
     "live_rehearsal_count": 23
   }
 }
