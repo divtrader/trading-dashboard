@@ -1,31 +1,19 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-06-17T12:54:36Z",
+  "last_updated_iso": "2026-06-17T13:37:05Z",
   "mexc_account": {
-    "unrealized_pnl": 6.3979,
-    "equity": 1472.9022,
-    "available": 350.7191,
+    "unrealized_pnl": 3.2923,
+    "equity": 1469.7967,
+    "available": 350.9716,
     "position_margin": 0.0
   },
   "order_levels": {
     "checked": 15,
-    "in_sync": 14,
-    "drifted": [
-      "NEAR"
-    ],
+    "in_sync": 15,
+    "drifted": [],
     "reconciling": [],
-    "detail": [
-      {
-        "coin": "NEAR",
-        "trade_id": "NEARUSDT_20260616_CJ_001",
-        "status": "PENDING",
-        "fields": [
-          "sl"
-        ],
-        "synced_at": null
-      }
-    ]
+    "detail": []
   },
   "api_keys": [
     {
@@ -78,9 +66,9 @@
       "key": "daily_summary",
       "tier": 1,
       "label": "Daily summary",
-      "value": "overdue 1d",
-      "status": "warn",
-      "action": "Run daily_summary.yml manually from Actions."
+      "value": "sent today",
+      "status": "ok",
+      "action": null
     },
     {
       "key": "state_file",
@@ -94,7 +82,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$1,472.90",
+      "value": "$1,469.80",
       "status": "ok",
       "action": null
     },
@@ -183,7 +171,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 1756.4,
+      "price_at_run": 1759.84,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-06-15",
@@ -213,7 +201,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 0.3701,
+      "price_at_run": 0.3752,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-06-15",
@@ -243,7 +231,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 2.306,
+      "price_at_run": 2.309,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-06-16",
