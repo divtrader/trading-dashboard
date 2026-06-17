@@ -1,41 +1,19 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-06-17T12:19:23Z",
+  "last_updated_iso": "2026-06-17T12:25:35Z",
   "mexc_account": {
-    "unrealized_pnl": 8.4686,
-    "equity": 1474.9729,
-    "available": 350.0621,
+    "unrealized_pnl": 17.1579,
+    "equity": 1483.6622,
+    "available": 349.8096,
     "position_margin": 0.0
   },
   "order_levels": {
     "checked": 15,
-    "in_sync": 13,
-    "drifted": [
-      "SUI",
-      "SOL"
-    ],
+    "in_sync": 15,
+    "drifted": [],
     "reconciling": [],
-    "detail": [
-      {
-        "coin": "SUI",
-        "trade_id": "SUIUSDT_20260617_CB_001",
-        "status": "OPEN",
-        "fields": [
-          "tp2"
-        ],
-        "synced_at": null
-      },
-      {
-        "coin": "SOL",
-        "trade_id": "SOLUSDT_20260617_CB_001",
-        "status": "OPEN",
-        "fields": [
-          "tp2"
-        ],
-        "synced_at": null
-      }
-    ]
+    "detail": []
   },
   "api_keys": [
     {
@@ -96,7 +74,7 @@
       "key": "state_file",
       "tier": 1,
       "label": "Trade journal",
-      "value": "OK (520 records)",
+      "value": "OK (521 records)",
       "status": "ok",
       "action": null
     },
@@ -104,7 +82,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$1,474.97",
+      "value": "$1,483.66",
       "status": "ok",
       "action": null
     },
@@ -193,7 +171,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 1763.14,
+      "price_at_run": 1751.96,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-06-15",
@@ -223,7 +201,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 0.3695,
+      "price_at_run": 0.3679,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-06-15",
@@ -244,16 +222,16 @@
       "trade_id": "NEARUSDT_20260616_CJ_001",
       "coin": "NEARUSDT",
       "direction": "Long",
-      "entry_price": 2.19664459,
-      "sl": 2.10639734,
+      "entry_price": 2.162,
+      "sl": 2.07175275,
       "tp1": 2.51016378,
-      "tp2": 2.69020532,
+      "tp2": 2.73849451,
       "capital_usd": 74.96,
       "leverage": 3,
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 2.301,
+      "price_at_run": 2.294,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-06-16",
