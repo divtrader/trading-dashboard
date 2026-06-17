@@ -1,38 +1,38 @@
 {
-  "generated_at_utc": "2026-06-17T18:32:39+00:00",
+  "generated_at_utc": "2026-06-17T19:43:29+00:00",
   "all_time": {
-    "total_trades": 242,
+    "total_trades": 243,
     "wins": 83,
-    "losses": 159,
-    "win_rate": 34.3,
-    "total_pnl_usd": 168.95,
-    "avg_pnl_usd": 0.7,
+    "losses": 160,
+    "win_rate": 34.2,
+    "total_pnl_usd": 163.58,
+    "avg_pnl_usd": 0.67,
     "best_usd": 85.94,
     "worst_usd": -44.29,
     "avg_win_usd": 20.18,
-    "avg_loss_usd": -9.85,
-    "expectancy_usd": 0.7,
+    "avg_loss_usd": -9.82,
+    "expectancy_usd": 0.67,
     "profit_factor": 1.11,
     "longest_win_streak": 5,
     "longest_loss_streak": 11,
     "current_streak_type": "loss",
-    "current_streak_count": 3,
-    "avg_hold_hours": 56.7,
+    "current_streak_count": 4,
+    "avg_hold_hours": 56.6,
     "median_hold_hours": 31.1
   },
   "by_system": {
     "John": {
-      "n": 145,
+      "n": 146,
       "wins": 47,
-      "wr": 32.4,
-      "pnl": 184.85,
-      "avg": 1.27,
+      "wr": 32.2,
+      "pnl": 179.48,
+      "avg": 1.23,
       "inception": "2026-04-25",
       "days_active": 53,
-      "pnl_per_day": 3.49,
+      "pnl_per_day": 3.39,
       "status": "active",
       "open": 9,
-      "pending": 21
+      "pending": 20
     },
     "Braam": {
       "n": 74,
@@ -45,7 +45,7 @@
       "pnl_per_day": -1.3,
       "status": "active",
       "open": 10,
-      "pending": 5
+      "pending": 6
     },
     "Mong": {
       "n": 0,
@@ -76,13 +76,13 @@
       "name": "John",
       "inception": "2026-04-25",
       "days_active": 53,
-      "closed": 145,
+      "closed": 146,
       "wins": 47,
-      "wr": 32.4,
-      "pnl": 184.85,
-      "pnl_per_day": 3.49,
+      "wr": 32.2,
+      "pnl": 179.48,
+      "pnl_per_day": 3.39,
       "open": 9,
-      "pending": 21
+      "pending": 20
     },
     {
       "name": "Braam",
@@ -94,7 +94,7 @@
       "pnl": -61.14,
       "pnl_per_day": -1.3,
       "open": 10,
-      "pending": 5
+      "pending": 6
     },
     {
       "name": "Mong",
@@ -128,11 +128,11 @@
     },
     {
       "month": "2026-06",
-      "n": 113,
+      "n": 114,
       "wins": 36,
-      "wr": 31.9,
-      "pnl": -69.01,
-      "cumulative_pnl": 168.95
+      "wr": 31.6,
+      "pnl": -74.38,
+      "cumulative_pnl": 163.58
     }
   ],
   "equity_curve": [
@@ -1583,19 +1583,25 @@
       "won": false
     },
     {
+      "iso": "2026-06-17T16:00:00+00:00",
+      "pnl": -5.37,
+      "cumulative": 164.93,
+      "won": false
+    },
+    {
       "iso": "2026-06-17T16:28:00+00:00",
       "pnl": -1.35,
-      "cumulative": 168.95,
+      "cumulative": 163.58,
       "won": false
     }
   ],
   "by_direction": {
     "Long": {
-      "n": 91,
+      "n": 92,
       "wins": 37,
-      "wr": 40.7,
-      "pnl": 335.04,
-      "avg": 3.68
+      "wr": 40.2,
+      "pnl": 329.67,
+      "avg": 3.58
     },
     "Short": {
       "n": 151,
@@ -1607,11 +1613,11 @@
   },
   "by_conviction": {
     "MEDIUM": {
-      "n": 228,
+      "n": 229,
       "wins": 78,
-      "wr": 34.2,
-      "pnl": 174.99,
-      "avg": 0.77
+      "wr": 34.1,
+      "pnl": 169.62,
+      "avg": 0.74
     },
     "VERY HIGH": {
       "n": 1,
@@ -1651,11 +1657,11 @@
       "avg": 4.73
     },
     "near_support": {
-      "n": 36,
+      "n": 37,
       "wins": 12,
-      "wr": 33.3,
-      "pnl": 149.2,
-      "avg": 4.14
+      "wr": 32.4,
+      "pnl": 143.83,
+      "avg": 3.89
     },
     "ema20_rejection": {
       "n": 74,
@@ -1709,11 +1715,11 @@
       "avg": -0.6
     },
     "2": {
-      "n": 29,
+      "n": 30,
       "wins": 15,
-      "wr": 51.7,
-      "pnl": 267.3,
-      "avg": 9.22
+      "wr": 50.0,
+      "pnl": 261.93,
+      "avg": 8.73
     },
     "6": {
       "n": 41,
@@ -1732,11 +1738,11 @@
   },
   "by_session": {
     "europe": {
-      "n": 99,
+      "n": 100,
       "wins": 32,
-      "wr": 32.3,
-      "pnl": -97.15,
-      "avg": -0.98
+      "wr": 32.0,
+      "pnl": -102.52,
+      "avg": -1.03
     },
     "asia": {
       "n": 61,
@@ -1762,11 +1768,11 @@
       "avg": 1.32
     },
     "DEGRADED": {
-      "n": 28,
+      "n": 29,
       "wins": 8,
-      "wr": 28.6,
-      "pnl": -72.13,
-      "avg": -2.58
+      "wr": 27.6,
+      "pnl": -77.5,
+      "avg": -2.67
     },
     "BLOCK": {
       "n": 3,
@@ -1799,11 +1805,11 @@
       "avg": 0.13
     },
     "Tuesday": {
-      "n": 33,
+      "n": 34,
       "wins": 8,
-      "wr": 24.2,
-      "pnl": -111.6,
-      "avg": -3.38
+      "wr": 23.5,
+      "pnl": -116.97,
+      "avg": -3.44
     },
     "Saturday": {
       "n": 34,
@@ -1850,11 +1856,11 @@
       "avg": 6.47
     },
     "12": {
-      "n": 60,
+      "n": 61,
       "wins": 23,
-      "wr": 38.3,
-      "pnl": -7.13,
-      "avg": -0.12
+      "wr": 37.7,
+      "pnl": -12.5,
+      "avg": -0.2
     },
     "0": {
       "n": 37,
@@ -2059,6 +2065,16 @@
       "iso": "2026-06-17T16:28:00+00:00"
     },
     {
+      "trade_id": "ETHUSDT_20260616_CJ_M_001",
+      "coin": "ETH",
+      "direction": "Long",
+      "system": "John",
+      "pnl_usd": -5.37,
+      "won": false,
+      "close_reason": "SL hit",
+      "iso": "2026-06-17T16:00:00+00:00"
+    },
+    {
       "trade_id": "UNIUSDT_20260617_CJ_M_001",
       "coin": "UNI",
       "direction": "Long",
@@ -2137,16 +2153,6 @@
       "won": false,
       "close_reason": "SL hit",
       "iso": "2026-06-16T20:00:00+00:00"
-    },
-    {
-      "trade_id": "XLMUSDT_20260615_CJ_001",
-      "coin": "XLM",
-      "direction": "Long",
-      "system": "John",
-      "pnl_usd": -12.99,
-      "won": false,
-      "close_reason": "SL hit",
-      "iso": "2026-06-16T00:00:00+00:00"
     }
   ],
   "live_positions": {
@@ -2158,24 +2164,24 @@
     "capital_pending_usd": 2600.0
   },
   "macro": {
-    "vix": 17.19,
+    "vix": 18.02,
     "vix_5d": [
       19.44,
       17.68,
       16.2,
       16.41,
-      17.19
+      18.02
     ],
-    "vix_ma14": 17.72,
-    "dxy": 99.97,
+    "vix_ma14": 17.78,
+    "dxy": 100.47,
     "dxy_5d": [
       99.86,
       99.75,
       99.63,
       99.54,
-      99.97
+      100.47
     ],
-    "dxy_ma14": 99.74,
+    "dxy_ma14": 99.78,
     "btc_price_last_seen": 64818.81,
     "btc_7d_change_pct": 3.48,
     "btc_30d_change_pct": -15.169,
