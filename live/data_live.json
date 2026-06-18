@@ -1,10 +1,10 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-06-18T18:36:00Z",
+  "last_updated_iso": "2026-06-18T18:39:27Z",
   "mexc_account": {
-    "unrealized_pnl": 95.2665,
-    "equity": 1576.8462,
+    "unrealized_pnl": 94.7797,
+    "equity": 1576.3594,
     "available": 322.1607,
     "position_margin": 0.0
   },
@@ -25,7 +25,7 @@
         "fields": [
           "sl"
         ],
-        "synced_at": "2026-06-18T18:34:59.889278+00:00"
+        "synced_at": "2026-06-18T18:38:29.716881+00:00"
       },
       {
         "coin": "AVAX",
@@ -43,7 +43,7 @@
         "fields": [
           "sl"
         ],
-        "synced_at": "2026-06-18T18:35:10.343576+00:00"
+        "synced_at": "2026-06-18T18:38:39.780694+00:00"
       }
     ]
   },
@@ -106,7 +106,7 @@
       "key": "state_file",
       "tier": 1,
       "label": "Trade journal",
-      "value": "OK (531 records)",
+      "value": "OK (533 records)",
       "status": "ok",
       "action": null
     },
@@ -114,7 +114,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$1,576.85",
+      "value": "$1,576.36",
       "status": "ok",
       "action": null
     },
@@ -203,7 +203,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 1684.94,
+      "price_at_run": 1683.74,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-06-15",
@@ -232,21 +232,21 @@
       "leverage": 3,
       "trading_system": "John",
       "track_only": false,
-      "status": "PENDING",
-      "price_at_run": 0.3551,
-      "date_activated": null,
-      "time_activated_utc": null,
+      "status": "OPEN",
+      "price_at_run": 0.3524,
+      "date_activated": "2026-06-18",
+      "time_activated_utc": "18:35",
       "date_opened": "2026-06-15",
       "time_opened_utc": "22:27",
       "conviction": "HIGH",
       "tp1_hit": false,
       "sl_moved_to_be": null,
       "pnl_tp1_realized_usd": null,
-      "live_executed": null,
-      "live_entry_fill": null,
+      "live_executed": true,
+      "live_entry_fill": 0.3539,
       "live_exit_fill": null,
-      "live_entry_slippage_pct": null,
-      "live_fees_usd": null,
+      "live_entry_slippage_pct": -0.014,
+      "live_fees_usd": 0.1337,
       "live_funding_usd": null,
       "rehearsal": false
     },
@@ -623,7 +623,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 62782.0,
+      "price_at_run": 62837.99,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-06-18",
@@ -787,6 +787,18 @@
       "tp1_hit": false,
       "iso": "2026-06-18T05:02:00Z",
       "_iso_ms": 1781758920000,
+      "rehearsal": false
+    },
+    {
+      "trade_id": "ONDOUSDT_20260615_CJ_001",
+      "coin": "ONDOUSDT",
+      "direction": "Long",
+      "trading_system": "John",
+      "entry_price": 0.35394953,
+      "live_entry_fill": 0.3539,
+      "tp1_hit": false,
+      "iso": "2026-06-18T18:35:00Z",
+      "_iso_ms": 1781807700000,
       "rehearsal": false
     }
   ],
