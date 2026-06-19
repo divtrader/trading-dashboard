@@ -1,51 +1,19 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-06-19T05:22:41Z",
+  "last_updated_iso": "2026-06-19T06:18:43Z",
   "mexc_account": {
-    "unrealized_pnl": 101.92,
-    "equity": 1583.6166,
-    "available": 310.8578,
+    "unrealized_pnl": 98.0285,
+    "equity": 1579.6586,
+    "available": 310.7913,
     "position_margin": 0.0
   },
   "order_levels": {
     "checked": 17,
-    "in_sync": 14,
-    "drifted": [
-      "DOGE",
-      "AVAX",
-      "SUI"
-    ],
+    "in_sync": 17,
+    "drifted": [],
     "reconciling": [],
-    "detail": [
-      {
-        "coin": "DOGE",
-        "trade_id": "DOGEUSDT_20260616_CB_001",
-        "status": "OPEN",
-        "fields": [
-          "sl"
-        ],
-        "synced_at": "2026-06-19T05:21:41.942234+00:00"
-      },
-      {
-        "coin": "AVAX",
-        "trade_id": "AVAXUSDT_20260617_CB_001",
-        "status": "OPEN",
-        "fields": [
-          "sl"
-        ],
-        "synced_at": "2026-06-19T05:21:48.786005+00:00"
-      },
-      {
-        "coin": "SUI",
-        "trade_id": "SUIUSDT_20260617_CB_001",
-        "status": "OPEN",
-        "fields": [
-          "sl"
-        ],
-        "synced_at": "2026-06-19T05:21:54.094718+00:00"
-      }
-    ]
+    "detail": []
   },
   "api_keys": [
     {
@@ -114,7 +82,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$1,583.62",
+      "value": "$1,579.66",
       "status": "ok",
       "action": null
     },
@@ -203,7 +171,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "OPEN",
-      "price_at_run": 0.3541,
+      "price_at_run": 0.3562,
       "date_activated": "2026-06-18",
       "time_activated_utc": "18:35",
       "date_opened": "2026-06-15",
@@ -233,7 +201,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "OPEN",
-      "price_at_run": 2.121,
+      "price_at_run": 2.137,
       "date_activated": "2026-06-18",
       "time_activated_utc": "05:02",
       "date_opened": "2026-06-16",
@@ -285,7 +253,7 @@
       "coin": "DOGEUSDT",
       "direction": "Short",
       "entry_price": 0.08779827,
-      "sl": 0.08955424,
+      "sl": 0.08548774,
       "tp1": 0.08231,
       "tp2": 0.07917,
       "capital_usd": 74.44,
@@ -435,7 +403,7 @@
       "coin": "AVAXUSDT",
       "direction": "Short",
       "entry_price": 6.82529391,
-      "sl": 6.96179979,
+      "sl": 6.40208378,
       "tp1": 6.42706131,
       "tp2": 5.824,
       "capital_usd": 73.73,
@@ -525,7 +493,7 @@
       "coin": "SUIUSDT",
       "direction": "Short",
       "entry_price": 0.78860295,
-      "sl": 0.80437501,
+      "sl": 0.75475255,
       "tp1": 0.718,
       "tp2": 0.6696,
       "capital_usd": 73.86,
@@ -593,7 +561,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 62590.0,
+      "price_at_run": 62825.99,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-06-18",
