@@ -1,11 +1,11 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-06-18T23:25:31Z",
+  "last_updated_iso": "2026-06-19T02:23:22Z",
   "mexc_account": {
-    "unrealized_pnl": 88.7194,
-    "equity": 1570.3199,
-    "available": 389.5433,
+    "unrealized_pnl": 86.2952,
+    "equity": 1567.9752,
+    "available": 389.6228,
     "position_margin": 0.0
   },
   "order_levels": {
@@ -25,7 +25,7 @@
         "fields": [
           "sl"
         ],
-        "synced_at": "2026-06-18T23:24:39.997719+00:00"
+        "synced_at": "2026-06-19T02:22:32.912622+00:00"
       },
       {
         "coin": "AVAX",
@@ -43,7 +43,7 @@
         "fields": [
           "sl"
         ],
-        "synced_at": "2026-06-18T23:24:48.269050+00:00"
+        "synced_at": "2026-06-19T02:22:41.314690+00:00"
       }
     ]
   },
@@ -52,28 +52,28 @@
       "label": "MEXC AlgoTrading sub-account (live orders)",
       "name": "MEXC_ALGO_KEY",
       "expires": "2026-08-27",
-      "days_left": 70,
+      "days_left": 69,
       "status": "ok"
     },
     {
       "label": "GitHub PAT (dashboard deploy)",
       "name": "DASHBOARD_PAT",
       "expires": "2026-07-30",
-      "days_left": 42,
+      "days_left": 41,
       "status": "ok"
     },
     {
       "label": "Google Drive OAuth (journal sync)",
       "name": "GDRIVE_OAUTH_TOKEN",
       "expires": "2026-07-30",
-      "days_left": 42,
+      "days_left": 41,
       "status": "ok"
     },
     {
       "label": "Telegram Bot (trade alerts)",
       "name": "TELEGRAM_TOKEN",
       "expires": "2126-01-01",
-      "days_left": 36356,
+      "days_left": 36355,
       "status": "ok"
     }
   ],
@@ -98,9 +98,9 @@
       "key": "daily_summary",
       "tier": 1,
       "label": "Daily summary",
-      "value": "sent today",
-      "status": "ok",
-      "action": null
+      "value": "overdue 1d",
+      "status": "warn",
+      "action": "Run daily_summary.yml manually from Actions."
     },
     {
       "key": "state_file",
@@ -114,7 +114,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$1,570.32",
+      "value": "$1,567.98",
       "status": "ok",
       "action": null
     },
@@ -130,7 +130,7 @@
       "key": "apikey_MEXC_ALGO_KEY",
       "tier": 1,
       "label": "MEXC AlgoTrading sub-account (live orders)",
-      "value": "70d left (2026-08-27)",
+      "value": "69d left (2026-08-27)",
       "status": "ok",
       "action": null
     },
@@ -138,7 +138,7 @@
       "key": "apikey_DASHBOARD_PAT",
       "tier": 1,
       "label": "GitHub PAT (dashboard deploy)",
-      "value": "42d left (2026-07-30)",
+      "value": "41d left (2026-07-30)",
       "status": "ok",
       "action": null
     },
@@ -146,7 +146,7 @@
       "key": "apikey_GDRIVE_OAUTH_TOKEN",
       "tier": 1,
       "label": "Google Drive OAuth (journal sync)",
-      "value": "42d left (2026-07-30)",
+      "value": "41d left (2026-07-30)",
       "status": "ok",
       "action": null
     },
@@ -154,7 +154,7 @@
       "key": "apikey_TELEGRAM_TOKEN",
       "tier": 1,
       "label": "Telegram Bot (trade alerts)",
-      "value": "36356d left (2126-01-01)",
+      "value": "36355d left (2126-01-01)",
       "status": "ok",
       "action": null
     }
@@ -203,7 +203,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "OPEN",
-      "price_at_run": 0.3611,
+      "price_at_run": 0.3615,
       "date_activated": "2026-06-18",
       "time_activated_utc": "18:35",
       "date_opened": "2026-06-15",
@@ -233,7 +233,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "OPEN",
-      "price_at_run": 2.204,
+      "price_at_run": 2.212,
       "date_activated": "2026-06-18",
       "time_activated_utc": "05:02",
       "date_opened": "2026-06-16",
@@ -593,7 +593,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 62845.78,
+      "price_at_run": 62977.43,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-06-18",
@@ -657,18 +657,6 @@
     }
   ],
   "recent_opens": [
-    {
-      "trade_id": "DOGEUSDT_20260616_CB_001",
-      "coin": "DOGEUSDT",
-      "direction": "Short",
-      "trading_system": "Braam",
-      "entry_price": 0.08779827,
-      "live_entry_fill": 0.0878,
-      "tp1_hit": true,
-      "iso": "2026-06-17T01:56:00Z",
-      "_iso_ms": 1781661360000,
-      "rehearsal": false
-    },
     {
       "trade_id": "AVAXUSDT_20260617_CB_001",
       "coin": "AVAXUSDT",
