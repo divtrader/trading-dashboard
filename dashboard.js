@@ -149,6 +149,9 @@ function saveVseen() {
   localStorage.setItem(VSEEN_KEY, JSON.stringify([...vseen].slice(-800)));
 }
 function maybeSpeak(key, text) {
+  // Voice/TTS announcements DISABLED per user request (2026-06-17) — no spoken
+  // win/loss/entry/TP alerts. To re-enable, remove the early return below.
+  return false;
   if (vseen.has(key)) return false;
   vseen.add(key); saveVseen();
   speak(text);
@@ -460,6 +463,10 @@ setInterval(() => {
 }, 1000);
 
 function showOverlay(ev) {
+  // Win celebrations + loss "sulk" + TP1 popup overlays DISABLED per user
+  // request (2026-06-17) to de-gamify the dashboard. Voice TTS is a separate
+  // system and is unaffected. To re-enable, remove the early return below.
+  return;
   // Dedupe: never queue or show the same event twice in one session
   if (seen.has(ev.id) || overlayQueuedIds.has(ev.id)) return;
   overlayQueuedIds.add(ev.id);
@@ -847,6 +854,9 @@ let bloombergSeen = loadBloombergSeen();
 let bloombergFirstRun = !localStorage.getItem(BLOOMBERG_FIRSTRUN_KEY);
 
 function checkBloombergNews(articles) {
+  // Bloomberg news-flash popups DISABLED per user request (2026-06-17).
+  // To re-enable, remove this early return + re-enable fetchBloombergNews below.
+  return;
   if (!articles) return;
   if (bloombergFirstRun) {
     // First load: mark existing articles as seen so we don't replay old news.
@@ -2093,8 +2103,9 @@ async function fetchBloombergNews() {
     console.warn("Bloomberg worker fetch failed:", e);
   }
 }
-fetchBloombergNews();
-setInterval(fetchBloombergNews, 60_000);
+// Bloomberg news polling DISABLED per user request (2026-06-17) — no flashes.
+// fetchBloombergNews();
+// setInterval(fetchBloombergNews, 60_000);
 
 // ════════════════════════════════════════════════════════════════════════
 // SCREEN 4 — EDGE INTELLIGENCE
