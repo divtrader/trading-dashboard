@@ -1,11 +1,11 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-06-19T11:11:21Z",
+  "last_updated_iso": "2026-06-19T12:09:33Z",
   "mexc_account": {
-    "unrealized_pnl": 102.4662,
-    "equity": 1584.1292,
-    "available": 309.9907,
+    "unrealized_pnl": 98.7418,
+    "equity": 1580.4392,
+    "available": 310.9057,
     "position_margin": 0.0
   },
   "order_levels": {
@@ -82,7 +82,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$1,584.13",
+      "value": "$1,580.44",
       "status": "ok",
       "action": null
     },
@@ -164,14 +164,14 @@
       "direction": "Long",
       "entry_price": 0.35394953,
       "sl": 0.34076435,
-      "tp1": 0.3832864,
-      "tp2": 0.42127129,
+      "tp1": 0.3879,
+      "tp2": 0.4282,
       "capital_usd": 75.27,
       "leverage": 3,
       "trading_system": "John",
       "track_only": false,
       "status": "OPEN",
-      "price_at_run": 0.3479,
+      "price_at_run": 0.349,
       "date_activated": "2026-06-18",
       "time_activated_utc": "18:35",
       "date_opened": "2026-06-15",
@@ -201,7 +201,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "OPEN",
-      "price_at_run": 2.11,
+      "price_at_run": 2.107,
       "date_activated": "2026-06-18",
       "time_activated_utc": "05:02",
       "date_opened": "2026-06-16",
@@ -493,7 +493,7 @@
       "coin": "SUIUSDT",
       "direction": "Short",
       "entry_price": 0.78860295,
-      "sl": 0.75126308,
+      "sl": 0.74998,
       "tp1": 0.718,
       "tp2": 0.6696,
       "capital_usd": 73.86,
@@ -552,16 +552,16 @@
       "trade_id": "BTCUSDT_20260618_CJ_001",
       "coin": "BTCUSDT",
       "direction": "Short",
-      "entry_price": 66886.805,
-      "sl": 67762.42299458,
-      "tp1": 52280.9689349,
-      "tp2": 51059.97788522,
+      "entry_price": 66113.95290381,
+      "sl": 66960.28104164,
+      "tp1": 54251.00254422,
+      "tp2": 51509.97788522,
       "capital_usd": 76.51,
       "leverage": 3,
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 62498.0,
+      "price_at_run": 62616.0,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-06-18",
@@ -655,42 +655,6 @@
     }
   ],
   "recent_opens": [
-    {
-      "trade_id": "LTCUSDT_20260617_CB_001",
-      "coin": "LTCUSDT",
-      "direction": "Short",
-      "trading_system": "Braam",
-      "entry_price": 45.131772,
-      "live_entry_fill": 45.13,
-      "tp1_hit": false,
-      "iso": "2026-06-17T12:06:00Z",
-      "_iso_ms": 1781697960000,
-      "rehearsal": false
-    },
-    {
-      "trade_id": "SUIUSDT_20260617_CB_001",
-      "coin": "SUIUSDT",
-      "direction": "Short",
-      "trading_system": "Braam",
-      "entry_price": 0.78860295,
-      "live_entry_fill": 0.7886,
-      "tp1_hit": true,
-      "iso": "2026-06-17T12:06:00Z",
-      "_iso_ms": 1781697960000,
-      "rehearsal": false
-    },
-    {
-      "trade_id": "SOLUSDT_20260617_CB_001",
-      "coin": "SOLUSDT",
-      "direction": "Short",
-      "trading_system": "Braam",
-      "entry_price": 72.20386861,
-      "live_entry_fill": 72.2,
-      "tp1_hit": false,
-      "iso": "2026-06-17T12:09:00Z",
-      "_iso_ms": 1781698140000,
-      "rehearsal": false
-    },
     {
       "trade_id": "XRPUSDT_20260617_CB_001",
       "coin": "XRPUSDT",
@@ -1286,15 +1250,7 @@
       "rehearsal": false
     }
   ],
-  "recent_cancels": [
-    {
-      "coin": "ETHUSDT",
-      "direction": "Short",
-      "trading_system": "John",
-      "close_reason": "Stale 12.8h \u2265 12h grace: Price $1,707.8 is 14.1% below entry $1,947.8",
-      "iso": "2026-06-18T23:24:00Z"
-    }
-  ],
+  "recent_cancels": [],
   "tp1_hits_open": [
     {
       "coin": "DOGEUSDT",
