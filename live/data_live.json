@@ -1,16 +1,16 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-06-19T03:02:15Z",
+  "last_updated_iso": "2026-06-19T04:10:40Z",
   "mexc_account": {
-    "unrealized_pnl": 84.7525,
-    "equity": 1566.4324,
-    "available": 389.6228,
+    "unrealized_pnl": 94.9097,
+    "equity": 1576.6063,
+    "available": 310.8578,
     "position_margin": 0.0
   },
   "order_levels": {
-    "checked": 16,
-    "in_sync": 13,
+    "checked": 17,
+    "in_sync": 14,
     "drifted": [
       "DOGE",
       "AVAX",
@@ -25,7 +25,7 @@
         "fields": [
           "sl"
         ],
-        "synced_at": "2026-06-19T02:22:32.912622+00:00"
+        "synced_at": "2026-06-19T04:09:50.687160+00:00"
       },
       {
         "coin": "AVAX",
@@ -34,7 +34,7 @@
         "fields": [
           "sl"
         ],
-        "synced_at": "2026-06-18T18:35:05.707358+00:00"
+        "synced_at": "2026-06-19T04:09:57.220579+00:00"
       },
       {
         "coin": "SUI",
@@ -43,7 +43,7 @@
         "fields": [
           "sl"
         ],
-        "synced_at": "2026-06-19T02:22:41.314690+00:00"
+        "synced_at": "2026-06-19T04:10:00.440866+00:00"
       }
     ]
   },
@@ -114,7 +114,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$1,566.43",
+      "value": "$1,576.61",
       "status": "ok",
       "action": null
     },
@@ -203,7 +203,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "OPEN",
-      "price_at_run": 0.3618,
+      "price_at_run": 0.3581,
       "date_activated": "2026-06-18",
       "time_activated_utc": "18:35",
       "date_opened": "2026-06-15",
@@ -233,7 +233,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "OPEN",
-      "price_at_run": 2.211,
+      "price_at_run": 2.132,
       "date_activated": "2026-06-18",
       "time_activated_utc": "05:02",
       "date_opened": "2026-06-16",
@@ -376,7 +376,7 @@
       "direction": "Short",
       "entry_price": 8.20530521,
       "sl": 8.45799255,
-      "tp1": 7.75038824,
+      "tp1": 7.788,
       "tp2": 7.274,
       "capital_usd": 73.73,
       "leverage": 3,
@@ -437,7 +437,7 @@
       "entry_price": 6.82529391,
       "sl": 6.96179979,
       "tp1": 6.42706131,
-      "tp2": 5.42559902,
+      "tp2": 5.824,
       "capital_usd": 73.73,
       "leverage": 3,
       "trading_system": "Braam",
@@ -593,7 +593,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 63014.79,
+      "price_at_run": 62765.35,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-06-18",
@@ -639,6 +639,36 @@
       "live_fees_usd": null,
       "live_funding_usd": null,
       "rehearsal": false
+    },
+    {
+      "trade_id": "ALGOUSDT_20260619_CB_001",
+      "coin": "ALGOUSDT",
+      "direction": "Short",
+      "entry_price": 0.0967987,
+      "sl": 0.10191324,
+      "tp1": 0.08500274,
+      "tp2": 0.06851188,
+      "capital_usd": 78.36,
+      "leverage": 3,
+      "trading_system": "Braam",
+      "track_only": false,
+      "status": "PENDING",
+      "price_at_run": 0.0961,
+      "date_activated": null,
+      "time_activated_utc": null,
+      "date_opened": "2026-06-19",
+      "time_opened_utc": "03:01",
+      "conviction": "MEDIUM",
+      "tp1_hit": false,
+      "sl_moved_to_be": false,
+      "pnl_tp1_realized_usd": null,
+      "live_executed": null,
+      "live_entry_fill": null,
+      "live_exit_fill": null,
+      "live_entry_slippage_pct": null,
+      "live_fees_usd": null,
+      "live_funding_usd": null,
+      "rehearsal": false
     }
   ],
   "recent_signals": [
@@ -653,6 +683,19 @@
       "conviction": "MEDIUM",
       "track_only": false,
       "iso": "2026-06-18T18:38:00Z",
+      "rehearsal": false
+    },
+    {
+      "trade_id": "ALGOUSDT_20260619_CB_001",
+      "coin": "ALGOUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "entry_price": 0.0967987,
+      "tp1": 0.08500274,
+      "sl": 0.10191324,
+      "conviction": "MEDIUM",
+      "track_only": false,
+      "iso": "2026-06-19T03:01:00Z",
       "rehearsal": false
     }
   ],
@@ -1358,8 +1401,8 @@
         "closed_count": 3
       }
     },
-    "live_trade_count_total": 69,
-    "live_real_count": 46,
+    "live_trade_count_total": 70,
+    "live_real_count": 47,
     "live_rehearsal_count": 23
   }
 }
