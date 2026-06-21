@@ -867,16 +867,40 @@ function renderOrderHealth() {
   }
   const levelsIsAlarm = levelsLine && levelsLine.startsWith("🟡");
 
-  // Fold healthy mover + levels status into the green line; alarms get their
-  // own line below.
+  // ── Order reconciliation (section 5) — orphan-order check from the
+  // publisher's housekeeping (key=orphan_orders). It reads LIVE MEXC open
+  // orders and reconciles them against the journal — catching a resting order
+  // with NO journal row (the structural gap the journal-vs-snapshot checks
+  // can't see). Surfaced here on Screen 1 in addition to the Housekeeping tile.
+  const orphan = (state.housekeeping || []).find(h => h.key === "orphan_orders");
+  let orphanLine = null, orphanIsCrit = false, orphanIsWarn = false;
+  if (orphan) {
+    if (orphan.status === "urgent") {
+      orphanLine = `🔴 ${orphan.value}`;
+      orphanIsCrit = true;
+    } else if (orphan.status === "warn") {
+      orphanLine = `🟡 Order reconciliation: ${orphan.value}`;
+      orphanIsWarn = true;
+    } else {
+      // ok — fold a concise "Reconciled N/N" into the green line
+      const m = /(\d+)\s*resting/.exec(orphan.value || "");
+      orphanLine = m ? `Reconciled ${m[1]}/${m[1]}` : "Reconciled ✓";
+    }
+  }
+  const orphanIsAlarm = orphanIsCrit || orphanIsWarn;
+
+  // Fold healthy mover + levels + reconciliation status into the green line;
+  // alarms get their own line below.
   if (!critical.length && !degraded.length && !liqDanger.length && !liqWatch.length) {
     const moverSuffix  = moverLine  && !moverIsAlarm  ? ` · ${moverLine}`  : "";
     const levelsSuffix = levelsLine && !levelsIsAlarm ? ` · ${levelsLine}` : "";
-    lines[0] = `🟢 Order Health · Stops set ${total}/${total}${liqSuffix}${moverSuffix}${levelsSuffix}`;
+    const orphanSuffix = orphanLine && !orphanIsAlarm ? ` · ${orphanLine}` : "";
+    lines[0] = `🟢 Order Health · Stops set ${total}/${total}${liqSuffix}${moverSuffix}${levelsSuffix}${orphanSuffix}`;
   }
 
   if (moverIsAlarm)  lines.push(moverLine);
   if (levelsIsAlarm) lines.push(levelsLine);
+  if (orphanIsAlarm) lines.push(orphanLine);
 
   // Legend — explains each segment + why the counts differ. Available on
   // hover (title attr) and on tap (toggles the inline panel). Tap-wiring is
@@ -886,6 +910,7 @@ function renderOrderHealth() {
     "Liquidation — how far the nearest position is from a forced liquidation (higher % = safer).",
     "Profit-lock — runners whose stop auto-moves up to TP1 once TP1 hits, banking a profit floor.",
     "Synced to MEXC — live trades whose journal TP/SL match the orders actually on the exchange.",
+    "Reconciled — every order resting on MEXC has a matching trade in our system (no stray/orphan orders).",
     "Counts differ: Stops & Profit-lock count OPEN positions; Synced counts ALL live trades incl. pending entries.",
   ];
   el.title = legend.join("\n");
@@ -902,9 +927,9 @@ function renderOrderHealth() {
     _ohLegendWired = true;
   }
 
-  // Class driven by worst state across all four checks
-  const hasCritical = critical.length > 0 || liqDanger.length > 0 || (moverLine || "").startsWith("🔴");
-  const hasWarning  = degraded.length > 0 || liqWatch.length > 0  || (moverLine || "").startsWith("🟡") || levelsIsAlarm;
+  // Class driven by worst state across all five checks
+  const hasCritical = critical.length > 0 || liqDanger.length > 0 || (moverLine || "").startsWith("🔴") || orphanIsCrit;
+  const hasWarning  = degraded.length > 0 || liqWatch.length > 0  || (moverLine || "").startsWith("🟡") || levelsIsAlarm || orphanIsWarn;
   el.className = "order-health-strip" + (hasCritical ? " critical" : hasWarning ? " degraded" : " healthy");
 }
 
