@@ -2397,8 +2397,8 @@ main {
    ══════════════════════════════════════════════════════════════════════════ */
 
 #screen-4 {
-  display: grid;
-  grid-template-rows: auto repeat(4, 1fr) auto;
+  display: flex;
+  flex-direction: column;
   gap: 8px;
   overflow: hidden;
 }
@@ -3909,3 +3909,61 @@ main {
 .pt-col:nth-child(1) .pt-col-count { background: rgba(0,201,167,0.16); color: var(--green); }
 .pb-col:nth-child(2) .pb-col-count,
 .pt-col:nth-child(2) .pt-col-count { background: rgba(255,183,77,0.16); color: #ffb74d; }
+
+/* ══════════════════════════════════════════════════════════════════════
+   Screen 4 — Analytics redesign (an-*). 4 bands: vs-S&P hero, 2x2 grid,
+   monthly, housekeeping. Reuses .edge-bars / .dir-vbars / .monthly-* inner
+   components inside the new tiles.
+   ══════════════════════════════════════════════════════════════════════ */
+.an-screen { display:flex; flex-direction:column; gap:12px; flex:1 1 0; min-height:0; height:100%; padding:2px; }
+.an-tile {
+  position:relative; display:flex; flex-direction:column; min-height:0;
+  padding:16px 20px; border-radius:16px;
+  background:linear-gradient(135deg, rgba(22,27,38,0.72) 0%, rgba(13,17,27,0.72) 100%);
+  border:1px solid rgba(255,255,255,0.07);
+  backdrop-filter:blur(14px) saturate(140%); -webkit-backdrop-filter:blur(14px) saturate(140%);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,0.05), 0 10px 30px -14px rgba(0,0,0,0.7);
+}
+.an-label { font-size:11px; font-weight:800; letter-spacing:1.4px; color:var(--muted); text-transform:uppercase; }
+.an-sub   { font-size:10px; font-weight:500; color:rgba(255,255,255,0.42); margin-top:3px; letter-spacing:0.3px; }
+
+/* Hero — vs S&P 500 */
+.an-hero { flex:2.0 1 0; }
+.an-hero-head { display:flex; justify-content:space-between; align-items:flex-start; gap:18px; }
+.an-hero-stats { display:flex; gap:30px; }
+.an-stat { text-align:right; }
+.an-stat-k { font-size:9px; font-weight:800; letter-spacing:1.2px; color:var(--muted); text-transform:uppercase; }
+.an-stat.ours .an-stat-k { color:#00c9a7; }
+.an-stat.spx  .an-stat-k { color:rgba(176,186,208,0.9); }
+.an-stat-v { font-size:30px; font-weight:900; letter-spacing:-0.6px; line-height:1.05; color:var(--text); white-space:nowrap; }
+.an-stat-v.pos { color:var(--green); } .an-stat-v.neg { color:var(--red); }
+.an-bench-chart { position:relative; flex:1 1 0; min-height:0; margin-top:10px; }
+.an-bench-svg { width:100%; height:100%; display:block; }
+.an-bench-legend { position:absolute; bottom:0; left:2px; right:2px; display:flex; gap:18px; align-items:center; font-size:10px; font-weight:700; color:var(--muted); }
+.an-leg { display:inline-flex; align-items:center; gap:6px; letter-spacing:0.4px; }
+.an-leg i { width:14px; height:3px; border-radius:2px; display:inline-block; }
+.an-leg.ours i { background:#00c9a7; } .an-leg.ours { color:#00c9a7; }
+.an-leg.spx i { background:#5b9dff; }
+.an-bench-since { margin-left:auto; color:rgba(255,255,255,0.35); font-weight:600; }
+
+/* 2x2 breakdown grid */
+.an-grid { flex:2.3 1 0; display:grid; grid-template-columns:1fr 1fr; grid-template-rows:1fr 1fr; gap:12px; min-height:0; }
+.an-grid .an-tile { padding:13px 16px; }
+.an-bars { margin-top:9px; flex:1 1 0; min-height:0; display:flex; flex-direction:column; justify-content:center; gap:7px; }
+.an-dir { margin-top:6px; flex:1 1 0; min-height:0; }
+
+/* Monthly (full width) */
+.an-monthly { flex:1.0 1 0; }
+.an-monthly-wrap { margin-top:8px; flex:1 1 0; min-height:0; display:flex; flex-direction:column; }
+
+/* Housekeeping inside the redesign */
+.an-screen .housekeeping-tile { flex:1.1 1 0; min-height:0; overflow:hidden; }
+.an-screen .housekeeping-tile .housekeeping-body { overflow:auto; min-height:0; }
+
+/* Screen-4 Housekeeping — collapsible (header-only when collapsed) */
+.an-screen .housekeeping-tile .hk-header { cursor:pointer; user-select:none; }
+.hk-header-right { display:flex; align-items:center; gap:12px; }
+.hk-chevron { font-size:11px; color:var(--muted); transition:transform 0.2s ease; }
+.housekeeping-tile.hk-collapsed { flex:0 0 auto !important; }
+.housekeeping-tile.hk-collapsed .housekeeping-body { display:none; }
+.housekeeping-tile.hk-collapsed .hk-chevron { transform:rotate(-90deg); }

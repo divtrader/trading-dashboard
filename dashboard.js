@@ -2211,6 +2211,7 @@ async function fetchFearGreed() {
 // ── Render: F&G gauge ──
 function renderEdgeFng() {
   if (!_edgeFng) return;
+  if (!$("fg-value")) return;   // Fear&Greed tile removed in Screen-4 redesign
   const v = _edgeFng.value;
   $("fg-value").textContent = v;
   $("fg-label").textContent = (_edgeFng.label || "").toUpperCase();
@@ -2379,26 +2380,29 @@ function _renderMacroSpark(svgId, values, isInverted) {
 
 // ── Refresh just the Edge hero P&L number — called from renderLive on every WS tick ──
 function updateEdgeLivePnL() {
-  if (!_edgeAnalytics) return;
-  const pnlEl = document.getElementById("edge-pnl");
-  if (!pnlEl) return;
-  const at = _edgeAnalytics.all_time || {};
+  // Keep the Screen-4 "vs S&P 500" headline in sync with the paper hero —
+  // realized + TP1 banked + unrealized, as % of paper starting capital ($2000).
+  const oursEl = document.getElementById("an-ours-pct");
+  if (!oursEl) return;
+  const b = _edgeAnalytics && _edgeAnalytics.benchmark;
   const openTrades = (state.trades || []).filter(t => t.status === "OPEN");
-  const liveEnriched = openTrades.map(t => ({ ...t, ...computeUnrealized(t) }));
-  const liveUnreal = liveEnriched.reduce((s, t) => s + (t.usd || 0), 0);
-  const liveTp1Banked = liveEnriched.reduce((s, t) => s + (t.tp1BankedUsd || 0), 0);
-  const realizedTotal = (at.total_pnl_usd || 0) + liveTp1Banked;
-  const liveTotalPnl = realizedTotal + liveUnreal;
-  pnlEl.textContent = _fmtUsdEdge(liveTotalPnl);
-  pnlEl.classList.remove("pos", "neg", "neu");
-  pnlEl.classList.add(_signCls(liveTotalPnl));
-  const subEl = document.getElementById("edge-perf-sub");
-  if (subEl) {
-    const unrealTxt = openTrades.length
-      ? ` · <span class="${_signCls(liveUnreal)}">${_fmtUsdEdge(liveUnreal)} unreal</span>`
-      : "";
-    subEl.innerHTML =
-      `<span class="${_signCls(realizedTotal)}">${_fmtUsdEdge(realizedTotal)} realized</span>${unrealTxt} · ${at.total_trades ?? 0} closed · ${at.win_rate ?? 0}% WR`;
+  const enriched = openTrades.map(t => ({ ...t, ...computeUnrealized(t) }));
+  const tp1Banked = enriched.reduce((s, t) => s + (t.tp1BankedUsd || 0), 0);
+  const unrealized = enriched.reduce((s, t) => s + (t.usd || 0), 0);
+  const total = ((state.stats && state.stats.realized_pnl_usd) || 0) + tp1Banked + unrealized;
+  const equity = (b && b.base_usd) || 2000;
+  const oursNowPct = equity ? (total / equity) * 100 : 0;
+  const setPct = (id, v) => {
+    const el = document.getElementById(id);
+    if (!el) return;
+    if (v == null || !isFinite(v)) { el.textContent = "—"; el.className = "an-stat-v"; return; }
+    el.textContent = (v >= 0 ? "+" : "") + v.toFixed(2) + "%";
+    el.className = "an-stat-v " + cls(v);
+  };
+  setPct("an-ours-pct", oursNowPct);
+  if (b) {
+    setPct("an-spx-pct", b.spx_pct);
+    setPct("an-edge-pct", (b.spx_pct != null) ? oursNowPct - b.spx_pct : null);
   }
 }
 
@@ -2699,130 +2703,105 @@ function _renderMonthly(monthly) {
 function renderEdgeScreen() {
   if (!_edgeAnalytics) return;
   const a = _edgeAnalytics;
-  const at = a.all_time || {};
-  const macro = a.macro || {};
 
-  // Hero P&L tile + equity curve
-  // Compute LIVE portfolio total (matches Screen 1): realized + unrealized + tp1_banked
-  // realized = closed-trade P&L; tp1_banked = banked TP1 from still-open trades; unrealized = mark-to-market on open
+  // "Ours" computed like the paper hero (Screen 1): realized (closed + TP1
+  // banked) + unrealized (mark-to-market on open), as % of paper starting
+  // capital ($2000). No MEXC equity — this is the paper book.
   const openTrades = (state.trades || []).filter(t => t.status === "OPEN");
-  const liveEnriched = openTrades.map(t => ({ ...t, ...computeUnrealized(t) }));
-  const liveUnreal = liveEnriched.reduce((s, t) => s + (t.usd || 0), 0);
-  const liveTp1Banked = liveEnriched.reduce((s, t) => s + (t.tp1BankedUsd || 0), 0);
-  const realizedTotal = (at.total_pnl_usd || 0) + liveTp1Banked;
-  const liveTotalPnl = realizedTotal + liveUnreal;
+  const enriched = openTrades.map(t => ({ ...t, ...computeUnrealized(t) }));
+  const tp1Banked = enriched.reduce((s, t) => s + (t.tp1BankedUsd || 0), 0);
+  const unrealized = enriched.reduce((s, t) => s + (t.usd || 0), 0);
+  const realized = (state.stats?.realized_pnl_usd ?? 0) + tp1Banked;
+  const liveTotalPnl = realized + unrealized;
+  const equity = (a.benchmark && a.benchmark.base_usd) || 2000;
 
-  const pnlEl = $("edge-pnl");
-  pnlEl.textContent = _fmtUsdEdge(liveTotalPnl);
-  pnlEl.classList.remove("pos", "neg", "neu");
-  pnlEl.classList.add(_signCls(liveTotalPnl));
-  // Sub-line: show the breakdown so realized vs unrealized vs WR is clear
-  const unrealTxt = openTrades.length
-    ? ` · <span class="${_signCls(liveUnreal)}">${_fmtUsdEdge(liveUnreal)} unreal</span>`
-    : "";
-  $("edge-perf-sub").innerHTML =
-    `<span class="${_signCls(realizedTotal)}">${_fmtUsdEdge(realizedTotal)} realized</span>${unrealTxt} · ${at.total_trades ?? 0} closed · ${at.win_rate ?? 0}% WR`;
-  _renderEquityCurve(a.equity_curve);
+  _renderBenchmark(a.benchmark, liveTotalPnl, equity);
 
-  // WR big donut (radius 64, circumference = 2π·64 = 402.124)
-  const wr = at.win_rate ?? 0;
-  $("edge-wr-pct").textContent = wr.toFixed(1) + "%";
-  $("edge-wl").textContent = `${at.wins ?? 0}W · ${at.losses ?? 0}L`;
-  const C = 2 * Math.PI * 64;
-  const fill = document.getElementById("edge-donut-fill");
-  const glow = document.getElementById("edge-donut-glow");
-  if (fill && glow) {
-    const gradId = wr >= 50 ? "wrGradGreen" : (wr >= 35 ? "wrGradAmber" : "wrGradRed");
-    fill.setAttribute("stroke-dasharray", C);
-    fill.setAttribute("stroke-dashoffset", C * (1 - wr / 100));
-    fill.style.stroke = `url(#${gradId})`;
-    glow.setAttribute("stroke-dasharray", C);
-    glow.setAttribute("stroke-dashoffset", C * (1 - wr / 100));
-    glow.style.stroke = `url(#${gradId})`;
-  }
-
-  // Direction (vertical bars)
-  _renderDirectionVbars(a.by_direction);
-
-  // Streak: big number + pills + longest meta
-  const streakBig = $("edge-streak-big");
-  if (at.current_streak_count != null) {
-    streakBig.textContent = at.current_streak_count + (at.current_streak_type === "win" ? "W" : "L");
-    streakBig.classList.remove("pos", "neg");
-    streakBig.classList.add(at.current_streak_type === "win" ? "pos" : "neg");
-  }
-  _renderStreakPills(a.recent_closes);
-  $("edge-longest-w").textContent = at.longest_win_streak ?? "—";
-  $("edge-longest-l").textContent = at.longest_loss_streak ?? "—";
-
-  // Macro: number + mini sparkline + trend label
-  if (macro.vix != null) {
-    $("macro-vix").textContent = macro.vix.toFixed(2);
-    _renderMacroSpark("macro-vix-spark", macro.vix_5d || [], /*isInverted=*/true);
-    const rising = macro.vix > (macro.vix_ma14 ?? macro.vix);
-    const trendEl = $("macro-vix-trend");
-    trendEl.textContent = `${rising ? "↑" : "↓"} MA14 ${macro.vix_ma14?.toFixed(1) ?? "—"}`;
-    trendEl.className = "macro-cell-foot " + (rising ? "neg" : "pos");
-  }
-  if (macro.dxy != null) {
-    $("macro-dxy").textContent = macro.dxy.toFixed(2);
-    _renderMacroSpark("macro-dxy-spark", macro.dxy_5d || [], /*isInverted=*/false);
-    const rising = macro.dxy > (macro.dxy_ma14 ?? macro.dxy);
-    const trendEl = $("macro-dxy-trend");
-    trendEl.textContent = `${rising ? "↑" : "↓"} MA14 ${macro.dxy_ma14?.toFixed(1) ?? "—"}`;
-    trendEl.className = "macro-cell-foot " + (rising ? "neu" : "pos");
-  }
-  if (macro.btc_7d_change_pct != null) {
-    const el = $("macro-btc7d");
-    el.textContent = _fmtPctEdge(macro.btc_7d_change_pct);
-    el.className = "macro-cell-val " + _signCls(macro.btc_7d_change_pct);
-  }
-  if (macro.btc_30d_change_pct != null) {
-    const el = $("macro-btc30d");
-    el.textContent = _fmtPctEdge(macro.btc_30d_change_pct);
-    el.className = "macro-cell-val " + _signCls(macro.btc_30d_change_pct);
-  }
-  if (macro.btc_correlation_30d != null) {
-    $("macro-btc-corr").textContent = `corr ${macro.btc_correlation_30d.toFixed(2)}`;
-  }
-  if (macro.btc_price_last_seen != null) {
-    $("macro-btc-price").textContent = `$${Math.round(macro.btc_price_last_seen).toLocaleString()}`;
-  }
-
-  // Breakdown bar tiles
-  _renderSystemsRich(a.system_summary, a.decommissioned_systems);
-  _renderMonthly(a.monthly);
-  _renderBars("edge-by-conviction", a.by_conviction, {
-    labelMap: { "VERY HIGH": "V.HIGH", "HIGH": "HIGH", "MEDIUM": "MED", "LOW": "LOW" }
-  });
   _renderBars("edge-by-entry", a.by_entry_type, {
-    labelMap: {
-      "at_support": "@ Support", "near_support": "Near Sup",
-      "at_resistance": "@ Resist", "ema20_rejection": "EMA20 Rej",
-      "breakout_chase": "Brkout", "structural_limit": "Struct"
-    }
-  });
-  _renderBars("edge-by-session", a.by_session, {
-    labelMap: { "asia": "Asia", "europe": "Europe", "us": "US" }
+    labelMap: { "at_support":"@ Support","near_support":"Near Sup","at_resistance":"@ Resist",
+                "ema20_rejection":"EMA20 Rej","breakout_chase":"Brkout","structural_limit":"Struct" }
   });
   _renderBars("edge-by-confluence", a.by_confluence_score, {
-    sortByKey: true,
-    labelMap: { "4": "4/8", "5": "5/8", "6": "6/8", "7": "7/8", "8": "8/8" }
+    sortByKey: true, labelMap: { "4":"4/8","5":"5/8","6":"6/8","7":"7/8","8":"8/8" }
   });
-  _renderEconomicEvents();
+  _renderBars("edge-by-conviction", a.by_conviction, {
+    labelMap: { "VERY HIGH":"V.HIGH","HIGH":"HIGH","MEDIUM":"MED","LOW":"LOW" }
+  });
 
-  // Bottom strip
-  const bc = (a.best_coins || [])[0];
-  if (bc) $("strip-best-coin").innerHTML = `<span class="strip-name">${bc.coin}</span> <span class="pos">${_fmtUsdEdge(bc.pnl)}</span> <span class="strip-sub">${bc.n}t</span>`;
-  const wc = (a.worst_coins || [])[0];
-  if (wc) $("strip-worst-coin").innerHTML = `<span class="strip-name">${wc.coin}</span> <span class="neg">${_fmtUsdEdge(wc.pnl)}</span> <span class="strip-sub">${wc.n}t</span>`;
-  if (a.best_trade) $("strip-best-trade").innerHTML = `<span class="strip-name">${a.best_trade.coin} ${a.best_trade.direction}</span> <span class="pos">${_fmtUsdEdge(a.best_trade.pnl_usd)}</span>`;
-  if (a.worst_trade) $("strip-worst-trade").innerHTML = `<span class="strip-name">${a.worst_trade.coin} ${a.worst_trade.direction}</span> <span class="neg">${_fmtUsdEdge(a.worst_trade.pnl_usd)}</span>`;
-  if (at.avg_hold_hours != null) $("strip-avg-hold").innerHTML = `<span class="strip-name">${at.avg_hold_hours.toFixed(1)}h</span> <span class="strip-sub">median ${at.median_hold_hours?.toFixed(1) ?? "—"}h</span>`;
-  if (a.live_positions) $("strip-live").innerHTML = `<span class="strip-name">${a.live_positions.open_count} open</span> <span class="strip-sub">${a.live_positions.open_long}L · ${a.live_positions.open_short}S</span>`;
+  _renderDirectionVbars(a.by_direction);
+  _renderMonthly(a.monthly);
+}
 
-  // Live insights ticker
-  _renderEdgeInsights(a);
+// Hero: our total return (realized + open) vs S&P 500 buy-and-hold, since
+// inception. Lines smoothed (_smoothPath, same as Screen 1). Spyker GREEN when
+// up, RED when in loss; S&P BLUE. Index-based even spacing (no x-reversal).
+function _renderBenchmark(b, liveTotalPnl, equity) {
+  const svg = document.getElementById("an-bench-svg");
+  if (!svg) return;
+  if (!b) { svg.innerHTML = ""; return; }
+  const base = equity || b.base_usd || 2000;
+  const oursNowPct = base ? (liveTotalPnl / base) * 100 : 0;
+  const scale = (b.base_usd && base) ? (b.base_usd / base) : 1;
+
+  const ours = (b.ours || []).map(p => ({ pct: p.pct * scale }));
+  ours.push({ pct: +oursNowPct.toFixed(3) });
+  const spx = (b.spx || []).map(p => ({ pct: p.pct }));
+  if (spx.length) spx.push({ pct: spx[spx.length - 1].pct });
+
+  const allPct = ours.concat(spx).map(p => p.pct).filter(v => isFinite(v));
+  let lo = Math.min(0, ...allPct), hi = Math.max(0, ...allPct);
+  if (lo === hi) { lo -= 1; hi += 1; }
+  const padY = (hi - lo) * 0.2; lo -= padY; hi += padY;
+
+  const W = 1000, H = 300, padL = 6, padR = 6, padT = 14, padB = 16;
+  const xAt = (i, n) => padL + (n > 1 ? i / (n - 1) : 0) * (W - padL - padR);
+  const yOf = v => padT + (1 - (v - lo) / (hi - lo)) * (H - padT - padB);
+  const zeroY = yOf(0).toFixed(1);
+
+  const oursPts = ours.map((p, i) => [xAt(i, ours.length), yOf(p.pct)]);
+  const spxPts  = spx.map((p, i) => [xAt(i, spx.length), yOf(p.pct)]);
+  const oursPath = _smoothPath(oursPts);
+  const spxPath  = _smoothPath(spxPts);
+  const area = oursPath
+    ? `${oursPath} L ${oursPts[oursPts.length-1][0]} ${(H-padB).toFixed(1)} L ${oursPts[0][0]} ${(H-padB).toFixed(1)} Z`
+    : "";
+
+  const up = oursNowPct >= 0;
+  const ourCol = up ? "#00e6c0" : "#ff6b7a";
+  const spxCol = "#5b9dff";
+
+  svg.innerHTML = `
+    <defs>
+      <linearGradient id="oursFill" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="${ourCol}" stop-opacity="0.30"/>
+        <stop offset="45%" stop-color="${ourCol}" stop-opacity="0.12"/>
+        <stop offset="100%" stop-color="${ourCol}" stop-opacity="0"/>
+      </linearGradient>
+    </defs>
+    <line x1="${padL}" y1="${zeroY}" x2="${W-padR}" y2="${zeroY}" stroke="rgba(255,255,255,0.14)" stroke-width="1" stroke-dasharray="4 5" vector-effect="non-scaling-stroke"/>
+    ${area ? `<path d="${area}" fill="url(#oursFill)"/>` : ""}
+    ${spxPath ? `<path d="${spxPath}" fill="none" stroke="${spxCol}" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round" vector-effect="non-scaling-stroke"/>` : ""}
+    ${oursPath ? `<path d="${oursPath}" fill="none" stroke="${ourCol}" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" vector-effect="non-scaling-stroke"/>` : ""}
+  `;
+
+  const setPct = (id, v) => {
+    const el = document.getElementById(id);
+    if (!el) return;
+    if (v == null || !isFinite(v)) { el.textContent = "—"; el.className = "an-stat-v"; return; }
+    el.textContent = (v >= 0 ? "+" : "") + v.toFixed(2) + "%";
+    el.className = "an-stat-v " + cls(v);
+  };
+  setPct("an-ours-pct", oursNowPct);
+  setPct("an-spx-pct", b.spx_pct);
+  setPct("an-edge-pct", (b.spx_pct != null) ? oursNowPct - b.spx_pct : null);
+
+  const sinceEl = document.getElementById("an-bench-since");
+  if (sinceEl) sinceEl.textContent = b.inception_iso ? "since " + b.inception_iso.slice(0, 10) : "";
+  const subEl = document.getElementById("an-bench-sub");
+  if (subEl) subEl.textContent = "Total return (realized + open) vs S&P 500 buy-and-hold";
+  const oi = document.querySelector(".an-leg.ours i"); if (oi) oi.style.background = ourCol;
+  const ot = document.querySelector(".an-leg.ours"); if (ot) ot.style.color = ourCol;
+  const si = document.querySelector(".an-leg.spx i"); if (si) si.style.background = spxCol;
 }
 
 fetchAnalytics();
@@ -2830,3 +2809,24 @@ fetchFearGreed();
 setInterval(fetchAnalytics, 5 * 60_000);    // analytics: every 5 min
 setInterval(fetchFearGreed, 30 * 60_000);   // F&G: every 30 min (updates daily anyway)
 setInterval(_renderEconomicEvents, 60_000); // econ countdown: tick every 60s
+
+// Screen-4 Housekeeping collapse toggle — only the header shows when collapsed.
+(function wireHkCollapse(){
+  const KEY = "hkCollapsed_paper_v1";
+  function apply(){
+    const tile = document.querySelector(".housekeeping-tile");
+    if (!tile) return;
+    tile.classList.toggle("hk-collapsed", localStorage.getItem(KEY) !== "0"); // default = collapsed
+  }
+  document.addEventListener("click", e => {
+    const hdr = e.target.closest(".housekeeping-tile .hk-header");
+    if (!hdr) return;
+    const tile = hdr.closest(".housekeeping-tile");
+    const collapsed = !tile.classList.contains("hk-collapsed");
+    tile.classList.toggle("hk-collapsed", collapsed);
+    localStorage.setItem(KEY, collapsed ? "1" : "0");
+  });
+  if (document.readyState !== "loading") apply();
+  else document.addEventListener("DOMContentLoaded", apply);
+  setTimeout(apply, 1500);
+})();

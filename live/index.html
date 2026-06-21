@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <meta name="robots" content="noindex,nofollow">
 <title>Spyker Trading Inc — Live MEXC Dashboard</title>
-<link rel="stylesheet" href="style.css?v=134">
+<link rel="stylesheet" href="style.css?v=135">
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
@@ -141,233 +141,103 @@
   </section>
 
   <section id="screen-4" class="screen">
-    <!-- Live insights ticker -->
-    <div class="edge-insights" id="edge-insights">
-      <span class="edge-ins-label">EDGE INSIGHTS</span>
-    </div>
+    <div class="an-screen">
 
-    <!-- Row 1: hero — P&L spans 2 cols with equity curve, WR donut, Direction -->
-    <div class="edge-row edge-row-hero">
-      <div class="edge-tile edge-perf edge-span-2">
-        <div class="edge-perf-overlay">
-          <div class="edge-label">ALL-TIME P&amp;L · EQUITY CURVE</div>
-          <div class="edge-desc">Live MEXC portfolio · realized + TP1 banked + unrealized · curve traces closed live trades over time</div>
-          <div class="edge-big" id="edge-pnl">—</div>
-          <div class="edge-sub" id="edge-perf-sub">—</div>
+      <!-- HERO: Performance vs S&P 500 since inception -->
+      <div class="an-tile an-hero">
+        <div class="an-hero-head">
+          <div class="an-hero-titles">
+            <div class="an-label">PERFORMANCE vs S&amp;P 500 · SINCE INCEPTION</div>
+            <div class="an-sub" id="an-bench-sub">Realized trading return vs S&amp;P 500 buy-and-hold</div>
+          </div>
+          <div class="an-hero-stats">
+            <div class="an-stat ours"><div class="an-stat-k">SPYKER</div><div class="an-stat-v" id="an-ours-pct">—</div></div>
+            <div class="an-stat spx"><div class="an-stat-k">S&amp;P 500</div><div class="an-stat-v" id="an-spx-pct">—</div></div>
+            <div class="an-stat edge"><div class="an-stat-k">vs S&amp;P</div><div class="an-stat-v" id="an-edge-pct">—</div></div>
+          </div>
         </div>
-        <!-- Smooth equity curve fills the tile background -->
-        <svg id="equity-curve-svg" class="equity-curve-svg" viewBox="0 0 800 200" preserveAspectRatio="none"></svg>
-      </div>
-
-      <div class="edge-tile edge-wr">
-        <div class="edge-label">WIN RATE</div>
-        <div class="edge-desc">% of closed trades that ended in profit</div>
-        <div class="wr-big-donut">
-          <svg viewBox="0 0 160 160" class="wr-donut-svg">
+        <div class="an-bench-chart">
+          <svg id="an-bench-svg" class="an-bench-svg" viewBox="0 0 1000 300" preserveAspectRatio="none">
             <defs>
-              <linearGradient id="wrGradGreen" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0%" stop-color="#00e6c0"/>
-                <stop offset="100%" stop-color="#00a884"/>
+              <linearGradient id="oursFill" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#00c9a7" stop-opacity="0.30"/>
+                <stop offset="100%" stop-color="#00c9a7" stop-opacity="0"/>
               </linearGradient>
-              <linearGradient id="wrGradAmber" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0%" stop-color="#ffd54f"/>
-                <stop offset="100%" stop-color="#ff9800"/>
-              </linearGradient>
-              <linearGradient id="wrGradRed" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0%" stop-color="#ff8a80"/>
-                <stop offset="100%" stop-color="#ff4d5e"/>
-              </linearGradient>
-              <filter id="wrGlow"><feGaussianBlur stdDeviation="3"/></filter>
             </defs>
-            <circle class="wr-track" cx="80" cy="80" r="64" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="14"/>
-            <circle class="wr-glow" cx="80" cy="80" r="64" fill="none" stroke-width="14" stroke-linecap="round"
-                    transform="rotate(-90 80 80)" id="edge-donut-glow" filter="url(#wrGlow)" opacity="0.5"/>
-            <circle class="wr-fill" cx="80" cy="80" r="64" fill="none" stroke-width="14" stroke-linecap="round"
-                    transform="rotate(-90 80 80)" id="edge-donut-fill"/>
           </svg>
-          <div class="wr-center">
-            <div class="wr-big-pct" id="edge-wr-pct">—</div>
-            <div class="wr-big-label">WIN RATE</div>
-            <div class="wr-big-sub" id="edge-wl">—</div>
+          <div class="an-bench-legend">
+            <span class="an-leg ours"><i></i>Spyker</span>
+            <span class="an-leg spx"><i></i>S&amp;P 500</span>
+            <span class="an-bench-since" id="an-bench-since"></span>
           </div>
         </div>
       </div>
 
-      <div class="edge-tile edge-dir">
-        <div class="edge-label">DIRECTION</div>
-        <div class="edge-desc">Long vs Short · tower height scales with P&amp;L</div>
-        <div class="dir-vbars" id="edge-direction">
-          <div class="dir-vbar-col long">
-            <div class="dir-vbar-pnl" id="dir-long-pnl">—</div>
-            <div class="dir-vbar-frame">
-              <div class="dir-vbar-fill" id="dir-long-fill" style="height:0%"></div>
+      <!-- 2x2 breakdown grid -->
+      <div class="an-grid">
+        <div class="an-tile">
+          <div class="an-label">BY ENTRY TYPE</div>
+          <div class="an-sub">Where price was when the trade triggered</div>
+          <div class="edge-bars an-bars" id="edge-by-entry">—</div>
+        </div>
+        <div class="an-tile">
+          <div class="an-label">BY CONFLUENCE</div>
+          <div class="an-sub">Signal score at entry (out of 8)</div>
+          <div class="edge-bars an-bars" id="edge-by-confluence">—</div>
+        </div>
+        <div class="an-tile">
+          <div class="an-label">BY CONVICTION</div>
+          <div class="an-sub">Setup quality grade at entry</div>
+          <div class="edge-bars an-bars" id="edge-by-conviction">—</div>
+        </div>
+        <div class="an-tile an-dir-tile">
+          <div class="an-label">DIRECTION</div>
+          <div class="an-sub">Long vs Short · tower height scales with P&amp;L</div>
+          <div class="dir-vbars an-dir" id="edge-direction">
+            <div class="dir-vbar-col long">
+              <div class="dir-vbar-pnl" id="dir-long-pnl">—</div>
+              <div class="dir-vbar-frame"><div class="dir-vbar-fill" id="dir-long-fill" style="height:0%"></div></div>
+              <div class="dir-vbar-foot">
+                <div class="dir-vbar-wr" id="dir-long-wr">—</div>
+                <div class="dir-vbar-tag long">LONG</div>
+                <div class="dir-vbar-n" id="dir-long-n">—</div>
+              </div>
             </div>
-            <div class="dir-vbar-foot">
-              <div class="dir-vbar-wr" id="dir-long-wr">—</div>
-              <div class="dir-vbar-tag long">LONG</div>
-              <div class="dir-vbar-n" id="dir-long-n">—</div>
-            </div>
-          </div>
-          <div class="dir-vbar-col short">
-            <div class="dir-vbar-pnl" id="dir-short-pnl">—</div>
-            <div class="dir-vbar-frame">
-              <div class="dir-vbar-fill short" id="dir-short-fill" style="height:0%"></div>
-            </div>
-            <div class="dir-vbar-foot">
-              <div class="dir-vbar-wr" id="dir-short-wr">—</div>
-              <div class="dir-vbar-tag short">SHORT</div>
-              <div class="dir-vbar-n" id="dir-short-n">—</div>
+            <div class="dir-vbar-col short">
+              <div class="dir-vbar-pnl" id="dir-short-pnl">—</div>
+              <div class="dir-vbar-frame"><div class="dir-vbar-fill short" id="dir-short-fill" style="height:0%"></div></div>
+              <div class="dir-vbar-foot">
+                <div class="dir-vbar-wr" id="dir-short-wr">—</div>
+                <div class="dir-vbar-tag short">SHORT</div>
+                <div class="dir-vbar-n" id="dir-short-n">—</div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
 
-    <!-- Row 2: F&G | Macro | By System (spans 2) -->
-    <div class="edge-row edge-row-2">
-      <div class="edge-tile edge-fg">
-        <div class="edge-label">FEAR &amp; GREED</div>
-        <div class="edge-desc">Live crypto sentiment · 0 = Extreme Fear → 100 = Extreme Greed</div>
-        <div class="fg-gauge">
-          <svg viewBox="0 0 220 130" class="fg-svg" id="fg-svg">
-            <defs>
-              <linearGradient id="fgGrad" x1="0" y1="0" x2="1" y2="0">
-                <stop offset="0%" stop-color="#ff4d5e"/>
-                <stop offset="25%" stop-color="#ff9800"/>
-                <stop offset="50%" stop-color="#ffd54f"/>
-                <stop offset="75%" stop-color="#9ccc65"/>
-                <stop offset="100%" stop-color="#00c9a7"/>
-              </linearGradient>
-              <filter id="fgGlow"><feGaussianBlur stdDeviation="2.5"/></filter>
-            </defs>
-            <path d="M 22 110 A 88 88 0 0 1 198 110" stroke="url(#fgGrad)" stroke-width="14" fill="none" stroke-linecap="round" filter="url(#fgGlow)" opacity="0.45"/>
-            <path d="M 22 110 A 88 88 0 0 1 198 110" stroke="url(#fgGrad)" stroke-width="12" fill="none" stroke-linecap="round"/>
-            <line id="fg-needle" x1="110" y1="110" x2="110" y2="30" stroke="#fff" stroke-width="3" stroke-linecap="round" filter="url(#fgGlow)"/>
-            <circle cx="110" cy="110" r="7" fill="#fff"/>
-            <circle cx="110" cy="110" r="3" fill="#1a2233"/>
-          </svg>
-          <div class="fg-value" id="fg-value">—</div>
-          <div class="fg-label" id="fg-label">—</div>
-        </div>
-      </div>
-
-      <div class="edge-tile edge-macro">
-        <div class="edge-label">MACRO</div>
-        <div class="edge-desc">VIX vol · DXY dollar · BTC momentum — risk-off indicators</div>
-        <div class="macro-grid">
-          <div class="macro-cell" data-key="vix">
-            <div class="macro-cell-top">
-              <span class="macro-cell-key">VIX</span>
-              <span class="macro-cell-val" id="macro-vix">—</span>
-            </div>
-            <svg class="macro-spark" id="macro-vix-spark" viewBox="0 0 120 32" preserveAspectRatio="none"></svg>
-            <div class="macro-cell-foot" id="macro-vix-trend">—</div>
-          </div>
-          <div class="macro-cell" data-key="dxy">
-            <div class="macro-cell-top">
-              <span class="macro-cell-key">DXY</span>
-              <span class="macro-cell-val" id="macro-dxy">—</span>
-            </div>
-            <svg class="macro-spark" id="macro-dxy-spark" viewBox="0 0 120 32" preserveAspectRatio="none"></svg>
-            <div class="macro-cell-foot" id="macro-dxy-trend">—</div>
-          </div>
-          <div class="macro-cell" data-key="btc7">
-            <div class="macro-cell-top">
-              <span class="macro-cell-key">BTC 7D</span>
-              <span class="macro-cell-val" id="macro-btc7d">—</span>
-            </div>
-            <div class="macro-cell-foot"><span id="macro-btc-corr">—</span></div>
-          </div>
-          <div class="macro-cell" data-key="btc30">
-            <div class="macro-cell-top">
-              <span class="macro-cell-key">BTC 30D</span>
-              <span class="macro-cell-val" id="macro-btc30d">—</span>
-            </div>
-            <div class="macro-cell-foot" id="macro-btc-price">—</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="edge-tile edge-systems-tile edge-span-2">
-        <div class="edge-label">BY SYSTEM · SINCE INCEPTION</div>
-        <div class="edge-desc">Per-system track record · William decommissioned · Mong awaiting first signal</div>
-        <div class="edge-systems" id="edge-systems">—</div>
-      </div>
-    </div>
-
-    <!-- Row 3: Monthly P&L (spans 2) | By Conviction | Streak -->
-    <div class="edge-row edge-row-3">
-      <div class="edge-tile edge-monthly-tile edge-span-2">
-        <div class="edge-label">MONTHLY P&amp;L</div>
-        <div class="edge-desc">Realized P&amp;L per calendar month · all systems combined</div>
-        <div class="monthly-chart-wrap">
+      <!-- Monthly P&L (full width) -->
+      <div class="an-tile an-monthly">
+        <div class="an-label">MONTHLY P&amp;L</div>
+        <div class="an-sub">Realized P&amp;L per calendar month · all systems combined</div>
+        <div class="monthly-chart-wrap an-monthly-wrap">
           <div class="monthly-bars" id="monthly-bars"></div>
           <div class="monthly-meta" id="monthly-meta">—</div>
         </div>
       </div>
 
-      <div class="edge-tile edge-bars-tile">
-        <div class="edge-label">BY CONVICTION</div>
-        <div class="edge-desc">Outcome by signal strength rating</div>
-        <div class="edge-bars" id="edge-by-conviction">—</div>
-      </div>
-
-      <div class="edge-tile edge-streak">
-        <div class="edge-label">STREAK</div>
-        <div class="edge-desc">Current run · pills = last 10 closes (green=win)</div>
-        <div class="edge-streak-big" id="edge-streak-big">—</div>
-        <div class="edge-streak-pills" id="edge-streak-pills"></div>
-        <div class="edge-streak-meta">
-          <div><span class="edge-mk">Max consecutive wins</span><span class="edge-mv pos" id="edge-longest-w">—</span></div>
-          <div><span class="edge-mk">Max consecutive losses</span><span class="edge-mv neg" id="edge-longest-l">—</span></div>
+      <!-- Housekeeping (operational health — kept) -->
+      <div class="an-tile housekeeping-tile">
+        <div class="hk-header">
+          <div class="an-label">🧹 HOUSEKEEPING</div>
+          <div class="hk-header-right">
+            <div class="hk-status-summary" id="hk-summary">—</div>
+            <span class="hk-chevron">▾</span>
+          </div>
         </div>
-      </div>
-    </div>
-
-    <!-- Row 4: 4 breakdown tiles + economic calendar -->
-    <div class="edge-row edge-row-4">
-      <div class="edge-tile edge-bars-tile">
-        <div class="edge-label">BY ENTRY TYPE</div>
-        <div class="edge-desc">Setup classification at signal time</div>
-        <div class="edge-bars" id="edge-by-entry">—</div>
+        <div id="api-keys" class="housekeeping-body">—</div>
       </div>
 
-      <div class="edge-tile edge-bars-tile">
-        <div class="edge-label">BY SESSION (UTC)</div>
-        <div class="edge-desc">Trading window at trade activation</div>
-        <div class="edge-bars" id="edge-by-session">—</div>
-      </div>
-
-      <div class="edge-tile edge-bars-tile">
-        <div class="edge-label">BY CONFLUENCE</div>
-        <div class="edge-desc">How many of 8 signal categories aligned at entry</div>
-        <div class="edge-bars" id="edge-by-confluence">—</div>
-      </div>
-
-      <div class="edge-tile econ-tile">
-        <div class="edge-label">ECONOMIC EVENTS</div>
-        <div class="edge-desc">High-impact macro releases · countdown to next</div>
-        <div class="econ-body" id="edge-econ-events">—</div>
-      </div>
-    </div>
-
-    <!-- Bottom strip: best/worst + live positions -->
-    <div class="edge-strip" id="edge-strip">
-      <div class="strip-cell"><div class="strip-k">BEST COIN</div><div class="strip-v" id="strip-best-coin">—</div></div>
-      <div class="strip-cell"><div class="strip-k">WORST COIN</div><div class="strip-v" id="strip-worst-coin">—</div></div>
-      <div class="strip-cell"><div class="strip-k">BEST TRADE</div><div class="strip-v" id="strip-best-trade">—</div></div>
-      <div class="strip-cell"><div class="strip-k">WORST TRADE</div><div class="strip-v" id="strip-worst-trade">—</div></div>
-      <div class="strip-cell"><div class="strip-k">AVG HOLD</div><div class="strip-v" id="strip-avg-hold">—</div></div>
-      <div class="strip-cell"><div class="strip-k">LIVE</div><div class="strip-v" id="strip-live">—</div></div>
-    </div>
-
-    <!-- Housekeeping — system health items that need human action -->
-    <div class="edge-tile housekeeping-tile">
-      <div class="hk-header">
-        <div class="edge-label">🧹 HOUSEKEEPING</div>
-        <div class="hk-status-summary" id="hk-summary">—</div>
-      </div>
-      <div id="api-keys" class="housekeeping-body">—</div>
     </div>
   </section>
 
@@ -382,6 +252,6 @@
   </div>
 </main>
 
-<script src="dashboard.js?v=224"></script>
+<script src="dashboard.js?v=225"></script>
 </body>
 </html>
