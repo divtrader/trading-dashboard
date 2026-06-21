@@ -1,11 +1,11 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-06-21T11:26:00Z",
+  "last_updated_iso": "2026-06-21T12:06:02Z",
   "mexc_account": {
-    "unrealized_pnl": 73.9476,
-    "equity": 1568.0587,
-    "available": 393.5994,
+    "unrealized_pnl": 74.7838,
+    "equity": 1568.9042,
+    "available": 393.6088,
     "position_margin": 0.0
   },
   "order_levels": {
@@ -66,9 +66,9 @@
       "key": "daily_summary",
       "tier": 1,
       "label": "Daily summary",
-      "value": "overdue 1d",
-      "status": "warn",
-      "action": "Run daily_summary.yml manually from Actions."
+      "value": "sent today",
+      "status": "ok",
+      "action": null
     },
     {
       "key": "state_file",
@@ -82,7 +82,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$1,568.06",
+      "value": "$1,568.90",
       "status": "ok",
       "action": null
     },
@@ -179,7 +179,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "OPEN",
-      "price_at_run": 2.248,
+      "price_at_run": 2.227,
       "date_activated": "2026-06-18",
       "time_activated_utc": "05:02",
       "date_opened": "2026-06-16",
@@ -441,7 +441,7 @@
       "coin": "SUIUSDT",
       "direction": "Short",
       "entry_price": 0.78860295,
-      "sl": 0.73585135,
+      "sl": 0.73505346,
       "tp1": 0.718,
       "tp2": 0.6696,
       "capital_usd": 73.86,
@@ -509,7 +509,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 64326.01,
+      "price_at_run": 64182.48,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-06-18",
