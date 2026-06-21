@@ -2390,7 +2390,10 @@ function updateEdgeLivePnL() {
   const tp1Banked = enriched.reduce((s, t) => s + (t.tp1BankedUsd || 0), 0);
   const unrealized = enriched.reduce((s, t) => s + (t.usd || 0), 0);
   const total = ((state.stats && state.stats.realized_pnl_usd) || 0) + tp1Banked + unrealized;
-  const equity = (b && b.base_usd) || 2000;
+  // Denominator = Screen-1's hero %: total capital deployed.
+  const totalCap = enriched.reduce((s, t) => s + (t.capital_usd || 100), 0);
+  const closedCap = ((state.stats && state.stats.closed_count) || 0) * 100;
+  const equity = (closedCap + totalCap) || (b && b.base_usd) || 2000;
   const oursNowPct = equity ? (total / equity) * 100 : 0;
   const setPct = (id, v) => {
     const el = document.getElementById(id);
@@ -2713,7 +2716,11 @@ function renderEdgeScreen() {
   const unrealized = enriched.reduce((s, t) => s + (t.usd || 0), 0);
   const realized = (state.stats?.realized_pnl_usd ?? 0) + tp1Banked;
   const liveTotalPnl = realized + unrealized;
-  const equity = (a.benchmark && a.benchmark.base_usd) || 2000;
+  // Denominator = Screen-1's hero %: total capital deployed (closed × $100 +
+  // open capital), so the Spyker number matches Screen 1 exactly.
+  const totalCap = enriched.reduce((s, t) => s + (t.capital_usd || 100), 0);
+  const closedCap = ((state.stats && state.stats.closed_count) || 0) * 100;
+  const equity = (closedCap + totalCap) || (a.benchmark && a.benchmark.base_usd) || 2000;
 
   _renderBenchmark(a.benchmark, liveTotalPnl, equity);
 
