@@ -1,16 +1,16 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-06-22T08:59:43Z",
+  "last_updated_iso": "2026-06-22T12:35:36Z",
   "mexc_account": {
-    "unrealized_pnl": 82.4291,
-    "equity": 1565.6751,
-    "available": 540.1503,
+    "unrealized_pnl": 51.9106,
+    "equity": 1545.4908,
+    "available": 624.4435,
     "position_margin": 0.0
   },
   "order_levels": {
-    "checked": 14,
-    "in_sync": 14,
+    "checked": 12,
+    "in_sync": 12,
     "drifted": [],
     "reconciling": [],
     "detail": []
@@ -74,7 +74,7 @@
       "key": "state_file",
       "tier": 1,
       "label": "Trade journal",
-      "value": "OK (546 records)",
+      "value": "OK (548 records)",
       "status": "ok",
       "action": null
     },
@@ -82,7 +82,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$1,565.68",
+      "value": "$1,545.49",
       "status": "ok",
       "action": null
     },
@@ -106,7 +106,7 @@
       "key": "position_protection",
       "tier": 1,
       "label": "Position protection",
-      "value": "all protected (10 open, 7 pre-TP1 runners)",
+      "value": "all protected (8 open, 7 pre-TP1 runners)",
       "status": "ok",
       "action": null
     },
@@ -157,7 +157,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "OPEN",
-      "price_at_run": 2.157,
+      "price_at_run": 2.172,
       "date_activated": "2026-06-18",
       "time_activated_utc": "05:02",
       "date_opened": "2026-06-16",
@@ -295,36 +295,6 @@
       "rehearsal": false
     },
     {
-      "trade_id": "LINKUSDT_20260617_CB_001",
-      "coin": "LINKUSDT",
-      "direction": "Short",
-      "entry_price": 8.20530521,
-      "sl": 8.08624648,
-      "tp1": 7.788,
-      "tp2": 7.274,
-      "capital_usd": 73.73,
-      "leverage": 3,
-      "trading_system": "Braam",
-      "track_only": false,
-      "status": "OPEN",
-      "price_at_run": 8.179,
-      "date_activated": "2026-06-17",
-      "time_activated_utc": "09:26",
-      "date_opened": "2026-06-17",
-      "time_opened_utc": "08:56",
-      "conviction": "MEDIUM",
-      "tp1_hit": true,
-      "sl_moved_to_be": false,
-      "pnl_tp1_realized_usd": 5.93,
-      "live_executed": true,
-      "live_entry_fill": 8.205,
-      "live_exit_fill": null,
-      "live_entry_slippage_pct": 0.0037,
-      "live_fees_usd": 0.2159,
-      "live_funding_usd": null,
-      "rehearsal": false
-    },
-    {
       "trade_id": "XRPUSDT_20260617_CB_001",
       "coin": "XRPUSDT",
       "direction": "Short",
@@ -415,36 +385,6 @@
       "rehearsal": false
     },
     {
-      "trade_id": "SUIUSDT_20260617_CB_001",
-      "coin": "SUIUSDT",
-      "direction": "Short",
-      "entry_price": 0.78860295,
-      "sl": 0.72513691,
-      "tp1": 0.718,
-      "tp2": 0.6696,
-      "capital_usd": 73.86,
-      "leverage": 3,
-      "trading_system": "Braam",
-      "track_only": false,
-      "status": "OPEN",
-      "price_at_run": 0.7866,
-      "date_activated": "2026-06-17",
-      "time_activated_utc": "12:06",
-      "date_opened": "2026-06-17",
-      "time_opened_utc": "12:02",
-      "conviction": "MEDIUM",
-      "tp1_hit": true,
-      "sl_moved_to_be": false,
-      "pnl_tp1_realized_usd": 10.89,
-      "live_executed": true,
-      "live_entry_fill": 0.7886,
-      "live_exit_fill": null,
-      "live_entry_slippage_pct": 0.0004,
-      "live_fees_usd": 0.2128,
-      "live_funding_usd": null,
-      "rehearsal": false
-    },
-    {
       "trade_id": "BTCUSDT_20260618_CJ_001",
       "coin": "BTCUSDT",
       "direction": "Short",
@@ -457,7 +397,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 64154.01,
+      "price_at_run": 64935.26,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-06-18",
@@ -567,18 +507,6 @@
   ],
   "recent_signals": [],
   "recent_opens": [
-    {
-      "trade_id": "TRXUSDT_20260610_CB_001",
-      "coin": "TRXUSDT",
-      "direction": "Short",
-      "trading_system": "Braam",
-      "entry_price": 0.32425273,
-      "live_entry_fill": 0.32425,
-      "tp1_hit": false,
-      "iso": "2026-06-20T11:20:00Z",
-      "_iso_ms": 1781954400000,
-      "rehearsal": false
-    },
     {
       "trade_id": "UNIUSDT_20260620_CB_001",
       "coin": "UNIUSDT",
@@ -1200,6 +1128,44 @@
       "won": false,
       "close_iso": "2026-06-22T06:35:00Z",
       "rehearsal": false
+    },
+    {
+      "trade_id": "SUIUSDT_20260617_CB_001",
+      "coin": "SUIUSDT",
+      "direction": "Short",
+      "status": "STOPPED_AFTER_TP1",
+      "pnl_usd": 22.9,
+      "close_reason": "live MEXC exit: manual @ 0.7251",
+      "date_closed": "2026-06-22",
+      "time_closed_utc": "11:10",
+      "trading_system": "Braam",
+      "live_entry_fill": 0.7886,
+      "live_exit_fill": 0.7251,
+      "live_entry_slippage_pct": 0.0004,
+      "live_fees_usd": 0.294,
+      "live_funding_usd": -0.012893,
+      "won": true,
+      "close_iso": "2026-06-22T11:10:00Z",
+      "rehearsal": false
+    },
+    {
+      "trade_id": "LINKUSDT_20260617_CB_001",
+      "coin": "LINKUSDT",
+      "direction": "Short",
+      "status": "STOPPED_AFTER_TP1",
+      "pnl_usd": 8.8,
+      "close_reason": "live MEXC exit: manual @ 8.086",
+      "date_closed": "2026-06-22",
+      "time_closed_utc": "11:49",
+      "trading_system": "Braam",
+      "live_entry_fill": 8.205,
+      "live_exit_fill": 8.086,
+      "live_entry_slippage_pct": 0.0037,
+      "live_fees_usd": 0.3032,
+      "live_funding_usd": 0.051794,
+      "won": true,
+      "close_iso": "2026-06-22T11:49:00Z",
+      "rehearsal": false
     }
   ],
   "recent_cancels": [],
@@ -1209,30 +1175,18 @@
       "direction": "Short",
       "trading_system": "Braam",
       "entry_price": 0.08779827
-    },
-    {
-      "coin": "LINKUSDT",
-      "direction": "Short",
-      "trading_system": "Braam",
-      "entry_price": 8.20530521
-    },
-    {
-      "coin": "SUIUSDT",
-      "direction": "Short",
-      "trading_system": "Braam",
-      "entry_price": 0.78860295
     }
   ],
   "stats": {
-    "realized_pnl_usd": -197.69,
-    "realized_pnl_pct": -7.68,
-    "win_rate_pct": 15.6,
-    "closed_count": 32,
+    "realized_pnl_usd": -172.43,
+    "realized_pnl_pct": -6.33,
+    "win_rate_pct": 20.6,
+    "closed_count": 34,
     "per_system": {
       "Braam": {
-        "realized_pnl_usd": -172.88,
-        "win_rate_pct": 17.9,
-        "closed_count": 28
+        "realized_pnl_usd": -147.62,
+        "win_rate_pct": 23.3,
+        "closed_count": 30
       },
       "John": {
         "realized_pnl_usd": -24.81,
