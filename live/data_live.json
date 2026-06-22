@@ -1,16 +1,16 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-06-21T22:49:22Z",
+  "last_updated_iso": "2026-06-22T02:09:24Z",
   "mexc_account": {
-    "unrealized_pnl": 80.7901,
-    "equity": 1574.9523,
-    "available": 393.6506,
+    "unrealized_pnl": 72.6513,
+    "equity": 1559.4503,
+    "available": 461.2979,
     "position_margin": 0.0
   },
   "order_levels": {
-    "checked": 16,
-    "in_sync": 16,
+    "checked": 15,
+    "in_sync": 15,
     "drifted": [],
     "reconciling": [],
     "detail": []
@@ -20,28 +20,28 @@
       "label": "MEXC AlgoTrading sub-account (live orders)",
       "name": "MEXC_ALGO_KEY",
       "expires": "2026-08-27",
-      "days_left": 67,
+      "days_left": 66,
       "status": "ok"
     },
     {
       "label": "GitHub PAT (dashboard deploy)",
       "name": "DASHBOARD_PAT",
       "expires": "2026-07-30",
-      "days_left": 39,
+      "days_left": 38,
       "status": "ok"
     },
     {
       "label": "Google Drive OAuth (journal sync)",
       "name": "GDRIVE_OAUTH_TOKEN",
       "expires": "2026-07-30",
-      "days_left": 39,
+      "days_left": 38,
       "status": "ok"
     },
     {
       "label": "Telegram Bot (trade alerts)",
       "name": "TELEGRAM_TOKEN",
       "expires": "2126-01-01",
-      "days_left": 36353,
+      "days_left": 36352,
       "status": "ok"
     }
   ],
@@ -66,9 +66,9 @@
       "key": "daily_summary",
       "tier": 1,
       "label": "Daily summary",
-      "value": "sent today",
-      "status": "ok",
-      "action": null
+      "value": "overdue 1d",
+      "status": "warn",
+      "action": "Run daily_summary.yml manually from Actions."
     },
     {
       "key": "state_file",
@@ -82,7 +82,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$1,574.95",
+      "value": "$1,559.45",
       "status": "ok",
       "action": null
     },
@@ -106,7 +106,7 @@
       "key": "position_protection",
       "tier": 1,
       "label": "Position protection",
-      "value": "all protected (12 open, 9 pre-TP1 runners)",
+      "value": "all protected (11 open, 8 pre-TP1 runners)",
       "status": "ok",
       "action": null
     },
@@ -114,7 +114,7 @@
       "key": "apikey_MEXC_ALGO_KEY",
       "tier": 1,
       "label": "MEXC AlgoTrading sub-account (live orders)",
-      "value": "67d left (2026-08-27)",
+      "value": "66d left (2026-08-27)",
       "status": "ok",
       "action": null
     },
@@ -122,7 +122,7 @@
       "key": "apikey_DASHBOARD_PAT",
       "tier": 1,
       "label": "GitHub PAT (dashboard deploy)",
-      "value": "39d left (2026-07-30)",
+      "value": "38d left (2026-07-30)",
       "status": "ok",
       "action": null
     },
@@ -130,7 +130,7 @@
       "key": "apikey_GDRIVE_OAUTH_TOKEN",
       "tier": 1,
       "label": "Google Drive OAuth (journal sync)",
-      "value": "39d left (2026-07-30)",
+      "value": "38d left (2026-07-30)",
       "status": "ok",
       "action": null
     },
@@ -138,7 +138,7 @@
       "key": "apikey_TELEGRAM_TOKEN",
       "tier": 1,
       "label": "Telegram Bot (trade alerts)",
-      "value": "36353d left (2126-01-01)",
+      "value": "36352d left (2126-01-01)",
       "status": "ok",
       "action": null
     }
@@ -187,7 +187,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "OPEN",
-      "price_at_run": 2.11,
+      "price_at_run": 2.166,
       "date_activated": "2026-06-18",
       "time_activated_utc": "05:02",
       "date_opened": "2026-06-16",
@@ -475,36 +475,6 @@
       "rehearsal": false
     },
     {
-      "trade_id": "SOLUSDT_20260617_CB_002",
-      "coin": "SOLUSDT",
-      "direction": "Short",
-      "entry_price": 72.3568335,
-      "sl": 74.67705411,
-      "tp1": 68.21,
-      "tp2": 63.2,
-      "capital_usd": 74.88,
-      "leverage": 3,
-      "trading_system": "Braam",
-      "track_only": false,
-      "status": "OPEN",
-      "price_at_run": 71.85,
-      "date_activated": "2026-06-18",
-      "time_activated_utc": "00:30",
-      "date_opened": "2026-06-17",
-      "time_opened_utc": "19:42",
-      "conviction": "MEDIUM",
-      "tp1_hit": false,
-      "sl_moved_to_be": false,
-      "pnl_tp1_realized_usd": null,
-      "live_executed": true,
-      "live_entry_fill": 72.36,
-      "live_exit_fill": null,
-      "live_entry_slippage_pct": -0.0044,
-      "live_fees_usd": 0.1345,
-      "live_funding_usd": null,
-      "rehearsal": false
-    },
-    {
       "trade_id": "BTCUSDT_20260618_CJ_001",
       "coin": "BTCUSDT",
       "direction": "Short",
@@ -517,7 +487,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 63693.09,
+      "price_at_run": 64544.01,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-06-18",
@@ -1222,6 +1192,25 @@
       "won": false,
       "close_iso": "2026-06-20T14:02:00Z",
       "rehearsal": false
+    },
+    {
+      "trade_id": "SOLUSDT_20260617_CB_002",
+      "coin": "SOLUSDT",
+      "direction": "Short",
+      "status": "STOPPED",
+      "pnl_usd": -1.86,
+      "close_reason": "live MEXC exit: sl @ 74.69",
+      "date_closed": "2026-06-22",
+      "time_closed_utc": "01:26",
+      "trading_system": "Braam",
+      "live_entry_fill": 72.36,
+      "live_exit_fill": 74.69,
+      "live_entry_slippage_pct": -0.0044,
+      "live_fees_usd": 0.3197,
+      "live_funding_usd": 0.021263,
+      "won": false,
+      "close_iso": "2026-06-22T01:26:00Z",
+      "rehearsal": false
     }
   ],
   "recent_cancels": [],
@@ -1246,15 +1235,15 @@
     }
   ],
   "stats": {
-    "realized_pnl_usd": -186.42,
-    "realized_pnl_pct": -7.71,
-    "win_rate_pct": 16.7,
-    "closed_count": 30,
+    "realized_pnl_usd": -193.99,
+    "realized_pnl_pct": -7.78,
+    "win_rate_pct": 16.1,
+    "closed_count": 31,
     "per_system": {
       "Braam": {
-        "realized_pnl_usd": -161.61,
-        "win_rate_pct": 19.2,
-        "closed_count": 26
+        "realized_pnl_usd": -169.17,
+        "win_rate_pct": 18.5,
+        "closed_count": 27
       },
       "John": {
         "realized_pnl_usd": -24.81,
