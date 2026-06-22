@@ -1,16 +1,16 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-06-22T05:29:09Z",
+  "last_updated_iso": "2026-06-22T06:38:33Z",
   "mexc_account": {
-    "unrealized_pnl": 78.0498,
-    "equity": 1564.8584,
-    "available": 461.3076,
+    "unrealized_pnl": 82.1013,
+    "equity": 1565.3586,
+    "available": 540.1616,
     "position_margin": 0.0
   },
   "order_levels": {
-    "checked": 15,
-    "in_sync": 15,
+    "checked": 14,
+    "in_sync": 14,
     "drifted": [],
     "reconciling": [],
     "detail": []
@@ -82,7 +82,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$1,564.86",
+      "value": "$1,565.36",
       "status": "ok",
       "action": null
     },
@@ -106,7 +106,7 @@
       "key": "position_protection",
       "tier": 1,
       "label": "Position protection",
-      "value": "all protected (11 open, 8 pre-TP1 runners)",
+      "value": "all protected (10 open, 7 pre-TP1 runners)",
       "status": "ok",
       "action": null
     },
@@ -145,36 +145,6 @@
   ],
   "active_trades": [
     {
-      "trade_id": "TRXUSDT_20260610_CB_001",
-      "coin": "TRXUSDT",
-      "direction": "Short",
-      "entry_price": 0.32425273,
-      "sl": 0.3286,
-      "tp1": 0.28491145,
-      "tp2": 0.2674496,
-      "capital_usd": 83.03,
-      "leverage": 3,
-      "trading_system": "Braam",
-      "track_only": false,
-      "status": "OPEN",
-      "price_at_run": 0.3219,
-      "date_activated": "2026-06-20",
-      "time_activated_utc": "11:20",
-      "date_opened": "2026-06-10",
-      "time_opened_utc": "18:34",
-      "conviction": "MEDIUM",
-      "tp1_hit": false,
-      "sl_moved_to_be": false,
-      "pnl_tp1_realized_usd": null,
-      "live_executed": true,
-      "live_entry_fill": 0.32425,
-      "live_exit_fill": null,
-      "live_entry_slippage_pct": 0.0008,
-      "live_fees_usd": 0.1478,
-      "live_funding_usd": null,
-      "rehearsal": false
-    },
-    {
       "trade_id": "NEARUSDT_20260616_CJ_001",
       "coin": "NEARUSDT",
       "direction": "Long",
@@ -187,7 +157,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "OPEN",
-      "price_at_run": 2.155,
+      "price_at_run": 2.146,
       "date_activated": "2026-06-18",
       "time_activated_utc": "05:02",
       "date_opened": "2026-06-16",
@@ -487,7 +457,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 64240.36,
+      "price_at_run": 64011.85,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-06-18",
@@ -540,8 +510,8 @@
       "direction": "Short",
       "entry_price": 0.0967987,
       "sl": 0.10191324,
-      "tp1": 0.08500274,
-      "tp2": 0.06851188,
+      "tp1": 0.0871,
+      "tp2": 0.0818,
       "capital_usd": 78.36,
       "leverage": 3,
       "trading_system": "Braam",
@@ -1211,6 +1181,25 @@
       "won": false,
       "close_iso": "2026-06-22T01:26:00Z",
       "rehearsal": false
+    },
+    {
+      "trade_id": "TRXUSDT_20260610_CB_001",
+      "coin": "TRXUSDT",
+      "direction": "Short",
+      "status": "STOPPED",
+      "pnl_usd": -3.15,
+      "close_reason": "live MEXC exit: sl @ 0.32866",
+      "date_closed": "2026-06-22",
+      "time_closed_utc": "06:35",
+      "trading_system": "Braam",
+      "live_entry_fill": 0.32425,
+      "live_exit_fill": 0.32866,
+      "live_entry_slippage_pct": 0.0008,
+      "live_fees_usd": 0.3476,
+      "live_funding_usd": 0.007869,
+      "won": false,
+      "close_iso": "2026-06-22T06:35:00Z",
+      "rehearsal": false
     }
   ],
   "recent_cancels": [],
@@ -1235,15 +1224,15 @@
     }
   ],
   "stats": {
-    "realized_pnl_usd": -193.99,
-    "realized_pnl_pct": -7.78,
-    "win_rate_pct": 16.1,
-    "closed_count": 31,
+    "realized_pnl_usd": -197.69,
+    "realized_pnl_pct": -7.68,
+    "win_rate_pct": 15.6,
+    "closed_count": 32,
     "per_system": {
       "Braam": {
-        "realized_pnl_usd": -169.17,
-        "win_rate_pct": 18.5,
-        "closed_count": 27
+        "realized_pnl_usd": -172.88,
+        "win_rate_pct": 17.9,
+        "closed_count": 28
       },
       "John": {
         "realized_pnl_usd": -24.81,
