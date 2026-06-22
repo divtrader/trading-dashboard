@@ -1,24 +1,24 @@
 {
-  "generated_at_utc": "2026-06-22T13:45:13+00:00",
+  "generated_at_utc": "2026-06-22T15:10:22+00:00",
   "all_time": {
-    "total_trades": 259,
-    "wins": 87,
+    "total_trades": 260,
+    "wins": 88,
     "losses": 172,
-    "win_rate": 33.6,
-    "total_pnl_usd": 160.43,
-    "avg_pnl_usd": 0.62,
+    "win_rate": 33.8,
+    "total_pnl_usd": 176.03,
+    "avg_pnl_usd": 0.68,
     "best_usd": 85.94,
     "worst_usd": -44.29,
-    "avg_win_usd": 20.27,
+    "avg_win_usd": 20.22,
     "avg_loss_usd": -9.67,
-    "expectancy_usd": 0.62,
-    "profit_factor": 1.1,
+    "expectancy_usd": 0.68,
+    "profit_factor": 1.11,
     "longest_win_streak": 5,
     "longest_loss_streak": 11,
     "current_streak_type": "win",
-    "current_streak_count": 2,
-    "avg_hold_hours": 57.2,
-    "median_hold_hours": 31.4
+    "current_streak_count": 3,
+    "avg_hold_hours": 57.5,
+    "median_hold_hours": 31.7
   },
   "by_system": {
     "John": {
@@ -31,20 +31,20 @@
       "days_active": 58,
       "pnl_per_day": 1.61,
       "status": "active",
-      "open": 18,
-      "pending": 15
+      "open": 19,
+      "pending": 14
     },
     "Braam": {
-      "n": 80,
-      "wins": 31,
-      "wr": 38.8,
-      "pnl": 21.8,
-      "avg": 0.27,
+      "n": 81,
+      "wins": 32,
+      "wr": 39.5,
+      "pnl": 37.4,
+      "avg": 0.46,
       "inception": "2026-05-01",
       "days_active": 52,
-      "pnl_per_day": 0.42,
+      "pnl_per_day": 0.72,
       "status": "active",
-      "open": 9,
+      "open": 8,
       "pending": 5
     },
     "Mong": {
@@ -81,19 +81,19 @@
       "wr": 30.1,
       "pnl": 93.39,
       "pnl_per_day": 1.61,
-      "open": 18,
-      "pending": 15
+      "open": 19,
+      "pending": 14
     },
     {
       "name": "Braam",
       "inception": "2026-05-01",
       "days_active": 52,
-      "closed": 80,
-      "wins": 31,
-      "wr": 38.8,
-      "pnl": 21.8,
-      "pnl_per_day": 0.42,
-      "open": 9,
+      "closed": 81,
+      "wins": 32,
+      "wr": 39.5,
+      "pnl": 37.4,
+      "pnl_per_day": 0.72,
+      "open": 8,
       "pending": 5
     },
     {
@@ -128,11 +128,11 @@
     },
     {
       "month": "2026-06",
-      "n": 130,
-      "wins": 40,
-      "wr": 30.8,
-      "pnl": -77.53,
-      "cumulative_pnl": 160.43
+      "n": 131,
+      "wins": 41,
+      "wr": 31.3,
+      "pnl": -61.93,
+      "cumulative_pnl": 176.03
     }
   ],
   "equity_curve": [
@@ -1689,6 +1689,12 @@
       "pnl": 11.94,
       "cumulative": 160.43,
       "won": true
+    },
+    {
+      "iso": "2026-06-22T13:50:00+00:00",
+      "pnl": 15.6,
+      "cumulative": 176.03,
+      "won": true
     }
   ],
   "benchmark": {
@@ -2730,6 +2736,10 @@
       {
         "iso": "2026-06-22",
         "pct": 8.022
+      },
+      {
+        "iso": "2026-06-22",
+        "pct": 8.801
       }
     ],
     "spx": [
@@ -2883,11 +2893,11 @@
       },
       {
         "iso": "2026-06-22",
-        "pct": 5.214
+        "pct": 4.639
       }
     ],
-    "ours_pct": 8.022,
-    "spx_pct": 5.214
+    "ours_pct": 8.801,
+    "spx_pct": 4.639
   },
   "by_direction": {
     "Long": {
@@ -2898,20 +2908,20 @@
       "avg": 2.39
     },
     "Short": {
-      "n": 157,
-      "wins": 50,
-      "wr": 31.8,
-      "pnl": -83.15,
-      "avg": -0.53
+      "n": 158,
+      "wins": 51,
+      "wr": 32.3,
+      "pnl": -67.55,
+      "avg": -0.43
     }
   },
   "by_conviction": {
     "MEDIUM": {
-      "n": 244,
-      "wins": 82,
-      "wr": 33.6,
-      "pnl": 176.0,
-      "avg": 0.72
+      "n": 245,
+      "wins": 83,
+      "wr": 33.9,
+      "pnl": 191.6,
+      "avg": 0.78
     },
     "VERY HIGH": {
       "n": 1,
@@ -2958,11 +2968,11 @@
       "avg": 3.48
     },
     "ema20_rejection": {
-      "n": 80,
-      "wins": 31,
-      "wr": 38.8,
-      "pnl": 21.8,
-      "avg": 0.27
+      "n": 81,
+      "wins": 32,
+      "wr": 39.5,
+      "pnl": 37.4,
+      "avg": 0.46
     },
     "at_resistance": {
       "n": 2,
@@ -3002,11 +3012,11 @@
       "avg": 2.41
     },
     "3": {
-      "n": 66,
-      "wins": 20,
-      "wr": 30.3,
-      "pnl": -23.12,
-      "avg": -0.35
+      "n": 67,
+      "wins": 21,
+      "wr": 31.3,
+      "pnl": -7.52,
+      "avg": -0.11
     },
     "2": {
       "n": 31,
@@ -3039,11 +3049,11 @@
       "avg": -0.62
     },
     "asia": {
-      "n": 64,
-      "wins": 18,
-      "wr": 28.1,
-      "pnl": -49.08,
-      "avg": -0.77
+      "n": 65,
+      "wins": 19,
+      "wr": 29.2,
+      "pnl": -33.48,
+      "avg": -0.52
     },
     "us": {
       "n": 86,
@@ -3055,11 +3065,11 @@
   },
   "by_audit_verdict": {
     "PASS": {
-      "n": 222,
-      "wins": 77,
-      "wr": 34.7,
-      "pnl": 256.14,
-      "avg": 1.15
+      "n": 223,
+      "wins": 78,
+      "wr": 35.0,
+      "pnl": 271.74,
+      "avg": 1.22
     },
     "DEGRADED": {
       "n": 31,
@@ -3085,11 +3095,11 @@
       "avg": -4.76
     },
     "Wednesday": {
-      "n": 47,
-      "wins": 16,
-      "wr": 34.0,
-      "pnl": 186.02,
-      "avg": 3.96
+      "n": 48,
+      "wins": 17,
+      "wr": 35.4,
+      "pnl": 201.62,
+      "avg": 4.2
     },
     "Monday": {
       "n": 28,
@@ -3240,6 +3250,13 @@
       "pnl": -7.93,
       "avg": -7.93
     },
+    "1": {
+      "n": 1,
+      "wins": 1,
+      "wr": 100.0,
+      "pnl": 15.6,
+      "avg": 15.6
+    },
     "9": {
       "n": 2,
       "wins": 2,
@@ -3356,6 +3373,16 @@
   },
   "recent_closes": [
     {
+      "trade_id": "DOGEUSDT_20260616_CB_001",
+      "coin": "DOGE",
+      "direction": "Short",
+      "system": "Braam",
+      "pnl_usd": 15.6,
+      "won": true,
+      "close_reason": "live MEXC exit: manual @ 0.08491",
+      "iso": "2026-06-22T13:50:00+00:00"
+    },
+    {
       "trade_id": "LINKUSDT_20260617_CB_001",
       "coin": "LINK",
       "direction": "Short",
@@ -3444,46 +3471,36 @@
       "won": true,
       "close_reason": "live MEXC exit: manual @ 5.824",
       "iso": "2026-06-19T18:39:00+00:00"
-    },
-    {
-      "trade_id": "ETHUSDT_20260619_CJ_M_002",
-      "coin": "ETH",
-      "direction": "Long",
-      "system": "John",
-      "pnl_usd": -4.53,
-      "won": false,
-      "close_reason": "SL hit",
-      "iso": "2026-06-19T16:00:00+00:00"
     }
   ],
   "live_positions": {
     "open_count": 27,
-    "open_long": 10,
-    "open_short": 17,
-    "pending_count": 20,
+    "open_long": 11,
+    "open_short": 16,
+    "pending_count": 19,
     "capital_open_usd": 2700.0,
-    "capital_pending_usd": 2000.0
+    "capital_pending_usd": 1900.0
   },
   "macro": {
-    "vix": 16.8,
+    "vix": 17.78,
     "vix_5d": [
       16.2,
       16.41,
       18.44,
       16.4,
-      16.8
+      17.78
     ],
-    "vix_ma14": 18.1,
-    "dxy": 100.98,
+    "vix_ma14": 18.18,
+    "dxy": 100.87,
     "dxy_5d": [
       99.63,
       99.54,
       100.09,
       100.85,
-      100.98
+      100.87
     ],
-    "dxy_ma14": 100.06,
-    "btc_price_last_seen": 64298.01,
+    "dxy_ma14": 100.05,
+    "btc_price_last_seen": 64191.07,
     "btc_7d_change_pct": null,
     "btc_30d_change_pct": null,
     "btc_correlation_30d": null
