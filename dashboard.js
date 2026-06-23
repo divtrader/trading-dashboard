@@ -2680,7 +2680,7 @@ function _renderMonthly(monthly) {
   const rect = host.getBoundingClientRect();
   const W = Math.max(360, Math.round(rect.width || 900));
   const H = Math.max(120, Math.round(rect.height || 190));
-  const padL = 50, padR = 16, padT = 20, padB = 22;
+  const padL = 50, padR = 18, padT = 16, padB = 20;
   const iW = W - padL - padR, iH = H - padT - padB;
 
   const pnls = monthly.map(m => m.pnl);
@@ -2688,7 +2688,7 @@ function _renderMonthly(monthly) {
   let vMin = Math.min(0, ...pnls, ...cums);
   let vMax = Math.max(0, ...pnls, ...cums);
   const span0 = (vMax - vMin) || 1;
-  vMin -= span0 * 0.05; vMax += span0 * 0.17;
+  vMin -= span0 * 0.04; vMax += span0 * 0.12;
   const yOf = v => padT + (1 - (v - vMin) / (vMax - vMin)) * iH;
   const zeroY = yOf(0);
   const ticks = _niceTicks(vMin, vMax, 4);
@@ -2696,7 +2696,7 @@ function _renderMonthly(monthly) {
 
   const n = monthly.length;
   const slot = iW / n;
-  const barW = Math.max(8, Math.min(54, slot * 0.46));
+  const barW = Math.max(16, Math.min(120, slot * 0.52));
 
   const grid = ticks.map(t => {
     const y = yOf(t);
