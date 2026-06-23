@@ -1,11 +1,11 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-06-23T15:25:07Z",
+  "last_updated_iso": "2026-06-23T17:11:47Z",
   "mexc_account": {
-    "unrealized_pnl": 68.9097,
-    "equity": 1585.9842,
-    "available": 397.5357,
+    "unrealized_pnl": 69.8287,
+    "equity": 1586.9441,
+    "available": 397.5765,
     "position_margin": 0.0
   },
   "order_levels": {
@@ -74,7 +74,7 @@
       "key": "state_file",
       "tier": 1,
       "label": "Trade journal",
-      "value": "OK (565 records)",
+      "value": "OK (566 records)",
       "status": "ok",
       "action": null
     },
@@ -82,7 +82,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$1,585.98",
+      "value": "$1,586.94",
       "status": "ok",
       "action": null
     },
@@ -106,9 +106,9 @@
       "key": "position_protection",
       "tier": 1,
       "label": "Position protection",
-      "value": "all protected (7 open, 4 pre-TP1 runners)",
-      "status": "ok",
-      "action": null
+      "value": "live read failed",
+      "status": "warn",
+      "action": "Worker health read failed \u2014 can't confirm SL protection; check the Worker."
     },
     {
       "key": "apikey_MEXC_ALGO_KEY",
@@ -337,7 +337,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 62244.32,
+      "price_at_run": 62454.56,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-06-18",
