@@ -1,16 +1,16 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-06-23T04:20:17Z",
+  "last_updated_iso": "2026-06-23T07:34:00Z",
   "mexc_account": {
-    "unrealized_pnl": 68.7457,
-    "equity": 1555.967,
-    "available": 497.4529,
+    "unrealized_pnl": 78.4566,
+    "equity": 1580.137,
+    "available": 468.4081,
     "position_margin": 0.0
   },
   "order_levels": {
-    "checked": 13,
-    "in_sync": 13,
+    "checked": 14,
+    "in_sync": 14,
     "drifted": [],
     "reconciling": [],
     "detail": []
@@ -74,7 +74,7 @@
       "key": "state_file",
       "tier": 1,
       "label": "Trade journal",
-      "value": "OK (555 records)",
+      "value": "OK (559 records)",
       "status": "ok",
       "action": null
     },
@@ -82,7 +82,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$1,555.97",
+      "value": "$1,580.14",
       "status": "ok",
       "action": null
     },
@@ -98,7 +98,7 @@
       "key": "orphan_orders",
       "tier": 1,
       "label": "Order reconciliation",
-      "value": "in sync (7 resting = journal)",
+      "value": "in sync (8 resting = journal)",
       "status": "ok",
       "action": null
     },
@@ -106,7 +106,7 @@
       "key": "position_protection",
       "tier": 1,
       "label": "Position protection",
-      "value": "all protected (6 open, 6 pre-TP1 runners)",
+      "value": "all protected (6 open, 5 pre-TP1 runners)",
       "status": "ok",
       "action": null
     },
@@ -269,7 +269,7 @@
       "coin": "TAOUSDT",
       "direction": "Short",
       "entry_price": 258.33481698,
-      "sl": 275.19985912,
+      "sl": 235.72498862,
       "tp1": 223.7,
       "tp2": 202,
       "capital_usd": 73.77,
@@ -283,14 +283,14 @@
       "date_opened": "2026-06-17",
       "time_opened_utc": "10:28",
       "conviction": "MEDIUM",
-      "tp1_hit": false,
+      "tp1_hit": true,
       "sl_moved_to_be": false,
-      "pnl_tp1_realized_usd": null,
+      "pnl_tp1_realized_usd": 17.13,
       "live_executed": true,
       "live_entry_fill": 258.33,
       "live_exit_fill": null,
       "live_entry_slippage_pct": 0.0019,
-      "live_fees_usd": 0.1317,
+      "live_fees_usd": 0.2068,
       "live_funding_usd": null,
       "rehearsal": false
     },
@@ -337,7 +337,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 63992.79,
+      "price_at_run": 62939.11,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-06-18",
@@ -345,36 +345,6 @@
       "conviction": "HIGH",
       "tp1_hit": false,
       "sl_moved_to_be": null,
-      "pnl_tp1_realized_usd": null,
-      "live_executed": null,
-      "live_entry_fill": null,
-      "live_exit_fill": null,
-      "live_entry_slippage_pct": null,
-      "live_fees_usd": null,
-      "live_funding_usd": null,
-      "rehearsal": false
-    },
-    {
-      "trade_id": "ONDOUSDT_20260618_CB_001",
-      "coin": "ONDOUSDT",
-      "direction": "Short",
-      "entry_price": 0.36800298,
-      "sl": 0.38870448,
-      "tp1": 0.3192742,
-      "tp2": 0.23000545,
-      "capital_usd": 78.83,
-      "leverage": 3,
-      "trading_system": "Braam",
-      "track_only": false,
-      "status": "PENDING",
-      "price_at_run": 0.3524,
-      "date_activated": null,
-      "time_activated_utc": null,
-      "date_opened": "2026-06-18",
-      "time_opened_utc": "18:38",
-      "conviction": "MEDIUM",
-      "tp1_hit": false,
-      "sl_moved_to_be": false,
       "pnl_tp1_realized_usd": null,
       "live_executed": null,
       "live_entry_fill": null,
@@ -533,6 +503,66 @@
       "live_fees_usd": null,
       "live_funding_usd": null,
       "rehearsal": false
+    },
+    {
+      "trade_id": "SUIUSDT_20260623_CB_001",
+      "coin": "SUIUSDT",
+      "direction": "Short",
+      "entry_price": 0.71982162,
+      "sl": 0.7447336,
+      "tp1": 0.66467283,
+      "tp2": 0.53656914,
+      "capital_usd": 79.04,
+      "leverage": 3,
+      "trading_system": "Braam",
+      "track_only": false,
+      "status": "PENDING",
+      "price_at_run": 0.6887,
+      "date_activated": null,
+      "time_activated_utc": null,
+      "date_opened": "2026-06-23",
+      "time_opened_utc": "07:32",
+      "conviction": "MEDIUM",
+      "tp1_hit": false,
+      "sl_moved_to_be": false,
+      "pnl_tp1_realized_usd": null,
+      "live_executed": null,
+      "live_entry_fill": null,
+      "live_exit_fill": null,
+      "live_entry_slippage_pct": null,
+      "live_fees_usd": null,
+      "live_funding_usd": null,
+      "rehearsal": false
+    },
+    {
+      "trade_id": "LINKUSDT_20260623_CB_001",
+      "coin": "LINKUSDT",
+      "direction": "Short",
+      "entry_price": 7.94359381,
+      "sl": 8.14672593,
+      "tp1": 6.9837374,
+      "tp2": 6.00719389,
+      "capital_usd": 79.04,
+      "leverage": 3,
+      "trading_system": "Braam",
+      "track_only": false,
+      "status": "PENDING",
+      "price_at_run": 7.693,
+      "date_activated": null,
+      "time_activated_utc": null,
+      "date_opened": "2026-06-23",
+      "time_opened_utc": "07:32",
+      "conviction": "MEDIUM",
+      "tp1_hit": false,
+      "sl_moved_to_be": false,
+      "pnl_tp1_realized_usd": null,
+      "live_executed": null,
+      "live_entry_fill": null,
+      "live_exit_fill": null,
+      "live_entry_slippage_pct": null,
+      "live_fees_usd": null,
+      "live_funding_usd": null,
+      "rehearsal": false
     }
   ],
   "recent_signals": [
@@ -573,6 +603,32 @@
       "conviction": "MEDIUM",
       "track_only": false,
       "iso": "2026-06-23T02:08:00Z",
+      "rehearsal": false
+    },
+    {
+      "trade_id": "SUIUSDT_20260623_CB_001",
+      "coin": "SUIUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "entry_price": 0.71982162,
+      "tp1": 0.66467283,
+      "sl": 0.7447336,
+      "conviction": "MEDIUM",
+      "track_only": false,
+      "iso": "2026-06-23T07:32:00Z",
+      "rehearsal": false
+    },
+    {
+      "trade_id": "LINKUSDT_20260623_CB_001",
+      "coin": "LINKUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "entry_price": 7.94359381,
+      "tp1": 6.9837374,
+      "sl": 8.14672593,
+      "conviction": "MEDIUM",
+      "track_only": false,
+      "iso": "2026-06-23T07:32:00Z",
       "rehearsal": false
     }
   ],
@@ -1276,8 +1332,23 @@
       "rehearsal": false
     }
   ],
-  "recent_cancels": [],
-  "tp1_hits_open": [],
+  "recent_cancels": [
+    {
+      "coin": "ONDOUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "close_reason": "Stale 12.5h \u2265 12h grace: Price $0.3157 is 16.6% below entry $0.3680",
+      "iso": "2026-06-23T07:32:00Z"
+    }
+  ],
+  "tp1_hits_open": [
+    {
+      "coin": "TAOUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "entry_price": 258.33481698
+    }
+  ],
   "stats": {
     "realized_pnl_usd": -172.5,
     "realized_pnl_pct": -6.0,
@@ -1295,8 +1366,8 @@
         "closed_count": 5
       }
     },
-    "live_trade_count_total": 74,
-    "live_real_count": 51,
+    "live_trade_count_total": 76,
+    "live_real_count": 53,
     "live_rehearsal_count": 23
   }
 }
