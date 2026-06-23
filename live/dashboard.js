@@ -2813,53 +2813,104 @@ function _renderSystemsRich(systems, decommissioned) {
   flipReplace(el, active + decomHtml, "data-sys");
 }
 
-// ── Render: MONTHLY P&L — HTML/CSS flex bars (no SVG stretching) ──
+// Nice round y-axis ticks spanning [min,max] in ~count steps.
+function _niceTicks(min, max, count) {
+  const span = (max - min) || 1;
+  const raw = span / Math.max(1, count);
+  const mag = Math.pow(10, Math.floor(Math.log10(raw)));
+  const norm = raw / mag;
+  const step = (norm >= 5 ? 10 : norm >= 2 ? 5 : norm >= 1 ? 2 : 1) * mag;
+  const start = Math.ceil(min / step) * step;
+  const ticks = [];
+  for (let v = start; v <= max + 1e-9; v += step) ticks.push(Math.round(v));
+  if (!ticks.includes(0) && min < 0 && max > 0) { ticks.push(0); ticks.sort((a,b)=>a-b); }
+  return ticks;
+}
+
+// ── Render: MONTHLY P&L — glossy gradient bars + dotted cumulative trend ──
 const MONTH_NAMES = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
 function _renderMonthly(monthly) {
   const host = document.getElementById("monthly-bars");
-  const meta = $("monthly-meta");
+  const meta = document.getElementById("monthly-meta");
   if (!host || !monthly || !monthly.length) {
     if (host) host.innerHTML = "";
     if (meta) meta.textContent = "no closed trades yet";
     return;
   }
-  const maxAbs = Math.max(1, ...monthly.map(m => Math.abs(m.pnl)));
-  // Each half (above/below zero line) maps maxAbs to ~85% of that half's height
-  const html = monthly.map(m => {
-    const heightPct = (Math.abs(m.pnl) / maxAbs) * 85;
-    const cls = m.pnl >= 0 ? "pos" : "neg";
-    const monIdx = parseInt(m.month.slice(5), 10) - 1;
-    const monShort = MONTH_NAMES[monIdx] || m.month.slice(5);
-    const yr = m.month.slice(2, 4);
-    const pnlTxt = (m.pnl >= 0 ? "+" : "−") + "$" + Math.abs(m.pnl).toFixed(0);
-    const sub = `${m.n}t · ${m.wr.toFixed(0)}% WR`;
-    return `
-      <div class="mbar ${cls}" title="${monShort} ${yr} · ${pnlTxt} · ${sub}">
-        <div class="mbar-pnl">${pnlTxt}</div>
-        <div class="mbar-half top">
-          <div class="mbar-fill" style="height:${m.pnl >= 0 ? heightPct : 0}%"></div>
-        </div>
-        <div class="mbar-baseline"></div>
-        <div class="mbar-half bot">
-          <div class="mbar-fill" style="height:${m.pnl < 0 ? heightPct : 0}%"></div>
-        </div>
-        <div class="mbar-month">${monShort} '${yr}</div>
-        <div class="mbar-sub">${sub}</div>
-      </div>
-    `;
-  }).join("");
-  host.innerHTML = html;
+  const rect = host.getBoundingClientRect();
+  const W = Math.max(360, Math.round(rect.width || 900));
+  const H = Math.max(120, Math.round(rect.height || 190));
+  const padL = 50, padR = 16, padT = 20, padB = 22;
+  const iW = W - padL - padR, iH = H - padT - padB;
 
-  // Meta line
-  const totalN = monthly.reduce((s, m) => s + m.n, 0);
-  const cum = monthly[monthly.length - 1]?.cumulative_pnl ?? 0;
-  const last = monthly[monthly.length - 1];
-  const lastCls = (last?.pnl ?? 0) > 0 ? "pos" : ((last?.pnl ?? 0) < 0 ? "neg" : "neu");
-  meta.innerHTML = `
-    <span>${monthly.length}mo · ${totalN}t</span>
-    <span class="monthly-cum ${cum > 0 ? 'pos' : (cum < 0 ? 'neg' : 'neu')}">cumulative ${_fmtUsdEdge(cum)}</span>
-    <span class="monthly-now ${lastCls}">${last?.month?.slice(5)}: ${_fmtUsdEdge(last?.pnl)}</span>
-  `;
+  const pnls = monthly.map(m => m.pnl);
+  const cums = monthly.map(m => m.cumulative_pnl ?? 0);
+  let vMin = Math.min(0, ...pnls, ...cums);
+  let vMax = Math.max(0, ...pnls, ...cums);
+  const span0 = (vMax - vMin) || 1;
+  vMin -= span0 * 0.05; vMax += span0 * 0.17;
+  const yOf = v => padT + (1 - (v - vMin) / (vMax - vMin)) * iH;
+  const zeroY = yOf(0);
+  const ticks = _niceTicks(vMin, vMax, 4);
+  const fmt = v => (v >= 0 ? "+$" : "−$") + Math.abs(Math.round(v));
+
+  const n = monthly.length;
+  const slot = iW / n;
+  const barW = Math.max(8, Math.min(54, slot * 0.46));
+
+  const grid = ticks.map(t => {
+    const y = yOf(t);
+    return `<line x1="${padL}" y1="${y.toFixed(1)}" x2="${W-padR}" y2="${y.toFixed(1)}" class="m-grid"/>`
+      + `<text x="${(padL-9).toFixed(1)}" y="${(y+3.5).toFixed(1)}" class="m-ytick" text-anchor="end">${t===0?'0':fmt(t)}</text>`;
+  }).join("");
+
+  const bars = monthly.map((m, i) => {
+    const cx = padL + slot * (i + 0.5);
+    const x = cx - barW / 2;
+    const v = m.pnl;
+    const yTop = v >= 0 ? yOf(v) : zeroY;
+    const yBot = v >= 0 ? zeroY : yOf(v);
+    const h = Math.max(2, yBot - yTop);
+    const grad = v >= 0 ? "mPos" : "mNeg";
+    const txt = (v >= 0 ? "+$" : "−$") + Math.abs(v).toFixed(0);
+    const ty = v >= 0 ? yTop - 6 : yBot + 13;
+    const gloss = Math.min(h, 10);
+    const gy = v >= 0 ? yTop : (yBot - gloss);
+    return `<rect x="${x.toFixed(1)}" y="${yTop.toFixed(1)}" width="${barW.toFixed(1)}" height="${h.toFixed(1)}" rx="4" fill="url(#${grad})"/>`
+      + `<rect x="${x.toFixed(1)}" y="${gy.toFixed(1)}" width="${barW.toFixed(1)}" height="${gloss.toFixed(1)}" rx="4" fill="rgba(255,255,255,0.16)"/>`
+      + `<text x="${cx.toFixed(1)}" y="${ty.toFixed(1)}" class="m-val ${v>=0?'pos':'neg'}" text-anchor="middle">${txt}</text>`;
+  }).join("");
+
+  const cumPts = monthly.map((m, i) => [padL + slot * (i + 0.5), yOf(m.cumulative_pnl ?? 0)]);
+  const cumPath = cumPts.length > 1 ? _smoothPath(cumPts) : (cumPts.length ? `M ${cumPts[0][0]} ${cumPts[0][1]}` : "");
+  const lc = cumPts[cumPts.length - 1];
+
+  const xlab = monthly.map((m, i) => {
+    const cx = padL + slot * (i + 0.5);
+    const monIdx = parseInt(m.month.slice(5), 10) - 1;
+    const mon = MONTH_NAMES[monIdx] || m.month.slice(5);
+    return `<text x="${cx.toFixed(1)}" y="${H-6}" class="m-xtick" text-anchor="middle">${mon} '${m.month.slice(2,4)}</text>`;
+  }).join("");
+
+  host.innerHTML = `<svg viewBox="0 0 ${W} ${H}" class="m-svg">
+    <defs>
+      <linearGradient id="mPos" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#3ef0cd"/><stop offset="100%" stop-color="#009e80"/></linearGradient>
+      <linearGradient id="mNeg" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#ff7d8a"/><stop offset="100%" stop-color="#bf3242"/></linearGradient>
+    </defs>
+    ${grid}
+    <line x1="${padL}" y1="${zeroY.toFixed(1)}" x2="${W-padR}" y2="${zeroY.toFixed(1)}" class="m-zero"/>
+    ${bars}
+    ${cumPath ? `<path d="${cumPath}" class="m-cum"/>` : ""}
+    ${lc ? `<circle cx="${lc[0].toFixed(1)}" cy="${lc[1].toFixed(1)}" r="3" class="m-cum-dot"/>` : ""}
+    ${lc ? `<text x="${(lc[0]-7).toFixed(1)}" y="${(lc[1]-9).toFixed(1)}" class="m-cum-lab" text-anchor="end">Cumulative</text>` : ""}
+    ${xlab}
+  </svg>`;
+
+  if (meta) {
+    const totalN = monthly.reduce((s, m) => s + m.n, 0);
+    const cum = monthly[monthly.length - 1]?.cumulative_pnl ?? 0;
+    meta.innerHTML = `<span>${monthly.length}mo · ${totalN}t</span><span class="monthly-cum ${cum>0?'pos':(cum<0?'neg':'neu')}">cumulative ${fmt(cum)}</span>`;
+  }
 }
 
 // ── Render: full screen 4 ──
