@@ -1,16 +1,16 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-06-24T16:55:12Z",
+  "last_updated_iso": "2026-06-24T18:07:28Z",
   "mexc_account": {
-    "unrealized_pnl": 45.4712,
-    "equity": 1613.8319,
-    "available": 684.657,
+    "unrealized_pnl": 48.1519,
+    "equity": 1616.5125,
+    "available": 603.3086,
     "position_margin": 0.0
   },
   "order_levels": {
-    "checked": 14,
-    "in_sync": 14,
+    "checked": 15,
+    "in_sync": 15,
     "drifted": [],
     "reconciling": [],
     "detail": []
@@ -74,7 +74,7 @@
       "key": "state_file",
       "tier": 1,
       "label": "Trade journal",
-      "value": "OK (576 records)",
+      "value": "OK (578 records)",
       "status": "ok",
       "action": null
     },
@@ -82,7 +82,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$1,613.83",
+      "value": "$1,616.51",
       "status": "ok",
       "action": null
     },
@@ -98,7 +98,7 @@
       "key": "orphan_orders",
       "tier": 1,
       "label": "Order reconciliation",
-      "value": "in sync (10 resting = journal)",
+      "value": "in sync (11 resting = journal)",
       "status": "ok",
       "action": null
     },
@@ -213,7 +213,7 @@
       "coin": "LTCUSDT",
       "direction": "Short",
       "entry_price": 45.131772,
-      "sl": 41.81352218,
+      "sl": 41.05352218,
       "tp1": 41.39,
       "tp2": 37.25,
       "capital_usd": 73.86,
@@ -253,7 +253,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 59854.0,
+      "price_at_run": 59406.0,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-06-18",
@@ -277,7 +277,7 @@
       "coin": "ALGOUSDT",
       "direction": "Short",
       "entry_price": 0.0967987,
-      "sl": 0.09247951,
+      "sl": 0.09147951,
       "tp1": 0.0894,
       "tp2": 0.0818,
       "capital_usd": 78.36,
@@ -309,7 +309,7 @@
       "coin": "UNIUSDT",
       "direction": "Short",
       "entry_price": 3.06098902,
-      "sl": 2.95897825,
+      "sl": 2.90897825,
       "tp1": 2.763,
       "tp2": 2.61,
       "capital_usd": 79.17,
@@ -591,6 +591,38 @@
       "live_funding_usd": null,
       "live_tp1_pnl_usd": null,
       "rehearsal": false
+    },
+    {
+      "trade_id": "AVAXUSDT_20260624_CB_001",
+      "coin": "AVAXUSDT",
+      "direction": "Short",
+      "entry_price": 6.32012069,
+      "sl": 6.57108345,
+      "tp1": 5.7687092,
+      "tp2": 4.67461921,
+      "capital_usd": 80.91,
+      "leverage": 3,
+      "trading_system": "Braam",
+      "track_only": false,
+      "status": "PENDING",
+      "price_at_run": 6.015,
+      "date_activated": null,
+      "time_activated_utc": null,
+      "date_opened": "2026-06-24",
+      "time_opened_utc": "18:06",
+      "conviction": "MEDIUM",
+      "tp1_hit": false,
+      "sl_moved_to_be": false,
+      "pnl_tp1_realized_usd": null,
+      "tp2_hit": false,
+      "live_executed": null,
+      "live_entry_fill": null,
+      "live_exit_fill": null,
+      "live_entry_slippage_pct": null,
+      "live_fees_usd": null,
+      "live_funding_usd": null,
+      "live_tp1_pnl_usd": null,
+      "rehearsal": false
     }
   ],
   "recent_signals": [
@@ -605,6 +637,19 @@
       "conviction": "MEDIUM",
       "track_only": false,
       "iso": "2026-06-24T13:31:00Z",
+      "rehearsal": false
+    },
+    {
+      "trade_id": "AVAXUSDT_20260624_CB_001",
+      "coin": "AVAXUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "entry_price": 6.32012069,
+      "tp1": 5.7687092,
+      "sl": 6.57108345,
+      "conviction": "MEDIUM",
+      "track_only": false,
+      "iso": "2026-06-24T18:06:00Z",
       "rehearsal": false
     }
   ],
@@ -1417,8 +1462,8 @@
         "closed_count": 5
       }
     },
-    "live_trade_count_total": 81,
-    "live_real_count": 58,
+    "live_trade_count_total": 82,
+    "live_real_count": 59,
     "live_rehearsal_count": 23
   }
 }
