@@ -1,10 +1,10 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-06-24T12:07:22Z",
+  "last_updated_iso": "2026-06-24T12:14:36Z",
   "mexc_account": {
-    "unrealized_pnl": 70.1542,
-    "equity": 1577.8934,
+    "unrealized_pnl": 69.2025,
+    "equity": 1576.9418,
     "available": 436.7074,
     "position_margin": 0.0
   },
@@ -66,9 +66,9 @@
       "key": "daily_summary",
       "tier": 1,
       "label": "Daily summary",
-      "value": "overdue 1d",
-      "status": "warn",
-      "action": "Run daily_summary.yml manually from Actions."
+      "value": "sent today",
+      "status": "ok",
+      "action": null
     },
     {
       "key": "state_file",
@@ -82,7 +82,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$1,577.89",
+      "value": "$1,576.94",
       "status": "ok",
       "action": null
     },
@@ -317,7 +317,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 62931.84,
+      "price_at_run": 62878.0,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-06-18",
