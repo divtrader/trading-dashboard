@@ -638,11 +638,14 @@ function computeUnrealized(t) {
 
   let tp1BankedUsd = 0;
   if (tp1WasHit) {
-    if (t.pnl_tp1_realized_usd != null) {
+    // Prefer the REAL broker realized on the TP1 partial close (live trades);
+    // else the recorded estimate; else recompute from the TP1 price using the
+    // per-system banked fraction. Same math as the live dashboard.
+    if (t.live_tp1_pnl_usd != null) {
+      tp1BankedUsd = t.live_tp1_pnl_usd || 0;
+    } else if (t.pnl_tp1_realized_usd != null) {
       tp1BankedUsd = t.pnl_tp1_realized_usd || 0;
     } else if (t.tp1 && t.entry_price) {
-      // Backend hasn't written pnl yet — estimate from TP1 price using the
-      // correct per-system banked fraction (was hardcoded 0.8 = John only).
       const tp1PricePct = ((t.tp1 - t.entry_price) / t.entry_price) * 100 * dir;
       tp1BankedUsd = cap * bankedFraction * (tp1PricePct * (t.leverage || 1) / 100);
     }

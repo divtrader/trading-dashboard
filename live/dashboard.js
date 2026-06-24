@@ -595,6 +595,16 @@ function subscribeWs() {
   ws.onclose = () => setTimeout(subscribeWs, 5000);
 }
 
+// Per-system close fractions at TP1 {banked, remaining}. Mirrors the paper
+// dashboard so both compute P&L with the SAME math. Braam closes 50% at TP1,
+// Mong 30%, John/William 80%.
+function splitFractions(t) {
+  const sys = t.trading_system || "";
+  if (sys === "Braam") return { banked: 0.5, remaining: 0.5 };
+  if (sys === "Mong")  return { banked: 0.3, remaining: t.tp2_hit ? 0.4 : 0.7 };
+  return { banked: 0.8, remaining: 0.2 };  // John / William default
+}
+
 function computeUnrealized(t) {
   const live = state.prices[t.coin] ?? t.price_at_run ?? t.entry_price;
   const dir = t.direction === "Long" ? 1 : -1;
@@ -603,18 +613,23 @@ function computeUnrealized(t) {
   const cap = t.capital_usd || 100;
 
   const tp1WasHit = !!t.tp1_hit;
-  // After TP1 hit, 80% of position is closed — only 20% remains live
-  const remainingFraction = tp1WasHit ? 0.2 : 1.0;
+  // After TP1 only the runner fraction stays open — per-system (Braam 50%),
+  // not the old hard-coded 20% (which understated the runner ~2.5×).
+  const { banked: bankedFraction, remaining: remainingFractionAfterTp1 } = splitFractions(t);
+  const remainingFraction = tp1WasHit ? remainingFractionAfterTp1 : 1.0;
   const usd = cap * remainingFraction * (leveragedPct / 100);
 
   let tp1BankedUsd = 0;
   if (tp1WasHit) {
-    if (t.pnl_tp1_realized_usd != null) {
+    // Prefer the REAL broker realized on the TP1 partial close (live trades);
+    // else the recorded paper estimate; else recompute from the TP1 price.
+    if (t.live_tp1_pnl_usd != null) {
+      tp1BankedUsd = t.live_tp1_pnl_usd || 0;
+    } else if (t.pnl_tp1_realized_usd != null) {
       tp1BankedUsd = t.pnl_tp1_realized_usd || 0;
     } else if (t.tp1 && t.entry_price) {
-      // Backend hasn't written pnl yet — estimate from TP1 price
       const tp1PricePct = ((t.tp1 - t.entry_price) / t.entry_price) * 100 * dir;
-      tp1BankedUsd = cap * 0.8 * (tp1PricePct * (t.leverage || 1) / 100);
+      tp1BankedUsd = cap * bankedFraction * (tp1PricePct * (t.leverage || 1) / 100);
     }
   }
 
