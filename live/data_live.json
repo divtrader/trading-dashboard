@@ -1,16 +1,16 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-06-24T14:54:29Z",
+  "last_updated_iso": "2026-06-24T15:49:06Z",
   "mexc_account": {
-    "unrealized_pnl": 52.0799,
-    "equity": 1595.8357,
-    "available": 505.9532,
+    "unrealized_pnl": 48.7783,
+    "equity": 1605.6611,
+    "available": 555.7288,
     "position_margin": 0.0
   },
   "order_levels": {
-    "checked": 16,
-    "in_sync": 16,
+    "checked": 15,
+    "in_sync": 15,
     "drifted": [],
     "reconciling": [],
     "detail": []
@@ -74,7 +74,7 @@
       "key": "state_file",
       "tier": 1,
       "label": "Trade journal",
-      "value": "OK (574 records)",
+      "value": "OK (575 records)",
       "status": "ok",
       "action": null
     },
@@ -82,7 +82,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$1,595.84",
+      "value": "$1,605.66",
       "status": "ok",
       "action": null
     },
@@ -106,7 +106,7 @@
       "key": "position_protection",
       "tier": 1,
       "label": "Position protection",
-      "value": "all protected (5 open, 1 pre-TP1 runners)",
+      "value": "all protected (4 open, 1 pre-TP1 runners)",
       "status": "ok",
       "action": null
     },
@@ -181,7 +181,7 @@
       "coin": "HBARUSDT",
       "direction": "Short",
       "entry_price": 0.08111492,
-      "sl": 0.07753103,
+      "sl": 0.07634103,
       "tp1": 0.07712,
       "tp2": 0.07282,
       "capital_usd": 74.44,
@@ -209,43 +209,11 @@
       "rehearsal": false
     },
     {
-      "trade_id": "XRPUSDT_20260617_CB_001",
-      "coin": "XRPUSDT",
-      "direction": "Short",
-      "entry_price": 1.20441464,
-      "sl": 1.10840754,
-      "tp1": 1.0964,
-      "tp2": 1.0592,
-      "capital_usd": 73.73,
-      "leverage": 3,
-      "trading_system": "Braam",
-      "track_only": false,
-      "status": "OPEN",
-      "price_at_run": 1.1972,
-      "date_activated": "2026-06-17",
-      "time_activated_utc": "13:37",
-      "date_opened": "2026-06-17",
-      "time_opened_utc": "08:56",
-      "conviction": "MEDIUM",
-      "tp1_hit": true,
-      "sl_moved_to_be": false,
-      "pnl_tp1_realized_usd": 10.9,
-      "tp2_hit": false,
-      "live_executed": true,
-      "live_entry_fill": 1.2044,
-      "live_exit_fill": null,
-      "live_entry_slippage_pct": 0.0012,
-      "live_fees_usd": 0.2128,
-      "live_funding_usd": null,
-      "live_tp1_pnl_usd": 9.9544,
-      "rehearsal": false
-    },
-    {
       "trade_id": "LTCUSDT_20260617_CB_001",
       "coin": "LTCUSDT",
       "direction": "Short",
       "entry_price": 45.131772,
-      "sl": 42.92302389,
+      "sl": 42.16302389,
       "tp1": 41.39,
       "tp2": 37.25,
       "capital_usd": 73.86,
@@ -285,7 +253,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 61064.01,
+      "price_at_run": 60412.53,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-06-18",
@@ -1408,6 +1376,25 @@
       "won": true,
       "close_iso": "2026-06-24T13:22:00Z",
       "rehearsal": false
+    },
+    {
+      "trade_id": "XRPUSDT_20260617_CB_001",
+      "coin": "XRPUSDT",
+      "direction": "Short",
+      "status": "TP2_HIT",
+      "pnl_usd": 24.12,
+      "close_reason": "live MEXC exit: tp2 @ 1.0593",
+      "date_closed": "2026-06-24",
+      "time_closed_utc": "15:45",
+      "trading_system": "Braam",
+      "live_entry_fill": 1.2044,
+      "live_exit_fill": 1.0593,
+      "live_entry_slippage_pct": 0.0012,
+      "live_fees_usd": 0.2899,
+      "live_funding_usd": -0.084389,
+      "won": true,
+      "close_iso": "2026-06-24T15:45:00Z",
+      "rehearsal": false
     }
   ],
   "recent_cancels": [],
@@ -1417,12 +1404,6 @@
       "direction": "Short",
       "trading_system": "Braam",
       "entry_price": 0.08111492
-    },
-    {
-      "coin": "XRPUSDT",
-      "direction": "Short",
-      "trading_system": "Braam",
-      "entry_price": 1.20441464
     },
     {
       "coin": "LTCUSDT",
@@ -1438,15 +1419,15 @@
     }
   ],
   "stats": {
-    "realized_pnl_usd": -149.7,
-    "realized_pnl_pct": -4.95,
-    "win_rate_pct": 23.7,
-    "closed_count": 38,
+    "realized_pnl_usd": -126.75,
+    "realized_pnl_pct": -4.09,
+    "win_rate_pct": 25.6,
+    "closed_count": 39,
     "per_system": {
       "Braam": {
-        "realized_pnl_usd": -114.73,
-        "win_rate_pct": 27.3,
-        "closed_count": 33
+        "realized_pnl_usd": -91.78,
+        "win_rate_pct": 29.4,
+        "closed_count": 34
       },
       "John": {
         "realized_pnl_usd": -34.97,
