@@ -1,10 +1,10 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-06-24T08:19:07Z",
+  "last_updated_iso": "2026-06-24T11:17:44Z",
   "mexc_account": {
-    "unrealized_pnl": 72.0852,
-    "equity": 1579.8237,
+    "unrealized_pnl": 78.0043,
+    "equity": 1585.7428,
     "available": 436.7067,
     "position_margin": 0.0
   },
@@ -74,7 +74,7 @@
       "key": "state_file",
       "tier": 1,
       "label": "Trade journal",
-      "value": "OK (570 records)",
+      "value": "OK (572 records)",
       "status": "ok",
       "action": null
     },
@@ -82,7 +82,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$1,579.82",
+      "value": "$1,585.74",
       "status": "ok",
       "action": null
     },
@@ -181,7 +181,7 @@
       "coin": "HBARUSDT",
       "direction": "Short",
       "entry_price": 0.08111492,
-      "sl": 0.07943453,
+      "sl": 0.07865188,
       "tp1": 0.07712,
       "tp2": 0.07282,
       "capital_usd": 74.44,
@@ -213,7 +213,7 @@
       "coin": "XRPUSDT",
       "direction": "Short",
       "entry_price": 1.20441464,
-      "sl": 1.12989899,
+      "sl": 1.11593889,
       "tp1": 1.0964,
       "tp2": 1.0592,
       "capital_usd": 73.73,
@@ -317,7 +317,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 62653.21,
+      "price_at_run": 62352.04,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-06-18",
@@ -657,34 +657,7 @@
       "rehearsal": false
     }
   ],
-  "recent_signals": [
-    {
-      "trade_id": "ADAUSDT_20260623_CB_001",
-      "coin": "ADAUSDT",
-      "direction": "Short",
-      "trading_system": "Braam",
-      "entry_price": 0.15818426,
-      "tp1": 0.14684813,
-      "sl": 0.16350516,
-      "conviction": "MEDIUM",
-      "track_only": false,
-      "iso": "2026-06-23T21:50:00Z",
-      "rehearsal": false
-    },
-    {
-      "trade_id": "ONDOUSDT_20260623_CB_001",
-      "coin": "ONDOUSDT",
-      "direction": "Short",
-      "trading_system": "Braam",
-      "entry_price": 0.33031958,
-      "tp1": 0.2635,
-      "sl": 0.34376242,
-      "conviction": "MEDIUM",
-      "track_only": false,
-      "iso": "2026-06-23T21:50:00Z",
-      "rehearsal": false
-    }
-  ],
+  "recent_signals": [],
   "recent_opens": [
     {
       "trade_id": "AVAXUSDT_20260623_CB_001",
@@ -1404,15 +1377,7 @@
       "rehearsal": false
     }
   ],
-  "recent_cancels": [
-    {
-      "coin": "ADAUSDT",
-      "direction": "Short",
-      "trading_system": "Braam",
-      "close_reason": "Stale 13.1h \u2265 12h grace: Price $0.1506 is 16.4% below entry $0.1753",
-      "iso": "2026-06-23T20:39:00Z"
-    }
-  ],
+  "recent_cancels": [],
   "tp1_hits_open": [
     {
       "coin": "HBARUSDT",
