@@ -1157,18 +1157,25 @@ function renderHero(enrichedOpen) {
     if (enriched.length) animateValue(uEl, unrealized, fmtUsd);
     else uEl.textContent = "—";
   }
+  // Peak capital = max concurrent positions × $100 (the real bankroll required,
+  // e.g. 33 open at once on peak_date → $3,300). This is the denominator for the
+  // headline return; the tile shows it so the % visually reconciles.
+  const peakCap = state.stats.peak_capital_usd;
   if (cEl) {
     cEl.className = "hero-stat-val";
-    if (enriched.length) animateValue(cEl, totalCap, v => "$" + v.toFixed(0));
+    if (peakCap && peakCap > 0) animateValue(cEl, peakCap, v => "$" + Math.round(v).toLocaleString());
+    else if (enriched.length) animateValue(cEl, totalCap, v => "$" + v.toFixed(0)); // legacy fallback: current open capital
     else cEl.textContent = "—";
   }
   const pctEl2 = $("hero-pct");
   if (pctEl2) {
-    const closedCap = (state.stats.closed_count ?? 0) * 100;
-    const totalDeployed = closedCap + totalCap;
-    const retPct = totalDeployed > 0 ? (total / totalDeployed) * 100 : 0;
-    // Bracketed % rendered inline next to the big $ value (no longer a
-    // separate "on all capital deployed" sentence).
+    // Return on PEAK concurrent capital, NOT cumulative churn (closed×$100),
+    // which understated the return because capital recycles as trades close.
+    // Falls back to the legacy churn denominator only if the field is absent.
+    const denom = (peakCap && peakCap > 0)
+      ? peakCap
+      : (state.stats.closed_count ?? 0) * 100 + totalCap;
+    const retPct = denom > 0 ? (total / denom) * 100 : 0;
     pctEl2.textContent = "(" + (retPct >= 0 ? "+" : "") + retPct.toFixed(2) + "%)";
     pctEl2.className = "hero-pct-inline " + cls(total);
   }
