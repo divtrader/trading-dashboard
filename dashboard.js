@@ -1157,55 +1157,6 @@ function renderHero(enrichedOpen) {
     if (enriched.length) animateValue(uEl, unrealized, fmtUsd);
     else uEl.textContent = "—";
   }
-  // --- Daily deltas (since 00:00 UTC today) ---
-  // Both REALIZED and UNREALIZED snapshot at first render of the UTC day so
-  // the deltas reconcile to actual day P&L change. Earlier version enumerated
-  // closes for realizedToday — that missed TP1 banks on still-open trades
-  // (e.g. THETA hits TP1 mid-day → $16.68 banked but daily realized stayed flat).
-  // Snapshot approach catches: new full closes, new TP1 banks, anything that
-  // moves the realized total.
-  const utcDayKey = new Date().toISOString().slice(0, 10); // YYYY-MM-DD UTC
-  function _readDaySnapshot(prefix, currentValue) {
-    try {
-      const KEY = prefix + utcDayKey;
-      // Prune yesterday/older keys for this prefix
-      for (let i = localStorage.length - 1; i >= 0; i--) {
-        const k = localStorage.key(i);
-        if (k && k.startsWith(prefix) && k !== KEY) localStorage.removeItem(k);
-      }
-      const existing = localStorage.getItem(KEY);
-      if (existing == null) {
-        localStorage.setItem(KEY, String(currentValue));
-        return currentValue;
-      }
-      return parseFloat(existing);
-    } catch (e) { return null; /* localStorage blocked */ }
-  }
-  const realizedBaseline = _readDaySnapshot("realSnap_",   realized);
-  const unrealBaseline   = _readDaySnapshot("unrealSnap_", unrealized);
-  const realizedDayDelta = realizedBaseline == null ? null : realized - realizedBaseline;
-  const unrealDayDelta   = unrealBaseline   == null ? null : unrealized - unrealBaseline;
-
-  const rDayEl = $("hero-realized-day");
-  if (rDayEl) {
-    if (realizedDayDelta == null) {
-      rDayEl.textContent = "—";
-      rDayEl.className = "hero-stat-sub";
-    } else {
-      rDayEl.textContent = fmtUsd(realizedDayDelta);
-      rDayEl.className = "hero-stat-sub " + cls(realizedDayDelta);
-    }
-  }
-  const uDayEl = $("hero-unrealized-day");
-  if (uDayEl) {
-    if (unrealDayDelta == null) {
-      uDayEl.textContent = "—";
-      uDayEl.className = "hero-stat-sub";
-    } else {
-      uDayEl.textContent = fmtUsd(unrealDayDelta);
-      uDayEl.className = "hero-stat-sub " + cls(unrealDayDelta);
-    }
-  }
   if (cEl) {
     cEl.className = "hero-stat-val";
     if (enriched.length) animateValue(cEl, totalCap, v => "$" + v.toFixed(0));
@@ -1220,24 +1171,6 @@ function renderHero(enrichedOpen) {
     // separate "on all capital deployed" sentence).
     pctEl2.textContent = "(" + (retPct >= 0 ? "+" : "") + retPct.toFixed(2) + "%)";
     pctEl2.className = "hero-pct-inline " + cls(total);
-  }
-
-  // Real-only breakdown (excludes track_only signals)
-  const realStats = state.stats.real_only;
-  if (realStats) {
-    const realOpen   = enriched.filter(t => !t.track_only);
-    const realUnreal = realOpen.reduce((s, t) => s + t.usd, 0);
-    const realTp1Bk  = realOpen.reduce((s, t) => s + (t.tp1BankedUsd || 0), 0);
-    const realRealiz = (realStats.realized_pnl_usd ?? 0) + realTp1Bk;
-    const realTotal  = realRealiz + realUnreal;
-    const rwr        = realStats.win_rate_pct ?? 0;
-    const rcl        = realStats.closed_count ?? 0;
-    const pnlEl   = $("hr-pnl");
-    const wrEl    = $("hr-wr");
-    const cntEl   = $("hr-count");
-    if (pnlEl) { pnlEl.textContent = fmtUsd(realTotal); pnlEl.className = "hr-pnl " + cls(realTotal); }
-    if (wrEl)  { wrEl.textContent  = rwr.toFixed(1) + "% WR"; }
-    if (cntEl) { cntEl.textContent = rcl + " closed"; }
   }
 
   // Donut
