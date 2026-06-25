@@ -1,16 +1,16 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-06-25T21:54:28Z",
+  "last_updated_iso": "2026-06-25T22:06:30Z",
   "mexc_account": {
     "unrealized_pnl": 0.0,
     "equity": 1591.2388,
-    "available": 300.334,
+    "available": 380.3173,
     "position_margin": 0.0
   },
   "order_levels": {
-    "checked": 17,
-    "in_sync": 17,
+    "checked": 16,
+    "in_sync": 16,
     "drifted": [],
     "reconciling": [],
     "detail": []
@@ -98,7 +98,7 @@
       "key": "orphan_orders",
       "tier": 1,
       "label": "Order reconciliation",
-      "value": "in sync (17 resting = journal)",
+      "value": "in sync (16 resting = journal)",
       "status": "ok",
       "action": null
     },
@@ -189,7 +189,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 60020.01,
+      "price_at_run": 60140.0,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-06-18",
@@ -381,7 +381,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 2.883,
+      "price_at_run": 2.896,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-06-23",
@@ -593,38 +593,6 @@
       "rehearsal": false
     },
     {
-      "trade_id": "UNIUSDT_20260625_CB_001",
-      "coin": "UNIUSDT",
-      "direction": "Short",
-      "entry_price": 2.93508494,
-      "sl": 3.0711223,
-      "tp1": 2.316,
-      "tp2": 1.82885714,
-      "capital_usd": 79.56,
-      "leverage": 3,
-      "trading_system": "Braam",
-      "track_only": false,
-      "status": "PENDING",
-      "price_at_run": 2.802,
-      "date_activated": null,
-      "time_activated_utc": null,
-      "date_opened": "2026-06-25",
-      "time_opened_utc": "13:54",
-      "conviction": "MEDIUM",
-      "tp1_hit": false,
-      "sl_moved_to_be": false,
-      "pnl_tp1_realized_usd": null,
-      "tp2_hit": false,
-      "live_executed": null,
-      "live_entry_fill": null,
-      "live_exit_fill": null,
-      "live_entry_slippage_pct": null,
-      "live_fees_usd": null,
-      "live_funding_usd": null,
-      "live_tp1_pnl_usd": null,
-      "rehearsal": false
-    },
-    {
       "trade_id": "ALGOUSDT_20260625_CB_001",
       "coin": "ALGOUSDT",
       "direction": "Short",
@@ -690,19 +658,6 @@
     }
   ],
   "recent_signals": [
-    {
-      "trade_id": "UNIUSDT_20260625_CB_001",
-      "coin": "UNIUSDT",
-      "direction": "Short",
-      "trading_system": "Braam",
-      "entry_price": 2.93508494,
-      "tp1": 2.316,
-      "sl": 3.0711223,
-      "conviction": "MEDIUM",
-      "track_only": false,
-      "iso": "2026-06-25T13:54:00Z",
-      "rehearsal": false
-    },
     {
       "trade_id": "ALGOUSDT_20260625_CB_001",
       "coin": "ALGOUSDT",
@@ -1606,8 +1561,8 @@
         "closed_count": 5
       }
     },
-    "live_trade_count_total": 89,
-    "live_real_count": 66,
+    "live_trade_count_total": 88,
+    "live_real_count": 65,
     "live_rehearsal_count": 23
   }
 }
