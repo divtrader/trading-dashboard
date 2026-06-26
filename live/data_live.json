@@ -1,11 +1,11 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-06-26T16:30:03Z",
+  "last_updated_iso": "2026-06-26T18:04:39Z",
   "mexc_account": {
-    "unrealized_pnl": 0.864,
-    "equity": 1591.9635,
-    "available": 304.9242,
+    "unrealized_pnl": -0.48,
+    "equity": 1590.6195,
+    "available": 305.193,
     "position_margin": 0.0
   },
   "order_levels": {
@@ -74,7 +74,7 @@
       "key": "state_file",
       "tier": 1,
       "label": "Trade journal",
-      "value": "OK (604 records)",
+      "value": "OK (605 records)",
       "status": "ok",
       "action": null
     },
@@ -82,7 +82,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$1,591.96",
+      "value": "$1,590.62",
       "status": "ok",
       "action": null
     },
@@ -189,7 +189,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 60069.82,
+      "price_at_run": 60066.78,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-06-18",
@@ -293,38 +293,6 @@
       "conviction": "MEDIUM",
       "tp1_hit": false,
       "sl_moved_to_be": false,
-      "pnl_tp1_realized_usd": null,
-      "tp2_hit": false,
-      "live_executed": null,
-      "live_entry_fill": null,
-      "live_exit_fill": null,
-      "live_entry_slippage_pct": null,
-      "live_fees_usd": null,
-      "live_funding_usd": null,
-      "live_tp1_pnl_usd": null,
-      "rehearsal": false
-    },
-    {
-      "trade_id": "UNIUSDT_20260623_CJ_001",
-      "coin": "UNIUSDT",
-      "direction": "Short",
-      "entry_price": 3.07475,
-      "sl": 3.16757252,
-      "tp1": 2.40844124,
-      "tp2": 2.34385496,
-      "capital_usd": 79.43,
-      "leverage": 3,
-      "trading_system": "John",
-      "track_only": false,
-      "status": "PENDING",
-      "price_at_run": 2.947,
-      "date_activated": null,
-      "time_activated_utc": null,
-      "date_opened": "2026-06-23",
-      "time_opened_utc": "17:10",
-      "conviction": "HIGH",
-      "tp1_hit": false,
-      "sl_moved_to_be": null,
       "pnl_tp1_realized_usd": null,
       "tp2_hit": false,
       "live_executed": null,
@@ -687,6 +655,38 @@
       "live_funding_usd": null,
       "live_tp1_pnl_usd": null,
       "rehearsal": false
+    },
+    {
+      "trade_id": "NEARUSDT_20260626_CB_001",
+      "coin": "NEARUSDT",
+      "direction": "Short",
+      "entry_price": 1.91255325,
+      "sl": 2.01688922,
+      "tp1": 1.674,
+      "tp2": 1.17547532,
+      "capital_usd": 79.56,
+      "leverage": 3,
+      "trading_system": "Braam",
+      "track_only": false,
+      "status": "PENDING",
+      "price_at_run": 1.817,
+      "date_activated": null,
+      "time_activated_utc": null,
+      "date_opened": "2026-06-26",
+      "time_opened_utc": "18:03",
+      "conviction": "MEDIUM",
+      "tp1_hit": false,
+      "sl_moved_to_be": false,
+      "pnl_tp1_realized_usd": null,
+      "tp2_hit": false,
+      "live_executed": null,
+      "live_entry_fill": null,
+      "live_exit_fill": null,
+      "live_entry_slippage_pct": null,
+      "live_fees_usd": null,
+      "live_funding_usd": null,
+      "live_tp1_pnl_usd": null,
+      "rehearsal": false
     }
   ],
   "recent_signals": [
@@ -714,6 +714,19 @@
       "conviction": "MEDIUM",
       "track_only": false,
       "iso": "2026-06-26T16:16:00Z",
+      "rehearsal": false
+    },
+    {
+      "trade_id": "NEARUSDT_20260626_CB_001",
+      "coin": "NEARUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "entry_price": 1.91255325,
+      "tp1": 1.674,
+      "sl": 2.01688922,
+      "conviction": "MEDIUM",
+      "track_only": false,
+      "iso": "2026-06-26T18:03:00Z",
       "rehearsal": false
     }
   ],
@@ -1581,7 +1594,15 @@
       "rehearsal": false
     }
   ],
-  "recent_cancels": [],
+  "recent_cancels": [
+    {
+      "coin": "UNIUSDT",
+      "direction": "Short",
+      "trading_system": "John",
+      "close_reason": "Signal direction flipped to Long (5/8 signals) \u2014 original setup no longer valid",
+      "iso": "2026-06-26T18:03:00Z"
+    }
+  ],
   "tp1_hits_open": [],
   "stats": {
     "realized_pnl_usd": -69.48,
@@ -1605,8 +1626,8 @@
         "closed_count": 5
       }
     },
-    "live_trade_count_total": 92,
-    "live_real_count": 69,
+    "live_trade_count_total": 93,
+    "live_real_count": 70,
     "live_rehearsal_count": 23
   }
 }
