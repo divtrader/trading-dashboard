@@ -1,10 +1,10 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-06-27T04:16:41Z",
+  "last_updated_iso": "2026-06-27T07:26:25Z",
   "mexc_account": {
-    "unrealized_pnl": -0.121,
-    "equity": 1590.8585,
+    "unrealized_pnl": 0.3495,
+    "equity": 1591.329,
     "available": 304.6863,
     "position_margin": 0.0
   },
@@ -74,7 +74,7 @@
       "key": "state_file",
       "tier": 1,
       "label": "Trade journal",
-      "value": "OK (607 records)",
+      "value": "OK (608 records)",
       "status": "ok",
       "action": null
     },
@@ -82,7 +82,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$1,590.86",
+      "value": "$1,591.33",
       "status": "ok",
       "action": null
     },
@@ -189,7 +189,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 60414.93,
+      "price_at_run": 60428.0,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-06-18",
@@ -502,8 +502,8 @@
       "direction": "Short",
       "entry_price": 42.1914763,
       "sl": 43.55876668,
-      "tp1": 39.39691087,
-      "tp2": 34.68142556,
+      "tp1": 40.7,
+      "tp2": 37.28,
       "capital_usd": 79.56,
       "leverage": 3,
       "trading_system": "Braam",
@@ -689,21 +689,7 @@
       "rehearsal": false
     }
   ],
-  "recent_signals": [
-    {
-      "trade_id": "NEARUSDT_20260626_CB_001",
-      "coin": "NEARUSDT",
-      "direction": "Short",
-      "trading_system": "Braam",
-      "entry_price": 1.91255325,
-      "tp1": 1.674,
-      "sl": 2.01688922,
-      "conviction": "MEDIUM",
-      "track_only": false,
-      "iso": "2026-06-26T18:03:00Z",
-      "rehearsal": false
-    }
-  ],
+  "recent_signals": [],
   "recent_opens": [
     {
       "trade_id": "SOLUSDT_20260623_CB_001",
@@ -1568,15 +1554,7 @@
       "rehearsal": false
     }
   ],
-  "recent_cancels": [
-    {
-      "coin": "UNIUSDT",
-      "direction": "Short",
-      "trading_system": "John",
-      "close_reason": "Signal direction flipped to Long (5/8 signals) \u2014 original setup no longer valid",
-      "iso": "2026-06-26T18:03:00Z"
-    }
-  ],
+  "recent_cancels": [],
   "tp1_hits_open": [],
   "stats": {
     "realized_pnl_usd": -69.48,
