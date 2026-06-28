@@ -626,10 +626,19 @@ function splitFractions(t) {
   return { banked: 0.8, remaining: 0.2 };  // John / William default
 }
 
+// For an EXECUTED trade, anchor display + P&L on the ACTUAL fill price, not the
+// intended/feed entry — they diverge on an instant-fill (limit already marketable
+// at placement), which otherwise shows a false loss. PENDING/unfilled trades have
+// no fill yet, so this falls back to the intended entry automatically.
+function effEntry(t) {
+  return (t.live_executed && t.live_entry_fill) ? t.live_entry_fill : t.entry_price;
+}
+
 function computeUnrealized(t) {
-  const live = state.prices[t.coin] ?? t.price_at_run ?? t.entry_price;
+  const eEntry = effEntry(t);
+  const live = state.prices[t.coin] ?? t.price_at_run ?? eEntry;
   const dir = t.direction === "Long" ? 1 : -1;
-  const pricePct = ((live - t.entry_price) / t.entry_price) * 100 * dir;
+  const pricePct = ((live - eEntry) / eEntry) * 100 * dir;
   const leveragedPct = pricePct * (t.leverage || 1);
   const cap = t.capital_usd || 100;
 
@@ -648,8 +657,8 @@ function computeUnrealized(t) {
       tp1BankedUsd = t.live_tp1_pnl_usd || 0;
     } else if (t.pnl_tp1_realized_usd != null) {
       tp1BankedUsd = t.pnl_tp1_realized_usd || 0;
-    } else if (t.tp1 && t.entry_price) {
-      const tp1PricePct = ((t.tp1 - t.entry_price) / t.entry_price) * 100 * dir;
+    } else if (t.tp1 && eEntry) {
+      const tp1PricePct = ((t.tp1 - eEntry) / eEntry) * 100 * dir;
       tp1BankedUsd = cap * bankedFraction * (tp1PricePct * (t.leverage || 1) / 100);
     }
   }
@@ -1215,7 +1224,7 @@ function renderPaperBars(enrichedOpen) {
       return Math.max(0, Math.min(1, v)) * 100;
     };
     const slPct  = 0;
-    const ePct   = posOf(t.entry_price);
+    const ePct   = posOf(effEntry(t));
     const lPct   = posOf(t.live);
     const t1Pct  = posOf(tp1);
     const t2Pct  = hasTP2 ? posOf(tp2) : null;
@@ -1272,7 +1281,7 @@ function renderPaperBars(enrichedOpen) {
           <div class="pb-dot" style="left:${lPct.toFixed(1)}%;background:${liveColor};box-shadow:0 0 12px ${liveColor},0 0 4px ${liveColor}"></div>
           <div class="pb-prices">
             ${!beActive ? `<span class="pb-price-val sl" style="left:${slPct}%">${fmtPrice(sl)}</span>` : ""}
-            <span class="pb-price-val entry" style="left:${ePct.toFixed(1)}%">${fmtPrice(t.entry_price)}</span>
+            <span class="pb-price-val entry" style="left:${ePct.toFixed(1)}%">${fmtPrice(effEntry(t))}</span>
             <span class="pb-price-val tp1"   style="left:${t1Pct.toFixed(1)}%">${fmtPrice(tp1)}</span>
             ${t2Pct !== null ? `<span class="pb-price-val tp2" style="left:${t2Pct.toFixed(1)}%">${fmtPrice(tp2)}</span>` : ""}
           </div>
@@ -1654,13 +1663,14 @@ function positionBar(t) {
     const v = isLong ? (price - sl) / span : (sl - price) / span;
     return Math.max(0, Math.min(1, v)) * 100; // clamp 0–100%
   };
-  const ePct  = posOf(entry_price);
+  const eEntry = effEntry(t);
+  const ePct  = posOf(eEntry);
   const lPct  = posOf(live);
   const t1Pct = posOf(tp1);
 
-  const distSL  = Math.abs((live - sl)          / entry_price * 100).toFixed(1);
-  const distTP1 = Math.abs((tp1  - live)         / entry_price * 100).toFixed(1);
-  const distTP2 = hasTP2 ? Math.abs((tp2 - live) / entry_price * 100).toFixed(1) : null;
+  const distSL  = Math.abs((live - sl)          / eEntry * 100).toFixed(1);
+  const distTP1 = Math.abs((tp1  - live)         / eEntry * 100).toFixed(1);
+  const distTP2 = hasTP2 ? Math.abs((tp2 - live) / eEntry * 100).toFixed(1) : null;
   const liveColor = lPct < 33 ? cssVar("--red") : lPct > 66 ? cssVar("--green") : cssVar("--orange");
 
   const achievedFill = tp1_hit ? `
@@ -1741,8 +1751,9 @@ function renderMovers(list, kind) {
     const lev = t.leverage || 1;
     const posSize = cap * lev;
     // R-multiple = current move / risk
-    const risk = Math.abs(t.entry_price - t.sl);
-    const move = isLong ? (t.live - t.entry_price) : (t.entry_price - t.live);
+    const eEntry = effEntry(t);
+    const risk = Math.abs(eEntry - t.sl);
+    const move = isLong ? (t.live - eEntry) : (eEntry - t.live);
     const rMult = risk > 0 ? move / risk : 0;
     const rStr = (rMult >= 0 ? "+" : "") + rMult.toFixed(2) + "R";
     return `
@@ -1779,7 +1790,7 @@ function renderMovers(list, kind) {
             </div>
             <div class="meta-item">
               <div class="meta-label">Entry</div>
-              <div class="meta-val">${fmtPrice(t.entry_price)}</div>
+              <div class="meta-val">${fmtPrice(effEntry(t))}</div>
             </div>
             <div class="meta-item">
               <div class="meta-label">Live</div>
