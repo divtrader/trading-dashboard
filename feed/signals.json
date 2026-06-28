@@ -1,9 +1,9 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-06-28T10:49Z",
+  "generated_utc": "2026-06-28T11:42Z",
   "master": "braam",
   "retention_hours": 48,
-  "trade_count": 25,
+  "trade_count": 27,
   "trades": [
     {
       "trade_id": "BNBUSDT_20260616_CB_001",
@@ -18,15 +18,15 @@
       "sl": 624.56633716,
       "tp1": 572.50421942,
       "tp2": 514.08127266,
-      "status": "PENDING",
+      "status": "CANCELLED",
       "tp1_hit": false,
       "tp2_hit": false,
       "sl_hit": false,
-      "close_reason": null,
+      "close_reason": "Stale 12.0h \u2265 12h grace: Price $556.20 is 10.3% below entry $613.31",
       "date_opened": "2026-06-16",
       "time_opened_utc": "14:34",
       "sl_mode": "initial",
-      "feed_updated_utc": "2026-06-16T14:34Z"
+      "feed_updated_utc": "2026-06-28T11:40Z"
     },
     {
       "trade_id": "TONUSDT_20260616_CB_001",
@@ -579,6 +579,52 @@
       "time_opened_utc": "10:34",
       "sl_mode": "initial",
       "feed_updated_utc": "2026-06-28T10:34Z"
+    },
+    {
+      "trade_id": "TRXUSDT_20260628_CJ_001",
+      "coin": "TRXUSDT",
+      "direction": "Long",
+      "trading_system": "John",
+      "conviction": "HIGH",
+      "leverage": 3,
+      "entry_price": 0.31902878,
+      "entry_lo": 0.31698256,
+      "entry_hi": 0.32516744,
+      "sl": 0.31749229,
+      "tp1": 0.33260772,
+      "tp2": 0.35030756,
+      "status": "PENDING",
+      "tp1_hit": false,
+      "tp2_hit": false,
+      "sl_hit": false,
+      "close_reason": null,
+      "date_opened": "2026-06-28",
+      "time_opened_utc": "11:40",
+      "sl_mode": "initial",
+      "feed_updated_utc": "2026-06-28T11:40Z"
+    },
+    {
+      "trade_id": "BNBUSDT_20260628_CB_001",
+      "coin": "BNBUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "conviction": "MEDIUM",
+      "leverage": 3,
+      "entry_price": 563.90729335,
+      "entry_lo": 561.08775688,
+      "entry_hi": 566.72682982,
+      "sl": 575.40922408,
+      "tp1": 533.67450924,
+      "tp2": 484.9078378,
+      "status": "PENDING",
+      "tp1_hit": false,
+      "tp2_hit": false,
+      "sl_hit": false,
+      "close_reason": null,
+      "date_opened": "2026-06-28",
+      "time_opened_utc": "11:40",
+      "sl_mode": "initial",
+      "feed_updated_utc": "2026-06-28T11:40Z"
     }
   ]
 }

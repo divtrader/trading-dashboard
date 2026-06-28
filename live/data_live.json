@@ -1,16 +1,16 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-06-28T10:48:51Z",
+  "last_updated_iso": "2026-06-28T11:42:07Z",
   "mexc_account": {
-    "unrealized_pnl": 7.6175,
-    "equity": 1598.4319,
-    "available": 380.4318,
+    "unrealized_pnl": 3.4405,
+    "equity": 1594.2549,
+    "available": 375.0519,
     "position_margin": 0.0
   },
   "order_levels": {
-    "checked": 16,
-    "in_sync": 16,
+    "checked": 17,
+    "in_sync": 17,
     "drifted": [],
     "reconciling": [],
     "detail": []
@@ -66,15 +66,15 @@
       "key": "daily_summary",
       "tier": 1,
       "label": "Daily summary",
-      "value": "overdue 1d",
-      "status": "warn",
-      "action": "Run daily_summary.yml manually from Actions."
+      "value": "sent today",
+      "status": "ok",
+      "action": null
     },
     {
       "key": "state_file",
       "tier": 1,
       "label": "Trade journal",
-      "value": "OK (613 records)",
+      "value": "OK (615 records)",
       "status": "ok",
       "action": null
     },
@@ -82,7 +82,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$1,598.43",
+      "value": "$1,594.25",
       "status": "ok",
       "action": null
     },
@@ -98,7 +98,7 @@
       "key": "orphan_orders",
       "tier": 1,
       "label": "Order reconciliation",
-      "value": "in sync (13 resting = journal)",
+      "value": "in sync (14 resting = journal)",
       "status": "ok",
       "action": null
     },
@@ -144,38 +144,6 @@
     }
   ],
   "active_trades": [
-    {
-      "trade_id": "BNBUSDT_20260616_CB_001",
-      "coin": "BNBUSDT",
-      "direction": "Short",
-      "entry_price": 613.30987351,
-      "sl": 624.56633716,
-      "tp1": 572.50421942,
-      "tp2": 514.08127266,
-      "capital_usd": 74.96,
-      "leverage": 3,
-      "trading_system": "Braam",
-      "track_only": false,
-      "status": "PENDING",
-      "price_at_run": 602.93,
-      "date_activated": null,
-      "time_activated_utc": null,
-      "date_opened": "2026-06-16",
-      "time_opened_utc": "14:34",
-      "conviction": "MEDIUM",
-      "tp1_hit": false,
-      "sl_moved_to_be": false,
-      "pnl_tp1_realized_usd": null,
-      "tp2_hit": false,
-      "live_executed": null,
-      "live_entry_fill": null,
-      "live_exit_fill": null,
-      "live_entry_slippage_pct": null,
-      "live_fees_usd": null,
-      "live_funding_usd": null,
-      "live_tp1_pnl_usd": null,
-      "rehearsal": false
-    },
     {
       "trade_id": "SOLUSDT_20260623_CB_001",
       "coin": "SOLUSDT",
@@ -655,9 +623,100 @@
       "live_funding_usd": null,
       "live_tp1_pnl_usd": null,
       "rehearsal": false
+    },
+    {
+      "trade_id": "TRXUSDT_20260628_CJ_001",
+      "coin": "TRXUSDT",
+      "direction": "Long",
+      "entry_price": 0.31902878,
+      "sl": 0.31749229,
+      "tp1": 0.33260772,
+      "tp2": 0.35030756,
+      "capital_usd": 79.69,
+      "leverage": 3,
+      "trading_system": "John",
+      "track_only": false,
+      "status": "PENDING",
+      "price_at_run": 0.3232,
+      "date_activated": null,
+      "time_activated_utc": null,
+      "date_opened": "2026-06-28",
+      "time_opened_utc": "11:40",
+      "conviction": "HIGH",
+      "tp1_hit": false,
+      "sl_moved_to_be": null,
+      "pnl_tp1_realized_usd": null,
+      "tp2_hit": false,
+      "live_executed": null,
+      "live_entry_fill": null,
+      "live_exit_fill": null,
+      "live_entry_slippage_pct": null,
+      "live_fees_usd": null,
+      "live_funding_usd": null,
+      "live_tp1_pnl_usd": null,
+      "rehearsal": false
+    },
+    {
+      "trade_id": "BNBUSDT_20260628_CB_001",
+      "coin": "BNBUSDT",
+      "direction": "Short",
+      "entry_price": 563.90729335,
+      "sl": 575.40922408,
+      "tp1": 533.67450924,
+      "tp2": 484.9078378,
+      "capital_usd": 79.69,
+      "leverage": 3,
+      "trading_system": "Braam",
+      "track_only": false,
+      "status": "PENDING",
+      "price_at_run": 556.2,
+      "date_activated": null,
+      "time_activated_utc": null,
+      "date_opened": "2026-06-28",
+      "time_opened_utc": "11:40",
+      "conviction": "MEDIUM",
+      "tp1_hit": false,
+      "sl_moved_to_be": false,
+      "pnl_tp1_realized_usd": null,
+      "tp2_hit": false,
+      "live_executed": null,
+      "live_entry_fill": null,
+      "live_exit_fill": null,
+      "live_entry_slippage_pct": null,
+      "live_fees_usd": null,
+      "live_funding_usd": null,
+      "live_tp1_pnl_usd": null,
+      "rehearsal": false
     }
   ],
-  "recent_signals": [],
+  "recent_signals": [
+    {
+      "trade_id": "TRXUSDT_20260628_CJ_001",
+      "coin": "TRXUSDT",
+      "direction": "Long",
+      "trading_system": "John",
+      "entry_price": 0.31902878,
+      "tp1": 0.33260772,
+      "sl": 0.31749229,
+      "conviction": "HIGH",
+      "track_only": false,
+      "iso": "2026-06-28T11:40:00Z",
+      "rehearsal": false
+    },
+    {
+      "trade_id": "BNBUSDT_20260628_CB_001",
+      "coin": "BNBUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "entry_price": 563.90729335,
+      "tp1": 533.67450924,
+      "sl": 575.40922408,
+      "conviction": "MEDIUM",
+      "track_only": false,
+      "iso": "2026-06-28T11:40:00Z",
+      "rehearsal": false
+    }
+  ],
   "recent_opens": [
     {
       "trade_id": "SOLUSDT_20260623_CB_001",
@@ -1541,6 +1600,13 @@
       "trading_system": "John",
       "close_reason": "Stale 13.5h \u2265 12h grace: Price $60,328 is 10.1% below entry $66,448",
       "iso": "2026-06-28T09:26:00Z"
+    },
+    {
+      "coin": "BNBUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "close_reason": "Stale 12.0h \u2265 12h grace: Price $556.20 is 10.3% below entry $613.31",
+      "iso": "2026-06-28T11:40:00Z"
     }
   ],
   "tp1_hits_open": [],
@@ -1566,8 +1632,8 @@
         "closed_count": 5
       }
     },
-    "live_trade_count_total": 93,
-    "live_real_count": 70,
+    "live_trade_count_total": 95,
+    "live_real_count": 72,
     "live_rehearsal_count": 23
   }
 }
