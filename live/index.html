@@ -9,6 +9,13 @@
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
+<style>
+  /* Braam/Tjono account toggle */
+  .acct-toggle{display:inline-flex;margin-left:14px;vertical-align:middle;border:1px solid #2b3340;border-radius:6px;overflow:hidden}
+  .acct-toggle button{background:transparent;color:#8a93a3;border:0;padding:3px 12px;font:inherit;font-size:12px;letter-spacing:.04em;cursor:pointer}
+  .acct-toggle button.active{background:#f2a73b;color:#0b0e14;font-weight:600}
+  .acct-toggle button:not(.active):hover{color:#dfe5ef}
+</style>
 </head>
 <body>
 <div id="gate" class="gate">
@@ -36,7 +43,7 @@
 
 <main id="app" hidden>
   <header class="top">
-    <div class="brand"><span class="brand-co">Spyker Trading Inc</span> · Live MEXC Dashboard <span class="brand-live">● LIVE</span><span class="brand-rehearsal hidden" id="brand-rehearsal">● REHEARSAL MODE — dry-run trades, no real fills yet</span></div>
+    <div class="brand"><span class="brand-co">Spyker Trading Inc</span> · Live MEXC Dashboard <span class="brand-live">● LIVE</span><span class="brand-rehearsal hidden" id="brand-rehearsal">● REHEARSAL MODE — dry-run trades, no real fills yet</span><span class="acct-toggle" id="acct-toggle" role="group" aria-label="Account"><button type="button" data-acct="braam">Braam</button><button type="button" data-acct="tjono">Tjono</button></span></div>
     <div class="meta">
       <span id="last-cron">last run: —</span>
       <span class="dot" id="live-dot"></span>
@@ -252,6 +259,23 @@
   </div>
 </main>
 
-<script src="dashboard.js?v=228"></script>
+<script src="dashboard.js?v=229"></script>
+<script>
+  // Account toggle wiring — sets localStorage.acct + reloads. Self-contained
+  // (no dependency on dashboard.js, which reads localStorage.acct on load).
+  (function(){
+    var sel = localStorage.getItem('acct') === 'tjono' ? 'tjono' : 'braam';
+    var box = document.getElementById('acct-toggle');
+    if (!box) return;
+    box.querySelectorAll('button').forEach(function(b){
+      if (b.dataset.acct === sel) b.classList.add('active');
+      b.addEventListener('click', function(){
+        if (b.dataset.acct === sel) return;
+        localStorage.setItem('acct', b.dataset.acct);
+        location.reload();
+      });
+    });
+  })();
+</script>
 </body>
 </html>

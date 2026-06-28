@@ -56,15 +56,36 @@ function playSound(type) {
 }
 
 const URL_TOKEN = "LV9mKpQ3xR2tW8nB5cZ";
-const DATA_URL  = "data_live.json";
+
+// ── Account toggle (Braam / Tjono) ──────────────────────────────────────────
+// Switches the live data source between Braam (master) and Tjono (follower).
+// The header toggle sets localStorage.acct and reloads. Only the
+// account-specific live sources switch (data + live-analytics + Worker); the
+// shared macro analytics (ANALYTICS_URL = ../analytics.json) stays Braam's.
+const ACCOUNTS = {
+  braam: {
+    label: "Braam",
+    data:  "data_live.json",
+    liveAnalytics: "analytics.json",
+    worker: "https://mexc-proxy.braamdeclerk.workers.dev",
+  },
+  tjono: {
+    label: "Tjono",
+    data:  "https://raw.githubusercontent.com/Tjono/follower-data/main/data_live.json",
+    liveAnalytics: "https://raw.githubusercontent.com/Tjono/follower-data/main/analytics.json",
+    worker: "https://mexc-follower-proxy.futurefoliage.workers.dev",
+  },
+};
+const ACCOUNT_KEY = localStorage.getItem("acct") === "tjono" ? "tjono" : "braam";
+const ACCOUNT     = ACCOUNTS[ACCOUNT_KEY];
+
+const DATA_URL  = ACCOUNT.data;
 const REFRESH_MS = 60_000;
 const ROTATE_MS  = 15_000;
 const STALE_MS   = 5 * 60 * 60_000;
 
-// ── Set this to your Cloudflare Worker URL once deployed ──────────────────
-// e.g. "https://mexc-proxy.yourname.workers.dev"
-// Leave empty to rely on the 5-minute GHA snapshot fallback.
-const MEXC_WORKER_URL      = "https://mexc-proxy.braamdeclerk.workers.dev";
+// ── Cloudflare Worker (per-account: live balance / positions / mover_health) ─
+const MEXC_WORKER_URL      = ACCOUNT.worker;
 const BLOOMBERG_WORKER_URL = "https://bloomberg-news.braamdeclerk.workers.dev";
 // ─────────────────────────────────────────────────────────────────────────
 
@@ -2244,7 +2265,7 @@ async function fetchBloombergNews() {
 // ════════════════════════════════════════════════════════════════════════
 
 const ANALYTICS_URL      = "../analytics.json"; // PAPER analytics (root) — used only for shared infra (macro/econ/api_keys)
-const LIVE_ANALYTICS_URL = "analytics.json";    // LIVE analytics (live/analytics.json) — trade-derived stats over live_executed trades
+const LIVE_ANALYTICS_URL = ACCOUNT.liveAnalytics; // LIVE analytics — trade-derived stats; per-account (Braam: live/analytics.json, Tjono: his public analytics.json)
 const FNG_URL       = "https://api.alternative.me/fng/?limit=1";
 let _edgeAnalytics = null;
 let _edgeFng = null;
