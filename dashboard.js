@@ -1935,6 +1935,16 @@ document.querySelectorAll(".dots .d").forEach(d => {
   });
 });
 
+// Clickable count tiles → jump to that screen (Open trades → Screen 2, Pending → Screen 3)
+[["open-tile", 1], ["pending-tile", 2]].forEach(([id, idx]) => {
+  const el = document.getElementById(id);
+  if (!el) return;
+  el.addEventListener("click", () => goToScreen(idx));
+  el.addEventListener("keydown", e => {
+    if (e.key === "Enter" || e.key === " ") { e.preventDefault(); goToScreen(idx); }
+  });
+});
+
 // Keyboard arrows (handy for desktop testing)
 document.addEventListener("keydown", e => {
   if (e.key === "ArrowRight") nextScreen();
