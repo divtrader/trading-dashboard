@@ -721,9 +721,11 @@ function renderRecentClosesTile() {
   }
   const newHtml = closes.map(c => {
     const coin = (c.coin || "").replace("USDT", "");
-    const won = c.won != null ? c.won : (c.pnl_usd || 0) > 0;
-    const pnl = c.pnl_usd || 0;
-    const pnlStr = (pnl >= 0 ? "+$" : "-$") + Math.abs(pnl).toFixed(2);
+    // A reconcile-closed trade (status backstop, no confirm_fill) can have a
+    // null pnl_usd — render "—" rather than a misleading $0.00 / NaN.
+    const hasPnl = typeof c.pnl_usd === "number" && isFinite(c.pnl_usd);
+    const won = c.won != null ? c.won : (hasPnl && c.pnl_usd > 0);
+    const pnlStr = hasPnl ? ((c.pnl_usd >= 0 ? "+$" : "-$") + Math.abs(c.pnl_usd).toFixed(2)) : "—";
     const isLong = c.direction === "Long";
     const dirCls = isLong ? "long" : "short";
     const dirLetter = isLong ? "L" : "S";
@@ -751,7 +753,7 @@ function renderRecentClosesTile() {
           <span class="rc-tid">${tid || "—"}</span>
         </div>
         <div class="rc-reason ${rCls}">${rCode}</div>
-        <div class="rc-pnl ${won ? 'pos' : 'neg'}">${pnlStr}</div>
+        <div class="rc-pnl ${hasPnl ? (won ? 'pos' : 'neg') : ''}"${hasPnl ? "" : ' style="color:var(--muted)"'}>${pnlStr}</div>
         <div class="rc-ago">${fmtAgo(c.close_iso, { detectedAtIso: state.lastCronIso })}</div>
       </div>`;
   }).join("");
