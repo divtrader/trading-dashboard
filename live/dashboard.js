@@ -993,7 +993,9 @@ function renderOrderHealth() {
   ];
   el.title = legend.join("\n");
 
-  let html = lines.join('<br>') + ' <span class="oh-info" title="What do these mean?">ⓘ</span>';
+  // Single row: segments + any alarm lines joined inline (no <br>) so the whole
+  // strip stays on one line (the 🟡/🔴 emoji mark each issue inline).
+  let html = lines.join(' · ') + ' <span class="oh-info" title="What do these mean?">ⓘ</span>';
   if (_ohLegendOpen) {
     html += '<div class="oh-legend">' + legend.map(l => "· " + l).join("<br>") + '</div>';
   }
