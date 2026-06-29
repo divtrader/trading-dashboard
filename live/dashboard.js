@@ -724,8 +724,10 @@ function renderRecentClosesTile() {
     // A reconcile-closed trade (status backstop, no confirm_fill) can have a
     // null pnl_usd — render "—" rather than a misleading $0.00 / NaN.
     const hasPnl = typeof c.pnl_usd === "number" && isFinite(c.pnl_usd);
+    // Reconcile-close estimate (server-side close, no exact fill P&L) → mark with "~".
+    const est = !!c.pnl_estimated;
     const won = c.won != null ? c.won : (hasPnl && c.pnl_usd > 0);
-    const pnlStr = hasPnl ? ((c.pnl_usd >= 0 ? "+$" : "-$") + Math.abs(c.pnl_usd).toFixed(2)) : "—";
+    const pnlStr = hasPnl ? ((est ? "~" : "") + (c.pnl_usd >= 0 ? "+$" : "-$") + Math.abs(c.pnl_usd).toFixed(2)) : "—";
     const isLong = c.direction === "Long";
     const dirCls = isLong ? "long" : "short";
     const dirLetter = isLong ? "L" : "S";
@@ -753,7 +755,7 @@ function renderRecentClosesTile() {
           <span class="rc-tid">${tid || "—"}</span>
         </div>
         <div class="rc-reason ${rCls}">${rCode}</div>
-        <div class="rc-pnl ${hasPnl ? (won ? 'pos' : 'neg') : ''}"${hasPnl ? "" : ' style="color:var(--muted)"'}>${pnlStr}</div>
+        <div class="rc-pnl ${hasPnl ? (won ? 'pos' : 'neg') : ''}"${!hasPnl ? ' style="color:var(--muted)"' : (est ? ' title="Estimated P&amp;L — closed server-side (stop/TP fill); exact fill P&amp;L unavailable"' : '')}>${pnlStr}</div>
         <div class="rc-ago">${fmtAgo(c.close_iso, { detectedAtIso: state.lastCronIso })}</div>
       </div>`;
   }).join("");
