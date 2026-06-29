@@ -359,6 +359,7 @@ async function fetchData() {
     state.stats = d.stats || {};
     state.mexcAccount = d.mexc_account || null;
     state.orderLevels = d.order_levels || null;
+    state.driftVsMaster = d.drift_vs_master || null;
     state.apiKeys = d.api_keys || [];
     state.housekeeping = d.housekeeping || [];
     state.lastCronIso = d.last_updated_iso || null;
@@ -934,18 +935,49 @@ function renderOrderHealth() {
   }
   const orphanIsAlarm = orphanIsCrit || orphanIsWarn;
 
+  // ── Master parity (section 6) — from drift_vs_master in data_live.json ──
+  // The follower's drift_check.py compares THIS account's synced per-trade
+  // levels (tp1/tp2/sl/status) against Braam's MASTER feed. Every other check is
+  // follower-internal (his exchange matches his own intent) and reads green even
+  // when his levels lag the master — this is the only check that sees that drift.
+  // Intentionally surfaces transient propagation lag (amber that self-heals next
+  // follower run). On Braam's own view it compares his feed to itself → N/N.
+  const drift = state.driftVsMaster;
+  let parityLine = null, parityIsWarn = false;
+  if (drift) {
+    if (drift.available === false) {
+      parityLine = "Master parity —";              // feed fetch failed → unknown
+    } else if (typeof drift.checked === "number" && drift.checked > 0) {
+      if (drift.drifting && drift.drifting.length) {
+        const list = drift.drifting.map(d => {
+          const coin = (d.coin || d.trade_id || "").replace("USDT", "");
+          const fields = Object.entries(d.diffs || {})
+            .map(([k, v]) => `${coin} ${k.toUpperCase()} ${v.follower}→${v.master}`);
+          return fields.length ? fields.join(", ") : coin;
+        });
+        parityLine = `🟡 Master parity ${drift.in_parity}/${drift.checked}: ${list.join(" · ")}`;
+        parityIsWarn = true;
+      } else {
+        parityLine = `Master parity ${drift.in_parity}/${drift.checked}`;
+      }
+    }
+  }
+  const parityIsAlarm = parityIsWarn;
+
   // Fold healthy mover + levels + reconciliation status into the green line;
   // alarms get their own line below.
   if (!critical.length && !degraded.length && !liqDanger.length && !liqWatch.length) {
     const moverSuffix  = moverLine  && !moverIsAlarm  ? ` · ${moverLine}`  : "";
     const levelsSuffix = levelsLine && !levelsIsAlarm ? ` · ${levelsLine}` : "";
     const orphanSuffix = orphanLine && !orphanIsAlarm ? ` · ${orphanLine}` : "";
-    lines[0] = `🟢 Order Health · Stops set ${total}/${total}${liqSuffix}${moverSuffix}${levelsSuffix}${orphanSuffix}`;
+    const paritySuffix = parityLine && !parityIsAlarm ? ` · ${parityLine}` : "";
+    lines[0] = `🟢 Order Health · Stops set ${total}/${total}${liqSuffix}${moverSuffix}${levelsSuffix}${orphanSuffix}${paritySuffix}`;
   }
 
   if (moverIsAlarm)  lines.push(moverLine);
   if (levelsIsAlarm) lines.push(levelsLine);
   if (orphanIsAlarm) lines.push(orphanLine);
+  if (parityIsAlarm) lines.push(parityLine);
 
   // Legend — explains each segment + why the counts differ. Available on
   // hover (title attr) and on tap (toggles the inline panel). Tap-wiring is
@@ -956,6 +988,7 @@ function renderOrderHealth() {
     "Profit-lock — runners whose stop auto-moves up to TP1 once TP1 hits, banking a profit floor.",
     "Synced to MEXC — live trades whose journal TP/SL match the orders actually on the exchange.",
     "Reconciled — every order resting on MEXC has a matching trade in our system (no stray/orphan orders).",
+    "Master parity — this account's TP/SL/status vs Braam's master feed. Amber = a level edit hasn't propagated yet (usually self-heals next follower run). Braam's own view is always full parity.",
     "Counts differ: Stops & Profit-lock count OPEN positions; Synced counts ALL live trades incl. pending entries.",
   ];
   el.title = legend.join("\n");
@@ -972,9 +1005,9 @@ function renderOrderHealth() {
     _ohLegendWired = true;
   }
 
-  // Class driven by worst state across all five checks
+  // Class driven by worst state across all six checks
   const hasCritical = critical.length > 0 || liqDanger.length > 0 || (moverLine || "").startsWith("🔴") || orphanIsCrit;
-  const hasWarning  = degraded.length > 0 || liqWatch.length > 0  || (moverLine || "").startsWith("🟡") || levelsIsAlarm || orphanIsWarn;
+  const hasWarning  = degraded.length > 0 || liqWatch.length > 0  || (moverLine || "").startsWith("🟡") || levelsIsAlarm || orphanIsWarn || parityIsWarn;
   el.className = "order-health-strip" + (hasCritical ? " critical" : hasWarning ? " degraded" : " healthy");
 }
 
