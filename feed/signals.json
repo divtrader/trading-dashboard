@@ -1,9 +1,9 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-06-30T12:49Z",
+  "generated_utc": "2026-06-30T13:37Z",
   "master": "braam",
   "retention_hours": 48,
-  "trade_count": 23,
+  "trade_count": 24,
   "trades": [
     {
       "trade_id": "TONUSDT_20260616_CB_001",
@@ -340,15 +340,15 @@
       "sl": 1620.09255786,
       "tp1": 1589,
       "tp2": 1554,
-      "status": "OPEN",
+      "status": "TP2_HIT",
       "tp1_hit": true,
       "tp2_hit": false,
       "sl_hit": false,
-      "close_reason": null,
+      "close_reason": "live MEXC exit: tp2 @ 1552.93",
       "date_opened": "2026-06-26",
       "time_opened_utc": "04:04",
       "sl_mode": "breakeven",
-      "feed_updated_utc": "2026-06-29T17:18Z"
+      "feed_updated_utc": "2026-06-30T12:59Z"
     },
     {
       "trade_id": "DOGEUSDT_20260626_CB_001",
@@ -521,7 +521,7 @@
       "entry_price": 563.90729335,
       "entry_lo": 561.08775688,
       "entry_hi": 566.72682982,
-      "sl": 560.10428194,
+      "sl": 560.05428194,
       "tp1": 548,
       "tp2": 522,
       "status": "OPEN",
@@ -533,6 +533,29 @@
       "time_opened_utc": "11:40",
       "sl_mode": "breakeven",
       "feed_updated_utc": "2026-06-29T17:46Z"
+    },
+    {
+      "trade_id": "ETHUSDT_20260630_CB_001",
+      "coin": "ETHUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "conviction": "MEDIUM",
+      "leverage": 3,
+      "entry_price": 1589.64371588,
+      "entry_lo": 1581.6954973,
+      "entry_hi": 1597.59193446,
+      "sl": 1632.21563427,
+      "tp1": 1509.28059469,
+      "tp2": 1309.42769961,
+      "status": "PENDING",
+      "tp1_hit": false,
+      "tp2_hit": false,
+      "sl_hit": false,
+      "close_reason": null,
+      "date_opened": "2026-06-30",
+      "time_opened_utc": "13:36",
+      "sl_mode": "initial",
+      "feed_updated_utc": "2026-06-30T13:36Z"
     }
   ]
 }
