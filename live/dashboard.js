@@ -1277,9 +1277,12 @@ function renderPaperBars(enrichedOpen) {
     // Breakdown line: TP1-hit shows banked + live; non-TP1 shows live only (same format for consistency)
     const liveUsd = t.usd ?? 0;
     const bankedUsd = t.tp1BankedUsd || 0;
+    // Banked is an estimate when TP1 was recorded by the follower's partial-fill
+    // backstop (server-side fill, no exact deal P&L) → mark with "~".
+    const bankedEst = !!t.pnl_tp1_estimated;
     const breakdownHtml = tp1Hit
       ? `<div class="pb-pnl-breakdown">
-           <div class="pb-bd-row"><span class="pb-bd-k">banked</span><span class="pb-bd-v pos">${fmtUsd(bankedUsd)}</span></div>
+           <div class="pb-bd-row"${bankedEst ? ' title="Estimated TP1 partial — banked from a server-side TP1 fill; exact P&amp;L pending"' : ''}><span class="pb-bd-k">banked</span><span class="pb-bd-v pos">${bankedEst ? "~" : ""}${fmtUsd(bankedUsd)}</span></div>
            <div class="pb-bd-row"><span class="pb-bd-k">live</span><span class="pb-bd-v ${cls(liveUsd)}">${fmtUsd(liveUsd)}</span></div>
          </div>`
       : `<div class="pb-pnl-breakdown">
