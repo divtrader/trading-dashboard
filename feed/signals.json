@@ -1,9 +1,9 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-06-30T07:32Z",
+  "generated_utc": "2026-06-30T09:30Z",
   "master": "braam",
   "retention_hours": 48,
-  "trade_count": 26,
+  "trade_count": 24,
   "trades": [
     {
       "trade_id": "BNBUSDT_20260616_CB_001",
@@ -50,29 +50,6 @@
       "time_opened_utc": "20:08",
       "sl_mode": "breakeven",
       "feed_updated_utc": "2026-06-29T04:00Z"
-    },
-    {
-      "trade_id": "BTCUSDT_20260618_CJ_001",
-      "coin": "BTCUSDT",
-      "direction": "Short",
-      "trading_system": "John",
-      "conviction": "HIGH",
-      "leverage": 3,
-      "entry_price": 66448.055,
-      "entry_lo": 63915.77,
-      "entry_hi": 67292.15,
-      "sl": 67570.1888238,
-      "tp1": 53569.44736811,
-      "tp2": 46104.41235239,
-      "status": "CANCELLED",
-      "tp1_hit": false,
-      "tp2_hit": false,
-      "sl_hit": false,
-      "close_reason": "Stale 13.5h \u2265 12h grace: Price $60,328 is 10.1% below entry $66,448",
-      "date_opened": "2026-06-18",
-      "time_opened_utc": "10:33",
-      "sl_mode": "initial",
-      "feed_updated_utc": "2026-06-28T09:26Z"
     },
     {
       "trade_id": "SOLUSDT_20260623_CB_001",
@@ -257,29 +234,6 @@
       "time_opened_utc": "13:31",
       "sl_mode": "initial",
       "feed_updated_utc": "2026-06-24T13:31Z"
-    },
-    {
-      "trade_id": "APTUSDT_20260624_CB_001",
-      "coin": "APTUSDT",
-      "direction": "Short",
-      "trading_system": "Braam",
-      "conviction": "MEDIUM",
-      "leverage": 3,
-      "entry_price": 0.64741175,
-      "entry_lo": 0.64417469,
-      "entry_hi": 0.6506488,
-      "sl": 0.67295901,
-      "tp1": 0.58541168,
-      "tp2": 0.46855803,
-      "status": "CANCELLED",
-      "tp1_hit": false,
-      "tp2_hit": false,
-      "sl_hit": false,
-      "close_reason": "Stale 13.5h \u2265 12h grace: Price $0.5880 is 10.1% below entry $0.6474",
-      "date_opened": "2026-06-24",
-      "time_opened_utc": "15:47",
-      "sl_mode": "initial",
-      "feed_updated_utc": "2026-06-28T09:26Z"
     },
     {
       "trade_id": "CAKEUSDT_20260624_CB_001",
