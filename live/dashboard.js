@@ -731,17 +731,21 @@ function renderRecentClosesTile() {
     const isLong = c.direction === "Long";
     const dirCls = isLong ? "long" : "short";
     const dirLetter = isLong ? "L" : "S";
-    // Close reason → short badge: "TP2 hit" → TP2, "TP1 hit" → TP1, "SL hit" → SL,
-    // STOPPED_AFTER_TP1 → "TP1+SL" (closed at BE after TP1 hit), else first word uppercase.
+    // Close badge: key off STATUS first — close_reason text varies by close path
+    // ("TP2 hit" / "live MEXC exit: tp2 @ ..." / "reconciled: ... master TP2_HIT"),
+    // and parsing its first word mislabeled (e.g. → "LIVE"/"RECONC"). Status is reliable.
     const reason = (c.close_reason || "").toString();
+    const st = (c.status || "").toUpperCase();
     let rCode, rCls;
-    if (/^tp2/i.test(reason))         { rCode = "TP2"; rCls = "tp2"; }
-    else if (/^tp1/i.test(reason))    { rCode = "TP1"; rCls = "tp1"; }
-    else if (/sl|stop/i.test(reason)) {
-      // "STOPPED_AFTER_TP1" means TP1 was banked then SL hit at breakeven — show TP1
-      if (c.status === "STOPPED_AFTER_TP1") { rCode = "TP1+BE"; rCls = "tp1"; }
-      else                                  { rCode = "SL";     rCls = "sl";  }
-    }
+    if      (st === "TP2_HIT")            { rCode = "TP2";    rCls = "tp2";   }
+    else if (st === "STOPPED_AFTER_TP1")  { rCode = "TP1+BE"; rCls = "tp1";   } // TP1 banked, SL at BE
+    else if (st === "TP1_HIT")            { rCode = "TP1";    rCls = "tp1";   }
+    else if (st === "STOPPED")            { rCode = "SL";     rCls = "sl";    }
+    else if (st === "CLOSED" || st === "EARLY_CLOSE") { rCode = "CLOSE"; rCls = "other"; }
+    // Fallbacks when status is missing/unknown — match on reason text.
+    else if (/\btp2\b/i.test(reason))     { rCode = "TP2"; rCls = "tp2"; }
+    else if (/\btp1\b/i.test(reason))     { rCode = "TP1"; rCls = "tp1"; }
+    else if (/\bsl\b|stop/i.test(reason)) { rCode = "SL";  rCls = "sl";  }
     else if (reason)                  { rCode = reason.split(" ")[0].toUpperCase().slice(0, 6); rCls = "other"; }
     else                              { rCode = "—";    rCls = "other"; }
     // Trade-id subtitle: strip the redundant "COINUSDT_" prefix → "20260427_CWM_001"
