@@ -1,6 +1,6 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-07-01T20:10Z",
+  "generated_utc": "2026-07-01T21:47Z",
   "master": "braam",
   "retention_hours": 48,
   "trade_count": 24,
@@ -271,15 +271,15 @@
       "sl": 43.55876668,
       "tp1": 40.71,
       "tp2": 39.6,
-      "status": "OPEN",
+      "status": "STOPPED",
       "tp1_hit": false,
       "tp2_hit": false,
       "sl_hit": false,
-      "close_reason": null,
+      "close_reason": "live MEXC exit: sl @ 43.6",
       "date_opened": "2026-06-25",
       "time_opened_utc": "16:13",
       "sl_mode": "initial",
-      "feed_updated_utc": "2026-06-27T02:20Z"
+      "feed_updated_utc": "2026-07-01T21:41Z"
     },
     {
       "trade_id": "ETHUSDT_20260626_CB_001",
@@ -478,15 +478,15 @@
       "sl": 557.70097932,
       "tp1": 548,
       "tp2": 522,
-      "status": "OPEN",
+      "status": "STOPPED_AFTER_TP1",
       "tp1_hit": true,
       "tp2_hit": false,
       "sl_hit": false,
-      "close_reason": null,
+      "close_reason": "live MEXC exit: manual @ 557.7",
       "date_opened": "2026-06-28",
       "time_opened_utc": "11:40",
       "sl_mode": "breakeven",
-      "feed_updated_utc": "2026-06-29T17:46Z"
+      "feed_updated_utc": "2026-07-01T21:40Z"
     },
     {
       "trade_id": "ETHUSDT_20260630_CB_001",
@@ -524,7 +524,7 @@
       "sl": 213.32070219,
       "tp1": 168.3626741,
       "tp2": 135.28816159,
-      "status": "PENDING",
+      "status": "OPEN",
       "tp1_hit": false,
       "tp2_hit": false,
       "sl_hit": false,
@@ -532,7 +532,7 @@
       "date_opened": "2026-07-01",
       "time_opened_utc": "07:14",
       "sl_mode": "initial",
-      "feed_updated_utc": "2026-07-01T07:14Z"
+      "feed_updated_utc": "2026-07-01T21:36Z"
     },
     {
       "trade_id": "ADAUSDT_20260701_CJ_001",
