@@ -1,9 +1,9 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-07-01T18:16Z",
+  "generated_utc": "2026-07-01T20:10Z",
   "master": "braam",
   "retention_hours": 48,
-  "trade_count": 23,
+  "trade_count": 24,
   "trades": [
     {
       "trade_id": "SUIUSDT_20260623_CB_001",
@@ -533,6 +533,29 @@
       "time_opened_utc": "07:14",
       "sl_mode": "initial",
       "feed_updated_utc": "2026-07-01T07:14Z"
+    },
+    {
+      "trade_id": "ADAUSDT_20260701_CJ_001",
+      "coin": "ADAUSDT",
+      "direction": "Short",
+      "trading_system": "John",
+      "conviction": "HIGH",
+      "leverage": 3,
+      "entry_price": 0.16529516,
+      "entry_lo": 0.15397343,
+      "entry_hi": 0.16906907,
+      "sl": 0.16896389,
+      "tp1": 0.12606318,
+      "tp2": 0.12287221,
+      "status": "PENDING",
+      "tp1_hit": false,
+      "tp2_hit": false,
+      "sl_hit": false,
+      "close_reason": null,
+      "date_opened": "2026-07-01",
+      "time_opened_utc": "20:09",
+      "sl_mode": "initial",
+      "feed_updated_utc": "2026-07-01T20:09Z"
     }
   ]
 }
