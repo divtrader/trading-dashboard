@@ -1,11 +1,11 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-07-01T03:01:54Z",
+  "last_updated_iso": "2026-07-01T03:44:16Z",
   "mexc_account": {
-    "unrealized_pnl": 6.93,
-    "equity": 1595.3887,
-    "available": 606.0344,
+    "unrealized_pnl": 4.508,
+    "equity": 1592.8237,
+    "available": 606.0822,
     "position_margin": 0.0
   },
   "order_levels": {
@@ -82,7 +82,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$1,595.39",
+      "value": "$1,592.82",
       "status": "ok",
       "action": null
     },
@@ -98,7 +98,7 @@
       "key": "orphan_orders",
       "tier": 1,
       "label": "Order reconciliation",
-      "value": "in sync (11 resting = journal)",
+      "value": "in sync (10 resting = journal)",
       "status": "ok",
       "action": null
     },
@@ -106,7 +106,7 @@
       "key": "position_protection",
       "tier": 1,
       "label": "Position protection",
-      "value": "all protected (3 open, 1 pre-TP1 runners)",
+      "value": "all protected (4 open, 2 pre-TP1 runners)",
       "status": "ok",
       "action": null
     },
@@ -572,10 +572,10 @@
       "leverage": 3,
       "trading_system": "Braam",
       "track_only": false,
-      "status": "PENDING",
+      "status": "OPEN",
       "price_at_run": 1556.23,
-      "date_activated": null,
-      "time_activated_utc": null,
+      "date_activated": "2026-07-01",
+      "time_activated_utc": "03:36",
       "date_opened": "2026-06-30",
       "time_opened_utc": "13:36",
       "conviction": "MEDIUM",
@@ -583,11 +583,11 @@
       "sl_moved_to_be": false,
       "pnl_tp1_realized_usd": null,
       "tp2_hit": false,
-      "live_executed": null,
-      "live_entry_fill": null,
+      "live_executed": true,
+      "live_entry_fill": 1589.64,
       "live_exit_fill": null,
-      "live_entry_slippage_pct": null,
-      "live_fees_usd": null,
+      "live_entry_slippage_pct": 0.0002,
+      "live_fees_usd": 0.143,
       "live_funding_usd": null,
       "live_tp1_pnl_usd": null,
       "rehearsal": false
@@ -641,6 +641,18 @@
       "tp1_hit": false,
       "iso": "2026-06-30T04:31:00Z",
       "_iso_ms": 1782793860000,
+      "rehearsal": false
+    },
+    {
+      "trade_id": "ETHUSDT_20260630_CB_001",
+      "coin": "ETHUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "entry_price": 1589.64371588,
+      "live_entry_fill": 1589.64,
+      "tp1_hit": false,
+      "iso": "2026-07-01T03:36:00Z",
+      "_iso_ms": 1782876960000,
       "rehearsal": false
     }
   ],
@@ -1579,7 +1591,7 @@
     "peak_capital_usd": 1162.42,
     "peak_concurrent": 14,
     "peak_date": "2026-06-12",
-    "deployed_trades": 51,
+    "deployed_trades": 52,
     "return_on_peak_pct": -7.07,
     "win_rate_pct": 31.2,
     "closed_count": 48,
