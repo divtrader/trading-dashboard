@@ -1,31 +1,19 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-07-01T12:06:59Z",
+  "last_updated_iso": "2026-07-01T12:28:17Z",
   "mexc_account": {
-    "unrealized_pnl": 18.4715,
-    "equity": 1606.8286,
+    "unrealized_pnl": 17.8555,
+    "equity": 1606.2126,
     "available": 606.0477,
     "position_margin": 0.0
   },
   "order_levels": {
     "checked": 14,
-    "in_sync": 13,
-    "drifted": [
-      "LTC"
-    ],
+    "in_sync": 14,
+    "drifted": [],
     "reconciling": [],
-    "detail": [
-      {
-        "coin": "LTC",
-        "trade_id": "LTCUSDT_20260625_CB_001",
-        "status": "OPEN",
-        "fields": [
-          "tp1"
-        ],
-        "synced_at": "2026-07-01T04:28:35.717075+00:00"
-      }
-    ]
+    "detail": []
   },
   "api_keys": [
     {
@@ -70,7 +58,7 @@
       "key": "cron_watchlist",
       "tier": 1,
       "label": "Last cloud run",
-      "value": "0.1h ago",
+      "value": "0.0h ago",
       "status": "ok",
       "action": null
     },
@@ -78,9 +66,9 @@
       "key": "daily_summary",
       "tier": 1,
       "label": "Daily summary",
-      "value": "overdue 1d",
-      "status": "warn",
-      "action": "Run daily_summary.yml manually from Actions."
+      "value": "sent today",
+      "status": "ok",
+      "action": null
     },
     {
       "key": "state_file",
@@ -94,7 +82,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$1,606.83",
+      "value": "$1,606.21",
       "status": "ok",
       "action": null
     },
