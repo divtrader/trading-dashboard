@@ -2750,6 +2750,27 @@ function renderEdgeScreen() {
 // Hero: our total return (realized + open) vs S&P 500 buy-and-hold, since
 // inception. Lines smoothed (_smoothPath, same as Screen 1). Spyker GREEN when
 // up, RED when in loss; S&P BLUE. Index-based even spacing (no x-reversal).
+// Reduce a dense pct series to ~target points so the smoothed benchmark line
+// reads as cleanly as the live chart (the paper book has ~6× more closes, which
+// otherwise makes the identical smoothing look jagged). Bucket-averages to damp
+// jitter while preserving the exact inception + current endpoints.
+function _resampleSeries(arr, target) {
+  const n = arr.length;
+  if (n <= target) return arr;
+  const out = new Array(target);
+  const size = n / target;
+  for (let i = 0; i < target; i++) {
+    const lo = Math.floor(i * size);
+    const hi = i === target - 1 ? n : Math.floor((i + 1) * size);
+    let sum = 0, c = 0;
+    for (let j = lo; j < hi; j++) { sum += arr[j].pct; c++; }
+    out[i] = { pct: c ? sum / c : arr[lo].pct };
+  }
+  out[0] = arr[0];               // exact inception
+  out[target - 1] = arr[n - 1];  // exact current point
+  return out;
+}
+
 function _renderBenchmark(b, liveTotalPnl, equity) {
   const svg = document.getElementById("an-bench-svg");
   if (!svg) return;
@@ -2758,8 +2779,11 @@ function _renderBenchmark(b, liveTotalPnl, equity) {
   const oursNowPct = base ? (liveTotalPnl / base) * 100 : 0;
   const scale = (b.base_usd && base) ? (b.base_usd / base) : 1;
 
-  const ours = (b.ours || []).map(p => ({ pct: p.pct * scale }));
-  ours.push({ pct: +oursNowPct.toFixed(3) });
+  const oursRaw = (b.ours || []).map(p => ({ pct: p.pct * scale }));
+  oursRaw.push({ pct: +oursNowPct.toFixed(3) });
+  // Downsample the dense paper series (~300+ closes) to roughly the live chart's
+  // point density so the smoothed line reads as clean as the MEXC dashboard.
+  const ours = _resampleSeries(oursRaw, 48);
   const spx = (b.spx || []).map(p => ({ pct: p.pct }));
   if (spx.length) spx.push({ pct: spx[spx.length - 1].pct });
 
