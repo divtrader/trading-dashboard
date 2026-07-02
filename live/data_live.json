@@ -1,11 +1,11 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-07-02T11:48:40Z",
+  "last_updated_iso": "2026-07-02T12:02:32Z",
   "mexc_account": {
-    "unrealized_pnl": -6.8434,
-    "equity": 1551.6334,
-    "available": 897.1769,
+    "unrealized_pnl": -6.5605,
+    "equity": 1551.9189,
+    "available": 897.1795,
     "position_margin": 0.0
   },
   "order_levels": {
@@ -66,9 +66,9 @@
       "key": "daily_summary",
       "tier": 1,
       "label": "Daily summary",
-      "value": "overdue 1d",
-      "status": "warn",
-      "action": "Run daily_summary.yml manually from Actions."
+      "value": "sent today",
+      "status": "ok",
+      "action": null
     },
     {
       "key": "state_file",
@@ -82,7 +82,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$1,551.63",
+      "value": "$1,551.92",
       "status": "ok",
       "action": null
     },
