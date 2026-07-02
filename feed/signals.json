@@ -1,6 +1,6 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-07-01T21:47Z",
+  "generated_utc": "2026-07-02T04:21Z",
   "master": "braam",
   "retention_hours": 48,
   "trade_count": 24,
@@ -110,7 +110,7 @@
       "sl": 0.34376242,
       "tp1": 0.2635,
       "tp2": 0.18674992,
-      "status": "PENDING",
+      "status": "OPEN",
       "tp1_hit": false,
       "tp2_hit": false,
       "sl_hit": false,
@@ -118,7 +118,7 @@
       "date_opened": "2026-06-23",
       "time_opened_utc": "21:50",
       "sl_mode": "initial",
-      "feed_updated_utc": "2026-06-23T21:50Z"
+      "feed_updated_utc": "2026-07-01T22:21Z"
     },
     {
       "trade_id": "RENDERUSDT_20260624_CB_001",
@@ -133,15 +133,15 @@
       "sl": 1.57268263,
       "tp1": 1.50436519,
       "tp2": 1.353,
-      "status": "OPEN",
+      "status": "STOPPED_AFTER_TP1",
       "tp1_hit": true,
       "tp2_hit": false,
-      "sl_hit": false,
-      "close_reason": null,
+      "sl_hit": true,
+      "close_reason": "SL hit",
       "date_opened": "2026-06-24",
       "time_opened_utc": "11:16",
       "sl_mode": "breakeven",
-      "feed_updated_utc": "2026-06-27T06:16Z"
+      "feed_updated_utc": "2026-07-02T00:00Z"
     },
     {
       "trade_id": "TAOUSDT_20260624_CB_001",
@@ -386,15 +386,15 @@
       "sl": 1.89251576,
       "tp1": 1.801,
       "tp2": 1.606,
-      "status": "OPEN",
+      "status": "STOPPED_AFTER_TP1",
       "tp1_hit": true,
       "tp2_hit": false,
       "sl_hit": false,
-      "close_reason": null,
+      "close_reason": "live MEXC exit: manual @ 1.895",
       "date_opened": "2026-06-26",
       "time_opened_utc": "18:03",
       "sl_mode": "breakeven",
-      "feed_updated_utc": "2026-06-27T16:26Z"
+      "feed_updated_utc": "2026-07-02T01:31Z"
     },
     {
       "trade_id": "THETAUSDT_20260628_CJ_001",
@@ -501,15 +501,15 @@
       "sl": 1632.21563427,
       "tp1": 1524.74,
       "tp2": 1423,
-      "status": "OPEN",
+      "status": "STOPPED",
       "tp1_hit": false,
       "tp2_hit": false,
       "sl_hit": false,
-      "close_reason": null,
+      "close_reason": "live MEXC exit: sl @ 1633.73",
       "date_opened": "2026-06-30",
       "time_opened_utc": "13:36",
       "sl_mode": "initial",
-      "feed_updated_utc": "2026-07-01T03:36Z"
+      "feed_updated_utc": "2026-07-01T21:52Z"
     },
     {
       "trade_id": "TAOUSDT_20260701_CB_001",
