@@ -1,21 +1,32 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-07-02T05:08:52Z",
+  "last_updated_iso": "2026-07-02T05:10:20Z",
   "mexc_account": {
-    "unrealized_pnl": -3.871,
-    "equity": 1571.4661,
+    "unrealized_pnl": -4.8066,
+    "equity": 1570.5305,
     "available": 832.171,
     "position_margin": 0.0
   },
   "order_levels": {
     "checked": 10,
-    "in_sync": 9,
+    "in_sync": 8,
     "drifted": [
+      "ONDO",
       "TAO"
     ],
     "reconciling": [],
     "detail": [
+      {
+        "coin": "ONDO",
+        "trade_id": "ONDOUSDT_20260623_CB_001",
+        "status": "OPEN",
+        "fields": [
+          "tp1",
+          "tp2"
+        ],
+        "synced_at": null
+      },
       {
         "coin": "TAO",
         "trade_id": "TAOUSDT_20260701_CB_001",
@@ -95,7 +106,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$1,571.47",
+      "value": "$1,570.53",
       "status": "ok",
       "action": null
     },
@@ -259,8 +270,8 @@
       "direction": "Short",
       "entry_price": 0.33031958,
       "sl": 0.34376242,
-      "tp1": 0.2635,
-      "tp2": 0.18674992,
+      "tp1": 0.3088,
+      "tp2": 0.2891,
       "capital_usd": 28.6,
       "leverage": 3,
       "trading_system": "Braam",
