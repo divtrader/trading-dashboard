@@ -1,19 +1,32 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-07-02T09:32:03Z",
+  "last_updated_iso": "2026-07-02T09:34:27Z",
   "mexc_account": {
-    "unrealized_pnl": -6.3835,
-    "equity": 1568.8364,
+    "unrealized_pnl": -7.2782,
+    "equity": 1567.9417,
     "available": 754.4711,
     "position_margin": 0.0
   },
   "order_levels": {
     "checked": 11,
-    "in_sync": 11,
-    "drifted": [],
+    "in_sync": 10,
+    "drifted": [
+      "BNB"
+    ],
     "reconciling": [],
-    "detail": []
+    "detail": [
+      {
+        "coin": "BNB",
+        "trade_id": "BNBUSDT_20260702_CB_001",
+        "status": "OPEN",
+        "fields": [
+          "tp1",
+          "tp2"
+        ],
+        "synced_at": null
+      }
+    ]
   },
   "api_keys": [
     {
@@ -82,7 +95,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$1,568.84",
+      "value": "$1,567.94",
       "status": "ok",
       "action": null
     },
@@ -470,8 +483,8 @@
       "direction": "Short",
       "entry_price": 552.42916876,
       "sl": 564.99735093,
-      "tp1": 533.36442351,
-      "tp2": 485.86490738,
+      "tp1": 541.3,
+      "tp2": 522,
       "capital_usd": 78.8,
       "leverage": 3,
       "trading_system": "Braam",
