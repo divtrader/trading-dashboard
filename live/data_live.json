@@ -1,16 +1,16 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-07-02T07:05:17Z",
+  "last_updated_iso": "2026-07-02T07:50:33Z",
   "mexc_account": {
-    "unrealized_pnl": 2.2159,
-    "equity": 1577.553,
-    "available": 832.171,
+    "unrealized_pnl": -0.9233,
+    "equity": 1574.4138,
+    "available": 754.4026,
     "position_margin": 0.0
   },
   "order_levels": {
-    "checked": 10,
-    "in_sync": 10,
+    "checked": 11,
+    "in_sync": 11,
     "drifted": [],
     "reconciling": [],
     "detail": []
@@ -74,7 +74,7 @@
       "key": "state_file",
       "tier": 1,
       "label": "Trade journal",
-      "value": "OK (628 records)",
+      "value": "OK (629 records)",
       "status": "ok",
       "action": null
     },
@@ -82,7 +82,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$1,577.55",
+      "value": "$1,574.41",
       "status": "ok",
       "action": null
     },
@@ -98,7 +98,7 @@
       "key": "orphan_orders",
       "tier": 1,
       "label": "Order reconciliation",
-      "value": "in sync (7 resting = journal)",
+      "value": "in sync (8 resting = journal)",
       "status": "ok",
       "action": null
     },
@@ -106,9 +106,9 @@
       "key": "position_protection",
       "tier": 1,
       "label": "Position protection",
-      "value": "all protected (3 open, 3 pre-TP1 runners)",
-      "status": "ok",
-      "action": null
+      "value": "live read failed",
+      "status": "warn",
+      "action": "Worker health read failed \u2014 can't confirm SL protection; check the Worker."
     },
     {
       "key": "apikey_MEXC_ALGO_KEY",
@@ -463,9 +463,55 @@
       "live_funding_usd": null,
       "live_tp1_pnl_usd": null,
       "rehearsal": false
+    },
+    {
+      "trade_id": "BNBUSDT_20260702_CB_001",
+      "coin": "BNBUSDT",
+      "direction": "Short",
+      "entry_price": 552.42916876,
+      "sl": 564.99735093,
+      "tp1": 533.36442351,
+      "tp2": 485.86490738,
+      "capital_usd": 78.8,
+      "leverage": 3,
+      "trading_system": "Braam",
+      "track_only": false,
+      "status": "PENDING",
+      "price_at_run": 549.31,
+      "date_activated": null,
+      "time_activated_utc": null,
+      "date_opened": "2026-07-02",
+      "time_opened_utc": "07:49",
+      "conviction": "MEDIUM",
+      "tp1_hit": false,
+      "sl_moved_to_be": false,
+      "pnl_tp1_realized_usd": null,
+      "tp2_hit": false,
+      "live_executed": null,
+      "live_entry_fill": null,
+      "live_exit_fill": null,
+      "live_entry_slippage_pct": null,
+      "live_fees_usd": null,
+      "live_funding_usd": null,
+      "live_tp1_pnl_usd": null,
+      "rehearsal": false
     }
   ],
-  "recent_signals": [],
+  "recent_signals": [
+    {
+      "trade_id": "BNBUSDT_20260702_CB_001",
+      "coin": "BNBUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "entry_price": 552.42916876,
+      "tp1": 533.36442351,
+      "sl": 564.99735093,
+      "conviction": "MEDIUM",
+      "track_only": false,
+      "iso": "2026-07-02T07:49:00Z",
+      "rehearsal": false
+    }
+  ],
   "recent_opens": [
     {
       "trade_id": "ETHUSDT_20260630_CB_001",
@@ -1530,8 +1576,8 @@
         "closed_count": 6
       }
     },
-    "live_trade_count_total": 97,
-    "live_real_count": 74,
+    "live_trade_count_total": 98,
+    "live_real_count": 75,
     "live_rehearsal_count": 23
   }
 }
