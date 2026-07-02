@@ -3053,6 +3053,27 @@ function renderEdgeScreen() {
 // inception. Headline + denominator match Screen 1 (total / MEXC equity).
 // Lines are smoothed (_smoothPath, same as Screen 1). Spyker line is GREEN when
 // up, RED when in loss; S&P line is BLUE.
+// Reduce a dense pct series to ~target points so the smoothed benchmark line
+// stays as clean as it is today once live closes accumulate (identical smoothing
+// on 300+ points otherwise reads jagged). Bucket-averages to damp jitter while
+// preserving the exact inception + current endpoints. No-op until length > target.
+function _resampleSeries(arr, target) {
+  const n = arr.length;
+  if (n <= target) return arr;
+  const out = new Array(target);
+  const size = n / target;
+  for (let i = 0; i < target; i++) {
+    const lo = Math.floor(i * size);
+    const hi = i === target - 1 ? n : Math.floor((i + 1) * size);
+    let sum = 0, c = 0;
+    for (let j = lo; j < hi; j++) { sum += arr[j].pct; c++; }
+    out[i] = { pct: c ? sum / c : arr[lo].pct };
+  }
+  out[0] = arr[0];               // exact inception
+  out[target - 1] = arr[n - 1];  // exact current point
+  return out;
+}
+
 function _renderBenchmark(b, liveTotalPnl, equity) {
   const svg = document.getElementById("an-bench-svg");
   if (!svg) return;
@@ -3065,8 +3086,11 @@ function _renderBenchmark(b, liveTotalPnl, equity) {
   const nowMs = Date.now();
   const incMs = b.inception_iso ? toMs(b.inception_iso) : nowMs;
 
-  const ours = (b.ours || []).map(p => ({ t: toMs(p.iso), pct: p.pct * scale }));
-  ours.push({ t: nowMs, pct: +oursNowPct.toFixed(3) });          // current = total incl. unrealized
+  const oursRaw = (b.ours || []).map(p => ({ t: toMs(p.iso), pct: p.pct * scale }));
+  oursRaw.push({ t: nowMs, pct: +oursNowPct.toFixed(3) });        // current = total incl. unrealized
+  // Downsample the dense series to ~the chart's smooth density so the line stays
+  // clean as live closes accumulate (no-op until it exceeds ~48 points).
+  const ours = _resampleSeries(oursRaw, 48);
   const spx = (b.spx || []).map(p => ({ t: toMs(p.iso), pct: p.pct }));
   if (spx.length) spx.push({ t: nowMs, pct: spx[spx.length - 1].pct });
 
