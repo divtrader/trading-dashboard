@@ -1,6 +1,6 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-07-02T12:50Z",
+  "generated_utc": "2026-07-02T13:20Z",
   "master": "braam",
   "retention_hours": 48,
   "trade_count": 25,
@@ -282,29 +282,6 @@
       "feed_updated_utc": "2026-07-01T21:41Z"
     },
     {
-      "trade_id": "ETHUSDT_20260626_CB_001",
-      "coin": "ETHUSDT",
-      "direction": "Short",
-      "trading_system": "Braam",
-      "conviction": "MEDIUM",
-      "leverage": 3,
-      "entry_price": 1631.50543465,
-      "entry_lo": 1623.34790748,
-      "entry_hi": 1639.66296182,
-      "sl": 1620.09255786,
-      "tp1": 1589,
-      "tp2": 1554,
-      "status": "TP2_HIT",
-      "tp1_hit": true,
-      "tp2_hit": false,
-      "sl_hit": false,
-      "close_reason": "live MEXC exit: tp2 @ 1552.93",
-      "date_opened": "2026-06-26",
-      "time_opened_utc": "04:04",
-      "sl_mode": "breakeven",
-      "feed_updated_utc": "2026-06-30T12:59Z"
-    },
-    {
       "trade_id": "DOGEUSDT_20260626_CB_001",
       "coin": "DOGEUSDT",
       "direction": "Short",
@@ -547,15 +524,15 @@
       "sl": 564.99735093,
       "tp1": 541.3,
       "tp2": 522,
-      "status": "OPEN",
+      "status": "STOPPED",
       "tp1_hit": false,
       "tp2_hit": false,
       "sl_hit": false,
-      "close_reason": null,
+      "close_reason": "live MEXC exit: sl @ 565.0",
       "date_opened": "2026-07-02",
       "time_opened_utc": "07:49",
       "sl_mode": "initial",
-      "feed_updated_utc": "2026-07-02T09:28Z"
+      "feed_updated_utc": "2026-07-02T13:17Z"
     },
     {
       "trade_id": "THETAUSDT_20260702_CJ_001",
@@ -579,6 +556,29 @@
       "time_opened_utc": "12:49",
       "sl_mode": "initial",
       "feed_updated_utc": "2026-07-02T12:49Z"
+    },
+    {
+      "trade_id": "ETHUSDT_20260702_CJ_001",
+      "coin": "ETHUSDT",
+      "direction": "Short",
+      "trading_system": "John",
+      "conviction": "HIGH",
+      "leverage": 3,
+      "entry_price": 1786.03462416,
+      "entry_lo": 1695.27075167,
+      "entry_hi": 1816.28924833,
+      "sl": 1818.03584527,
+      "tp1": 1574.89063512,
+      "tp2": 1386.13830946,
+      "status": "PENDING",
+      "tp1_hit": false,
+      "tp2_hit": false,
+      "sl_hit": false,
+      "close_reason": null,
+      "date_opened": "2026-07-02",
+      "time_opened_utc": "13:19",
+      "sl_mode": "initial",
+      "feed_updated_utc": "2026-07-02T13:19Z"
     }
   ]
 }
