@@ -1,32 +1,19 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-07-03T19:25:08Z",
+  "last_updated_iso": "2026-07-03T19:30:05Z",
   "mexc_account": {
-    "unrealized_pnl": -1.491,
-    "equity": 1536.689,
+    "unrealized_pnl": -1.6658,
+    "equity": 1536.5142,
     "available": 1042.258,
     "position_margin": 0.0
   },
   "order_levels": {
     "checked": 7,
-    "in_sync": 6,
-    "drifted": [
-      "LINK"
-    ],
+    "in_sync": 7,
+    "drifted": [],
     "reconciling": [],
-    "detail": [
-      {
-        "coin": "LINK",
-        "trade_id": "LINKUSDT_20260623_CB_001",
-        "status": "OPEN",
-        "fields": [
-          "tp1",
-          "tp2"
-        ],
-        "synced_at": null
-      }
-    ]
+    "detail": []
   },
   "api_keys": [
     {
@@ -95,7 +82,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$1,536.69",
+      "value": "$1,536.51",
       "status": "ok",
       "action": null
     },
@@ -119,7 +106,7 @@
       "key": "position_protection",
       "tier": 1,
       "label": "Position protection",
-      "value": "all protected (4 open, 3 pre-TP1 runners)",
+      "value": "all protected (4 open, 4 pre-TP1 runners)",
       "status": "ok",
       "action": null
     },
@@ -265,10 +252,10 @@
       "leverage": 3,
       "trading_system": "Braam",
       "track_only": false,
-      "status": "PENDING",
+      "status": "OPEN",
       "price_at_run": 0.0867,
-      "date_activated": null,
-      "time_activated_utc": null,
+      "date_activated": "2026-07-03",
+      "time_activated_utc": "19:22",
       "date_opened": "2026-06-25",
       "time_opened_utc": "16:13",
       "conviction": "MEDIUM",
@@ -276,11 +263,11 @@
       "sl_moved_to_be": false,
       "pnl_tp1_realized_usd": null,
       "tp2_hit": false,
-      "live_executed": null,
-      "live_entry_fill": null,
+      "live_executed": true,
+      "live_entry_fill": 0.0905,
       "live_exit_fill": null,
-      "live_entry_slippage_pct": null,
-      "live_fees_usd": null,
+      "live_entry_slippage_pct": -0.0453,
+      "live_fees_usd": 0.1432,
       "live_funding_usd": null,
       "live_tp1_pnl_usd": null,
       "rehearsal": false
@@ -362,7 +349,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 1745.64,
+      "price_at_run": 1746.95,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-07-02",
@@ -466,6 +453,18 @@
       "tp1_hit": false,
       "iso": "2026-07-03T19:18:00Z",
       "_iso_ms": 1783106280000,
+      "rehearsal": false
+    },
+    {
+      "trade_id": "ALGOUSDT_20260625_CB_001",
+      "coin": "ALGOUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "entry_price": 0.09045899,
+      "live_entry_fill": 0.0905,
+      "tp1_hit": false,
+      "iso": "2026-07-03T19:22:00Z",
+      "_iso_ms": 1783106520000,
       "rehearsal": false
     }
   ],
@@ -1562,7 +1561,7 @@
     "peak_capital_usd": 1162.42,
     "peak_concurrent": 14,
     "peak_date": "2026-06-12",
-    "deployed_trades": 60,
+    "deployed_trades": 61,
     "return_on_peak_pct": -10.58,
     "win_rate_pct": 29.8,
     "closed_count": 57,
