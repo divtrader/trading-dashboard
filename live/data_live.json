@@ -1,16 +1,16 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-07-02T23:44:44Z",
+  "last_updated_iso": "2026-07-03T04:07:14Z",
   "mexc_account": {
-    "unrealized_pnl": -0.2641,
-    "equity": 1552.5648,
-    "available": 897.4707,
+    "unrealized_pnl": 4.1518,
+    "equity": 1548.9334,
+    "available": 968.1938,
     "position_margin": 0.0
   },
   "order_levels": {
-    "checked": 9,
-    "in_sync": 9,
+    "checked": 8,
+    "in_sync": 8,
     "drifted": [],
     "reconciling": [],
     "detail": []
@@ -20,28 +20,28 @@
       "label": "MEXC AlgoTrading sub-account (live orders)",
       "name": "MEXC_ALGO_KEY",
       "expires": "2026-08-27",
-      "days_left": 56,
+      "days_left": 55,
       "status": "ok"
     },
     {
       "label": "GitHub PAT (dashboard deploy)",
       "name": "DASHBOARD_PAT",
       "expires": "2026-07-30",
-      "days_left": 28,
+      "days_left": 27,
       "status": "ok"
     },
     {
       "label": "Google Drive OAuth (journal sync)",
       "name": "GDRIVE_OAUTH_TOKEN",
       "expires": "2026-07-30",
-      "days_left": 28,
+      "days_left": 27,
       "status": "ok"
     },
     {
       "label": "Telegram Bot (trade alerts)",
       "name": "TELEGRAM_TOKEN",
       "expires": "2126-01-01",
-      "days_left": 36342,
+      "days_left": 36341,
       "status": "ok"
     }
   ],
@@ -66,9 +66,9 @@
       "key": "daily_summary",
       "tier": 1,
       "label": "Daily summary",
-      "value": "sent today",
-      "status": "ok",
-      "action": null
+      "value": "overdue 1d",
+      "status": "warn",
+      "action": "Run daily_summary.yml manually from Actions."
     },
     {
       "key": "state_file",
@@ -82,7 +82,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$1,552.56",
+      "value": "$1,548.93",
       "status": "ok",
       "action": null
     },
@@ -106,15 +106,15 @@
       "key": "position_protection",
       "tier": 1,
       "label": "Position protection",
-      "value": "live read failed",
-      "status": "warn",
-      "action": "Worker health read failed \u2014 can't confirm SL protection; check the Worker."
+      "value": "all protected (2 open, 2 pre-TP1 runners)",
+      "status": "ok",
+      "action": null
     },
     {
       "key": "apikey_MEXC_ALGO_KEY",
       "tier": 1,
       "label": "MEXC AlgoTrading sub-account (live orders)",
-      "value": "56d left (2026-08-27)",
+      "value": "55d left (2026-08-27)",
       "status": "ok",
       "action": null
     },
@@ -122,7 +122,7 @@
       "key": "apikey_DASHBOARD_PAT",
       "tier": 1,
       "label": "GitHub PAT (dashboard deploy)",
-      "value": "28d left (2026-07-30)",
+      "value": "27d left (2026-07-30)",
       "status": "ok",
       "action": null
     },
@@ -130,7 +130,7 @@
       "key": "apikey_GDRIVE_OAUTH_TOKEN",
       "tier": 1,
       "label": "Google Drive OAuth (journal sync)",
-      "value": "28d left (2026-07-30)",
+      "value": "27d left (2026-07-30)",
       "status": "ok",
       "action": null
     },
@@ -138,7 +138,7 @@
       "key": "apikey_TELEGRAM_TOKEN",
       "tier": 1,
       "label": "Telegram Bot (trade alerts)",
-      "value": "36342d left (2126-01-01)",
+      "value": "36341d left (2126-01-01)",
       "status": "ok",
       "action": null
     }
@@ -172,38 +172,6 @@
       "live_exit_fill": null,
       "live_entry_slippage_pct": null,
       "live_fees_usd": null,
-      "live_funding_usd": null,
-      "live_tp1_pnl_usd": null,
-      "rehearsal": false
-    },
-    {
-      "trade_id": "ADAUSDT_20260623_CB_001",
-      "coin": "ADAUSDT",
-      "direction": "Short",
-      "entry_price": 0.15818426,
-      "sl": 0.16350516,
-      "tp1": 0.1425,
-      "tp2": 0.12058254,
-      "capital_usd": 78.53,
-      "leverage": 3,
-      "trading_system": "Braam",
-      "track_only": false,
-      "status": "OPEN",
-      "price_at_run": 0.1513,
-      "date_activated": "2026-07-02",
-      "time_activated_utc": "09:41",
-      "date_opened": "2026-06-23",
-      "time_opened_utc": "21:50",
-      "conviction": "MEDIUM",
-      "tp1_hit": false,
-      "sl_moved_to_be": false,
-      "pnl_tp1_realized_usd": null,
-      "tp2_hit": false,
-      "live_executed": true,
-      "live_entry_fill": 0.1582,
-      "live_exit_fill": null,
-      "live_entry_slippage_pct": -0.01,
-      "live_fees_usd": 0.1413,
       "live_funding_usd": null,
       "live_tp1_pnl_usd": null,
       "rehearsal": false
@@ -413,7 +381,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 1696.49,
+      "price_at_run": 1707.31,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-07-02",
@@ -433,34 +401,8 @@
       "rehearsal": false
     }
   ],
-  "recent_signals": [
-    {
-      "trade_id": "ETHUSDT_20260702_CJ_001",
-      "coin": "ETHUSDT",
-      "direction": "Short",
-      "trading_system": "John",
-      "entry_price": 1786.03462416,
-      "tp1": 1574.89063512,
-      "sl": 1818.03584527,
-      "conviction": "HIGH",
-      "track_only": false,
-      "iso": "2026-07-02T13:19:00Z",
-      "rehearsal": false
-    }
-  ],
+  "recent_signals": [],
   "recent_opens": [
-    {
-      "trade_id": "ETHUSDT_20260630_CB_001",
-      "coin": "ETHUSDT",
-      "direction": "Short",
-      "trading_system": "Braam",
-      "entry_price": 1589.64371588,
-      "live_entry_fill": 1589.64,
-      "tp1_hit": false,
-      "iso": "2026-07-01T03:36:00Z",
-      "_iso_ms": 1782876960000,
-      "rehearsal": false
-    },
     {
       "trade_id": "SUIUSDT_20260623_CB_001",
       "coin": "SUIUSDT",
@@ -1579,25 +1521,44 @@
       "won": false,
       "close_iso": "2026-07-02T13:17:00Z",
       "rehearsal": false
+    },
+    {
+      "trade_id": "ADAUSDT_20260623_CB_001",
+      "coin": "ADAUSDT",
+      "direction": "Short",
+      "status": "STOPPED",
+      "pnl_usd": -8.28,
+      "close_reason": "live MEXC exit: sl @ 0.1635",
+      "date_closed": "2026-07-03",
+      "time_closed_utc": "01:20",
+      "trading_system": "Braam",
+      "live_entry_fill": 0.1582,
+      "live_exit_fill": 0.1635,
+      "live_entry_slippage_pct": -0.01,
+      "live_fees_usd": 0.336,
+      "live_funding_usd": 0.047946,
+      "won": false,
+      "close_iso": "2026-07-03T01:20:00Z",
+      "rehearsal": false
     }
   ],
   "recent_cancels": [],
   "tp1_hits_open": [],
   "stats": {
-    "realized_pnl_usd": -108.36,
-    "realized_pnl_pct": -2.48,
+    "realized_pnl_usd": -116.64,
+    "realized_pnl_pct": -2.63,
     "peak_capital_usd": 1162.42,
     "peak_concurrent": 14,
     "peak_date": "2026-06-12",
     "deployed_trades": 58,
-    "return_on_peak_pct": -9.32,
-    "win_rate_pct": 30.9,
-    "closed_count": 55,
+    "return_on_peak_pct": -10.03,
+    "win_rate_pct": 30.4,
+    "closed_count": 56,
     "per_system": {
       "Braam": {
-        "realized_pnl_usd": -71.81,
-        "win_rate_pct": 34.7,
-        "closed_count": 49
+        "realized_pnl_usd": -80.09,
+        "win_rate_pct": 34.0,
+        "closed_count": 50
       },
       "John": {
         "realized_pnl_usd": -36.55,

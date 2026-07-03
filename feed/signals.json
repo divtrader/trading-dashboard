@@ -1,9 +1,9 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-07-02T23:44Z",
+  "generated_utc": "2026-07-03T04:07Z",
   "master": "braam",
   "retention_hours": 48,
-  "trade_count": 24,
+  "trade_count": 23,
   "trades": [
     {
       "trade_id": "SUIUSDT_20260623_CB_001",
@@ -87,15 +87,15 @@
       "sl": 0.16350516,
       "tp1": 0.1425,
       "tp2": 0.12058254,
-      "status": "OPEN",
+      "status": "STOPPED",
       "tp1_hit": false,
       "tp2_hit": false,
       "sl_hit": false,
-      "close_reason": null,
+      "close_reason": "live MEXC exit: sl @ 0.1635",
       "date_opened": "2026-06-23",
       "time_opened_utc": "21:50",
       "sl_mode": "initial",
-      "feed_updated_utc": "2026-07-02T09:41Z"
+      "feed_updated_utc": "2026-07-03T01:20Z"
     },
     {
       "trade_id": "ONDOUSDT_20260623_CB_001",
@@ -328,29 +328,6 @@
       "feed_updated_utc": "2026-06-26T07:20Z"
     },
     {
-      "trade_id": "XLMUSDT_20260626_CB_001",
-      "coin": "XLMUSDT",
-      "direction": "Short",
-      "trading_system": "Braam",
-      "conviction": "MEDIUM",
-      "leverage": 3,
-      "entry_price": 0.18547266,
-      "entry_lo": 0.18454529,
-      "entry_hi": 0.18640002,
-      "sl": 0.19442129,
-      "tp1": 0.172,
-      "tp2": 0.145,
-      "status": "STOPPED",
-      "tp1_hit": false,
-      "tp2_hit": false,
-      "sl_hit": false,
-      "close_reason": "live MEXC exit: sl @ 0.19449",
-      "date_opened": "2026-06-26",
-      "time_opened_utc": "16:16",
-      "sl_mode": "initial",
-      "feed_updated_utc": "2026-07-01T00:37Z"
-    },
-    {
       "trade_id": "NEARUSDT_20260626_CB_001",
       "coin": "NEARUSDT",
       "direction": "Short",
@@ -478,7 +455,7 @@
       "sl": 0.16896389,
       "tp1": 0.12606318,
       "tp2": 0.12287221,
-      "status": "PENDING",
+      "status": "OPEN",
       "tp1_hit": false,
       "tp2_hit": false,
       "sl_hit": false,
@@ -486,7 +463,7 @@
       "date_opened": "2026-07-01",
       "time_opened_utc": "20:09",
       "sl_mode": "initial",
-      "feed_updated_utc": "2026-07-01T20:09Z"
+      "feed_updated_utc": "2026-07-03T00:00Z"
     },
     {
       "trade_id": "BNBUSDT_20260702_CB_001",
