@@ -1,0 +1,41 @@
+name: Deploy to GitHub Pages
+
+# Replaces the legacy "Deploy from a branch" method, which has no concurrency
+# control: frequent data pushes (~13/day) + GitHub Pages degradation caused
+# overlapping deploys to fail ("pages build and deployment failed" emails) and
+# froze the served site behind the latest push. With cancel-in-progress an
+# overlapping deploy CANCELS the older in-flight one cleanly (not a failure),
+# so the newest data always wins and there's no email spam.
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+      - name: Upload site artifact (whole repo — static files at root)
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: '.'
+      - name: Deploy to Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
