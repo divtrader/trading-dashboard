@@ -1,10 +1,10 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-07-03T07:13:47Z",
+  "last_updated_iso": "2026-07-03T07:13:54Z",
   "mexc_account": {
-    "unrealized_pnl": 2.684,
-    "equity": 1547.4656,
+    "unrealized_pnl": 2.6874,
+    "equity": 1547.469,
     "available": 968.1938,
     "position_margin": 0.0
   },
@@ -106,9 +106,9 @@
       "key": "position_protection",
       "tier": 1,
       "label": "Position protection",
-      "value": "live read failed",
-      "status": "warn",
-      "action": "Worker health read failed \u2014 can't confirm SL protection; check the Worker."
+      "value": "all protected (2 open, 2 pre-TP1 runners)",
+      "status": "ok",
+      "action": null
     },
     {
       "key": "apikey_MEXC_ALGO_KEY",
