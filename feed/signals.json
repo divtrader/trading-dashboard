@@ -1,6 +1,6 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-07-03T10:50Z",
+  "generated_utc": "2026-07-03T12:00Z",
   "master": "braam",
   "retention_hours": 48,
   "trade_count": 21,
@@ -156,15 +156,15 @@
       "sl": 1.38767844,
       "tp1": 1.258,
       "tp2": 1.15,
-      "status": "OPEN",
+      "status": "STOPPED",
       "tp1_hit": false,
       "tp2_hit": false,
-      "sl_hit": false,
-      "close_reason": null,
+      "sl_hit": true,
+      "close_reason": "SL hit",
       "date_opened": "2026-06-24",
       "time_opened_utc": "16:30",
       "sl_mode": "initial",
-      "feed_updated_utc": "2026-06-25T06:34Z"
+      "feed_updated_utc": "2026-07-03T08:00Z"
     },
     {
       "trade_id": "XRPUSDT_20260624_CB_001",
