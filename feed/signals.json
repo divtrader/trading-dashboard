@@ -1,6 +1,6 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-07-03T12:00Z",
+  "generated_utc": "2026-07-03T12:18Z",
   "master": "braam",
   "retention_hours": 48,
   "trade_count": 21,
@@ -340,15 +340,15 @@
       "sl": 0.6262187,
       "tp1": 0.55580897,
       "tp2": 0.43755038,
-      "status": "OPEN",
+      "status": "STOPPED",
       "tp1_hit": false,
       "tp2_hit": false,
-      "sl_hit": false,
-      "close_reason": null,
+      "sl_hit": true,
+      "close_reason": "SL hit",
       "date_opened": "2026-06-28",
       "time_opened_utc": "10:34",
       "sl_mode": "initial",
-      "feed_updated_utc": "2026-07-01T15:26Z"
+      "feed_updated_utc": "2026-07-03T12:00Z"
     },
     {
       "trade_id": "BNBUSDT_20260628_CB_001",
