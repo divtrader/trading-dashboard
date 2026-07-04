@@ -1,31 +1,19 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-07-04T15:14:37Z",
+  "last_updated_iso": "2026-07-04T15:17:23Z",
   "mexc_account": {
-    "unrealized_pnl": -6.959,
-    "equity": 1531.2335,
+    "unrealized_pnl": -6.9638,
+    "equity": 1531.2287,
     "available": 1042.4421,
     "position_margin": 0.0
   },
   "order_levels": {
     "checked": 7,
-    "in_sync": 6,
-    "drifted": [
-      "ETH"
-    ],
+    "in_sync": 7,
+    "drifted": [],
     "reconciling": [],
-    "detail": [
-      {
-        "coin": "ETH",
-        "trade_id": "ETHUSDT_20260702_CJ_001",
-        "status": "PENDING",
-        "fields": [
-          "tp1"
-        ],
-        "synced_at": null
-      }
-    ]
+    "detail": []
   },
   "api_keys": [
     {
@@ -86,7 +74,7 @@
       "key": "state_file",
       "tier": 1,
       "label": "Trade journal",
-      "value": "OK (649 records)",
+      "value": "OK (652 records)",
       "status": "ok",
       "action": null
     },
@@ -118,7 +106,7 @@
       "key": "position_protection",
       "tier": 1,
       "label": "Position protection",
-      "value": "all protected (5 open, 4 pre-TP1 runners)",
+      "value": "all protected (5 open, 5 pre-TP1 runners)",
       "status": "ok",
       "action": null
     },
@@ -360,10 +348,10 @@
       "leverage": 3,
       "trading_system": "John",
       "track_only": false,
-      "status": "PENDING",
-      "price_at_run": 1762.36,
-      "date_activated": null,
-      "time_activated_utc": null,
+      "status": "OPEN",
+      "price_at_run": 1785.27,
+      "date_activated": "2026-07-04",
+      "time_activated_utc": "15:09",
       "date_opened": "2026-07-02",
       "time_opened_utc": "13:19",
       "conviction": "HIGH",
@@ -371,11 +359,11 @@
       "sl_moved_to_be": null,
       "pnl_tp1_realized_usd": null,
       "tp2_hit": false,
-      "live_executed": null,
-      "live_entry_fill": null,
+      "live_executed": true,
+      "live_entry_fill": 1786.03,
       "live_exit_fill": null,
-      "live_entry_slippage_pct": null,
-      "live_fees_usd": null,
+      "live_entry_slippage_pct": 0.0003,
+      "live_fees_usd": 0.1285,
       "live_funding_usd": null,
       "live_tp1_pnl_usd": null,
       "rehearsal": false
@@ -417,6 +405,18 @@
       "tp1_hit": false,
       "iso": "2026-07-03T19:22:00Z",
       "_iso_ms": 1783106520000,
+      "rehearsal": false
+    },
+    {
+      "trade_id": "ETHUSDT_20260702_CJ_001",
+      "coin": "ETHUSDT",
+      "direction": "Short",
+      "trading_system": "John",
+      "entry_price": 1786.03462416,
+      "live_entry_fill": 1786.03,
+      "tp1_hit": false,
+      "iso": "2026-07-04T15:09:00Z",
+      "_iso_ms": 1783177740000,
       "rehearsal": false
     }
   ],
@@ -1513,7 +1513,7 @@
     "peak_capital_usd": 1162.42,
     "peak_concurrent": 14,
     "peak_date": "2026-06-12",
-    "deployed_trades": 61,
+    "deployed_trades": 62,
     "return_on_peak_pct": -10.58,
     "win_rate_pct": 29.8,
     "closed_count": 57,
