@@ -1,19 +1,31 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-07-04T06:35:11Z",
+  "last_updated_iso": "2026-07-04T07:01:27Z",
   "mexc_account": {
-    "unrealized_pnl": 6.1296,
-    "equity": 1544.3877,
+    "unrealized_pnl": 4.5792,
+    "equity": 1542.8373,
     "available": 1042.3361,
     "position_margin": 0.0
   },
   "order_levels": {
     "checked": 7,
-    "in_sync": 7,
-    "drifted": [],
+    "in_sync": 6,
+    "drifted": [
+      "ONDO"
+    ],
     "reconciling": [],
-    "detail": []
+    "detail": [
+      {
+        "coin": "ONDO",
+        "trade_id": "ONDOUSDT_20260623_CB_001",
+        "status": "OPEN",
+        "fields": [
+          "tp2"
+        ],
+        "synced_at": "2026-07-02T05:13:01.459753+00:00"
+      }
+    ]
   },
   "api_keys": [
     {
@@ -82,7 +94,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$1,544.39",
+      "value": "$1,542.84",
       "status": "ok",
       "action": null
     },
@@ -183,7 +195,7 @@
       "entry_price": 0.33031958,
       "sl": 0.34376242,
       "tp1": 0.3088,
-      "tp2": 0.2891,
+      "tp2": 0.2968,
       "capital_usd": 28.6,
       "leverage": 3,
       "trading_system": "Braam",
