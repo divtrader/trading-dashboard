@@ -1,19 +1,31 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-07-04T13:57:35Z",
+  "last_updated_iso": "2026-07-04T15:14:37Z",
   "mexc_account": {
-    "unrealized_pnl": 3.9766,
-    "equity": 1542.2977,
-    "available": 1042.3991,
+    "unrealized_pnl": -6.959,
+    "equity": 1531.2335,
+    "available": 1042.4421,
     "position_margin": 0.0
   },
   "order_levels": {
     "checked": 7,
-    "in_sync": 7,
-    "drifted": [],
+    "in_sync": 6,
+    "drifted": [
+      "ETH"
+    ],
     "reconciling": [],
-    "detail": []
+    "detail": [
+      {
+        "coin": "ETH",
+        "trade_id": "ETHUSDT_20260702_CJ_001",
+        "status": "PENDING",
+        "fields": [
+          "tp1"
+        ],
+        "synced_at": null
+      }
+    ]
   },
   "api_keys": [
     {
@@ -82,7 +94,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$1,542.30",
+      "value": "$1,531.23",
       "status": "ok",
       "action": null
     },
@@ -98,7 +110,7 @@
       "key": "orphan_orders",
       "tier": 1,
       "label": "Order reconciliation",
-      "value": "in sync (3 resting = journal)",
+      "value": "in sync (2 resting = journal)",
       "status": "ok",
       "action": null
     },
@@ -106,7 +118,7 @@
       "key": "position_protection",
       "tier": 1,
       "label": "Position protection",
-      "value": "all protected (4 open, 4 pre-TP1 runners)",
+      "value": "all protected (5 open, 4 pre-TP1 runners)",
       "status": "ok",
       "action": null
     },
@@ -342,8 +354,8 @@
       "direction": "Short",
       "entry_price": 1786.03462416,
       "sl": 1818.03584527,
-      "tp1": 1574.89063512,
-      "tp2": 1386.13830946,
+      "tp1": 1650,
+      "tp2": 1554,
       "capital_usd": 77.36,
       "leverage": 3,
       "trading_system": "John",
