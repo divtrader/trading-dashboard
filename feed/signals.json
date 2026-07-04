@@ -1,6 +1,6 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-07-04T17:19Z",
+  "generated_utc": "2026-07-04T18:29Z",
   "master": "braam",
   "retention_hours": 48,
   "trade_count": 13,
@@ -18,15 +18,15 @@
       "sl": 8.14672593,
       "tp1": 7.498,
       "tp2": 7.096,
-      "status": "OPEN",
+      "status": "STOPPED",
       "tp1_hit": false,
       "tp2_hit": false,
       "sl_hit": false,
-      "close_reason": null,
+      "close_reason": "live MEXC exit: sl @ 8.151",
       "date_opened": "2026-06-23",
       "time_opened_utc": "07:32",
       "sl_mode": "initial",
-      "feed_updated_utc": "2026-07-03T19:18Z"
+      "feed_updated_utc": "2026-07-04T17:51Z"
     },
     {
       "trade_id": "TONUSDT_20260623_CJ_001",
@@ -271,15 +271,15 @@
       "sl": 0.14644853,
       "tp1": 0.1352,
       "tp2": 0.1275,
-      "status": "OPEN",
+      "status": "STOPPED",
       "tp1_hit": false,
       "tp2_hit": false,
-      "sl_hit": false,
-      "close_reason": null,
+      "sl_hit": true,
+      "close_reason": "SL hit",
       "date_opened": "2026-07-02",
       "time_opened_utc": "12:49",
       "sl_mode": "initial",
-      "feed_updated_utc": "2026-07-03T04:00Z"
+      "feed_updated_utc": "2026-07-04T16:00Z"
     },
     {
       "trade_id": "ETHUSDT_20260702_CJ_001",
