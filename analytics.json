@@ -1,22 +1,22 @@
 {
-  "generated_at_utc": "2026-07-04T15:46:49+00:00",
+  "generated_at_utc": "2026-07-04T17:19:31+00:00",
   "all_time": {
-    "total_trades": 340,
+    "total_trades": 341,
     "wins": 113,
-    "losses": 227,
-    "win_rate": 33.2,
-    "total_pnl_usd": 406.7,
-    "avg_pnl_usd": 1.2,
+    "losses": 228,
+    "win_rate": 33.1,
+    "total_pnl_usd": 394.26,
+    "avg_pnl_usd": 1.16,
     "best_usd": 85.94,
     "worst_usd": -44.29,
     "avg_win_usd": 21.64,
-    "avg_loss_usd": -9.53,
-    "expectancy_usd": 1.2,
-    "profit_factor": 1.19,
+    "avg_loss_usd": -9.55,
+    "expectancy_usd": 1.16,
+    "profit_factor": 1.18,
     "longest_win_streak": 5,
     "longest_loss_streak": 11,
     "current_streak_type": "loss",
-    "current_streak_count": 1,
+    "current_streak_count": 2,
     "avg_hold_hours": 61.8,
     "median_hold_hours": 36.0
   },
@@ -31,20 +31,20 @@
       "days_active": 70,
       "pnl_per_day": 2.41,
       "status": "active",
-      "open": 9,
+      "open": 10,
       "pending": 22
     },
     "Braam": {
-      "n": 108,
+      "n": 109,
       "wins": 46,
-      "wr": 42.6,
-      "pnl": 192.69,
-      "avg": 1.78,
+      "wr": 42.2,
+      "pnl": 180.25,
+      "avg": 1.65,
       "inception": "2026-05-01",
       "days_active": 64,
-      "pnl_per_day": 3.01,
+      "pnl_per_day": 2.82,
       "status": "active",
-      "open": 4,
+      "open": 3,
       "pending": 2
     },
     "Mong": {
@@ -81,19 +81,19 @@
       "wr": 27.8,
       "pnl": 168.77,
       "pnl_per_day": 2.41,
-      "open": 9,
+      "open": 10,
       "pending": 22
     },
     {
       "name": "Braam",
       "inception": "2026-05-01",
       "days_active": 64,
-      "closed": 108,
+      "closed": 109,
       "wins": 46,
-      "wr": 42.6,
-      "pnl": 192.69,
-      "pnl_per_day": 3.01,
-      "open": 4,
+      "wr": 42.2,
+      "pnl": 180.25,
+      "pnl_per_day": 2.82,
+      "open": 3,
       "pending": 2
     },
     {
@@ -136,11 +136,11 @@
     },
     {
       "month": "2026-07",
-      "n": 28,
+      "n": 29,
       "wins": 8,
-      "wr": 28.6,
-      "pnl": -24.15,
-      "cumulative_pnl": 406.7
+      "wr": 27.6,
+      "pnl": -36.59,
+      "cumulative_pnl": 394.26
     }
   ],
   "equity_curve": [
@@ -2183,6 +2183,12 @@
       "pnl": -8.39,
       "cumulative": 406.7,
       "won": false
+    },
+    {
+      "iso": "2026-07-04T17:16:00+00:00",
+      "pnl": -12.44,
+      "cumulative": 394.26,
+      "won": false
     }
   ],
   "benchmark": {
@@ -3548,6 +3554,10 @@
       {
         "iso": "2026-07-03",
         "pct": 20.335
+      },
+      {
+        "iso": "2026-07-04",
+        "pct": 19.713
       }
     ],
     "spx": [
@@ -3736,7 +3746,7 @@
         "pct": 4.825
       }
     ],
-    "ours_pct": 20.335,
+    "ours_pct": 19.713,
     "spx_pct": 4.825
   },
   "by_direction": {
@@ -3748,20 +3758,20 @@
       "avg": 0.34
     },
     "Short": {
-      "n": 207,
+      "n": 208,
       "wins": 74,
-      "wr": 35.7,
-      "pnl": 360.93,
-      "avg": 1.74
+      "wr": 35.6,
+      "pnl": 348.49,
+      "avg": 1.68
     }
   },
   "by_conviction": {
     "MEDIUM": {
-      "n": 322,
+      "n": 323,
       "wins": 108,
-      "wr": 33.5,
-      "pnl": 366.14,
-      "avg": 1.14
+      "wr": 33.4,
+      "pnl": 353.7,
+      "avg": 1.1
     },
     "VERY HIGH": {
       "n": 1,
@@ -3808,11 +3818,11 @@
       "avg": 3.07
     },
     "ema20_rejection": {
-      "n": 108,
+      "n": 109,
       "wins": 46,
-      "wr": 42.6,
-      "pnl": 192.69,
-      "avg": 1.78
+      "wr": 42.2,
+      "pnl": 180.25,
+      "avg": 1.65
     },
     "at_resistance": {
       "n": 2,
@@ -3866,11 +3876,11 @@
       "avg": 7.42
     },
     "6": {
-      "n": 47,
+      "n": 48,
       "wins": 17,
-      "wr": 36.2,
-      "pnl": -4.92,
-      "avg": -0.1
+      "wr": 35.4,
+      "pnl": -17.36,
+      "avg": -0.36
     },
     "7": {
       "n": 4,
@@ -3896,20 +3906,20 @@
       "avg": 0.73
     },
     "us": {
-      "n": 107,
+      "n": 108,
       "wins": 41,
-      "wr": 38.3,
-      "pnl": 334.97,
-      "avg": 3.13
+      "wr": 38.0,
+      "pnl": 322.53,
+      "avg": 2.99
     }
   },
   "by_audit_verdict": {
     "PASS": {
-      "n": 289,
+      "n": 290,
       "wins": 98,
-      "wr": 33.9,
-      "pnl": 444.39,
-      "avg": 1.54
+      "wr": 33.8,
+      "pnl": 431.95,
+      "avg": 1.49
     },
     "DEGRADED": {
       "n": 43,
@@ -3935,11 +3945,11 @@
       "avg": -0.42
     },
     "Wednesday": {
-      "n": 64,
+      "n": 65,
       "wins": 22,
-      "wr": 34.4,
-      "pnl": 247.98,
-      "avg": 3.87
+      "wr": 33.8,
+      "pnl": 235.54,
+      "avg": 3.62
     },
     "Monday": {
       "n": 37,
@@ -4035,11 +4045,11 @@
       "avg": 3.59
     },
     "22": {
-      "n": 1,
+      "n": 2,
       "wins": 0,
       "wr": 0.0,
-      "pnl": -11.05,
-      "avg": -11.05
+      "pnl": -23.49,
+      "avg": -11.75
     },
     "20": {
       "n": 50,
@@ -4137,11 +4147,11 @@
     },
     {
       "coin": "ONDO",
-      "n": 21,
+      "n": 22,
       "wins": 10,
-      "wr": 47.6,
-      "pnl": 154.11,
-      "avg": 7.34
+      "wr": 45.5,
+      "pnl": 141.67,
+      "avg": 6.44
     },
     {
       "coin": "RENDER",
@@ -4234,6 +4244,16 @@
   },
   "recent_closes": [
     {
+      "trade_id": "ONDOUSDT_20260623_CB_001",
+      "coin": "ONDO",
+      "direction": "Short",
+      "system": "Braam",
+      "pnl_usd": -12.44,
+      "won": false,
+      "close_reason": "live MEXC exit: sl @ 0.344",
+      "iso": "2026-07-04T17:16:00+00:00"
+    },
+    {
       "trade_id": "APTUSDT_20260628_CJ_M_001",
       "coin": "APT",
       "direction": "Short",
@@ -4319,16 +4339,6 @@
       "direction": "Short",
       "system": "Braam",
       "pnl_usd": -8.81,
-      "won": false,
-      "close_reason": "SL hit",
-      "iso": "2026-07-03T08:00:00+00:00"
-    },
-    {
-      "trade_id": "AVAXUSDT_20260624_CJ_M_001",
-      "coin": "AVAX",
-      "direction": "Short",
-      "system": "John",
-      "pnl_usd": -8.17,
       "won": false,
       "close_reason": "SL hit",
       "iso": "2026-07-03T08:00:00+00:00"
