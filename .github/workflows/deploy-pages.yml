@@ -19,7 +19,11 @@ permissions:
 
 concurrency:
   group: "pages"
-  cancel-in-progress: true
+  # GitHub's official Pages pattern: let an in-progress production deploy COMPLETE
+  # (cancelling it mid-deployment can leave Pages half-deployed and error the next
+  # run). New pushes queue; GitHub keeps only the latest queued and skips older
+  # ones, so the newest content still wins without cancelling a live deploy.
+  cancel-in-progress: false
 
 jobs:
   deploy:
