@@ -1560,10 +1560,25 @@ function renderEquitySparkline(recentCloses) {
   // equity $ curve). Dashed reference line; skipped if no benchmark yet.
   const _bench = _edgeAnalytics && _edgeAnalytics.benchmark;
   const _spxBase = (state.stats && state.stats.peak_capital_usd) || (_bench && _bench.base_usd) || 2000;
-  const spxDollars = (_bench && Array.isArray(_bench.spx) ? _bench.spx : [])
+  const _spxRaw = (_bench && Array.isArray(_bench.spx) ? _bench.spx : [])
     .filter(p => p && p.iso != null && isFinite(p.pct))
-    .map(p => ({ iso: p.iso, cum: (p.pct / 100) * _spxBase }))
-    .filter(p => { const t = new Date(p.iso).getTime(); return t >= t0 && t <= tEnd + 12 * 3600_000; });
+    .map(p => ({ t: new Date(p.iso).getTime(), cum: (p.pct / 100) * _spxBase }))
+    .sort((a, b) => a.t - b.t);
+  // Span the S&P line across the FULL chart range [t0, tEnd] by holding the
+  // nearest known value at each edge — S&P has fewer, weekday-only points and
+  // can start after / end before the 24/7 equity curve.
+  const _spxAt = tt => {
+    if (!_spxRaw.length) return 0;
+    if (tt <= _spxRaw[0].t) return _spxRaw[0].cum;
+    let v = _spxRaw[0].cum;
+    for (const p of _spxRaw) { if (p.t <= tt) v = p.cum; else break; }
+    return v;
+  };
+  const spxDollars = _spxRaw.length
+    ? [{ iso: new Date(t0).toISOString(), cum: _spxAt(t0) },
+       ..._spxRaw.filter(p => p.t > t0 && p.t < tEnd).map(p => ({ iso: new Date(p.t).toISOString(), cum: p.cum })),
+       { iso: new Date(tEnd).toISOString(), cum: _spxAt(tEnd) }]
+    : [];
 
   // SVG sized to actual container pixels (no preserveAspectRatio stretching).
   const wrap = svg.parentElement;
