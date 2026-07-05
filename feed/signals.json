@@ -1,9 +1,9 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-07-05T12:16Z",
+  "generated_utc": "2026-07-05T12:54Z",
   "master": "braam",
   "retention_hours": 48,
-  "trade_count": 12,
+  "trade_count": 10,
   "trades": [
     {
       "trade_id": "LINKUSDT_20260623_CB_001",
@@ -27,29 +27,6 @@
       "time_opened_utc": "07:32",
       "sl_mode": "initial",
       "feed_updated_utc": "2026-07-04T17:51Z"
-    },
-    {
-      "trade_id": "TONUSDT_20260623_CJ_001",
-      "coin": "TONUSDT",
-      "direction": "Short",
-      "trading_system": "John",
-      "conviction": "HIGH",
-      "leverage": 3,
-      "entry_price": 1.68183488,
-      "entry_lo": 1.60733024,
-      "entry_hi": 1.70666976,
-      "sl": 1.72543646,
-      "tp1": 1.51671578,
-      "tp2": 1.35812708,
-      "status": "PENDING",
-      "tp1_hit": false,
-      "tp2_hit": false,
-      "sl_hit": false,
-      "close_reason": null,
-      "date_opened": "2026-06-23",
-      "time_opened_utc": "10:05",
-      "sl_mode": "initial",
-      "feed_updated_utc": "2026-06-23T10:05Z"
     },
     {
       "trade_id": "ONDOUSDT_20260623_CB_001",
@@ -188,29 +165,6 @@
       "time_opened_utc": "07:20",
       "sl_mode": "initial",
       "feed_updated_utc": "2026-07-05T12:14Z"
-    },
-    {
-      "trade_id": "THETAUSDT_20260702_CJ_001",
-      "coin": "THETAUSDT",
-      "direction": "Short",
-      "trading_system": "John",
-      "conviction": "HIGH",
-      "leverage": 3,
-      "entry_price": 0.14316583,
-      "entry_lo": 0.13666834,
-      "entry_hi": 0.14533166,
-      "sl": 0.14644853,
-      "tp1": 0.1352,
-      "tp2": 0.1275,
-      "status": "STOPPED",
-      "tp1_hit": false,
-      "tp2_hit": false,
-      "sl_hit": true,
-      "close_reason": "SL hit",
-      "date_opened": "2026-07-02",
-      "time_opened_utc": "12:49",
-      "sl_mode": "initial",
-      "feed_updated_utc": "2026-07-04T16:00Z"
     },
     {
       "trade_id": "ETHUSDT_20260702_CJ_001",
