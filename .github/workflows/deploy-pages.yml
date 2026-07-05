@@ -1,11 +1,14 @@
 name: Deploy to GitHub Pages
 
-# Replaces the legacy "Deploy from a branch" method, which has no concurrency
-# control: frequent data pushes (~13/day) + GitHub Pages degradation caused
-# overlapping deploys to fail ("pages build and deployment failed" emails) and
-# froze the served site behind the latest push. With cancel-in-progress an
-# overlapping deploy CANCELS the older in-flight one cleanly (not a failure),
-# so the newest data always wins and there's no email spam.
+# Static dashboard, deployed via GitHub Actions (replaces legacy branch-deploy,
+# which had no concurrency control and froze the served site on failure).
+#
+# GitHub Pages' backend intermittently rejects deploys with
+#   ##[error]Deployment failed, try again later.
+# — a TRANSIENT server-side error, not a config problem. Left unhandled, each one
+# fails the run and emails "All jobs have failed". So the deploy step RETRIES:
+# a transient rejection self-heals on the next attempt and the run stays green.
+# Only 3 consecutive failures (rare) fail the run.
 
 on:
   push:
@@ -19,10 +22,9 @@ permissions:
 
 concurrency:
   group: "pages"
-  # GitHub's official Pages pattern: let an in-progress production deploy COMPLETE
-  # (cancelling it mid-deployment can leave Pages half-deployed and error the next
-  # run). New pushes queue; GitHub keeps only the latest queued and skips older
-  # ones, so the newest content still wins without cancelling a live deploy.
+  # Let an in-progress production deploy COMPLETE (cancelling it mid-deployment
+  # can leave Pages in a stuck "in_progress" state that blocks the next run).
+  # Queued runs collapse to the latest, so newest content still wins.
   cancel-in-progress: false
 
 jobs:
@@ -30,7 +32,7 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+      url: https://divtrader.github.io/trading-dashboard/
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -40,6 +42,31 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           path: '.'
-      - name: Deploy to Pages
-        id: deployment
+
+      # Deploy with retry — a transient "try again later" from Pages self-heals
+      # instead of failing the run + emailing Braam.
+      - name: Deploy to Pages (attempt 1)
+        id: d1
         uses: actions/deploy-pages@v4
+        continue-on-error: true
+      - name: Backoff before attempt 2
+        if: steps.d1.outcome == 'failure'
+        run: sleep 20
+      - name: Deploy to Pages (attempt 2)
+        id: d2
+        if: steps.d1.outcome == 'failure'
+        uses: actions/deploy-pages@v4
+        continue-on-error: true
+      - name: Backoff before attempt 3
+        if: steps.d1.outcome == 'failure' && steps.d2.outcome == 'failure'
+        run: sleep 45
+      - name: Deploy to Pages (attempt 3)
+        id: d3
+        if: steps.d1.outcome == 'failure' && steps.d2.outcome == 'failure'
+        uses: actions/deploy-pages@v4
+        continue-on-error: true
+      - name: Fail run only if all 3 attempts failed
+        if: steps.d1.outcome == 'failure' && steps.d2.outcome == 'failure' && steps.d3.outcome == 'failure'
+        run: |
+          echo "::error::All 3 GitHub Pages deploy attempts failed (transient backend). The next push will redeploy."
+          exit 1
