@@ -1,31 +1,19 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-07-05T10:27:41Z",
+  "last_updated_iso": "2026-07-05T11:23:54Z",
   "mexc_account": {
-    "unrealized_pnl": 10.1634,
-    "equity": 1538.695,
+    "unrealized_pnl": 10.2314,
+    "equity": 1538.763,
     "available": 987.3515,
     "position_margin": 0.0
   },
   "order_levels": {
     "checked": 7,
-    "in_sync": 6,
-    "drifted": [
-      "XLM"
-    ],
+    "in_sync": 7,
+    "drifted": [],
     "reconciling": [],
-    "detail": [
-      {
-        "coin": "XLM",
-        "trade_id": "XLMUSDT_20260705_CJ_001",
-        "status": "PENDING",
-        "fields": [
-          "tp1"
-        ],
-        "synced_at": null
-      }
-    ]
+    "detail": []
   },
   "api_keys": [
     {
@@ -78,9 +66,9 @@
       "key": "daily_summary",
       "tier": 1,
       "label": "Daily summary",
-      "value": "overdue 1d",
-      "status": "warn",
-      "action": "Run daily_summary.yml manually from Actions."
+      "value": "sent today",
+      "status": "ok",
+      "action": null
     },
     {
       "key": "state_file",
@@ -94,7 +82,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$1,538.69",
+      "value": "$1,538.76",
       "status": "ok",
       "action": null
     },
@@ -297,7 +285,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "OPEN",
-      "price_at_run": 1759.17,
+      "price_at_run": 1762.65,
       "date_activated": "2026-07-04",
       "time_activated_utc": "15:09",
       "date_opened": "2026-07-02",
@@ -329,7 +317,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 62662.0,
+      "price_at_run": 62672.0,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-07-05",
@@ -361,7 +349,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 0.1986,
+      "price_at_run": 0.1994,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-07-05",
