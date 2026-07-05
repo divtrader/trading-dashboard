@@ -1,16 +1,16 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-07-05T12:02:56Z",
+  "last_updated_iso": "2026-07-05T12:16:24Z",
   "mexc_account": {
-    "unrealized_pnl": 10.9438,
-    "equity": 1539.4754,
-    "available": 987.3515,
+    "unrealized_pnl": 9.3436,
+    "equity": 1537.8752,
+    "available": 1067.3176,
     "position_margin": 0.0
   },
   "order_levels": {
-    "checked": 7,
-    "in_sync": 7,
+    "checked": 6,
+    "in_sync": 6,
     "drifted": [],
     "reconciling": [],
     "detail": []
@@ -74,7 +74,7 @@
       "key": "state_file",
       "tier": 1,
       "label": "Trade journal",
-      "value": "OK (663 records)",
+      "value": "OK (664 records)",
       "status": "ok",
       "action": null
     },
@@ -82,7 +82,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$1,539.48",
+      "value": "$1,537.88",
       "status": "ok",
       "action": null
     },
@@ -98,7 +98,7 @@
       "key": "orphan_orders",
       "tier": 1,
       "label": "Order reconciliation",
-      "value": "in sync (4 resting = journal)",
+      "value": "in sync (3 resting = journal)",
       "status": "ok",
       "action": null
     },
@@ -241,38 +241,6 @@
       "rehearsal": false
     },
     {
-      "trade_id": "TRXUSDT_20260626_CB_001",
-      "coin": "TRXUSDT",
-      "direction": "Short",
-      "entry_price": 0.32679843,
-      "sl": 0.33005995,
-      "tp1": 0.31671394,
-      "tp2": 0.28962689,
-      "capital_usd": 79.56,
-      "leverage": 3,
-      "trading_system": "Braam",
-      "track_only": false,
-      "status": "PENDING",
-      "price_at_run": 0.3229,
-      "date_activated": null,
-      "time_activated_utc": null,
-      "date_opened": "2026-06-26",
-      "time_opened_utc": "07:20",
-      "conviction": "MEDIUM",
-      "tp1_hit": false,
-      "sl_moved_to_be": false,
-      "pnl_tp1_realized_usd": null,
-      "tp2_hit": false,
-      "live_executed": null,
-      "live_entry_fill": null,
-      "live_exit_fill": null,
-      "live_entry_slippage_pct": null,
-      "live_fees_usd": null,
-      "live_funding_usd": null,
-      "live_tp1_pnl_usd": null,
-      "rehearsal": false
-    },
-    {
       "trade_id": "ETHUSDT_20260702_CJ_001",
       "coin": "ETHUSDT",
       "direction": "Short",
@@ -285,7 +253,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "OPEN",
-      "price_at_run": 1759.31,
+      "price_at_run": 1760.08,
       "date_activated": "2026-07-04",
       "time_activated_utc": "15:09",
       "date_opened": "2026-07-02",
@@ -317,7 +285,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 62640.53,
+      "price_at_run": 62621.59,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-07-05",
@@ -1570,7 +1538,15 @@
       "rehearsal": false
     }
   ],
-  "recent_cancels": [],
+  "recent_cancels": [
+    {
+      "coin": "TRXUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "close_reason": "Signal direction flipped to Long (5/8 signals) \u2014 original setup no longer valid",
+      "iso": "2026-07-05T12:14:00Z"
+    }
+  ],
   "tp1_hits_open": [],
   "stats": {
     "realized_pnl_usd": -133.19,
