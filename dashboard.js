@@ -1303,6 +1303,16 @@ function renderEquitySparkline(recentCloses) {
   // Anchor at $0 a few hours before the first close, then daily samples.
   const series = [{ iso: new Date(t0).toISOString(), cum: 0, anchor: true }, ...daily];
 
+  // S&P 500 overlay: convert the benchmark's spx % series to $ on the SAME peak-
+  // capital basis used for the return % (so it's directly comparable to the
+  // equity $ curve). Dashed reference line; skipped if no benchmark yet.
+  const _bench = _edgeAnalytics && _edgeAnalytics.benchmark;
+  const _spxBase = (state.stats && state.stats.peak_capital_usd) || (_bench && _bench.base_usd) || 2000;
+  const spxDollars = (_bench && Array.isArray(_bench.spx) ? _bench.spx : [])
+    .filter(p => p && p.iso != null && isFinite(p.pct))
+    .map(p => ({ iso: p.iso, cum: (p.pct / 100) * _spxBase }))
+    .filter(p => { const t = new Date(p.iso).getTime(); return t >= t0 && t <= tEnd + 12 * 3600_000; });
+
   // Use the wrap's actual pixel size as the SVG viewBox — no stretching, so
   // strokes draw at their literal pixel width.
   const wrap = svg.parentElement;
@@ -1313,7 +1323,7 @@ function renderEquitySparkline(recentCloses) {
   const innerH = H - PAD_T - PAD_B;
 
   // Y range: include 0 and all cum values. Pick a "nice" tick step.
-  const vals = series.map(p => p.cum);
+  const vals = series.map(p => p.cum).concat(spxDollars.map(p => p.cum));
   let yMin = Math.min(0, ...vals);
   let yMax = Math.max(0, ...vals);
   const pad = Math.max(5, (yMax - yMin) * 0.12);
@@ -1351,6 +1361,9 @@ function renderEquitySparkline(recentCloses) {
   const bdcFirstX = bdcPts[0][0];
   const baseY = yFor(Math.max(yMin, 0)).toFixed(2);
   const bdcArea = bdcLine + ` L${bdcLastX.toFixed(2)} ${baseY} L${bdcFirstX.toFixed(2)} ${baseY} Z`;
+  const spxLine = spxDollars.length >= 2
+    ? _monotoneCubicPath(spxDollars.map(p => [xFor(p.iso), yFor(p.cum)]))
+    : "";
 
   // Color the line by Y value: green where cumulative is above $0, red where
   // it's below $0. Achieved with a vertical SVG linear gradient that flips
@@ -1389,6 +1402,7 @@ function renderEquitySparkline(recentCloses) {
     </defs>
     ${gridHtml}
     <path d="${bdcArea}" fill="url(#bdc-area-grad)"/>
+    ${spxLine ? `<path d="${spxLine}" fill="none" stroke="#5b9dff" stroke-width="1.6" stroke-dasharray="3 5" stroke-linecap="round" stroke-linejoin="round" opacity="0.7"/>` : ""}
     <path d="${bdcLine}" fill="none" stroke="url(#bdc-line-grad)" stroke-width="9"
           stroke-linecap="round" stroke-linejoin="round"
           opacity="0.22" style="filter: blur(2.5px)"/>
@@ -1430,7 +1444,11 @@ function renderEquitySparkline(recentCloses) {
     datesHtml += `<div class="spark-date axis" style="left:${xPct.toFixed(2)}%">${label}</div>`;
   }
 
-  overlay.innerHTML = `${yLabelsHtml}${dotsHtml}${datesHtml}`;
+  const legendHtml = `<div class="spark-legend" style="position:absolute;top:0;right:24px;display:flex;gap:12px;font-size:10px;letter-spacing:0.04em;color:rgba(255,255,255,0.5);pointer-events:none">`
+    + `<span style="display:flex;align-items:center;gap:5px"><span style="width:14px;height:3px;border-radius:2px;background:#00c9a7"></span>Spyker</span>`
+    + (spxLine ? `<span style="display:flex;align-items:center;gap:5px"><span style="width:14px;height:0;border-top:2px dashed #5b9dff"></span>S&amp;P 500</span>` : ``)
+    + `</div>`;
+  overlay.innerHTML = `${legendHtml}${yLabelsHtml}${dotsHtml}${datesHtml}`;
 }
 
 function fmtAgo(iso, opts) {
