@@ -1,19 +1,31 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-07-05T10:20:52Z",
+  "last_updated_iso": "2026-07-05T10:26:35Z",
   "mexc_account": {
-    "unrealized_pnl": 10.0336,
-    "equity": 1538.5652,
+    "unrealized_pnl": 9.9558,
+    "equity": 1538.4874,
     "available": 987.3515,
     "position_margin": 0.0
   },
   "order_levels": {
     "checked": 7,
-    "in_sync": 7,
-    "drifted": [],
+    "in_sync": 6,
+    "drifted": [
+      "XLM"
+    ],
     "reconciling": [],
-    "detail": []
+    "detail": [
+      {
+        "coin": "XLM",
+        "trade_id": "XLMUSDT_20260705_CJ_001",
+        "status": "PENDING",
+        "fields": [
+          "tp1"
+        ],
+        "synced_at": null
+      }
+    ]
   },
   "api_keys": [
     {
@@ -82,7 +94,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$1,538.57",
+      "value": "$1,538.49",
       "status": "ok",
       "action": null
     },
@@ -342,8 +354,8 @@
       "direction": "Long",
       "entry_price": 0.16649156,
       "sl": 0.1605236,
-      "tp1": 0.2046646,
-      "tp2": 0.27475281,
+      "tp1": 0.2119,
+      "tp2": 0.2453,
       "capital_usd": 76.95,
       "leverage": 3,
       "trading_system": "John",
@@ -389,7 +401,7 @@
       "direction": "Long",
       "trading_system": "John",
       "entry_price": 0.16649156,
-      "tp1": 0.2046646,
+      "tp1": 0.2119,
       "sl": 0.1605236,
       "conviction": "HIGH",
       "track_only": false,
