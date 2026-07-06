@@ -1,19 +1,86 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-07-06T16:36:15Z",
+  "last_updated_iso": "2026-07-06T16:48:56Z",
   "mexc_account": {
-    "unrealized_pnl": -11.0686,
-    "equity": 1502.9711,
+    "unrealized_pnl": -18.2986,
+    "equity": 1495.7411,
     "available": 587.1647,
     "position_margin": 0.0
   },
   "order_levels": {
     "checked": 12,
-    "in_sync": 12,
-    "drifted": [],
+    "in_sync": 6,
+    "drifted": [
+      "AVAX",
+      "TAO",
+      "SUI",
+      "LTC",
+      "XRP",
+      "LINK"
+    ],
     "reconciling": [],
-    "detail": []
+    "detail": [
+      {
+        "coin": "AVAX",
+        "trade_id": "AVAXUSDT_20260706_CB_001",
+        "status": "OPEN",
+        "fields": [
+          "tp1",
+          "tp2"
+        ],
+        "synced_at": null
+      },
+      {
+        "coin": "TAO",
+        "trade_id": "TAOUSDT_20260706_CB_001",
+        "status": "OPEN",
+        "fields": [
+          "tp2"
+        ],
+        "synced_at": null
+      },
+      {
+        "coin": "SUI",
+        "trade_id": "SUIUSDT_20260706_CB_001",
+        "status": "OPEN",
+        "fields": [
+          "tp1",
+          "tp2"
+        ],
+        "synced_at": null
+      },
+      {
+        "coin": "LTC",
+        "trade_id": "LTCUSDT_20260706_CB_001",
+        "status": "OPEN",
+        "fields": [
+          "tp1",
+          "tp2"
+        ],
+        "synced_at": null
+      },
+      {
+        "coin": "XRP",
+        "trade_id": "XRPUSDT_20260706_CB_001",
+        "status": "OPEN",
+        "fields": [
+          "tp1",
+          "tp2"
+        ],
+        "synced_at": null
+      },
+      {
+        "coin": "LINK",
+        "trade_id": "LINKUSDT_20260706_CB_001",
+        "status": "OPEN",
+        "fields": [
+          "tp1",
+          "tp2"
+        ],
+        "synced_at": null
+      }
+    ]
   },
   "api_keys": [
     {
@@ -82,7 +149,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$1,502.97",
+      "value": "$1,495.74",
       "status": "ok",
       "action": null
     },
@@ -310,8 +377,8 @@
       "direction": "Short",
       "entry_price": 6.87020669,
       "sl": 7.04907039,
-      "tp1": 6.38768454,
-      "tp2": 5.56307844,
+      "tp1": 6.098,
+      "tp2": 5.825,
       "capital_usd": 77.52,
       "leverage": 3,
       "trading_system": "Braam",
@@ -343,7 +410,7 @@
       "entry_price": 212.75288707,
       "sl": 219.06398424,
       "tp1": 201.19669477,
-      "tp2": 161.9478198,
+      "tp2": 186.7,
       "capital_usd": 77.52,
       "leverage": 3,
       "trading_system": "Braam",
@@ -406,8 +473,8 @@
       "direction": "Short",
       "entry_price": 0.74715982,
       "sl": 0.76896641,
-      "tp1": 0.6575799,
-      "tp2": 0.56267761,
+      "tp1": 0.683,
+      "tp2": 0.5983,
       "capital_usd": 77.15,
       "leverage": 3,
       "trading_system": "Braam",
@@ -438,8 +505,8 @@
       "direction": "Short",
       "entry_price": 44.58823812,
       "sl": 45.73137447,
-      "tp1": 39.90979846,
-      "tp2": 35.44591423,
+      "tp1": 41.57,
+      "tp2": 37.25,
       "capital_usd": 77.15,
       "leverage": 3,
       "trading_system": "Braam",
@@ -470,8 +537,8 @@
       "direction": "Short",
       "entry_price": 1.13207803,
       "sl": 1.15968249,
-      "tp1": 1.08502142,
-      "tp2": 0.95077672,
+      "tp1": 1.0584,
+      "tp2": 0.7451,
       "capital_usd": 77.24,
       "leverage": 3,
       "trading_system": "Braam",
@@ -502,8 +569,8 @@
       "direction": "Short",
       "entry_price": 7.90087631,
       "sl": 8.08966912,
-      "tp1": 7.06802246,
-      "tp2": 6.18748534,
+      "tp1": 7.115,
+      "tp2": 5.981,
       "capital_usd": 76.64,
       "leverage": 3,
       "trading_system": "Braam",
@@ -1801,15 +1868,7 @@
       "rehearsal": false
     }
   ],
-  "recent_cancels": [
-    {
-      "coin": "NEARUSDT",
-      "direction": "Long",
-      "trading_system": "John",
-      "close_reason": "Stale 12.6h \u2265 12h grace: Price $1.9860 is 10.4% above entry $1.7797",
-      "iso": "2026-07-06T04:37:00Z"
-    }
-  ],
+  "recent_cancels": [],
   "tp1_hits_open": [],
   "stats": {
     "realized_pnl_usd": -146.93,
