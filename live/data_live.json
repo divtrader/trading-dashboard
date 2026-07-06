@@ -1,16 +1,16 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-07-06T21:18:00Z",
+  "last_updated_iso": "2026-07-06T22:05:30Z",
   "mexc_account": {
-    "unrealized_pnl": -11.6929,
-    "equity": 1474.4172,
-    "available": 940.2007,
+    "unrealized_pnl": -8.9342,
+    "equity": 1477.1759,
+    "available": 1020.2891,
     "position_margin": 0.0
   },
   "order_levels": {
-    "checked": 7,
-    "in_sync": 7,
+    "checked": 6,
+    "in_sync": 6,
     "drifted": [],
     "reconciling": [],
     "detail": []
@@ -82,7 +82,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$1,474.42",
+      "value": "$1,477.18",
       "status": "ok",
       "action": null
     },
@@ -98,7 +98,7 @@
       "key": "orphan_orders",
       "tier": 1,
       "label": "Order reconciliation",
-      "value": "in sync (2 resting = journal)",
+      "value": "in sync (1 resting = journal)",
       "status": "ok",
       "action": null
     },
@@ -144,38 +144,6 @@
     }
   ],
   "active_trades": [
-    {
-      "trade_id": "HBARUSDT_20260624_CB_001",
-      "coin": "HBARUSDT",
-      "direction": "Short",
-      "entry_price": 0.07765433,
-      "sl": 0.07967717,
-      "tp1": 0.07287206,
-      "tp2": 0.06345355,
-      "capital_usd": 79.67,
-      "leverage": 3,
-      "trading_system": "Braam",
-      "track_only": false,
-      "status": "PENDING",
-      "price_at_run": 0.07643,
-      "date_activated": null,
-      "time_activated_utc": null,
-      "date_opened": "2026-06-24",
-      "time_opened_utc": "22:03",
-      "conviction": "MEDIUM",
-      "tp1_hit": false,
-      "sl_moved_to_be": false,
-      "pnl_tp1_realized_usd": null,
-      "tp2_hit": false,
-      "live_executed": null,
-      "live_entry_fill": null,
-      "live_exit_fill": null,
-      "live_entry_slippage_pct": null,
-      "live_fees_usd": null,
-      "live_funding_usd": null,
-      "live_tp1_pnl_usd": null,
-      "rehearsal": false
-    },
     {
       "trade_id": "ALGOUSDT_20260625_CB_001",
       "coin": "ALGOUSDT",
@@ -253,7 +221,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 64300.0,
+      "price_at_run": 64406.01,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-07-05",
@@ -1736,7 +1704,15 @@
       "rehearsal": false
     }
   ],
-  "recent_cancels": [],
+  "recent_cancels": [
+    {
+      "coin": "HBARUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "close_reason": "Entry window expired: unfilled 12.0d \u2265 72\u00d74H (288h) \u2014 mirrors backtest ENTRY_WIN",
+      "iso": "2026-07-06T22:03:00Z"
+    }
+  ],
   "tp1_hits_open": [],
   "stats": {
     "realized_pnl_usd": -175.68,
