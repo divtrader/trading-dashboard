@@ -1,16 +1,16 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-07-05T23:42:35Z",
+  "last_updated_iso": "2026-07-06T04:38:27Z",
   "mexc_account": {
-    "unrealized_pnl": -4.8842,
-    "equity": 1523.704,
-    "available": 1067.4198,
+    "unrealized_pnl": 4.0306,
+    "equity": 1532.6837,
+    "available": 1144.3921,
     "position_margin": 0.0
   },
   "order_levels": {
-    "checked": 6,
-    "in_sync": 6,
+    "checked": 5,
+    "in_sync": 5,
     "drifted": [],
     "reconciling": [],
     "detail": []
@@ -20,28 +20,28 @@
       "label": "MEXC AlgoTrading sub-account (live orders)",
       "name": "MEXC_ALGO_KEY",
       "expires": "2026-08-27",
-      "days_left": 53,
+      "days_left": 52,
       "status": "ok"
     },
     {
       "label": "GitHub PAT (dashboard deploy)",
       "name": "DASHBOARD_PAT",
       "expires": "2026-07-30",
-      "days_left": 25,
+      "days_left": 24,
       "status": "ok"
     },
     {
       "label": "Google Drive OAuth (journal sync)",
       "name": "GDRIVE_OAUTH_TOKEN",
       "expires": "2026-07-30",
-      "days_left": 25,
+      "days_left": 24,
       "status": "ok"
     },
     {
       "label": "Telegram Bot (trade alerts)",
       "name": "TELEGRAM_TOKEN",
       "expires": "2126-01-01",
-      "days_left": 36339,
+      "days_left": 36338,
       "status": "ok"
     }
   ],
@@ -66,9 +66,9 @@
       "key": "daily_summary",
       "tier": 1,
       "label": "Daily summary",
-      "value": "sent today",
-      "status": "ok",
-      "action": null
+      "value": "overdue 1d",
+      "status": "warn",
+      "action": "Run daily_summary.yml manually from Actions."
     },
     {
       "key": "state_file",
@@ -82,7 +82,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$1,523.70",
+      "value": "$1,532.68",
       "status": "ok",
       "action": null
     },
@@ -98,7 +98,7 @@
       "key": "orphan_orders",
       "tier": 1,
       "label": "Order reconciliation",
-      "value": "in sync (3 resting = journal)",
+      "value": "in sync (2 resting = journal)",
       "status": "ok",
       "action": null
     },
@@ -114,7 +114,7 @@
       "key": "apikey_MEXC_ALGO_KEY",
       "tier": 1,
       "label": "MEXC AlgoTrading sub-account (live orders)",
-      "value": "53d left (2026-08-27)",
+      "value": "52d left (2026-08-27)",
       "status": "ok",
       "action": null
     },
@@ -122,7 +122,7 @@
       "key": "apikey_DASHBOARD_PAT",
       "tier": 1,
       "label": "GitHub PAT (dashboard deploy)",
-      "value": "25d left (2026-07-30)",
+      "value": "24d left (2026-07-30)",
       "status": "ok",
       "action": null
     },
@@ -130,7 +130,7 @@
       "key": "apikey_GDRIVE_OAUTH_TOKEN",
       "tier": 1,
       "label": "Google Drive OAuth (journal sync)",
-      "value": "25d left (2026-07-30)",
+      "value": "24d left (2026-07-30)",
       "status": "ok",
       "action": null
     },
@@ -138,7 +138,7 @@
       "key": "apikey_TELEGRAM_TOKEN",
       "tier": 1,
       "label": "Telegram Bot (trade alerts)",
-      "value": "36339d left (2126-01-01)",
+      "value": "36338d left (2126-01-01)",
       "status": "ok",
       "action": null
     }
@@ -253,7 +253,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "OPEN",
-      "price_at_run": 1788.65,
+      "price_at_run": 1779.19,
       "date_activated": "2026-07-04",
       "time_activated_utc": "15:09",
       "date_opened": "2026-07-02",
@@ -285,7 +285,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 63661.99,
+      "price_at_run": 63294.66,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-07-05",
@@ -303,55 +303,9 @@
       "live_funding_usd": null,
       "live_tp1_pnl_usd": null,
       "rehearsal": false
-    },
-    {
-      "trade_id": "NEARUSDT_20260705_CJ_001",
-      "coin": "NEARUSDT",
-      "direction": "Long",
-      "entry_price": 1.77975,
-      "sl": 1.72753832,
-      "tp1": 2.09886471,
-      "tp2": 2.47292336,
-      "capital_usd": 76.71,
-      "leverage": 3,
-      "trading_system": "John",
-      "track_only": false,
-      "status": "PENDING",
-      "price_at_run": 2.015,
-      "date_activated": null,
-      "time_activated_utc": null,
-      "date_opened": "2026-07-05",
-      "time_opened_utc": "14:05",
-      "conviction": "HIGH",
-      "tp1_hit": false,
-      "sl_moved_to_be": null,
-      "pnl_tp1_realized_usd": null,
-      "tp2_hit": false,
-      "live_executed": null,
-      "live_entry_fill": null,
-      "live_exit_fill": null,
-      "live_entry_slippage_pct": null,
-      "live_fees_usd": null,
-      "live_funding_usd": null,
-      "live_tp1_pnl_usd": null,
-      "rehearsal": false
     }
   ],
-  "recent_signals": [
-    {
-      "trade_id": "NEARUSDT_20260705_CJ_001",
-      "coin": "NEARUSDT",
-      "direction": "Long",
-      "trading_system": "John",
-      "entry_price": 1.77975,
-      "tp1": 2.09886471,
-      "sl": 1.72753832,
-      "conviction": "HIGH",
-      "track_only": false,
-      "iso": "2026-07-05T14:05:00Z",
-      "rehearsal": false
-    }
-  ],
+  "recent_signals": [],
   "recent_opens": [
     {
       "trade_id": "ETHUSDT_20260702_CJ_001",
@@ -1491,18 +1445,11 @@
   ],
   "recent_cancels": [
     {
-      "coin": "TRXUSDT",
-      "direction": "Short",
-      "trading_system": "Braam",
-      "close_reason": "Signal direction flipped to Long (5/8 signals) \u2014 original setup no longer valid",
-      "iso": "2026-07-05T12:14:00Z"
-    },
-    {
-      "coin": "XLMUSDT",
+      "coin": "NEARUSDT",
       "direction": "Long",
       "trading_system": "John",
-      "close_reason": "BTC entered full BEAR regime and XLMUSDT has 82% BTC correlation \u2014 active Long n",
-      "iso": "2026-07-05T16:03:00Z"
+      "close_reason": "Stale 12.6h \u2265 12h grace: Price $1.9860 is 10.4% above entry $1.7797",
+      "iso": "2026-07-06T04:37:00Z"
     }
   ],
   "tp1_hits_open": [],
