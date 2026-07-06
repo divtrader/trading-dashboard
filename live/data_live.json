@@ -1,53 +1,19 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-07-06T12:25:13Z",
+  "last_updated_iso": "2026-07-06T12:29:45Z",
   "mexc_account": {
-    "unrealized_pnl": 15.5888,
-    "equity": 1543.8066,
-    "available": 600.1201,
+    "unrealized_pnl": 14.9031,
+    "equity": 1543.1209,
+    "available": 522.7097,
     "position_margin": 0.0
   },
   "order_levels": {
-    "checked": 12,
-    "in_sync": 9,
-    "drifted": [
-      "NEAR",
-      "ADA",
-      "BNB"
-    ],
+    "checked": 13,
+    "in_sync": 13,
+    "drifted": [],
     "reconciling": [],
-    "detail": [
-      {
-        "coin": "NEAR",
-        "trade_id": "NEARUSDT_20260706_CB_001",
-        "status": "OPEN",
-        "fields": [
-          "tp1",
-          "tp2"
-        ],
-        "synced_at": null
-      },
-      {
-        "coin": "ADA",
-        "trade_id": "ADAUSDT_20260706_CB_001",
-        "status": "OPEN",
-        "fields": [
-          "tp2"
-        ],
-        "synced_at": null
-      },
-      {
-        "coin": "BNB",
-        "trade_id": "BNBUSDT_20260706_CB_001",
-        "status": "OPEN",
-        "fields": [
-          "tp1",
-          "tp2"
-        ],
-        "synced_at": null
-      }
-    ]
+    "detail": []
   },
   "api_keys": [
     {
@@ -108,7 +74,7 @@
       "key": "state_file",
       "tier": 1,
       "label": "Trade journal",
-      "value": "OK (676 records)",
+      "value": "OK (677 records)",
       "status": "ok",
       "action": null
     },
@@ -116,7 +82,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$1,543.81",
+      "value": "$1,543.12",
       "status": "ok",
       "action": null
     },
@@ -132,7 +98,7 @@
       "key": "orphan_orders",
       "tier": 1,
       "label": "Order reconciliation",
-      "value": "in sync (6 resting = journal)",
+      "value": "in sync (7 resting = journal)",
       "status": "ok",
       "action": null
     },
@@ -287,7 +253,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "OPEN",
-      "price_at_run": 1748.94,
+      "price_at_run": 1748.43,
       "date_activated": "2026-07-04",
       "time_activated_utc": "15:09",
       "date_opened": "2026-07-02",
@@ -319,7 +285,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 62101.64,
+      "price_at_run": 62033.99,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-07-05",
@@ -561,6 +527,38 @@
       "live_funding_usd": null,
       "live_tp1_pnl_usd": null,
       "rehearsal": false
+    },
+    {
+      "trade_id": "XRPUSDT_20260706_CB_001",
+      "coin": "XRPUSDT",
+      "direction": "Short",
+      "entry_price": 1.13207803,
+      "sl": 1.15968249,
+      "tp1": 1.08502142,
+      "tp2": 0.95077672,
+      "capital_usd": 77.24,
+      "leverage": 3,
+      "trading_system": "Braam",
+      "track_only": false,
+      "status": "PENDING",
+      "price_at_run": 1.1276,
+      "date_activated": null,
+      "time_activated_utc": null,
+      "date_opened": "2026-07-06",
+      "time_opened_utc": "12:28",
+      "conviction": "MEDIUM",
+      "tp1_hit": false,
+      "sl_moved_to_be": false,
+      "pnl_tp1_realized_usd": null,
+      "tp2_hit": false,
+      "live_executed": null,
+      "live_entry_fill": null,
+      "live_exit_fill": null,
+      "live_entry_slippage_pct": null,
+      "live_fees_usd": null,
+      "live_funding_usd": null,
+      "live_tp1_pnl_usd": null,
+      "rehearsal": false
     }
   ],
   "recent_signals": [
@@ -614,6 +612,19 @@
       "conviction": "MEDIUM",
       "track_only": false,
       "iso": "2026-07-06T12:13:00Z",
+      "rehearsal": false
+    },
+    {
+      "trade_id": "XRPUSDT_20260706_CB_001",
+      "coin": "XRPUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "entry_price": 1.13207803,
+      "tp1": 1.08502142,
+      "sl": 1.15968249,
+      "conviction": "MEDIUM",
+      "track_only": false,
+      "iso": "2026-07-06T12:28:00Z",
       "rehearsal": false
     }
   ],
@@ -1822,8 +1833,8 @@
         "closed_count": 6
       }
     },
-    "live_trade_count_total": 109,
-    "live_real_count": 86,
+    "live_trade_count_total": 110,
+    "live_real_count": 87,
     "live_rehearsal_count": 23
   }
 }
