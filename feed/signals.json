@@ -1,9 +1,9 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-07-06T14:11Z",
+  "generated_utc": "2026-07-06T15:36Z",
   "master": "braam",
   "retention_hours": 48,
-  "trade_count": 18,
+  "trade_count": 19,
   "trades": [
     {
       "trade_id": "LINKUSDT_20260623_CB_001",
@@ -248,15 +248,15 @@
       "sl": 2.05675472,
       "tp1": 1.787,
       "tp2": 1.599,
-      "status": "OPEN",
+      "status": "STOPPED",
       "tp1_hit": false,
       "tp2_hit": false,
       "sl_hit": false,
-      "close_reason": null,
+      "close_reason": "live MEXC exit: sl @ 2.057",
       "date_opened": "2026-07-06",
       "time_opened_utc": "12:05",
       "sl_mode": "initial",
-      "feed_updated_utc": "2026-07-06T12:09Z"
+      "feed_updated_utc": "2026-07-06T15:27Z"
     },
     {
       "trade_id": "AVAXUSDT_20260706_CB_001",
@@ -418,6 +418,29 @@
       "time_opened_utc": "12:28",
       "sl_mode": "initial",
       "feed_updated_utc": "2026-07-06T12:28Z"
+    },
+    {
+      "trade_id": "LINKUSDT_20260706_CB_001",
+      "coin": "LINKUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "conviction": "MEDIUM",
+      "leverage": 3,
+      "entry_price": 7.90087631,
+      "entry_lo": 7.86137192,
+      "entry_hi": 7.94038069,
+      "sl": 8.08966912,
+      "tp1": 7.06802246,
+      "tp2": 6.18748534,
+      "status": "PENDING",
+      "tp1_hit": false,
+      "tp2_hit": false,
+      "sl_hit": false,
+      "close_reason": null,
+      "date_opened": "2026-07-06",
+      "time_opened_utc": "15:34",
+      "sl_mode": "initial",
+      "feed_updated_utc": "2026-07-06T15:34Z"
     }
   ]
 }

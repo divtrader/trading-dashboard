@@ -1,11 +1,11 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-07-06T14:10:59Z",
+  "last_updated_iso": "2026-07-06T15:36:37Z",
   "mexc_account": {
-    "unrealized_pnl": 16.794,
-    "equity": 1545.0118,
-    "available": 522.7097,
+    "unrealized_pnl": 14.249,
+    "equity": 1533.0313,
+    "available": 513.591,
     "position_margin": 0.0
   },
   "order_levels": {
@@ -74,7 +74,7 @@
       "key": "state_file",
       "tier": 1,
       "label": "Trade journal",
-      "value": "OK (677 records)",
+      "value": "OK (678 records)",
       "status": "ok",
       "action": null
     },
@@ -82,7 +82,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$1,545.01",
+      "value": "$1,533.03",
       "status": "ok",
       "action": null
     },
@@ -98,7 +98,7 @@
       "key": "orphan_orders",
       "tier": 1,
       "label": "Order reconciliation",
-      "value": "in sync (7 resting = journal)",
+      "value": "in sync (8 resting = journal)",
       "status": "ok",
       "action": null
     },
@@ -106,7 +106,7 @@
       "key": "position_protection",
       "tier": 1,
       "label": "Position protection",
-      "value": "all protected (6 open, 6 pre-TP1 runners)",
+      "value": "all protected (5 open, 5 pre-TP1 runners)",
       "status": "ok",
       "action": null
     },
@@ -253,7 +253,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "OPEN",
-      "price_at_run": 1744.32,
+      "price_at_run": 1763.3,
       "date_activated": "2026-07-04",
       "time_activated_utc": "15:09",
       "date_opened": "2026-07-02",
@@ -285,7 +285,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 61829.99,
+      "price_at_run": 62369.99,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-07-05",
@@ -300,38 +300,6 @@
       "live_exit_fill": null,
       "live_entry_slippage_pct": null,
       "live_fees_usd": null,
-      "live_funding_usd": null,
-      "live_tp1_pnl_usd": null,
-      "rehearsal": false
-    },
-    {
-      "trade_id": "NEARUSDT_20260706_CB_001",
-      "coin": "NEARUSDT",
-      "direction": "Short",
-      "entry_price": 1.97809266,
-      "sl": 2.05675472,
-      "tp1": 1.787,
-      "tp2": 1.599,
-      "capital_usd": 77.52,
-      "leverage": 3,
-      "trading_system": "Braam",
-      "track_only": false,
-      "status": "OPEN",
-      "price_at_run": 1.966,
-      "date_activated": "2026-07-06",
-      "time_activated_utc": "12:09",
-      "date_opened": "2026-07-06",
-      "time_opened_utc": "12:05",
-      "conviction": "MEDIUM",
-      "tp1_hit": false,
-      "sl_moved_to_be": false,
-      "pnl_tp1_realized_usd": null,
-      "tp2_hit": false,
-      "live_executed": true,
-      "live_entry_fill": 1.978,
-      "live_exit_fill": null,
-      "live_entry_slippage_pct": 0.0047,
-      "live_fees_usd": 0.1388,
       "live_funding_usd": null,
       "live_tp1_pnl_usd": null,
       "rehearsal": false
@@ -559,6 +527,38 @@
       "live_funding_usd": null,
       "live_tp1_pnl_usd": null,
       "rehearsal": false
+    },
+    {
+      "trade_id": "LINKUSDT_20260706_CB_001",
+      "coin": "LINKUSDT",
+      "direction": "Short",
+      "entry_price": 7.90087631,
+      "sl": 8.08966912,
+      "tp1": 7.06802246,
+      "tp2": 6.18748534,
+      "capital_usd": 76.64,
+      "leverage": 3,
+      "trading_system": "Braam",
+      "track_only": false,
+      "status": "PENDING",
+      "price_at_run": 7.898,
+      "date_activated": null,
+      "time_activated_utc": null,
+      "date_opened": "2026-07-06",
+      "time_opened_utc": "15:34",
+      "conviction": "MEDIUM",
+      "tp1_hit": false,
+      "sl_moved_to_be": false,
+      "pnl_tp1_realized_usd": null,
+      "tp2_hit": false,
+      "live_executed": null,
+      "live_entry_fill": null,
+      "live_exit_fill": null,
+      "live_entry_slippage_pct": null,
+      "live_fees_usd": null,
+      "live_funding_usd": null,
+      "live_tp1_pnl_usd": null,
+      "rehearsal": false
     }
   ],
   "recent_signals": [
@@ -626,21 +626,22 @@
       "track_only": false,
       "iso": "2026-07-06T12:28:00Z",
       "rehearsal": false
+    },
+    {
+      "trade_id": "LINKUSDT_20260706_CB_001",
+      "coin": "LINKUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "entry_price": 7.90087631,
+      "tp1": 7.06802246,
+      "sl": 8.08966912,
+      "conviction": "MEDIUM",
+      "track_only": false,
+      "iso": "2026-07-06T15:34:00Z",
+      "rehearsal": false
     }
   ],
   "recent_opens": [
-    {
-      "trade_id": "ETHUSDT_20260702_CJ_001",
-      "coin": "ETHUSDT",
-      "direction": "Short",
-      "trading_system": "John",
-      "entry_price": 1786.03462416,
-      "live_entry_fill": 1786.03,
-      "tp1_hit": false,
-      "iso": "2026-07-04T15:09:00Z",
-      "_iso_ms": 1783177740000,
-      "rehearsal": false
-    },
     {
       "trade_id": "ADAUSDT_20260706_CB_001",
       "coin": "ADAUSDT",
@@ -1799,6 +1800,25 @@
       "won": false,
       "close_iso": "2026-07-04T17:51:00Z",
       "rehearsal": false
+    },
+    {
+      "trade_id": "NEARUSDT_20260706_CB_001",
+      "coin": "NEARUSDT",
+      "direction": "Short",
+      "status": "STOPPED",
+      "pnl_usd": -9.57,
+      "close_reason": "live MEXC exit: sl @ 2.057",
+      "date_closed": "2026-07-06",
+      "time_closed_utc": "15:27",
+      "trading_system": "Braam",
+      "live_entry_fill": 1.978,
+      "live_exit_fill": 2.057,
+      "live_entry_slippage_pct": 0.0047,
+      "live_fees_usd": 0.3313,
+      "live_funding_usd": 0.0,
+      "won": false,
+      "close_iso": "2026-07-06T15:27:00Z",
+      "rehearsal": false
     }
   ],
   "recent_cancels": [
@@ -1812,20 +1832,20 @@
   ],
   "tp1_hits_open": [],
   "stats": {
-    "realized_pnl_usd": -133.19,
-    "realized_pnl_pct": -2.88,
+    "realized_pnl_usd": -142.76,
+    "realized_pnl_pct": -3.03,
     "peak_capital_usd": 1162.42,
     "peak_concurrent": 14,
     "peak_date": "2026-06-12",
     "deployed_trades": 65,
-    "return_on_peak_pct": -11.46,
-    "win_rate_pct": 28.8,
-    "closed_count": 59,
+    "return_on_peak_pct": -12.28,
+    "win_rate_pct": 28.3,
+    "closed_count": 60,
     "per_system": {
       "Braam": {
-        "realized_pnl_usd": -96.64,
-        "win_rate_pct": 32.1,
-        "closed_count": 53
+        "realized_pnl_usd": -106.21,
+        "win_rate_pct": 31.5,
+        "closed_count": 54
       },
       "John": {
         "realized_pnl_usd": -36.55,
@@ -1833,8 +1853,8 @@
         "closed_count": 6
       }
     },
-    "live_trade_count_total": 110,
-    "live_real_count": 87,
+    "live_trade_count_total": 111,
+    "live_real_count": 88,
     "live_rehearsal_count": 23
   }
 }
