@@ -1,9 +1,9 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-07-07T12:05Z",
+  "generated_utc": "2026-07-07T12:23Z",
   "master": "braam",
   "retention_hours": 48,
-  "trade_count": 24,
+  "trade_count": 23,
   "trades": [
     {
       "trade_id": "HBARUSDT_20260624_CB_001",
@@ -73,29 +73,6 @@
       "time_opened_utc": "04:04",
       "sl_mode": "breakeven",
       "feed_updated_utc": "2026-07-06T18:32Z"
-    },
-    {
-      "trade_id": "TRXUSDT_20260626_CB_001",
-      "coin": "TRXUSDT",
-      "direction": "Short",
-      "trading_system": "Braam",
-      "conviction": "MEDIUM",
-      "leverage": 3,
-      "entry_price": 0.32679843,
-      "entry_lo": 0.32516444,
-      "entry_hi": 0.32843243,
-      "sl": 0.33005995,
-      "tp1": 0.31671394,
-      "tp2": 0.28962689,
-      "status": "CANCELLED",
-      "tp1_hit": false,
-      "tp2_hit": false,
-      "sl_hit": false,
-      "close_reason": "Signal direction flipped to Long (5/8 signals) \u2014 original setup no longer valid",
-      "date_opened": "2026-06-26",
-      "time_opened_utc": "07:20",
-      "sl_mode": "initial",
-      "feed_updated_utc": "2026-07-05T12:14Z"
     },
     {
       "trade_id": "ETHUSDT_20260702_CJ_001",
