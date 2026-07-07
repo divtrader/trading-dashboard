@@ -1,9 +1,9 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-07-07T02:05Z",
+  "generated_utc": "2026-07-07T04:05Z",
   "master": "braam",
   "retention_hours": 48,
-  "trade_count": 18,
+  "trade_count": 20,
   "trades": [
     {
       "trade_id": "HBARUSDT_20260624_CB_001",
@@ -418,6 +418,52 @@
       "time_opened_utc": "00:03",
       "sl_mode": "initial",
       "feed_updated_utc": "2026-07-07T00:03Z"
+    },
+    {
+      "trade_id": "HBARUSDT_20260707_CB_001",
+      "coin": "HBARUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "conviction": "MEDIUM",
+      "leverage": 3,
+      "entry_price": 0.07405254,
+      "entry_lo": 0.07368228,
+      "entry_hi": 0.0744228,
+      "sl": 0.0763015,
+      "tp1": 0.06992791,
+      "tp2": 0.0609938,
+      "status": "PENDING",
+      "tp1_hit": false,
+      "tp2_hit": false,
+      "sl_hit": false,
+      "close_reason": null,
+      "date_opened": "2026-07-07",
+      "time_opened_utc": "04:03",
+      "sl_mode": "initial",
+      "feed_updated_utc": "2026-07-07T04:03Z"
+    },
+    {
+      "trade_id": "XLMUSDT_20260707_CB_001",
+      "coin": "XLMUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "conviction": "MEDIUM",
+      "leverage": 3,
+      "entry_price": 0.20064571,
+      "entry_lo": 0.19964249,
+      "entry_hi": 0.20164894,
+      "sl": 0.20848949,
+      "tp1": 0.15717495,
+      "tp2": 0.1253748,
+      "status": "PENDING",
+      "tp1_hit": false,
+      "tp2_hit": false,
+      "sl_hit": false,
+      "close_reason": null,
+      "date_opened": "2026-07-07",
+      "time_opened_utc": "04:03",
+      "sl_mode": "initial",
+      "feed_updated_utc": "2026-07-07T04:03Z"
     }
   ]
 }
