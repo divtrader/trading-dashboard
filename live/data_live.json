@@ -1,11 +1,11 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-07-07T08:06:04Z",
+  "last_updated_iso": "2026-07-07T10:06:02Z",
   "mexc_account": {
-    "unrealized_pnl": 23.4182,
-    "equity": 1513.2315,
-    "available": 538.2359,
+    "unrealized_pnl": 18.0995,
+    "equity": 1507.7769,
+    "available": 538.2813,
     "position_margin": 0.0
   },
   "order_levels": {
@@ -82,7 +82,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$1,513.23",
+      "value": "$1,507.78",
       "status": "ok",
       "action": null
     },
@@ -98,7 +98,7 @@
       "key": "orphan_orders",
       "tier": 1,
       "label": "Order reconciliation",
-      "value": "in sync (7 resting = journal)",
+      "value": "in sync (6 resting = journal)",
       "status": "ok",
       "action": null
     },
@@ -106,7 +106,7 @@
       "key": "position_protection",
       "tier": 1,
       "label": "Position protection",
-      "value": "all protected (6 open, 5 pre-TP1 runners)",
+      "value": "all protected (7 open, 6 pre-TP1 runners)",
       "status": "ok",
       "action": null
     },
@@ -221,7 +221,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 63092.04,
+      "price_at_run": 63358.14,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-07-05",
@@ -349,7 +349,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 1771.57,
+      "price_at_run": 1780.76,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-07-07",
@@ -508,10 +508,10 @@
       "leverage": 3,
       "trading_system": "Braam",
       "track_only": false,
-      "status": "PENDING",
+      "status": "OPEN",
       "price_at_run": 7.91,
-      "date_activated": null,
-      "time_activated_utc": null,
+      "date_activated": "2026-07-07",
+      "time_activated_utc": "10:02",
       "date_opened": "2026-07-07",
       "time_opened_utc": "08:03",
       "conviction": "MEDIUM",
@@ -519,11 +519,11 @@
       "sl_moved_to_be": false,
       "pnl_tp1_realized_usd": null,
       "tp2_hit": false,
-      "live_executed": null,
-      "live_entry_fill": null,
+      "live_executed": true,
+      "live_entry_fill": 7.925,
       "live_exit_fill": null,
-      "live_entry_slippage_pct": null,
-      "live_fees_usd": null,
+      "live_entry_slippage_pct": -0.0051,
+      "live_fees_usd": 0.1359,
       "live_funding_usd": null,
       "live_tp1_pnl_usd": null,
       "rehearsal": false
@@ -622,19 +622,6 @@
       "entry_price": 1.13433524,
       "tp1": 1.08511785,
       "sl": 1.16393818,
-      "conviction": "MEDIUM",
-      "track_only": false,
-      "iso": "2026-07-07T08:03:00Z",
-      "rehearsal": false
-    },
-    {
-      "trade_id": "LINKUSDT_20260707_CB_001",
-      "coin": "LINKUSDT",
-      "direction": "Short",
-      "trading_system": "Braam",
-      "entry_price": 7.92459365,
-      "tp1": 7.01,
-      "sl": 8.13642592,
       "conviction": "MEDIUM",
       "track_only": false,
       "iso": "2026-07-07T08:03:00Z",
@@ -760,6 +747,18 @@
       "tp1_hit": false,
       "iso": "2026-07-07T08:03:00Z",
       "_iso_ms": 1783411380000,
+      "rehearsal": false
+    },
+    {
+      "trade_id": "LINKUSDT_20260707_CB_001",
+      "coin": "LINKUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "entry_price": 7.92459365,
+      "live_entry_fill": 7.925,
+      "tp1_hit": false,
+      "iso": "2026-07-07T10:02:00Z",
+      "_iso_ms": 1783418520000,
       "rehearsal": false
     }
   ],
@@ -2019,15 +2018,7 @@
       "rehearsal": false
     }
   ],
-  "recent_cancels": [
-    {
-      "coin": "HBARUSDT",
-      "direction": "Short",
-      "trading_system": "Braam",
-      "close_reason": "Entry window expired: unfilled 12.0d \u2265 72\u00d74H (288h) \u2014 mirrors backtest ENTRY_WIN",
-      "iso": "2026-07-06T22:03:00Z"
-    }
-  ],
+  "recent_cancels": [],
   "tp1_hits_open": [
     {
       "coin": "DOGEUSDT",
@@ -2042,7 +2033,7 @@
     "peak_capital_usd": 1162.42,
     "peak_concurrent": 14,
     "peak_date": "2026-06-12",
-    "deployed_trades": 72,
+    "deployed_trades": 73,
     "return_on_peak_pct": -15.11,
     "win_rate_pct": 25.8,
     "closed_count": 66,
