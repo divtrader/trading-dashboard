@@ -1,9 +1,9 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-07-06T22:05Z",
+  "generated_utc": "2026-07-07T00:06Z",
   "master": "braam",
   "retention_hours": 48,
-  "trade_count": 17,
+  "trade_count": 18,
   "trades": [
     {
       "trade_id": "HBARUSDT_20260624_CB_001",
@@ -395,6 +395,29 @@
       "time_opened_utc": "15:34",
       "sl_mode": "initial",
       "feed_updated_utc": "2026-07-06T21:09Z"
+    },
+    {
+      "trade_id": "ETHUSDT_20260707_CJ_001",
+      "coin": "ETHUSDT",
+      "direction": "Short",
+      "trading_system": "John",
+      "conviction": "HIGH",
+      "leverage": 3,
+      "entry_price": 1880.7338125,
+      "entry_lo": 1822.597375,
+      "entry_hi": 1900.112625,
+      "sl": 1909.99363151,
+      "tp1": 1682.55431161,
+      "tp2": 1577.61273698,
+      "status": "PENDING",
+      "tp1_hit": false,
+      "tp2_hit": false,
+      "sl_hit": false,
+      "close_reason": null,
+      "date_opened": "2026-07-07",
+      "time_opened_utc": "00:03",
+      "sl_mode": "initial",
+      "feed_updated_utc": "2026-07-07T00:03Z"
     }
   ]
 }

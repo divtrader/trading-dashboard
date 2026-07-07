@@ -1,16 +1,16 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-07-06T22:05:30Z",
+  "last_updated_iso": "2026-07-07T00:05:50Z",
   "mexc_account": {
-    "unrealized_pnl": -8.9342,
-    "equity": 1477.1759,
-    "available": 1020.2891,
+    "unrealized_pnl": 1.5678,
+    "equity": 1487.7582,
+    "available": 951.0312,
     "position_margin": 0.0
   },
   "order_levels": {
-    "checked": 6,
-    "in_sync": 6,
+    "checked": 7,
+    "in_sync": 7,
     "drifted": [],
     "reconciling": [],
     "detail": []
@@ -20,28 +20,28 @@
       "label": "MEXC AlgoTrading sub-account (live orders)",
       "name": "MEXC_ALGO_KEY",
       "expires": "2026-08-27",
-      "days_left": 52,
+      "days_left": 51,
       "status": "ok"
     },
     {
       "label": "GitHub PAT (dashboard deploy)",
       "name": "DASHBOARD_PAT",
       "expires": "2026-07-30",
-      "days_left": 24,
+      "days_left": 23,
       "status": "ok"
     },
     {
       "label": "Google Drive OAuth (journal sync)",
       "name": "GDRIVE_OAUTH_TOKEN",
       "expires": "2026-07-30",
-      "days_left": 24,
+      "days_left": 23,
       "status": "ok"
     },
     {
       "label": "Telegram Bot (trade alerts)",
       "name": "TELEGRAM_TOKEN",
       "expires": "2126-01-01",
-      "days_left": 36338,
+      "days_left": 36337,
       "status": "ok"
     }
   ],
@@ -66,15 +66,15 @@
       "key": "daily_summary",
       "tier": 1,
       "label": "Daily summary",
-      "value": "sent today",
-      "status": "ok",
-      "action": null
+      "value": "overdue 1d",
+      "status": "warn",
+      "action": "Run daily_summary.yml manually from Actions."
     },
     {
       "key": "state_file",
       "tier": 1,
       "label": "Trade journal",
-      "value": "OK (679 records)",
+      "value": "OK (681 records)",
       "status": "ok",
       "action": null
     },
@@ -82,7 +82,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$1,477.18",
+      "value": "$1,487.76",
       "status": "ok",
       "action": null
     },
@@ -98,7 +98,7 @@
       "key": "orphan_orders",
       "tier": 1,
       "label": "Order reconciliation",
-      "value": "in sync (1 resting = journal)",
+      "value": "in sync (2 resting = journal)",
       "status": "ok",
       "action": null
     },
@@ -114,7 +114,7 @@
       "key": "apikey_MEXC_ALGO_KEY",
       "tier": 1,
       "label": "MEXC AlgoTrading sub-account (live orders)",
-      "value": "52d left (2026-08-27)",
+      "value": "51d left (2026-08-27)",
       "status": "ok",
       "action": null
     },
@@ -122,7 +122,7 @@
       "key": "apikey_DASHBOARD_PAT",
       "tier": 1,
       "label": "GitHub PAT (dashboard deploy)",
-      "value": "24d left (2026-07-30)",
+      "value": "23d left (2026-07-30)",
       "status": "ok",
       "action": null
     },
@@ -130,7 +130,7 @@
       "key": "apikey_GDRIVE_OAUTH_TOKEN",
       "tier": 1,
       "label": "Google Drive OAuth (journal sync)",
-      "value": "24d left (2026-07-30)",
+      "value": "23d left (2026-07-30)",
       "status": "ok",
       "action": null
     },
@@ -138,7 +138,7 @@
       "key": "apikey_TELEGRAM_TOKEN",
       "tier": 1,
       "label": "Telegram Bot (trade alerts)",
-      "value": "36338d left (2126-01-01)",
+      "value": "36337d left (2126-01-01)",
       "status": "ok",
       "action": null
     }
@@ -221,7 +221,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 64406.01,
+      "price_at_run": 64043.79,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-07-05",
@@ -335,9 +335,55 @@
       "live_funding_usd": null,
       "live_tp1_pnl_usd": null,
       "rehearsal": false
+    },
+    {
+      "trade_id": "ETHUSDT_20260707_CJ_001",
+      "coin": "ETHUSDT",
+      "direction": "Short",
+      "entry_price": 1880.7338125,
+      "sl": 1909.99363151,
+      "tp1": 1682.55431161,
+      "tp2": 1577.61273698,
+      "capital_usd": 74.44,
+      "leverage": 3,
+      "trading_system": "John",
+      "track_only": false,
+      "status": "PENDING",
+      "price_at_run": 1799.2,
+      "date_activated": null,
+      "time_activated_utc": null,
+      "date_opened": "2026-07-07",
+      "time_opened_utc": "00:03",
+      "conviction": "HIGH",
+      "tp1_hit": false,
+      "sl_moved_to_be": null,
+      "pnl_tp1_realized_usd": null,
+      "tp2_hit": false,
+      "live_executed": null,
+      "live_entry_fill": null,
+      "live_exit_fill": null,
+      "live_entry_slippage_pct": null,
+      "live_fees_usd": null,
+      "live_funding_usd": null,
+      "live_tp1_pnl_usd": null,
+      "rehearsal": false
     }
   ],
-  "recent_signals": [],
+  "recent_signals": [
+    {
+      "trade_id": "ETHUSDT_20260707_CJ_001",
+      "coin": "ETHUSDT",
+      "direction": "Short",
+      "trading_system": "John",
+      "entry_price": 1880.7338125,
+      "tp1": 1682.55431161,
+      "sl": 1909.99363151,
+      "conviction": "HIGH",
+      "track_only": false,
+      "iso": "2026-07-07T00:03:00Z",
+      "rehearsal": false
+    }
+  ],
   "recent_opens": [
     {
       "trade_id": "ADAUSDT_20260706_CB_001",
@@ -1736,8 +1782,8 @@
         "closed_count": 7
       }
     },
-    "live_trade_count_total": 111,
-    "live_real_count": 88,
+    "live_trade_count_total": 112,
+    "live_real_count": 89,
     "live_rehearsal_count": 23
   }
 }
