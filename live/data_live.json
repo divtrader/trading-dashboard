@@ -1,10 +1,10 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-07-07T05:54:25Z",
+  "last_updated_iso": "2026-07-07T06:05:50Z",
   "mexc_account": {
-    "unrealized_pnl": 21.4932,
-    "equity": 1511.5541,
+    "unrealized_pnl": 23.2595,
+    "equity": 1513.3204,
     "available": 841.6111,
     "position_margin": 0.0
   },
@@ -58,7 +58,7 @@
       "key": "cron_watchlist",
       "tier": 1,
       "label": "Last cloud run",
-      "value": "1.8h ago",
+      "value": "0.0h ago",
       "status": "ok",
       "action": null
     },
@@ -82,7 +82,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$1,511.55",
+      "value": "$1,513.32",
       "status": "ok",
       "action": null
     },
@@ -181,7 +181,7 @@
       "coin": "DOGEUSDT",
       "direction": "Short",
       "entry_price": 0.07718084,
-      "sl": 0.08010774,
+      "sl": 0.07718084,
       "tp1": 0.07452,
       "tp2": 0.07171,
       "capital_usd": 79.56,
@@ -195,17 +195,17 @@
       "date_opened": "2026-06-26",
       "time_opened_utc": "04:04",
       "conviction": "MEDIUM",
-      "tp1_hit": false,
+      "tp1_hit": true,
       "sl_moved_to_be": false,
-      "pnl_tp1_realized_usd": null,
+      "pnl_tp1_realized_usd": 4.26,
       "tp2_hit": false,
       "live_executed": true,
       "live_entry_fill": 0.07718,
       "live_exit_fill": null,
       "live_entry_slippage_pct": 0.0011,
-      "live_fees_usd": 0.1389,
+      "live_fees_usd": 0.2283,
       "live_funding_usd": null,
-      "live_tp1_pnl_usd": null,
+      "live_tp1_pnl_usd": 3.96,
       "rehearsal": false
     },
     {
@@ -221,7 +221,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 63154.92,
+      "price_at_run": 63200.0,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-07-05",
@@ -349,7 +349,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 1769.51,
+      "price_at_run": 1773.61,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-07-07",
@@ -1849,7 +1849,14 @@
       "iso": "2026-07-06T22:03:00Z"
     }
   ],
-  "tp1_hits_open": [],
+  "tp1_hits_open": [
+    {
+      "coin": "DOGEUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "entry_price": 0.07718084
+    }
+  ],
   "stats": {
     "realized_pnl_usd": -175.68,
     "realized_pnl_pct": -3.4,
