@@ -1,16 +1,16 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-07-08T08:06:06Z",
+  "last_updated_iso": "2026-07-08T08:45:57Z",
   "mexc_account": {
-    "unrealized_pnl": 62.8785,
-    "equity": 1556.2422,
-    "available": 502.4684,
+    "unrealized_pnl": 70.19,
+    "equity": 1576.5309,
+    "available": 592.0878,
     "position_margin": 0.0
   },
   "order_levels": {
-    "checked": 14,
-    "in_sync": 14,
+    "checked": 13,
+    "in_sync": 13,
     "drifted": [],
     "reconciling": [],
     "detail": []
@@ -82,7 +82,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$1,556.24",
+      "value": "$1,576.53",
       "status": "ok",
       "action": null
     },
@@ -106,7 +106,7 @@
       "key": "position_protection",
       "tier": 1,
       "label": "Position protection",
-      "value": "all protected (8 open, 6 pre-TP1 runners)",
+      "value": "all protected (7 open, 5 pre-TP1 runners)",
       "status": "ok",
       "action": null
     },
@@ -177,38 +177,6 @@
       "rehearsal": false
     },
     {
-      "trade_id": "DOGEUSDT_20260626_CB_001",
-      "coin": "DOGEUSDT",
-      "direction": "Short",
-      "entry_price": 0.07718084,
-      "sl": 0.07532954,
-      "tp1": 0.07452,
-      "tp2": 0.07171,
-      "capital_usd": 79.56,
-      "leverage": 3,
-      "trading_system": "Braam",
-      "track_only": false,
-      "status": "OPEN",
-      "price_at_run": 0.07458,
-      "date_activated": "2026-07-03",
-      "time_activated_utc": "15:08",
-      "date_opened": "2026-06-26",
-      "time_opened_utc": "04:04",
-      "conviction": "MEDIUM",
-      "tp1_hit": true,
-      "sl_moved_to_be": false,
-      "pnl_tp1_realized_usd": 4.26,
-      "tp2_hit": false,
-      "live_executed": true,
-      "live_entry_fill": 0.07718,
-      "live_exit_fill": null,
-      "live_entry_slippage_pct": 0.0011,
-      "live_fees_usd": 0.2283,
-      "live_funding_usd": null,
-      "live_tp1_pnl_usd": 3.96,
-      "rehearsal": false
-    },
-    {
       "trade_id": "BTCUSDT_20260705_CJ_001",
       "coin": "BTCUSDT",
       "direction": "Short",
@@ -221,7 +189,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 62886.94,
+      "price_at_run": 61917.99,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-07-05",
@@ -277,7 +245,7 @@
       "coin": "SUIUSDT",
       "direction": "Short",
       "entry_price": 0.74715982,
-      "sl": 0.74615425,
+      "sl": 0.73349323,
       "tp1": 0.7225,
       "tp2": 0.6812,
       "capital_usd": 77.15,
@@ -349,7 +317,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 1756.26,
+      "price_at_run": 1727.47,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-07-07",
@@ -469,7 +437,7 @@
       "coin": "XRPUSDT",
       "direction": "Short",
       "entry_price": 1.13433524,
-      "sl": 1.16393818,
+      "sl": 1.1177495,
       "tp1": 1.08511785,
       "tp2": 1.0356,
       "capital_usd": 75.62,
@@ -483,17 +451,17 @@
       "date_opened": "2026-07-07",
       "time_opened_utc": "08:03",
       "conviction": "MEDIUM",
-      "tp1_hit": false,
+      "tp1_hit": true,
       "sl_moved_to_be": false,
-      "pnl_tp1_realized_usd": null,
+      "pnl_tp1_realized_usd": 5.14,
       "tp2_hit": false,
       "live_executed": true,
       "live_entry_fill": 1.1343,
       "live_exit_fill": null,
       "live_entry_slippage_pct": 0.0031,
-      "live_fees_usd": 0.1354,
+      "live_fees_usd": 0.2222,
       "live_funding_usd": null,
-      "live_tp1_pnl_usd": null,
+      "live_tp1_pnl_usd": 4.93,
       "rehearsal": false
     },
     {
@@ -748,7 +716,7 @@
       "trading_system": "Braam",
       "entry_price": 1.13433524,
       "live_entry_fill": 1.1343,
-      "tp1_hit": false,
+      "tp1_hit": true,
       "iso": "2026-07-07T16:52:00Z",
       "_iso_ms": 1783443120000,
       "rehearsal": false
@@ -2008,38 +1976,57 @@
       "won": false,
       "close_iso": "2026-07-06T21:10:00Z",
       "rehearsal": false
+    },
+    {
+      "trade_id": "DOGEUSDT_20260626_CB_001",
+      "coin": "DOGEUSDT",
+      "direction": "Short",
+      "status": "TP2_HIT",
+      "pnl_usd": 11.64,
+      "close_reason": "live MEXC exit: tp2 @ 0.0717",
+      "date_closed": "2026-07-08",
+      "time_closed_utc": "08:17",
+      "trading_system": "Braam",
+      "live_entry_fill": 0.07718,
+      "live_exit_fill": 0.0717,
+      "live_entry_slippage_pct": 0.0011,
+      "live_fees_usd": 0.3143,
+      "live_funding_usd": 0.228635,
+      "won": true,
+      "close_iso": "2026-07-08T08:17:00Z",
+      "rehearsal": false
     }
   ],
   "recent_cancels": [],
   "tp1_hits_open": [
     {
-      "coin": "DOGEUSDT",
-      "direction": "Short",
-      "trading_system": "Braam",
-      "entry_price": 0.07718084
-    },
-    {
       "coin": "SUIUSDT",
       "direction": "Short",
       "trading_system": "Braam",
       "entry_price": 0.74715982
+    },
+    {
+      "coin": "XRPUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "entry_price": 1.13433524
     }
   ],
   "stats": {
-    "realized_pnl_usd": -175.68,
-    "realized_pnl_pct": -3.4,
+    "realized_pnl_usd": -164.05,
+    "realized_pnl_pct": -3.13,
     "peak_capital_usd": 1162.42,
     "peak_concurrent": 14,
     "peak_date": "2026-06-12",
     "deployed_trades": 74,
-    "return_on_peak_pct": -15.11,
-    "win_rate_pct": 25.8,
-    "closed_count": 66,
+    "return_on_peak_pct": -14.11,
+    "win_rate_pct": 26.9,
+    "closed_count": 67,
     "per_system": {
       "Braam": {
-        "realized_pnl_usd": -135.35,
-        "win_rate_pct": 28.8,
-        "closed_count": 59
+        "realized_pnl_usd": -123.72,
+        "win_rate_pct": 30.0,
+        "closed_count": 60
       },
       "John": {
         "realized_pnl_usd": -40.33,
