@@ -1,9 +1,9 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-07-08T06:06Z",
+  "generated_utc": "2026-07-08T08:06Z",
   "master": "braam",
   "retention_hours": 48,
-  "trade_count": 21,
+  "trade_count": 22,
   "trades": [
     {
       "trade_id": "HBARUSDT_20260624_CB_001",
@@ -61,7 +61,7 @@
       "entry_price": 0.07718084,
       "entry_lo": 0.07679493,
       "entry_hi": 0.07756674,
-      "sl": 0.07547643,
+      "sl": 0.07532954,
       "tp1": 0.07452,
       "tp2": 0.07171,
       "status": "OPEN",
@@ -487,6 +487,29 @@
       "time_opened_utc": "08:03",
       "sl_mode": "initial",
       "feed_updated_utc": "2026-07-07T12:03Z"
+    },
+    {
+      "trade_id": "NEARUSDT_20260708_CB_001",
+      "coin": "NEARUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "conviction": "MEDIUM",
+      "leverage": 3,
+      "entry_price": 1.99291228,
+      "entry_lo": 1.98294772,
+      "entry_hi": 2.00287684,
+      "sl": 2.08642606,
+      "tp1": 1.723,
+      "tp2": 1.31474286,
+      "status": "PENDING",
+      "tp1_hit": false,
+      "tp2_hit": false,
+      "sl_hit": false,
+      "close_reason": null,
+      "date_opened": "2026-07-08",
+      "time_opened_utc": "08:03",
+      "sl_mode": "initial",
+      "feed_updated_utc": "2026-07-08T08:03Z"
     }
   ]
 }
