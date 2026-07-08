@@ -1,9 +1,9 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-07-08T18:06Z",
+  "generated_utc": "2026-07-08T20:06Z",
   "master": "braam",
   "retention_hours": 48,
-  "trade_count": 22,
+  "trade_count": 23,
   "trades": [
     {
       "trade_id": "HBARUSDT_20260624_CB_001",
@@ -510,6 +510,29 @@
       "time_opened_utc": "16:04",
       "sl_mode": "initial",
       "feed_updated_utc": "2026-07-08T16:04Z"
+    },
+    {
+      "trade_id": "DOGEUSDT_20260708_CB_001",
+      "coin": "DOGEUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "conviction": "MEDIUM",
+      "leverage": 3,
+      "entry_price": 0.07441592,
+      "entry_lo": 0.07404384,
+      "entry_hi": 0.074788,
+      "sl": 0.07651872,
+      "tp1": 0.06986835,
+      "tp2": 0.05993789,
+      "status": "PENDING",
+      "tp1_hit": false,
+      "tp2_hit": false,
+      "sl_hit": false,
+      "close_reason": null,
+      "date_opened": "2026-07-08",
+      "time_opened_utc": "20:04",
+      "sl_mode": "initial",
+      "feed_updated_utc": "2026-07-08T20:04Z"
     }
   ]
 }
