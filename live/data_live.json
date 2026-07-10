@@ -1,19 +1,33 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-07-10T08:06:23Z",
+  "last_updated_iso": "2026-07-10T08:56:04Z",
   "mexc_account": {
-    "unrealized_pnl": 21.8618,
-    "equity": 1554.8757,
-    "available": 577.1247,
+    "unrealized_pnl": 14.1033,
+    "equity": 1549.029,
+    "available": 616.7712,
     "position_margin": 0.0
   },
   "order_levels": {
-    "checked": 14,
-    "in_sync": 14,
-    "drifted": [],
-    "reconciling": [],
-    "detail": []
+    "checked": 13,
+    "in_sync": 12,
+    "drifted": [
+      "TAO"
+    ],
+    "reconciling": [
+      "XRP"
+    ],
+    "detail": [
+      {
+        "coin": "TAO",
+        "trade_id": "TAOUSDT_20260708_CB_001",
+        "status": "OPEN",
+        "fields": [
+          "tp1"
+        ],
+        "synced_at": "2026-07-09T16:04:36.285353+00:00"
+      }
+    ]
   },
   "api_keys": [
     {
@@ -82,7 +96,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$1,554.88",
+      "value": "$1,549.03",
       "status": "ok",
       "action": null
     },
@@ -98,7 +112,7 @@
       "key": "orphan_orders",
       "tier": 1,
       "label": "Order reconciliation",
-      "value": "in sync (8 resting = journal)",
+      "value": "in sync (7 resting = journal)",
       "status": "ok",
       "action": null
     },
@@ -502,7 +516,7 @@
       "direction": "Short",
       "entry_price": 211.67550575,
       "sl": 219.01207541,
-      "tp1": 201.4,
+      "tp1": 202.5,
       "tp2": 197.3,
       "capital_usd": 78.57,
       "leverage": 3,
