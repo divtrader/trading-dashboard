@@ -1,5 +1,5 @@
 {
-  "last_updated_iso": "2026-07-10T09:02:16Z",
+  "last_updated_iso": "2026-07-10T09:43:17Z",
   "mexc_account": {
     "unrealized_pnl": 0.0,
     "equity": 0.0,
@@ -958,29 +958,6 @@
       "pnl_tp1_realized_usd": null
     },
     {
-      "trade_id": "TONUSDT_20260708_CJ_M_001",
-      "coin": "TONUSDT",
-      "direction": "Short",
-      "entry_price": 1.67692289,
-      "sl": 1.7156173,
-      "tp1": 1.50683286,
-      "tp2": 1.36876541,
-      "capital_usd": 100,
-      "leverage": 3,
-      "trading_system": "John",
-      "track_only": true,
-      "status": "PENDING",
-      "price_at_run": 1.6,
-      "date_activated": null,
-      "time_activated_utc": null,
-      "date_opened": "2026-07-08",
-      "time_opened_utc": "16:04",
-      "conviction": "MEDIUM",
-      "tp1_hit": false,
-      "sl_moved_to_be": null,
-      "pnl_tp1_realized_usd": null
-    },
-    {
       "trade_id": "ONDOUSDT_20260708_CB_001",
       "coin": "ONDOUSDT",
       "direction": "Short",
@@ -1929,7 +1906,15 @@
       "fees_modeled": true
     }
   ],
-  "recent_cancels": [],
+  "recent_cancels": [
+    {
+      "coin": "TONUSDT",
+      "direction": "Short",
+      "trading_system": "John",
+      "close_reason": "TONUSDT delisted on Binance & MEXC (~2026-06-30) \u2014 no live price feed (Binance f",
+      "iso": "2026-07-10T09:42:00Z"
+    }
+  ],
   "tp1_hits_open": [
     {
       "coin": "ALGOUSDT",
