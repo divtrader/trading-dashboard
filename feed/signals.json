@@ -1,6 +1,6 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-07-10T08:56Z",
+  "generated_utc": "2026-07-10T09:02Z",
   "master": "braam",
   "retention_hours": 48,
   "trade_count": 16,
@@ -225,15 +225,15 @@
       "sl": 1.1123483,
       "tp1": 1.08511785,
       "tp2": 1.0356,
-      "status": "OPEN",
+      "status": "STOPPED_AFTER_TP1",
       "tp1_hit": true,
       "tp2_hit": false,
       "sl_hit": false,
-      "close_reason": null,
+      "close_reason": "live MEXC exit: manual @ 1.1127",
       "date_opened": "2026-07-07",
       "time_opened_utc": "08:03",
       "sl_mode": "breakeven",
-      "feed_updated_utc": "2026-07-07T16:52Z"
+      "feed_updated_utc": "2026-07-10T08:17Z"
     },
     {
       "trade_id": "LINKUSDT_20260707_CB_001",
@@ -269,8 +269,8 @@
       "entry_lo": 575.4895316,
       "entry_hi": 581.27334599,
       "sl": 589.58155613,
-      "tp1": 562.28,
-      "tp2": 547.57,
+      "tp1": 561.38,
+      "tp2": 547.78,
       "status": "OPEN",
       "tp1_hit": false,
       "tp2_hit": false,
@@ -363,7 +363,7 @@
       "sl": 0.07651872,
       "tp1": 0.07199,
       "tp2": 0.06687,
-      "status": "PENDING",
+      "status": "OPEN",
       "tp1_hit": false,
       "tp2_hit": false,
       "sl_hit": false,
@@ -371,7 +371,7 @@
       "date_opened": "2026-07-08",
       "time_opened_utc": "20:04",
       "sl_mode": "initial",
-      "feed_updated_utc": "2026-07-08T20:04Z"
+      "feed_updated_utc": "2026-07-10T08:35Z"
     }
   ]
 }
