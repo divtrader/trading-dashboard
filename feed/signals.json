@@ -1,6 +1,6 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-07-10T00:06Z",
+  "generated_utc": "2026-07-10T02:06Z",
   "master": "braam",
   "retention_hours": 48,
   "trade_count": 17,
@@ -15,17 +15,17 @@
       "entry_price": 0.09045899,
       "entry_lo": 0.09000669,
       "entry_hi": 0.09091128,
-      "sl": 0.0949109,
+      "sl": 0.08815533,
       "tp1": 0.0839,
       "tp2": 0.0819,
       "status": "OPEN",
-      "tp1_hit": false,
+      "tp1_hit": true,
       "tp2_hit": false,
       "sl_hit": false,
       "close_reason": null,
       "date_opened": "2026-06-25",
       "time_opened_utc": "16:13",
-      "sl_mode": "initial",
+      "sl_mode": "breakeven",
       "feed_updated_utc": "2026-07-09T12:08Z"
     },
     {
@@ -271,15 +271,15 @@
       "sl": 7.84192197,
       "tp1": 7.544,
       "tp2": 7.163,
-      "status": "OPEN",
+      "status": "STOPPED_AFTER_TP1",
       "tp1_hit": true,
       "tp2_hit": false,
       "sl_hit": false,
-      "close_reason": null,
+      "close_reason": "live MEXC exit: manual @ 7.878",
       "date_opened": "2026-07-07",
       "time_opened_utc": "08:03",
       "sl_mode": "breakeven",
-      "feed_updated_utc": "2026-07-07T16:03Z"
+      "feed_updated_utc": "2026-07-10T01:48Z"
     },
     {
       "trade_id": "BNBUSDT_20260707_CB_001",
