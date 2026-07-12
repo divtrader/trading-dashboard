@@ -1,9 +1,9 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-07-11T22:05Z",
+  "generated_utc": "2026-07-12T00:06Z",
   "master": "braam",
   "retention_hours": 48,
-  "trade_count": 17,
+  "trade_count": 18,
   "trades": [
     {
       "trade_id": "ALGOUSDT_20260625_CB_001",
@@ -15,7 +15,7 @@
       "entry_price": 0.09045899,
       "entry_lo": 0.09000669,
       "entry_hi": 0.09091128,
-      "sl": 0.08789424,
+      "sl": 0.08721963,
       "tp1": 0.0839,
       "tp2": 0.0819,
       "status": "OPEN",
@@ -395,6 +395,29 @@
       "time_opened_utc": "08:03",
       "sl_mode": "initial",
       "feed_updated_utc": "2026-07-11T08:03Z"
+    },
+    {
+      "trade_id": "ONDOUSDT_20260712_CJ_001",
+      "coin": "ONDOUSDT",
+      "direction": "Long",
+      "trading_system": "John",
+      "conviction": "HIGH",
+      "leverage": 3,
+      "entry_price": 0.28866523,
+      "entry_lo": 0.28478046,
+      "entry_hi": 0.30031954,
+      "sl": 0.28189831,
+      "tp1": 0.34629018,
+      "tp2": 0.41000338,
+      "status": "PENDING",
+      "tp1_hit": false,
+      "tp2_hit": false,
+      "sl_hit": false,
+      "close_reason": null,
+      "date_opened": "2026-07-12",
+      "time_opened_utc": "00:03",
+      "sl_mode": "initial",
+      "feed_updated_utc": "2026-07-12T00:03Z"
     }
   ]
 }
