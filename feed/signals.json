@@ -1,9 +1,9 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-07-12T02:05Z",
+  "generated_utc": "2026-07-12T04:05Z",
   "master": "braam",
   "retention_hours": 48,
-  "trade_count": 17,
+  "trade_count": 18,
   "trades": [
     {
       "trade_id": "ALGOUSDT_20260625_CB_001",
@@ -395,6 +395,29 @@
       "time_opened_utc": "00:03",
       "sl_mode": "initial",
       "feed_updated_utc": "2026-07-12T00:03Z"
+    },
+    {
+      "trade_id": "BNBUSDT_20260712_CJ_001",
+      "coin": "BNBUSDT",
+      "direction": "Long",
+      "trading_system": "John",
+      "conviction": "HIGH",
+      "leverage": 3,
+      "entry_price": 549.91663812,
+      "entry_lo": 544.83327625,
+      "entry_hi": 565.16672375,
+      "sl": 544.56330691,
+      "tp1": 592.32777149,
+      "tp2": 635.90338618,
+      "status": "PENDING",
+      "tp1_hit": false,
+      "tp2_hit": false,
+      "sl_hit": false,
+      "close_reason": null,
+      "date_opened": "2026-07-12",
+      "time_opened_utc": "04:03",
+      "sl_mode": "initial",
+      "feed_updated_utc": "2026-07-12T04:03Z"
     }
   ]
 }
