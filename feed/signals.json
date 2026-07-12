@@ -1,9 +1,9 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-07-12T00:06Z",
+  "generated_utc": "2026-07-12T02:05Z",
   "master": "braam",
   "retention_hours": 48,
-  "trade_count": 18,
+  "trade_count": 17,
   "trades": [
     {
       "trade_id": "ALGOUSDT_20260625_CB_001",
@@ -41,15 +41,15 @@
       "sl": 66672.72332552,
       "tp1": 59604.04466906,
       "tp2": 58819.96638717,
-      "status": "PENDING",
+      "status": "CANCELLED",
       "tp1_hit": false,
       "tp2_hit": false,
       "sl_hit": false,
-      "close_reason": null,
+      "close_reason": "Signal direction flipped to Long (5/8 signals) \u2014 original setup no longer valid",
       "date_opened": "2026-07-05",
       "time_opened_utc": "09:23",
       "sl_mode": "initial",
-      "feed_updated_utc": "2026-07-05T09:23Z"
+      "feed_updated_utc": "2026-07-12T02:03Z"
     },
     {
       "trade_id": "ADAUSDT_20260706_CB_001",
@@ -211,29 +211,6 @@
       "time_opened_utc": "08:03",
       "sl_mode": "breakeven",
       "feed_updated_utc": "2026-07-10T08:17Z"
-    },
-    {
-      "trade_id": "LINKUSDT_20260707_CB_001",
-      "coin": "LINKUSDT",
-      "direction": "Short",
-      "trading_system": "Braam",
-      "conviction": "MEDIUM",
-      "leverage": 3,
-      "entry_price": 7.92459365,
-      "entry_lo": 7.88497068,
-      "entry_hi": 7.96421662,
-      "sl": 7.84192197,
-      "tp1": 7.544,
-      "tp2": 7.163,
-      "status": "STOPPED_AFTER_TP1",
-      "tp1_hit": true,
-      "tp2_hit": false,
-      "sl_hit": false,
-      "close_reason": "live MEXC exit: manual @ 7.878",
-      "date_opened": "2026-07-07",
-      "time_opened_utc": "08:03",
-      "sl_mode": "breakeven",
-      "feed_updated_utc": "2026-07-10T01:48Z"
     },
     {
       "trade_id": "BNBUSDT_20260707_CB_001",
