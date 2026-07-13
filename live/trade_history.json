@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-13T02:06:30Z",
+  "updated": "2026-07-13T04:09:40Z",
   "positions": {
     "1414291495": {
       "position_id": "1414291495",
@@ -858,8 +858,15 @@
       "leverage": 3,
       "entry_price": 0.0905,
       "opened_at": "2026-07-03T19:22:24Z",
-      "status": "OPEN",
-      "braam_trade_id": "ALGOUSDT_20260625_CB_001"
+      "status": "CLOSED",
+      "braam_trade_id": "ALGOUSDT_20260625_CB_001",
+      "closed_at": "2026-07-13T03:11:40Z",
+      "close_price": 0.082,
+      "pnl_usd": 19.2647,
+      "fees_usd": 0.3184,
+      "tag": "WIN",
+      "close_type": 3,
+      "close_reason": "take_profit"
     },
     "1429656515": {
       "position_id": "1429656515",
@@ -1275,8 +1282,15 @@
       "leverage": 3,
       "entry_price": 0.1627,
       "opened_at": "2026-07-12T06:27:11Z",
-      "status": "OPEN",
-      "braam_trade_id": "ADAUSDT_20260711_CJ_001"
+      "status": "CLOSED",
+      "braam_trade_id": "ADAUSDT_20260711_CJ_001",
+      "closed_at": "2026-07-13T02:08:37Z",
+      "close_price": 0.1595,
+      "pnl_usd": -4.9633,
+      "fees_usd": 0.3213,
+      "tag": "LOSS",
+      "close_type": 4,
+      "close_reason": "stop_loss"
     },
     "1443081367": {
       "position_id": "1443081367",
@@ -1369,6 +1383,33 @@
       "entry_price": 1.10417057,
       "resting_at": "2026-07-12T08:03:00Z",
       "braam_trade_id": "XRPUSDT_20260712_CB_001",
+      "status": "RESTING"
+    },
+    "831499735906113536": {
+      "order_id": "831499735906113536",
+      "coin": "ALGOUSDT",
+      "direction": "Short",
+      "entry_price": 0.08481903,
+      "resting_at": "2026-07-13T04:03:00Z",
+      "braam_trade_id": "ALGOUSDT_20260713_CB_001",
+      "status": "RESTING"
+    },
+    "831499746676986880": {
+      "order_id": "831499746676986880",
+      "coin": "LINKUSDT",
+      "direction": "Short",
+      "entry_price": 7.96438558,
+      "resting_at": "2026-07-13T04:03:00Z",
+      "braam_trade_id": "LINKUSDT_20260713_CB_001",
+      "status": "RESTING"
+    },
+    "831499753701353472": {
+      "order_id": "831499753701353472",
+      "coin": "SUIUSDT",
+      "direction": "Short",
+      "entry_price": 0.73561429,
+      "resting_at": "2026-07-13T04:03:00Z",
+      "braam_trade_id": "SUIUSDT_20260713_CB_001",
       "status": "RESTING"
     }
   }
