@@ -1,11 +1,11 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-07-13T04:09:27Z",
+  "last_updated_iso": "2026-07-13T06:06:34Z",
   "mexc_account": {
-    "unrealized_pnl": 26.7756,
-    "equity": 1585.1558,
-    "available": 84.375,
+    "unrealized_pnl": 23.8099,
+    "equity": 1582.0477,
+    "available": 323.4049,
     "position_margin": 0.0
   },
   "order_levels": {
@@ -58,7 +58,7 @@
       "key": "cron_watchlist",
       "tier": 1,
       "label": "Last cloud run",
-      "value": "0.1h ago",
+      "value": "0.0h ago",
       "status": "ok",
       "action": null
     },
@@ -74,7 +74,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$1,585.16",
+      "value": "$1,582.05",
       "status": "ok",
       "action": null
     },
@@ -90,15 +90,15 @@
       "key": "orphan_orders",
       "tier": 1,
       "label": "Order reconciliation",
-      "value": "3 ORPHAN order(s) on MEXC",
-      "status": "urgent",
-      "action": "Untracked resting order(s) \u2014 cancel on MEXC (double-fill risk): SUI_USDT Short @ 0.7356 (id 831500681959552000), LINK_USDT Short @ 7.964 (id 831500674364753920), ALGO_USDT Short @ 0.0848 (id 831500663493215744)"
+      "value": "in sync (11 resting = journal)",
+      "status": "ok",
+      "action": null
     },
     {
       "key": "position_protection",
       "tier": 1,
       "label": "Position protection",
-      "value": "all protected (6 open, 3 pre-TP1 runners)",
+      "value": "all protected (7 open, 4 pre-TP1 runners)",
       "status": "ok",
       "action": null
     },
@@ -181,7 +181,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 1780.22,
+      "price_at_run": 1783.07,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-07-07",
@@ -501,7 +501,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 0.3163,
+      "price_at_run": 0.3184,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-07-12",
@@ -660,10 +660,10 @@
       "leverage": 3,
       "trading_system": "Braam",
       "track_only": false,
-      "status": "PENDING",
+      "status": "OPEN",
       "price_at_run": 7.917,
-      "date_activated": null,
-      "time_activated_utc": null,
+      "date_activated": "2026-07-13",
+      "time_activated_utc": "06:01",
       "date_opened": "2026-07-13",
       "time_opened_utc": "04:03",
       "conviction": "MEDIUM",
@@ -671,11 +671,11 @@
       "sl_moved_to_be": false,
       "pnl_tp1_realized_usd": null,
       "tp2_hit": false,
-      "live_executed": null,
-      "live_entry_fill": null,
+      "live_executed": true,
+      "live_entry_fill": 7.964,
       "live_exit_fill": null,
-      "live_entry_slippage_pct": null,
-      "live_fees_usd": null,
+      "live_entry_slippage_pct": 0.0048,
+      "live_fees_usd": 0.1423,
       "live_funding_usd": null,
       "live_tp1_pnl_usd": null,
       "rehearsal": false
@@ -728,19 +728,6 @@
       "rehearsal": false
     },
     {
-      "trade_id": "LINKUSDT_20260713_CB_001",
-      "coin": "LINKUSDT",
-      "direction": "Short",
-      "trading_system": "Braam",
-      "entry_price": 7.96438558,
-      "tp1": 7.02714733,
-      "sl": 8.14857378,
-      "conviction": "MEDIUM",
-      "track_only": false,
-      "iso": "2026-07-13T04:03:00Z",
-      "rehearsal": false
-    },
-    {
       "trade_id": "SUIUSDT_20260713_CB_001",
       "coin": "SUIUSDT",
       "direction": "Short",
@@ -777,6 +764,18 @@
       "tp1_hit": false,
       "iso": "2026-07-13T00:11:00Z",
       "_iso_ms": 1783901460000,
+      "rehearsal": false
+    },
+    {
+      "trade_id": "LINKUSDT_20260713_CB_001",
+      "coin": "LINKUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "entry_price": 7.96438558,
+      "live_entry_fill": 7.964,
+      "tp1_hit": false,
+      "iso": "2026-07-13T06:01:00Z",
+      "_iso_ms": 1783922460000,
       "rehearsal": false
     }
   ],
@@ -2196,7 +2195,7 @@
     "peak_capital_usd": 1162.42,
     "peak_concurrent": 14,
     "peak_date": "2026-06-12",
-    "deployed_trades": 79,
+    "deployed_trades": 80,
     "return_on_peak_pct": -9.97,
     "win_rate_pct": 31.5,
     "closed_count": 73,
