@@ -1,5 +1,5 @@
 {
-  "last_updated_iso": "2026-07-13T12:58:10Z",
+  "last_updated_iso": "2026-07-13T13:11:48Z",
   "mexc_account": {
     "unrealized_pnl": 0.0,
     "equity": 0.0,
@@ -1183,7 +1183,7 @@
       "date_opened": "2026-07-12",
       "time_opened_utc": "08:03",
       "conviction": "MEDIUM",
-      "tp1_hit": false,
+      "tp1_hit": true,
       "sl_moved_to_be": false,
       "pnl_tp1_realized_usd": null
     },
@@ -1193,7 +1193,7 @@
       "direction": "Short",
       "entry_price": 0.1682546,
       "sl": 0.17362944,
-      "tp1": 0.1566,
+      "tp1": 0.1587,
       "tp2": 0.1427,
       "capital_usd": 100.0,
       "leverage": 3,
@@ -1495,7 +1495,7 @@
       "direction": "Short",
       "trading_system": "Braam",
       "entry_price": 78.01515893,
-      "tp1_hit": false,
+      "tp1_hit": true,
       "iso": "2026-07-13T00:11:00Z",
       "_iso_ms": 1783901460000
     },
@@ -2153,6 +2153,12 @@
       "direction": "Short",
       "trading_system": "Braam",
       "entry_price": 0.07441592
+    },
+    {
+      "coin": "SOLUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "entry_price": 78.01515893
     }
   ],
   "stats": {

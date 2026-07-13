@@ -1,73 +1,21 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-07-13T12:58:13Z",
+  "last_updated_iso": "2026-07-13T13:11:51Z",
   "mexc_account": {
-    "unrealized_pnl": 29.8586,
-    "equity": 1591.0056,
+    "unrealized_pnl": 30.7021,
+    "equity": 1591.8491,
     "available": 360.241,
     "position_margin": 0.0
   },
   "order_levels": {
     "checked": 18,
-    "in_sync": 10,
+    "in_sync": 17,
     "drifted": [
-      "LTC",
-      "ETH",
-      "XLM",
-      "NEAR",
-      "DOGE",
-      "ADA",
-      "XRP",
-      "ALGO"
+      "ADA"
     ],
     "reconciling": [],
     "detail": [
-      {
-        "coin": "LTC",
-        "trade_id": "LTCUSDT_20260706_CB_001",
-        "status": "OPEN",
-        "fields": [
-          "tp2"
-        ],
-        "synced_at": "2026-07-13T12:04:51.316611+00:00"
-      },
-      {
-        "coin": "ETH",
-        "trade_id": "ETHUSDT_20260707_CJ_001",
-        "status": "PENDING",
-        "fields": [
-          "tp1"
-        ],
-        "synced_at": "2026-07-13T08:04:39.102059+00:00"
-      },
-      {
-        "coin": "XLM",
-        "trade_id": "XLMUSDT_20260707_CB_001",
-        "status": "PENDING",
-        "fields": [
-          "tp1"
-        ],
-        "synced_at": null
-      },
-      {
-        "coin": "NEAR",
-        "trade_id": "NEARUSDT_20260708_CB_001",
-        "status": "PENDING",
-        "fields": [
-          "tp1"
-        ],
-        "synced_at": null
-      },
-      {
-        "coin": "DOGE",
-        "trade_id": "DOGEUSDT_20260708_CB_001",
-        "status": "OPEN",
-        "fields": [
-          "tp2"
-        ],
-        "synced_at": "2026-07-13T04:04:13.981767+00:00"
-      },
       {
         "coin": "ADA",
         "trade_id": "ADAUSDT_20260712_CB_001",
@@ -75,25 +23,7 @@
         "fields": [
           "tp1"
         ],
-        "synced_at": "2026-07-12T14:04:37.187677+00:00"
-      },
-      {
-        "coin": "XRP",
-        "trade_id": "XRPUSDT_20260712_CB_001",
-        "status": "PENDING",
-        "fields": [
-          "tp1"
-        ],
-        "synced_at": "2026-07-12T14:04:39.994039+00:00"
-      },
-      {
-        "coin": "ALGO",
-        "trade_id": "ALGOUSDT_20260713_CB_001",
-        "status": "PENDING",
-        "fields": [
-          "tp1"
-        ],
-        "synced_at": null
+        "synced_at": "2026-07-13T12:59:00.303329+00:00"
       }
     ]
   },
@@ -156,7 +86,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$1,591.01",
+      "value": "$1,591.85",
       "status": "ok",
       "action": null
     },
@@ -172,9 +102,9 @@
       "key": "orphan_orders",
       "tier": 1,
       "label": "Order reconciliation",
-      "value": "in sync (10 resting = journal)",
-      "status": "ok",
-      "action": null
+      "value": "1 ORPHAN order(s) on MEXC",
+      "status": "urgent",
+      "action": "Untracked resting order(s) \u2014 cancel on MEXC (double-fill risk): ADA_USDT Short @ 0.1683 (id 831637796107282432)"
     },
     {
       "key": "position_protection",
@@ -621,7 +551,7 @@
       "date_opened": "2026-07-12",
       "time_opened_utc": "08:03",
       "conviction": "MEDIUM",
-      "tp1_hit": false,
+      "tp1_hit": true,
       "sl_moved_to_be": false,
       "pnl_tp1_realized_usd": null,
       "tp2_hit": false,
@@ -629,9 +559,9 @@
       "live_entry_fill": 78.02,
       "live_exit_fill": null,
       "live_entry_slippage_pct": -0.0062,
-      "live_fees_usd": 0.1404,
+      "live_fees_usd": 0.2315,
       "live_funding_usd": null,
-      "live_tp1_pnl_usd": null,
+      "live_tp1_pnl_usd": 3.15,
       "rehearsal": false
     },
     {
@@ -640,7 +570,7 @@
       "direction": "Short",
       "entry_price": 0.1682546,
       "sl": 0.17362944,
-      "tp1": 0.1566,
+      "tp1": 0.1587,
       "tp2": 0.1427,
       "capital_usd": 78.13,
       "leverage": 3,
@@ -830,7 +760,7 @@
       "trading_system": "Braam",
       "entry_price": 78.01515893,
       "live_entry_fill": 78.02,
-      "tp1_hit": false,
+      "tp1_hit": true,
       "iso": "2026-07-13T00:11:00Z",
       "_iso_ms": 1783901460000,
       "rehearsal": false
@@ -2268,6 +2198,12 @@
       "direction": "Short",
       "trading_system": "Braam",
       "entry_price": 0.07441592
+    },
+    {
+      "coin": "SOLUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "entry_price": 78.01515893
     }
   ],
   "stats": {

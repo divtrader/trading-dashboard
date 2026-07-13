@@ -1,6 +1,6 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-07-13T12:58Z",
+  "generated_utc": "2026-07-13T13:12Z",
   "master": "braam",
   "retention_hours": 48,
   "trade_count": 23,
@@ -410,13 +410,13 @@
       "tp1": 75.91,
       "tp2": 70.56,
       "status": "OPEN",
-      "tp1_hit": false,
+      "tp1_hit": true,
       "tp2_hit": false,
       "sl_hit": false,
       "close_reason": null,
       "date_opened": "2026-07-12",
       "time_opened_utc": "08:03",
-      "sl_mode": "initial",
+      "sl_mode": "breakeven",
       "feed_updated_utc": "2026-07-13T12:03Z"
     },
     {
@@ -430,7 +430,7 @@
       "entry_lo": 0.16741333,
       "entry_hi": 0.16909588,
       "sl": 0.17362944,
-      "tp1": 0.1566,
+      "tp1": 0.1587,
       "tp2": 0.1427,
       "status": "PENDING",
       "tp1_hit": false,
