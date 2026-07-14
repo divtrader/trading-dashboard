@@ -1,6 +1,6 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-07-14T12:06Z",
+  "generated_utc": "2026-07-14T13:06Z",
   "master": "braam",
   "retention_hours": 48,
   "trade_count": 21,
@@ -41,15 +41,15 @@
       "sl": 44.21434904,
       "tp1": 43.41,
       "tp2": 41.15,
-      "status": "OPEN",
+      "status": "STOPPED_AFTER_TP1",
       "tp1_hit": true,
       "tp2_hit": false,
       "sl_hit": false,
-      "close_reason": null,
+      "close_reason": "live MEXC exit: manual @ 44.21",
       "date_opened": "2026-07-06",
       "time_opened_utc": "12:13",
       "sl_mode": "breakeven",
-      "feed_updated_utc": "2026-07-13T14:04Z"
+      "feed_updated_utc": "2026-07-14T12:45Z"
     },
     {
       "trade_id": "ETHUSDT_20260707_CJ_001",
@@ -64,7 +64,7 @@
       "sl": 1884.09395815,
       "tp1": 1727.02,
       "tp2": 1563.91,
-      "status": "PENDING",
+      "status": "OPEN",
       "tp1_hit": false,
       "tp2_hit": false,
       "sl_hit": false,
@@ -72,7 +72,7 @@
       "date_opened": "2026-07-07",
       "time_opened_utc": "00:03",
       "sl_mode": "initial",
-      "feed_updated_utc": "2026-07-07T00:03Z"
+      "feed_updated_utc": "2026-07-14T12:58Z"
     },
     {
       "trade_id": "HBARUSDT_20260707_CB_001",
@@ -248,15 +248,15 @@
       "sl": 0.07317481,
       "tp1": 0.07199,
       "tp2": 0.07006,
-      "status": "OPEN",
+      "status": "STOPPED_AFTER_TP1",
       "tp1_hit": true,
       "tp2_hit": false,
       "sl_hit": false,
-      "close_reason": null,
+      "close_reason": "live MEXC exit: manual @ 0.07318",
       "date_opened": "2026-07-08",
       "time_opened_utc": "20:04",
       "sl_mode": "breakeven",
-      "feed_updated_utc": "2026-07-13T14:04Z"
+      "feed_updated_utc": "2026-07-14T12:46Z"
     },
     {
       "trade_id": "TRXUSDT_20260710_CJ_001",
@@ -409,7 +409,7 @@
       "sl": 0.08690189,
       "tp1": 0.0822,
       "tp2": 0.081,
-      "status": "PENDING",
+      "status": "OPEN",
       "tp1_hit": false,
       "tp2_hit": false,
       "sl_hit": false,
@@ -417,7 +417,7 @@
       "date_opened": "2026-07-13",
       "time_opened_utc": "04:03",
       "sl_mode": "initial",
-      "feed_updated_utc": "2026-07-13T04:03Z"
+      "feed_updated_utc": "2026-07-14T12:52Z"
     },
     {
       "trade_id": "LINKUSDT_20260713_CB_001",
@@ -432,15 +432,15 @@
       "sl": 8.14857378,
       "tp1": 7.57,
       "tp2": 7.119,
-      "status": "OPEN",
+      "status": "STOPPED",
       "tp1_hit": false,
       "tp2_hit": false,
       "sl_hit": false,
-      "close_reason": null,
+      "close_reason": "live MEXC exit: sl @ 8.15",
       "date_opened": "2026-07-13",
       "time_opened_utc": "04:03",
       "sl_mode": "initial",
-      "feed_updated_utc": "2026-07-13T08:04Z"
+      "feed_updated_utc": "2026-07-14T12:56Z"
     },
     {
       "trade_id": "SUIUSDT_20260713_CB_001",
@@ -455,15 +455,15 @@
       "sl": 0.73561429,
       "tp1": 0.7107,
       "tp2": 0.679,
-      "status": "OPEN",
+      "status": "STOPPED_AFTER_TP1",
       "tp1_hit": true,
       "tp2_hit": false,
       "sl_hit": false,
-      "close_reason": null,
+      "close_reason": "live MEXC exit: sl @ 0.7366",
       "date_opened": "2026-07-13",
       "time_opened_utc": "04:03",
       "sl_mode": "breakeven",
-      "feed_updated_utc": "2026-07-13T12:04Z"
+      "feed_updated_utc": "2026-07-14T12:30Z"
     },
     {
       "trade_id": "TAOUSDT_20260714_CB_001",

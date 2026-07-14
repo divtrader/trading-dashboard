@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-14T12:06:35Z",
+  "updated": "2026-07-14T13:06:28Z",
   "positions": {
     "1414291495": {
       "position_id": "1414291495",
@@ -1164,8 +1164,15 @@
       "leverage": 3,
       "entry_price": 44.59,
       "opened_at": "2026-07-06T15:41:32Z",
-      "status": "OPEN",
-      "braam_trade_id": "LTCUSDT_20260706_CB_001"
+      "status": "CLOSED",
+      "braam_trade_id": "LTCUSDT_20260706_CB_001",
+      "closed_at": "2026-07-14T12:45:53Z",
+      "close_price": 44.21,
+      "pnl_usd": 3.5252,
+      "fees_usd": 0.3206,
+      "tag": "WIN",
+      "close_type": 1,
+      "close_reason": "manual"
     },
     "1437781954": {
       "position_id": "1437781954",
@@ -1200,6 +1207,16 @@
       "tag": "LOSS",
       "close_type": 4,
       "close_reason": "stop_loss"
+    },
+    "1444392936": {
+      "position_id": "1444392936",
+      "coin": "ETHUSDT",
+      "direction": "Short",
+      "leverage": 3,
+      "entry_price": 1858.21,
+      "opened_at": "2026-07-14T12:58:29Z",
+      "status": "OPEN",
+      "braam_trade_id": "ETHUSDT_20260707_CJ_001"
     },
     "1438811550": {
       "position_id": "1438811550",
@@ -1289,8 +1306,15 @@
       "leverage": 3,
       "entry_price": 0.07442,
       "opened_at": "2026-07-10T08:35:18Z",
-      "status": "OPEN",
-      "braam_trade_id": "DOGEUSDT_20260708_CB_001"
+      "status": "CLOSED",
+      "braam_trade_id": "DOGEUSDT_20260708_CB_001",
+      "closed_at": "2026-07-14T12:46:04Z",
+      "close_price": 0.07318,
+      "pnl_usd": 5.381,
+      "fees_usd": 0.3182,
+      "tag": "WIN",
+      "close_type": 1,
+      "close_reason": "manual"
     },
     "1442537884": {
       "position_id": "1442537884",
@@ -1319,6 +1343,16 @@
       "status": "OPEN",
       "braam_trade_id": "SOLUSDT_20260712_CB_001"
     },
+    "1444382980": {
+      "position_id": "1444382980",
+      "coin": "ALGOUSDT",
+      "direction": "Short",
+      "leverage": 3,
+      "entry_price": 0.0848,
+      "opened_at": "2026-07-14T12:52:08Z",
+      "status": "OPEN",
+      "braam_trade_id": "ALGOUSDT_20260713_CB_001"
+    },
     "1443278470": {
       "position_id": "1443278470",
       "coin": "LINKUSDT",
@@ -1326,8 +1360,15 @@
       "leverage": 3,
       "entry_price": 7.964,
       "opened_at": "2026-07-13T06:01:51Z",
-      "status": "OPEN",
-      "braam_trade_id": "LINKUSDT_20260713_CB_001"
+      "status": "CLOSED",
+      "braam_trade_id": "LINKUSDT_20260713_CB_001",
+      "closed_at": "2026-07-14T12:56:28Z",
+      "close_price": 8.15,
+      "pnl_usd": -5.9377,
+      "fees_usd": 0.3365,
+      "tag": "LOSS",
+      "close_type": 4,
+      "close_reason": "stop_loss"
     },
     "1443359532": {
       "position_id": "1443359532",
@@ -1336,20 +1377,18 @@
       "leverage": 3,
       "entry_price": 0.7356,
       "opened_at": "2026-07-13T08:49:16Z",
-      "status": "OPEN",
-      "braam_trade_id": "SUIUSDT_20260713_CB_001"
+      "status": "CLOSED",
+      "braam_trade_id": "SUIUSDT_20260713_CB_001",
+      "closed_at": "2026-07-14T12:30:09Z",
+      "close_price": 0.7366,
+      "pnl_usd": 3.6716,
+      "fees_usd": 0.3293,
+      "tag": "WIN",
+      "close_type": 4,
+      "close_reason": "stop_loss"
     }
   },
   "orders": {
-    "831651095620184064": {
-      "order_id": "831651095620184064",
-      "coin": "ETHUSDT",
-      "direction": "Short",
-      "entry_price": 1858.21271644,
-      "resting_at": "2026-07-07T00:03:00Z",
-      "braam_trade_id": "ETHUSDT_20260707_CJ_001",
-      "status": "RESTING"
-    },
     "829325546038840832": {
       "order_id": "829325546038840832",
       "coin": "HBARUSDT",
@@ -1402,15 +1441,6 @@
       "entry_price": 1.10417057,
       "resting_at": "2026-07-12T08:03:00Z",
       "braam_trade_id": "XRPUSDT_20260712_CB_001",
-      "status": "RESTING"
-    },
-    "831651159906441728": {
-      "order_id": "831651159906441728",
-      "coin": "ALGOUSDT",
-      "direction": "Short",
-      "entry_price": 0.08481903,
-      "resting_at": "2026-07-13T04:03:00Z",
-      "braam_trade_id": "ALGOUSDT_20260713_CB_001",
       "status": "RESTING"
     },
     "831922757896926784": {
