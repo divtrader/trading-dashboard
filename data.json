@@ -1,5 +1,5 @@
 {
-  "last_updated_iso": "2026-07-14T06:02:20Z",
+  "last_updated_iso": "2026-07-14T06:03:34Z",
   "mexc_account": {
     "unrealized_pnl": 0.0,
     "equity": 0.0,
@@ -618,16 +618,16 @@
       "direction": "Short",
       "entry_price": 1.99291228,
       "sl": 2.08642606,
-      "tp1": 1.886,
+      "tp1": 1.874,
       "tp2": 1.798,
       "capital_usd": 100.0,
       "leverage": 3,
       "trading_system": "Braam",
       "track_only": false,
-      "status": "PENDING",
+      "status": "OPEN",
       "price_at_run": 1.907,
-      "date_activated": null,
-      "time_activated_utc": null,
+      "date_activated": "2026-07-14",
+      "time_activated_utc": "05:55",
       "date_opened": "2026-07-08",
       "time_opened_utc": "08:03",
       "conviction": "MEDIUM",
@@ -1556,6 +1556,16 @@
       "tp1_hit": false,
       "iso": "2026-07-13T20:00:00Z",
       "_iso_ms": 1783972800000
+    },
+    {
+      "trade_id": "NEARUSDT_20260708_CB_001",
+      "coin": "NEARUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "entry_price": 1.99291228,
+      "tp1_hit": false,
+      "iso": "2026-07-14T05:55:00Z",
+      "_iso_ms": 1784008500000
     }
   ],
   "recent_closes": [
@@ -2225,7 +2235,7 @@
     "peak_capital_usd": 3300,
     "peak_concurrent": 33,
     "peak_date": "2026-06-22",
-    "deployed_trades": 419,
+    "deployed_trades": 420,
     "return_on_peak_pct": 11.66,
     "win_rate_pct": 33.2,
     "closed_count": 385,

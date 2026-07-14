@@ -1,19 +1,31 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-07-14T06:02:23Z",
+  "last_updated_iso": "2026-07-14T06:03:38Z",
   "mexc_account": {
-    "unrealized_pnl": 19.7736,
-    "equity": 1597.5344,
+    "unrealized_pnl": 20.5917,
+    "equity": 1598.3525,
     "available": 454.235,
     "position_margin": 0.0
   },
   "order_levels": {
     "checked": 17,
-    "in_sync": 17,
-    "drifted": [],
+    "in_sync": 16,
+    "drifted": [
+      "NEAR"
+    ],
     "reconciling": [],
-    "detail": []
+    "detail": [
+      {
+        "coin": "NEAR",
+        "trade_id": "NEARUSDT_20260708_CB_001",
+        "status": "OPEN",
+        "fields": [
+          "tp1"
+        ],
+        "synced_at": "2026-07-13T14:04:39.085800+00:00"
+      }
+    ]
   },
   "api_keys": [
     {
@@ -74,7 +86,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$1,597.53",
+      "value": "$1,598.35",
       "status": "ok",
       "action": null
     },
@@ -98,7 +110,7 @@
       "key": "position_protection",
       "tier": 1,
       "label": "Position protection",
-      "value": "all protected (8 open, 2 pre-TP1 runners)",
+      "value": "all protected (8 open, 3 pre-TP1 runners)",
       "status": "ok",
       "action": null
     },
@@ -334,16 +346,16 @@
       "direction": "Short",
       "entry_price": 1.99291228,
       "sl": 2.08642606,
-      "tp1": 1.886,
+      "tp1": 1.874,
       "tp2": 1.798,
       "capital_usd": 77.87,
       "leverage": 3,
       "trading_system": "Braam",
       "track_only": false,
-      "status": "PENDING",
+      "status": "OPEN",
       "price_at_run": 1.907,
-      "date_activated": null,
-      "time_activated_utc": null,
+      "date_activated": "2026-07-14",
+      "time_activated_utc": "05:55",
       "date_opened": "2026-07-08",
       "time_opened_utc": "08:03",
       "conviction": "MEDIUM",
@@ -351,11 +363,11 @@
       "sl_moved_to_be": false,
       "pnl_tp1_realized_usd": null,
       "tp2_hit": false,
-      "live_executed": null,
-      "live_entry_fill": null,
+      "live_executed": true,
+      "live_entry_fill": 1.993,
       "live_exit_fill": null,
-      "live_entry_slippage_pct": null,
-      "live_fees_usd": null,
+      "live_entry_slippage_pct": -0.0044,
+      "live_fees_usd": 0.1399,
       "live_funding_usd": null,
       "live_tp1_pnl_usd": null,
       "rehearsal": false
@@ -743,6 +755,18 @@
       "tp1_hit": true,
       "iso": "2026-07-13T08:49:00Z",
       "_iso_ms": 1783932540000,
+      "rehearsal": false
+    },
+    {
+      "trade_id": "NEARUSDT_20260708_CB_001",
+      "coin": "NEARUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "entry_price": 1.99291228,
+      "live_entry_fill": 1.993,
+      "tp1_hit": false,
+      "iso": "2026-07-14T05:55:00Z",
+      "_iso_ms": 1784008500000,
       "rehearsal": false
     }
   ],
@@ -2201,7 +2225,7 @@
     "peak_capital_usd": 1162.42,
     "peak_concurrent": 14,
     "peak_date": "2026-06-12",
-    "deployed_trades": 81,
+    "deployed_trades": 82,
     "return_on_peak_pct": -8.91,
     "win_rate_pct": 32.4,
     "closed_count": 74,
