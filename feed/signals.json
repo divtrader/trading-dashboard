@@ -1,9 +1,9 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-07-14T00:06Z",
+  "generated_utc": "2026-07-14T02:06Z",
   "master": "braam",
   "retention_hours": 48,
-  "trade_count": 23,
+  "trade_count": 22,
   "trades": [
     {
       "trade_id": "ALGOUSDT_20260625_CB_001",
@@ -27,29 +27,6 @@
       "time_opened_utc": "16:13",
       "sl_mode": "breakeven",
       "feed_updated_utc": "2026-07-13T03:11Z"
-    },
-    {
-      "trade_id": "BTCUSDT_20260705_CJ_001",
-      "coin": "BTCUSDT",
-      "direction": "Short",
-      "trading_system": "John",
-      "conviction": "HIGH",
-      "leverage": 3,
-      "entry_price": 66026.9471521,
-      "entry_lo": 64295.04361283,
-      "entry_hi": 66604.24833186,
-      "sl": 66672.72332552,
-      "tp1": 59604.04466906,
-      "tp2": 58819.96638717,
-      "status": "CANCELLED",
-      "tp1_hit": false,
-      "tp2_hit": false,
-      "sl_hit": false,
-      "close_reason": "Signal direction flipped to Long (5/8 signals) \u2014 original setup no longer valid",
-      "date_opened": "2026-07-05",
-      "time_opened_utc": "09:23",
-      "sl_mode": "initial",
-      "feed_updated_utc": "2026-07-12T02:03Z"
     },
     {
       "trade_id": "LTCUSDT_20260706_CB_001",
@@ -245,7 +222,7 @@
       "entry_price": 0.3273517,
       "entry_lo": 0.32571494,
       "entry_hi": 0.32898846,
-      "sl": 0.32233996,
+      "sl": 0.32207282,
       "tp1": 0.3146,
       "tp2": 0.2986,
       "status": "OPEN",
@@ -340,15 +317,15 @@
       "sl": 0.28189831,
       "tp1": 0.34629018,
       "tp2": 0.388,
-      "status": "PENDING",
+      "status": "CANCELLED",
       "tp1_hit": false,
       "tp2_hit": false,
       "sl_hit": false,
-      "close_reason": null,
+      "close_reason": "Signal direction flipped to Short (5/8 signals) \u2014 original setup no longer valid",
       "date_opened": "2026-07-12",
       "time_opened_utc": "00:03",
       "sl_mode": "initial",
-      "feed_updated_utc": "2026-07-12T00:03Z"
+      "feed_updated_utc": "2026-07-14T02:03Z"
     },
     {
       "trade_id": "BNBUSDT_20260712_CJ_001",
