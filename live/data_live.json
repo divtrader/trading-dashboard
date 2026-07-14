@@ -1,16 +1,16 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-07-14T13:06:16Z",
+  "last_updated_iso": "2026-07-14T14:02:48Z",
   "mexc_account": {
-    "unrealized_pnl": 3.4726,
-    "equity": 1577.6707,
-    "available": 645.9529,
+    "unrealized_pnl": 1.5906,
+    "equity": 1577.1309,
+    "available": 686.617,
     "position_margin": 0.0
   },
   "order_levels": {
-    "checked": 13,
-    "in_sync": 13,
+    "checked": 12,
+    "in_sync": 12,
     "drifted": [],
     "reconciling": [],
     "detail": []
@@ -74,7 +74,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$1,577.67",
+      "value": "$1,577.13",
       "status": "ok",
       "action": null
     },
@@ -90,7 +90,7 @@
       "key": "orphan_orders",
       "tier": 1,
       "label": "Order reconciliation",
-      "value": "in sync (7 resting = journal)",
+      "value": "in sync (6 resting = journal)",
       "status": "ok",
       "action": null
     },
@@ -98,7 +98,7 @@
       "key": "position_protection",
       "tier": 1,
       "label": "Position protection",
-      "value": "all protected (6 open, 4 pre-TP1 runners)",
+      "value": "all protected (6 open, 5 pre-TP1 runners)",
       "status": "ok",
       "action": null
     },
@@ -149,7 +149,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "OPEN",
-      "price_at_run": 1862.94,
+      "price_at_run": 1871.25,
       "date_activated": "2026-07-14",
       "time_activated_utc": "12:58",
       "date_opened": "2026-07-07",
@@ -373,7 +373,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 0.3257,
+      "price_at_run": 0.3256,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-07-10",
@@ -390,38 +390,6 @@
       "live_fees_usd": null,
       "live_funding_usd": null,
       "live_tp1_pnl_usd": null,
-      "rehearsal": false
-    },
-    {
-      "trade_id": "SOLUSDT_20260712_CB_001",
-      "coin": "SOLUSDT",
-      "direction": "Short",
-      "entry_price": 78.01515893,
-      "sl": 76.97205139,
-      "tp1": 75.91,
-      "tp2": 70.56,
-      "capital_usd": 78.13,
-      "leverage": 3,
-      "trading_system": "Braam",
-      "track_only": false,
-      "status": "OPEN",
-      "price_at_run": 76.56,
-      "date_activated": "2026-07-13",
-      "time_activated_utc": "00:11",
-      "date_opened": "2026-07-12",
-      "time_opened_utc": "08:03",
-      "conviction": "MEDIUM",
-      "tp1_hit": true,
-      "sl_moved_to_be": false,
-      "pnl_tp1_realized_usd": 3.25,
-      "tp2_hit": false,
-      "live_executed": true,
-      "live_entry_fill": 78.02,
-      "live_exit_fill": null,
-      "live_entry_slippage_pct": -0.0062,
-      "live_fees_usd": 0.2315,
-      "live_funding_usd": null,
-      "live_tp1_pnl_usd": 3.15,
       "rehearsal": false
     },
     {
@@ -468,10 +436,10 @@
       "leverage": 3,
       "trading_system": "Braam",
       "track_only": false,
-      "status": "PENDING",
+      "status": "OPEN",
       "price_at_run": 1.0917,
-      "date_activated": null,
-      "time_activated_utc": null,
+      "date_activated": "2026-07-14",
+      "time_activated_utc": "13:23",
       "date_opened": "2026-07-12",
       "time_opened_utc": "08:03",
       "conviction": "MEDIUM",
@@ -479,11 +447,11 @@
       "sl_moved_to_be": false,
       "pnl_tp1_realized_usd": null,
       "tp2_hit": false,
-      "live_executed": null,
-      "live_entry_fill": null,
+      "live_executed": true,
+      "live_entry_fill": 1.1042,
       "live_exit_fill": null,
-      "live_entry_slippage_pct": null,
-      "live_fees_usd": null,
+      "live_entry_slippage_pct": -0.0027,
+      "live_fees_usd": 0.1404,
       "live_funding_usd": null,
       "live_tp1_pnl_usd": null,
       "rehearsal": false
@@ -625,6 +593,18 @@
       "tp1_hit": false,
       "iso": "2026-07-14T12:58:00Z",
       "_iso_ms": 1784033880000,
+      "rehearsal": false
+    },
+    {
+      "trade_id": "XRPUSDT_20260712_CB_001",
+      "coin": "XRPUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "entry_price": 1.10417057,
+      "live_entry_fill": 1.1042,
+      "tp1_hit": false,
+      "iso": "2026-07-14T13:23:00Z",
+      "_iso_ms": 1784035380000,
       "rehearsal": false
     }
   ],
@@ -2110,6 +2090,25 @@
       "won": false,
       "close_iso": "2026-07-14T12:56:00Z",
       "rehearsal": false
+    },
+    {
+      "trade_id": "SOLUSDT_20260712_CB_001",
+      "coin": "SOLUSDT",
+      "direction": "Short",
+      "status": "STOPPED_AFTER_TP1",
+      "pnl_usd": 4.41,
+      "close_reason": "live MEXC exit: manual @ 76.97",
+      "date_closed": "2026-07-14",
+      "time_closed_utc": "13:20",
+      "trading_system": "Braam",
+      "live_entry_fill": 78.02,
+      "live_exit_fill": 76.97,
+      "live_entry_slippage_pct": -0.0062,
+      "live_fees_usd": 0.3238,
+      "live_funding_usd": -0.005962,
+      "won": true,
+      "close_iso": "2026-07-14T13:20:00Z",
+      "rehearsal": false
     }
   ],
   "recent_cancels": [
@@ -2127,29 +2126,23 @@
       "direction": "Short",
       "trading_system": "Braam",
       "entry_price": 0.3273517
-    },
-    {
-      "coin": "SOLUSDT",
-      "direction": "Short",
-      "trading_system": "Braam",
-      "entry_price": 78.01515893
     }
   ],
   "stats": {
-    "realized_pnl_usd": -96.98,
-    "realized_pnl_pct": -1.59,
+    "realized_pnl_usd": -92.57,
+    "realized_pnl_pct": -1.5,
     "peak_capital_usd": 1162.42,
     "peak_concurrent": 14,
     "peak_date": "2026-06-12",
-    "deployed_trades": 84,
-    "return_on_peak_pct": -8.34,
-    "win_rate_pct": 34.6,
-    "closed_count": 78,
+    "deployed_trades": 85,
+    "return_on_peak_pct": -7.96,
+    "win_rate_pct": 35.4,
+    "closed_count": 79,
     "per_system": {
       "Braam": {
-        "realized_pnl_usd": -51.69,
-        "win_rate_pct": 38.6,
-        "closed_count": 70
+        "realized_pnl_usd": -47.28,
+        "win_rate_pct": 39.4,
+        "closed_count": 71
       },
       "John": {
         "realized_pnl_usd": -45.29,

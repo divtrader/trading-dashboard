@@ -1,6 +1,6 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-07-14T13:06Z",
+  "generated_utc": "2026-07-14T14:02Z",
   "master": "braam",
   "retention_hours": 48,
   "trade_count": 21,
@@ -340,15 +340,15 @@
       "sl": 76.97205139,
       "tp1": 75.91,
       "tp2": 70.56,
-      "status": "OPEN",
+      "status": "STOPPED_AFTER_TP1",
       "tp1_hit": true,
       "tp2_hit": false,
       "sl_hit": false,
-      "close_reason": null,
+      "close_reason": "live MEXC exit: manual @ 76.97",
       "date_opened": "2026-07-12",
       "time_opened_utc": "08:03",
       "sl_mode": "breakeven",
-      "feed_updated_utc": "2026-07-13T12:03Z"
+      "feed_updated_utc": "2026-07-14T13:20Z"
     },
     {
       "trade_id": "ADAUSDT_20260712_CB_001",
@@ -386,7 +386,7 @@
       "sl": 1.12380433,
       "tp1": 1.0734,
       "tp2": 1.0371,
-      "status": "PENDING",
+      "status": "OPEN",
       "tp1_hit": false,
       "tp2_hit": false,
       "sl_hit": false,
@@ -394,7 +394,7 @@
       "date_opened": "2026-07-12",
       "time_opened_utc": "08:03",
       "sl_mode": "initial",
-      "feed_updated_utc": "2026-07-12T08:03Z"
+      "feed_updated_utc": "2026-07-14T13:23Z"
     },
     {
       "trade_id": "ALGOUSDT_20260713_CB_001",
