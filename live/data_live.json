@@ -1,31 +1,21 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-07-14T15:25:44Z",
+  "last_updated_iso": "2026-07-14T15:35:20Z",
   "mexc_account": {
-    "unrealized_pnl": -5.1422,
-    "equity": 1570.3981,
-    "available": 686.617,
+    "unrealized_pnl": -6.4426,
+    "equity": 1565.756,
+    "available": 757.8326,
     "position_margin": 0.0
   },
   "order_levels": {
-    "checked": 12,
+    "checked": 11,
     "in_sync": 11,
-    "drifted": [
+    "drifted": [],
+    "reconciling": [
       "ETH"
     ],
-    "reconciling": [],
-    "detail": [
-      {
-        "coin": "ETH",
-        "trade_id": "ETHUSDT_20260707_CJ_001",
-        "status": "OPEN",
-        "fields": [
-          "tp1"
-        ],
-        "synced_at": "2026-07-13T14:04:32.747058+00:00"
-      }
-    ]
+    "detail": []
   },
   "api_keys": [
     {
@@ -86,7 +76,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$1,570.40",
+      "value": "$1,565.76",
       "status": "ok",
       "action": null
     },
@@ -110,7 +100,7 @@
       "key": "position_protection",
       "tier": 1,
       "label": "Position protection",
-      "value": "all protected (6 open, 5 pre-TP1 runners)",
+      "value": "all protected (5 open, 4 pre-TP1 runners)",
       "status": "ok",
       "action": null
     },
@@ -411,7 +401,7 @@
       "entry_price": 0.1682546,
       "sl": 0.17362944,
       "tp1": 0.1587,
-      "tp2": 0.1427,
+      "tp2": 0.1504,
       "capital_usd": 78.13,
       "leverage": 3,
       "trading_system": "Braam",
