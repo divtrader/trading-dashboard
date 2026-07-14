@@ -1,31 +1,19 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-07-14T05:13:30Z",
+  "last_updated_iso": "2026-07-14T06:02:23Z",
   "mexc_account": {
-    "unrealized_pnl": 19.7433,
-    "equity": 1597.644,
-    "available": 454.1882,
+    "unrealized_pnl": 19.7736,
+    "equity": 1597.5344,
+    "available": 454.235,
     "position_margin": 0.0
   },
   "order_levels": {
     "checked": 17,
-    "in_sync": 16,
-    "drifted": [
-      "TAO"
-    ],
+    "in_sync": 17,
+    "drifted": [],
     "reconciling": [],
-    "detail": [
-      {
-        "coin": "TAO",
-        "trade_id": "TAOUSDT_20260714_CB_001",
-        "status": "PENDING",
-        "fields": [
-          "tp1"
-        ],
-        "synced_at": null
-      }
-    ]
+    "detail": []
   },
   "api_keys": [
     {
@@ -86,7 +74,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$1,597.64",
+      "value": "$1,597.53",
       "status": "ok",
       "action": null
     },
@@ -102,7 +90,7 @@
       "key": "orphan_orders",
       "tier": 1,
       "label": "Order reconciliation",
-      "value": "in sync (10 resting = journal)",
+      "value": "in sync (9 resting = journal)",
       "status": "ok",
       "action": null
     },
@@ -110,7 +98,7 @@
       "key": "position_protection",
       "tier": 1,
       "label": "Position protection",
-      "value": "all protected (7 open, 2 pre-TP1 runners)",
+      "value": "all protected (8 open, 2 pre-TP1 runners)",
       "status": "ok",
       "action": null
     },
@@ -347,7 +335,7 @@
       "entry_price": 1.99291228,
       "sl": 2.08642606,
       "tp1": 1.886,
-      "tp2": 1.178,
+      "tp2": 1.798,
       "capital_usd": 77.87,
       "leverage": 3,
       "trading_system": "Braam",
