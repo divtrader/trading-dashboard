@@ -1,16 +1,16 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-07-15T00:05:46Z",
+  "last_updated_iso": "2026-07-15T02:06:02Z",
   "mexc_account": {
-    "unrealized_pnl": 0.1946,
-    "equity": 1572.4647,
-    "available": 757.9041,
+    "unrealized_pnl": -1.9324,
+    "equity": 1573.2338,
+    "available": 800.2136,
     "position_margin": 0.0
   },
   "order_levels": {
-    "checked": 11,
-    "in_sync": 11,
+    "checked": 10,
+    "in_sync": 10,
     "drifted": [],
     "reconciling": [],
     "detail": []
@@ -74,7 +74,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$1,572.46",
+      "value": "$1,573.23",
       "status": "ok",
       "action": null
     },
@@ -98,7 +98,7 @@
       "key": "position_protection",
       "tier": 1,
       "label": "Position protection",
-      "value": "all protected (5 open, 4 pre-TP1 runners)",
+      "value": "all protected (4 open, 4 pre-TP1 runners)",
       "status": "ok",
       "action": null
     },
@@ -297,38 +297,6 @@
       "rehearsal": false
     },
     {
-      "trade_id": "ONDOUSDT_20260708_CB_001",
-      "coin": "ONDOUSDT",
-      "direction": "Short",
-      "entry_price": 0.3273517,
-      "sl": 0.31876829,
-      "tp1": 0.3146,
-      "tp2": 0.2986,
-      "capital_usd": 79.04,
-      "leverage": 3,
-      "trading_system": "Braam",
-      "track_only": false,
-      "status": "OPEN",
-      "price_at_run": 0.3121,
-      "date_activated": "2026-07-10",
-      "time_activated_utc": "10:24",
-      "date_opened": "2026-07-08",
-      "time_opened_utc": "16:04",
-      "conviction": "MEDIUM",
-      "tp1_hit": true,
-      "sl_moved_to_be": false,
-      "pnl_tp1_realized_usd": 4.81,
-      "tp2_hit": false,
-      "live_executed": true,
-      "live_entry_fill": 0.3274,
-      "live_exit_fill": null,
-      "live_entry_slippage_pct": -0.0148,
-      "live_fees_usd": 0.232,
-      "live_funding_usd": null,
-      "live_tp1_pnl_usd": 4.536,
-      "rehearsal": false
-    },
-    {
       "trade_id": "TRXUSDT_20260710_CJ_001",
       "coin": "TRXUSDT",
       "direction": "Long",
@@ -341,7 +309,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 0.3261,
+      "price_at_run": 0.326,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-07-10",
@@ -491,18 +459,6 @@
   ],
   "recent_signals": [],
   "recent_opens": [
-    {
-      "trade_id": "SOLUSDT_20260712_CB_001",
-      "coin": "SOLUSDT",
-      "direction": "Short",
-      "trading_system": "Braam",
-      "entry_price": 78.01515893,
-      "live_entry_fill": 78.02,
-      "tp1_hit": true,
-      "iso": "2026-07-13T00:11:00Z",
-      "_iso_ms": 1783901460000,
-      "rehearsal": false
-    },
     {
       "trade_id": "LINKUSDT_20260713_CB_001",
       "coin": "LINKUSDT",
@@ -2096,32 +2052,44 @@
       "won": false,
       "close_iso": "2026-07-14T15:30:00Z",
       "rehearsal": false
+    },
+    {
+      "trade_id": "ONDOUSDT_20260708_CB_001",
+      "coin": "ONDOUSDT",
+      "direction": "Short",
+      "status": "STOPPED_AFTER_TP1",
+      "pnl_usd": 7.17,
+      "close_reason": "live MEXC exit: manual @ 0.3191",
+      "date_closed": "2026-07-15",
+      "time_closed_utc": "00:41",
+      "trading_system": "Braam",
+      "live_entry_fill": 0.3274,
+      "live_exit_fill": 0.3191,
+      "live_entry_slippage_pct": -0.0148,
+      "live_fees_usd": 0.3239,
+      "live_funding_usd": 0.032525,
+      "won": true,
+      "close_iso": "2026-07-15T00:41:00Z",
+      "rehearsal": false
     }
   ],
   "recent_cancels": [],
-  "tp1_hits_open": [
-    {
-      "coin": "ONDOUSDT",
-      "direction": "Short",
-      "trading_system": "Braam",
-      "entry_price": 0.3273517
-    }
-  ],
+  "tp1_hits_open": [],
   "stats": {
-    "realized_pnl_usd": -96.05,
-    "realized_pnl_pct": -1.54,
+    "realized_pnl_usd": -88.88,
+    "realized_pnl_pct": -1.4,
     "peak_capital_usd": 1162.42,
     "peak_concurrent": 14,
     "peak_date": "2026-06-12",
     "deployed_trades": 85,
-    "return_on_peak_pct": -8.26,
-    "win_rate_pct": 35.0,
-    "closed_count": 80,
+    "return_on_peak_pct": -7.65,
+    "win_rate_pct": 35.8,
+    "closed_count": 81,
     "per_system": {
       "Braam": {
-        "realized_pnl_usd": -47.28,
-        "win_rate_pct": 39.4,
-        "closed_count": 71
+        "realized_pnl_usd": -40.11,
+        "win_rate_pct": 40.3,
+        "closed_count": 72
       },
       "John": {
         "realized_pnl_usd": -48.77,
