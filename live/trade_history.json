@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-15T12:06:01Z",
+  "updated": "2026-07-15T14:06:34Z",
   "positions": {
     "1414291495": {
       "position_id": "1414291495",
@@ -1451,6 +1451,16 @@
       "close_type": 1,
       "close_reason": "manual"
     },
+    "1445250988": {
+      "position_id": "1445250988",
+      "coin": "ADAUSDT",
+      "direction": "Short",
+      "leverage": 3,
+      "entry_price": 0.1683,
+      "opened_at": "2026-07-15T13:31:10Z",
+      "status": "OPEN",
+      "braam_trade_id": "ADAUSDT_20260712_CB_001"
+    },
     "1444421862": {
       "position_id": "1444421862",
       "coin": "XRPUSDT",
@@ -1458,8 +1468,16 @@
       "leverage": 3,
       "entry_price": 1.1042,
       "opened_at": "2026-07-14T13:23:31Z",
-      "status": "OPEN",
-      "braam_trade_id": "XRPUSDT_20260712_CB_001"
+      "status": "CLOSED",
+      "braam_trade_id": "XRPUSDT_20260712_CB_001",
+      "closed_at": "2026-07-15T13:03:20Z",
+      "close_price": 1.1238,
+      "pnl_usd": -4.5351,
+      "margin_usd": 78.13,
+      "fees_usd": 0.3309,
+      "tag": "LOSS",
+      "close_type": 4,
+      "close_reason": "stop_loss"
     },
     "1444382980": {
       "position_id": "1444382980",
@@ -1543,15 +1561,6 @@
       "entry_price": 0.31919056,
       "resting_at": "2026-07-10T12:04:00Z",
       "braam_trade_id": "TRXUSDT_20260710_CJ_001",
-      "status": "RESTING"
-    },
-    "831651139132029440": {
-      "order_id": "831651139132029440",
-      "coin": "ADAUSDT",
-      "direction": "Short",
-      "entry_price": 0.1682546,
-      "resting_at": "2026-07-12T08:03:00Z",
-      "braam_trade_id": "ADAUSDT_20260712_CB_001",
       "status": "RESTING"
     },
     "831922757896926784": {
