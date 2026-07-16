@@ -1,33 +1,10 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-07-16T14:06Z",
+  "generated_utc": "2026-07-16T16:06Z",
   "master": "braam",
   "retention_hours": 48,
   "trade_count": 15,
   "trades": [
-    {
-      "trade_id": "ETHUSDT_20260707_CJ_001",
-      "coin": "ETHUSDT",
-      "direction": "Short",
-      "trading_system": "John",
-      "conviction": "HIGH",
-      "leverage": 3,
-      "entry_price": 1858.21271644,
-      "entry_lo": 1807.98456712,
-      "entry_hi": 1874.95543288,
-      "sl": 1884.09395815,
-      "tp1": 1760.31,
-      "tp2": 1563.91,
-      "status": "STOPPED",
-      "tp1_hit": false,
-      "tp2_hit": false,
-      "sl_hit": false,
-      "close_reason": "live MEXC exit: sl @ 1884.55",
-      "date_opened": "2026-07-07",
-      "time_opened_utc": "00:03",
-      "sl_mode": "initial",
-      "feed_updated_utc": "2026-07-14T15:30Z"
-    },
     {
       "trade_id": "HBARUSDT_20260707_CB_001",
       "coin": "HBARUSDT",
@@ -349,6 +326,29 @@
       "time_opened_utc": "12:03",
       "sl_mode": "initial",
       "feed_updated_utc": "2026-07-16T12:03Z"
+    },
+    {
+      "trade_id": "SUIUSDT_20260716_CJ_001",
+      "coin": "SUIUSDT",
+      "direction": "Short",
+      "trading_system": "John",
+      "conviction": "HIGH",
+      "leverage": 3,
+      "entry_price": 0.79355706,
+      "entry_lo": 0.76923589,
+      "entry_hi": 0.80166411,
+      "sl": 0.80776423,
+      "tp1": 0.7369956,
+      "tp2": 0.63477154,
+      "status": "PENDING",
+      "tp1_hit": false,
+      "tp2_hit": false,
+      "sl_hit": false,
+      "close_reason": null,
+      "date_opened": "2026-07-16",
+      "time_opened_utc": "16:03",
+      "sl_mode": "initial",
+      "feed_updated_utc": "2026-07-16T16:03Z"
     }
   ]
 }
