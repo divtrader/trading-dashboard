@@ -1,9 +1,9 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-07-16T12:15Z",
+  "generated_utc": "2026-07-16T12:33Z",
   "master": "braam",
   "retention_hours": 48,
-  "trade_count": 20,
+  "trade_count": 19,
   "trades": [
     {
       "trade_id": "LTCUSDT_20260706_CB_001",
@@ -131,7 +131,7 @@
       "entry_lo": 575.4895316,
       "entry_hi": 581.27334599,
       "sl": 589.58155613,
-      "tp1": 561.38,
+      "tp1": 563.49,
       "tp2": 547.78,
       "status": "OPEN",
       "tp1_hit": false,
@@ -349,29 +349,6 @@
       "time_opened_utc": "04:03",
       "sl_mode": "initial",
       "feed_updated_utc": "2026-07-14T12:56Z"
-    },
-    {
-      "trade_id": "SUIUSDT_20260713_CB_001",
-      "coin": "SUIUSDT",
-      "direction": "Short",
-      "trading_system": "Braam",
-      "conviction": "MEDIUM",
-      "leverage": 3,
-      "entry_price": 0.73561429,
-      "entry_lo": 0.73193622,
-      "entry_hi": 0.73929236,
-      "sl": 0.73561429,
-      "tp1": 0.7107,
-      "tp2": 0.679,
-      "status": "STOPPED_AFTER_TP1",
-      "tp1_hit": true,
-      "tp2_hit": false,
-      "sl_hit": false,
-      "close_reason": "live MEXC exit: sl @ 0.7366",
-      "date_opened": "2026-07-13",
-      "time_opened_utc": "04:03",
-      "sl_mode": "breakeven",
-      "feed_updated_utc": "2026-07-14T12:30Z"
     },
     {
       "trade_id": "TAOUSDT_20260714_CB_001",

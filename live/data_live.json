@@ -1,19 +1,31 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-07-16T12:15:05Z",
+  "last_updated_iso": "2026-07-16T12:33:38Z",
   "mexc_account": {
-    "unrealized_pnl": 12.6364,
-    "equity": 1572.33,
+    "unrealized_pnl": 11.9047,
+    "equity": 1571.5983,
     "available": 783.972,
     "position_margin": 0.0
   },
   "order_levels": {
     "checked": 10,
-    "in_sync": 10,
-    "drifted": [],
+    "in_sync": 9,
+    "drifted": [
+      "BNB"
+    ],
     "reconciling": [],
-    "detail": []
+    "detail": [
+      {
+        "coin": "BNB",
+        "trade_id": "BNBUSDT_20260707_CB_001",
+        "status": "OPEN",
+        "fields": [
+          "tp1"
+        ],
+        "synced_at": "2026-07-10T09:02:45.780899+00:00"
+      }
+    ]
   },
   "api_keys": [
     {
@@ -74,7 +86,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$1,572.33",
+      "value": "$1,571.60",
       "status": "ok",
       "action": null
     },
@@ -238,7 +250,7 @@
       "direction": "Short",
       "entry_price": 578.38143879,
       "sl": 589.58155613,
-      "tp1": 561.38,
+      "tp1": 563.49,
       "tp2": 547.78,
       "capital_usd": 75.62,
       "leverage": 3,
