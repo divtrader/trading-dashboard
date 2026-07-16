@@ -1,9 +1,9 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-07-16T12:00Z",
+  "generated_utc": "2026-07-16T12:06Z",
   "master": "braam",
   "retention_hours": 48,
-  "trade_count": 19,
+  "trade_count": 20,
   "trades": [
     {
       "trade_id": "LTCUSDT_20260706_CB_001",
@@ -441,6 +441,29 @@
       "time_opened_utc": "08:03",
       "sl_mode": "initial",
       "feed_updated_utc": "2026-07-16T10:03Z"
+    },
+    {
+      "trade_id": "LTCUSDT_20260716_CJ_001",
+      "coin": "LTCUSDT",
+      "direction": "Long",
+      "trading_system": "John",
+      "conviction": "HIGH",
+      "leverage": 3,
+      "entry_price": 42.01027511,
+      "entry_lo": 41.52055022,
+      "entry_hi": 43.47944978,
+      "sl": 41.39772217,
+      "tp1": 49.32291808,
+      "tp2": 50.76455565,
+      "status": "PENDING",
+      "tp1_hit": false,
+      "tp2_hit": false,
+      "sl_hit": false,
+      "close_reason": null,
+      "date_opened": "2026-07-16",
+      "time_opened_utc": "12:03",
+      "sl_mode": "initial",
+      "feed_updated_utc": "2026-07-16T12:03Z"
     }
   ]
 }

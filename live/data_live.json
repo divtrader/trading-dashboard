@@ -1,16 +1,16 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-07-16T12:00:15Z",
+  "last_updated_iso": "2026-07-16T12:05:59Z",
   "mexc_account": {
-    "unrealized_pnl": 11.7505,
-    "equity": 1571.4441,
-    "available": 862.9078,
+    "unrealized_pnl": 11.5053,
+    "equity": 1571.1989,
+    "available": 783.972,
     "position_margin": 0.0
   },
   "order_levels": {
-    "checked": 9,
-    "in_sync": 9,
+    "checked": 10,
+    "in_sync": 10,
     "drifted": [],
     "reconciling": [],
     "detail": []
@@ -66,7 +66,7 @@
       "key": "state_file",
       "tier": 1,
       "label": "Trade journal",
-      "value": "OK (747 records)",
+      "value": "OK (749 records)",
       "status": "ok",
       "action": null
     },
@@ -74,7 +74,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$1,571.44",
+      "value": "$1,571.20",
       "status": "ok",
       "action": null
     },
@@ -90,7 +90,7 @@
       "key": "orphan_orders",
       "tier": 1,
       "label": "Order reconciliation",
-      "value": "in sync (6 resting = journal)",
+      "value": "in sync (7 resting = journal)",
       "status": "ok",
       "action": null
     },
@@ -277,7 +277,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 0.3234,
+      "price_at_run": 0.3236,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-07-10",
@@ -405,7 +405,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 0.3735,
+      "price_at_run": 0.3739,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-07-15",
@@ -423,9 +423,55 @@
       "live_funding_usd": null,
       "live_tp1_pnl_usd": null,
       "rehearsal": false
+    },
+    {
+      "trade_id": "LTCUSDT_20260716_CJ_001",
+      "coin": "LTCUSDT",
+      "direction": "Long",
+      "entry_price": 42.01027511,
+      "sl": 41.39772217,
+      "tp1": 49.32291808,
+      "tp2": 50.76455565,
+      "capital_usd": 78.56,
+      "leverage": 3,
+      "trading_system": "John",
+      "track_only": false,
+      "status": "PENDING",
+      "price_at_run": 44.52,
+      "date_activated": null,
+      "time_activated_utc": null,
+      "date_opened": "2026-07-16",
+      "time_opened_utc": "12:03",
+      "conviction": "HIGH",
+      "tp1_hit": false,
+      "sl_moved_to_be": null,
+      "pnl_tp1_realized_usd": null,
+      "tp2_hit": false,
+      "live_executed": null,
+      "live_entry_fill": null,
+      "live_exit_fill": null,
+      "live_entry_slippage_pct": null,
+      "live_fees_usd": null,
+      "live_funding_usd": null,
+      "live_tp1_pnl_usd": null,
+      "rehearsal": false
     }
   ],
-  "recent_signals": [],
+  "recent_signals": [
+    {
+      "trade_id": "LTCUSDT_20260716_CJ_001",
+      "coin": "LTCUSDT",
+      "direction": "Long",
+      "trading_system": "John",
+      "entry_price": 42.01027511,
+      "tp1": 49.32291808,
+      "sl": 41.39772217,
+      "conviction": "HIGH",
+      "track_only": false,
+      "iso": "2026-07-16T12:03:00Z",
+      "rehearsal": false
+    }
+  ],
   "recent_opens": [
     {
       "trade_id": "ALGOUSDT_20260713_CB_001",
@@ -2087,8 +2133,8 @@
         "closed_count": 9
       }
     },
-    "live_trade_count_total": 135,
-    "live_real_count": 112,
+    "live_trade_count_total": 136,
+    "live_real_count": 113,
     "live_rehearsal_count": 23
   }
 }
