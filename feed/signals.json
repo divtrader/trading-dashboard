@@ -1,9 +1,9 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-07-17T06:54Z",
+  "generated_utc": "2026-07-17T08:06Z",
   "master": "braam",
   "retention_hours": 48,
-  "trade_count": 21,
+  "trade_count": 22,
   "trades": [
     {
       "trade_id": "HBARUSDT_20260707_CB_001",
@@ -487,6 +487,29 @@
       "time_opened_utc": "04:03",
       "sl_mode": "initial",
       "feed_updated_utc": "2026-07-17T04:03Z"
+    },
+    {
+      "trade_id": "LTCUSDT_20260717_CB_001",
+      "coin": "LTCUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "conviction": "MEDIUM",
+      "leverage": 3,
+      "entry_price": 44.89846809,
+      "entry_lo": 44.67397575,
+      "entry_hi": 45.12296043,
+      "sl": 45.91774152,
+      "tp1": 43.25012934,
+      "tp2": 39.51148289,
+      "status": "PENDING",
+      "tp1_hit": false,
+      "tp2_hit": false,
+      "sl_hit": false,
+      "close_reason": null,
+      "date_opened": "2026-07-17",
+      "time_opened_utc": "08:04",
+      "sl_mode": "initial",
+      "feed_updated_utc": "2026-07-17T08:04Z"
     }
   ]
 }
