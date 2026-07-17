@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-17T14:06:37Z",
+  "updated": "2026-07-17T16:06:29Z",
   "positions": {
     "1414291495": {
       "position_id": "1414291495",
@@ -1458,8 +1458,16 @@
       "leverage": 3,
       "entry_price": 0.1683,
       "opened_at": "2026-07-15T13:31:10Z",
-      "status": "OPEN",
-      "braam_trade_id": "ADAUSDT_20260712_CB_001"
+      "status": "CLOSED",
+      "braam_trade_id": "ADAUSDT_20260712_CB_001",
+      "closed_at": "2026-07-17T16:03:15Z",
+      "close_price": 0.1647,
+      "pnl_usd": 8.7869,
+      "margin_usd": 78.13,
+      "fees_usd": 0.3208,
+      "tag": "WIN",
+      "close_type": 1,
+      "close_reason": "manual"
     },
     "1444421862": {
       "position_id": "1444421862",
@@ -1652,6 +1660,15 @@
       "entry_price": 8.31979967,
       "resting_at": "2026-07-17T04:03:00Z",
       "braam_trade_id": "LINKUSDT_20260717_CB_001",
+      "status": "RESTING"
+    },
+    "833130682644519424": {
+      "order_id": "833130682644519424",
+      "coin": "BTCUSDT",
+      "direction": "Short",
+      "entry_price": 65936.28168201,
+      "resting_at": "2026-07-17T16:03:00Z",
+      "braam_trade_id": "BTCUSDT_20260717_CJ_001",
       "status": "RESTING"
     }
   }

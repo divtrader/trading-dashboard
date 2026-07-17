@@ -1,9 +1,9 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-07-17T14:06Z",
+  "generated_utc": "2026-07-17T16:06Z",
   "master": "braam",
   "retention_hours": 48,
-  "trade_count": 20,
+  "trade_count": 21,
   "trades": [
     {
       "trade_id": "HBARUSDT_20260707_CB_001",
@@ -133,15 +133,15 @@
       "sl": 0.1647018,
       "tp1": 0.1587,
       "tp2": 0.1504,
-      "status": "OPEN",
+      "status": "STOPPED_AFTER_TP1",
       "tp1_hit": true,
       "tp2_hit": false,
       "sl_hit": false,
-      "close_reason": null,
+      "close_reason": "live MEXC exit: manual @ 0.1647",
       "date_opened": "2026-07-12",
       "time_opened_utc": "08:03",
       "sl_mode": "breakeven",
-      "feed_updated_utc": "2026-07-15T13:31Z"
+      "feed_updated_utc": "2026-07-17T16:03Z"
     },
     {
       "trade_id": "ALGOUSDT_20260713_CB_001",
@@ -464,6 +464,29 @@
       "time_opened_utc": "08:04",
       "sl_mode": "initial",
       "feed_updated_utc": "2026-07-17T10:08Z"
+    },
+    {
+      "trade_id": "BTCUSDT_20260717_CJ_001",
+      "coin": "BTCUSDT",
+      "direction": "Short",
+      "trading_system": "John",
+      "conviction": "HIGH",
+      "leverage": 3,
+      "entry_price": 65936.28168201,
+      "entry_lo": 64034.91935489,
+      "entry_hi": 66570.06912438,
+      "sl": 66652.25179979,
+      "tp1": 59132.77118898,
+      "tp2": 56967.49640041,
+      "status": "PENDING",
+      "tp1_hit": false,
+      "tp2_hit": false,
+      "sl_hit": false,
+      "close_reason": null,
+      "date_opened": "2026-07-17",
+      "time_opened_utc": "16:03",
+      "sl_mode": "initial",
+      "feed_updated_utc": "2026-07-17T16:03Z"
     }
   ]
 }
