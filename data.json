@@ -1,5 +1,5 @@
 {
-  "last_updated_iso": "2026-07-17T11:54:08Z",
+  "last_updated_iso": "2026-07-17T11:55:08Z",
   "mexc_account": {
     "unrealized_pnl": 0.0,
     "equity": 0.0,
@@ -1383,10 +1383,10 @@
       "leverage": 3,
       "trading_system": "Braam",
       "track_only": false,
-      "status": "PENDING",
+      "status": "OPEN",
       "price_at_run": 44.78,
-      "date_activated": null,
-      "time_activated_utc": null,
+      "date_activated": "2026-07-17",
+      "time_activated_utc": "10:08",
       "date_opened": "2026-07-17",
       "time_opened_utc": "08:04",
       "conviction": "MEDIUM",
@@ -1467,18 +1467,6 @@
       "conviction": "MEDIUM",
       "track_only": false,
       "iso": "2026-07-17T08:04:00Z"
-    },
-    {
-      "trade_id": "LTCUSDT_20260717_CB_001",
-      "coin": "LTCUSDT",
-      "direction": "Short",
-      "trading_system": "Braam",
-      "entry_price": 44.89846809,
-      "tp1": 43.25012934,
-      "sl": 45.91774152,
-      "conviction": "MEDIUM",
-      "track_only": false,
-      "iso": "2026-07-17T08:04:00Z"
     }
   ],
   "recent_opens": [
@@ -1551,6 +1539,16 @@
       "tp1_hit": false,
       "iso": "2026-07-17T04:03:00Z",
       "_iso_ms": 1784260980000
+    },
+    {
+      "trade_id": "LTCUSDT_20260717_CB_001",
+      "coin": "LTCUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "entry_price": 44.89846809,
+      "tp1_hit": false,
+      "iso": "2026-07-17T10:08:00Z",
+      "_iso_ms": 1784282880000
     }
   ],
   "recent_closes": [
@@ -2252,7 +2250,7 @@
     "peak_capital_usd": 3300,
     "peak_concurrent": 33,
     "peak_date": "2026-06-22",
-    "deployed_trades": 437,
+    "deployed_trades": 438,
     "return_on_peak_pct": 12.88,
     "win_rate_pct": 33.6,
     "closed_count": 405,
