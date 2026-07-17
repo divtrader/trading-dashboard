@@ -1,19 +1,51 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-07-17T06:06:16Z",
+  "last_updated_iso": "2026-07-17T06:52:40Z",
   "mexc_account": {
-    "unrealized_pnl": 13.7286,
-    "equity": 1583.2749,
+    "unrealized_pnl": 13.4174,
+    "equity": 1582.9637,
     "available": 477.9876,
     "position_margin": 0.0
   },
   "order_levels": {
     "checked": 16,
-    "in_sync": 16,
-    "drifted": [],
+    "in_sync": 13,
+    "drifted": [
+      "NEAR",
+      "ETH",
+      "LINK"
+    ],
     "reconciling": [],
-    "detail": []
+    "detail": [
+      {
+        "coin": "NEAR",
+        "trade_id": "NEARUSDT_20260717_CB_001",
+        "status": "PENDING",
+        "fields": [
+          "tp1"
+        ],
+        "synced_at": null
+      },
+      {
+        "coin": "ETH",
+        "trade_id": "ETHUSDT_20260717_CJ_001",
+        "status": "PENDING",
+        "fields": [
+          "tp1"
+        ],
+        "synced_at": null
+      },
+      {
+        "coin": "LINK",
+        "trade_id": "LINKUSDT_20260717_CB_001",
+        "status": "PENDING",
+        "fields": [
+          "tp1"
+        ],
+        "synced_at": null
+      }
+    ]
   },
   "api_keys": [
     {
@@ -74,7 +106,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$1,583.27",
+      "value": "$1,582.96",
       "status": "ok",
       "action": null
     },
@@ -558,8 +590,8 @@
       "direction": "Short",
       "entry_price": 2.0122341,
       "sl": 2.08975464,
-      "tp1": 1.75879902,
-      "tp2": 1.47345719,
+      "tp1": 1.962,
+      "tp2": 1.883,
       "capital_usd": 78.99,
       "leverage": 3,
       "trading_system": "Braam",
@@ -590,8 +622,8 @@
       "direction": "Short",
       "entry_price": 1946.11598091,
       "sl": 1974.22336814,
-      "tp1": 1732.56076021,
-      "tp2": 1605.63326373,
+      "tp1": 1849.6,
+      "tp2": 1776.84,
       "capital_usd": 79.02,
       "leverage": 3,
       "trading_system": "John",
@@ -622,8 +654,8 @@
       "direction": "Short",
       "entry_price": 8.31979967,
       "sl": 8.51146025,
-      "tp1": 7.93267485,
-      "tp2": 7.03555222,
+      "tp1": 7.892,
+      "tp2": 7.571,
       "capital_usd": 79.02,
       "leverage": 3,
       "trading_system": "Braam",
@@ -708,7 +740,7 @@
       "direction": "Short",
       "trading_system": "Braam",
       "entry_price": 2.0122341,
-      "tp1": 1.75879902,
+      "tp1": 1.962,
       "sl": 2.08975464,
       "conviction": "MEDIUM",
       "track_only": false,
@@ -721,7 +753,7 @@
       "direction": "Short",
       "trading_system": "John",
       "entry_price": 1946.11598091,
-      "tp1": 1732.56076021,
+      "tp1": 1849.6,
       "sl": 1974.22336814,
       "conviction": "HIGH",
       "track_only": false,
@@ -734,7 +766,7 @@
       "direction": "Short",
       "trading_system": "Braam",
       "entry_price": 8.31979967,
-      "tp1": 7.93267485,
+      "tp1": 7.892,
       "sl": 8.51146025,
       "conviction": "MEDIUM",
       "track_only": false,
