@@ -1,9 +1,9 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-07-17T02:05Z",
+  "generated_utc": "2026-07-17T04:06Z",
   "master": "braam",
   "retention_hours": 48,
-  "trade_count": 19,
+  "trade_count": 21,
   "trades": [
     {
       "trade_id": "HBARUSDT_20260707_CB_001",
@@ -441,6 +441,52 @@
       "time_opened_utc": "00:03",
       "sl_mode": "initial",
       "feed_updated_utc": "2026-07-17T00:03Z"
+    },
+    {
+      "trade_id": "ETHUSDT_20260717_CJ_001",
+      "coin": "ETHUSDT",
+      "direction": "Short",
+      "trading_system": "John",
+      "conviction": "HIGH",
+      "leverage": 3,
+      "entry_price": 1946.11598091,
+      "entry_lo": 1890.20803819,
+      "entry_hi": 1964.75196181,
+      "sl": 1974.22336814,
+      "tp1": 1732.56076021,
+      "tp2": 1605.63326373,
+      "status": "PENDING",
+      "tp1_hit": false,
+      "tp2_hit": false,
+      "sl_hit": false,
+      "close_reason": null,
+      "date_opened": "2026-07-17",
+      "time_opened_utc": "04:03",
+      "sl_mode": "initial",
+      "feed_updated_utc": "2026-07-17T04:03Z"
+    },
+    {
+      "trade_id": "LINKUSDT_20260717_CB_001",
+      "coin": "LINKUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "conviction": "MEDIUM",
+      "leverage": 3,
+      "entry_price": 8.31979967,
+      "entry_lo": 8.27820067,
+      "entry_hi": 8.36139867,
+      "sl": 8.51146025,
+      "tp1": 7.93267485,
+      "tp2": 7.03555222,
+      "status": "PENDING",
+      "tp1_hit": false,
+      "tp2_hit": false,
+      "sl_hit": false,
+      "close_reason": null,
+      "date_opened": "2026-07-17",
+      "time_opened_utc": "04:03",
+      "sl_mode": "initial",
+      "feed_updated_utc": "2026-07-17T04:03Z"
     }
   ]
 }
