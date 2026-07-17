@@ -1,10 +1,10 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-07-17T13:18:32Z",
+  "last_updated_iso": "2026-07-17T14:06:23Z",
   "mexc_account": {
-    "unrealized_pnl": 17.6885,
-    "equity": 1590.0778,
+    "unrealized_pnl": 12.6876,
+    "equity": 1585.0769,
     "available": 440.1354,
     "position_margin": 0.0
   },
@@ -58,7 +58,7 @@
       "key": "cron_watchlist",
       "tier": 1,
       "label": "Last cloud run",
-      "value": "1.2h ago",
+      "value": "0.0h ago",
       "status": "ok",
       "action": null
     },
@@ -74,7 +74,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$1,590.08",
+      "value": "$1,585.08",
       "status": "ok",
       "action": null
     },
@@ -237,7 +237,7 @@
       "coin": "BNBUSDT",
       "direction": "Short",
       "entry_price": 578.38143879,
-      "sl": 589.58155613,
+      "sl": 571.57794744,
       "tp1": 563.49,
       "tp2": 547.78,
       "capital_usd": 75.62,
@@ -251,17 +251,17 @@
       "date_opened": "2026-07-07",
       "time_opened_utc": "08:03",
       "conviction": "MEDIUM",
-      "tp1_hit": false,
+      "tp1_hit": true,
       "sl_moved_to_be": false,
-      "pnl_tp1_realized_usd": null,
+      "pnl_tp1_realized_usd": 2.99,
       "tp2_hit": false,
       "live_executed": true,
       "live_entry_fill": 579.1,
       "live_exit_fill": null,
       "live_entry_slippage_pct": -0.1242,
-      "live_fees_usd": 0.1806,
+      "live_fees_usd": 0.2707,
       "live_funding_usd": null,
-      "live_tp1_pnl_usd": null,
+      "live_tp1_pnl_usd": 3.1,
       "rehearsal": false
     },
     {
@@ -277,7 +277,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 0.3227,
+      "price_at_run": 0.3231,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-07-10",
@@ -405,7 +405,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 0.736,
+      "price_at_run": 0.7345,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-07-16",
@@ -597,7 +597,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 1838.62,
+      "price_at_run": 1825.71,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-07-17",
@@ -710,18 +710,6 @@
     }
   ],
   "recent_opens": [
-    {
-      "trade_id": "ADAUSDT_20260712_CB_001",
-      "coin": "ADAUSDT",
-      "direction": "Short",
-      "trading_system": "Braam",
-      "entry_price": 0.1682546,
-      "live_entry_fill": 0.1683,
-      "tp1_hit": true,
-      "iso": "2026-07-15T13:31:00Z",
-      "_iso_ms": 1784122260000,
-      "rehearsal": false
-    },
     {
       "trade_id": "LTCUSDT_20260717_CB_001",
       "coin": "LTCUSDT",
@@ -2316,6 +2304,12 @@
   ],
   "recent_cancels": [],
   "tp1_hits_open": [
+    {
+      "coin": "BNBUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "entry_price": 578.38143879
+    },
     {
       "coin": "ADAUSDT",
       "direction": "Short",
