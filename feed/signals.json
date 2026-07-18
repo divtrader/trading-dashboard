@@ -1,9 +1,9 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-07-18T18:06Z",
+  "generated_utc": "2026-07-18T20:07Z",
   "master": "braam",
   "retention_hours": 48,
-  "trade_count": 20,
+  "trade_count": 21,
   "trades": [
     {
       "trade_id": "HBARUSDT_20260707_CB_001",
@@ -294,7 +294,7 @@
       "sl": 0.32764341,
       "tp1": 0.31765007,
       "tp2": 0.2903,
-      "status": "PENDING",
+      "status": "OPEN",
       "tp1_hit": false,
       "tp2_hit": false,
       "sl_hit": false,
@@ -302,7 +302,7 @@
       "date_opened": "2026-07-16",
       "time_opened_utc": "20:03",
       "sl_mode": "initial",
-      "feed_updated_utc": "2026-07-16T20:03Z"
+      "feed_updated_utc": "2026-07-18T19:42Z"
     },
     {
       "trade_id": "XRPUSDT_20260716_CB_001",
@@ -432,15 +432,15 @@
       "sl": 66652.25179979,
       "tp1": 62745.1,
       "tp2": 59894,
-      "status": "PENDING",
+      "status": "CANCELLED",
       "tp1_hit": false,
       "tp2_hit": false,
       "sl_hit": false,
-      "close_reason": null,
+      "close_reason": "Signal direction flipped to Long (5/8 signals) \u2014 original setup no longer valid",
       "date_opened": "2026-07-17",
       "time_opened_utc": "16:03",
       "sl_mode": "initial",
-      "feed_updated_utc": "2026-07-17T16:03Z"
+      "feed_updated_utc": "2026-07-18T20:04Z"
     },
     {
       "trade_id": "ONDOUSDT_20260718_CB_001",
@@ -464,6 +464,29 @@
       "time_opened_utc": "12:04",
       "sl_mode": "initial",
       "feed_updated_utc": "2026-07-18T12:04Z"
+    },
+    {
+      "trade_id": "ONDOUSDT_20260718_CJ_001",
+      "coin": "ONDOUSDT",
+      "direction": "Long",
+      "trading_system": "John",
+      "conviction": "HIGH",
+      "leverage": 3,
+      "entry_price": 0.3296,
+      "entry_lo": 0.3218,
+      "entry_hi": 0.353,
+      "sl": 0.31598825,
+      "tp1": 0.36426316,
+      "tp2": 0.41352351,
+      "status": "PENDING",
+      "tp1_hit": false,
+      "tp2_hit": false,
+      "sl_hit": false,
+      "close_reason": null,
+      "date_opened": "2026-07-18",
+      "time_opened_utc": "20:04",
+      "sl_mode": "initial",
+      "feed_updated_utc": "2026-07-18T20:04Z"
     }
   ]
 }
