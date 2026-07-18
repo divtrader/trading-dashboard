@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-18T12:07:14Z",
+  "updated": "2026-07-18T14:07:04Z",
   "positions": {
     "1414291495": {
       "position_id": "1414291495",
@@ -1340,8 +1340,16 @@
       "leverage": 3,
       "entry_price": 579.1,
       "opened_at": "2026-07-07T08:03:39Z",
-      "status": "OPEN",
-      "braam_trade_id": "BNBUSDT_20260707_CB_001"
+      "status": "CLOSED",
+      "braam_trade_id": "BNBUSDT_20260707_CB_001",
+      "closed_at": "2026-07-18T12:46:18Z",
+      "close_price": 571.3,
+      "pnl_usd": 3.7598,
+      "margin_usd": 75.62,
+      "fees_usd": 0.3575,
+      "tag": "WIN",
+      "close_type": 1,
+      "close_reason": "manual"
     },
     "1444122424": {
       "position_id": "1444122424",
@@ -1533,6 +1541,16 @@
       "close_type": 4,
       "close_reason": "stop_loss"
     },
+    "1447522004": {
+      "position_id": "1447522004",
+      "coin": "LINKUSDT",
+      "direction": "Short",
+      "leverage": 3,
+      "entry_price": 8.32,
+      "opened_at": "2026-07-18T12:06:13Z",
+      "status": "OPEN",
+      "braam_trade_id": "LINKUSDT_20260717_CB_001"
+    },
     "1446748692": {
       "position_id": "1446748692",
       "coin": "LTCUSDT",
@@ -1651,15 +1669,6 @@
       "entry_price": 1946.11598091,
       "resting_at": "2026-07-17T04:03:00Z",
       "braam_trade_id": "ETHUSDT_20260717_CJ_001",
-      "status": "RESTING"
-    },
-    "833010099336403456": {
-      "order_id": "833010099336403456",
-      "coin": "LINKUSDT",
-      "direction": "Short",
-      "entry_price": 8.31979967,
-      "resting_at": "2026-07-17T04:03:00Z",
-      "braam_trade_id": "LINKUSDT_20260717_CB_001",
       "status": "RESTING"
     },
     "833372437205833728": {
