@@ -1,9 +1,9 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-07-18T10:06Z",
+  "generated_utc": "2026-07-18T12:07Z",
   "master": "braam",
   "retention_hours": 48,
-  "trade_count": 20,
+  "trade_count": 21,
   "trades": [
     {
       "trade_id": "HBARUSDT_20260707_CB_001",
@@ -464,6 +464,29 @@
       "time_opened_utc": "16:03",
       "sl_mode": "initial",
       "feed_updated_utc": "2026-07-17T16:03Z"
+    },
+    {
+      "trade_id": "ONDOUSDT_20260718_CB_001",
+      "coin": "ONDOUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "conviction": "MEDIUM",
+      "leverage": 3,
+      "entry_price": 0.35961456,
+      "entry_lo": 0.35781648,
+      "entry_hi": 0.36141263,
+      "sl": 0.3809066,
+      "tp1": 0.3218,
+      "tp2": 0.25875404,
+      "status": "PENDING",
+      "tp1_hit": false,
+      "tp2_hit": false,
+      "sl_hit": false,
+      "close_reason": null,
+      "date_opened": "2026-07-18",
+      "time_opened_utc": "12:04",
+      "sl_mode": "initial",
+      "feed_updated_utc": "2026-07-18T12:04Z"
     }
   ]
 }
