@@ -1,19 +1,32 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-07-19T10:20:02Z",
+  "last_updated_iso": "2026-07-19T11:33:42Z",
   "mexc_account": {
-    "unrealized_pnl": 2.1222,
-    "equity": 1572.4768,
+    "unrealized_pnl": 1.2956,
+    "equity": 1571.6502,
     "available": 743.5171,
     "position_margin": 0.0
   },
   "order_levels": {
     "checked": 13,
-    "in_sync": 13,
-    "drifted": [],
+    "in_sync": 12,
+    "drifted": [
+      "LINK"
+    ],
     "reconciling": [],
-    "detail": []
+    "detail": [
+      {
+        "coin": "LINK",
+        "trade_id": "LINKUSDT_20260717_CB_001",
+        "status": "OPEN",
+        "fields": [
+          "tp1",
+          "tp2"
+        ],
+        "synced_at": "2026-07-17T08:04:44.586300+00:00"
+      }
+    ]
   },
   "api_keys": [
     {
@@ -74,7 +87,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$1,572.48",
+      "value": "$1,571.65",
       "status": "ok",
       "action": null
     },
@@ -462,8 +475,8 @@
       "direction": "Short",
       "entry_price": 8.31979967,
       "sl": 8.51146025,
-      "tp1": 7.892,
-      "tp2": 7.571,
+      "tp1": 8.029,
+      "tp2": 7.811,
       "capital_usd": 79.02,
       "leverage": 3,
       "trading_system": "Braam",
