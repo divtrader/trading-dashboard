@@ -1,19 +1,31 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-07-19T11:34:54Z",
+  "last_updated_iso": "2026-07-19T11:54:59Z",
   "mexc_account": {
-    "unrealized_pnl": 1.1888,
-    "equity": 1571.5434,
+    "unrealized_pnl": 1.6652,
+    "equity": 1572.0198,
     "available": 743.5171,
     "position_margin": 0.0
   },
   "order_levels": {
     "checked": 13,
-    "in_sync": 13,
-    "drifted": [],
+    "in_sync": 12,
+    "drifted": [
+      "ALGO"
+    ],
     "reconciling": [],
-    "detail": []
+    "detail": [
+      {
+        "coin": "ALGO",
+        "trade_id": "ALGOUSDT_20260713_CB_001",
+        "status": "OPEN",
+        "fields": [
+          "tp2"
+        ],
+        "synced_at": "2026-07-18T14:05:18.323096+00:00"
+      }
+    ]
   },
   "api_keys": [
     {
@@ -74,7 +86,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$1,571.54",
+      "value": "$1,572.02",
       "status": "ok",
       "action": null
     },
@@ -175,7 +187,7 @@
       "entry_price": 0.08481903,
       "sl": 0.08440913,
       "tp1": 0.0822,
-      "tp2": 0.081,
+      "tp2": 0.0813,
       "capital_usd": 79.3,
       "leverage": 3,
       "trading_system": "Braam",
