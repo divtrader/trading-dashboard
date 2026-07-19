@@ -1,16 +1,16 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-07-19T06:05:59Z",
+  "last_updated_iso": "2026-07-19T08:06:59Z",
   "mexc_account": {
-    "unrealized_pnl": 2.38,
-    "equity": 1572.7371,
-    "available": 667.549,
+    "unrealized_pnl": 1.804,
+    "equity": 1572.1586,
+    "available": 743.5171,
     "position_margin": 0.0
   },
   "order_levels": {
-    "checked": 14,
-    "in_sync": 14,
+    "checked": 13,
+    "in_sync": 13,
     "drifted": [],
     "reconciling": [],
     "detail": []
@@ -66,7 +66,7 @@
       "key": "state_file",
       "tier": 1,
       "label": "Trade journal",
-      "value": "OK (769 records)",
+      "value": "OK (770 records)",
       "status": "ok",
       "action": null
     },
@@ -74,7 +74,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$1,572.74",
+      "value": "$1,572.16",
       "status": "ok",
       "action": null
     },
@@ -90,7 +90,7 @@
       "key": "orphan_orders",
       "tier": 1,
       "label": "Order reconciliation",
-      "value": "in sync (11 resting = journal)",
+      "value": "in sync (10 resting = journal)",
       "status": "ok",
       "action": null
     },
@@ -137,38 +137,6 @@
   ],
   "active_trades": [
     {
-      "trade_id": "AVAXUSDT_20260707_CB_001",
-      "coin": "AVAXUSDT",
-      "direction": "Short",
-      "entry_price": 6.86849607,
-      "sl": 7.06469725,
-      "tp1": 6.3882785,
-      "tp2": 6.032,
-      "capital_usd": 75.62,
-      "leverage": 3,
-      "trading_system": "Braam",
-      "track_only": false,
-      "status": "PENDING",
-      "price_at_run": 6.757,
-      "date_activated": null,
-      "time_activated_utc": null,
-      "date_opened": "2026-07-07",
-      "time_opened_utc": "08:03",
-      "conviction": "MEDIUM",
-      "tp1_hit": false,
-      "sl_moved_to_be": false,
-      "pnl_tp1_realized_usd": null,
-      "tp2_hit": false,
-      "live_executed": null,
-      "live_entry_fill": null,
-      "live_exit_fill": null,
-      "live_entry_slippage_pct": null,
-      "live_fees_usd": null,
-      "live_funding_usd": null,
-      "live_tp1_pnl_usd": null,
-      "rehearsal": false
-    },
-    {
       "trade_id": "TRXUSDT_20260710_CJ_001",
       "coin": "TRXUSDT",
       "direction": "Long",
@@ -181,7 +149,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 0.3257,
+      "price_at_run": 0.3263,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-07-10",
@@ -277,7 +245,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 0.7419,
+      "price_at_run": 0.7455,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-07-16",
@@ -469,7 +437,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 1868.4,
+      "price_at_run": 1869.35,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-07-17",
@@ -565,7 +533,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 0.3455,
+      "price_at_run": 0.3521,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-07-18",
@@ -585,21 +553,7 @@
       "rehearsal": false
     }
   ],
-  "recent_signals": [
-    {
-      "trade_id": "ONDOUSDT_20260718_CJ_001",
-      "coin": "ONDOUSDT",
-      "direction": "Long",
-      "trading_system": "John",
-      "entry_price": 0.3296,
-      "tp1": 0.36426316,
-      "sl": 0.31598825,
-      "conviction": "HIGH",
-      "track_only": false,
-      "iso": "2026-07-18T20:04:00Z",
-      "rehearsal": false
-    }
-  ],
+  "recent_signals": [],
   "recent_opens": [
     {
       "trade_id": "LTCUSDT_20260717_CB_001",
@@ -2276,13 +2230,6 @@
   ],
   "recent_cancels": [
     {
-      "coin": "BTCUSDT",
-      "direction": "Short",
-      "trading_system": "John",
-      "close_reason": "Signal direction flipped to Long (5/8 signals) \u2014 original setup no longer valid",
-      "iso": "2026-07-18T20:04:00Z"
-    },
-    {
       "coin": "HBARUSDT",
       "direction": "Short",
       "trading_system": "Braam",
@@ -2295,6 +2242,13 @@
       "trading_system": "Braam",
       "close_reason": "Entry window expired: unfilled 12.0d \u2265 72\u00d74H (288h) \u2014 mirrors backtest ENTRY_WIN",
       "iso": "2026-07-19T04:04:00Z"
+    },
+    {
+      "coin": "AVAXUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "close_reason": "Entry window expired: unfilled 12.0d \u2265 72\u00d74H (288h) \u2014 mirrors backtest ENTRY_WIN",
+      "iso": "2026-07-19T08:04:00Z"
     }
   ],
   "tp1_hits_open": [
