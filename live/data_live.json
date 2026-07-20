@@ -1,19 +1,32 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-07-20T06:06:35Z",
+  "last_updated_iso": "2026-07-20T07:48:04Z",
   "mexc_account": {
-    "unrealized_pnl": 9.8434,
-    "equity": 1574.2572,
+    "unrealized_pnl": 9.628,
+    "equity": 1574.0418,
     "available": 895.2351,
     "position_margin": 0.0
   },
   "order_levels": {
     "checked": 11,
-    "in_sync": 11,
-    "drifted": [],
+    "in_sync": 10,
+    "drifted": [
+      "XRP"
+    ],
     "reconciling": [],
-    "detail": []
+    "detail": [
+      {
+        "coin": "XRP",
+        "trade_id": "XRPUSDT_20260716_CB_001",
+        "status": "OPEN",
+        "fields": [
+          "tp1",
+          "tp2"
+        ],
+        "synced_at": "2026-07-16T22:04:19.897629+00:00"
+      }
+    ]
   },
   "api_keys": [
     {
@@ -74,7 +87,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$1,574.26",
+      "value": "$1,574.04",
       "status": "ok",
       "action": null
     },
@@ -366,8 +379,8 @@
       "direction": "Short",
       "entry_price": 1.10294501,
       "sl": 1.12651672,
-      "tp1": 1.0599,
-      "tp2": 1.0205,
+      "tp1": 1.0765,
+      "tp2": 1.0277,
       "capital_usd": 78.7,
       "leverage": 3,
       "trading_system": "Braam",
