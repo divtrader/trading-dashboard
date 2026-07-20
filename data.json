@@ -1,5 +1,5 @@
 {
-  "last_updated_iso": "2026-07-20T18:23:32Z",
+  "last_updated_iso": "2026-07-20T18:25:16Z",
   "mexc_account": {
     "unrealized_pnl": 0.0,
     "equity": 0.0,
@@ -900,10 +900,10 @@
       "leverage": 3,
       "trading_system": "Braam",
       "track_only": false,
-      "status": "PENDING",
+      "status": "OPEN",
       "price_at_run": 0.3449,
-      "date_activated": null,
-      "time_activated_utc": null,
+      "date_activated": "2026-07-20",
+      "time_activated_utc": "18:10",
       "date_opened": "2026-07-18",
       "time_opened_utc": "12:04",
       "conviction": "MEDIUM",
@@ -1070,29 +1070,6 @@
       "conviction": "MEDIUM",
       "tp1_hit": false,
       "sl_moved_to_be": null,
-      "pnl_tp1_realized_usd": null
-    },
-    {
-      "trade_id": "ADAUSDT_20260720_CB_001",
-      "coin": "ADAUSDT",
-      "direction": "Short",
-      "entry_price": 0.16499546,
-      "sl": 0.1694411,
-      "tp1": 0.1593,
-      "tp2": 0.144,
-      "capital_usd": 100.0,
-      "leverage": 3,
-      "trading_system": "Braam",
-      "track_only": false,
-      "status": "OPEN",
-      "price_at_run": 0.1628,
-      "date_activated": "2026-07-20",
-      "time_activated_utc": "11:36",
-      "date_opened": "2026-07-20",
-      "time_opened_utc": "08:04",
-      "conviction": "MEDIUM",
-      "tp1_hit": false,
-      "sl_moved_to_be": false,
       "pnl_tp1_realized_usd": null
     },
     {
@@ -1339,25 +1316,19 @@
       "tp1_hit": false,
       "iso": "2026-07-20T16:14:00Z",
       "_iso_ms": 1784564040000
+    },
+    {
+      "trade_id": "ONDOUSDT_20260718_CB_001",
+      "coin": "ONDOUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "entry_price": 0.35961456,
+      "tp1_hit": false,
+      "iso": "2026-07-20T18:10:00Z",
+      "_iso_ms": 1784571000000
     }
   ],
   "recent_closes": [
-    {
-      "trade_id": "ADAUSDT_20260705_CJ_M_001",
-      "coin": "ADAUSDT",
-      "direction": "Long",
-      "status": "STOPPED",
-      "pnl_usd": -9.83,
-      "close_reason": "SL hit",
-      "date_closed": "2026-07-12",
-      "time_closed_utc": "00:00",
-      "trading_system": "John",
-      "won": false,
-      "close_iso": "2026-07-12T00:00:00Z",
-      "margin_usd": 100,
-      "fees_usd": 0.408,
-      "fees_modeled": true
-    },
     {
       "trade_id": "AVAXUSDT_20260709_CJ_M_001",
       "coin": "AVAXUSDT",
@@ -1981,6 +1952,22 @@
       "margin_usd": 100,
       "fees_usd": 0.408,
       "fees_modeled": true
+    },
+    {
+      "trade_id": "ADAUSDT_20260720_CB_001",
+      "coin": "ADAUSDT",
+      "direction": "Short",
+      "status": "STOPPED",
+      "pnl_usd": -8.0,
+      "close_reason": "live MEXC exit: sl @ 0.1694",
+      "date_closed": "2026-07-20",
+      "time_closed_utc": "18:12",
+      "trading_system": "Braam",
+      "won": false,
+      "close_iso": "2026-07-20T18:12:00Z",
+      "margin_usd": 100,
+      "fees_usd": 0.408,
+      "fees_modeled": true
     }
   ],
   "recent_cancels": [
@@ -2031,15 +2018,15 @@
     }
   ],
   "stats": {
-    "realized_pnl_usd": 460.7,
-    "realized_pnl_pct": 1.1,
+    "realized_pnl_usd": 452.7,
+    "realized_pnl_pct": 1.08,
     "peak_capital_usd": 3300,
     "peak_concurrent": 33,
     "peak_date": "2026-06-22",
-    "deployed_trades": 453,
-    "return_on_peak_pct": 13.96,
+    "deployed_trades": 454,
+    "return_on_peak_pct": 13.72,
     "win_rate_pct": 33.7,
-    "closed_count": 418,
+    "closed_count": 419,
     "per_system": {
       "John": {
         "realized_pnl_usd": 150.73,
@@ -2052,16 +2039,16 @@
         "closed_count": 23
       },
       "Braam": {
-        "realized_pnl_usd": 264.73,
-        "win_rate_pct": 44.4,
-        "closed_count": 142
+        "realized_pnl_usd": 256.73,
+        "win_rate_pct": 44.1,
+        "closed_count": 143
       }
     },
     "real_only": {
-      "realized_pnl_usd": -11.12,
-      "realized_pnl_pct": -0.13,
-      "win_rate_pct": 35.6,
-      "closed_count": 87
+      "realized_pnl_usd": -19.12,
+      "realized_pnl_pct": -0.22,
+      "win_rate_pct": 35.2,
+      "closed_count": 88
     },
     "track_only": {
       "realized_pnl_usd": 471.82,
