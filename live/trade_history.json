@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-20T00:07:01Z",
+  "updated": "2026-07-20T02:07:16Z",
   "positions": {
     "1414291495": {
       "position_id": "1414291495",
@@ -1541,6 +1541,16 @@
       "close_type": 4,
       "close_reason": "stop_loss"
     },
+    "1448475300": {
+      "position_id": "1448475300",
+      "coin": "SOLUSDT",
+      "direction": "Short",
+      "leverage": 3,
+      "entry_price": 76.79,
+      "opened_at": "2026-07-20T00:10:26Z",
+      "status": "OPEN",
+      "braam_trade_id": "SOLUSDT_20260716_CB_001"
+    },
     "1447756070": {
       "position_id": "1447756070",
       "coin": "TRXUSDT",
@@ -1551,6 +1561,16 @@
       "status": "OPEN",
       "braam_trade_id": "TRXUSDT_20260716_CB_001"
     },
+    "1448475895": {
+      "position_id": "1448475895",
+      "coin": "XRPUSDT",
+      "direction": "Short",
+      "leverage": 3,
+      "entry_price": 1.1029,
+      "opened_at": "2026-07-20T00:10:51Z",
+      "status": "OPEN",
+      "braam_trade_id": "XRPUSDT_20260716_CB_001"
+    },
     "1447522004": {
       "position_id": "1447522004",
       "coin": "LINKUSDT",
@@ -1558,8 +1578,16 @@
       "leverage": 3,
       "entry_price": 8.32,
       "opened_at": "2026-07-18T12:06:13Z",
-      "status": "OPEN",
-      "braam_trade_id": "LINKUSDT_20260717_CB_001"
+      "status": "CLOSED",
+      "braam_trade_id": "LINKUSDT_20260717_CB_001",
+      "closed_at": "2026-07-20T01:10:04Z",
+      "close_price": 8.511,
+      "pnl_usd": -5.7864,
+      "margin_usd": 79.02,
+      "fees_usd": 0.335,
+      "tag": "LOSS",
+      "close_type": 4,
+      "close_reason": "stop_loss"
     },
     "1446748692": {
       "position_id": "1446748692",
@@ -1608,15 +1636,6 @@
       "braam_trade_id": "SUIUSDT_20260716_CJ_001",
       "status": "RESTING"
     },
-    "832858975640122368": {
-      "order_id": "832858975640122368",
-      "coin": "SOLUSDT",
-      "direction": "Short",
-      "entry_price": 76.7920937,
-      "resting_at": "2026-07-16T20:03:00Z",
-      "braam_trade_id": "SOLUSDT_20260716_CB_001",
-      "status": "RESTING"
-    },
     "832858987677914624": {
       "order_id": "832858987677914624",
       "coin": "DOGEUSDT",
@@ -1624,15 +1643,6 @@
       "entry_price": 0.07356441,
       "resting_at": "2026-07-16T20:03:00Z",
       "braam_trade_id": "DOGEUSDT_20260716_CB_001",
-      "status": "RESTING"
-    },
-    "832859000990205953": {
-      "order_id": "832859000990205953",
-      "coin": "XRPUSDT",
-      "direction": "Short",
-      "entry_price": 1.10294501,
-      "resting_at": "2026-07-16T20:03:00Z",
-      "braam_trade_id": "XRPUSDT_20260716_CB_001",
       "status": "RESTING"
     },
     "833010074888153088": {
