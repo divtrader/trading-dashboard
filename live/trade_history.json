@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-21T02:06:23Z",
+  "updated": "2026-07-21T04:07:15Z",
   "positions": {
     "1414291495": {
       "position_id": "1414291495",
@@ -1548,8 +1548,16 @@
       "leverage": 3,
       "entry_price": 76.79,
       "opened_at": "2026-07-20T00:10:26Z",
-      "status": "OPEN",
-      "braam_trade_id": "SOLUSDT_20260716_CB_001"
+      "status": "CLOSED",
+      "braam_trade_id": "SOLUSDT_20260716_CB_001",
+      "closed_at": "2026-07-21T03:07:50Z",
+      "close_price": 78.5,
+      "pnl_usd": -5.4709,
+      "margin_usd": 78.7,
+      "fees_usd": 0.3266,
+      "tag": "LOSS",
+      "close_type": 4,
+      "close_reason": "stop_loss"
     },
     "1449056795": {
       "position_id": "1449056795",
@@ -1578,8 +1586,26 @@
       "leverage": 3,
       "entry_price": 1.1029,
       "opened_at": "2026-07-20T00:10:51Z",
+      "status": "CLOSED",
+      "braam_trade_id": "XRPUSDT_20260716_CB_001",
+      "closed_at": "2026-07-21T04:04:01Z",
+      "close_price": 1.1269,
+      "pnl_usd": -5.4914,
+      "margin_usd": 78.7,
+      "fees_usd": 0.3345,
+      "tag": "LOSS",
+      "close_type": 4,
+      "close_reason": "stop_loss"
+    },
+    "1449367851": {
+      "position_id": "1449367851",
+      "coin": "NEARUSDT",
+      "direction": "Short",
+      "leverage": 3,
+      "entry_price": 2.012,
+      "opened_at": "2026-07-21T03:10:04Z",
       "status": "OPEN",
-      "braam_trade_id": "XRPUSDT_20260716_CB_001"
+      "braam_trade_id": "NEARUSDT_20260717_CB_001"
     },
     "1447522004": {
       "position_id": "1447522004",
@@ -1693,15 +1719,6 @@
       "entry_price": 207.89300487,
       "resting_at": "2026-07-14T00:03:00Z",
       "braam_trade_id": "TAOUSDT_20260714_CB_001",
-      "status": "RESTING"
-    },
-    "833010074888153088": {
-      "order_id": "833010074888153088",
-      "coin": "NEARUSDT",
-      "direction": "Short",
-      "entry_price": 2.0122341,
-      "resting_at": "2026-07-17T00:03:00Z",
-      "braam_trade_id": "NEARUSDT_20260717_CB_001",
       "status": "RESTING"
     },
     "833553598381176896": {
