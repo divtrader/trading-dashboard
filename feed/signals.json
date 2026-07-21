@@ -1,9 +1,9 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-07-21T04:07Z",
+  "generated_utc": "2026-07-21T06:07Z",
   "master": "braam",
   "retention_hours": 48,
-  "trade_count": 18,
+  "trade_count": 19,
   "trades": [
     {
       "trade_id": "AVAXUSDT_20260707_CB_001",
@@ -64,15 +64,15 @@
       "sl": 0.08416527,
       "tp1": 0.0822,
       "tp2": 0.0813,
-      "status": "OPEN",
+      "status": "STOPPED_AFTER_TP1",
       "tp1_hit": true,
       "tp2_hit": false,
       "sl_hit": false,
-      "close_reason": null,
+      "close_reason": "live MEXC exit: manual @ 0.0842",
       "date_opened": "2026-07-13",
       "time_opened_utc": "04:03",
       "sl_mode": "breakeven",
-      "feed_updated_utc": "2026-07-19T12:04Z"
+      "feed_updated_utc": "2026-07-21T05:57Z"
     },
     {
       "trade_id": "TAOUSDT_20260714_CB_001",
@@ -418,6 +418,29 @@
       "time_opened_utc": "08:04",
       "sl_mode": "initial",
       "feed_updated_utc": "2026-07-20T11:57Z"
+    },
+    {
+      "trade_id": "SOLUSDT_20260720_CJ_001",
+      "coin": "SOLUSDT",
+      "direction": "Short",
+      "trading_system": "John",
+      "conviction": "HIGH",
+      "leverage": 3,
+      "entry_price": 82.55861546,
+      "entry_lo": 79.09194227,
+      "entry_hi": 83.71417319,
+      "sl": 83.61077762,
+      "tp1": 69.33799286,
+      "tp2": 65.42844475,
+      "status": "PENDING",
+      "tp1_hit": false,
+      "tp2_hit": false,
+      "sl_hit": false,
+      "close_reason": null,
+      "date_opened": "2026-07-20",
+      "time_opened_utc": "20:04",
+      "sl_mode": "initial",
+      "feed_updated_utc": "2026-07-20T20:04Z"
     }
   ]
 }

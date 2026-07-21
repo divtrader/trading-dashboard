@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-21T04:07:15Z",
+  "updated": "2026-07-21T06:07:28Z",
   "positions": {
     "1414291495": {
       "position_id": "1414291495",
@@ -1502,8 +1502,16 @@
       "leverage": 3,
       "entry_price": 0.0848,
       "opened_at": "2026-07-14T12:52:08Z",
-      "status": "OPEN",
-      "braam_trade_id": "ALGOUSDT_20260713_CB_001"
+      "status": "CLOSED",
+      "braam_trade_id": "ALGOUSDT_20260713_CB_001",
+      "closed_at": "2026-07-21T05:57:39Z",
+      "close_price": 0.0842,
+      "pnl_usd": 4.1615,
+      "margin_usd": 79.3,
+      "fees_usd": 0.3293,
+      "tag": "WIN",
+      "close_type": 1,
+      "close_reason": "manual"
     },
     "1443278470": {
       "position_id": "1443278470",
@@ -1728,6 +1736,15 @@
       "entry_price": 0.3296,
       "resting_at": "2026-07-18T20:04:00Z",
       "braam_trade_id": "ONDOUSDT_20260718_CJ_001",
+      "status": "RESTING"
+    },
+    "834429500745213440": {
+      "order_id": "834429500745213440",
+      "coin": "SOLUSDT",
+      "direction": "Short",
+      "entry_price": 82.55861546,
+      "resting_at": "2026-07-20T20:04:00Z",
+      "braam_trade_id": "SOLUSDT_20260720_CJ_001",
       "status": "RESTING"
     }
   }
