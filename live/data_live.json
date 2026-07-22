@@ -1,16 +1,16 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-07-22T14:05:00Z",
+  "last_updated_iso": "2026-07-22T16:07:03Z",
   "mexc_account": {
-    "unrealized_pnl": 1.824,
-    "equity": 1527.7371,
-    "available": 1212.1098,
+    "unrealized_pnl": 1.664,
+    "equity": 1527.5965,
+    "available": 1135.5174,
     "position_margin": 0.0
   },
   "order_levels": {
-    "checked": 4,
-    "in_sync": 4,
+    "checked": 5,
+    "in_sync": 5,
     "drifted": [],
     "reconciling": [],
     "detail": []
@@ -66,7 +66,7 @@
       "key": "state_file",
       "tier": 1,
       "label": "Trade journal",
-      "value": "OK (786 records)",
+      "value": "OK (787 records)",
       "status": "ok",
       "action": null
     },
@@ -74,7 +74,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$1,527.74",
+      "value": "$1,527.60",
       "status": "ok",
       "action": null
     },
@@ -90,7 +90,7 @@
       "key": "orphan_orders",
       "tier": 1,
       "label": "Order reconciliation",
-      "value": "in sync (3 resting = journal)",
+      "value": "in sync (4 resting = journal)",
       "status": "ok",
       "action": null
     },
@@ -149,7 +149,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 0.3297,
+      "price_at_run": 0.3284,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-07-10",
@@ -245,7 +245,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 77.85,
+      "price_at_run": 78.46,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-07-20",
@@ -263,9 +263,55 @@
       "live_funding_usd": null,
       "live_tp1_pnl_usd": null,
       "rehearsal": false
+    },
+    {
+      "trade_id": "NEARUSDT_20260722_CB_001",
+      "coin": "NEARUSDT",
+      "direction": "Short",
+      "entry_price": 1.93703018,
+      "sl": 1.99448665,
+      "tp1": 1.75833614,
+      "tp2": 1.48487732,
+      "capital_usd": 76.4,
+      "leverage": 3,
+      "trading_system": "Braam",
+      "track_only": false,
+      "status": "PENDING",
+      "price_at_run": 1.886,
+      "date_activated": null,
+      "time_activated_utc": null,
+      "date_opened": "2026-07-22",
+      "time_opened_utc": "16:03",
+      "conviction": "MEDIUM",
+      "tp1_hit": false,
+      "sl_moved_to_be": false,
+      "pnl_tp1_realized_usd": null,
+      "tp2_hit": false,
+      "live_executed": null,
+      "live_entry_fill": null,
+      "live_exit_fill": null,
+      "live_entry_slippage_pct": null,
+      "live_fees_usd": null,
+      "live_funding_usd": null,
+      "live_tp1_pnl_usd": null,
+      "rehearsal": false
     }
   ],
-  "recent_signals": [],
+  "recent_signals": [
+    {
+      "trade_id": "NEARUSDT_20260722_CB_001",
+      "coin": "NEARUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "entry_price": 1.93703018,
+      "tp1": 1.75833614,
+      "sl": 1.99448665,
+      "conviction": "MEDIUM",
+      "track_only": false,
+      "iso": "2026-07-22T16:03:00Z",
+      "rehearsal": false
+    }
+  ],
   "recent_opens": [
     {
       "trade_id": "DOGEUSDT_20260716_CB_001",
@@ -2181,8 +2227,8 @@
         "closed_count": 9
       }
     },
-    "live_trade_count_total": 153,
-    "live_real_count": 130,
+    "live_trade_count_total": 154,
+    "live_real_count": 131,
     "live_rehearsal_count": 23
   }
 }
