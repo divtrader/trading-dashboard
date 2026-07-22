@@ -1,10 +1,10 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-07-22T20:10:59Z",
+  "last_updated_iso": "2026-07-22T22:05:07Z",
   "mexc_account": {
-    "unrealized_pnl": 3.368,
-    "equity": 1529.1175,
+    "unrealized_pnl": 2.136,
+    "equity": 1527.8855,
     "available": 982.007,
     "position_margin": 0.0
   },
@@ -58,7 +58,7 @@
       "key": "cron_watchlist",
       "tier": 1,
       "label": "Last cloud run",
-      "value": "0.1h ago",
+      "value": "0.0h ago",
       "status": "ok",
       "action": null
     },
@@ -74,7 +74,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$1,529.12",
+      "value": "$1,527.89",
       "status": "ok",
       "action": null
     },
@@ -149,7 +149,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 0.3288,
+      "price_at_run": 0.3287,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-07-10",
@@ -245,7 +245,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 77.72,
+      "price_at_run": 77.9,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-07-20",
@@ -2260,15 +2260,7 @@
       "rehearsal": false
     }
   ],
-  "recent_cancels": [
-    {
-      "coin": "ONDOUSDT",
-      "direction": "Long",
-      "trading_system": "John",
-      "close_reason": "Stale 26.0h \u2265 24h grace: Price $0.4040 is 18.4% above entry $0.3296",
-      "iso": "2026-07-22T10:03:00Z"
-    }
-  ],
+  "recent_cancels": [],
   "tp1_hits_open": [],
   "stats": {
     "realized_pnl_usd": -139.49,
