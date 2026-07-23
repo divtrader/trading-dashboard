@@ -1,5 +1,5 @@
 {
-  "last_updated_iso": "2026-07-23T07:44:45Z",
+  "last_updated_iso": "2026-07-23T07:46:16Z",
   "mexc_account": {
     "unrealized_pnl": 0.0,
     "equity": 0.0,
@@ -1084,10 +1084,10 @@
       "leverage": 3,
       "trading_system": "Braam",
       "track_only": false,
-      "status": "PENDING",
+      "status": "OPEN",
       "price_at_run": 6.525,
-      "date_activated": null,
-      "time_activated_utc": null,
+      "date_activated": "2026-07-23",
+      "time_activated_utc": "06:20",
       "date_opened": "2026-07-23",
       "time_opened_utc": "04:03",
       "conviction": "MEDIUM",
@@ -1132,18 +1132,6 @@
       "conviction": "MEDIUM",
       "track_only": true,
       "iso": "2026-07-23T04:03:00Z"
-    },
-    {
-      "trade_id": "AVAXUSDT_20260723_CB_001",
-      "coin": "AVAXUSDT",
-      "direction": "Short",
-      "trading_system": "Braam",
-      "entry_price": 6.57872609,
-      "tp1": 6.349,
-      "sl": 6.72731154,
-      "conviction": "MEDIUM",
-      "track_only": false,
-      "iso": "2026-07-23T04:03:00Z"
     }
   ],
   "recent_opens": [
@@ -1186,6 +1174,16 @@
       "tp1_hit": false,
       "iso": "2026-07-23T02:03:00Z",
       "_iso_ms": 1784772180000
+    },
+    {
+      "trade_id": "AVAXUSDT_20260723_CB_001",
+      "coin": "AVAXUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "entry_price": 6.57872609,
+      "tp1_hit": false,
+      "iso": "2026-07-23T06:20:00Z",
+      "_iso_ms": 1784787600000
     }
   ],
   "recent_closes": [
@@ -1869,7 +1867,7 @@
     "peak_capital_usd": 3300,
     "peak_concurrent": 33,
     "peak_date": "2026-06-22",
-    "deployed_trades": 460,
+    "deployed_trades": 461,
     "return_on_peak_pct": 12.88,
     "win_rate_pct": 33.3,
     "closed_count": 433,
