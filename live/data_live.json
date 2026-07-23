@@ -1,10 +1,10 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-07-23T08:15:27Z",
+  "last_updated_iso": "2026-07-23T08:17:12Z",
   "mexc_account": {
-    "unrealized_pnl": 4.5161,
-    "equity": 1529.9888,
+    "unrealized_pnl": 4.081,
+    "equity": 1529.5537,
     "available": 674.636,
     "position_margin": 0.0
   },
@@ -74,7 +74,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$1,529.99",
+      "value": "$1,529.55",
       "status": "ok",
       "action": null
     },
@@ -98,7 +98,7 @@
       "key": "position_protection",
       "tier": 1,
       "label": "Position protection",
-      "value": "all protected (4 open, 3 pre-TP1 runners)",
+      "value": "all protected (4 open, 4 pre-TP1 runners)",
       "status": "ok",
       "action": null
     },
@@ -468,10 +468,10 @@
       "leverage": 3,
       "trading_system": "Braam",
       "track_only": false,
-      "status": "PENDING",
+      "status": "OPEN",
       "price_at_run": 46.9,
-      "date_activated": null,
-      "time_activated_utc": null,
+      "date_activated": "2026-07-23",
+      "time_activated_utc": "08:09",
       "date_opened": "2026-07-23",
       "time_opened_utc": "08:03",
       "conviction": "MEDIUM",
@@ -479,11 +479,11 @@
       "sl_moved_to_be": false,
       "pnl_tp1_realized_usd": null,
       "tp2_hit": false,
-      "live_executed": null,
-      "live_entry_fill": null,
+      "live_executed": true,
+      "live_entry_fill": 46.96,
       "live_exit_fill": null,
-      "live_entry_slippage_pct": null,
-      "live_fees_usd": null,
+      "live_entry_slippage_pct": -0.0069,
+      "live_fees_usd": 0.1377,
       "live_funding_usd": null,
       "live_tp1_pnl_usd": null,
       "rehearsal": false
@@ -515,19 +515,6 @@
       "track_only": false,
       "iso": "2026-07-23T08:03:00Z",
       "rehearsal": false
-    },
-    {
-      "trade_id": "LTCUSDT_20260723_CB_001",
-      "coin": "LTCUSDT",
-      "direction": "Short",
-      "trading_system": "Braam",
-      "entry_price": 46.95675714,
-      "tp1": 43.42894217,
-      "sl": 47.86009837,
-      "conviction": "MEDIUM",
-      "track_only": false,
-      "iso": "2026-07-23T08:03:00Z",
-      "rehearsal": false
     }
   ],
   "recent_opens": [
@@ -553,6 +540,18 @@
       "tp1_hit": false,
       "iso": "2026-07-23T06:20:00Z",
       "_iso_ms": 1784787600000,
+      "rehearsal": false
+    },
+    {
+      "trade_id": "LTCUSDT_20260723_CB_001",
+      "coin": "LTCUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "entry_price": 46.95675714,
+      "live_entry_fill": 46.96,
+      "tp1_hit": false,
+      "iso": "2026-07-23T08:09:00Z",
+      "_iso_ms": 1784794140000,
       "rehearsal": false
     }
   ],
@@ -2409,7 +2408,7 @@
     "peak_capital_usd": 1162.42,
     "peak_concurrent": 14,
     "peak_date": "2026-06-12",
-    "deployed_trades": 100,
+    "deployed_trades": 101,
     "return_on_peak_pct": -12.0,
     "win_rate_pct": 34.0,
     "closed_count": 97,
