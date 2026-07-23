@@ -1,5 +1,5 @@
 {
-  "last_updated_iso": "2026-07-23T09:07:59Z",
+  "last_updated_iso": "2026-07-23T09:09:31Z",
   "mexc_account": {
     "unrealized_pnl": 0.0,
     "equity": 0.0,
@@ -1153,10 +1153,10 @@
       "leverage": 3,
       "trading_system": "Braam",
       "track_only": false,
-      "status": "PENDING",
+      "status": "OPEN",
       "price_at_run": 8.532,
-      "date_activated": null,
-      "time_activated_utc": null,
+      "date_activated": "2026-07-23",
+      "time_activated_utc": "08:54",
       "date_opened": "2026-07-23",
       "time_opened_utc": "08:03",
       "conviction": "MEDIUM",
@@ -1236,18 +1236,6 @@
       "conviction": "MEDIUM",
       "track_only": false,
       "iso": "2026-07-23T08:03:00Z"
-    },
-    {
-      "trade_id": "LINKUSDT_20260723_CB_001",
-      "coin": "LINKUSDT",
-      "direction": "Short",
-      "trading_system": "Braam",
-      "entry_price": 8.57658515,
-      "tp1": 8.21,
-      "sl": 8.7487529,
-      "conviction": "MEDIUM",
-      "track_only": false,
-      "iso": "2026-07-23T08:03:00Z"
     }
   ],
   "recent_opens": [
@@ -1320,6 +1308,16 @@
       "tp1_hit": false,
       "iso": "2026-07-23T08:09:00Z",
       "_iso_ms": 1784794140000
+    },
+    {
+      "trade_id": "LINKUSDT_20260723_CB_001",
+      "coin": "LINKUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "entry_price": 8.57658515,
+      "tp1_hit": false,
+      "iso": "2026-07-23T08:54:00Z",
+      "_iso_ms": 1784796840000
     }
   ],
   "recent_closes": [
@@ -2003,7 +2001,7 @@
     "peak_capital_usd": 3300,
     "peak_concurrent": 33,
     "peak_date": "2026-06-22",
-    "deployed_trades": 463,
+    "deployed_trades": 464,
     "return_on_peak_pct": 12.88,
     "win_rate_pct": 33.3,
     "closed_count": 433,
