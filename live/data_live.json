@@ -1,19 +1,31 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-07-23T20:06:29Z",
+  "last_updated_iso": "2026-07-23T20:13:08Z",
   "mexc_account": {
-    "unrealized_pnl": 14.7474,
-    "equity": 1547.6687,
+    "unrealized_pnl": 14.0077,
+    "equity": 1546.929,
     "available": 449.7468,
     "position_margin": 0.0
   },
   "order_levels": {
     "checked": 17,
-    "in_sync": 17,
-    "drifted": [],
+    "in_sync": 16,
+    "drifted": [
+      "AVAX"
+    ],
     "reconciling": [],
-    "detail": []
+    "detail": [
+      {
+        "coin": "AVAX",
+        "trade_id": "AVAXUSDT_20260723_CB_001",
+        "status": "OPEN",
+        "fields": [
+          "tp2"
+        ],
+        "synced_at": "2026-07-23T18:04:40.517224+00:00"
+      }
+    ]
   },
   "api_keys": [
     {
@@ -74,7 +86,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$1,547.67",
+      "value": "$1,546.93",
       "status": "ok",
       "action": null
     },
@@ -367,7 +379,7 @@
       "entry_price": 6.57872609,
       "sl": 6.51384268,
       "tp1": 6.349,
-      "tp2": 5.807,
+      "tp2": 6.04,
       "capital_usd": 76.5,
       "leverage": 3,
       "trading_system": "Braam",
