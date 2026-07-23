@@ -1,19 +1,32 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-07-23T20:14:19Z",
+  "last_updated_iso": "2026-07-23T20:27:52Z",
   "mexc_account": {
-    "unrealized_pnl": 13.5064,
-    "equity": 1546.4277,
+    "unrealized_pnl": 12.7406,
+    "equity": 1545.6619,
     "available": 449.7468,
     "position_margin": 0.0
   },
   "order_levels": {
     "checked": 17,
-    "in_sync": 17,
-    "drifted": [],
+    "in_sync": 16,
+    "drifted": [
+      "LTC"
+    ],
     "reconciling": [],
-    "detail": []
+    "detail": [
+      {
+        "coin": "LTC",
+        "trade_id": "LTCUSDT_20260723_CB_001",
+        "status": "OPEN",
+        "fields": [
+          "tp1",
+          "tp2"
+        ],
+        "synced_at": null
+      }
+    ]
   },
   "api_keys": [
     {
@@ -74,7 +87,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$1,546.43",
+      "value": "$1,545.66",
       "status": "ok",
       "action": null
     },
@@ -462,8 +475,8 @@
       "direction": "Short",
       "entry_price": 46.95675714,
       "sl": 47.86009837,
-      "tp1": 43.42894217,
-      "tp2": 40.77,
+      "tp1": 46.28,
+      "tp2": 44.42,
       "capital_usd": 76.56,
       "leverage": 3,
       "trading_system": "Braam",
