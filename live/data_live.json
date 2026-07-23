@@ -1,16 +1,16 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-07-23T02:05:46Z",
+  "last_updated_iso": "2026-07-23T04:05:48Z",
   "mexc_account": {
-    "unrealized_pnl": 2.584,
-    "equity": 1528.3461,
-    "available": 982.0196,
+    "unrealized_pnl": 4.016,
+    "equity": 1529.7781,
+    "available": 905.2764,
     "position_margin": 0.0
   },
   "order_levels": {
-    "checked": 7,
-    "in_sync": 7,
+    "checked": 8,
+    "in_sync": 8,
     "drifted": [],
     "reconciling": [],
     "detail": []
@@ -66,7 +66,7 @@
       "key": "state_file",
       "tier": 1,
       "label": "Trade journal",
-      "value": "OK (790 records)",
+      "value": "OK (793 records)",
       "status": "ok",
       "action": null
     },
@@ -74,7 +74,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$1,528.35",
+      "value": "$1,529.78",
       "status": "ok",
       "action": null
     },
@@ -90,7 +90,7 @@
       "key": "orphan_orders",
       "tier": 1,
       "label": "Order reconciliation",
-      "value": "in sync (5 resting = journal)",
+      "value": "in sync (6 resting = journal)",
       "status": "ok",
       "action": null
     },
@@ -149,7 +149,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 0.3291,
+      "price_at_run": 0.3285,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-07-10",
@@ -245,7 +245,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 77.83,
+      "price_at_run": 77.55,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-07-20",
@@ -359,22 +359,41 @@
       "live_funding_usd": null,
       "live_tp1_pnl_usd": null,
       "rehearsal": false
+    },
+    {
+      "trade_id": "AVAXUSDT_20260723_CB_001",
+      "coin": "AVAXUSDT",
+      "direction": "Short",
+      "entry_price": 6.57872609,
+      "sl": 6.72731154,
+      "tp1": 6.12814737,
+      "tp2": 5.43617897,
+      "capital_usd": 76.5,
+      "leverage": 3,
+      "trading_system": "Braam",
+      "track_only": false,
+      "status": "PENDING",
+      "price_at_run": 6.525,
+      "date_activated": null,
+      "time_activated_utc": null,
+      "date_opened": "2026-07-23",
+      "time_opened_utc": "04:03",
+      "conviction": "MEDIUM",
+      "tp1_hit": false,
+      "sl_moved_to_be": false,
+      "pnl_tp1_realized_usd": null,
+      "tp2_hit": false,
+      "live_executed": null,
+      "live_entry_fill": null,
+      "live_exit_fill": null,
+      "live_entry_slippage_pct": null,
+      "live_fees_usd": null,
+      "live_funding_usd": null,
+      "live_tp1_pnl_usd": null,
+      "rehearsal": false
     }
   ],
   "recent_signals": [
-    {
-      "trade_id": "NEARUSDT_20260722_CB_001",
-      "coin": "NEARUSDT",
-      "direction": "Short",
-      "trading_system": "Braam",
-      "entry_price": 1.93703018,
-      "tp1": 1.75833614,
-      "sl": 1.99448665,
-      "conviction": "MEDIUM",
-      "track_only": false,
-      "iso": "2026-07-22T16:03:00Z",
-      "rehearsal": false
-    },
     {
       "trade_id": "XLMUSDT_20260722_CB_001",
       "coin": "XLMUSDT",
@@ -387,21 +406,22 @@
       "track_only": false,
       "iso": "2026-07-22T20:03:00Z",
       "rehearsal": false
+    },
+    {
+      "trade_id": "AVAXUSDT_20260723_CB_001",
+      "coin": "AVAXUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "entry_price": 6.57872609,
+      "tp1": 6.12814737,
+      "sl": 6.72731154,
+      "conviction": "MEDIUM",
+      "track_only": false,
+      "iso": "2026-07-23T04:03:00Z",
+      "rehearsal": false
     }
   ],
   "recent_opens": [
-    {
-      "trade_id": "NEARUSDT_20260717_CB_001",
-      "coin": "NEARUSDT",
-      "direction": "Short",
-      "trading_system": "Braam",
-      "entry_price": 2.0122341,
-      "live_entry_fill": 2.012,
-      "tp1_hit": true,
-      "iso": "2026-07-21T03:10:00Z",
-      "_iso_ms": 1784603400000,
-      "rehearsal": false
-    },
     {
       "trade_id": "BNBUSDT_20260722_CB_001",
       "coin": "BNBUSDT",
@@ -2284,8 +2304,8 @@
         "closed_count": 9
       }
     },
-    "live_trade_count_total": 156,
-    "live_real_count": 133,
+    "live_trade_count_total": 157,
+    "live_real_count": 134,
     "live_rehearsal_count": 23
   }
 }

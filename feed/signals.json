@@ -1,9 +1,9 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-07-23T02:05Z",
+  "generated_utc": "2026-07-23T04:05Z",
   "master": "braam",
   "retention_hours": 48,
-  "trade_count": 17,
+  "trade_count": 16,
   "trades": [
     {
       "trade_id": "TRXUSDT_20260710_CJ_001",
@@ -75,29 +75,6 @@
       "feed_updated_utc": "2026-07-14T00:03Z"
     },
     {
-      "trade_id": "SOLUSDT_20260716_CB_001",
-      "coin": "SOLUSDT",
-      "direction": "Short",
-      "trading_system": "Braam",
-      "conviction": "HIGH",
-      "leverage": 3,
-      "entry_price": 76.7920937,
-      "entry_lo": 76.40813323,
-      "entry_hi": 77.17605416,
-      "sl": 78.50370022,
-      "tp1": 74.52,
-      "tp2": 70.58,
-      "status": "STOPPED",
-      "tp1_hit": false,
-      "tp2_hit": false,
-      "sl_hit": false,
-      "close_reason": "live MEXC exit: sl @ 78.5",
-      "date_opened": "2026-07-16",
-      "time_opened_utc": "20:03",
-      "sl_mode": "initial",
-      "feed_updated_utc": "2026-07-21T03:07Z"
-    },
-    {
       "trade_id": "DOGEUSDT_20260716_CB_001",
       "coin": "DOGEUSDT",
       "direction": "Short",
@@ -142,29 +119,6 @@
       "time_opened_utc": "20:03",
       "sl_mode": "initial",
       "feed_updated_utc": "2026-07-21T18:53Z"
-    },
-    {
-      "trade_id": "XRPUSDT_20260716_CB_001",
-      "coin": "XRPUSDT",
-      "direction": "Short",
-      "trading_system": "Braam",
-      "conviction": "MEDIUM",
-      "leverage": 3,
-      "entry_price": 1.10294501,
-      "entry_lo": 1.09743028,
-      "entry_hi": 1.10845973,
-      "sl": 1.12651672,
-      "tp1": 1.0765,
-      "tp2": 1.0277,
-      "status": "STOPPED",
-      "tp1_hit": false,
-      "tp2_hit": false,
-      "sl_hit": false,
-      "close_reason": "live MEXC exit: sl @ 1.1269",
-      "date_opened": "2026-07-16",
-      "time_opened_utc": "20:03",
-      "sl_mode": "initial",
-      "feed_updated_utc": "2026-07-21T04:04Z"
     },
     {
       "trade_id": "NEARUSDT_20260717_CB_001",
@@ -395,6 +349,29 @@
       "time_opened_utc": "20:03",
       "sl_mode": "initial",
       "feed_updated_utc": "2026-07-22T20:03Z"
+    },
+    {
+      "trade_id": "AVAXUSDT_20260723_CB_001",
+      "coin": "AVAXUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "conviction": "MEDIUM",
+      "leverage": 3,
+      "entry_price": 6.57872609,
+      "entry_lo": 6.54583246,
+      "entry_hi": 6.61161972,
+      "sl": 6.72731154,
+      "tp1": 6.12814737,
+      "tp2": 5.43617897,
+      "status": "PENDING",
+      "tp1_hit": false,
+      "tp2_hit": false,
+      "sl_hit": false,
+      "close_reason": null,
+      "date_opened": "2026-07-23",
+      "time_opened_utc": "04:03",
+      "sl_mode": "initial",
+      "feed_updated_utc": "2026-07-23T04:03Z"
     }
   ]
 }
