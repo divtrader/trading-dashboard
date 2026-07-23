@@ -1,16 +1,16 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-07-23T19:51:20Z",
+  "last_updated_iso": "2026-07-23T20:06:29Z",
   "mexc_account": {
-    "unrealized_pnl": 18.8946,
-    "equity": 1551.8159,
-    "available": 449.9731,
+    "unrealized_pnl": 14.7474,
+    "equity": 1547.6687,
+    "available": 449.7468,
     "position_margin": 0.0
   },
   "order_levels": {
-    "checked": 16,
-    "in_sync": 16,
+    "checked": 17,
+    "in_sync": 17,
     "drifted": [],
     "reconciling": [],
     "detail": []
@@ -66,7 +66,7 @@
       "key": "state_file",
       "tier": 1,
       "label": "Trade journal",
-      "value": "OK (803 records)",
+      "value": "OK (806 records)",
       "status": "ok",
       "action": null
     },
@@ -74,7 +74,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$1,551.82",
+      "value": "$1,547.67",
       "status": "ok",
       "action": null
     },
@@ -149,7 +149,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 0.3269,
+      "price_at_run": 0.3272,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-07-10",
@@ -245,7 +245,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 75.67,
+      "price_at_run": 75.87,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-07-20",
@@ -647,22 +647,41 @@
       "live_funding_usd": null,
       "live_tp1_pnl_usd": null,
       "rehearsal": false
+    },
+    {
+      "trade_id": "SUIUSDT_20260723_CJ_001",
+      "coin": "SUIUSDT",
+      "direction": "Short",
+      "entry_price": 0.79262788,
+      "sl": 0.80473387,
+      "tp1": 0.71399218,
+      "tp2": 0.63093226,
+      "capital_usd": 77.42,
+      "leverage": 3,
+      "trading_system": "John",
+      "track_only": false,
+      "status": "PENDING",
+      "price_at_run": 0.7468,
+      "date_activated": null,
+      "time_activated_utc": null,
+      "date_opened": "2026-07-23",
+      "time_opened_utc": "20:03",
+      "conviction": "HIGH",
+      "tp1_hit": false,
+      "sl_moved_to_be": null,
+      "pnl_tp1_realized_usd": null,
+      "tp2_hit": false,
+      "live_executed": null,
+      "live_entry_fill": null,
+      "live_exit_fill": null,
+      "live_entry_slippage_pct": null,
+      "live_fees_usd": null,
+      "live_funding_usd": null,
+      "live_tp1_pnl_usd": null,
+      "rehearsal": false
     }
   ],
   "recent_signals": [
-    {
-      "trade_id": "ALGOUSDT_20260723_CB_001",
-      "coin": "ALGOUSDT",
-      "direction": "Short",
-      "trading_system": "Braam",
-      "entry_price": 0.0837858,
-      "tp1": 0.0821,
-      "sl": 0.08542028,
-      "conviction": "MEDIUM",
-      "track_only": false,
-      "iso": "2026-07-23T08:03:00Z",
-      "rehearsal": false
-    },
     {
       "trade_id": "ETHUSDT_20260723_CB_001",
       "coin": "ETHUSDT",
@@ -726,6 +745,19 @@
       "conviction": "MEDIUM",
       "track_only": false,
       "iso": "2026-07-23T16:03:00Z",
+      "rehearsal": false
+    },
+    {
+      "trade_id": "SUIUSDT_20260723_CJ_001",
+      "coin": "SUIUSDT",
+      "direction": "Short",
+      "trading_system": "John",
+      "entry_price": 0.79262788,
+      "tp1": 0.71399218,
+      "sl": 0.80473387,
+      "conviction": "HIGH",
+      "track_only": false,
+      "iso": "2026-07-23T20:03:00Z",
       "rehearsal": false
     }
   ],
@@ -2661,8 +2693,8 @@
         "closed_count": 9
       }
     },
-    "live_trade_count_total": 165,
-    "live_real_count": 142,
+    "live_trade_count_total": 166,
+    "live_real_count": 143,
     "live_rehearsal_count": 23
   }
 }
