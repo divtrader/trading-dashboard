@@ -1,31 +1,19 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-07-24T13:53:20Z",
+  "last_updated_iso": "2026-07-24T13:54:35Z",
   "mexc_account": {
-    "unrealized_pnl": 29.4883,
-    "equity": 1562.148,
+    "unrealized_pnl": 30.857,
+    "equity": 1563.5167,
     "available": 409.9386,
     "position_margin": 0.0
   },
   "order_levels": {
     "checked": 17,
-    "in_sync": 16,
-    "drifted": [
-      "HBAR"
-    ],
+    "in_sync": 17,
+    "drifted": [],
     "reconciling": [],
-    "detail": [
-      {
-        "coin": "HBAR",
-        "trade_id": "HBARUSDT_20260724_CB_001",
-        "status": "PENDING",
-        "fields": [
-          "tp1"
-        ],
-        "synced_at": null
-      }
-    ]
+    "detail": []
   },
   "api_keys": [
     {
@@ -86,7 +74,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$1,562.15",
+      "value": "$1,563.52",
       "status": "ok",
       "action": null
     },
@@ -110,7 +98,7 @@
       "key": "position_protection",
       "tier": 1,
       "label": "Position protection",
-      "value": "all protected (6 open, 2 pre-TP1 runners)",
+      "value": "all protected (6 open, 3 pre-TP1 runners)",
       "status": "ok",
       "action": null
     },
@@ -672,10 +660,10 @@
       "leverage": 3,
       "trading_system": "Braam",
       "track_only": false,
-      "status": "PENDING",
+      "status": "OPEN",
       "price_at_run": 0.07039,
-      "date_activated": null,
-      "time_activated_utc": null,
+      "date_activated": "2026-07-24",
+      "time_activated_utc": "13:34",
       "date_opened": "2026-07-24",
       "time_opened_utc": "12:03",
       "conviction": "MEDIUM",
@@ -683,31 +671,17 @@
       "sl_moved_to_be": false,
       "pnl_tp1_realized_usd": null,
       "tp2_hit": false,
-      "live_executed": null,
-      "live_entry_fill": null,
+      "live_executed": true,
+      "live_entry_fill": 0.07073,
       "live_exit_fill": null,
-      "live_entry_slippage_pct": null,
-      "live_fees_usd": null,
+      "live_entry_slippage_pct": -0.0025,
+      "live_fees_usd": 0.1397,
       "live_funding_usd": null,
       "live_tp1_pnl_usd": null,
       "rehearsal": false
     }
   ],
-  "recent_signals": [
-    {
-      "trade_id": "HBARUSDT_20260724_CB_001",
-      "coin": "HBARUSDT",
-      "direction": "Short",
-      "trading_system": "Braam",
-      "entry_price": 0.0707282,
-      "tp1": 0.06941,
-      "sl": 0.07258513,
-      "conviction": "MEDIUM",
-      "track_only": false,
-      "iso": "2026-07-24T12:03:00Z",
-      "rehearsal": false
-    }
-  ],
+  "recent_signals": [],
   "recent_opens": [
     {
       "trade_id": "BNBUSDT_20260722_CB_001",
@@ -767,6 +741,18 @@
       "tp1_hit": false,
       "iso": "2026-07-23T21:00:00Z",
       "_iso_ms": 1784840400000,
+      "rehearsal": false
+    },
+    {
+      "trade_id": "HBARUSDT_20260724_CB_001",
+      "coin": "HBARUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "entry_price": 0.0707282,
+      "live_entry_fill": 0.07073,
+      "tp1_hit": false,
+      "iso": "2026-07-24T13:34:00Z",
+      "_iso_ms": 1784900040000,
       "rehearsal": false
     }
   ],
@@ -2661,7 +2647,7 @@
     "peak_capital_usd": 1162.42,
     "peak_concurrent": 14,
     "peak_date": "2026-06-12",
-    "deployed_trades": 103,
+    "deployed_trades": 104,
     "return_on_peak_pct": -12.14,
     "win_rate_pct": 33.7,
     "closed_count": 98,
