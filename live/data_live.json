@@ -1,19 +1,31 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-07-24T12:06:20Z",
+  "last_updated_iso": "2026-07-24T13:53:20Z",
   "mexc_account": {
-    "unrealized_pnl": 19.8138,
-    "equity": 1552.6132,
-    "available": 409.8919,
+    "unrealized_pnl": 29.4883,
+    "equity": 1562.148,
+    "available": 409.9386,
     "position_margin": 0.0
   },
   "order_levels": {
     "checked": 17,
-    "in_sync": 17,
-    "drifted": [],
+    "in_sync": 16,
+    "drifted": [
+      "HBAR"
+    ],
     "reconciling": [],
-    "detail": []
+    "detail": [
+      {
+        "coin": "HBAR",
+        "trade_id": "HBARUSDT_20260724_CB_001",
+        "status": "PENDING",
+        "fields": [
+          "tp1"
+        ],
+        "synced_at": null
+      }
+    ]
   },
   "api_keys": [
     {
@@ -74,7 +86,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$1,552.61",
+      "value": "$1,562.15",
       "status": "ok",
       "action": null
     },
@@ -90,7 +102,7 @@
       "key": "orphan_orders",
       "tier": 1,
       "label": "Order reconciliation",
-      "value": "in sync (11 resting = journal)",
+      "value": "in sync (10 resting = journal)",
       "status": "ok",
       "action": null
     },
@@ -98,7 +110,7 @@
       "key": "position_protection",
       "tier": 1,
       "label": "Position protection",
-      "value": "all protected (5 open, 2 pre-TP1 runners)",
+      "value": "all protected (6 open, 2 pre-TP1 runners)",
       "status": "ok",
       "action": null
     },
@@ -654,8 +666,8 @@
       "direction": "Short",
       "entry_price": 0.0707282,
       "sl": 0.07258513,
-      "tp1": 0.06751173,
-      "tp2": 0.05982536,
+      "tp1": 0.06941,
+      "tp2": 0.06645,
       "capital_usd": 77.62,
       "leverage": 3,
       "trading_system": "Braam",
@@ -688,7 +700,7 @@
       "direction": "Short",
       "trading_system": "Braam",
       "entry_price": 0.0707282,
-      "tp1": 0.06751173,
+      "tp1": 0.06941,
       "sl": 0.07258513,
       "conviction": "MEDIUM",
       "track_only": false,
