@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-24T04:06:36Z",
+  "updated": "2026-07-24T06:06:26Z",
   "positions": {
     "1414291495": {
       "position_id": "1414291495",
@@ -1804,8 +1804,16 @@
       "leverage": 3,
       "entry_price": 0.32784,
       "opened_at": "2026-07-23T21:00:11Z",
-      "status": "OPEN",
-      "braam_trade_id": "TRXUSDT_20260723_CB_001"
+      "status": "CLOSED",
+      "braam_trade_id": "TRXUSDT_20260723_CB_001",
+      "closed_at": "2026-07-24T04:22:55Z",
+      "close_price": 0.32968,
+      "pnl_usd": -1.6183,
+      "margin_usd": 77.43,
+      "fees_usd": 0.3222,
+      "tag": "LOSS",
+      "close_type": 4,
+      "close_reason": "stop_loss"
     }
   },
   "orders": {
