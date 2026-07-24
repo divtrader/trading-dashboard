@@ -1,9 +1,9 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-07-24T08:06Z",
+  "generated_utc": "2026-07-24T10:06Z",
   "master": "braam",
   "retention_hours": 48,
-  "trade_count": 18,
+  "trade_count": 17,
   "trades": [
     {
       "trade_id": "TRXUSDT_20260710_CJ_001",
@@ -73,29 +73,6 @@
       "time_opened_utc": "20:03",
       "sl_mode": "breakeven",
       "feed_updated_utc": "2026-07-20T16:14Z"
-    },
-    {
-      "trade_id": "ONDOUSDT_20260718_CJ_001",
-      "coin": "ONDOUSDT",
-      "direction": "Long",
-      "trading_system": "John",
-      "conviction": "HIGH",
-      "leverage": 3,
-      "entry_price": 0.3296,
-      "entry_lo": 0.3218,
-      "entry_hi": 0.353,
-      "sl": 0.31598825,
-      "tp1": 0.36426316,
-      "tp2": 0.41352351,
-      "status": "CANCELLED",
-      "tp1_hit": false,
-      "tp2_hit": false,
-      "sl_hit": false,
-      "close_reason": "Stale 26.0h \u2265 24h grace: Price $0.4040 is 18.4% above entry $0.3296",
-      "date_opened": "2026-07-18",
-      "time_opened_utc": "20:04",
-      "sl_mode": "initial",
-      "feed_updated_utc": "2026-07-22T10:03Z"
     },
     {
       "trade_id": "SOLUSDT_20260720_CJ_001",
