@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-25T12:10:04Z",
+  "updated": "2026-07-25T14:06:57Z",
   "positions": {
     "1414291495": {
       "position_id": "1414291495",
@@ -1774,8 +1774,16 @@
       "leverage": 3,
       "entry_price": 6.579,
       "opened_at": "2026-07-23T06:20:24Z",
-      "status": "OPEN",
-      "braam_trade_id": "AVAXUSDT_20260723_CB_001"
+      "status": "CLOSED",
+      "braam_trade_id": "AVAXUSDT_20260723_CB_001",
+      "closed_at": "2026-07-25T13:43:23Z",
+      "close_price": 6.412,
+      "pnl_usd": 6.675,
+      "margin_usd": 76.5,
+      "fees_usd": 0.3148,
+      "tag": "WIN",
+      "close_type": 1,
+      "close_reason": "manual"
     },
     "1452270096": {
       "position_id": "1452270096",
@@ -1853,15 +1861,6 @@
     }
   },
   "orders": {
-    "833614114038675456": {
-      "order_id": "833614114038675456",
-      "coin": "TRXUSDT",
-      "direction": "Long",
-      "entry_price": 0.32123162,
-      "resting_at": "2026-07-10T12:04:00Z",
-      "braam_trade_id": "TRXUSDT_20260710_CJ_001",
-      "status": "RESTING"
-    },
     "831922757896926784": {
       "order_id": "831922757896926784",
       "coin": "TAOUSDT",
@@ -1943,8 +1942,8 @@
       "braam_trade_id": "SUIUSDT_20260723_CJ_001",
       "status": "RESTING"
     },
-    "835970722849182720": {
-      "order_id": "835970722849182720",
+    "835999781935204352": {
+      "order_id": "835999781935204352",
       "coin": "HBARUSDT",
       "direction": "Short",
       "entry_price": 0.07076682,

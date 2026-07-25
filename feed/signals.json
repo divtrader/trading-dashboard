@@ -1,6 +1,6 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-07-25T12:10Z",
+  "generated_utc": "2026-07-25T14:06Z",
   "master": "braam",
   "retention_hours": 48,
   "trade_count": 19,
@@ -18,15 +18,15 @@
       "sl": 0.31990435,
       "tp1": 0.33616215,
       "tp2": 0.34965685,
-      "status": "PENDING",
+      "status": "CANCELLED",
       "tp1_hit": false,
       "tp2_hit": false,
       "sl_hit": false,
-      "close_reason": null,
+      "close_reason": "Entry window expired: unfilled 15.1d \u2265 90\u00d74H (360h) \u2014 mirrors backtest ENTRY_WINDOW",
       "date_opened": "2026-07-10",
       "time_opened_utc": "12:04",
       "sl_mode": "initial",
-      "feed_updated_utc": "2026-07-10T12:04Z"
+      "feed_updated_utc": "2026-07-25T14:03Z"
     },
     {
       "trade_id": "TAOUSDT_20260714_CB_001",
@@ -179,15 +179,15 @@
       "sl": 6.40155806,
       "tp1": 6.349,
       "tp2": 6.04,
-      "status": "OPEN",
+      "status": "STOPPED_AFTER_TP1",
       "tp1_hit": true,
       "tp2_hit": false,
       "sl_hit": false,
-      "close_reason": null,
+      "close_reason": "live MEXC exit: manual @ 6.412",
       "date_opened": "2026-07-23",
       "time_opened_utc": "04:03",
       "sl_mode": "breakeven",
-      "feed_updated_utc": "2026-07-23T22:03Z"
+      "feed_updated_utc": "2026-07-25T13:43Z"
     },
     {
       "trade_id": "ALGOUSDT_20260723_CB_001",
