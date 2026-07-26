@@ -1,9 +1,9 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-07-26T20:07Z",
+  "generated_utc": "2026-07-26T22:07Z",
   "master": "braam",
   "retention_hours": 48,
-  "trade_count": 20,
+  "trade_count": 18,
   "trades": [
     {
       "trade_id": "TRXUSDT_20260710_CJ_001",
@@ -190,29 +190,6 @@
       "feed_updated_utc": "2026-07-25T13:43Z"
     },
     {
-      "trade_id": "ALGOUSDT_20260723_CB_001",
-      "coin": "ALGOUSDT",
-      "direction": "Short",
-      "trading_system": "Braam",
-      "conviction": "MEDIUM",
-      "leverage": 3,
-      "entry_price": 0.0837858,
-      "entry_lo": 0.08336687,
-      "entry_hi": 0.08420473,
-      "sl": 0.08542028,
-      "tp1": 0.0821,
-      "tp2": 0.0798,
-      "status": "STOPPED",
-      "tp1_hit": false,
-      "tp2_hit": false,
-      "sl_hit": false,
-      "close_reason": "live MEXC exit: sl @ 0.08551",
-      "date_opened": "2026-07-23",
-      "time_opened_utc": "08:03",
-      "sl_mode": "initial",
-      "feed_updated_utc": "2026-07-24T20:16Z"
-    },
-    {
       "trade_id": "LINKUSDT_20260723_CB_001",
       "coin": "LINKUSDT",
       "direction": "Short",
@@ -374,29 +351,6 @@
       "feed_updated_utc": "2026-07-23T20:03Z"
     },
     {
-      "trade_id": "HBARUSDT_20260724_CB_001",
-      "coin": "HBARUSDT",
-      "direction": "Short",
-      "trading_system": "Braam",
-      "conviction": "MEDIUM",
-      "leverage": 3,
-      "entry_price": 0.0707282,
-      "entry_lo": 0.07037456,
-      "entry_hi": 0.07108184,
-      "sl": 0.07258513,
-      "tp1": 0.06941,
-      "tp2": 0.06645,
-      "status": "STOPPED",
-      "tp1_hit": false,
-      "tp2_hit": false,
-      "sl_hit": false,
-      "close_reason": "live MEXC exit: sl @ 0.07261",
-      "date_opened": "2026-07-24",
-      "time_opened_utc": "12:03",
-      "sl_mode": "initial",
-      "feed_updated_utc": "2026-07-24T20:52Z"
-    },
-    {
       "trade_id": "HBARUSDT_20260725_CB_001",
       "coin": "HBARUSDT",
       "direction": "Short",
@@ -455,7 +409,7 @@
       "sl": 0.08610728,
       "tp1": 0.07964161,
       "tp2": 0.0709984,
-      "status": "PENDING",
+      "status": "OPEN",
       "tp1_hit": false,
       "tp2_hit": false,
       "sl_hit": false,
@@ -463,7 +417,7 @@
       "date_opened": "2026-07-26",
       "time_opened_utc": "20:04",
       "sl_mode": "initial",
-      "feed_updated_utc": "2026-07-26T20:04Z"
+      "feed_updated_utc": "2026-07-26T22:00Z"
     }
   ]
 }
