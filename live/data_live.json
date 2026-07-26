@@ -1,11 +1,11 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-07-26T14:06:35Z",
+  "last_updated_iso": "2026-07-26T16:07:02Z",
   "mexc_account": {
-    "unrealized_pnl": 3.7255,
-    "equity": 1526.693,
-    "available": 751.3952,
+    "unrealized_pnl": 1.0931,
+    "equity": 1523.9534,
+    "available": 751.4719,
     "position_margin": 0.0
   },
   "order_levels": {
@@ -66,7 +66,7 @@
       "key": "state_file",
       "tier": 1,
       "label": "Trade journal",
-      "value": "OK (820 records)",
+      "value": "OK (821 records)",
       "status": "ok",
       "action": null
     },
@@ -74,7 +74,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$1,526.69",
+      "value": "$1,523.95",
       "status": "ok",
       "action": null
     },
@@ -90,7 +90,7 @@
       "key": "orphan_orders",
       "tier": 1,
       "label": "Order reconciliation",
-      "value": "in sync (7 resting = journal)",
+      "value": "in sync (6 resting = journal)",
       "status": "ok",
       "action": null
     },
@@ -98,7 +98,7 @@
       "key": "position_protection",
       "tier": 1,
       "label": "Position protection",
-      "value": "all protected (3 open, 3 pre-TP1 runners)",
+      "value": "all protected (4 open, 4 pre-TP1 runners)",
       "status": "ok",
       "action": null
     },
@@ -149,7 +149,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 74.99,
+      "price_at_run": 75.48,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-07-20",
@@ -308,10 +308,10 @@
       "leverage": 3,
       "trading_system": "Braam",
       "track_only": false,
-      "status": "PENDING",
+      "status": "OPEN",
       "price_at_run": 1889.94,
-      "date_activated": null,
-      "time_activated_utc": null,
+      "date_activated": "2026-07-26",
+      "time_activated_utc": "15:36",
       "date_opened": "2026-07-23",
       "time_opened_utc": "16:03",
       "conviction": "MEDIUM",
@@ -319,11 +319,11 @@
       "sl_moved_to_be": false,
       "pnl_tp1_realized_usd": null,
       "tp2_hit": false,
-      "live_executed": null,
-      "live_entry_fill": null,
+      "live_executed": true,
+      "live_entry_fill": 1913.31,
       "live_exit_fill": null,
-      "live_entry_slippage_pct": null,
-      "live_fees_usd": null,
+      "live_entry_slippage_pct": -0.0003,
+      "live_fees_usd": 0.1377,
       "live_funding_usd": null,
       "live_tp1_pnl_usd": null,
       "rehearsal": false
@@ -437,7 +437,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 0.7169,
+      "price_at_run": 0.7192,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-07-23",
@@ -492,18 +492,6 @@
   "recent_signals": [],
   "recent_opens": [
     {
-      "trade_id": "ALGOUSDT_20260723_CB_001",
-      "coin": "ALGOUSDT",
-      "direction": "Short",
-      "trading_system": "Braam",
-      "entry_price": 0.0837858,
-      "live_entry_fill": 0.08379,
-      "tp1_hit": false,
-      "iso": "2026-07-24T15:16:00Z",
-      "_iso_ms": 1784906160000,
-      "rehearsal": false
-    },
-    {
       "trade_id": "HBARUSDT_20260725_CB_001",
       "coin": "HBARUSDT",
       "direction": "Short",
@@ -525,6 +513,18 @@
       "tp1_hit": false,
       "iso": "2026-07-26T03:00:00Z",
       "_iso_ms": 1785034800000,
+      "rehearsal": false
+    },
+    {
+      "trade_id": "ETHUSDT_20260723_CB_001",
+      "coin": "ETHUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "entry_price": 1913.30505822,
+      "live_entry_fill": 1913.31,
+      "tp1_hit": false,
+      "iso": "2026-07-26T15:36:00Z",
+      "_iso_ms": 1785080160000,
       "rehearsal": false
     }
   ],
@@ -2514,7 +2514,7 @@
     "peak_capital_usd": 1162.42,
     "peak_concurrent": 14,
     "peak_date": "2026-06-12",
-    "deployed_trades": 107,
+    "deployed_trades": 108,
     "return_on_peak_pct": -12.23,
     "win_rate_pct": 34.6,
     "closed_count": 104,
