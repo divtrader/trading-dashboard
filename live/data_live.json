@@ -1,16 +1,16 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-07-26T18:07:03Z",
+  "last_updated_iso": "2026-07-26T20:07:06Z",
   "mexc_account": {
-    "unrealized_pnl": 2.5208,
-    "equity": 1525.3811,
-    "available": 751.4719,
+    "unrealized_pnl": 1.5083,
+    "equity": 1524.3686,
+    "available": 674.8457,
     "position_margin": 0.0
   },
   "order_levels": {
-    "checked": 11,
-    "in_sync": 11,
+    "checked": 12,
+    "in_sync": 12,
     "drifted": [],
     "reconciling": [],
     "detail": []
@@ -66,7 +66,7 @@
       "key": "state_file",
       "tier": 1,
       "label": "Trade journal",
-      "value": "OK (821 records)",
+      "value": "OK (822 records)",
       "status": "ok",
       "action": null
     },
@@ -74,7 +74,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$1,525.38",
+      "value": "$1,524.37",
       "status": "ok",
       "action": null
     },
@@ -90,7 +90,7 @@
       "key": "orphan_orders",
       "tier": 1,
       "label": "Order reconciliation",
-      "value": "in sync (6 resting = journal)",
+      "value": "in sync (7 resting = journal)",
       "status": "ok",
       "action": null
     },
@@ -149,7 +149,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 75.37,
+      "price_at_run": 75.36,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-07-20",
@@ -437,7 +437,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 0.7147,
+      "price_at_run": 0.7117,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-07-23",
@@ -487,9 +487,55 @@
       "live_funding_usd": null,
       "live_tp1_pnl_usd": null,
       "rehearsal": false
+    },
+    {
+      "trade_id": "ALGOUSDT_20260726_CB_001",
+      "coin": "ALGOUSDT",
+      "direction": "Short",
+      "entry_price": 0.08423476,
+      "sl": 0.08610728,
+      "tp1": 0.07964161,
+      "tp2": 0.0709984,
+      "capital_usd": 76.23,
+      "leverage": 3,
+      "trading_system": "Braam",
+      "track_only": false,
+      "status": "PENDING",
+      "price_at_run": 0.0842,
+      "date_activated": null,
+      "time_activated_utc": null,
+      "date_opened": "2026-07-26",
+      "time_opened_utc": "20:04",
+      "conviction": "MEDIUM",
+      "tp1_hit": false,
+      "sl_moved_to_be": false,
+      "pnl_tp1_realized_usd": null,
+      "tp2_hit": false,
+      "live_executed": null,
+      "live_entry_fill": null,
+      "live_exit_fill": null,
+      "live_entry_slippage_pct": null,
+      "live_fees_usd": null,
+      "live_funding_usd": null,
+      "live_tp1_pnl_usd": null,
+      "rehearsal": false
     }
   ],
-  "recent_signals": [],
+  "recent_signals": [
+    {
+      "trade_id": "ALGOUSDT_20260726_CB_001",
+      "coin": "ALGOUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "entry_price": 0.08423476,
+      "tp1": 0.07964161,
+      "sl": 0.08610728,
+      "conviction": "MEDIUM",
+      "track_only": false,
+      "iso": "2026-07-26T20:04:00Z",
+      "rehearsal": false
+    }
+  ],
   "recent_opens": [
     {
       "trade_id": "HBARUSDT_20260725_CB_001",
@@ -2530,8 +2576,8 @@
         "closed_count": 9
       }
     },
-    "live_trade_count_total": 169,
-    "live_real_count": 146,
+    "live_trade_count_total": 170,
+    "live_real_count": 147,
     "live_rehearsal_count": 23
   }
 }

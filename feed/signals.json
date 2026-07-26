@@ -1,9 +1,9 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-07-26T18:07Z",
+  "generated_utc": "2026-07-26T20:07Z",
   "master": "braam",
   "retention_hours": 48,
-  "trade_count": 19,
+  "trade_count": 20,
   "trades": [
     {
       "trade_id": "TRXUSDT_20260710_CJ_001",
@@ -441,6 +441,29 @@
       "time_opened_utc": "00:03",
       "sl_mode": "initial",
       "feed_updated_utc": "2026-07-26T05:07Z"
+    },
+    {
+      "trade_id": "ALGOUSDT_20260726_CB_001",
+      "coin": "ALGOUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "conviction": "MEDIUM",
+      "leverage": 3,
+      "entry_price": 0.08423476,
+      "entry_lo": 0.08381358,
+      "entry_hi": 0.08465593,
+      "sl": 0.08610728,
+      "tp1": 0.07964161,
+      "tp2": 0.0709984,
+      "status": "PENDING",
+      "tp1_hit": false,
+      "tp2_hit": false,
+      "sl_hit": false,
+      "close_reason": null,
+      "date_opened": "2026-07-26",
+      "time_opened_utc": "20:04",
+      "sl_mode": "initial",
+      "feed_updated_utc": "2026-07-26T20:04Z"
     }
   ]
 }
