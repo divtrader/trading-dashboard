@@ -1,10 +1,10 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-07-27T14:47:19Z",
+  "last_updated_iso": "2026-07-27T14:48:40Z",
   "mexc_account": {
-    "unrealized_pnl": 5.4314,
-    "equity": 2184.9587,
+    "unrealized_pnl": 5.6259,
+    "equity": 2185.1531,
     "available": 1491.3191,
     "position_margin": 0.0
   },
@@ -12,9 +12,7 @@
     "checked": 10,
     "in_sync": 10,
     "drifted": [],
-    "reconciling": [
-      "ALGO"
-    ],
+    "reconciling": [],
     "detail": []
   },
   "api_keys": [
@@ -76,7 +74,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$2,184.96",
+      "value": "$2,185.15",
       "status": "ok",
       "action": null
     },
@@ -424,38 +422,6 @@
       "live_fees_usd": 0.2289,
       "live_funding_usd": null,
       "live_tp1_pnl_usd": 3.12476,
-      "rehearsal": false
-    },
-    {
-      "trade_id": "ALGOUSDT_20260726_CB_001",
-      "coin": "ALGOUSDT",
-      "direction": "Short",
-      "entry_price": 0.08423476,
-      "sl": 0.08610728,
-      "tp1": 0.0819,
-      "tp2": 0.0811,
-      "capital_usd": 76.23,
-      "leverage": 3,
-      "trading_system": "Braam",
-      "track_only": false,
-      "status": "OPEN",
-      "price_at_run": 0.0842,
-      "date_activated": "2026-07-26",
-      "time_activated_utc": "22:00",
-      "date_opened": "2026-07-26",
-      "time_opened_utc": "20:04",
-      "conviction": "MEDIUM",
-      "tp1_hit": true,
-      "sl_moved_to_be": false,
-      "pnl_tp1_realized_usd": null,
-      "tp2_hit": false,
-      "live_executed": true,
-      "live_entry_fill": 0.08423,
-      "live_exit_fill": null,
-      "live_entry_slippage_pct": 0.0057,
-      "live_fees_usd": 0.226,
-      "live_funding_usd": null,
-      "live_tp1_pnl_usd": 3.10753,
       "rehearsal": false
     },
     {
@@ -2570,6 +2536,25 @@
       "won": false,
       "close_iso": "2026-07-26T22:48:00Z",
       "rehearsal": false
+    },
+    {
+      "trade_id": "ALGOUSDT_20260726_CB_001",
+      "coin": "ALGOUSDT",
+      "direction": "Short",
+      "status": "TP2_HIT",
+      "pnl_usd": 7.05,
+      "close_reason": "live MEXC exit: tp2 @ 0.08109",
+      "date_closed": "2026-07-27",
+      "time_closed_utc": "14:41",
+      "trading_system": "Braam",
+      "live_entry_fill": 0.08423,
+      "live_exit_fill": 0.08109,
+      "live_entry_slippage_pct": 0.0057,
+      "live_fees_usd": 0.314,
+      "live_funding_usd": 0.003198,
+      "won": true,
+      "close_iso": "2026-07-27T14:41:00Z",
+      "rehearsal": false
     }
   ],
   "recent_cancels": [],
@@ -2579,29 +2564,23 @@
       "direction": "Short",
       "trading_system": "Braam",
       "entry_price": 0.07076682
-    },
-    {
-      "coin": "ALGOUSDT",
-      "direction": "Short",
-      "trading_system": "Braam",
-      "entry_price": 0.08423476
     }
   ],
   "stats": {
-    "realized_pnl_usd": -152.22,
-    "realized_pnl_pct": -1.84,
+    "realized_pnl_usd": -145.17,
+    "realized_pnl_pct": -1.74,
     "peak_capital_usd": 1162.42,
     "peak_concurrent": 14,
     "peak_date": "2026-06-12",
     "deployed_trades": 109,
-    "return_on_peak_pct": -13.09,
-    "win_rate_pct": 34.0,
-    "closed_count": 106,
+    "return_on_peak_pct": -12.49,
+    "win_rate_pct": 34.6,
+    "closed_count": 107,
     "per_system": {
       "Braam": {
-        "realized_pnl_usd": -103.45,
-        "win_rate_pct": 37.1,
-        "closed_count": 97
+        "realized_pnl_usd": -96.4,
+        "win_rate_pct": 37.8,
+        "closed_count": 98
       },
       "John": {
         "realized_pnl_usd": -48.77,
