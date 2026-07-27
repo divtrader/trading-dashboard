@@ -1,16 +1,16 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-07-27T10:06:56Z",
+  "last_updated_iso": "2026-07-27T12:07:01Z",
   "mexc_account": {
-    "unrealized_pnl": 8.6705,
-    "equity": 2177.9715,
-    "available": 1474.8164,
+    "unrealized_pnl": 6.9983,
+    "equity": 2176.2994,
+    "available": 1365.9334,
     "position_margin": 0.0
   },
   "order_levels": {
-    "checked": 10,
-    "in_sync": 10,
+    "checked": 11,
+    "in_sync": 11,
     "drifted": [],
     "reconciling": [],
     "detail": []
@@ -66,7 +66,7 @@
       "key": "state_file",
       "tier": 1,
       "label": "Trade journal",
-      "value": "OK (824 records)",
+      "value": "OK (825 records)",
       "status": "ok",
       "action": null
     },
@@ -74,7 +74,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$2,177.97",
+      "value": "$2,176.30",
       "status": "ok",
       "action": null
     },
@@ -90,7 +90,7 @@
       "key": "orphan_orders",
       "tier": 1,
       "label": "Order reconciliation",
-      "value": "in sync (6 resting = journal)",
+      "value": "in sync (7 resting = journal)",
       "status": "ok",
       "action": null
     },
@@ -149,7 +149,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 76.48,
+      "price_at_run": 76.65,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-07-20",
@@ -373,7 +373,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 0.7169,
+      "price_at_run": 0.7178,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-07-23",
@@ -455,9 +455,55 @@
       "live_funding_usd": null,
       "live_tp1_pnl_usd": null,
       "rehearsal": false
+    },
+    {
+      "trade_id": "TRXUSDT_20260727_CJ_001",
+      "coin": "TRXUSDT",
+      "direction": "Long",
+      "entry_price": 0.32187479,
+      "sl": 0.32063314,
+      "tp1": 0.3479443,
+      "tp2": 0.35143372,
+      "capital_usd": 108.82,
+      "leverage": 3,
+      "trading_system": "John",
+      "track_only": false,
+      "status": "PENDING",
+      "price_at_run": 0.3309,
+      "date_activated": null,
+      "time_activated_utc": null,
+      "date_opened": "2026-07-27",
+      "time_opened_utc": "12:04",
+      "conviction": "HIGH",
+      "tp1_hit": false,
+      "sl_moved_to_be": null,
+      "pnl_tp1_realized_usd": null,
+      "tp2_hit": false,
+      "live_executed": null,
+      "live_entry_fill": null,
+      "live_exit_fill": null,
+      "live_entry_slippage_pct": null,
+      "live_fees_usd": null,
+      "live_funding_usd": null,
+      "live_tp1_pnl_usd": null,
+      "rehearsal": false
     }
   ],
-  "recent_signals": [],
+  "recent_signals": [
+    {
+      "trade_id": "TRXUSDT_20260727_CJ_001",
+      "coin": "TRXUSDT",
+      "direction": "Long",
+      "trading_system": "John",
+      "entry_price": 0.32187479,
+      "tp1": 0.3479443,
+      "sl": 0.32063314,
+      "conviction": "HIGH",
+      "track_only": false,
+      "iso": "2026-07-27T12:04:00Z",
+      "rehearsal": false
+    }
+  ],
   "recent_opens": [
     {
       "trade_id": "HBARUSDT_20260725_CB_001",
@@ -2548,8 +2594,8 @@
         "closed_count": 9
       }
     },
-    "live_trade_count_total": 170,
-    "live_real_count": 147,
+    "live_trade_count_total": 171,
+    "live_real_count": 148,
     "live_rehearsal_count": 23
   }
 }
