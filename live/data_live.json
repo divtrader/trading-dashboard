@@ -1,19 +1,31 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-07-27T14:48:40Z",
+  "last_updated_iso": "2026-07-27T14:50:43Z",
   "mexc_account": {
-    "unrealized_pnl": 5.6259,
-    "equity": 2185.1531,
+    "unrealized_pnl": 5.037,
+    "equity": 2184.5642,
     "available": 1491.3191,
     "position_margin": 0.0
   },
   "order_levels": {
     "checked": 10,
-    "in_sync": 10,
-    "drifted": [],
+    "in_sync": 9,
+    "drifted": [
+      "HBAR"
+    ],
     "reconciling": [],
-    "detail": []
+    "detail": [
+      {
+        "coin": "HBAR",
+        "trade_id": "HBARUSDT_20260725_CB_001",
+        "status": "OPEN",
+        "fields": [
+          "tp2"
+        ],
+        "synced_at": "2026-07-27T14:05:36.938894+00:00"
+      }
+    ]
   },
   "api_keys": [
     {
@@ -74,7 +86,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$2,185.15",
+      "value": "$2,184.56",
       "status": "ok",
       "action": null
     },
@@ -399,7 +411,7 @@
       "entry_price": 0.07076682,
       "sl": 0.07076682,
       "tp1": 0.06878,
-      "tp2": 0.06593,
+      "tp2": 0.06701,
       "capital_usd": 77.17,
       "leverage": 3,
       "trading_system": "Braam",
