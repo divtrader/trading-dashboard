@@ -1,5 +1,5 @@
 {
-  "last_updated_iso": "2026-07-28T15:29:36Z",
+  "last_updated_iso": "2026-07-28T15:30:56Z",
   "mexc_account": {
     "unrealized_pnl": 0.0,
     "equity": 0.0,
@@ -1061,10 +1061,10 @@
       "leverage": 3,
       "trading_system": "Braam",
       "track_only": false,
-      "status": "PENDING",
+      "status": "OPEN",
       "price_at_run": 1891.87,
-      "date_activated": null,
-      "time_activated_utc": null,
+      "date_activated": "2026-07-28",
+      "time_activated_utc": "15:23",
       "date_opened": "2026-07-28",
       "time_opened_utc": "00:04",
       "conviction": "MEDIUM",
@@ -1368,6 +1368,16 @@
       "tp1_hit": false,
       "iso": "2026-07-27T20:00:00Z",
       "_iso_ms": 1785182400000
+    },
+    {
+      "trade_id": "ETHUSDT_20260728_CB_001",
+      "coin": "ETHUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "entry_price": 1913.19564748,
+      "tp1_hit": false,
+      "iso": "2026-07-28T15:23:00Z",
+      "_iso_ms": 1785252180000
     }
   ],
   "recent_closes": [
@@ -2045,7 +2055,7 @@
     "peak_capital_usd": 3300,
     "peak_concurrent": 33,
     "peak_date": "2026-06-22",
-    "deployed_trades": 501,
+    "deployed_trades": 502,
     "return_on_peak_pct": 13.24,
     "win_rate_pct": 32.2,
     "closed_count": 475,
