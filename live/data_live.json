@@ -1,10 +1,10 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-07-29T16:07:53Z",
+  "last_updated_iso": "2026-07-29T18:07:14Z",
   "mexc_account": {
-    "unrealized_pnl": 31.6889,
-    "equity": 2216.8348,
+    "unrealized_pnl": 13.0625,
+    "equity": 2198.2083,
     "available": 752.8005,
     "position_margin": 0.0
   },
@@ -74,7 +74,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$2,216.83",
+      "value": "$2,198.21",
       "status": "ok",
       "action": null
     },
@@ -98,9 +98,9 @@
       "key": "position_protection",
       "tier": 1,
       "label": "Position protection",
-      "value": "live read failed",
-      "status": "warn",
-      "action": "Worker health read failed \u2014 can't confirm SL protection; check the Worker."
+      "value": "all protected (6 open, 4 pre-TP1 runners)",
+      "status": "ok",
+      "action": null
     },
     {
       "key": "apikey_MEXC_ALGO_KEY",
@@ -149,7 +149,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 72.99,
+      "price_at_run": 74.09,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-07-20",
@@ -309,7 +309,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 0.6815,
+      "price_at_run": 0.6934,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-07-23",
@@ -629,7 +629,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 63935.99,
+      "price_at_run": 64499.58,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-07-29",
@@ -665,30 +665,6 @@
     }
   ],
   "recent_opens": [
-    {
-      "trade_id": "AVAXUSDT_20260727_CB_001",
-      "coin": "AVAXUSDT",
-      "direction": "Short",
-      "trading_system": "Braam",
-      "entry_price": 6.59519277,
-      "live_entry_fill": 6.595,
-      "tp1_hit": true,
-      "iso": "2026-07-27T16:25:00Z",
-      "_iso_ms": 1785169500000,
-      "rehearsal": false
-    },
-    {
-      "trade_id": "DOGEUSDT_20260727_CB_001",
-      "coin": "DOGEUSDT",
-      "direction": "Short",
-      "trading_system": "Braam",
-      "entry_price": 0.07201283,
-      "live_entry_fill": 0.07201,
-      "tp1_hit": false,
-      "iso": "2026-07-27T16:34:00Z",
-      "_iso_ms": 1785170040000,
-      "rehearsal": false
-    },
     {
       "trade_id": "ETHUSDT_20260728_CB_001",
       "coin": "ETHUSDT",
