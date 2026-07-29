@@ -1,6 +1,6 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-07-29T20:07Z",
+  "generated_utc": "2026-07-29T22:07Z",
   "master": "braam",
   "retention_hours": 48,
   "trade_count": 18,
@@ -202,15 +202,15 @@
       "sl": 0.06924352,
       "tp1": 0.06878,
       "tp2": 0.06701,
-      "status": "OPEN",
+      "status": "TP2_HIT",
       "tp1_hit": true,
       "tp2_hit": false,
       "sl_hit": false,
-      "close_reason": null,
+      "close_reason": "live MEXC exit: tp2 @ 0.06703",
       "date_opened": "2026-07-25",
       "time_opened_utc": "04:03",
       "sl_mode": "breakeven",
-      "feed_updated_utc": "2026-07-27T16:04Z"
+      "feed_updated_utc": "2026-07-29T20:48Z"
     },
     {
       "trade_id": "TRXUSDT_20260727_CJ_001",
@@ -291,17 +291,17 @@
       "entry_price": 0.07201283,
       "entry_lo": 0.07165277,
       "entry_hi": 0.0723729,
-      "sl": 0.0737059,
+      "sl": 0.07201283,
       "tp1": 0.06911,
       "tp2": 0.0610548,
       "status": "OPEN",
-      "tp1_hit": false,
+      "tp1_hit": true,
       "tp2_hit": false,
       "sl_hit": false,
       "close_reason": null,
       "date_opened": "2026-07-27",
       "time_opened_utc": "16:04",
-      "sl_mode": "initial",
+      "sl_mode": "breakeven",
       "feed_updated_utc": "2026-07-27T16:34Z"
     },
     {
