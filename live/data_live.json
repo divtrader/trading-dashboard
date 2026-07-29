@@ -1,19 +1,32 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-07-29T08:07:07Z",
+  "last_updated_iso": "2026-07-29T09:05:08Z",
   "mexc_account": {
-    "unrealized_pnl": 16.6784,
-    "equity": 2201.7873,
+    "unrealized_pnl": 15.4716,
+    "equity": 2200.5805,
     "available": 861.5784,
     "position_margin": 0.0
   },
   "order_levels": {
     "checked": 15,
-    "in_sync": 15,
-    "drifted": [],
+    "in_sync": 14,
+    "drifted": [
+      "TAO"
+    ],
     "reconciling": [],
-    "detail": []
+    "detail": [
+      {
+        "coin": "TAO",
+        "trade_id": "TAOUSDT_20260727_CB_001",
+        "status": "OPEN",
+        "fields": [
+          "tp1",
+          "tp2"
+        ],
+        "synced_at": null
+      }
+    ]
   },
   "api_keys": [
     {
@@ -74,7 +87,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$2,201.79",
+      "value": "$2,200.58",
       "status": "ok",
       "action": null
     },
@@ -494,8 +507,8 @@
       "direction": "Short",
       "entry_price": 195.46985072,
       "sl": 200.41924549,
-      "tp1": 179.09335396,
-      "tp2": 159.05474505,
+      "tp1": 188.1,
+      "tp2": 176.4,
       "capital_usd": 109.24,
       "leverage": 3,
       "trading_system": "Braam",
