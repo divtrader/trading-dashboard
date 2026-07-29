@@ -1,11 +1,11 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-07-29T14:07:20Z",
+  "last_updated_iso": "2026-07-29T16:07:53Z",
   "mexc_account": {
-    "unrealized_pnl": 21.5363,
-    "equity": 2206.6614,
-    "available": 751.436,
+    "unrealized_pnl": 31.6889,
+    "equity": 2216.8348,
+    "available": 752.8005,
     "position_margin": 0.0
   },
   "order_levels": {
@@ -66,7 +66,7 @@
       "key": "state_file",
       "tier": 1,
       "label": "Trade journal",
-      "value": "OK (848 records)",
+      "value": "OK (850 records)",
       "status": "ok",
       "action": null
     },
@@ -74,7 +74,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$2,206.66",
+      "value": "$2,216.83",
       "status": "ok",
       "action": null
     },
@@ -98,9 +98,9 @@
       "key": "position_protection",
       "tier": 1,
       "label": "Position protection",
-      "value": "all protected (6 open, 4 pre-TP1 runners)",
-      "status": "ok",
-      "action": null
+      "value": "live read failed",
+      "status": "warn",
+      "action": "Worker health read failed \u2014 can't confirm SL protection; check the Worker."
     },
     {
       "key": "apikey_MEXC_ALGO_KEY",
@@ -149,7 +149,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 73.7,
+      "price_at_run": 72.99,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-07-20",
@@ -309,7 +309,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 0.6887,
+      "price_at_run": 0.6815,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-07-23",
@@ -373,7 +373,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 0.3266,
+      "price_at_run": 0.3264,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-07-27",
@@ -620,16 +620,16 @@
       "trade_id": "BTCUSDT_20260729_CJ_001",
       "coin": "BTCUSDT",
       "direction": "Short",
-      "entry_price": 67076.2984391,
-      "sl": 67695.13388732,
-      "tp1": 59046.75741575,
-      "tp2": 57997.47222537,
+      "entry_price": 64932.92993824,
+      "sl": 65567.05356873,
+      "tp1": 61037.90603971,
+      "tp2": 58694.58987649,
       "capital_usd": 110.24,
       "leverage": 3,
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 64535.99,
+      "price_at_run": 63935.99,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-07-29",
@@ -655,9 +655,9 @@
       "coin": "BTCUSDT",
       "direction": "Short",
       "trading_system": "John",
-      "entry_price": 67076.2984391,
-      "tp1": 59046.75741575,
-      "sl": 67695.13388732,
+      "entry_price": 64932.92993824,
+      "tp1": 61037.90603971,
+      "sl": 65567.05356873,
       "conviction": "HIGH",
       "track_only": false,
       "iso": "2026-07-29T12:04:00Z",
@@ -2749,15 +2749,7 @@
       "rehearsal": false
     }
   ],
-  "recent_cancels": [
-    {
-      "coin": "NEARUSDT",
-      "direction": "Short",
-      "trading_system": "Braam",
-      "close_reason": "Stale 26.0h \u2265 24h grace: Price $1.6040 is 20.8% below entry $1.9370",
-      "iso": "2026-07-29T04:04:00Z"
-    }
-  ],
+  "recent_cancels": [],
   "tp1_hits_open": [
     {
       "coin": "HBARUSDT",
