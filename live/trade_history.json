@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-30T10:07:50Z",
+  "updated": "2026-07-30T12:07:30Z",
   "positions": {
     "1414291495": {
       "position_id": "1414291495",
@@ -2010,8 +2010,16 @@
       "leverage": 3,
       "entry_price": 0.32689,
       "opened_at": "2026-07-30T06:22:04Z",
-      "status": "OPEN",
-      "braam_trade_id": "TRXUSDT_20260730_CB_001"
+      "status": "CLOSED",
+      "braam_trade_id": "TRXUSDT_20260730_CB_001",
+      "closed_at": "2026-07-30T12:01:01Z",
+      "close_price": 0.32872,
+      "pnl_usd": -2.2857,
+      "margin_usd": 110.86,
+      "fees_usd": 0.4636,
+      "tag": "LOSS",
+      "close_type": 4,
+      "close_reason": "stop_loss"
     }
   },
   "orders": {
@@ -2058,6 +2066,15 @@
       "entry_price": 0.79262788,
       "resting_at": "2026-07-23T20:03:00Z",
       "braam_trade_id": "SUIUSDT_20260723_CJ_001",
+      "status": "RESTING"
+    },
+    "837781642595905536": {
+      "order_id": "837781642595905536",
+      "coin": "BNBUSDT",
+      "direction": "Short",
+      "entry_price": 596.51265592,
+      "resting_at": "2026-07-26T04:03:00Z",
+      "braam_trade_id": "BNBUSDT_20260726_CJ_001",
       "status": "RESTING"
     },
     "836694261893623808": {

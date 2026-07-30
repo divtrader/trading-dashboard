@@ -1,9 +1,9 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-07-30T10:07Z",
+  "generated_utc": "2026-07-30T12:07Z",
   "master": "braam",
   "retention_hours": 48,
-  "trade_count": 21,
+  "trade_count": 22,
   "trades": [
     {
       "trade_id": "SOLUSDT_20260720_CJ_001",
@@ -211,6 +211,29 @@
       "time_opened_utc": "04:03",
       "sl_mode": "breakeven",
       "feed_updated_utc": "2026-07-29T20:48Z"
+    },
+    {
+      "trade_id": "BNBUSDT_20260726_CJ_001",
+      "coin": "BNBUSDT",
+      "direction": "Short",
+      "trading_system": "John",
+      "conviction": "HIGH",
+      "leverage": 3,
+      "entry_price": 596.51265592,
+      "entry_lo": 582.09367204,
+      "entry_hi": 601.31898388,
+      "sl": 600.20928185,
+      "tp1": 535.61783761,
+      "tp2": 511.2614363,
+      "status": "PENDING",
+      "tp1_hit": false,
+      "tp2_hit": false,
+      "sl_hit": false,
+      "close_reason": null,
+      "date_opened": "2026-07-26",
+      "time_opened_utc": "04:03",
+      "sl_mode": "initial",
+      "feed_updated_utc": "2026-07-26T04:03Z"
     },
     {
       "trade_id": "TRXUSDT_20260727_CJ_001",
@@ -455,15 +478,15 @@
       "sl": 0.3287139,
       "tp1": 0.3244,
       "tp2": 0.3221,
-      "status": "OPEN",
+      "status": "STOPPED",
       "tp1_hit": false,
       "tp2_hit": false,
       "sl_hit": false,
-      "close_reason": null,
+      "close_reason": "live MEXC exit: sl @ 0.32872",
       "date_opened": "2026-07-30",
       "time_opened_utc": "00:04",
       "sl_mode": "initial",
-      "feed_updated_utc": "2026-07-30T06:22Z"
+      "feed_updated_utc": "2026-07-30T12:01Z"
     },
     {
       "trade_id": "HBARUSDT_20260730_CB_001",
