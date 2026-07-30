@@ -1,19 +1,32 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-07-30T14:07:37Z",
+  "last_updated_iso": "2026-07-30T15:58:14Z",
   "mexc_account": {
-    "unrealized_pnl": 7.5961,
-    "equity": 2205.6813,
-    "available": 690.3272,
+    "unrealized_pnl": 9.4208,
+    "equity": 2207.3667,
+    "available": 690.3738,
     "position_margin": 0.0
   },
   "order_levels": {
     "checked": 17,
-    "in_sync": 17,
-    "drifted": [],
+    "in_sync": 16,
+    "drifted": [
+      "BTC"
+    ],
     "reconciling": [],
-    "detail": []
+    "detail": [
+      {
+        "coin": "BTC",
+        "trade_id": "BTCUSDT_20260729_CJ_001",
+        "status": "OPEN",
+        "fields": [
+          "tp1",
+          "tp2"
+        ],
+        "synced_at": "2026-07-29T16:05:30.554721+00:00"
+      }
+    ]
   },
   "api_keys": [
     {
@@ -74,7 +87,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$2,205.68",
+      "value": "$2,207.37",
       "status": "ok",
       "action": null
     },
@@ -90,7 +103,7 @@
       "key": "orphan_orders",
       "tier": 1,
       "label": "Order reconciliation",
-      "value": "in sync (12 resting = journal)",
+      "value": "in sync (11 resting = journal)",
       "status": "ok",
       "action": null
     },
@@ -98,7 +111,7 @@
       "key": "position_protection",
       "tier": 1,
       "label": "Position protection",
-      "value": "all protected (5 open, 2 pre-TP1 runners)",
+      "value": "all protected (6 open, 2 pre-TP1 runners)",
       "status": "ok",
       "action": null
     },
@@ -590,8 +603,8 @@
       "direction": "Short",
       "entry_price": 64932.92993824,
       "sl": 65567.05356873,
-      "tp1": 61037.90603971,
-      "tp2": 58694.58987649,
+      "tp1": 63294.54,
+      "tp2": 59798,
       "capital_usd": 110.24,
       "leverage": 3,
       "trading_system": "John",
@@ -683,18 +696,6 @@
   ],
   "recent_signals": [],
   "recent_opens": [
-    {
-      "trade_id": "ETHUSDT_20260728_CB_001",
-      "coin": "ETHUSDT",
-      "direction": "Short",
-      "trading_system": "Braam",
-      "entry_price": 1913.19564748,
-      "live_entry_fill": 1913.2,
-      "tp1_hit": false,
-      "iso": "2026-07-28T15:23:00Z",
-      "_iso_ms": 1785252180000,
-      "rehearsal": false
-    },
     {
       "trade_id": "TAOUSDT_20260727_CB_001",
       "coin": "TAOUSDT",
