@@ -1,19 +1,31 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-07-30T06:06:57Z",
+  "last_updated_iso": "2026-07-30T06:52:03Z",
   "mexc_account": {
-    "unrealized_pnl": 11.7004,
-    "equity": 2215.2209,
-    "available": 693.1998,
+    "unrealized_pnl": 13.9805,
+    "equity": 2217.3029,
+    "available": 693.266,
     "position_margin": 0.0
   },
   "order_levels": {
     "checked": 18,
-    "in_sync": 18,
-    "drifted": [],
+    "in_sync": 17,
+    "drifted": [
+      "TRX"
+    ],
     "reconciling": [],
-    "detail": []
+    "detail": [
+      {
+        "coin": "TRX",
+        "trade_id": "TRXUSDT_20260730_CB_001",
+        "status": "PENDING",
+        "fields": [
+          "tp1"
+        ],
+        "synced_at": null
+      }
+    ]
   },
   "api_keys": [
     {
@@ -74,7 +86,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$2,215.22",
+      "value": "$2,217.30",
       "status": "ok",
       "action": null
     },
@@ -90,7 +102,7 @@
       "key": "orphan_orders",
       "tier": 1,
       "label": "Order reconciliation",
-      "value": "in sync (13 resting = journal)",
+      "value": "in sync (12 resting = journal)",
       "status": "ok",
       "action": null
     },
@@ -98,7 +110,7 @@
       "key": "position_protection",
       "tier": 1,
       "label": "Position protection",
-      "value": "all protected (5 open, 2 pre-TP1 runners)",
+      "value": "all protected (6 open, 2 pre-TP1 runners)",
       "status": "ok",
       "action": null
     },
@@ -654,8 +666,8 @@
       "direction": "Short",
       "entry_price": 0.32689247,
       "sl": 0.3287139,
-      "tp1": 0.31992883,
-      "tp2": 0.27613389,
+      "tp1": 0.3244,
+      "tp2": 0.3221,
       "capital_usd": 110.86,
       "leverage": 3,
       "trading_system": "Braam",
@@ -733,7 +745,7 @@
       "direction": "Short",
       "trading_system": "Braam",
       "entry_price": 0.32689247,
-      "tp1": 0.31992883,
+      "tp1": 0.3244,
       "sl": 0.3287139,
       "conviction": "MEDIUM",
       "track_only": false,
