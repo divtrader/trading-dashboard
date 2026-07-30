@@ -1,5 +1,5 @@
 {
-  "last_updated_iso": "2026-07-30T06:52:00Z",
+  "last_updated_iso": "2026-07-30T06:53:24Z",
   "mexc_account": {
     "unrealized_pnl": 0.0,
     "equity": 0.0,
@@ -1268,10 +1268,10 @@
       "leverage": 3,
       "trading_system": "Braam",
       "track_only": false,
-      "status": "PENDING",
+      "status": "OPEN",
       "price_at_run": 0.3258,
-      "date_activated": null,
-      "time_activated_utc": null,
+      "date_activated": "2026-07-30",
+      "time_activated_utc": "06:22",
       "date_opened": "2026-07-30",
       "time_opened_utc": "00:04",
       "conviction": "MEDIUM",
@@ -1325,18 +1325,6 @@
       "tp1": 1.433,
       "sl": 1.73581493,
       "conviction": "HIGH",
-      "track_only": false,
-      "iso": "2026-07-30T00:04:00Z"
-    },
-    {
-      "trade_id": "TRXUSDT_20260730_CB_001",
-      "coin": "TRXUSDT",
-      "direction": "Short",
-      "trading_system": "Braam",
-      "entry_price": 0.32689247,
-      "tp1": 0.3244,
-      "sl": 0.3287139,
-      "conviction": "MEDIUM",
       "track_only": false,
       "iso": "2026-07-30T00:04:00Z"
     },
@@ -1423,6 +1411,16 @@
       "tp1_hit": false,
       "iso": "2026-07-29T20:00:00Z",
       "_iso_ms": 1785355200000
+    },
+    {
+      "trade_id": "TRXUSDT_20260730_CB_001",
+      "coin": "TRXUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "entry_price": 0.32689247,
+      "tp1_hit": false,
+      "iso": "2026-07-30T06:22:00Z",
+      "_iso_ms": 1785392520000
     }
   ],
   "recent_closes": [
@@ -2124,7 +2122,7 @@
     "peak_capital_usd": 3300,
     "peak_concurrent": 33,
     "peak_date": "2026-06-22",
-    "deployed_trades": 509,
+    "deployed_trades": 510,
     "return_on_peak_pct": 13.31,
     "win_rate_pct": 32.2,
     "closed_count": 478,

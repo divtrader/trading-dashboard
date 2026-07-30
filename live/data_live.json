@@ -1,31 +1,19 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-07-30T06:52:03Z",
+  "last_updated_iso": "2026-07-30T06:53:28Z",
   "mexc_account": {
-    "unrealized_pnl": 13.9805,
-    "equity": 2217.3029,
+    "unrealized_pnl": 14.3489,
+    "equity": 2217.6713,
     "available": 693.266,
     "position_margin": 0.0
   },
   "order_levels": {
     "checked": 18,
-    "in_sync": 17,
-    "drifted": [
-      "TRX"
-    ],
+    "in_sync": 18,
+    "drifted": [],
     "reconciling": [],
-    "detail": [
-      {
-        "coin": "TRX",
-        "trade_id": "TRXUSDT_20260730_CB_001",
-        "status": "PENDING",
-        "fields": [
-          "tp1"
-        ],
-        "synced_at": null
-      }
-    ]
+    "detail": []
   },
   "api_keys": [
     {
@@ -86,7 +74,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$2,217.30",
+      "value": "$2,217.67",
       "status": "ok",
       "action": null
     },
@@ -110,7 +98,7 @@
       "key": "position_protection",
       "tier": 1,
       "label": "Position protection",
-      "value": "all protected (6 open, 2 pre-TP1 runners)",
+      "value": "all protected (6 open, 3 pre-TP1 runners)",
       "status": "ok",
       "action": null
     },
@@ -672,10 +660,10 @@
       "leverage": 3,
       "trading_system": "Braam",
       "track_only": false,
-      "status": "PENDING",
+      "status": "OPEN",
       "price_at_run": 0.3258,
-      "date_activated": null,
-      "time_activated_utc": null,
+      "date_activated": "2026-07-30",
+      "time_activated_utc": "06:22",
       "date_opened": "2026-07-30",
       "time_opened_utc": "00:04",
       "conviction": "MEDIUM",
@@ -683,11 +671,11 @@
       "sl_moved_to_be": false,
       "pnl_tp1_realized_usd": null,
       "tp2_hit": false,
-      "live_executed": null,
-      "live_entry_fill": null,
+      "live_executed": true,
+      "live_entry_fill": 0.32689,
       "live_exit_fill": null,
-      "live_entry_slippage_pct": null,
-      "live_fees_usd": null,
+      "live_entry_slippage_pct": 0.0008,
+      "live_fees_usd": 0.198,
       "live_funding_usd": null,
       "live_tp1_pnl_usd": null,
       "rehearsal": false
@@ -740,19 +728,6 @@
       "rehearsal": false
     },
     {
-      "trade_id": "TRXUSDT_20260730_CB_001",
-      "coin": "TRXUSDT",
-      "direction": "Short",
-      "trading_system": "Braam",
-      "entry_price": 0.32689247,
-      "tp1": 0.3244,
-      "sl": 0.3287139,
-      "conviction": "MEDIUM",
-      "track_only": false,
-      "iso": "2026-07-30T00:04:00Z",
-      "rehearsal": false
-    },
-    {
       "trade_id": "HBARUSDT_20260730_CB_001",
       "coin": "HBARUSDT",
       "direction": "Short",
@@ -789,6 +764,18 @@
       "tp1_hit": true,
       "iso": "2026-07-28T20:12:00Z",
       "_iso_ms": 1785269520000,
+      "rehearsal": false
+    },
+    {
+      "trade_id": "TRXUSDT_20260730_CB_001",
+      "coin": "TRXUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "entry_price": 0.32689247,
+      "live_entry_fill": 0.32689,
+      "tp1_hit": false,
+      "iso": "2026-07-30T06:22:00Z",
+      "_iso_ms": 1785392520000,
       "rehearsal": false
     }
   ],
@@ -2873,7 +2860,7 @@
     "peak_capital_usd": 1162.42,
     "peak_concurrent": 14,
     "peak_date": "2026-06-12",
-    "deployed_trades": 113,
+    "deployed_trades": 114,
     "return_on_peak_pct": -11.72,
     "win_rate_pct": 35.2,
     "closed_count": 108,
