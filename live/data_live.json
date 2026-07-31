@@ -1,42 +1,19 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-07-31T03:58:57Z",
+  "last_updated_iso": "2026-07-31T04:00:20Z",
   "mexc_account": {
-    "unrealized_pnl": 21.0109,
-    "equity": 2218.6176,
+    "unrealized_pnl": 22.2678,
+    "equity": 2219.8745,
     "available": 744.8193,
     "position_margin": 0.0
   },
   "order_levels": {
     "checked": 16,
-    "in_sync": 14,
-    "drifted": [
-      "NEAR",
-      "HBAR"
-    ],
+    "in_sync": 16,
+    "drifted": [],
     "reconciling": [],
-    "detail": [
-      {
-        "coin": "NEAR",
-        "trade_id": "NEARUSDT_20260730_CB_001",
-        "status": "OPEN",
-        "fields": [
-          "tp1",
-          "tp2"
-        ],
-        "synced_at": null
-      },
-      {
-        "coin": "HBAR",
-        "trade_id": "HBARUSDT_20260730_CB_001",
-        "status": "OPEN",
-        "fields": [
-          "tp1"
-        ],
-        "synced_at": null
-      }
-    ]
+    "detail": []
   },
   "api_keys": [
     {
@@ -97,7 +74,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$2,218.62",
+      "value": "$2,219.87",
       "status": "ok",
       "action": null
     },
