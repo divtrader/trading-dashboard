@@ -1,9 +1,9 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-07-31T04:00Z",
+  "generated_utc": "2026-07-31T04:07Z",
   "master": "braam",
   "retention_hours": 48,
-  "trade_count": 22,
+  "trade_count": 21,
   "trades": [
     {
       "trade_id": "SOLUSDT_20260720_CJ_001",
@@ -27,29 +27,6 @@
       "time_opened_utc": "20:04",
       "sl_mode": "initial",
       "feed_updated_utc": "2026-07-20T20:04Z"
-    },
-    {
-      "trade_id": "NEARUSDT_20260722_CB_001",
-      "coin": "NEARUSDT",
-      "direction": "Short",
-      "trading_system": "Braam",
-      "conviction": "MEDIUM",
-      "leverage": 3,
-      "entry_price": 1.93703018,
-      "entry_lo": 1.92734503,
-      "entry_hi": 1.94671533,
-      "sl": 1.99448665,
-      "tp1": 1.75833614,
-      "tp2": 1.48487732,
-      "status": "CANCELLED",
-      "tp1_hit": false,
-      "tp2_hit": false,
-      "sl_hit": false,
-      "close_reason": "Stale 26.0h \u2265 24h grace: Price $1.6040 is 20.8% below entry $1.9370",
-      "date_opened": "2026-07-22",
-      "time_opened_utc": "16:03",
-      "sl_mode": "initial",
-      "feed_updated_utc": "2026-07-29T04:04Z"
     },
     {
       "trade_id": "BNBUSDT_20260722_CB_001",
@@ -225,15 +202,15 @@
       "sl": 600.20928185,
       "tp1": 535.61783761,
       "tp2": 511.2614363,
-      "status": "PENDING",
+      "status": "CANCELLED",
       "tp1_hit": false,
       "tp2_hit": false,
       "sl_hit": false,
-      "close_reason": null,
+      "close_reason": "Signal direction flipped to Long (5/8 signals) \u2014 original setup no longer valid",
       "date_opened": "2026-07-26",
       "time_opened_utc": "04:03",
       "sl_mode": "initial",
-      "feed_updated_utc": "2026-07-26T04:03Z"
+      "feed_updated_utc": "2026-07-31T04:04Z"
     },
     {
       "trade_id": "TRXUSDT_20260727_CJ_001",
@@ -463,7 +440,7 @@
       "date_opened": "2026-07-30",
       "time_opened_utc": "00:04",
       "sl_mode": "initial",
-      "feed_updated_utc": "2026-07-30T16:52Z"
+      "feed_updated_utc": "2026-07-31T04:04Z"
     },
     {
       "trade_id": "TRXUSDT_20260730_CB_001",
@@ -509,7 +486,7 @@
       "date_opened": "2026-07-30",
       "time_opened_utc": "00:04",
       "sl_mode": "initial",
-      "feed_updated_utc": "2026-07-30T19:26Z"
+      "feed_updated_utc": "2026-07-31T04:04Z"
     }
   ]
 }
