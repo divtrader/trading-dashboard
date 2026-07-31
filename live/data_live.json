@@ -1,16 +1,16 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-07-31T10:07:07Z",
+  "last_updated_iso": "2026-07-31T12:07:23Z",
   "mexc_account": {
-    "unrealized_pnl": 39.1311,
-    "equity": 2236.8387,
-    "available": 820.8993,
+    "unrealized_pnl": 35.9278,
+    "equity": 2233.6354,
+    "available": 817.7516,
     "position_margin": 0.0
   },
   "order_levels": {
-    "checked": 15,
-    "in_sync": 15,
+    "checked": 16,
+    "in_sync": 16,
     "drifted": [],
     "reconciling": [],
     "detail": []
@@ -66,7 +66,7 @@
       "key": "state_file",
       "tier": 1,
       "label": "Trade journal",
-      "value": "OK (859 records)",
+      "value": "OK (860 records)",
       "status": "ok",
       "action": null
     },
@@ -74,7 +74,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$2,236.84",
+      "value": "$2,233.64",
       "status": "ok",
       "action": null
     },
@@ -90,7 +90,7 @@
       "key": "orphan_orders",
       "tier": 1,
       "label": "Order reconciliation",
-      "value": "in sync (8 resting = journal)",
+      "value": "in sync (9 resting = journal)",
       "status": "ok",
       "action": null
     },
@@ -149,7 +149,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 73.46,
+      "price_at_run": 73.51,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-07-20",
@@ -277,7 +277,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 0.686,
+      "price_at_run": 0.687,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-07-23",
@@ -309,7 +309,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 0.3279,
+      "price_at_run": 0.3266,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-07-27",
@@ -533,7 +533,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "OPEN",
-      "price_at_run": 63680.2,
+      "price_at_run": 63785.6,
       "date_activated": "2026-07-30",
       "time_activated_utc": "12:12",
       "date_opened": "2026-07-29",
@@ -615,9 +615,55 @@
       "live_funding_usd": null,
       "live_tp1_pnl_usd": null,
       "rehearsal": false
+    },
+    {
+      "trade_id": "TRXUSDT_20260731_CB_001",
+      "coin": "TRXUSDT",
+      "direction": "Short",
+      "entry_price": 0.32766588,
+      "sl": 0.32960727,
+      "tp1": 0.32077298,
+      "tp2": 0.31100738,
+      "capital_usd": 111.62,
+      "leverage": 3,
+      "trading_system": "Braam",
+      "track_only": false,
+      "status": "PENDING",
+      "price_at_run": 0.3266,
+      "date_activated": null,
+      "time_activated_utc": null,
+      "date_opened": "2026-07-31",
+      "time_opened_utc": "12:04",
+      "conviction": "MEDIUM",
+      "tp1_hit": false,
+      "sl_moved_to_be": false,
+      "pnl_tp1_realized_usd": null,
+      "tp2_hit": false,
+      "live_executed": null,
+      "live_entry_fill": null,
+      "live_exit_fill": null,
+      "live_entry_slippage_pct": null,
+      "live_fees_usd": null,
+      "live_funding_usd": null,
+      "live_tp1_pnl_usd": null,
+      "rehearsal": false
     }
   ],
-  "recent_signals": [],
+  "recent_signals": [
+    {
+      "trade_id": "TRXUSDT_20260731_CB_001",
+      "coin": "TRXUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "entry_price": 0.32766588,
+      "tp1": 0.32077298,
+      "sl": 0.32960727,
+      "conviction": "MEDIUM",
+      "track_only": false,
+      "iso": "2026-07-31T12:04:00Z",
+      "rehearsal": false
+    }
+  ],
   "recent_opens": [
     {
       "trade_id": "TRXUSDT_20260730_CB_001",
@@ -2836,8 +2882,8 @@
         "closed_count": 9
       }
     },
-    "live_trade_count_total": 182,
-    "live_real_count": 159,
+    "live_trade_count_total": 183,
+    "live_real_count": 160,
     "live_rehearsal_count": 23
   }
 }
