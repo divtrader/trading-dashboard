@@ -1,9 +1,9 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-08-01T18:07Z",
+  "generated_utc": "2026-08-01T20:07Z",
   "master": "braam",
   "retention_hours": 48,
-  "trade_count": 21,
+  "trade_count": 22,
   "trades": [
     {
       "trade_id": "SOLUSDT_20260720_CJ_001",
@@ -199,7 +199,7 @@
       "entry_price": 6.59519277,
       "entry_lo": 6.5622168,
       "entry_hi": 6.62816873,
-      "sl": 6.48552075,
+      "sl": 6.35369784,
       "tp1": 6.342,
       "tp2": 5.975,
       "status": "OPEN",
@@ -245,7 +245,7 @@
       "entry_price": 0.07201283,
       "entry_lo": 0.07165277,
       "entry_hi": 0.0723729,
-      "sl": 0.07102034,
+      "sl": 0.07049355,
       "tp1": 0.06911,
       "tp2": 0.0610548,
       "status": "OPEN",
@@ -314,7 +314,7 @@
       "entry_price": 1913.19564748,
       "entry_lo": 1903.62966925,
       "entry_hi": 1922.76162572,
-      "sl": 1904.4402522,
+      "sl": 1885.6945199,
       "tp1": 1861.09,
       "tp2": 1767.21,
       "status": "OPEN",
@@ -487,6 +487,29 @@
       "time_opened_utc": "16:04",
       "sl_mode": "initial",
       "feed_updated_utc": "2026-08-01T16:04Z"
+    },
+    {
+      "trade_id": "ONDOUSDT_20260801_CB_001",
+      "coin": "ONDOUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "conviction": "MEDIUM",
+      "leverage": 3,
+      "entry_price": 0.39619096,
+      "entry_lo": 0.39421001,
+      "entry_hi": 0.39817192,
+      "sl": 0.41110849,
+      "tp1": 0.33977664,
+      "tp2": 0.27920548,
+      "status": "PENDING",
+      "tp1_hit": false,
+      "tp2_hit": false,
+      "sl_hit": false,
+      "close_reason": null,
+      "date_opened": "2026-08-01",
+      "time_opened_utc": "20:04",
+      "sl_mode": "initial",
+      "feed_updated_utc": "2026-08-01T20:04Z"
     }
   ]
 }
