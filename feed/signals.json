@@ -1,6 +1,6 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-08-01T10:08Z",
+  "generated_utc": "2026-08-01T12:07Z",
   "master": "braam",
   "retention_hours": 48,
   "trade_count": 20,
@@ -199,7 +199,7 @@
       "entry_price": 6.59519277,
       "entry_lo": 6.5622168,
       "entry_hi": 6.62816873,
-      "sl": 6.54246785,
+      "sl": 6.52979158,
       "tp1": 6.342,
       "tp2": 5.975,
       "status": "OPEN",
@@ -397,29 +397,6 @@
       "feed_updated_utc": "2026-07-31T04:04Z"
     },
     {
-      "trade_id": "TRXUSDT_20260730_CB_001",
-      "coin": "TRXUSDT",
-      "direction": "Short",
-      "trading_system": "Braam",
-      "conviction": "MEDIUM",
-      "leverage": 3,
-      "entry_price": 0.32689247,
-      "entry_lo": 0.32525801,
-      "entry_hi": 0.32852694,
-      "sl": 0.3287139,
-      "tp1": 0.3244,
-      "tp2": 0.3221,
-      "status": "STOPPED",
-      "tp1_hit": false,
-      "tp2_hit": false,
-      "sl_hit": false,
-      "close_reason": "live MEXC exit: sl @ 0.32872",
-      "date_opened": "2026-07-30",
-      "time_opened_utc": "00:04",
-      "sl_mode": "initial",
-      "feed_updated_utc": "2026-07-30T12:01Z"
-    },
-    {
       "trade_id": "HBARUSDT_20260730_CB_001",
       "coin": "HBARUSDT",
       "direction": "Short",
@@ -464,6 +441,29 @@
       "time_opened_utc": "12:04",
       "sl_mode": "initial",
       "feed_updated_utc": "2026-08-01T08:59Z"
+    },
+    {
+      "trade_id": "BNBUSDT_20260801_CB_001",
+      "coin": "BNBUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "conviction": "MEDIUM",
+      "leverage": 3,
+      "entry_price": 583.53398507,
+      "entry_lo": 580.61631514,
+      "entry_hi": 586.451655,
+      "sl": 592.66914061,
+      "tp1": 560.47113379,
+      "tp2": 527.7992328,
+      "status": "PENDING",
+      "tp1_hit": false,
+      "tp2_hit": false,
+      "sl_hit": false,
+      "close_reason": null,
+      "date_opened": "2026-08-01",
+      "time_opened_utc": "12:04",
+      "sl_mode": "initial",
+      "feed_updated_utc": "2026-08-01T12:04Z"
     }
   ]
 }
