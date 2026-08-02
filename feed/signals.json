@@ -1,9 +1,9 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-08-02T02:06Z",
+  "generated_utc": "2026-08-02T04:07Z",
   "master": "braam",
   "retention_hours": 48,
-  "trade_count": 21,
+  "trade_count": 20,
   "trades": [
     {
       "trade_id": "SOLUSDT_20260720_CJ_001",
@@ -64,15 +64,15 @@
       "sl": 0.17805954,
       "tp1": 0.1621,
       "tp2": 0.1559,
-      "status": "OPEN",
+      "status": "STOPPED",
       "tp1_hit": false,
       "tp2_hit": false,
       "sl_hit": false,
-      "close_reason": null,
+      "close_reason": "live MEXC exit: sl @ 0.1781",
       "date_opened": "2026-07-23",
       "time_opened_utc": "16:03",
       "sl_mode": "initial",
-      "feed_updated_utc": "2026-07-30T18:04Z"
+      "feed_updated_utc": "2026-08-02T02:07Z"
     },
     {
       "trade_id": "XRPUSDT_20260723_CB_001",
@@ -142,29 +142,6 @@
       "time_opened_utc": "20:03",
       "sl_mode": "initial",
       "feed_updated_utc": "2026-08-01T10:04Z"
-    },
-    {
-      "trade_id": "BNBUSDT_20260726_CJ_001",
-      "coin": "BNBUSDT",
-      "direction": "Short",
-      "trading_system": "John",
-      "conviction": "HIGH",
-      "leverage": 3,
-      "entry_price": 596.51265592,
-      "entry_lo": 582.09367204,
-      "entry_hi": 601.31898388,
-      "sl": 600.20928185,
-      "tp1": 535.61783761,
-      "tp2": 511.2614363,
-      "status": "CANCELLED",
-      "tp1_hit": false,
-      "tp2_hit": false,
-      "sl_hit": false,
-      "close_reason": "Signal direction flipped to Long (5/8 signals) \u2014 original setup no longer valid",
-      "date_opened": "2026-07-26",
-      "time_opened_utc": "04:03",
-      "sl_mode": "initial",
-      "feed_updated_utc": "2026-07-31T04:04Z"
     },
     {
       "trade_id": "TRXUSDT_20260727_CJ_001",
@@ -432,7 +409,7 @@
       "sl": 592.66914061,
       "tp1": 566.11,
       "tp2": 547.2,
-      "status": "PENDING",
+      "status": "OPEN",
       "tp1_hit": false,
       "tp2_hit": false,
       "sl_hit": false,
@@ -440,7 +417,7 @@
       "date_opened": "2026-08-01",
       "time_opened_utc": "12:04",
       "sl_mode": "initial",
-      "feed_updated_utc": "2026-08-01T12:04Z"
+      "feed_updated_utc": "2026-08-02T03:07Z"
     },
     {
       "trade_id": "TAOUSDT_20260801_CB_001",
@@ -455,7 +432,7 @@
       "sl": 199.30536558,
       "tp1": 178.98278046,
       "tp2": 158.63456576,
-      "status": "PENDING",
+      "status": "OPEN",
       "tp1_hit": false,
       "tp2_hit": false,
       "sl_hit": false,
@@ -463,7 +440,7 @@
       "date_opened": "2026-08-01",
       "time_opened_utc": "16:04",
       "sl_mode": "initial",
-      "feed_updated_utc": "2026-08-01T16:04Z"
+      "feed_updated_utc": "2026-08-02T02:07Z"
     },
     {
       "trade_id": "ONDOUSDT_20260801_CB_001",
