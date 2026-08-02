@@ -1,5 +1,5 @@
 {
-  "last_updated_iso": "2026-08-02T19:15:06Z",
+  "last_updated_iso": "2026-08-02T19:16:19Z",
   "mexc_account": {
     "unrealized_pnl": 0.0,
     "equity": 0.0,
@@ -519,29 +519,6 @@
       "tp1_hit": false,
       "sl_moved_to_be": false,
       "pnl_tp1_realized_usd": null
-    },
-    {
-      "trade_id": "ETHUSDT_20260728_CB_001",
-      "coin": "ETHUSDT",
-      "direction": "Short",
-      "entry_price": 1913.19564748,
-      "sl": 1885.6945199,
-      "tp1": 1861.09,
-      "tp2": 1767.21,
-      "capital_usd": 100.0,
-      "leverage": 3,
-      "trading_system": "Braam",
-      "track_only": false,
-      "status": "OPEN",
-      "price_at_run": 1891.87,
-      "date_activated": "2026-07-28",
-      "time_activated_utc": "15:23",
-      "date_opened": "2026-07-28",
-      "time_opened_utc": "00:04",
-      "conviction": "MEDIUM",
-      "tp1_hit": true,
-      "sl_moved_to_be": false,
-      "pnl_tp1_realized_usd": 4.2
     },
     {
       "trade_id": "LTCUSDT_20260728_CB_001",
@@ -1313,22 +1290,6 @@
   ],
   "recent_closes": [
     {
-      "trade_id": "AVAXUSDT_20260725_CJ_M_001",
-      "coin": "AVAXUSDT",
-      "direction": "Long",
-      "status": "STOPPED",
-      "pnl_usd": -5.29,
-      "close_reason": "SL hit",
-      "date_closed": "2026-07-27",
-      "time_closed_utc": "12:00",
-      "trading_system": "John",
-      "won": false,
-      "close_iso": "2026-07-27T12:00:00Z",
-      "margin_usd": 100,
-      "fees_usd": 0.408,
-      "fees_modeled": true
-    },
-    {
       "trade_id": "ALGOUSDT_20260726_CJ_M_001",
       "coin": "ALGOUSDT",
       "direction": "Long",
@@ -1951,6 +1912,22 @@
       "margin_usd": 100,
       "fees_usd": 0.408,
       "fees_modeled": true
+    },
+    {
+      "trade_id": "ETHUSDT_20260728_CB_001",
+      "coin": "ETHUSDT",
+      "direction": "Short",
+      "status": "STOPPED_AFTER_TP1",
+      "pnl_usd": 7.67,
+      "close_reason": "live MEXC exit: manual @ 1886.14",
+      "date_closed": "2026-08-02",
+      "time_closed_utc": "18:41",
+      "trading_system": "Braam",
+      "won": true,
+      "close_iso": "2026-08-02T18:41:00Z",
+      "margin_usd": 100,
+      "fees_usd": 0.408,
+      "fees_modeled": true
     }
   ],
   "recent_cancels": [],
@@ -1968,12 +1945,6 @@
       "entry_price": 0.08793112
     },
     {
-      "coin": "ETHUSDT",
-      "direction": "Short",
-      "trading_system": "Braam",
-      "entry_price": 1913.19564748
-    },
-    {
       "coin": "BNBUSDT",
       "direction": "Long",
       "trading_system": "John",
@@ -1987,15 +1958,15 @@
     }
   ],
   "stats": {
-    "realized_pnl_usd": 519.55,
-    "realized_pnl_pct": 1.03,
+    "realized_pnl_usd": 527.22,
+    "realized_pnl_pct": 1.05,
     "peak_capital_usd": 3300,
     "peak_concurrent": 33,
     "peak_date": "2026-06-22",
     "deployed_trades": 533,
-    "return_on_peak_pct": 15.74,
-    "win_rate_pct": 32.7,
-    "closed_count": 502,
+    "return_on_peak_pct": 15.98,
+    "win_rate_pct": 32.8,
+    "closed_count": 503,
     "per_system": {
       "John": {
         "realized_pnl_usd": 201.64,
@@ -2008,16 +1979,16 @@
         "closed_count": 23
       },
       "Braam": {
-        "realized_pnl_usd": 272.67,
-        "win_rate_pct": 43.5,
-        "closed_count": 177
+        "realized_pnl_usd": 280.34,
+        "win_rate_pct": 43.8,
+        "closed_count": 178
       }
     },
     "real_only": {
-      "realized_pnl_usd": -40.63,
-      "realized_pnl_pct": -0.35,
-      "win_rate_pct": 35.9,
-      "closed_count": 117
+      "realized_pnl_usd": -32.96,
+      "realized_pnl_pct": -0.28,
+      "win_rate_pct": 36.4,
+      "closed_count": 118
     },
     "track_only": {
       "realized_pnl_usd": 560.18,
