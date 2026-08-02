@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-02T05:56:44Z",
+  "updated": "2026-08-02T05:58:06Z",
   "positions": {
     "1414291495": {
       "position_id": "1414291495",
@@ -1988,8 +1988,16 @@
       "leverage": 3,
       "entry_price": 6.595,
       "opened_at": "2026-07-27T16:25:09Z",
-      "status": "OPEN",
-      "braam_trade_id": "AVAXUSDT_20260727_CB_001"
+      "status": "CLOSED",
+      "braam_trade_id": "AVAXUSDT_20260727_CB_001",
+      "closed_at": "2026-08-02T04:52:50Z",
+      "close_price": 6.357,
+      "pnl_usd": 11.7151,
+      "margin_usd": 109.24,
+      "fees_usd": 0.4481,
+      "tag": "WIN",
+      "close_type": 1,
+      "close_reason": "manual"
     },
     "1454521512": {
       "position_id": "1454521512",
@@ -1998,8 +2006,16 @@
       "leverage": 3,
       "entry_price": 0.07201,
       "opened_at": "2026-07-27T16:34:47Z",
-      "status": "OPEN",
-      "braam_trade_id": "DOGEUSDT_20260727_CB_001"
+      "status": "CLOSED",
+      "braam_trade_id": "DOGEUSDT_20260727_CB_001",
+      "closed_at": "2026-08-02T05:25:14Z",
+      "close_price": 0.07053,
+      "pnl_usd": 9.214,
+      "margin_usd": 109.24,
+      "fees_usd": 0.4457,
+      "tag": "WIN",
+      "close_type": 1,
+      "close_reason": "manual"
     },
     "1455576483": {
       "position_id": "1455576483",
@@ -2114,6 +2130,16 @@
       "opened_at": "2026-08-02T02:07:10Z",
       "status": "OPEN",
       "braam_trade_id": "TAOUSDT_20260801_CB_001"
+    },
+    "1459126344": {
+      "position_id": "1459126344",
+      "coin": "ONDOUSDT",
+      "direction": "Short",
+      "leverage": 3,
+      "entry_price": 0.3962,
+      "opened_at": "2026-08-02T05:01:22Z",
+      "status": "OPEN",
+      "braam_trade_id": "ONDOUSDT_20260801_CB_001"
     }
   },
   "orders": {
@@ -2187,15 +2213,6 @@
       "entry_price": 46.83797262,
       "resting_at": "2026-07-28T00:04:00Z",
       "braam_trade_id": "LTCUSDT_20260728_CB_001",
-      "status": "RESTING"
-    },
-    "838627052591660608": {
-      "order_id": "838627052591660608",
-      "coin": "ONDOUSDT",
-      "direction": "Short",
-      "entry_price": 0.39619096,
-      "resting_at": "2026-08-01T20:04:00Z",
-      "braam_trade_id": "ONDOUSDT_20260801_CB_001",
       "status": "RESTING"
     }
   }

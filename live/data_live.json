@@ -1,35 +1,19 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-08-02T05:56:29Z",
+  "last_updated_iso": "2026-08-02T05:57:54Z",
   "mexc_account": {
-    "unrealized_pnl": -3.6205,
-    "equity": 2197.4395,
+    "unrealized_pnl": -3.3226,
+    "equity": 2197.7374,
     "available": 925.1517,
     "position_margin": 0.0
   },
   "order_levels": {
     "checked": 15,
-    "in_sync": 14,
-    "drifted": [
-      "TAO"
-    ],
-    "reconciling": [
-      "AVAX",
-      "DOGE"
-    ],
-    "detail": [
-      {
-        "coin": "TAO",
-        "trade_id": "TAOUSDT_20260801_CB_001",
-        "status": "OPEN",
-        "fields": [
-          "tp1",
-          "tp2"
-        ],
-        "synced_at": null
-      }
-    ]
+    "in_sync": 15,
+    "drifted": [],
+    "reconciling": [],
+    "detail": []
   },
   "api_keys": [
     {
@@ -90,7 +74,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$2,197.44",
+      "value": "$2,197.74",
       "status": "ok",
       "action": null
     },
@@ -114,7 +98,7 @@
       "key": "position_protection",
       "tier": 1,
       "label": "Position protection",
-      "value": "all protected (7 open, 4 pre-TP1 runners)",
+      "value": "all protected (7 open, 5 pre-TP1 runners)",
       "status": "ok",
       "action": null
     },
@@ -313,38 +297,6 @@
       "rehearsal": false
     },
     {
-      "trade_id": "AVAXUSDT_20260727_CB_001",
-      "coin": "AVAXUSDT",
-      "direction": "Short",
-      "entry_price": 6.59519277,
-      "sl": 6.35369784,
-      "tp1": 6.342,
-      "tp2": 5.975,
-      "capital_usd": 109.24,
-      "leverage": 3,
-      "trading_system": "Braam",
-      "track_only": false,
-      "status": "OPEN",
-      "price_at_run": 6.539,
-      "date_activated": "2026-07-27",
-      "time_activated_utc": "16:25",
-      "date_opened": "2026-07-27",
-      "time_opened_utc": "16:04",
-      "conviction": "MEDIUM",
-      "tp1_hit": true,
-      "sl_moved_to_be": false,
-      "pnl_tp1_realized_usd": 6.54,
-      "tp2_hit": false,
-      "live_executed": true,
-      "live_entry_fill": 6.595,
-      "live_exit_fill": null,
-      "live_entry_slippage_pct": 0.0029,
-      "live_fees_usd": 0.322,
-      "live_funding_usd": null,
-      "live_tp1_pnl_usd": 6.2744,
-      "rehearsal": false
-    },
-    {
       "trade_id": "ALGOUSDT_20260727_CB_001",
       "coin": "ALGOUSDT",
       "direction": "Short",
@@ -374,38 +326,6 @@
       "live_fees_usd": null,
       "live_funding_usd": null,
       "live_tp1_pnl_usd": null,
-      "rehearsal": false
-    },
-    {
-      "trade_id": "DOGEUSDT_20260727_CB_001",
-      "coin": "DOGEUSDT",
-      "direction": "Short",
-      "entry_price": 0.07201283,
-      "sl": 0.07049355,
-      "tp1": 0.06911,
-      "tp2": 0.0610548,
-      "capital_usd": 109.24,
-      "leverage": 3,
-      "trading_system": "Braam",
-      "track_only": false,
-      "status": "OPEN",
-      "price_at_run": 0.07132,
-      "date_activated": "2026-07-27",
-      "time_activated_utc": "16:34",
-      "date_opened": "2026-07-27",
-      "time_opened_utc": "16:04",
-      "conviction": "MEDIUM",
-      "tp1_hit": true,
-      "sl_moved_to_be": false,
-      "pnl_tp1_realized_usd": 6.88,
-      "tp2_hit": false,
-      "live_executed": true,
-      "live_entry_fill": 0.07201,
-      "live_exit_fill": null,
-      "live_entry_slippage_pct": 0.0039,
-      "live_fees_usd": 0.316,
-      "live_funding_usd": null,
-      "live_tp1_pnl_usd": 6.38,
       "rehearsal": false
     },
     {
@@ -676,10 +596,10 @@
       "leverage": 3,
       "trading_system": "Braam",
       "track_only": false,
-      "status": "PENDING",
+      "status": "OPEN",
       "price_at_run": 0.3784,
-      "date_activated": null,
-      "time_activated_utc": null,
+      "date_activated": "2026-08-02",
+      "time_activated_utc": "05:01",
       "date_opened": "2026-08-01",
       "time_opened_utc": "20:04",
       "conviction": "MEDIUM",
@@ -687,31 +607,17 @@
       "sl_moved_to_be": false,
       "pnl_tp1_realized_usd": null,
       "tp2_hit": false,
-      "live_executed": null,
-      "live_entry_fill": null,
+      "live_executed": true,
+      "live_entry_fill": 0.3962,
       "live_exit_fill": null,
-      "live_entry_slippage_pct": null,
-      "live_fees_usd": null,
+      "live_entry_slippage_pct": -0.0023,
+      "live_fees_usd": 0.1996,
       "live_funding_usd": null,
       "live_tp1_pnl_usd": null,
       "rehearsal": false
     }
   ],
-  "recent_signals": [
-    {
-      "trade_id": "ONDOUSDT_20260801_CB_001",
-      "coin": "ONDOUSDT",
-      "direction": "Short",
-      "trading_system": "Braam",
-      "entry_price": 0.39619096,
-      "tp1": 0.33977664,
-      "sl": 0.41110849,
-      "conviction": "MEDIUM",
-      "track_only": false,
-      "iso": "2026-08-01T20:04:00Z",
-      "rehearsal": false
-    }
-  ],
+  "recent_signals": [],
   "recent_opens": [
     {
       "trade_id": "TRXUSDT_20260731_CB_001",
@@ -747,6 +653,18 @@
       "tp1_hit": false,
       "iso": "2026-08-02T03:07:00Z",
       "_iso_ms": 1785640020000,
+      "rehearsal": false
+    },
+    {
+      "trade_id": "ONDOUSDT_20260801_CB_001",
+      "coin": "ONDOUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "entry_price": 0.39619096,
+      "live_entry_fill": 0.3962,
+      "tp1_hit": false,
+      "iso": "2026-08-02T05:01:00Z",
+      "_iso_ms": 1785646860000,
       "rehearsal": false
     }
   ],
@@ -2897,22 +2815,48 @@
       "won": false,
       "close_iso": "2026-08-02T02:07:00Z",
       "rehearsal": false
+    },
+    {
+      "trade_id": "AVAXUSDT_20260727_CB_001",
+      "coin": "AVAXUSDT",
+      "direction": "Short",
+      "status": "STOPPED_AFTER_TP1",
+      "pnl_usd": 11.72,
+      "close_reason": "live MEXC exit: manual @ 6.357",
+      "date_closed": "2026-08-02",
+      "time_closed_utc": "04:52",
+      "trading_system": "Braam",
+      "live_entry_fill": 6.595,
+      "live_exit_fill": 6.357,
+      "live_entry_slippage_pct": 0.0029,
+      "live_fees_usd": 0.4481,
+      "live_funding_usd": 0.013638,
+      "won": true,
+      "close_iso": "2026-08-02T04:52:00Z",
+      "rehearsal": false
+    },
+    {
+      "trade_id": "DOGEUSDT_20260727_CB_001",
+      "coin": "DOGEUSDT",
+      "direction": "Short",
+      "status": "STOPPED_AFTER_TP1",
+      "pnl_usd": 9.21,
+      "close_reason": "live MEXC exit: manual @ 0.07053",
+      "date_closed": "2026-08-02",
+      "time_closed_utc": "05:25",
+      "trading_system": "Braam",
+      "live_entry_fill": 0.07201,
+      "live_exit_fill": 0.07053,
+      "live_entry_slippage_pct": 0.0039,
+      "live_fees_usd": 0.4457,
+      "live_funding_usd": 0.124268,
+      "won": true,
+      "close_iso": "2026-08-02T05:25:00Z",
+      "rehearsal": false
     }
   ],
   "recent_cancels": [],
   "tp1_hits_open": [
-    {
-      "coin": "AVAXUSDT",
-      "direction": "Short",
-      "trading_system": "Braam",
-      "entry_price": 6.59519277
-    },
-    {
-      "coin": "DOGEUSDT",
-      "direction": "Short",
-      "trading_system": "Braam",
-      "entry_price": 0.07201283
-    },
     {
       "coin": "ETHUSDT",
       "direction": "Short",
@@ -2927,20 +2871,20 @@
     }
   ],
   "stats": {
-    "realized_pnl_usd": -152.51,
-    "realized_pnl_pct": -1.71,
+    "realized_pnl_usd": -131.58,
+    "realized_pnl_pct": -1.44,
     "peak_capital_usd": 1162.42,
     "peak_concurrent": 14,
     "peak_date": "2026-06-12",
-    "deployed_trades": 121,
-    "return_on_peak_pct": -13.12,
-    "win_rate_pct": 34.5,
-    "closed_count": 113,
+    "deployed_trades": 122,
+    "return_on_peak_pct": -11.32,
+    "win_rate_pct": 35.7,
+    "closed_count": 115,
     "per_system": {
       "Braam": {
-        "realized_pnl_usd": -103.74,
-        "win_rate_pct": 37.5,
-        "closed_count": 104
+        "realized_pnl_usd": -82.81,
+        "win_rate_pct": 38.7,
+        "closed_count": 106
       },
       "John": {
         "realized_pnl_usd": -48.77,

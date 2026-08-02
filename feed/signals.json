@@ -1,6 +1,6 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-08-02T05:56Z",
+  "generated_utc": "2026-08-02T05:58Z",
   "master": "braam",
   "retention_hours": 48,
   "trade_count": 20,
@@ -179,15 +179,15 @@
       "sl": 6.35369784,
       "tp1": 6.342,
       "tp2": 5.975,
-      "status": "OPEN",
+      "status": "STOPPED_AFTER_TP1",
       "tp1_hit": true,
       "tp2_hit": false,
       "sl_hit": false,
-      "close_reason": null,
+      "close_reason": "live MEXC exit: manual @ 6.357",
       "date_opened": "2026-07-27",
       "time_opened_utc": "16:04",
       "sl_mode": "breakeven",
-      "feed_updated_utc": "2026-07-27T16:25Z"
+      "feed_updated_utc": "2026-08-02T04:52Z"
     },
     {
       "trade_id": "ALGOUSDT_20260727_CB_001",
@@ -225,15 +225,15 @@
       "sl": 0.07049355,
       "tp1": 0.06911,
       "tp2": 0.0610548,
-      "status": "OPEN",
+      "status": "STOPPED_AFTER_TP1",
       "tp1_hit": true,
       "tp2_hit": false,
       "sl_hit": false,
-      "close_reason": null,
+      "close_reason": "live MEXC exit: manual @ 0.07053",
       "date_opened": "2026-07-27",
       "time_opened_utc": "16:04",
       "sl_mode": "breakeven",
-      "feed_updated_utc": "2026-07-27T16:34Z"
+      "feed_updated_utc": "2026-08-02T05:25Z"
     },
     {
       "trade_id": "LINKUSDT_20260728_CB_001",
@@ -455,7 +455,7 @@
       "sl": 0.41110849,
       "tp1": 0.33977664,
       "tp2": 0.27920548,
-      "status": "PENDING",
+      "status": "OPEN",
       "tp1_hit": false,
       "tp2_hit": false,
       "sl_hit": false,
@@ -463,7 +463,7 @@
       "date_opened": "2026-08-01",
       "time_opened_utc": "20:04",
       "sl_mode": "initial",
-      "feed_updated_utc": "2026-08-01T20:04Z"
+      "feed_updated_utc": "2026-08-02T05:01Z"
     }
   ]
 }
