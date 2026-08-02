@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-02T16:07:26Z",
+  "updated": "2026-08-02T18:07:47Z",
   "positions": {
     "1414291495": {
       "position_id": "1414291495",
@@ -2006,8 +2006,16 @@
       "leverage": 3,
       "entry_price": 0.08394,
       "opened_at": "2026-08-02T14:34:52Z",
-      "status": "OPEN",
-      "braam_trade_id": "ALGOUSDT_20260727_CB_001"
+      "status": "CLOSED",
+      "braam_trade_id": "ALGOUSDT_20260727_CB_001",
+      "closed_at": "2026-08-02T17:04:54Z",
+      "close_price": 0.08585,
+      "pnl_usd": -7.9405,
+      "margin_usd": 109.24,
+      "fees_usd": 0.4647,
+      "tag": "LOSS",
+      "close_type": 4,
+      "close_reason": "stop_loss"
     },
     "1454521512": {
       "position_id": "1454521512",
@@ -2158,6 +2166,16 @@
       "opened_at": "2026-08-02T05:01:22Z",
       "status": "OPEN",
       "braam_trade_id": "ONDOUSDT_20260801_CB_001"
+    },
+    "1459440313": {
+      "position_id": "1459440313",
+      "coin": "TRXUSDT",
+      "direction": "Short",
+      "leverage": 3,
+      "entry_price": 0.32752,
+      "opened_at": "2026-08-02T16:33:43Z",
+      "status": "OPEN",
+      "braam_trade_id": "TRXUSDT_20260802_CB_001"
     }
   },
   "orders": {
@@ -2222,15 +2240,6 @@
       "entry_price": 46.83797262,
       "resting_at": "2026-07-28T00:04:00Z",
       "braam_trade_id": "LTCUSDT_20260728_CB_001",
-      "status": "RESTING"
-    },
-    "838928977493419008": {
-      "order_id": "838928977493419008",
-      "coin": "TRXUSDT",
-      "direction": "Short",
-      "entry_price": 0.32751884,
-      "resting_at": "2026-08-02T16:04:00Z",
-      "braam_trade_id": "TRXUSDT_20260802_CB_001",
       "status": "RESTING"
     }
   }
