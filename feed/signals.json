@@ -1,9 +1,9 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-08-02T14:07Z",
+  "generated_utc": "2026-08-02T16:07Z",
   "master": "braam",
   "retention_hours": 48,
-  "trade_count": 20,
+  "trade_count": 21,
   "trades": [
     {
       "trade_id": "SOLUSDT_20260720_CJ_001",
@@ -202,7 +202,7 @@
       "sl": 0.08584081,
       "tp1": 0.07690831,
       "tp2": 0.06831092,
-      "status": "PENDING",
+      "status": "OPEN",
       "tp1_hit": false,
       "tp2_hit": false,
       "sl_hit": false,
@@ -210,7 +210,7 @@
       "date_opened": "2026-07-27",
       "time_opened_utc": "16:04",
       "sl_mode": "initial",
-      "feed_updated_utc": "2026-07-27T16:04Z"
+      "feed_updated_utc": "2026-08-02T14:34Z"
     },
     {
       "trade_id": "DOGEUSDT_20260727_CB_001",
@@ -464,6 +464,29 @@
       "time_opened_utc": "20:04",
       "sl_mode": "initial",
       "feed_updated_utc": "2026-08-02T05:01Z"
+    },
+    {
+      "trade_id": "TRXUSDT_20260802_CB_001",
+      "coin": "TRXUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "conviction": "MEDIUM",
+      "leverage": 3,
+      "entry_price": 0.32751884,
+      "entry_lo": 0.32588125,
+      "entry_hi": 0.32915643,
+      "sl": 0.32940151,
+      "tp1": 0.3209329,
+      "tp2": 0.31152267,
+      "status": "PENDING",
+      "tp1_hit": false,
+      "tp2_hit": false,
+      "sl_hit": false,
+      "close_reason": null,
+      "date_opened": "2026-08-02",
+      "time_opened_utc": "16:04",
+      "sl_mode": "initial",
+      "feed_updated_utc": "2026-08-02T16:04Z"
     }
   ]
 }
