@@ -1,19 +1,42 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-08-03T04:07:41Z",
+  "last_updated_iso": "2026-08-03T05:18:13Z",
   "mexc_account": {
-    "unrealized_pnl": 20.6855,
-    "equity": 2219.4687,
-    "available": 706.9583,
+    "unrealized_pnl": 22.3138,
+    "equity": 2220.8973,
+    "available": 707.025,
     "position_margin": 0.0
   },
   "order_levels": {
     "checked": 17,
-    "in_sync": 17,
-    "drifted": [],
+    "in_sync": 15,
+    "drifted": [
+      "ONDO",
+      "HBAR"
+    ],
     "reconciling": [],
-    "detail": []
+    "detail": [
+      {
+        "coin": "ONDO",
+        "trade_id": "ONDOUSDT_20260801_CB_001",
+        "status": "OPEN",
+        "fields": [
+          "tp1",
+          "tp2"
+        ],
+        "synced_at": null
+      },
+      {
+        "coin": "HBAR",
+        "trade_id": "HBARUSDT_20260803_CB_001",
+        "status": "PENDING",
+        "fields": [
+          "tp1"
+        ],
+        "synced_at": null
+      }
+    ]
   },
   "api_keys": [
     {
@@ -74,7 +97,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$2,219.47",
+      "value": "$2,220.90",
       "status": "ok",
       "action": null
     },
@@ -90,7 +113,7 @@
       "key": "orphan_orders",
       "tier": 1,
       "label": "Order reconciliation",
-      "value": "in sync (11 resting = journal)",
+      "value": "in sync (10 resting = journal)",
       "status": "ok",
       "action": null
     },
@@ -98,7 +121,7 @@
       "key": "position_protection",
       "tier": 1,
       "label": "Position protection",
-      "value": "all protected (6 open, 4 pre-TP1 runners)",
+      "value": "all protected (7 open, 4 pre-TP1 runners)",
       "status": "ok",
       "action": null
     },
@@ -494,8 +517,8 @@
       "direction": "Short",
       "entry_price": 0.39619096,
       "sl": 0.41110849,
-      "tp1": 0.33977664,
-      "tp2": 0.27920548,
+      "tp1": 0.3441,
+      "tp2": 0.3195,
       "capital_usd": 111.64,
       "leverage": 3,
       "trading_system": "Braam",
@@ -654,8 +677,8 @@
       "direction": "Short",
       "entry_price": 0.06940401,
       "sl": 0.07063084,
-      "tp1": 0.06712603,
-      "tp2": 0.06141278,
+      "tp1": 0.06756,
+      "tp2": 0.06598,
       "capital_usd": 110.96,
       "leverage": 3,
       "trading_system": "Braam",
@@ -727,7 +750,7 @@
       "direction": "Short",
       "trading_system": "Braam",
       "entry_price": 0.06940401,
-      "tp1": 0.06712603,
+      "tp1": 0.06756,
       "sl": 0.07063084,
       "conviction": "MEDIUM",
       "track_only": false,
