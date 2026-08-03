@@ -1,19 +1,33 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-08-03T16:06:42Z",
+  "last_updated_iso": "2026-08-03T16:24:46Z",
   "mexc_account": {
-    "unrealized_pnl": 10.5522,
-    "equity": 2189.1343,
-    "available": 911.537,
+    "unrealized_pnl": 15.4128,
+    "equity": 2187.8248,
+    "available": 1016.6684,
     "position_margin": 0.0
   },
   "order_levels": {
-    "checked": 14,
-    "in_sync": 14,
-    "drifted": [],
-    "reconciling": [],
-    "detail": []
+    "checked": 13,
+    "in_sync": 12,
+    "drifted": [
+      "DOGE"
+    ],
+    "reconciling": [
+      "HBAR"
+    ],
+    "detail": [
+      {
+        "coin": "DOGE",
+        "trade_id": "DOGEUSDT_20260803_CB_001",
+        "status": "OPEN",
+        "fields": [
+          "tp1"
+        ],
+        "synced_at": null
+      }
+    ]
   },
   "api_keys": [
     {
@@ -74,7 +88,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$2,189.13",
+      "value": "$2,187.82",
       "status": "ok",
       "action": null
     },
@@ -98,7 +112,7 @@
       "key": "position_protection",
       "tier": 1,
       "label": "Position protection",
-      "value": "all protected (6 open, 4 pre-TP1 runners)",
+      "value": "all protected (5 open, 3 pre-TP1 runners)",
       "status": "ok",
       "action": null
     },
@@ -526,7 +540,7 @@
       "direction": "Short",
       "entry_price": 0.07010887,
       "sl": 0.07155583,
-      "tp1": 0.06743992,
+      "tp1": 0.0685,
       "tp2": 0.06166516,
       "capital_usd": 110.96,
       "leverage": 3,
