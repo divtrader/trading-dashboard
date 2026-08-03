@@ -1,9 +1,9 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-08-03T00:07Z",
+  "generated_utc": "2026-08-03T02:07Z",
   "master": "braam",
   "retention_hours": 48,
-  "trade_count": 21,
+  "trade_count": 20,
   "trades": [
     {
       "trade_id": "SOLUSDT_20260720_CJ_001",
@@ -351,29 +351,6 @@
       "feed_updated_utc": "2026-07-31T04:04Z"
     },
     {
-      "trade_id": "HBARUSDT_20260730_CB_001",
-      "coin": "HBARUSDT",
-      "direction": "Short",
-      "trading_system": "Braam",
-      "conviction": "MEDIUM",
-      "leverage": 3,
-      "entry_price": 0.06857575,
-      "entry_lo": 0.06823287,
-      "entry_hi": 0.06891863,
-      "sl": 0.07003642,
-      "tp1": 0.06595,
-      "tp2": 0.05944833,
-      "status": "STOPPED",
-      "tp1_hit": false,
-      "tp2_hit": false,
-      "sl_hit": false,
-      "close_reason": "live MEXC exit: sl @ 0.07004",
-      "date_opened": "2026-07-30",
-      "time_opened_utc": "00:04",
-      "sl_mode": "initial",
-      "feed_updated_utc": "2026-08-01T01:12Z"
-    },
-    {
       "trade_id": "TRXUSDT_20260731_CB_001",
       "coin": "TRXUSDT",
       "direction": "Short",
@@ -429,17 +406,17 @@
       "entry_price": 193.89370949,
       "entry_lo": 192.92424094,
       "entry_hi": 194.86317804,
-      "sl": 199.30536558,
+      "sl": 193.89370949,
       "tp1": 190.4,
       "tp2": 184.8,
       "status": "OPEN",
-      "tp1_hit": false,
+      "tp1_hit": true,
       "tp2_hit": false,
       "sl_hit": false,
       "close_reason": null,
       "date_opened": "2026-08-01",
       "time_opened_utc": "16:04",
-      "sl_mode": "initial",
+      "sl_mode": "breakeven",
       "feed_updated_utc": "2026-08-02T06:04Z"
     },
     {
