@@ -1,19 +1,31 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-08-03T20:06:58Z",
+  "last_updated_iso": "2026-08-03T20:28:36Z",
   "mexc_account": {
-    "unrealized_pnl": 14.2674,
-    "equity": 2186.5121,
-    "available": 872.4714,
+    "unrealized_pnl": 14.7095,
+    "equity": 2186.7578,
+    "available": 872.5371,
     "position_margin": 0.0
   },
   "order_levels": {
     "checked": 14,
-    "in_sync": 14,
-    "drifted": [],
+    "in_sync": 13,
+    "drifted": [
+      "XLM"
+    ],
     "reconciling": [],
-    "detail": []
+    "detail": [
+      {
+        "coin": "XLM",
+        "trade_id": "XLMUSDT_20260803_CB_001",
+        "status": "PENDING",
+        "fields": [
+          "tp1"
+        ],
+        "synced_at": null
+      }
+    ]
   },
   "api_keys": [
     {
@@ -74,7 +86,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$2,186.51",
+      "value": "$2,186.76",
       "status": "ok",
       "action": null
     },
@@ -90,7 +102,7 @@
       "key": "orphan_orders",
       "tier": 1,
       "label": "Order reconciliation",
-      "value": "in sync (8 resting = journal)",
+      "value": "in sync (7 resting = journal)",
       "status": "ok",
       "action": null
     },
@@ -98,7 +110,7 @@
       "key": "position_protection",
       "tier": 1,
       "label": "Position protection",
-      "value": "all protected (6 open, 4 pre-TP1 runners)",
+      "value": "all protected (7 open, 4 pre-TP1 runners)",
       "status": "ok",
       "action": null
     },
@@ -558,8 +570,8 @@
       "direction": "Short",
       "entry_price": 0.17231799,
       "sl": 0.17578035,
-      "tp1": 0.16192322,
-      "tp2": 0.14200062,
+      "tp1": 0.1705,
+      "tp2": 0.1514,
       "capital_usd": 109.37,
       "leverage": 3,
       "trading_system": "Braam",
@@ -592,7 +604,7 @@
       "direction": "Short",
       "trading_system": "Braam",
       "entry_price": 0.17231799,
-      "tp1": 0.16192322,
+      "tp1": 0.1705,
       "sl": 0.17578035,
       "conviction": "HIGH",
       "track_only": false,
