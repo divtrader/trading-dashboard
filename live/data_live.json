@@ -1,11 +1,11 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-08-03T18:05:59Z",
+  "last_updated_iso": "2026-08-03T20:06:58Z",
   "mexc_account": {
-    "unrealized_pnl": 14.1737,
-    "equity": 2186.5857,
-    "available": 905.2992,
+    "unrealized_pnl": 14.2674,
+    "equity": 2186.5121,
+    "available": 872.4714,
     "position_margin": 0.0
   },
   "order_levels": {
@@ -66,7 +66,7 @@
       "key": "state_file",
       "tier": 1,
       "label": "Trade journal",
-      "value": "OK (883 records)",
+      "value": "OK (885 records)",
       "status": "ok",
       "action": null
     },
@@ -74,7 +74,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$2,186.59",
+      "value": "$2,186.51",
       "status": "ok",
       "action": null
     },
@@ -90,7 +90,7 @@
       "key": "orphan_orders",
       "tier": 1,
       "label": "Order reconciliation",
-      "value": "in sync (9 resting = journal)",
+      "value": "in sync (8 resting = journal)",
       "status": "ok",
       "action": null
     },
@@ -98,7 +98,7 @@
       "key": "position_protection",
       "tier": 1,
       "label": "Position protection",
-      "value": "all protected (5 open, 3 pre-TP1 runners)",
+      "value": "all protected (6 open, 4 pre-TP1 runners)",
       "status": "ok",
       "action": null
     },
@@ -149,7 +149,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 73.75,
+      "price_at_run": 73.92,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-07-20",
@@ -157,38 +157,6 @@
       "conviction": "HIGH",
       "tp1_hit": false,
       "sl_moved_to_be": null,
-      "pnl_tp1_realized_usd": null,
-      "tp2_hit": false,
-      "live_executed": null,
-      "live_entry_fill": null,
-      "live_exit_fill": null,
-      "live_entry_slippage_pct": null,
-      "live_fees_usd": null,
-      "live_funding_usd": null,
-      "live_tp1_pnl_usd": null,
-      "rehearsal": false
-    },
-    {
-      "trade_id": "XLMUSDT_20260722_CB_001",
-      "coin": "XLMUSDT",
-      "direction": "Short",
-      "entry_price": 0.18943185,
-      "sl": 0.19479524,
-      "tp1": 0.1676794,
-      "tp2": 0.14194407,
-      "capital_usd": 76.46,
-      "leverage": 3,
-      "trading_system": "Braam",
-      "track_only": false,
-      "status": "PENDING",
-      "price_at_run": 0.187,
-      "date_activated": null,
-      "time_activated_utc": null,
-      "date_opened": "2026-07-22",
-      "time_opened_utc": "20:03",
-      "conviction": "MEDIUM",
-      "tp1_hit": false,
-      "sl_moved_to_be": false,
       "pnl_tp1_realized_usd": null,
       "tp2_hit": false,
       "live_executed": null,
@@ -277,7 +245,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 0.3288,
+      "price_at_run": 0.3291,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-07-27",
@@ -373,7 +341,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "OPEN",
-      "price_at_run": 63908.0,
+      "price_at_run": 63822.0,
       "date_activated": "2026-07-30",
       "time_activated_utc": "12:12",
       "date_opened": "2026-07-29",
@@ -405,7 +373,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 1.747,
+      "price_at_run": 1.741,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-08-01",
@@ -500,10 +468,10 @@
       "leverage": 3,
       "trading_system": "Braam",
       "track_only": false,
-      "status": "PENDING",
+      "status": "OPEN",
       "price_at_run": 1859.65,
-      "date_activated": null,
-      "time_activated_utc": null,
+      "date_activated": "2026-08-03",
+      "time_activated_utc": "19:33",
       "date_opened": "2026-08-03",
       "time_opened_utc": "04:04",
       "conviction": "HIGH",
@@ -511,11 +479,11 @@
       "sl_moved_to_be": false,
       "pnl_tp1_realized_usd": null,
       "tp2_hit": false,
-      "live_executed": null,
-      "live_entry_fill": null,
+      "live_executed": true,
+      "live_entry_fill": 1874.22,
       "live_exit_fill": null,
-      "live_entry_slippage_pct": null,
-      "live_fees_usd": null,
+      "live_entry_slippage_pct": 0.0001,
+      "live_fees_usd": 0.1911,
       "live_funding_usd": null,
       "live_tp1_pnl_usd": null,
       "rehearsal": false
@@ -583,9 +551,55 @@
       "live_funding_usd": null,
       "live_tp1_pnl_usd": null,
       "rehearsal": false
+    },
+    {
+      "trade_id": "XLMUSDT_20260803_CB_001",
+      "coin": "XLMUSDT",
+      "direction": "Short",
+      "entry_price": 0.17231799,
+      "sl": 0.17578035,
+      "tp1": 0.16192322,
+      "tp2": 0.14200062,
+      "capital_usd": 109.37,
+      "leverage": 3,
+      "trading_system": "Braam",
+      "track_only": false,
+      "status": "PENDING",
+      "price_at_run": 0.1721,
+      "date_activated": null,
+      "time_activated_utc": null,
+      "date_opened": "2026-08-03",
+      "time_opened_utc": "20:03",
+      "conviction": "HIGH",
+      "tp1_hit": false,
+      "sl_moved_to_be": false,
+      "pnl_tp1_realized_usd": null,
+      "tp2_hit": false,
+      "live_executed": null,
+      "live_entry_fill": null,
+      "live_exit_fill": null,
+      "live_entry_slippage_pct": null,
+      "live_fees_usd": null,
+      "live_funding_usd": null,
+      "live_tp1_pnl_usd": null,
+      "rehearsal": false
     }
   ],
-  "recent_signals": [],
+  "recent_signals": [
+    {
+      "trade_id": "XLMUSDT_20260803_CB_001",
+      "coin": "XLMUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "entry_price": 0.17231799,
+      "tp1": 0.16192322,
+      "sl": 0.17578035,
+      "conviction": "HIGH",
+      "track_only": false,
+      "iso": "2026-08-03T20:03:00Z",
+      "rehearsal": false
+    }
+  ],
   "recent_opens": [
     {
       "trade_id": "TAOUSDT_20260801_CB_001",
@@ -681,6 +695,18 @@
       "tp1_hit": false,
       "iso": "2026-08-03T13:49:00Z",
       "_iso_ms": 1785764940000,
+      "rehearsal": false
+    },
+    {
+      "trade_id": "ETHUSDT_20260803_CB_001",
+      "coin": "ETHUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "entry_price": 1874.22204363,
+      "live_entry_fill": 1874.22,
+      "tp1_hit": false,
+      "iso": "2026-08-03T19:33:00Z",
+      "_iso_ms": 1785785580000,
       "rehearsal": false
     }
   ],
@@ -3004,7 +3030,15 @@
       "rehearsal": false
     }
   ],
-  "recent_cancels": [],
+  "recent_cancels": [
+    {
+      "coin": "XLMUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "close_reason": "Entry window expired: unfilled 12.0d \u2265 72\u00d74H (288h) \u2014 mirrors backtest ENTRY_WIN",
+      "iso": "2026-08-03T20:03:00Z"
+    }
+  ],
   "tp1_hits_open": [
     {
       "coin": "BTCUSDT",
@@ -3025,7 +3059,7 @@
     "peak_capital_usd": 1162.42,
     "peak_concurrent": 14,
     "peak_date": "2026-06-12",
-    "deployed_trades": 127,
+    "deployed_trades": 128,
     "return_on_peak_pct": -13.78,
     "win_rate_pct": 35.2,
     "closed_count": 122,
@@ -3041,8 +3075,8 @@
         "closed_count": 9
       }
     },
-    "live_trade_count_total": 193,
-    "live_real_count": 170,
+    "live_trade_count_total": 194,
+    "live_real_count": 171,
     "live_rehearsal_count": 23
   }
 }

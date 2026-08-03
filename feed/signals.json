@@ -1,9 +1,9 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-08-03T18:06Z",
+  "generated_utc": "2026-08-03T20:07Z",
   "master": "braam",
   "retention_hours": 48,
-  "trade_count": 24,
+  "trade_count": 25,
   "trades": [
     {
       "trade_id": "SOLUSDT_20260720_CJ_001",
@@ -41,15 +41,15 @@
       "sl": 0.19479524,
       "tp1": 0.1676794,
       "tp2": 0.14194407,
-      "status": "PENDING",
+      "status": "CANCELLED",
       "tp1_hit": false,
       "tp2_hit": false,
       "sl_hit": false,
-      "close_reason": null,
+      "close_reason": "Entry window expired: unfilled 12.0d \u2265 72\u00d74H (288h) \u2014 mirrors backtest ENTRY_WINDOW",
       "date_opened": "2026-07-22",
       "time_opened_utc": "20:03",
       "sl_mode": "initial",
-      "feed_updated_utc": "2026-07-22T20:03Z"
+      "feed_updated_utc": "2026-08-03T20:03Z"
     },
     {
       "trade_id": "ADAUSDT_20260723_CB_001",
@@ -478,7 +478,7 @@
       "sl": 1910.4187755,
       "tp1": 1810.93080135,
       "tp2": 1632.8274411,
-      "status": "PENDING",
+      "status": "OPEN",
       "tp1_hit": false,
       "tp2_hit": false,
       "sl_hit": false,
@@ -486,7 +486,7 @@
       "date_opened": "2026-08-03",
       "time_opened_utc": "04:04",
       "sl_mode": "initial",
-      "feed_updated_utc": "2026-08-03T04:04Z"
+      "feed_updated_utc": "2026-08-03T19:33Z"
     },
     {
       "trade_id": "AVAXUSDT_20260803_CB_001",
@@ -556,6 +556,29 @@
       "time_opened_utc": "04:04",
       "sl_mode": "initial",
       "feed_updated_utc": "2026-08-03T16:12Z"
+    },
+    {
+      "trade_id": "XLMUSDT_20260803_CB_001",
+      "coin": "XLMUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "conviction": "HIGH",
+      "leverage": 3,
+      "entry_price": 0.17231799,
+      "entry_lo": 0.1714564,
+      "entry_hi": 0.17317958,
+      "sl": 0.17578035,
+      "tp1": 0.16192322,
+      "tp2": 0.14200062,
+      "status": "PENDING",
+      "tp1_hit": false,
+      "tp2_hit": false,
+      "sl_hit": false,
+      "close_reason": null,
+      "date_opened": "2026-08-03",
+      "time_opened_utc": "20:03",
+      "sl_mode": "initial",
+      "feed_updated_utc": "2026-08-03T20:03Z"
     }
   ]
 }
