@@ -1,19 +1,31 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-08-03T06:06:48Z",
+  "last_updated_iso": "2026-08-03T06:48:43Z",
   "mexc_account": {
-    "unrealized_pnl": 21.1854,
-    "equity": 2219.7689,
+    "unrealized_pnl": 26.6695,
+    "equity": 2225.253,
     "available": 707.025,
     "position_margin": 0.0
   },
   "order_levels": {
     "checked": 17,
-    "in_sync": 17,
-    "drifted": [],
+    "in_sync": 16,
+    "drifted": [
+      "TRX"
+    ],
     "reconciling": [],
-    "detail": []
+    "detail": [
+      {
+        "coin": "TRX",
+        "trade_id": "TRXUSDT_20260802_CB_001",
+        "status": "OPEN",
+        "fields": [
+          "tp2"
+        ],
+        "synced_at": "2026-08-02T19:15:41.944936+00:00"
+      }
+    ]
   },
   "api_keys": [
     {
@@ -74,7 +86,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$2,219.77",
+      "value": "$2,225.25",
       "status": "ok",
       "action": null
     },
@@ -527,7 +539,7 @@
       "entry_price": 0.32751884,
       "sl": 0.32940151,
       "tp1": 0.3245,
-      "tp2": 0.3191,
+      "tp2": 0.3224,
       "capital_usd": 110.7,
       "leverage": 3,
       "trading_system": "Braam",
