@@ -1,9 +1,9 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-08-03T22:07Z",
+  "generated_utc": "2026-08-04T00:06Z",
   "master": "braam",
   "retention_hours": 48,
-  "trade_count": 25,
+  "trade_count": 26,
   "trades": [
     {
       "trade_id": "SOLUSDT_20260720_CJ_001",
@@ -579,6 +579,29 @@
       "time_opened_utc": "20:03",
       "sl_mode": "initial",
       "feed_updated_utc": "2026-08-03T20:18Z"
+    },
+    {
+      "trade_id": "UNIUSDT_20260804_CB_001",
+      "coin": "UNIUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "conviction": "MEDIUM",
+      "leverage": 3,
+      "entry_price": 4.08534433,
+      "entry_lo": 4.06491761,
+      "entry_hi": 4.10577105,
+      "sl": 4.25518857,
+      "tp1": 3.58716291,
+      "tp2": 2.91272699,
+      "status": "PENDING",
+      "tp1_hit": false,
+      "tp2_hit": false,
+      "sl_hit": false,
+      "close_reason": null,
+      "date_opened": "2026-08-04",
+      "time_opened_utc": "00:03",
+      "sl_mode": "initial",
+      "feed_updated_utc": "2026-08-04T00:03Z"
     }
   ]
 }
