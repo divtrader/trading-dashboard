@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-04T00:06:53Z",
+  "updated": "2026-08-04T02:06:59Z",
   "positions": {
     "1414291495": {
       "position_id": "1414291495",
@@ -2153,6 +2153,16 @@
       "close_type": 4,
       "close_reason": "stop_loss"
     },
+    "1460578372": {
+      "position_id": "1460578372",
+      "coin": "NEARUSDT",
+      "direction": "Short",
+      "leverage": 3,
+      "entry_price": 1.758,
+      "opened_at": "2026-08-04T01:52:11Z",
+      "status": "OPEN",
+      "braam_trade_id": "NEARUSDT_20260801_CJ_001"
+    },
     "1459084527": {
       "position_id": "1459084527",
       "coin": "BNBUSDT",
@@ -2226,8 +2236,16 @@
       "leverage": 3,
       "entry_price": 6.455,
       "opened_at": "2026-08-03T10:00:25Z",
-      "status": "OPEN",
-      "braam_trade_id": "AVAXUSDT_20260803_CB_001"
+      "status": "CLOSED",
+      "braam_trade_id": "AVAXUSDT_20260803_CB_001",
+      "closed_at": "2026-08-04T01:24:07Z",
+      "close_price": 6.651,
+      "pnl_usd": -10.6304,
+      "margin_usd": 110.96,
+      "fees_usd": 0.4734,
+      "tag": "LOSS",
+      "close_type": 4,
+      "close_reason": "stop_loss"
     },
     "1460102587": {
       "position_id": "1460102587",
@@ -2321,15 +2339,6 @@
       "entry_price": 46.83797262,
       "resting_at": "2026-07-28T00:04:00Z",
       "braam_trade_id": "LTCUSDT_20260728_CB_001",
-      "status": "RESTING"
-    },
-    "839321656421235712": {
-      "order_id": "839321656421235712",
-      "coin": "NEARUSDT",
-      "direction": "Short",
-      "entry_price": 1.75809932,
-      "resting_at": "2026-08-01T04:04:00Z",
-      "braam_trade_id": "NEARUSDT_20260801_CJ_001",
       "status": "RESTING"
     },
     "839412026647646720": {
