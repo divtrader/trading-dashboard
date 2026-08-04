@@ -1,9 +1,9 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-08-04T14:07Z",
+  "generated_utc": "2026-08-04T16:07Z",
   "master": "braam",
   "retention_hours": 48,
-  "trade_count": 22,
+  "trade_count": 23,
   "trades": [
     {
       "trade_id": "SOLUSDT_20260720_CJ_001",
@@ -64,15 +64,15 @@
       "sl": 1.14988825,
       "tp1": 1.06000461,
       "tp2": 0.96323706,
-      "status": "PENDING",
+      "status": "CANCELLED",
       "tp1_hit": false,
       "tp2_hit": false,
       "sl_hit": false,
-      "close_reason": null,
+      "close_reason": "Entry window expired: unfilled 12.0d \u2265 72\u00d74H (288h) \u2014 mirrors backtest ENTRY_WINDOW",
       "date_opened": "2026-07-23",
       "time_opened_utc": "16:03",
       "sl_mode": "initial",
-      "feed_updated_utc": "2026-07-23T16:03Z"
+      "feed_updated_utc": "2026-08-04T16:03Z"
     },
     {
       "trade_id": "SUIUSDT_20260723_CB_001",
@@ -87,15 +87,15 @@
       "sl": 0.78014678,
       "tp1": 0.65960372,
       "tp2": 0.58427414,
-      "status": "PENDING",
+      "status": "CANCELLED",
       "tp1_hit": false,
       "tp2_hit": false,
       "sl_hit": false,
-      "close_reason": null,
+      "close_reason": "Entry window expired: unfilled 12.0d \u2265 72\u00d74H (288h) \u2014 mirrors backtest ENTRY_WINDOW",
       "date_opened": "2026-07-23",
       "time_opened_utc": "16:03",
       "sl_mode": "initial",
-      "feed_updated_utc": "2026-07-23T16:03Z"
+      "feed_updated_utc": "2026-08-04T16:03Z"
     },
     {
       "trade_id": "TRXUSDT_20260727_CJ_001",
@@ -510,6 +510,29 @@
       "time_opened_utc": "00:03",
       "sl_mode": "initial",
       "feed_updated_utc": "2026-08-04T00:03Z"
+    },
+    {
+      "trade_id": "HBARUSDT_20260804_CB_001",
+      "coin": "HBARUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "conviction": "MEDIUM",
+      "leverage": 3,
+      "entry_price": 0.06993598,
+      "entry_lo": 0.0695863,
+      "entry_hi": 0.07028566,
+      "sl": 0.07139593,
+      "tp1": 0.06731946,
+      "tp2": 0.06128433,
+      "status": "PENDING",
+      "tp1_hit": false,
+      "tp2_hit": false,
+      "sl_hit": false,
+      "close_reason": null,
+      "date_opened": "2026-08-04",
+      "time_opened_utc": "16:03",
+      "sl_mode": "initial",
+      "feed_updated_utc": "2026-08-04T16:03Z"
     }
   ]
 }
