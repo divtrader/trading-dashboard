@@ -1,33 +1,19 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-08-04T17:50:34Z",
+  "last_updated_iso": "2026-08-04T17:52:00Z",
   "mexc_account": {
-    "unrealized_pnl": 33.0886,
-    "equity": 2196.0377,
+    "unrealized_pnl": 34.4728,
+    "equity": 2197.4219,
     "available": 1019.404,
     "position_margin": 0.0
   },
   "order_levels": {
     "checked": 12,
-    "in_sync": 11,
-    "drifted": [
-      "HBAR"
-    ],
-    "reconciling": [
-      "TAO"
-    ],
-    "detail": [
-      {
-        "coin": "HBAR",
-        "trade_id": "HBARUSDT_20260804_CB_001",
-        "status": "PENDING",
-        "fields": [
-          "tp1"
-        ],
-        "synced_at": null
-      }
-    ]
+    "in_sync": 12,
+    "drifted": [],
+    "reconciling": [],
+    "detail": []
   },
   "api_keys": [
     {
@@ -88,7 +74,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$2,196.04",
+      "value": "$2,197.42",
       "status": "ok",
       "action": null
     },
@@ -112,7 +98,7 @@
       "key": "position_protection",
       "tier": 1,
       "label": "Position protection",
-      "value": "all protected (7 open, 4 pre-TP1 runners)",
+      "value": "all protected (7 open, 5 pre-TP1 runners)",
       "status": "ok",
       "action": null
     },
@@ -343,38 +329,6 @@
       "rehearsal": false
     },
     {
-      "trade_id": "TAOUSDT_20260801_CB_001",
-      "coin": "TAOUSDT",
-      "direction": "Short",
-      "entry_price": 193.89370949,
-      "sl": 193.89370949,
-      "tp1": 190.4,
-      "tp2": 184.8,
-      "capital_usd": 110.82,
-      "leverage": 3,
-      "trading_system": "Braam",
-      "track_only": false,
-      "status": "OPEN",
-      "price_at_run": 192.8,
-      "date_activated": "2026-08-02",
-      "time_activated_utc": "02:07",
-      "date_opened": "2026-08-01",
-      "time_opened_utc": "16:04",
-      "conviction": "MEDIUM",
-      "tp1_hit": true,
-      "sl_moved_to_be": false,
-      "pnl_tp1_realized_usd": 3.05,
-      "tp2_hit": false,
-      "live_executed": true,
-      "live_entry_fill": 193.89,
-      "live_exit_fill": null,
-      "live_entry_slippage_pct": 0.0019,
-      "live_fees_usd": 0.3299,
-      "live_funding_usd": null,
-      "live_tp1_pnl_usd": 2.9756,
-      "rehearsal": false
-    },
-    {
       "trade_id": "ONDOUSDT_20260801_CB_001",
       "coin": "ONDOUSDT",
       "direction": "Short",
@@ -546,10 +500,10 @@
       "leverage": 3,
       "trading_system": "Braam",
       "track_only": false,
-      "status": "PENDING",
+      "status": "OPEN",
       "price_at_run": 0.06962,
-      "date_activated": null,
-      "time_activated_utc": null,
+      "date_activated": "2026-08-04",
+      "time_activated_utc": "17:00",
       "date_opened": "2026-08-04",
       "time_opened_utc": "16:03",
       "conviction": "MEDIUM",
@@ -557,31 +511,17 @@
       "sl_moved_to_be": false,
       "pnl_tp1_realized_usd": null,
       "tp2_hit": false,
-      "live_executed": null,
-      "live_entry_fill": null,
+      "live_executed": true,
+      "live_entry_fill": 0.06994,
       "live_exit_fill": null,
-      "live_entry_slippage_pct": null,
-      "live_fees_usd": null,
+      "live_entry_slippage_pct": -0.0057,
+      "live_fees_usd": 0.1978,
       "live_funding_usd": null,
       "live_tp1_pnl_usd": null,
       "rehearsal": false
     }
   ],
-  "recent_signals": [
-    {
-      "trade_id": "HBARUSDT_20260804_CB_001",
-      "coin": "HBARUSDT",
-      "direction": "Short",
-      "trading_system": "Braam",
-      "entry_price": 0.06993598,
-      "tp1": 0.06877,
-      "sl": 0.07139593,
-      "conviction": "MEDIUM",
-      "track_only": false,
-      "iso": "2026-08-04T16:03:00Z",
-      "rehearsal": false
-    }
-  ],
+  "recent_signals": [],
   "recent_opens": [
     {
       "trade_id": "HBARUSDT_20260803_CB_001",
@@ -653,6 +593,18 @@
       "tp1_hit": false,
       "iso": "2026-08-04T01:52:00Z",
       "_iso_ms": 1785808320000,
+      "rehearsal": false
+    },
+    {
+      "trade_id": "HBARUSDT_20260804_CB_001",
+      "coin": "HBARUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "entry_price": 0.06993598,
+      "live_entry_fill": 0.06994,
+      "tp1_hit": false,
+      "iso": "2026-08-04T17:00:00Z",
+      "_iso_ms": 1785862800000,
       "rehearsal": false
     }
   ],
@@ -2993,6 +2945,25 @@
       "won": false,
       "close_iso": "2026-08-04T01:24:00Z",
       "rehearsal": false
+    },
+    {
+      "trade_id": "TAOUSDT_20260801_CB_001",
+      "coin": "TAOUSDT",
+      "direction": "Short",
+      "status": "STOPPED_AFTER_TP1",
+      "pnl_usd": 2.29,
+      "close_reason": "live MEXC exit: sl @ 193.96",
+      "date_closed": "2026-08-04",
+      "time_closed_utc": "17:30",
+      "trading_system": "Braam",
+      "live_entry_fill": 193.89,
+      "live_exit_fill": 193.96,
+      "live_entry_slippage_pct": 0.0019,
+      "live_fees_usd": 0.4617,
+      "live_funding_usd": 0.158896,
+      "won": true,
+      "close_iso": "2026-08-04T17:30:00Z",
+      "rehearsal": false
     }
   ],
   "recent_cancels": [
@@ -3019,12 +2990,6 @@
       "entry_price": 64932.92993824
     },
     {
-      "coin": "TAOUSDT",
-      "direction": "Short",
-      "trading_system": "Braam",
-      "entry_price": 193.89370949
-    },
-    {
       "coin": "XLMUSDT",
       "direction": "Short",
       "trading_system": "Braam",
@@ -3032,20 +2997,20 @@
     }
   ],
   "stats": {
-    "realized_pnl_usd": -170.79,
-    "realized_pnl_pct": -1.7,
+    "realized_pnl_usd": -168.5,
+    "realized_pnl_pct": -1.66,
     "peak_capital_usd": 1162.42,
     "peak_concurrent": 14,
     "peak_date": "2026-06-12",
-    "deployed_trades": 130,
-    "return_on_peak_pct": -14.69,
-    "win_rate_pct": 35.0,
-    "closed_count": 123,
+    "deployed_trades": 131,
+    "return_on_peak_pct": -14.5,
+    "win_rate_pct": 35.5,
+    "closed_count": 124,
     "per_system": {
       "Braam": {
-        "realized_pnl_usd": -122.02,
-        "win_rate_pct": 37.7,
-        "closed_count": 114
+        "realized_pnl_usd": -119.73,
+        "win_rate_pct": 38.3,
+        "closed_count": 115
       },
       "John": {
         "realized_pnl_usd": -48.77,

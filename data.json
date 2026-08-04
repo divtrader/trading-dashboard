@@ -1,5 +1,5 @@
 {
-  "last_updated_iso": "2026-08-04T17:50:29Z",
+  "last_updated_iso": "2026-08-04T17:51:56Z",
   "mexc_account": null,
   "api_keys": [
     {
@@ -769,29 +769,6 @@
       "pnl_tp1_realized_usd": null
     },
     {
-      "trade_id": "TAOUSDT_20260801_CB_001",
-      "coin": "TAOUSDT",
-      "direction": "Short",
-      "entry_price": 193.89370949,
-      "sl": 193.89370949,
-      "tp1": 190.4,
-      "tp2": 184.8,
-      "capital_usd": 100.0,
-      "leverage": 3,
-      "trading_system": "Braam",
-      "track_only": false,
-      "status": "OPEN",
-      "price_at_run": 192.8,
-      "date_activated": "2026-08-02",
-      "time_activated_utc": "02:07",
-      "date_opened": "2026-08-01",
-      "time_opened_utc": "16:04",
-      "conviction": "MEDIUM",
-      "tp1_hit": true,
-      "sl_moved_to_be": false,
-      "pnl_tp1_realized_usd": 2.75
-    },
-    {
       "trade_id": "ETHUSDT_20260801_CJ_M_001",
       "coin": "ETHUSDT",
       "direction": "Short",
@@ -1079,10 +1056,10 @@
       "leverage": 3,
       "trading_system": "Braam",
       "track_only": false,
-      "status": "PENDING",
+      "status": "OPEN",
       "price_at_run": 0.06962,
-      "date_activated": null,
-      "time_activated_utc": null,
+      "date_activated": "2026-08-04",
+      "time_activated_utc": "17:00",
       "date_opened": "2026-08-04",
       "time_opened_utc": "16:03",
       "conviction": "MEDIUM",
@@ -1091,20 +1068,7 @@
       "pnl_tp1_realized_usd": null
     }
   ],
-  "recent_signals": [
-    {
-      "trade_id": "HBARUSDT_20260804_CB_001",
-      "coin": "HBARUSDT",
-      "direction": "Short",
-      "trading_system": "Braam",
-      "entry_price": 0.06993598,
-      "tp1": 0.06877,
-      "sl": 0.07139593,
-      "conviction": "MEDIUM",
-      "track_only": false,
-      "iso": "2026-08-04T16:03:00Z"
-    }
-  ],
+  "recent_signals": [],
   "recent_opens": [
     {
       "trade_id": "AVAXUSDT_20260802_CJ_M_001",
@@ -1195,25 +1159,19 @@
       "tp1_hit": false,
       "iso": "2026-08-04T01:52:00Z",
       "_iso_ms": 1785808320000
+    },
+    {
+      "trade_id": "HBARUSDT_20260804_CB_001",
+      "coin": "HBARUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "entry_price": 0.06993598,
+      "tp1_hit": false,
+      "iso": "2026-08-04T17:00:00Z",
+      "_iso_ms": 1785862800000
     }
   ],
   "recent_closes": [
-    {
-      "trade_id": "SOLUSDT_20260708_CJ_M_001",
-      "coin": "SOLUSDT",
-      "direction": "Long",
-      "status": "STOPPED",
-      "pnl_usd": -6.03,
-      "close_reason": "SL hit",
-      "date_closed": "2026-07-28",
-      "time_closed_utc": "00:00",
-      "trading_system": "John",
-      "won": false,
-      "close_iso": "2026-07-28T00:00:00Z",
-      "margin_usd": 100,
-      "fees_usd": 0.408,
-      "fees_modeled": true
-    },
     {
       "trade_id": "CAKEUSDT_20260711_CJ_M_001",
       "coin": "CAKEUSDT",
@@ -1837,6 +1795,22 @@
       "margin_usd": 100,
       "fees_usd": 0.408,
       "fees_modeled": true
+    },
+    {
+      "trade_id": "TAOUSDT_20260801_CB_001",
+      "coin": "TAOUSDT",
+      "direction": "Short",
+      "status": "STOPPED_AFTER_TP1",
+      "pnl_usd": 4.07,
+      "close_reason": "live MEXC exit: sl @ 193.96",
+      "date_closed": "2026-08-04",
+      "time_closed_utc": "17:30",
+      "trading_system": "Braam",
+      "won": true,
+      "close_iso": "2026-08-04T17:30:00Z",
+      "margin_usd": 100,
+      "fees_usd": 0.408,
+      "fees_modeled": true
     }
   ],
   "recent_cancels": [
@@ -1882,12 +1856,6 @@
       "entry_price": 64932.92993824
     },
     {
-      "coin": "TAOUSDT",
-      "direction": "Short",
-      "trading_system": "Braam",
-      "entry_price": 193.89370949
-    },
-    {
       "coin": "AVAXUSDT",
       "direction": "Long",
       "trading_system": "John",
@@ -1907,15 +1875,15 @@
     }
   ],
   "stats": {
-    "realized_pnl_usd": 529.59,
+    "realized_pnl_usd": 533.66,
     "realized_pnl_pct": 1.04,
     "peak_capital_usd": 3300,
     "peak_concurrent": 33,
     "peak_date": "2026-06-22",
-    "deployed_trades": 543,
-    "return_on_peak_pct": 16.05,
-    "win_rate_pct": 32.5,
-    "closed_count": 510,
+    "deployed_trades": 544,
+    "return_on_peak_pct": 16.17,
+    "win_rate_pct": 32.7,
+    "closed_count": 511,
     "per_system": {
       "John": {
         "realized_pnl_usd": 235.39,
@@ -1928,16 +1896,16 @@
         "closed_count": 23
       },
       "Braam": {
-        "realized_pnl_usd": 248.96,
-        "win_rate_pct": 42.6,
-        "closed_count": 183
+        "realized_pnl_usd": 253.03,
+        "win_rate_pct": 42.9,
+        "closed_count": 184
       }
     },
     "real_only": {
-      "realized_pnl_usd": -64.34,
-      "realized_pnl_pct": -0.52,
-      "win_rate_pct": 35.0,
-      "closed_count": 123
+      "realized_pnl_usd": -60.27,
+      "realized_pnl_pct": -0.49,
+      "win_rate_pct": 35.5,
+      "closed_count": 124
     },
     "track_only": {
       "realized_pnl_usd": 593.93,

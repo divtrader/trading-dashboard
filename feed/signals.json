@@ -1,6 +1,6 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-08-04T17:50Z",
+  "generated_utc": "2026-08-04T17:52Z",
   "master": "braam",
   "retention_hours": 48,
   "trade_count": 22,
@@ -294,15 +294,15 @@
       "sl": 193.89370949,
       "tp1": 190.4,
       "tp2": 184.8,
-      "status": "OPEN",
+      "status": "STOPPED_AFTER_TP1",
       "tp1_hit": true,
       "tp2_hit": false,
       "sl_hit": false,
-      "close_reason": null,
+      "close_reason": "live MEXC exit: sl @ 193.96",
       "date_opened": "2026-08-01",
       "time_opened_utc": "16:04",
       "sl_mode": "breakeven",
-      "feed_updated_utc": "2026-08-02T06:04Z"
+      "feed_updated_utc": "2026-08-04T17:30Z"
     },
     {
       "trade_id": "ONDOUSDT_20260801_CB_001",
@@ -501,7 +501,7 @@
       "sl": 0.07139593,
       "tp1": 0.06877,
       "tp2": 0.06605,
-      "status": "PENDING",
+      "status": "OPEN",
       "tp1_hit": false,
       "tp2_hit": false,
       "sl_hit": false,
@@ -509,7 +509,7 @@
       "date_opened": "2026-08-04",
       "time_opened_utc": "16:03",
       "sl_mode": "initial",
-      "feed_updated_utc": "2026-08-04T16:03Z"
+      "feed_updated_utc": "2026-08-04T17:00Z"
     }
   ]
 }
