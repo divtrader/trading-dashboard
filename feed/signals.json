@@ -1,6 +1,6 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-08-05T15:17Z",
+  "generated_utc": "2026-08-05T16:07Z",
   "master": "braam",
   "retention_hours": 48,
   "trade_count": 22,
@@ -259,29 +259,6 @@
       "feed_updated_utc": "2026-08-03T06:04Z"
     },
     {
-      "trade_id": "TRXUSDT_20260802_CB_001",
-      "coin": "TRXUSDT",
-      "direction": "Short",
-      "trading_system": "Braam",
-      "conviction": "MEDIUM",
-      "leverage": 3,
-      "entry_price": 0.32751884,
-      "entry_lo": 0.32588125,
-      "entry_hi": 0.32915643,
-      "sl": 0.32940151,
-      "tp1": 0.3245,
-      "tp2": 0.3224,
-      "status": "STOPPED",
-      "tp1_hit": false,
-      "tp2_hit": false,
-      "sl_hit": false,
-      "close_reason": "live MEXC exit: sl @ 0.32948",
-      "date_opened": "2026-08-02",
-      "time_opened_utc": "16:04",
-      "sl_mode": "initial",
-      "feed_updated_utc": "2026-08-03T15:19Z"
-    },
-    {
       "trade_id": "ETHUSDT_20260803_CB_001",
       "coin": "ETHUSDT",
       "direction": "Short",
@@ -429,17 +406,17 @@
       "entry_price": 0.06993598,
       "entry_lo": 0.0695863,
       "entry_hi": 0.07028566,
-      "sl": 0.07139593,
+      "sl": 0.06993598,
       "tp1": 0.06877,
       "tp2": 0.06605,
       "status": "OPEN",
-      "tp1_hit": false,
+      "tp1_hit": true,
       "tp2_hit": false,
       "sl_hit": false,
       "close_reason": null,
       "date_opened": "2026-08-04",
       "time_opened_utc": "16:03",
-      "sl_mode": "initial",
+      "sl_mode": "breakeven",
       "feed_updated_utc": "2026-08-04T17:00Z"
     },
     {
@@ -510,6 +487,29 @@
       "time_opened_utc": "04:03",
       "sl_mode": "initial",
       "feed_updated_utc": "2026-08-05T05:05Z"
+    },
+    {
+      "trade_id": "ONDOUSDT_20260805_CJ_001",
+      "coin": "ONDOUSDT",
+      "direction": "Long",
+      "trading_system": "John",
+      "conviction": "HIGH",
+      "leverage": 3,
+      "entry_price": 0.35539478,
+      "entry_lo": 0.34658957,
+      "entry_hi": 0.38181043,
+      "sl": 0.34623305,
+      "tp1": 0.38472252,
+      "tp2": 0.44723391,
+      "status": "PENDING",
+      "tp1_hit": false,
+      "tp2_hit": false,
+      "sl_hit": false,
+      "close_reason": null,
+      "date_opened": "2026-08-05",
+      "time_opened_utc": "16:03",
+      "sl_mode": "initial",
+      "feed_updated_utc": "2026-08-05T16:03Z"
     }
   ]
 }

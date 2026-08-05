@@ -1,16 +1,16 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-08-05T15:17:29Z",
+  "last_updated_iso": "2026-08-05T16:07:03Z",
   "mexc_account": {
-    "unrealized_pnl": 35.0635,
-    "equity": 2197.4081,
-    "available": 874.9183,
+    "unrealized_pnl": 42.6625,
+    "equity": 2207.5536,
+    "available": 932.5896,
     "position_margin": 0.0
   },
   "order_levels": {
-    "checked": 14,
-    "in_sync": 14,
+    "checked": 15,
+    "in_sync": 15,
     "drifted": [],
     "reconciling": [],
     "detail": []
@@ -66,7 +66,7 @@
       "key": "state_file",
       "tier": 1,
       "label": "Trade journal",
-      "value": "OK (892 records)",
+      "value": "OK (897 records)",
       "status": "ok",
       "action": null
     },
@@ -74,7 +74,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$2,197.41",
+      "value": "$2,207.55",
       "status": "ok",
       "action": null
     },
@@ -90,7 +90,7 @@
       "key": "orphan_orders",
       "tier": 1,
       "label": "Order reconciliation",
-      "value": "in sync (3 resting = journal)",
+      "value": "in sync (4 resting = journal)",
       "status": "ok",
       "action": null
     },
@@ -98,7 +98,7 @@
       "key": "position_protection",
       "tier": 1,
       "label": "Position protection",
-      "value": "all protected (11 open, 9 pre-TP1 runners)",
+      "value": "all protected (11 open, 8 pre-TP1 runners)",
       "status": "ok",
       "action": null
     },
@@ -149,7 +149,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 0.3284,
+      "price_at_run": 0.3277,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-07-27",
@@ -245,7 +245,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "OPEN",
-      "price_at_run": 64319.31,
+      "price_at_run": 64435.29,
       "date_activated": "2026-07-30",
       "time_activated_utc": "12:12",
       "date_opened": "2026-07-29",
@@ -461,7 +461,7 @@
       "coin": "HBARUSDT",
       "direction": "Short",
       "entry_price": 0.06993598,
-      "sl": 0.07139593,
+      "sl": 0.06993598,
       "tp1": 0.06877,
       "tp2": 0.06605,
       "capital_usd": 109.91,
@@ -475,17 +475,17 @@
       "date_opened": "2026-08-04",
       "time_opened_utc": "16:03",
       "conviction": "MEDIUM",
-      "tp1_hit": false,
+      "tp1_hit": true,
       "sl_moved_to_be": false,
-      "pnl_tp1_realized_usd": null,
+      "pnl_tp1_realized_usd": 2.79,
       "tp2_hit": false,
       "live_executed": true,
       "live_entry_fill": 0.06994,
       "live_exit_fill": null,
       "live_entry_slippage_pct": -0.0057,
-      "live_fees_usd": 0.1978,
+      "live_fees_usd": 0.3275,
       "live_funding_usd": null,
-      "live_tp1_pnl_usd": null,
+      "live_tp1_pnl_usd": 2.68698,
       "rehearsal": false
     },
     {
@@ -583,9 +583,55 @@
       "live_funding_usd": null,
       "live_tp1_pnl_usd": null,
       "rehearsal": false
+    },
+    {
+      "trade_id": "ONDOUSDT_20260805_CJ_001",
+      "coin": "ONDOUSDT",
+      "direction": "Long",
+      "entry_price": 0.35539478,
+      "sl": 0.34623305,
+      "tp1": 0.38472252,
+      "tp2": 0.44723391,
+      "capital_usd": 110.63,
+      "leverage": 3,
+      "trading_system": "John",
+      "track_only": false,
+      "status": "PENDING",
+      "price_at_run": 0.3799,
+      "date_activated": null,
+      "time_activated_utc": null,
+      "date_opened": "2026-08-05",
+      "time_opened_utc": "16:03",
+      "conviction": "HIGH",
+      "tp1_hit": false,
+      "sl_moved_to_be": null,
+      "pnl_tp1_realized_usd": null,
+      "tp2_hit": false,
+      "live_executed": null,
+      "live_entry_fill": null,
+      "live_exit_fill": null,
+      "live_entry_slippage_pct": null,
+      "live_fees_usd": null,
+      "live_funding_usd": null,
+      "live_tp1_pnl_usd": null,
+      "rehearsal": false
     }
   ],
-  "recent_signals": [],
+  "recent_signals": [
+    {
+      "trade_id": "ONDOUSDT_20260805_CJ_001",
+      "coin": "ONDOUSDT",
+      "direction": "Long",
+      "trading_system": "John",
+      "entry_price": 0.35539478,
+      "tp1": 0.38472252,
+      "sl": 0.34623305,
+      "conviction": "HIGH",
+      "track_only": false,
+      "iso": "2026-08-05T16:03:00Z",
+      "rehearsal": false
+    }
+  ],
   "recent_opens": [
     {
       "trade_id": "ETHUSDT_20260803_CB_001",
@@ -630,7 +676,7 @@
       "trading_system": "Braam",
       "entry_price": 0.06993598,
       "live_entry_fill": 0.06994,
-      "tp1_hit": false,
+      "tp1_hit": true,
       "iso": "2026-08-04T17:00:00Z",
       "_iso_ms": 1785862800000,
       "rehearsal": false
@@ -3055,6 +3101,12 @@
       "direction": "Short",
       "trading_system": "Braam",
       "entry_price": 0.17231799
+    },
+    {
+      "coin": "HBARUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "entry_price": 0.06993598
     }
   ],
   "stats": {
@@ -3079,8 +3131,8 @@
         "closed_count": 9
       }
     },
-    "live_trade_count_total": 199,
-    "live_real_count": 176,
+    "live_trade_count_total": 200,
+    "live_real_count": 177,
     "live_rehearsal_count": 23
   }
 }
