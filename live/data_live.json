@@ -1,11 +1,11 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-08-05T04:06:34Z",
+  "last_updated_iso": "2026-08-05T06:06:39Z",
   "mexc_account": {
-    "unrealized_pnl": 44.0935,
-    "equity": 2206.9858,
-    "available": 874.6749,
+    "unrealized_pnl": 29.8166,
+    "equity": 2192.5103,
+    "available": 874.7413,
     "position_margin": 0.0
   },
   "order_levels": {
@@ -74,7 +74,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$2,206.99",
+      "value": "$2,192.51",
       "status": "ok",
       "action": null
     },
@@ -90,7 +90,7 @@
       "key": "orphan_orders",
       "tier": 1,
       "label": "Order reconciliation",
-      "value": "in sync (6 resting = journal)",
+      "value": "in sync (5 resting = journal)",
       "status": "ok",
       "action": null
     },
@@ -98,7 +98,7 @@
       "key": "position_protection",
       "tier": 1,
       "label": "Position protection",
-      "value": "all protected (8 open, 6 pre-TP1 runners)",
+      "value": "all protected (9 open, 7 pre-TP1 runners)",
       "status": "ok",
       "action": null
     },
@@ -149,7 +149,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 0.3266,
+      "price_at_run": 0.327,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-07-27",
@@ -245,7 +245,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "OPEN",
-      "price_at_run": 64153.53,
+      "price_at_run": 64312.51,
       "date_activated": "2026-07-30",
       "time_activated_utc": "12:12",
       "date_opened": "2026-07-29",
@@ -277,7 +277,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "OPEN",
-      "price_at_run": 1.7,
+      "price_at_run": 1.721,
       "date_activated": "2026-08-04",
       "time_activated_utc": "01:52",
       "date_opened": "2026-08-01",
@@ -564,10 +564,10 @@
       "leverage": 3,
       "trading_system": "Braam",
       "track_only": false,
-      "status": "PENDING",
+      "status": "OPEN",
       "price_at_run": 0.6889,
-      "date_activated": null,
-      "time_activated_utc": null,
+      "date_activated": "2026-08-05",
+      "time_activated_utc": "05:05",
       "date_opened": "2026-08-05",
       "time_opened_utc": "04:03",
       "conviction": "HIGH",
@@ -575,11 +575,11 @@
       "sl_moved_to_be": false,
       "pnl_tp1_realized_usd": null,
       "tp2_hit": false,
-      "live_executed": null,
-      "live_entry_fill": null,
+      "live_executed": true,
+      "live_entry_fill": 0.6911,
       "live_exit_fill": null,
-      "live_entry_slippage_pct": null,
-      "live_fees_usd": null,
+      "live_entry_slippage_pct": -0.0024,
+      "live_fees_usd": 0.1986,
       "live_funding_usd": null,
       "live_tp1_pnl_usd": null,
       "rehearsal": false
@@ -598,34 +598,9 @@
       "track_only": false,
       "iso": "2026-08-05T00:03:00Z",
       "rehearsal": false
-    },
-    {
-      "trade_id": "SUIUSDT_20260805_CB_001",
-      "coin": "SUIUSDT",
-      "direction": "Short",
-      "trading_system": "Braam",
-      "entry_price": 0.69108359,
-      "tp1": 0.66390377,
-      "sl": 0.70380019,
-      "conviction": "HIGH",
-      "track_only": false,
-      "iso": "2026-08-05T04:03:00Z",
-      "rehearsal": false
     }
   ],
   "recent_opens": [
-    {
-      "trade_id": "HBARUSDT_20260803_CB_001",
-      "coin": "HBARUSDT",
-      "direction": "Short",
-      "trading_system": "Braam",
-      "entry_price": 0.06940401,
-      "live_entry_fill": 0.0694,
-      "tp1_hit": false,
-      "iso": "2026-08-03T04:30:00Z",
-      "_iso_ms": 1785731400000,
-      "rehearsal": false
-    },
     {
       "trade_id": "AVAXUSDT_20260803_CB_001",
       "coin": "AVAXUSDT",
@@ -708,6 +683,18 @@
       "tp1_hit": false,
       "iso": "2026-08-05T02:04:00Z",
       "_iso_ms": 1785895440000,
+      "rehearsal": false
+    },
+    {
+      "trade_id": "SUIUSDT_20260805_CB_001",
+      "coin": "SUIUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "entry_price": 0.69108359,
+      "live_entry_fill": 0.6911,
+      "tp1_hit": false,
+      "iso": "2026-08-05T05:05:00Z",
+      "_iso_ms": 1785906300000,
       "rehearsal": false
     }
   ],
@@ -3098,7 +3085,7 @@
     "peak_capital_usd": 1162.42,
     "peak_concurrent": 14,
     "peak_date": "2026-06-12",
-    "deployed_trades": 132,
+    "deployed_trades": 133,
     "return_on_peak_pct": -14.5,
     "win_rate_pct": 35.5,
     "closed_count": 124,
