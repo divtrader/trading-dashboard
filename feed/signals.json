@@ -1,6 +1,6 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-08-05T20:06Z",
+  "generated_utc": "2026-08-05T22:07Z",
   "master": "braam",
   "retention_hours": 48,
   "trade_count": 20,
@@ -156,15 +156,15 @@
       "sl": 65567.05356873,
       "tp1": 63294.54,
       "tp2": 59798,
-      "status": "OPEN",
+      "status": "STOPPED_AFTER_TP1",
       "tp1_hit": true,
       "tp2_hit": false,
       "sl_hit": false,
-      "close_reason": null,
+      "close_reason": "live MEXC exit: manual @ 64924.9",
       "date_opened": "2026-07-29",
       "time_opened_utc": "12:04",
       "sl_mode": "breakeven",
-      "feed_updated_utc": "2026-07-30T16:04Z"
+      "feed_updated_utc": "2026-08-05T20:20Z"
     },
     {
       "trade_id": "NEARUSDT_20260801_CJ_001",
@@ -314,7 +314,7 @@
       "entry_price": 0.17231799,
       "entry_lo": 0.1714564,
       "entry_hi": 0.17317958,
-      "sl": 0.1708763,
+      "sl": 0.17068412,
       "tp1": 0.1705,
       "tp2": 0.1602,
       "status": "OPEN",

@@ -1,16 +1,16 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-08-05T20:06:32Z",
+  "last_updated_iso": "2026-08-05T22:06:51Z",
   "mexc_account": {
-    "unrealized_pnl": 35.1415,
-    "equity": 2193.6227,
-    "available": 1032.7126,
+    "unrealized_pnl": 44.4013,
+    "equity": 2202.8385,
+    "available": 1054.3796,
     "position_margin": 0.0
   },
   "order_levels": {
-    "checked": 14,
-    "in_sync": 14,
+    "checked": 13,
+    "in_sync": 13,
     "drifted": [],
     "reconciling": [],
     "detail": []
@@ -74,7 +74,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$2,193.62",
+      "value": "$2,202.84",
       "status": "ok",
       "action": null
     },
@@ -98,7 +98,7 @@
       "key": "position_protection",
       "tier": 1,
       "label": "Position protection",
-      "value": "all protected (10 open, 7 pre-TP1 runners)",
+      "value": "all protected (9 open, 7 pre-TP1 runners)",
       "status": "ok",
       "action": null
     },
@@ -149,7 +149,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 0.3279,
+      "price_at_run": 0.3278,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-07-27",
@@ -233,38 +233,6 @@
       "rehearsal": false
     },
     {
-      "trade_id": "BTCUSDT_20260729_CJ_001",
-      "coin": "BTCUSDT",
-      "direction": "Short",
-      "entry_price": 64932.92993824,
-      "sl": 65567.05356873,
-      "tp1": 63294.54,
-      "tp2": 59798,
-      "capital_usd": 110.24,
-      "leverage": 3,
-      "trading_system": "John",
-      "track_only": false,
-      "status": "OPEN",
-      "price_at_run": 64840.01,
-      "date_activated": "2026-07-30",
-      "time_activated_utc": "12:12",
-      "date_opened": "2026-07-29",
-      "time_opened_utc": "12:04",
-      "conviction": "HIGH",
-      "tp1_hit": true,
-      "sl_moved_to_be": null,
-      "pnl_tp1_realized_usd": 6.85,
-      "tp2_hit": false,
-      "live_executed": true,
-      "live_entry_fill": 64932.9,
-      "live_exit_fill": null,
-      "live_entry_slippage_pct": 0.0,
-      "live_fees_usd": 0.3972,
-      "live_funding_usd": null,
-      "live_tp1_pnl_usd": 6.572,
-      "rehearsal": false
-    },
-    {
       "trade_id": "NEARUSDT_20260801_CJ_001",
       "coin": "NEARUSDT",
       "direction": "Short",
@@ -277,7 +245,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "OPEN",
-      "price_at_run": 1.705,
+      "price_at_run": 1.697,
       "date_activated": "2026-08-04",
       "time_activated_utc": "01:52",
       "date_opened": "2026-08-01",
@@ -365,7 +333,7 @@
       "coin": "XLMUSDT",
       "direction": "Short",
       "entry_price": 0.17231799,
-      "sl": 0.1708763,
+      "sl": 0.17068412,
       "tp1": 0.1705,
       "tp2": 0.1602,
       "capital_usd": 109.37,
@@ -565,7 +533,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 0.3758,
+      "price_at_run": 0.3746,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-08-05",
@@ -601,18 +569,6 @@
     }
   ],
   "recent_opens": [
-    {
-      "trade_id": "XLMUSDT_20260803_CB_001",
-      "coin": "XLMUSDT",
-      "direction": "Short",
-      "trading_system": "Braam",
-      "entry_price": 0.17231799,
-      "live_entry_fill": 0.17232,
-      "tp1_hit": true,
-      "iso": "2026-08-03T20:18:00Z",
-      "_iso_ms": 1785788280000,
-      "rehearsal": false
-    },
     {
       "trade_id": "NEARUSDT_20260801_CJ_001",
       "coin": "NEARUSDT",
@@ -3061,16 +3017,29 @@
       "won": false,
       "close_iso": "2026-08-05T17:44:00Z",
       "rehearsal": false
+    },
+    {
+      "trade_id": "BTCUSDT_20260729_CJ_001",
+      "coin": "BTCUSDT",
+      "direction": "Short",
+      "status": "STOPPED_AFTER_TP1",
+      "pnl_usd": 5.99,
+      "close_reason": "live MEXC exit: manual @ 64924.9",
+      "date_closed": "2026-08-05",
+      "time_closed_utc": "20:20",
+      "trading_system": "John",
+      "live_entry_fill": 64932.9,
+      "live_exit_fill": 64924.9,
+      "live_entry_slippage_pct": 0.0,
+      "live_fees_usd": 0.4491,
+      "live_funding_usd": 0.141829,
+      "won": true,
+      "close_iso": "2026-08-05T20:20:00Z",
+      "rehearsal": false
     }
   ],
   "recent_cancels": [],
   "tp1_hits_open": [
-    {
-      "coin": "BTCUSDT",
-      "direction": "Short",
-      "trading_system": "John",
-      "entry_price": 64932.92993824
-    },
     {
       "coin": "XLMUSDT",
       "direction": "Short",
@@ -3085,15 +3054,15 @@
     }
   ],
   "stats": {
-    "realized_pnl_usd": -175.2,
-    "realized_pnl_pct": -1.71,
+    "realized_pnl_usd": -169.21,
+    "realized_pnl_pct": -1.63,
     "peak_capital_usd": 1213.71,
     "peak_concurrent": 11,
     "peak_date": "2026-08-05",
     "deployed_trades": 135,
-    "return_on_peak_pct": -14.43,
-    "win_rate_pct": 35.2,
-    "closed_count": 125,
+    "return_on_peak_pct": -13.94,
+    "win_rate_pct": 35.7,
+    "closed_count": 126,
     "per_system": {
       "Braam": {
         "realized_pnl_usd": -126.43,
@@ -3101,9 +3070,9 @@
         "closed_count": 116
       },
       "John": {
-        "realized_pnl_usd": -48.77,
-        "win_rate_pct": 0.0,
-        "closed_count": 9
+        "realized_pnl_usd": -42.78,
+        "win_rate_pct": 10.0,
+        "closed_count": 10
       }
     },
     "live_trade_count_total": 200,
