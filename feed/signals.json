@@ -1,9 +1,9 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-08-05T18:06Z",
+  "generated_utc": "2026-08-05T20:06Z",
   "master": "braam",
   "retention_hours": 48,
-  "trade_count": 21,
+  "trade_count": 20,
   "trades": [
     {
       "trade_id": "SOLUSDT_20260720_CJ_001",
@@ -27,29 +27,6 @@
       "time_opened_utc": "20:04",
       "sl_mode": "initial",
       "feed_updated_utc": "2026-08-04T22:03Z"
-    },
-    {
-      "trade_id": "XLMUSDT_20260722_CB_001",
-      "coin": "XLMUSDT",
-      "direction": "Short",
-      "trading_system": "Braam",
-      "conviction": "MEDIUM",
-      "leverage": 3,
-      "entry_price": 0.18943185,
-      "entry_lo": 0.18848469,
-      "entry_hi": 0.190379,
-      "sl": 0.19479524,
-      "tp1": 0.1676794,
-      "tp2": 0.14194407,
-      "status": "CANCELLED",
-      "tp1_hit": false,
-      "tp2_hit": false,
-      "sl_hit": false,
-      "close_reason": "Entry window expired: unfilled 12.0d \u2265 72\u00d74H (288h) \u2014 mirrors backtest ENTRY_WINDOW",
-      "date_opened": "2026-07-22",
-      "time_opened_utc": "20:03",
-      "sl_mode": "initial",
-      "feed_updated_utc": "2026-08-03T20:03Z"
     },
     {
       "trade_id": "XRPUSDT_20260723_CB_001",
