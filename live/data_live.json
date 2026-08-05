@@ -1,31 +1,19 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-08-05T15:15:47Z",
+  "last_updated_iso": "2026-08-05T15:17:29Z",
   "mexc_account": {
-    "unrealized_pnl": 33.5445,
-    "equity": 2195.8892,
+    "unrealized_pnl": 35.0635,
+    "equity": 2197.4081,
     "available": 874.9183,
     "position_margin": 0.0
   },
   "order_levels": {
     "checked": 14,
-    "in_sync": 13,
-    "drifted": [
-      "UNI"
-    ],
+    "in_sync": 14,
+    "drifted": [],
     "reconciling": [],
-    "detail": [
-      {
-        "coin": "UNI",
-        "trade_id": "UNIUSDT_20260804_CB_001",
-        "status": "PENDING",
-        "fields": [
-          "tp1"
-        ],
-        "synced_at": null
-      }
-    ]
+    "detail": []
   },
   "api_keys": [
     {
@@ -86,7 +74,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$2,195.89",
+      "value": "$2,197.41",
       "status": "ok",
       "action": null
     },
@@ -110,7 +98,7 @@
       "key": "position_protection",
       "tier": 1,
       "label": "Position protection",
-      "value": "all protected (11 open, 8 pre-TP1 runners)",
+      "value": "all protected (11 open, 9 pre-TP1 runners)",
       "status": "ok",
       "action": null
     },
@@ -448,10 +436,10 @@
       "leverage": 3,
       "trading_system": "Braam",
       "track_only": false,
-      "status": "PENDING",
+      "status": "OPEN",
       "price_at_run": 3.909,
-      "date_activated": null,
-      "time_activated_utc": null,
+      "date_activated": "2026-08-05",
+      "time_activated_utc": "14:13",
       "date_opened": "2026-08-04",
       "time_opened_utc": "00:03",
       "conviction": "MEDIUM",
@@ -459,11 +447,11 @@
       "sl_moved_to_be": false,
       "pnl_tp1_realized_usd": null,
       "tp2_hit": false,
-      "live_executed": null,
-      "live_entry_fill": null,
+      "live_executed": true,
+      "live_entry_fill": 4.085,
       "live_exit_fill": null,
-      "live_entry_slippage_pct": null,
-      "live_fees_usd": null,
+      "live_entry_slippage_pct": 0.0084,
+      "live_fees_usd": 0.1973,
       "live_funding_usd": null,
       "live_tp1_pnl_usd": null,
       "rehearsal": false
@@ -681,6 +669,18 @@
       "tp1_hit": false,
       "iso": "2026-08-05T08:59:00Z",
       "_iso_ms": 1785920340000,
+      "rehearsal": false
+    },
+    {
+      "trade_id": "UNIUSDT_20260804_CB_001",
+      "coin": "UNIUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "entry_price": 4.08534433,
+      "live_entry_fill": 4.085,
+      "tp1_hit": false,
+      "iso": "2026-08-05T14:13:00Z",
+      "_iso_ms": 1785939180000,
       "rehearsal": false
     }
   ],
@@ -3060,11 +3060,11 @@
   "stats": {
     "realized_pnl_usd": -168.5,
     "realized_pnl_pct": -1.66,
-    "peak_capital_usd": 1162.42,
-    "peak_concurrent": 14,
-    "peak_date": "2026-06-12",
-    "deployed_trades": 134,
-    "return_on_peak_pct": -14.5,
+    "peak_capital_usd": 1213.71,
+    "peak_concurrent": 11,
+    "peak_date": "2026-08-05",
+    "deployed_trades": 135,
+    "return_on_peak_pct": -13.88,
     "win_rate_pct": 35.5,
     "closed_count": 124,
     "per_system": {

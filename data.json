@@ -1,5 +1,5 @@
 {
-  "last_updated_iso": "2026-08-05T15:15:44Z",
+  "last_updated_iso": "2026-08-05T15:17:24Z",
   "mexc_account": null,
   "api_keys": [
     {
@@ -964,10 +964,10 @@
       "leverage": 3,
       "trading_system": "Braam",
       "track_only": false,
-      "status": "PENDING",
+      "status": "OPEN",
       "price_at_run": 3.909,
-      "date_activated": null,
-      "time_activated_utc": null,
+      "date_activated": "2026-08-05",
+      "time_activated_utc": "14:13",
       "date_opened": "2026-08-04",
       "time_opened_utc": "00:03",
       "conviction": "MEDIUM",
@@ -1228,6 +1228,16 @@
       "tp1_hit": false,
       "iso": "2026-08-05T12:00:00Z",
       "_iso_ms": 1785931200000
+    },
+    {
+      "trade_id": "UNIUSDT_20260804_CB_001",
+      "coin": "UNIUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "entry_price": 4.08534433,
+      "tp1_hit": false,
+      "iso": "2026-08-05T14:13:00Z",
+      "_iso_ms": 1785939180000
     }
   ],
   "recent_closes": [
@@ -1917,7 +1927,7 @@
     "peak_capital_usd": 3300,
     "peak_concurrent": 33,
     "peak_date": "2026-06-22",
-    "deployed_trades": 550,
+    "deployed_trades": 551,
     "return_on_peak_pct": 16.08,
     "win_rate_pct": 32.6,
     "closed_count": 512,
