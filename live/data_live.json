@@ -1,10 +1,10 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-08-05T09:20:27Z",
+  "last_updated_iso": "2026-08-05T10:06:39Z",
   "mexc_account": {
-    "unrealized_pnl": 33.0821,
-    "equity": 2195.6079,
+    "unrealized_pnl": 36.1972,
+    "equity": 2198.7231,
     "available": 874.8362,
     "position_margin": 0.0
   },
@@ -74,7 +74,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$2,195.61",
+      "value": "$2,198.72",
       "status": "ok",
       "action": null
     },
@@ -149,7 +149,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 0.3274,
+      "price_at_run": 0.3284,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-07-27",
@@ -245,7 +245,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "OPEN",
-      "price_at_run": 64172.08,
+      "price_at_run": 64128.19,
       "date_activated": "2026-07-30",
       "time_activated_utc": "12:12",
       "date_opened": "2026-07-29",
@@ -277,7 +277,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "OPEN",
-      "price_at_run": 1.727,
+      "price_at_run": 1.712,
       "date_activated": "2026-08-04",
       "time_activated_utc": "01:52",
       "date_opened": "2026-08-01",
@@ -397,7 +397,7 @@
       "coin": "XLMUSDT",
       "direction": "Short",
       "entry_price": 0.17231799,
-      "sl": 0.1711763,
+      "sl": 0.1708763,
       "tp1": 0.1705,
       "tp2": 0.1602,
       "capital_usd": 109.37,
@@ -587,18 +587,6 @@
   ],
   "recent_signals": [],
   "recent_opens": [
-    {
-      "trade_id": "AVAXUSDT_20260803_CB_001",
-      "coin": "AVAXUSDT",
-      "direction": "Short",
-      "trading_system": "Braam",
-      "entry_price": 6.45532725,
-      "live_entry_fill": 6.455,
-      "tp1_hit": false,
-      "iso": "2026-08-03T10:00:00Z",
-      "_iso_ms": 1785751200000,
-      "rehearsal": false
-    },
     {
       "trade_id": "DOGEUSDT_20260803_CB_001",
       "coin": "DOGEUSDT",
@@ -3054,15 +3042,7 @@
       "rehearsal": false
     }
   ],
-  "recent_cancels": [
-    {
-      "coin": "SOLUSDT",
-      "direction": "Short",
-      "trading_system": "John",
-      "close_reason": "Entry window expired: unfilled 15.1d \u2265 90\u00d74H (360h) \u2014 mirrors backtest ENTRY_WIN",
-      "iso": "2026-08-04T22:03:00Z"
-    }
-  ],
+  "recent_cancels": [],
   "tp1_hits_open": [
     {
       "coin": "BTCUSDT",
