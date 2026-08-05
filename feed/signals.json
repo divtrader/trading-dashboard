@@ -1,9 +1,9 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-08-05T16:07Z",
+  "generated_utc": "2026-08-05T18:06Z",
   "master": "braam",
   "retention_hours": 48,
-  "trade_count": 22,
+  "trade_count": 21,
   "trades": [
     {
       "trade_id": "SOLUSDT_20260720_CJ_001",
@@ -271,15 +271,15 @@
       "sl": 1910.4187755,
       "tp1": 1810.93080135,
       "tp2": 1632.8274411,
-      "status": "OPEN",
+      "status": "STOPPED",
       "tp1_hit": false,
       "tp2_hit": false,
       "sl_hit": false,
-      "close_reason": null,
+      "close_reason": "live MEXC exit: sl @ 1910.49",
       "date_opened": "2026-08-03",
       "time_opened_utc": "04:04",
       "sl_mode": "initial",
-      "feed_updated_utc": "2026-08-03T19:33Z"
+      "feed_updated_utc": "2026-08-05T17:44Z"
     },
     {
       "trade_id": "AVAXUSDT_20260803_CB_001",
@@ -326,29 +326,6 @@
       "time_opened_utc": "04:04",
       "sl_mode": "initial",
       "feed_updated_utc": "2026-08-03T18:03Z"
-    },
-    {
-      "trade_id": "HBARUSDT_20260803_CB_001",
-      "coin": "HBARUSDT",
-      "direction": "Short",
-      "trading_system": "Braam",
-      "conviction": "MEDIUM",
-      "leverage": 3,
-      "entry_price": 0.06940401,
-      "entry_lo": 0.06905699,
-      "entry_hi": 0.06975103,
-      "sl": 0.07063084,
-      "tp1": 0.06756,
-      "tp2": 0.06598,
-      "status": "STOPPED",
-      "tp1_hit": false,
-      "tp2_hit": false,
-      "sl_hit": false,
-      "close_reason": "live MEXC exit: sl @ 0.07063",
-      "date_opened": "2026-08-03",
-      "time_opened_utc": "04:04",
-      "sl_mode": "initial",
-      "feed_updated_utc": "2026-08-03T16:12Z"
     },
     {
       "trade_id": "XLMUSDT_20260803_CB_001",
