@@ -1,9 +1,9 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-08-05T02:07Z",
+  "generated_utc": "2026-08-05T04:06Z",
   "master": "braam",
   "retention_hours": 48,
-  "trade_count": 23,
+  "trade_count": 24,
   "trades": [
     {
       "trade_id": "SOLUSDT_20260720_CJ_001",
@@ -429,7 +429,7 @@
       "entry_price": 0.17231799,
       "entry_lo": 0.1714564,
       "entry_hi": 0.17317958,
-      "sl": 0.17178376,
+      "sl": 0.17132063,
       "tp1": 0.1705,
       "tp2": 0.1602,
       "status": "OPEN",
@@ -533,6 +533,29 @@
       "time_opened_utc": "00:03",
       "sl_mode": "initial",
       "feed_updated_utc": "2026-08-05T00:03Z"
+    },
+    {
+      "trade_id": "SUIUSDT_20260805_CB_001",
+      "coin": "SUIUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "conviction": "HIGH",
+      "leverage": 3,
+      "entry_price": 0.69108359,
+      "entry_lo": 0.68762817,
+      "entry_hi": 0.69453901,
+      "sl": 0.70380019,
+      "tp1": 0.66390377,
+      "tp2": 0.60371885,
+      "status": "PENDING",
+      "tp1_hit": false,
+      "tp2_hit": false,
+      "sl_hit": false,
+      "close_reason": null,
+      "date_opened": "2026-08-05",
+      "time_opened_utc": "04:03",
+      "sl_mode": "initial",
+      "feed_updated_utc": "2026-08-05T04:03Z"
     }
   ]
 }
