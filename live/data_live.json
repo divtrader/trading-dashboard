@@ -1,11 +1,11 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-08-06T02:06:32Z",
+  "last_updated_iso": "2026-08-06T04:06:33Z",
   "mexc_account": {
-    "unrealized_pnl": 53.401,
-    "equity": 2215.6972,
-    "available": 1113.2876,
+    "unrealized_pnl": 56.1943,
+    "equity": 2218.4887,
+    "available": 1113.2857,
     "position_margin": 0.0
   },
   "order_levels": {
@@ -66,7 +66,7 @@
       "key": "state_file",
       "tier": 1,
       "label": "Trade journal",
-      "value": "OK (899 records)",
+      "value": "OK (901 records)",
       "status": "ok",
       "action": null
     },
@@ -74,7 +74,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$2,215.70",
+      "value": "$2,218.49",
       "status": "ok",
       "action": null
     },
@@ -149,7 +149,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 0.3287,
+      "price_at_run": 0.3272,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-07-27",
@@ -245,7 +245,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "OPEN",
-      "price_at_run": 1.717,
+      "price_at_run": 1.719,
       "date_activated": "2026-08-04",
       "time_activated_utc": "01:52",
       "date_opened": "2026-08-01",
@@ -429,7 +429,7 @@
       "coin": "XRPUSDT",
       "direction": "Short",
       "entry_price": 1.07604441,
-      "sl": 1.09204093,
+      "sl": 1.06690709,
       "tp1": 1.0497,
       "tp2": 1.0256,
       "capital_usd": 109.83,
@@ -445,7 +445,7 @@
       "conviction": "HIGH",
       "tp1_hit": true,
       "sl_moved_to_be": false,
-      "pnl_tp1_realized_usd": null,
+      "pnl_tp1_realized_usd": 4.14,
       "tp2_hit": false,
       "live_executed": true,
       "live_entry_fill": 1.076,
@@ -533,7 +533,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 0.3704,
+      "price_at_run": 0.3716,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-08-05",
@@ -553,21 +553,7 @@
       "rehearsal": false
     }
   ],
-  "recent_signals": [
-    {
-      "trade_id": "ONDOUSDT_20260805_CJ_001",
-      "coin": "ONDOUSDT",
-      "direction": "Long",
-      "trading_system": "John",
-      "entry_price": 0.35539478,
-      "tp1": 0.38472252,
-      "sl": 0.34623305,
-      "conviction": "HIGH",
-      "track_only": false,
-      "iso": "2026-08-05T16:03:00Z",
-      "rehearsal": false
-    }
-  ],
+  "recent_signals": [],
   "recent_opens": [
     {
       "trade_id": "HBARUSDT_20260804_CB_001",
