@@ -1,9 +1,9 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-08-06T00:06Z",
+  "generated_utc": "2026-08-06T02:06Z",
   "master": "braam",
   "retention_hours": 48,
-  "trade_count": 20,
+  "trade_count": 19,
   "trades": [
     {
       "trade_id": "SOLUSDT_20260720_CJ_001",
@@ -259,29 +259,6 @@
       "feed_updated_utc": "2026-08-05T17:44Z"
     },
     {
-      "trade_id": "AVAXUSDT_20260803_CB_001",
-      "coin": "AVAXUSDT",
-      "direction": "Short",
-      "trading_system": "Braam",
-      "conviction": "MEDIUM",
-      "leverage": 3,
-      "entry_price": 6.45532725,
-      "entry_lo": 6.42305062,
-      "entry_hi": 6.48760389,
-      "sl": 6.64951643,
-      "tp1": 6.11812551,
-      "tp2": 5.32994165,
-      "status": "STOPPED",
-      "tp1_hit": false,
-      "tp2_hit": false,
-      "sl_hit": false,
-      "close_reason": "live MEXC exit: sl @ 6.651",
-      "date_opened": "2026-08-03",
-      "time_opened_utc": "04:04",
-      "sl_mode": "initial",
-      "feed_updated_utc": "2026-08-04T01:24Z"
-    },
-    {
       "trade_id": "DOGEUSDT_20260803_CB_001",
       "coin": "DOGEUSDT",
       "direction": "Short",
@@ -314,7 +291,7 @@
       "entry_price": 0.17231799,
       "entry_lo": 0.1714564,
       "entry_hi": 0.17317958,
-      "sl": 0.16928526,
+      "sl": 0.16638526,
       "tp1": 0.1705,
       "tp2": 0.1602,
       "status": "OPEN",
@@ -387,13 +364,13 @@
       "tp1": 1.0497,
       "tp2": 1.0256,
       "status": "OPEN",
-      "tp1_hit": false,
+      "tp1_hit": true,
       "tp2_hit": false,
       "sl_hit": false,
       "close_reason": null,
       "date_opened": "2026-08-05",
       "time_opened_utc": "00:03",
-      "sl_mode": "initial",
+      "sl_mode": "breakeven",
       "feed_updated_utc": "2026-08-05T08:03Z"
     },
     {
