@@ -1,19 +1,31 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-08-07T08:07:13Z",
+  "last_updated_iso": "2026-08-07T09:51:39Z",
   "mexc_account": {
-    "unrealized_pnl": 42.5593,
-    "equity": 2261.3675,
-    "available": 766.1164,
+    "unrealized_pnl": 40.0481,
+    "equity": 2258.6536,
+    "available": 766.1842,
     "position_margin": 0.0
   },
   "order_levels": {
     "checked": 15,
-    "in_sync": 15,
-    "drifted": [],
+    "in_sync": 14,
+    "drifted": [
+      "SOL"
+    ],
     "reconciling": [],
-    "detail": []
+    "detail": [
+      {
+        "coin": "SOL",
+        "trade_id": "SOLUSDT_20260807_CB_001",
+        "status": "PENDING",
+        "fields": [
+          "tp1"
+        ],
+        "synced_at": null
+      }
+    ]
   },
   "api_keys": [
     {
@@ -74,7 +86,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$2,261.37",
+      "value": "$2,258.65",
       "status": "ok",
       "action": null
     },
@@ -90,7 +102,7 @@
       "key": "orphan_orders",
       "tier": 1,
       "label": "Order reconciliation",
-      "value": "in sync (9 resting = journal)",
+      "value": "in sync (8 resting = journal)",
       "status": "ok",
       "action": null
     },
@@ -98,7 +110,7 @@
       "key": "position_protection",
       "tier": 1,
       "label": "Position protection",
-      "value": "all protected (6 open, 4 pre-TP1 runners)",
+      "value": "all protected (7 open, 4 pre-TP1 runners)",
       "status": "ok",
       "action": null
     },
@@ -430,8 +442,8 @@
       "direction": "Short",
       "entry_price": 73.4261961,
       "sl": 74.67933071,
-      "tp1": 69.30778483,
-      "tp2": 63.23164048,
+      "tp1": 71.1,
+      "tp2": 65.36,
       "capital_usd": 113.18,
       "leverage": 3,
       "trading_system": "Braam",
@@ -624,7 +636,7 @@
       "direction": "Short",
       "trading_system": "Braam",
       "entry_price": 73.4261961,
-      "tp1": 69.30778483,
+      "tp1": 71.1,
       "sl": 74.67933071,
       "conviction": "HIGH",
       "track_only": false,
@@ -698,18 +710,6 @@
     }
   ],
   "recent_opens": [
-    {
-      "trade_id": "TRXUSDT_20260805_CB_001",
-      "coin": "TRXUSDT",
-      "direction": "Short",
-      "trading_system": "Braam",
-      "entry_price": 0.32810795,
-      "live_entry_fill": 0.32811,
-      "tp1_hit": false,
-      "iso": "2026-08-05T08:59:00Z",
-      "_iso_ms": 1785920340000,
-      "rehearsal": false
-    },
     {
       "trade_id": "UNIUSDT_20260804_CB_001",
       "coin": "UNIUSDT",
