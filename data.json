@@ -1,5 +1,5 @@
 {
-  "last_updated_iso": "2026-08-07T09:51:36Z",
+  "last_updated_iso": "2026-08-07T09:53:08Z",
   "mexc_account": null,
   "api_keys": [
     {
@@ -1102,10 +1102,10 @@
       "leverage": 3,
       "trading_system": "Braam",
       "track_only": false,
-      "status": "PENDING",
+      "status": "OPEN",
       "price_at_run": 72.6,
-      "date_activated": null,
-      "time_activated_utc": null,
+      "date_activated": "2026-08-07",
+      "time_activated_utc": "09:18",
       "date_opened": "2026-08-07",
       "time_opened_utc": "04:04",
       "conviction": "HIGH",
@@ -1231,18 +1231,6 @@
   ],
   "recent_signals": [
     {
-      "trade_id": "SOLUSDT_20260807_CB_001",
-      "coin": "SOLUSDT",
-      "direction": "Short",
-      "trading_system": "Braam",
-      "entry_price": 73.4261961,
-      "tp1": 71.1,
-      "sl": 74.67933071,
-      "conviction": "HIGH",
-      "track_only": false,
-      "iso": "2026-08-07T04:04:00Z"
-    },
-    {
       "trade_id": "XLMUSDT_20260807_CB_001",
       "coin": "XLMUSDT",
       "direction": "Short",
@@ -1363,6 +1351,16 @@
       "tp1_hit": false,
       "iso": "2026-08-07T04:00:00Z",
       "_iso_ms": 1786075200000
+    },
+    {
+      "trade_id": "SOLUSDT_20260807_CB_001",
+      "coin": "SOLUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "entry_price": 73.4261961,
+      "tp1_hit": false,
+      "iso": "2026-08-07T09:18:00Z",
+      "_iso_ms": 1786094280000
     }
   ],
   "recent_closes": [
@@ -2052,7 +2050,7 @@
     "peak_capital_usd": 3300,
     "peak_concurrent": 33,
     "peak_date": "2026-06-22",
-    "deployed_trades": 556,
+    "deployed_trades": 557,
     "return_on_peak_pct": 17.72,
     "win_rate_pct": 32.9,
     "closed_count": 523,
