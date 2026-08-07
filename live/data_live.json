@@ -1,11 +1,11 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-08-06T14:07:19Z",
+  "last_updated_iso": "2026-08-07T00:07:27Z",
   "mexc_account": {
-    "unrealized_pnl": 57.0959,
-    "equity": 2234.4018,
-    "available": 1239.3062,
+    "unrealized_pnl": 78.7017,
+    "equity": 2255.8522,
+    "available": 1239.1509,
     "position_margin": 0.0
   },
   "order_levels": {
@@ -20,28 +20,28 @@
       "label": "MEXC AlgoTrading sub-account (live orders)",
       "name": "MEXC_ALGO_KEY",
       "expires": "2026-08-27",
-      "days_left": 21,
+      "days_left": 20,
       "status": "ok"
     },
     {
       "label": "GitHub PAT (dashboard deploy)",
       "name": "DASHBOARD_PAT",
       "expires": "2126-01-01",
-      "days_left": 36307,
+      "days_left": 36306,
       "status": "ok"
     },
     {
       "label": "Google Drive OAuth (journal sync)",
       "name": "GDRIVE_OAUTH_TOKEN",
       "expires": "2126-01-01",
-      "days_left": 36307,
+      "days_left": 36306,
       "status": "ok"
     },
     {
       "label": "Telegram Bot (trade alerts)",
       "name": "TELEGRAM_TOKEN",
       "expires": "2126-01-01",
-      "days_left": 36307,
+      "days_left": 36306,
       "status": "ok"
     }
   ],
@@ -66,7 +66,7 @@
       "key": "state_file",
       "tier": 1,
       "label": "Trade journal",
-      "value": "OK (902 records)",
+      "value": "OK (903 records)",
       "status": "ok",
       "action": null
     },
@@ -74,7 +74,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$2,234.40",
+      "value": "$2,255.85",
       "status": "ok",
       "action": null
     },
@@ -106,7 +106,7 @@
       "key": "apikey_MEXC_ALGO_KEY",
       "tier": 1,
       "label": "MEXC AlgoTrading sub-account (live orders)",
-      "value": "21d left (2026-08-27)",
+      "value": "20d left (2026-08-27)",
       "status": "ok",
       "action": null
     },
@@ -114,7 +114,7 @@
       "key": "apikey_DASHBOARD_PAT",
       "tier": 1,
       "label": "GitHub PAT (dashboard deploy)",
-      "value": "36307d left (2126-01-01)",
+      "value": "36306d left (2126-01-01)",
       "status": "ok",
       "action": null
     },
@@ -122,7 +122,7 @@
       "key": "apikey_GDRIVE_OAUTH_TOKEN",
       "tier": 1,
       "label": "Google Drive OAuth (journal sync)",
-      "value": "36307d left (2126-01-01)",
+      "value": "36306d left (2126-01-01)",
       "status": "ok",
       "action": null
     },
@@ -130,7 +130,7 @@
       "key": "apikey_TELEGRAM_TOKEN",
       "tier": 1,
       "label": "Telegram Bot (trade alerts)",
-      "value": "36307d left (2126-01-01)",
+      "value": "36306d left (2126-01-01)",
       "status": "ok",
       "action": null
     }
@@ -149,7 +149,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 0.3279,
+      "price_at_run": 0.3271,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-07-27",
@@ -245,7 +245,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "OPEN",
-      "price_at_run": 1.698,
+      "price_at_run": 1.658,
       "date_activated": "2026-08-04",
       "time_activated_utc": "01:52",
       "date_opened": "2026-08-01",
@@ -397,7 +397,7 @@
       "coin": "XRPUSDT",
       "direction": "Short",
       "entry_price": 1.07604441,
-      "sl": 1.06690709,
+      "sl": 1.05935951,
       "tp1": 1.0497,
       "tp2": 1.0256,
       "capital_usd": 109.83,
@@ -501,7 +501,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 0.3691,
+      "price_at_run": 0.3586,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-08-05",
@@ -523,18 +523,6 @@
   ],
   "recent_signals": [],
   "recent_opens": [
-    {
-      "trade_id": "HBARUSDT_20260804_CB_001",
-      "coin": "HBARUSDT",
-      "direction": "Short",
-      "trading_system": "Braam",
-      "entry_price": 0.06993598,
-      "live_entry_fill": 0.06994,
-      "tp1_hit": true,
-      "iso": "2026-08-04T17:00:00Z",
-      "_iso_ms": 1785862800000,
-      "rehearsal": false
-    },
     {
       "trade_id": "XRPUSDT_20260805_CB_001",
       "coin": "XRPUSDT",
