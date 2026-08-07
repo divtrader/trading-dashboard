@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-07T02:07:27Z",
+  "updated": "2026-08-07T04:07:55Z",
   "positions": {
     "1414291495": {
       "position_id": "1414291495",
@@ -2344,8 +2344,16 @@
       "leverage": 3,
       "entry_price": 1.076,
       "opened_at": "2026-08-05T02:04:02Z",
-      "status": "OPEN",
-      "braam_trade_id": "XRPUSDT_20260805_CB_001"
+      "status": "CLOSED",
+      "braam_trade_id": "XRPUSDT_20260805_CB_001",
+      "closed_at": "2026-08-07T03:42:42Z",
+      "close_price": 1.0256,
+      "pnl_usd": 11.2534,
+      "margin_usd": 109.83,
+      "fees_usd": 0.4515,
+      "tag": "WIN",
+      "close_type": 3,
+      "close_reason": "take_profit"
     },
     "1461675434": {
       "position_id": "1461675434",
@@ -2374,8 +2382,16 @@
       "leverage": 3,
       "entry_price": 0.3554,
       "opened_at": "2026-08-07T00:17:41Z",
-      "status": "OPEN",
-      "braam_trade_id": "ONDOUSDT_20260805_CJ_001"
+      "status": "CLOSED",
+      "braam_trade_id": "ONDOUSDT_20260805_CJ_001",
+      "closed_at": "2026-08-07T02:08:18Z",
+      "close_price": 0.3551,
+      "pnl_usd": -0.2508,
+      "margin_usd": 110.63,
+      "fees_usd": 0.2238,
+      "tag": "LOSS",
+      "close_type": 4,
+      "close_reason": "stop_loss"
     }
   },
   "orders": {
@@ -2404,6 +2420,51 @@
       "entry_price": 46.83797262,
       "resting_at": "2026-07-28T00:04:00Z",
       "braam_trade_id": "LTCUSDT_20260728_CB_001",
+      "status": "RESTING"
+    },
+    "840559765175559680": {
+      "order_id": "840559765175559680",
+      "coin": "SOLUSDT",
+      "direction": "Short",
+      "entry_price": 73.4261961,
+      "resting_at": "2026-08-07T04:04:00Z",
+      "braam_trade_id": "SOLUSDT_20260807_CB_001",
+      "status": "RESTING"
+    },
+    "840559772419239424": {
+      "order_id": "840559772419239424",
+      "coin": "XLMUSDT",
+      "direction": "Short",
+      "entry_price": 0.16509081,
+      "resting_at": "2026-08-07T04:04:00Z",
+      "braam_trade_id": "XLMUSDT_20260807_CB_001",
+      "status": "RESTING"
+    },
+    "840559780052743168": {
+      "order_id": "840559780052743168",
+      "coin": "AVAXUSDT",
+      "direction": "Short",
+      "entry_price": 6.56151718,
+      "resting_at": "2026-08-07T04:04:00Z",
+      "braam_trade_id": "AVAXUSDT_20260807_CB_001",
+      "status": "RESTING"
+    },
+    "840559788181055040": {
+      "order_id": "840559788181055040",
+      "coin": "TAOUSDT",
+      "direction": "Short",
+      "entry_price": 193.98958255,
+      "resting_at": "2026-08-07T04:04:00Z",
+      "braam_trade_id": "TAOUSDT_20260807_CB_001",
+      "status": "RESTING"
+    },
+    "840559796863479296": {
+      "order_id": "840559796863479296",
+      "coin": "BNBUSDT",
+      "direction": "Short",
+      "entry_price": 592.94627594,
+      "resting_at": "2026-08-07T04:04:00Z",
+      "braam_trade_id": "BNBUSDT_20260807_CB_001",
       "status": "RESTING"
     }
   }
