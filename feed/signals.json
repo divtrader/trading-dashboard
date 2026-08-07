@@ -1,6 +1,6 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-08-07T06:07Z",
+  "generated_utc": "2026-08-07T06:28Z",
   "master": "braam",
   "retention_hours": 48,
   "trade_count": 20,
@@ -133,15 +133,15 @@
       "sl": 0.41110849,
       "tp1": 0.3441,
       "tp2": 0.3195,
-      "status": "OPEN",
+      "status": "CLOSED",
       "tp1_hit": false,
       "tp2_hit": false,
       "sl_hit": false,
-      "close_reason": null,
+      "close_reason": "live MEXC exit: flattened by our own opposing order ONDOUSDT_20260805_CJ_001 (John Long, 93 contracts, posId 1463204294) filling 2026-08-07T00:17:41Z @ 0.3554. NOT a TP/SL fill (SL 0.41111, TP1 0.3441) and NOT a manual close. Hand-stamped 2026-08-07: confirm_fill could not detect the exit because the closing fill was reduceOnly=False under a different positionId.",
       "date_opened": "2026-08-01",
       "time_opened_utc": "20:04",
       "sl_mode": "initial",
-      "feed_updated_utc": "2026-08-03T06:04Z"
+      "feed_updated_utc": "2026-08-07T00:17Z"
     },
     {
       "trade_id": "ETHUSDT_20260803_CB_001",

@@ -1,24 +1,24 @@
 {
-  "generated_at_utc": "2026-08-07T06:07:11+00:00",
+  "generated_at_utc": "2026-08-07T06:28:08+00:00",
   "all_time": {
-    "total_trades": 522,
+    "total_trades": 523,
     "wins": 166,
-    "losses": 356,
-    "win_rate": 31.8,
-    "total_pnl_usd": 553.87,
-    "avg_pnl_usd": 1.06,
+    "losses": 357,
+    "win_rate": 31.7,
+    "total_pnl_usd": 584.76,
+    "avg_pnl_usd": 1.12,
     "best_usd": 85.94,
     "worst_usd": -44.29,
-    "avg_win_usd": 20.03,
+    "avg_win_usd": 20.09,
     "avg_loss_usd": -8.18,
-    "expectancy_usd": 1.06,
-    "profit_factor": 1.19,
+    "expectancy_usd": 1.12,
+    "profit_factor": 1.2,
     "longest_win_streak": 5,
     "longest_loss_streak": 15,
     "current_streak_type": "loss",
     "current_streak_count": 1,
-    "avg_hold_hours": 68.6,
-    "median_hold_hours": 36.6
+    "avg_hold_hours": 68.7,
+    "median_hold_hours": 37.1
   },
   "by_system": {
     "John": {
@@ -35,16 +35,16 @@
       "pending": 21
     },
     "Braam": {
-      "n": 188,
+      "n": 189,
       "wins": 80,
-      "wr": 42.6,
-      "pnl": 270.35,
-      "avg": 1.44,
+      "wr": 42.3,
+      "pnl": 301.24,
+      "avg": 1.59,
       "inception": "2026-05-01",
       "days_active": 98,
-      "pnl_per_day": 2.76,
+      "pnl_per_day": 3.07,
       "status": "active",
-      "open": 8,
+      "open": 7,
       "pending": 9
     },
     "Mong": {
@@ -88,12 +88,12 @@
       "name": "Braam",
       "inception": "2026-05-01",
       "days_active": 98,
-      "closed": 188,
+      "closed": 189,
       "wins": 80,
-      "wr": 42.6,
-      "pnl": 270.35,
-      "pnl_per_day": 2.76,
-      "open": 8,
+      "wr": 42.3,
+      "pnl": 301.24,
+      "pnl_per_day": 3.07,
+      "open": 7,
       "pending": 9
     },
     {
@@ -144,11 +144,11 @@
     },
     {
       "month": "2026-08",
-      "n": 30,
+      "n": 31,
       "wins": 11,
-      "wr": 36.7,
-      "pnl": 38.7,
-      "cumulative_pnl": 553.87
+      "wr": 35.5,
+      "pnl": 69.59,
+      "cumulative_pnl": 584.76
     }
   ],
   "equity_curve": [
@@ -3267,21 +3267,27 @@
       "won": true
     },
     {
+      "iso": "2026-08-07T00:17:00+00:00",
+      "pnl": 30.89,
+      "cumulative": 579.1,
+      "won": false
+    },
+    {
       "iso": "2026-08-07T02:08:00+00:00",
       "pnl": -0.25,
-      "cumulative": 547.96,
+      "cumulative": 578.85,
       "won": false
     },
     {
       "iso": "2026-08-07T03:42:00+00:00",
       "pnl": 14.03,
-      "cumulative": 561.99,
+      "cumulative": 592.88,
       "won": true
     },
     {
       "iso": "2026-08-07T04:00:00+00:00",
       "pnl": -8.12,
-      "cumulative": 553.87,
+      "cumulative": 584.76,
       "won": false
     }
   ],
@@ -5367,15 +5373,19 @@
       },
       {
         "iso": "2026-08-07",
-        "pct": 27.398
+        "pct": 28.955
       },
       {
         "iso": "2026-08-07",
-        "pct": 28.099
+        "pct": 28.942
       },
       {
         "iso": "2026-08-07",
-        "pct": 27.694
+        "pct": 29.644
+      },
+      {
+        "iso": "2026-08-07",
+        "pct": 29.238
       }
     ],
     "spx": [
@@ -5632,7 +5642,7 @@
         "pct": 5.082
       }
     ],
-    "ours_pct": 27.694,
+    "ours_pct": 29.238,
     "spx_pct": 5.082
   },
   "by_direction": {
@@ -5644,20 +5654,20 @@
       "avg": 0.25
     },
     "Short": {
-      "n": 324,
+      "n": 325,
       "wins": 115,
-      "wr": 35.5,
-      "pnl": 504.79,
-      "avg": 1.56
+      "wr": 35.4,
+      "pnl": 535.68,
+      "avg": 1.65
     }
   },
   "by_conviction": {
     "MEDIUM": {
-      "n": 489,
+      "n": 490,
       "wins": 156,
-      "wr": 31.9,
-      "pnl": 501.09,
-      "avg": 1.02
+      "wr": 31.8,
+      "pnl": 531.98,
+      "avg": 1.09
     },
     "VERY HIGH": {
       "n": 1,
@@ -5704,11 +5714,11 @@
       "avg": 1.66
     },
     "ema20_rejection": {
-      "n": 188,
+      "n": 189,
       "wins": 80,
-      "wr": 42.6,
-      "pnl": 270.35,
-      "avg": 1.44
+      "wr": 42.3,
+      "pnl": 301.24,
+      "avg": 1.59
     },
     "at_resistance": {
       "n": 2,
@@ -5748,11 +5758,11 @@
       "avg": 1.48
     },
     "3": {
-      "n": 179,
+      "n": 180,
       "wins": 52,
-      "wr": 29.1,
-      "pnl": 125.2,
-      "avg": 0.7
+      "wr": 28.9,
+      "pnl": 156.09,
+      "avg": 0.87
     },
     "2": {
       "n": 60,
@@ -5785,11 +5795,11 @@
       "avg": 0.25
     },
     "asia": {
-      "n": 143,
+      "n": 144,
       "wins": 38,
-      "wr": 26.6,
-      "pnl": 110.65,
-      "avg": 0.77
+      "wr": 26.4,
+      "pnl": 141.54,
+      "avg": 0.98
     },
     "us": {
       "n": 161,
@@ -5801,11 +5811,11 @@
   },
   "by_audit_verdict": {
     "PASS": {
-      "n": 418,
+      "n": 419,
       "wins": 138,
-      "wr": 33.0,
-      "pnl": 625.5,
-      "avg": 1.5
+      "wr": 32.9,
+      "pnl": 656.39,
+      "avg": 1.57
     },
     "DEGRADED": {
       "n": 81,
@@ -5824,11 +5834,11 @@
   },
   "by_dow": {
     "Sunday": {
-      "n": 59,
+      "n": 60,
       "wins": 14,
-      "wr": 23.7,
-      "pnl": -35.98,
-      "avg": -0.61
+      "wr": 23.3,
+      "pnl": -5.09,
+      "avg": -0.08
     },
     "Wednesday": {
       "n": 86,
@@ -5910,11 +5920,11 @@
       "avg": 2.51
     },
     "5": {
-      "n": 5,
+      "n": 6,
       "wins": 0,
       "wr": 0.0,
-      "pnl": -44.78,
-      "avg": -8.96
+      "pnl": -13.89,
+      "avg": -2.31
     },
     "4": {
       "n": 48,
@@ -6038,20 +6048,20 @@
   },
   "best_coins": [
     {
+      "coin": "ONDO",
+      "n": 31,
+      "wins": 12,
+      "wr": 38.7,
+      "pnl": 159.35,
+      "avg": 5.14
+    },
+    {
       "coin": "RENDER",
       "n": 20,
       "wins": 10,
       "wr": 50.0,
       "pnl": 158.78,
       "avg": 7.94
-    },
-    {
-      "coin": "ONDO",
-      "n": 30,
-      "wins": 12,
-      "wr": 40.0,
-      "pnl": 128.46,
-      "avg": 4.28
     },
     {
       "coin": "THETA",
@@ -6174,6 +6184,16 @@
       "iso": "2026-08-07T02:08:00+00:00"
     },
     {
+      "trade_id": "ONDOUSDT_20260801_CB_001",
+      "coin": "ONDO",
+      "direction": "Short",
+      "system": "Braam",
+      "pnl_usd": 30.89,
+      "won": false,
+      "close_reason": "live MEXC exit: flattened by our own opposing order ONDOUSDT_20260805_CJ_001 (John Long, 93 contracts, posId 1463204294) filling 2026-08-07T00:17:41Z @ 0.3554. NOT a TP/SL fill (SL 0.41111, TP1 0.3441) and NOT a manual close. Hand-stamped 2026-08-07: confirm_fill could not detect the exit because the closing fill was reduceOnly=False under a different positionId.",
+      "iso": "2026-08-07T00:17:00+00:00"
+    },
+    {
       "trade_id": "XLMUSDT_20260803_CB_001",
       "coin": "XLM",
       "direction": "Short",
@@ -6232,24 +6252,14 @@
       "won": false,
       "close_reason": "SL hit",
       "iso": "2026-08-05T12:00:00+00:00"
-    },
-    {
-      "trade_id": "BNBUSDT_20260801_CJ_M_001",
-      "coin": "BNB",
-      "direction": "Short",
-      "system": "John",
-      "pnl_usd": -3.02,
-      "won": false,
-      "close_reason": "SL hit",
-      "iso": "2026-08-05T00:00:00+00:00"
     }
   ],
   "live_positions": {
-    "open_count": 22,
+    "open_count": 21,
     "open_long": 7,
-    "open_short": 15,
+    "open_short": 14,
     "pending_count": 30,
-    "capital_open_usd": 2250.0,
+    "capital_open_usd": 2150.0,
     "capital_pending_usd": 3150.0
   },
   "macro": {

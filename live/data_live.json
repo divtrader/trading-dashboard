@@ -1,10 +1,10 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-08-07T06:07:12Z",
+  "last_updated_iso": "2026-08-07T06:28:09Z",
   "mexc_account": {
-    "unrealized_pnl": 46.2513,
-    "equity": 2264.9972,
+    "unrealized_pnl": 41.926,
+    "equity": 2260.6719,
     "available": 879.6282,
     "position_margin": 0.0
   },
@@ -12,9 +12,7 @@
     "checked": 14,
     "in_sync": 14,
     "drifted": [],
-    "reconciling": [
-      "ONDO"
-    ],
+    "reconciling": [],
     "detail": []
   },
   "api_keys": [
@@ -76,7 +74,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$2,265.00",
+      "value": "$2,260.67",
       "status": "ok",
       "action": null
     },
@@ -262,38 +260,6 @@
       "live_exit_fill": null,
       "live_entry_slippage_pct": 0.0056,
       "live_fees_usd": 0.1993,
-      "live_funding_usd": null,
-      "live_tp1_pnl_usd": null,
-      "rehearsal": false
-    },
-    {
-      "trade_id": "ONDOUSDT_20260801_CB_001",
-      "coin": "ONDOUSDT",
-      "direction": "Short",
-      "entry_price": 0.39619096,
-      "sl": 0.41110849,
-      "tp1": 0.3441,
-      "tp2": 0.3195,
-      "capital_usd": 111.64,
-      "leverage": 3,
-      "trading_system": "Braam",
-      "track_only": false,
-      "status": "OPEN",
-      "price_at_run": 0.3784,
-      "date_activated": "2026-08-02",
-      "time_activated_utc": "05:01",
-      "date_opened": "2026-08-01",
-      "time_opened_utc": "20:04",
-      "conviction": "MEDIUM",
-      "tp1_hit": false,
-      "sl_moved_to_be": false,
-      "pnl_tp1_realized_usd": null,
-      "tp2_hit": false,
-      "live_executed": true,
-      "live_entry_fill": 0.3962,
-      "live_exit_fill": null,
-      "live_entry_slippage_pct": -0.0023,
-      "live_fees_usd": 0.1996,
       "live_funding_usd": null,
       "live_tp1_pnl_usd": null,
       "rehearsal": false
@@ -3139,6 +3105,25 @@
       "rehearsal": false
     },
     {
+      "trade_id": "ONDOUSDT_20260801_CB_001",
+      "coin": "ONDOUSDT",
+      "direction": "Short",
+      "status": "CLOSED",
+      "pnl_usd": 33.83,
+      "close_reason": "live MEXC exit: flattened by our own opposing order ONDOUSDT_20260805_CJ_001 (John Long, 93 contracts, posId 1463204294) filling 2026-08-07T00:17:41Z @ 0.3554. NOT a TP/SL fill (SL 0.41111, TP1 0.3441) and NOT a manual close. Hand-stamped 2026-08-07: confirm_fill could not detect the exit because the closing fill was reduceOnly=False under a different positionId.",
+      "date_closed": "2026-08-07",
+      "time_closed_utc": "00:17",
+      "trading_system": "Braam",
+      "live_entry_fill": 0.3962,
+      "live_exit_fill": null,
+      "live_entry_slippage_pct": -0.0023,
+      "live_fees_usd": 0.1996,
+      "live_funding_usd": null,
+      "won": true,
+      "close_iso": "2026-08-07T00:17:00Z",
+      "rehearsal": false
+    },
+    {
       "trade_id": "ONDOUSDT_20260805_CJ_001",
       "coin": "ONDOUSDT",
       "direction": "Long",
@@ -3193,20 +3178,20 @@
     }
   ],
   "stats": {
-    "realized_pnl_usd": -145.29,
-    "realized_pnl_pct": -1.36,
+    "realized_pnl_usd": -111.46,
+    "realized_pnl_pct": -1.03,
     "peak_capital_usd": 1213.71,
     "peak_concurrent": 11,
     "peak_date": "2026-08-05",
     "deployed_trades": 136,
-    "return_on_peak_pct": -11.97,
-    "win_rate_pct": 36.4,
-    "closed_count": 129,
+    "return_on_peak_pct": -9.18,
+    "win_rate_pct": 36.9,
+    "closed_count": 130,
     "per_system": {
       "Braam": {
-        "realized_pnl_usd": -102.26,
-        "win_rate_pct": 39.0,
-        "closed_count": 118
+        "realized_pnl_usd": -68.43,
+        "win_rate_pct": 39.5,
+        "closed_count": 119
       },
       "John": {
         "realized_pnl_usd": -43.03,

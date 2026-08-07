@@ -1,5 +1,5 @@
 {
-  "last_updated_iso": "2026-08-07T06:07:09Z",
+  "last_updated_iso": "2026-08-07T06:28:05Z",
   "mexc_account": null,
   "api_keys": [
     {
@@ -651,29 +651,6 @@
       "conviction": "MEDIUM",
       "tp1_hit": false,
       "sl_moved_to_be": null,
-      "pnl_tp1_realized_usd": null
-    },
-    {
-      "trade_id": "ONDOUSDT_20260801_CB_001",
-      "coin": "ONDOUSDT",
-      "direction": "Short",
-      "entry_price": 0.39619096,
-      "sl": 0.41110849,
-      "tp1": 0.3441,
-      "tp2": 0.3195,
-      "capital_usd": 100.0,
-      "leverage": 3,
-      "trading_system": "Braam",
-      "track_only": false,
-      "status": "OPEN",
-      "price_at_run": 0.3784,
-      "date_activated": "2026-08-02",
-      "time_activated_utc": "05:01",
-      "date_opened": "2026-08-01",
-      "time_opened_utc": "20:04",
-      "conviction": "MEDIUM",
-      "tp1_hit": false,
-      "sl_moved_to_be": false,
       "pnl_tp1_realized_usd": null
     },
     {
@@ -1365,22 +1342,6 @@
   ],
   "recent_closes": [
     {
-      "trade_id": "RENDERUSDT_20260723_CB_001",
-      "coin": "RENDERUSDT",
-      "direction": "Short",
-      "status": "STOPPED_AFTER_TP1",
-      "pnl_usd": 17.48,
-      "close_reason": "SL hit",
-      "date_closed": "2026-07-30",
-      "time_closed_utc": "12:00",
-      "trading_system": "Braam",
-      "won": true,
-      "close_iso": "2026-07-30T12:00:00Z",
-      "margin_usd": 100,
-      "fees_usd": 0.408,
-      "fees_modeled": true
-    },
-    {
       "trade_id": "ADAUSDT_20260727_CJ_M_001",
       "coin": "ADAUSDT",
       "direction": "Short",
@@ -1957,6 +1918,22 @@
       "fees_modeled": true
     },
     {
+      "trade_id": "ONDOUSDT_20260801_CB_001",
+      "coin": "ONDOUSDT",
+      "direction": "Short",
+      "status": "CLOSED",
+      "pnl_usd": 30.89,
+      "close_reason": "live MEXC exit: flattened by our own opposing order ONDOUSDT_20260805_CJ_001 (John Long, 93 contracts, posId 1463204294) filling 2026-08-07T00:17:41Z @ 0.3554. NOT a TP/SL fill (SL 0.41111, TP1 0.3441) and NOT a manual close. Hand-stamped 2026-08-07: confirm_fill could not detect the exit because the closing fill was reduceOnly=False under a different positionId.",
+      "date_closed": "2026-08-07",
+      "time_closed_utc": "00:17",
+      "trading_system": "Braam",
+      "won": true,
+      "close_iso": "2026-08-07T00:17:00Z",
+      "margin_usd": 100,
+      "fees_usd": 0.408,
+      "fees_modeled": true
+    },
+    {
       "trade_id": "ONDOUSDT_20260805_CJ_001",
       "coin": "ONDOUSDT",
       "direction": "Long",
@@ -2045,15 +2022,15 @@
     }
   ],
   "stats": {
-    "realized_pnl_usd": 553.87,
-    "realized_pnl_pct": 1.06,
+    "realized_pnl_usd": 584.76,
+    "realized_pnl_pct": 1.12,
     "peak_capital_usd": 3300,
     "peak_concurrent": 33,
     "peak_date": "2026-06-22",
     "deployed_trades": 556,
-    "return_on_peak_pct": 16.78,
-    "win_rate_pct": 32.8,
-    "closed_count": 522,
+    "return_on_peak_pct": 17.72,
+    "win_rate_pct": 32.9,
+    "closed_count": 523,
     "per_system": {
       "John": {
         "realized_pnl_usd": 238.28,
@@ -2066,16 +2043,16 @@
         "closed_count": 23
       },
       "Braam": {
-        "realized_pnl_usd": 270.35,
-        "win_rate_pct": 43.1,
-        "closed_count": 188
+        "realized_pnl_usd": 301.24,
+        "win_rate_pct": 43.4,
+        "closed_count": 189
       }
     },
     "real_only": {
-      "realized_pnl_usd": -28.97,
-      "realized_pnl_pct": -0.22,
-      "win_rate_pct": 36.4,
-      "closed_count": 129
+      "realized_pnl_usd": 1.92,
+      "realized_pnl_pct": 0.01,
+      "win_rate_pct": 36.9,
+      "closed_count": 130
     },
     "track_only": {
       "realized_pnl_usd": 582.84,
