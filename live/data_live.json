@@ -1,16 +1,16 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-08-07T12:12:04Z",
+  "last_updated_iso": "2026-08-07T14:07:20Z",
   "mexc_account": {
-    "unrealized_pnl": 26.7893,
-    "equity": 2245.0053,
-    "available": 766.3371,
+    "unrealized_pnl": 46.5099,
+    "equity": 2264.4588,
+    "available": 819.9924,
     "position_margin": 0.0
   },
   "order_levels": {
-    "checked": 15,
-    "in_sync": 15,
+    "checked": 14,
+    "in_sync": 14,
     "drifted": [],
     "reconciling": [],
     "detail": []
@@ -74,7 +74,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$2,245.01",
+      "value": "$2,264.46",
       "status": "ok",
       "action": null
     },
@@ -98,7 +98,7 @@
       "key": "position_protection",
       "tier": 1,
       "label": "Position protection",
-      "value": "all protected (9 open, 7 pre-TP1 runners)",
+      "value": "all protected (8 open, 7 pre-TP1 runners)",
       "status": "ok",
       "action": null
     },
@@ -149,7 +149,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 0.3282,
+      "price_at_run": 0.3278,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-07-27",
@@ -245,7 +245,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "OPEN",
-      "price_at_run": 1.647,
+      "price_at_run": 1.636,
       "date_activated": "2026-08-04",
       "time_activated_utc": "01:52",
       "date_opened": "2026-08-01",
@@ -262,38 +262,6 @@
       "live_fees_usd": 0.1993,
       "live_funding_usd": null,
       "live_tp1_pnl_usd": null,
-      "rehearsal": false
-    },
-    {
-      "trade_id": "DOGEUSDT_20260803_CB_001",
-      "coin": "DOGEUSDT",
-      "direction": "Short",
-      "entry_price": 0.07010887,
-      "sl": 0.07010887,
-      "tp1": 0.0685,
-      "tp2": 0.06166516,
-      "capital_usd": 110.96,
-      "leverage": 3,
-      "trading_system": "Braam",
-      "track_only": false,
-      "status": "OPEN",
-      "price_at_run": 0.06981,
-      "date_activated": "2026-08-03",
-      "time_activated_utc": "13:49",
-      "date_opened": "2026-08-03",
-      "time_opened_utc": "04:04",
-      "conviction": "MEDIUM",
-      "tp1_hit": true,
-      "sl_moved_to_be": false,
-      "pnl_tp1_realized_usd": 3.91,
-      "tp2_hit": false,
-      "live_executed": true,
-      "live_entry_fill": 0.07011,
-      "live_exit_fill": null,
-      "live_entry_slippage_pct": -0.0016,
-      "live_fees_usd": 0.3292,
-      "live_funding_usd": null,
-      "live_tp1_pnl_usd": 3.84,
       "rehearsal": false
     },
     {
@@ -3190,16 +3158,29 @@
       "won": true,
       "close_iso": "2026-08-07T03:42:00Z",
       "rehearsal": false
+    },
+    {
+      "trade_id": "DOGEUSDT_20260803_CB_001",
+      "coin": "DOGEUSDT",
+      "direction": "Short",
+      "status": "STOPPED_AFTER_TP1",
+      "pnl_usd": 3.07,
+      "close_reason": "live MEXC exit: sl @ 0.07017",
+      "date_closed": "2026-08-07",
+      "time_closed_utc": "12:30",
+      "trading_system": "Braam",
+      "live_entry_fill": 0.07011,
+      "live_exit_fill": 0.07017,
+      "live_entry_slippage_pct": -0.0016,
+      "live_fees_usd": 0.4583,
+      "live_funding_usd": 0.171108,
+      "won": true,
+      "close_iso": "2026-08-07T12:30:00Z",
+      "rehearsal": false
     }
   ],
   "recent_cancels": [],
   "tp1_hits_open": [
-    {
-      "coin": "DOGEUSDT",
-      "direction": "Short",
-      "trading_system": "Braam",
-      "entry_price": 0.07010887
-    },
     {
       "coin": "HBARUSDT",
       "direction": "Short",
@@ -3208,20 +3189,20 @@
     }
   ],
   "stats": {
-    "realized_pnl_usd": -111.46,
-    "realized_pnl_pct": -1.03,
+    "realized_pnl_usd": -108.39,
+    "realized_pnl_pct": -0.99,
     "peak_capital_usd": 1213.71,
     "peak_concurrent": 11,
     "peak_date": "2026-08-05",
     "deployed_trades": 139,
-    "return_on_peak_pct": -9.18,
-    "win_rate_pct": 36.9,
-    "closed_count": 130,
+    "return_on_peak_pct": -8.93,
+    "win_rate_pct": 37.4,
+    "closed_count": 131,
     "per_system": {
       "Braam": {
-        "realized_pnl_usd": -68.43,
-        "win_rate_pct": 39.5,
-        "closed_count": 119
+        "realized_pnl_usd": -65.36,
+        "win_rate_pct": 40.0,
+        "closed_count": 120
       },
       "John": {
         "realized_pnl_usd": -43.03,
