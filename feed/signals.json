@@ -1,6 +1,6 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-08-08T12:07Z",
+  "generated_utc": "2026-08-08T14:07Z",
   "master": "braam",
   "retention_hours": 48,
   "trade_count": 18,
@@ -179,15 +179,15 @@
       "sl": 0.06900412,
       "tp1": 0.06877,
       "tp2": 0.06605,
-      "status": "OPEN",
+      "status": "STOPPED_AFTER_TP1",
       "tp1_hit": true,
       "tp2_hit": false,
       "sl_hit": false,
-      "close_reason": null,
+      "close_reason": "live MEXC exit: manual @ 0.069",
       "date_opened": "2026-08-04",
       "time_opened_utc": "16:03",
       "sl_mode": "breakeven",
-      "feed_updated_utc": "2026-08-04T17:00Z"
+      "feed_updated_utc": "2026-08-08T14:03Z"
     },
     {
       "trade_id": "XRPUSDT_20260805_CB_001",
@@ -317,7 +317,7 @@
       "sl": 0.16881098,
       "tp1": 0.1501,
       "tp2": 0.13166838,
-      "status": "PENDING",
+      "status": "OPEN",
       "tp1_hit": false,
       "tp2_hit": false,
       "sl_hit": false,
@@ -325,7 +325,7 @@
       "date_opened": "2026-08-07",
       "time_opened_utc": "04:04",
       "sl_mode": "initial",
-      "feed_updated_utc": "2026-08-07T04:04Z"
+      "feed_updated_utc": "2026-08-08T13:06Z"
     },
     {
       "trade_id": "AVAXUSDT_20260807_CB_001",
@@ -386,15 +386,15 @@
       "sl": 600.14213041,
       "tp1": 582.05,
       "tp2": 562.04,
-      "status": "OPEN",
+      "status": "STOPPED",
       "tp1_hit": false,
       "tp2_hit": false,
       "sl_hit": false,
-      "close_reason": null,
+      "close_reason": "live MEXC exit: sl @ 600.4",
       "date_opened": "2026-08-07",
       "time_opened_utc": "04:04",
       "sl_mode": "initial",
-      "feed_updated_utc": "2026-08-08T10:03Z"
+      "feed_updated_utc": "2026-08-08T13:55Z"
     },
     {
       "trade_id": "XRPUSDT_20260807_CB_001",

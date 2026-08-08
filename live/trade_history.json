@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-08T12:07:02Z",
+  "updated": "2026-08-08T14:07:05Z",
   "positions": {
     "1414291495": {
       "position_id": "1414291495",
@@ -2350,8 +2350,16 @@
       "leverage": 3,
       "entry_price": 0.06994,
       "opened_at": "2026-08-04T17:00:39Z",
-      "status": "OPEN",
-      "braam_trade_id": "HBARUSDT_20260804_CB_001"
+      "status": "CLOSED",
+      "braam_trade_id": "HBARUSDT_20260804_CB_001",
+      "closed_at": "2026-08-08T14:03:04Z",
+      "close_price": 0.069,
+      "pnl_usd": 4.3891,
+      "margin_usd": 109.91,
+      "fees_usd": 0.4576,
+      "tag": "WIN",
+      "close_type": 1,
+      "close_reason": "manual"
     },
     "1461462128": {
       "position_id": "1461462128",
@@ -2427,6 +2435,16 @@
       "close_type": 4,
       "close_reason": "stop_loss"
     },
+    "1464419233": {
+      "position_id": "1464419233",
+      "coin": "XLMUSDT",
+      "direction": "Short",
+      "leverage": 3,
+      "entry_price": 0.16509,
+      "opened_at": "2026-08-08T13:06:12Z",
+      "status": "OPEN",
+      "braam_trade_id": "XLMUSDT_20260807_CB_001"
+    },
     "1464103729": {
       "position_id": "1464103729",
       "coin": "AVAXUSDT",
@@ -2462,8 +2480,16 @@
       "leverage": 3,
       "entry_price": 592.9,
       "opened_at": "2026-08-07T11:23:34Z",
-      "status": "OPEN",
-      "braam_trade_id": "BNBUSDT_20260807_CB_001"
+      "status": "CLOSED",
+      "braam_trade_id": "BNBUSDT_20260807_CB_001",
+      "closed_at": "2026-08-08T13:55:05Z",
+      "close_price": 600.4,
+      "pnl_usd": -4.7884,
+      "margin_usd": 113.18,
+      "fees_usd": 0.4764,
+      "tag": "LOSS",
+      "close_type": 4,
+      "close_reason": "stop_loss"
     }
   },
   "orders": {
@@ -2483,15 +2509,6 @@
       "entry_price": 46.83797262,
       "resting_at": "2026-07-28T00:04:00Z",
       "braam_trade_id": "LTCUSDT_20260728_CB_001",
-      "status": "RESTING"
-    },
-    "840559772419239424": {
-      "order_id": "840559772419239424",
-      "coin": "XLMUSDT",
-      "direction": "Short",
-      "entry_price": 0.16509081,
-      "resting_at": "2026-08-07T04:04:00Z",
-      "braam_trade_id": "XLMUSDT_20260807_CB_001",
       "status": "RESTING"
     },
     "840620074464318464": {
