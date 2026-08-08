@@ -1,16 +1,16 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-08-08T02:06:53Z",
+  "last_updated_iso": "2026-08-08T04:06:44Z",
   "mexc_account": {
-    "unrealized_pnl": 25.1785,
-    "equity": 2269.5025,
-    "available": 1048.9259,
+    "unrealized_pnl": 22.2398,
+    "equity": 2260.539,
+    "available": 1155.853,
     "position_margin": 0.0
   },
   "order_levels": {
-    "checked": 13,
-    "in_sync": 13,
+    "checked": 12,
+    "in_sync": 12,
     "drifted": [],
     "reconciling": [],
     "detail": []
@@ -74,7 +74,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$2,269.50",
+      "value": "$2,260.54",
       "status": "ok",
       "action": null
     },
@@ -98,7 +98,7 @@
       "key": "position_protection",
       "tier": 1,
       "label": "Position protection",
-      "value": "all protected (8 open, 6 pre-TP1 runners)",
+      "value": "all protected (7 open, 5 pre-TP1 runners)",
       "status": "ok",
       "action": null
     },
@@ -245,7 +245,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "OPEN",
-      "price_at_run": 1.601,
+      "price_at_run": 1.611,
       "date_activated": "2026-08-04",
       "time_activated_utc": "01:52",
       "date_opened": "2026-08-01",
@@ -388,38 +388,6 @@
       "live_exit_fill": null,
       "live_entry_slippage_pct": -0.0024,
       "live_fees_usd": 0.1986,
-      "live_funding_usd": null,
-      "live_tp1_pnl_usd": null,
-      "rehearsal": false
-    },
-    {
-      "trade_id": "SOLUSDT_20260807_CB_001",
-      "coin": "SOLUSDT",
-      "direction": "Short",
-      "entry_price": 73.4261961,
-      "sl": 74.67933071,
-      "tp1": 71.1,
-      "tp2": 65.36,
-      "capital_usd": 113.18,
-      "leverage": 3,
-      "trading_system": "Braam",
-      "track_only": false,
-      "status": "OPEN",
-      "price_at_run": 72.6,
-      "date_activated": "2026-08-07",
-      "time_activated_utc": "09:18",
-      "date_opened": "2026-08-07",
-      "time_opened_utc": "04:04",
-      "conviction": "HIGH",
-      "tp1_hit": false,
-      "sl_moved_to_be": false,
-      "pnl_tp1_realized_usd": null,
-      "tp2_hit": false,
-      "live_executed": true,
-      "live_entry_fill": 73.43,
-      "live_exit_fill": null,
-      "live_entry_slippage_pct": -0.0052,
-      "live_fees_usd": 0.2026,
       "live_funding_usd": null,
       "live_tp1_pnl_usd": null,
       "rehearsal": false
@@ -3124,6 +3092,25 @@
       "won": true,
       "close_iso": "2026-08-07T19:22:00Z",
       "rehearsal": false
+    },
+    {
+      "trade_id": "SOLUSDT_20260807_CB_001",
+      "coin": "SOLUSDT",
+      "direction": "Short",
+      "status": "STOPPED",
+      "pnl_usd": -6.29,
+      "close_reason": "live MEXC exit: sl @ 74.68",
+      "date_closed": "2026-08-08",
+      "time_closed_utc": "03:55",
+      "trading_system": "Braam",
+      "live_entry_fill": 73.43,
+      "live_exit_fill": 74.68,
+      "live_entry_slippage_pct": -0.0052,
+      "live_fees_usd": 0.4774,
+      "live_funding_usd": 0.062418,
+      "won": false,
+      "close_iso": "2026-08-08T03:55:00Z",
+      "rehearsal": false
     }
   ],
   "recent_cancels": [],
@@ -3142,20 +3129,20 @@
     }
   ],
   "stats": {
-    "realized_pnl_usd": -106.26,
-    "realized_pnl_pct": -0.96,
+    "realized_pnl_usd": -112.55,
+    "realized_pnl_pct": -1.01,
     "peak_capital_usd": 1213.71,
     "peak_concurrent": 11,
     "peak_date": "2026-08-05",
     "deployed_trades": 140,
-    "return_on_peak_pct": -8.76,
-    "win_rate_pct": 37.9,
-    "closed_count": 132,
+    "return_on_peak_pct": -9.27,
+    "win_rate_pct": 37.6,
+    "closed_count": 133,
     "per_system": {
       "Braam": {
-        "realized_pnl_usd": -63.23,
-        "win_rate_pct": 40.5,
-        "closed_count": 121
+        "realized_pnl_usd": -69.52,
+        "win_rate_pct": 40.2,
+        "closed_count": 122
       },
       "John": {
         "realized_pnl_usd": -43.03,
