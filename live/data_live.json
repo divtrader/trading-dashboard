@@ -1,16 +1,16 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-08-08T14:13:43Z",
+  "last_updated_iso": "2026-08-08T16:07:23Z",
   "mexc_account": {
-    "unrealized_pnl": 14.4676,
-    "equity": 2710.4311,
-    "available": 1781.9234,
+    "unrealized_pnl": 10.3257,
+    "equity": 2699.9493,
+    "available": 1886.2813,
     "position_margin": 0.0
   },
   "order_levels": {
-    "checked": 9,
-    "in_sync": 9,
+    "checked": 8,
+    "in_sync": 8,
     "drifted": [],
     "reconciling": [],
     "detail": []
@@ -74,7 +74,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$2,710.43",
+      "value": "$2,699.95",
       "status": "ok",
       "action": null
     },
@@ -98,7 +98,7 @@
       "key": "position_protection",
       "tier": 1,
       "label": "Position protection",
-      "value": "all protected (6 open, 5 pre-TP1 runners)",
+      "value": "all protected (5 open, 4 pre-TP1 runners)",
       "status": "ok",
       "action": null
     },
@@ -213,7 +213,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "OPEN",
-      "price_at_run": 1.604,
+      "price_at_run": 1.628,
       "date_activated": "2026-08-04",
       "time_activated_utc": "01:52",
       "date_opened": "2026-08-01",
@@ -292,38 +292,6 @@
       "live_exit_fill": null,
       "live_entry_slippage_pct": -0.0006,
       "live_fees_usd": 0.1968,
-      "live_funding_usd": null,
-      "live_tp1_pnl_usd": null,
-      "rehearsal": false
-    },
-    {
-      "trade_id": "SUIUSDT_20260805_CB_001",
-      "coin": "SUIUSDT",
-      "direction": "Short",
-      "entry_price": 0.69108359,
-      "sl": 0.70380019,
-      "tp1": 0.66390377,
-      "tp2": 0.60371885,
-      "capital_usd": 110.39,
-      "leverage": 3,
-      "trading_system": "Braam",
-      "track_only": false,
-      "status": "OPEN",
-      "price_at_run": 0.6889,
-      "date_activated": "2026-08-05",
-      "time_activated_utc": "05:05",
-      "date_opened": "2026-08-05",
-      "time_opened_utc": "04:03",
-      "conviction": "HIGH",
-      "tp1_hit": false,
-      "sl_moved_to_be": false,
-      "pnl_tp1_realized_usd": null,
-      "tp2_hit": false,
-      "live_executed": true,
-      "live_entry_fill": 0.6911,
-      "live_exit_fill": null,
-      "live_entry_slippage_pct": -0.0024,
-      "live_fees_usd": 0.1986,
       "live_funding_usd": null,
       "live_tp1_pnl_usd": null,
       "rehearsal": false
@@ -3065,6 +3033,25 @@
       "won": true,
       "close_iso": "2026-08-08T14:03:00Z",
       "rehearsal": false
+    },
+    {
+      "trade_id": "SUIUSDT_20260805_CB_001",
+      "coin": "SUIUSDT",
+      "direction": "Short",
+      "status": "STOPPED",
+      "pnl_usd": -6.55,
+      "close_reason": "live MEXC exit: sl @ 0.7039",
+      "date_closed": "2026-08-08",
+      "time_closed_utc": "14:47",
+      "trading_system": "Braam",
+      "live_entry_fill": 0.6911,
+      "live_exit_fill": 0.7039,
+      "live_entry_slippage_pct": -0.0024,
+      "live_fees_usd": 0.4683,
+      "live_funding_usd": -0.046741,
+      "won": false,
+      "close_iso": "2026-08-08T14:47:00Z",
+      "rehearsal": false
     }
   ],
   "recent_cancels": [
@@ -3085,20 +3072,20 @@
     }
   ],
   "stats": {
-    "realized_pnl_usd": -112.95,
-    "realized_pnl_pct": -0.99,
+    "realized_pnl_usd": -119.5,
+    "realized_pnl_pct": -1.04,
     "peak_capital_usd": 1213.71,
     "peak_concurrent": 11,
     "peak_date": "2026-08-05",
     "deployed_trades": 141,
-    "return_on_peak_pct": -9.31,
-    "win_rate_pct": 37.8,
-    "closed_count": 135,
+    "return_on_peak_pct": -9.85,
+    "win_rate_pct": 37.5,
+    "closed_count": 136,
     "per_system": {
       "Braam": {
-        "realized_pnl_usd": -69.92,
-        "win_rate_pct": 40.3,
-        "closed_count": 124
+        "realized_pnl_usd": -76.47,
+        "win_rate_pct": 40.0,
+        "closed_count": 125
       },
       "John": {
         "realized_pnl_usd": -43.03,
