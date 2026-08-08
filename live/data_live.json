@@ -1,19 +1,32 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-08-08T14:06:55Z",
+  "last_updated_iso": "2026-08-08T14:12:14Z",
   "mexc_account": {
-    "unrealized_pnl": 15.2808,
-    "equity": 2711.2443,
+    "unrealized_pnl": 15.1558,
+    "equity": 2711.1193,
     "available": 1781.9234,
     "position_margin": 0.0
   },
   "order_levels": {
     "checked": 9,
-    "in_sync": 9,
-    "drifted": [],
+    "in_sync": 8,
+    "drifted": [
+      "XLM"
+    ],
     "reconciling": [],
-    "detail": []
+    "detail": [
+      {
+        "coin": "XLM",
+        "trade_id": "XLMUSDT_20260807_CB_001",
+        "status": "OPEN",
+        "fields": [
+          "tp1",
+          "tp2"
+        ],
+        "synced_at": null
+      }
+    ]
   },
   "api_keys": [
     {
@@ -74,7 +87,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$2,711.24",
+      "value": "$2,711.12",
       "status": "ok",
       "action": null
     },
@@ -334,8 +347,8 @@
       "direction": "Short",
       "entry_price": 0.16509081,
       "sl": 0.16881098,
-      "tp1": 0.1501,
-      "tp2": 0.13166838,
+      "tp1": 0.1599,
+      "tp2": 0.1509,
       "capital_usd": 113.18,
       "leverage": 3,
       "trading_system": "Braam",
