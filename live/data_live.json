@@ -1,16 +1,16 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-08-09T10:06:35Z",
+  "last_updated_iso": "2026-08-09T12:07:18Z",
   "mexc_account": {
-    "unrealized_pnl": 19.5484,
-    "equity": 2709.0664,
-    "available": 1699.7903,
+    "unrealized_pnl": 21.8301,
+    "equity": 2711.3481,
+    "available": 1563.4657,
     "position_margin": 0.0
   },
   "order_levels": {
-    "checked": 9,
-    "in_sync": 9,
+    "checked": 10,
+    "in_sync": 10,
     "drifted": [],
     "reconciling": [],
     "detail": []
@@ -66,7 +66,7 @@
       "key": "state_file",
       "tier": 1,
       "label": "Trade journal",
-      "value": "OK (921 records)",
+      "value": "OK (923 records)",
       "status": "ok",
       "action": null
     },
@@ -74,7 +74,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$2,709.07",
+      "value": "$2,711.35",
       "status": "ok",
       "action": null
     },
@@ -90,7 +90,7 @@
       "key": "orphan_orders",
       "tier": 1,
       "label": "Order reconciliation",
-      "value": "in sync (3 resting = journal)",
+      "value": "in sync (4 resting = journal)",
       "status": "ok",
       "action": null
     },
@@ -149,7 +149,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "OPEN",
-      "price_at_run": 1.62,
+      "price_at_run": 1.612,
       "date_activated": "2026-08-04",
       "time_activated_utc": "01:52",
       "date_opened": "2026-08-01",
@@ -423,22 +423,41 @@
       "live_funding_usd": null,
       "live_tp1_pnl_usd": null,
       "rehearsal": false
+    },
+    {
+      "trade_id": "ADAUSDT_20260809_CB_001",
+      "coin": "ADAUSDT",
+      "direction": "Short",
+      "entry_price": 0.19809051,
+      "sl": 0.20426079,
+      "tp1": 0.15836907,
+      "tp2": 0.13625242,
+      "capital_usd": 135.58,
+      "leverage": 3,
+      "trading_system": "Braam",
+      "track_only": false,
+      "status": "PENDING",
+      "price_at_run": 0.1962,
+      "date_activated": null,
+      "time_activated_utc": null,
+      "date_opened": "2026-08-09",
+      "time_opened_utc": "12:04",
+      "conviction": "MEDIUM",
+      "tp1_hit": false,
+      "sl_moved_to_be": false,
+      "pnl_tp1_realized_usd": null,
+      "tp2_hit": false,
+      "live_executed": null,
+      "live_entry_fill": null,
+      "live_exit_fill": null,
+      "live_entry_slippage_pct": null,
+      "live_fees_usd": null,
+      "live_funding_usd": null,
+      "live_tp1_pnl_usd": null,
+      "rehearsal": false
     }
   ],
   "recent_signals": [
-    {
-      "trade_id": "ALGOUSDT_20260809_CB_001",
-      "coin": "ALGOUSDT",
-      "direction": "Short",
-      "trading_system": "Braam",
-      "entry_price": 0.08798427,
-      "tp1": 0.0821299,
-      "sl": 0.09034515,
-      "conviction": "MEDIUM",
-      "track_only": false,
-      "iso": "2026-08-09T00:04:00Z",
-      "rehearsal": false
-    },
     {
       "trade_id": "ONDOUSDT_20260809_CB_001",
       "coin": "ONDOUSDT",
@@ -451,33 +470,22 @@
       "track_only": false,
       "iso": "2026-08-09T04:04:00Z",
       "rehearsal": false
+    },
+    {
+      "trade_id": "ADAUSDT_20260809_CB_001",
+      "coin": "ADAUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "entry_price": 0.19809051,
+      "tp1": 0.15836907,
+      "sl": 0.20426079,
+      "conviction": "MEDIUM",
+      "track_only": false,
+      "iso": "2026-08-09T12:04:00Z",
+      "rehearsal": false
     }
   ],
   "recent_opens": [
-    {
-      "trade_id": "TAOUSDT_20260807_CB_001",
-      "coin": "TAOUSDT",
-      "direction": "Short",
-      "trading_system": "Braam",
-      "entry_price": 193.98958255,
-      "live_entry_fill": 193.99,
-      "tp1_hit": true,
-      "iso": "2026-08-07T11:22:00Z",
-      "_iso_ms": 1786101720000,
-      "rehearsal": false
-    },
-    {
-      "trade_id": "BNBUSDT_20260807_CB_001",
-      "coin": "BNBUSDT",
-      "direction": "Short",
-      "trading_system": "Braam",
-      "entry_price": 592.94627594,
-      "live_entry_fill": 592.9,
-      "tp1_hit": false,
-      "iso": "2026-08-07T11:23:00Z",
-      "_iso_ms": 1786101780000,
-      "rehearsal": false
-    },
     {
       "trade_id": "AVAXUSDT_20260807_CB_001",
       "coin": "AVAXUSDT",
@@ -3101,22 +3109,7 @@
       "rehearsal": false
     }
   ],
-  "recent_cancels": [
-    {
-      "coin": "LINKUSDT",
-      "direction": "Short",
-      "trading_system": "Braam",
-      "close_reason": "Entry window expired: unfilled 12.0d \u2265 72\u00d74H (288h) \u2014 mirrors backtest ENTRY_WIN",
-      "iso": "2026-08-09T00:04:00Z"
-    },
-    {
-      "coin": "LTCUSDT",
-      "direction": "Short",
-      "trading_system": "Braam",
-      "close_reason": "Entry window expired: unfilled 12.0d \u2265 72\u00d74H (288h) \u2014 mirrors backtest ENTRY_WIN",
-      "iso": "2026-08-09T00:04:00Z"
-    }
-  ],
+  "recent_cancels": [],
   "tp1_hits_open": [
     {
       "coin": "NEARUSDT",
@@ -3147,8 +3140,8 @@
         "closed_count": 11
       }
     },
-    "live_trade_count_total": 209,
-    "live_real_count": 186,
+    "live_trade_count_total": 210,
+    "live_real_count": 187,
     "live_rehearsal_count": 23
   }
 }
