@@ -1,19 +1,32 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-08-09T20:07:15Z",
+  "last_updated_iso": "2026-08-09T20:50:45Z",
   "mexc_account": {
-    "unrealized_pnl": 8.5924,
-    "equity": 2697.9852,
+    "unrealized_pnl": 6.0075,
+    "equity": 2695.4003,
     "available": 1563.6661,
     "position_margin": 0.0
   },
   "order_levels": {
     "checked": 10,
-    "in_sync": 10,
-    "drifted": [],
+    "in_sync": 9,
+    "drifted": [
+      "ADA"
+    ],
     "reconciling": [],
-    "detail": []
+    "detail": [
+      {
+        "coin": "ADA",
+        "trade_id": "ADAUSDT_20260809_CB_001",
+        "status": "OPEN",
+        "fields": [
+          "tp1",
+          "tp2"
+        ],
+        "synced_at": null
+      }
+    ]
   },
   "api_keys": [
     {
@@ -74,7 +87,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$2,697.99",
+      "value": "$2,695.40",
       "status": "ok",
       "action": null
     },
@@ -430,8 +443,8 @@
       "direction": "Short",
       "entry_price": 0.19809051,
       "sl": 0.20426079,
-      "tp1": 0.15836907,
-      "tp2": 0.13625242,
+      "tp1": 0.1912,
+      "tp2": 0.1831,
       "capital_usd": 135.58,
       "leverage": 3,
       "trading_system": "Braam",
