@@ -1,19 +1,32 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-08-10T20:08:02Z",
+  "last_updated_iso": "2026-08-10T20:14:05Z",
   "mexc_account": {
-    "unrealized_pnl": 37.9654,
-    "equity": 2739.6377,
-    "available": 1249.4616,
+    "unrealized_pnl": 37.0109,
+    "equity": 2738.4365,
+    "available": 1249.5441,
     "position_margin": 0.0
   },
   "order_levels": {
     "checked": 13,
-    "in_sync": 13,
-    "drifted": [],
+    "in_sync": 12,
+    "drifted": [
+      "BNB"
+    ],
     "reconciling": [],
-    "detail": []
+    "detail": [
+      {
+        "coin": "BNB",
+        "trade_id": "BNBUSDT_20260810_CB_001",
+        "status": "OPEN",
+        "fields": [
+          "tp1",
+          "tp2"
+        ],
+        "synced_at": null
+      }
+    ]
   },
   "api_keys": [
     {
@@ -74,7 +87,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$2,739.64",
+      "value": "$2,738.44",
       "status": "ok",
       "action": null
     },
@@ -90,7 +103,7 @@
       "key": "orphan_orders",
       "tier": 1,
       "label": "Order reconciliation",
-      "value": "in sync (5 resting = journal)",
+      "value": "in sync (4 resting = journal)",
       "status": "ok",
       "action": null
     },
@@ -98,7 +111,7 @@
       "key": "position_protection",
       "tier": 1,
       "label": "Position protection",
-      "value": "all protected (8 open, 5 pre-TP1 runners)",
+      "value": "all protected (9 open, 5 pre-TP1 runners)",
       "status": "ok",
       "action": null
     },
@@ -494,8 +507,8 @@
       "direction": "Short",
       "entry_price": 600.77270036,
       "sl": 608.31666398,
-      "tp1": 584.77007396,
-      "tp2": 551.99315033,
+      "tp1": 595.41,
+      "tp2": 586.1,
       "capital_usd": 137.03,
       "leverage": 3,
       "trading_system": "Braam",
