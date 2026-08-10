@@ -1,6 +1,6 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-08-10T00:07Z",
+  "generated_utc": "2026-08-10T02:08Z",
   "master": "braam",
   "retention_hours": 48,
   "trade_count": 20,
@@ -156,15 +156,15 @@
       "sl": 0.33034325,
       "tp1": 0.3252,
       "tp2": 0.3166,
-      "status": "OPEN",
+      "status": "STOPPED",
       "tp1_hit": false,
       "tp2_hit": false,
       "sl_hit": false,
-      "close_reason": null,
+      "close_reason": "live MEXC exit: sl @ 0.33054",
       "date_opened": "2026-08-05",
       "time_opened_utc": "00:03",
       "sl_mode": "initial",
-      "feed_updated_utc": "2026-08-05T08:59Z"
+      "feed_updated_utc": "2026-08-10T00:07Z"
     },
     {
       "trade_id": "SUIUSDT_20260805_CB_001",
@@ -363,15 +363,15 @@
       "sl": 0.07007869,
       "tp1": 0.06886,
       "tp2": 0.06791,
-      "status": "OPEN",
+      "status": "STOPPED_AFTER_TP1",
       "tp1_hit": true,
       "tp2_hit": false,
       "sl_hit": false,
-      "close_reason": null,
+      "close_reason": "live MEXC exit: sl @ 0.07009",
       "date_opened": "2026-08-09",
       "time_opened_utc": "04:04",
       "sl_mode": "breakeven",
-      "feed_updated_utc": "2026-08-09T08:04Z"
+      "feed_updated_utc": "2026-08-10T01:50Z"
     },
     {
       "trade_id": "ADAUSDT_20260809_CB_001",
@@ -432,7 +432,7 @@
       "sl": 0.70321131,
       "tp1": 0.66492162,
       "tp2": 0.60820808,
-      "status": "PENDING",
+      "status": "OPEN",
       "tp1_hit": false,
       "tp2_hit": false,
       "sl_hit": false,
@@ -440,7 +440,7 @@
       "date_opened": "2026-08-10",
       "time_opened_utc": "00:04",
       "sl_mode": "initial",
-      "feed_updated_utc": "2026-08-10T00:04Z"
+      "feed_updated_utc": "2026-08-10T00:10Z"
     },
     {
       "trade_id": "HBARUSDT_20260810_CB_001",
@@ -455,7 +455,7 @@
       "sl": 0.07006011,
       "tp1": 0.06573772,
       "tp2": 0.06107684,
-      "status": "PENDING",
+      "status": "OPEN",
       "tp1_hit": false,
       "tp2_hit": false,
       "sl_hit": false,
@@ -463,7 +463,7 @@
       "date_opened": "2026-08-10",
       "time_opened_utc": "00:04",
       "sl_mode": "initial",
-      "feed_updated_utc": "2026-08-10T00:04Z"
+      "feed_updated_utc": "2026-08-10T00:11Z"
     }
   ]
 }
