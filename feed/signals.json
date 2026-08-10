@@ -1,9 +1,9 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-08-10T12:07Z",
+  "generated_utc": "2026-08-10T14:06Z",
   "master": "braam",
   "retention_hours": 48,
-  "trade_count": 18,
+  "trade_count": 16,
   "trades": [
     {
       "trade_id": "LINKUSDT_20260728_CB_001",
@@ -98,29 +98,6 @@
       "feed_updated_utc": "2026-08-05T14:13Z"
     },
     {
-      "trade_id": "HBARUSDT_20260804_CB_001",
-      "coin": "HBARUSDT",
-      "direction": "Short",
-      "trading_system": "Braam",
-      "conviction": "MEDIUM",
-      "leverage": 3,
-      "entry_price": 0.06993598,
-      "entry_lo": 0.0695863,
-      "entry_hi": 0.07028566,
-      "sl": 0.06900412,
-      "tp1": 0.06877,
-      "tp2": 0.06605,
-      "status": "STOPPED_AFTER_TP1",
-      "tp1_hit": true,
-      "tp2_hit": false,
-      "sl_hit": false,
-      "close_reason": "live MEXC exit: manual @ 0.069",
-      "date_opened": "2026-08-04",
-      "time_opened_utc": "16:03",
-      "sl_mode": "breakeven",
-      "feed_updated_utc": "2026-08-08T14:03Z"
-    },
-    {
       "trade_id": "TRXUSDT_20260805_CB_001",
       "coin": "TRXUSDT",
       "direction": "Short",
@@ -211,29 +188,6 @@
       "time_opened_utc": "04:04",
       "sl_mode": "breakeven",
       "feed_updated_utc": "2026-08-10T05:48Z"
-    },
-    {
-      "trade_id": "BNBUSDT_20260807_CB_001",
-      "coin": "BNBUSDT",
-      "direction": "Short",
-      "trading_system": "Braam",
-      "conviction": "MEDIUM",
-      "leverage": 3,
-      "entry_price": 592.94627594,
-      "entry_lo": 589.98154456,
-      "entry_hi": 595.91100732,
-      "sl": 600.14213041,
-      "tp1": 582.05,
-      "tp2": 562.04,
-      "status": "STOPPED",
-      "tp1_hit": false,
-      "tp2_hit": false,
-      "sl_hit": false,
-      "close_reason": "live MEXC exit: sl @ 600.4",
-      "date_opened": "2026-08-07",
-      "time_opened_utc": "04:04",
-      "sl_mode": "initial",
-      "feed_updated_utc": "2026-08-08T13:55Z"
     },
     {
       "trade_id": "XRPUSDT_20260807_CB_001",
