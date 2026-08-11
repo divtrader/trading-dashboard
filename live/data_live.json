@@ -1,19 +1,31 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-08-11T00:07:19Z",
+  "last_updated_iso": "2026-08-11T01:01:27Z",
   "mexc_account": {
-    "unrealized_pnl": 47.3519,
-    "equity": 2766.2091,
+    "unrealized_pnl": 45.1286,
+    "equity": 2763.9858,
     "available": 1125.7536,
     "position_margin": 0.0
   },
   "order_levels": {
     "checked": 14,
-    "in_sync": 14,
-    "drifted": [],
+    "in_sync": 13,
+    "drifted": [
+      "DOGE"
+    ],
     "reconciling": [],
-    "detail": []
+    "detail": [
+      {
+        "coin": "DOGE",
+        "trade_id": "DOGEUSDT_20260811_CB_001",
+        "status": "PENDING",
+        "fields": [
+          "tp1"
+        ],
+        "synced_at": null
+      }
+    ]
   },
   "api_keys": [
     {
@@ -74,7 +86,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$2,766.21",
+      "value": "$2,763.99",
       "status": "ok",
       "action": null
     },
@@ -558,8 +570,8 @@
       "direction": "Short",
       "entry_price": 0.069978,
       "sl": 0.07101281,
-      "tp1": 0.0669491,
-      "tp2": 0.06209202,
+      "tp1": 0.06937,
+      "tp2": 0.06846,
       "capital_usd": 138.27,
       "leverage": 3,
       "trading_system": "Braam",
@@ -618,7 +630,7 @@
       "direction": "Short",
       "trading_system": "Braam",
       "entry_price": 0.069978,
-      "tp1": 0.0669491,
+      "tp1": 0.06937,
       "sl": 0.07101281,
       "conviction": "MEDIUM",
       "track_only": false,
