@@ -1,9 +1,9 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-08-11T18:07Z",
+  "generated_utc": "2026-08-11T20:06Z",
   "master": "braam",
   "retention_hours": 48,
-  "trade_count": 19,
+  "trade_count": 20,
   "trades": [
     {
       "trade_id": "NEARUSDT_20260801_CJ_001",
@@ -441,6 +441,29 @@
       "time_opened_utc": "08:03",
       "sl_mode": "breakeven",
       "feed_updated_utc": "2026-08-11T14:03Z"
+    },
+    {
+      "trade_id": "AVAXUSDT_20260811_CB_001",
+      "coin": "AVAXUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "conviction": "HIGH",
+      "leverage": 3,
+      "entry_price": 6.45638054,
+      "entry_lo": 6.42409863,
+      "entry_hi": 6.48866244,
+      "sl": 6.62349635,
+      "tp1": 6.01275727,
+      "tp2": 5.27773448,
+      "status": "PENDING",
+      "tp1_hit": false,
+      "tp2_hit": false,
+      "sl_hit": false,
+      "close_reason": null,
+      "date_opened": "2026-08-11",
+      "time_opened_utc": "20:03",
+      "sl_mode": "initial",
+      "feed_updated_utc": "2026-08-11T20:03Z"
     }
   ]
 }

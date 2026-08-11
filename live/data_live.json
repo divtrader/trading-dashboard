@@ -1,18 +1,20 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-08-11T18:06:59Z",
+  "last_updated_iso": "2026-08-11T20:06:40Z",
   "mexc_account": {
-    "unrealized_pnl": 37.2127,
-    "equity": 2784.1035,
-    "available": 1595.4879,
+    "unrealized_pnl": 30.6212,
+    "equity": 2777.3683,
+    "available": 1524.2918,
     "position_margin": 0.0
   },
   "order_levels": {
     "checked": 11,
     "in_sync": 11,
     "drifted": [],
-    "reconciling": [],
+    "reconciling": [
+      "SOL"
+    ],
     "detail": []
   },
   "api_keys": [
@@ -66,7 +68,7 @@
       "key": "state_file",
       "tier": 1,
       "label": "Trade journal",
-      "value": "OK (939 records)",
+      "value": "OK (942 records)",
       "status": "ok",
       "action": null
     },
@@ -74,7 +76,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$2,784.10",
+      "value": "$2,777.37",
       "status": "ok",
       "action": null
     },
@@ -90,7 +92,7 @@
       "key": "orphan_orders",
       "tier": 1,
       "label": "Order reconciliation",
-      "value": "in sync (5 resting = journal)",
+      "value": "in sync (6 resting = journal)",
       "status": "ok",
       "action": null
     },
@@ -98,7 +100,7 @@
       "key": "position_protection",
       "tier": 1,
       "label": "Position protection",
-      "value": "all protected (6 open, 2 pre-TP1 runners)",
+      "value": "all protected (5 open, 2 pre-TP1 runners)",
       "status": "ok",
       "action": null
     },
@@ -149,7 +151,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "OPEN",
-      "price_at_run": 1.562,
+      "price_at_run": 1.575,
       "date_activated": "2026-08-04",
       "time_activated_utc": "01:52",
       "date_opened": "2026-08-01",
@@ -487,9 +489,55 @@
       "live_funding_usd": null,
       "live_tp1_pnl_usd": 3.348,
       "rehearsal": false
+    },
+    {
+      "trade_id": "AVAXUSDT_20260811_CB_001",
+      "coin": "AVAXUSDT",
+      "direction": "Short",
+      "entry_price": 6.45638054,
+      "sl": 6.62349635,
+      "tp1": 6.01275727,
+      "tp2": 5.27773448,
+      "capital_usd": 139.02,
+      "leverage": 3,
+      "trading_system": "Braam",
+      "track_only": false,
+      "status": "PENDING",
+      "price_at_run": 6.281,
+      "date_activated": null,
+      "time_activated_utc": null,
+      "date_opened": "2026-08-11",
+      "time_opened_utc": "20:03",
+      "conviction": "HIGH",
+      "tp1_hit": false,
+      "sl_moved_to_be": false,
+      "pnl_tp1_realized_usd": null,
+      "tp2_hit": false,
+      "live_executed": null,
+      "live_entry_fill": null,
+      "live_exit_fill": null,
+      "live_entry_slippage_pct": null,
+      "live_fees_usd": null,
+      "live_funding_usd": null,
+      "live_tp1_pnl_usd": null,
+      "rehearsal": false
     }
   ],
-  "recent_signals": [],
+  "recent_signals": [
+    {
+      "trade_id": "AVAXUSDT_20260811_CB_001",
+      "coin": "AVAXUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "entry_price": 6.45638054,
+      "tp1": 6.01275727,
+      "sl": 6.62349635,
+      "conviction": "HIGH",
+      "track_only": false,
+      "iso": "2026-08-11T20:03:00Z",
+      "rehearsal": false
+    }
+  ],
   "recent_opens": [
     {
       "trade_id": "ONDOUSDT_20260809_CB_001",
@@ -3363,8 +3411,8 @@
         "closed_count": 11
       }
     },
-    "live_trade_count_total": 219,
-    "live_real_count": 196,
+    "live_trade_count_total": 220,
+    "live_real_count": 197,
     "live_rehearsal_count": 23
   }
 }
