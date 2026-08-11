@@ -1,19 +1,32 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-08-11T12:07:23Z",
+  "last_updated_iso": "2026-08-11T13:07:29Z",
   "mexc_account": {
-    "unrealized_pnl": 36.1732,
-    "equity": 2754.765,
-    "available": 1181.9386,
+    "unrealized_pnl": 31.2099,
+    "equity": 2758.4008,
+    "available": 1245.4513,
     "position_margin": 0.0
   },
   "order_levels": {
     "checked": 14,
-    "in_sync": 14,
-    "drifted": [],
+    "in_sync": 13,
+    "drifted": [
+      "SOL"
+    ],
     "reconciling": [],
-    "detail": []
+    "detail": [
+      {
+        "coin": "SOL",
+        "trade_id": "SOLUSDT_20260811_CB_001",
+        "status": "OPEN",
+        "fields": [
+          "tp1",
+          "tp2"
+        ],
+        "synced_at": null
+      }
+    ]
   },
   "api_keys": [
     {
@@ -74,7 +87,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$2,754.76",
+      "value": "$2,758.40",
       "status": "ok",
       "action": null
     },
@@ -98,7 +111,7 @@
       "key": "position_protection",
       "tier": 1,
       "label": "Position protection",
-      "value": "all protected (9 open, 5 pre-TP1 runners)",
+      "value": "all protected (9 open, 4 pre-TP1 runners)",
       "status": "ok",
       "action": null
     },
@@ -527,7 +540,7 @@
       "entry_price": 0.069978,
       "sl": 0.07101281,
       "tp1": 0.06937,
-      "tp2": 0.06846,
+      "tp2": 0.06865,
       "capital_usd": 138.27,
       "leverage": 3,
       "trading_system": "Braam",
@@ -558,8 +571,8 @@
       "direction": "Short",
       "entry_price": 75.89830312,
       "sl": 77.10665141,
-      "tp1": 73.43242166,
-      "tp2": 67.74729845,
+      "tp1": 74.63,
+      "tp2": 72.8,
       "capital_usd": 138.04,
       "leverage": 3,
       "trading_system": "Braam",
