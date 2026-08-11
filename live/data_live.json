@@ -1,11 +1,11 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-08-11T10:06:56Z",
+  "last_updated_iso": "2026-08-11T12:07:23Z",
   "mexc_account": {
-    "unrealized_pnl": 36.5883,
-    "equity": 2750.0005,
-    "available": 1120.4493,
+    "unrealized_pnl": 36.1732,
+    "equity": 2754.765,
+    "available": 1181.9386,
     "position_margin": 0.0
   },
   "order_levels": {
@@ -66,7 +66,7 @@
       "key": "state_file",
       "tier": 1,
       "label": "Trade journal",
-      "value": "OK (936 records)",
+      "value": "OK (938 records)",
       "status": "ok",
       "action": null
     },
@@ -74,7 +74,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$2,750.00",
+      "value": "$2,754.76",
       "status": "ok",
       "action": null
     },
@@ -98,7 +98,7 @@
       "key": "position_protection",
       "tier": 1,
       "label": "Position protection",
-      "value": "all protected (9 open, 6 pre-TP1 runners)",
+      "value": "all protected (9 open, 5 pre-TP1 runners)",
       "status": "ok",
       "action": null
     },
@@ -149,7 +149,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "OPEN",
-      "price_at_run": 1.604,
+      "price_at_run": 1.594,
       "date_activated": "2026-08-04",
       "time_activated_utc": "01:52",
       "date_opened": "2026-08-01",
@@ -205,7 +205,7 @@
       "coin": "XLMUSDT",
       "direction": "Short",
       "entry_price": 0.16509081,
-      "sl": 0.16881098,
+      "sl": 0.16495225,
       "tp1": 0.1599,
       "tp2": 0.1509,
       "capital_usd": 113.18,
@@ -219,17 +219,17 @@
       "date_opened": "2026-08-07",
       "time_opened_utc": "04:04",
       "conviction": "HIGH",
-      "tp1_hit": false,
+      "tp1_hit": true,
       "sl_moved_to_be": false,
-      "pnl_tp1_realized_usd": null,
+      "pnl_tp1_realized_usd": 5.51,
       "tp2_hit": false,
       "live_executed": true,
       "live_entry_fill": 0.16509,
       "live_exit_fill": null,
       "live_entry_slippage_pct": 0.0005,
-      "live_fees_usd": 0.203,
+      "live_fees_usd": 0.3334,
       "live_funding_usd": null,
-      "live_tp1_pnl_usd": null,
+      "live_tp1_pnl_usd": 5.3142,
       "rehearsal": false
     },
     {
@@ -397,7 +397,7 @@
       "coin": "HBARUSDT",
       "direction": "Short",
       "entry_price": 0.06890848,
-      "sl": 0.06873731,
+      "sl": 0.06856283,
       "tp1": 0.06776,
       "tp2": 0.06611,
       "capital_usd": 136.99,
@@ -585,21 +585,7 @@
       "rehearsal": false
     }
   ],
-  "recent_signals": [
-    {
-      "trade_id": "ONDOUSDT_20260811_CB_001",
-      "coin": "ONDOUSDT",
-      "direction": "Short",
-      "trading_system": "Braam",
-      "entry_price": 0.35135977,
-      "tp1": 0.32250844,
-      "sl": 0.36155956,
-      "conviction": "HIGH",
-      "track_only": false,
-      "iso": "2026-08-11T00:04:00Z",
-      "rehearsal": false
-    }
-  ],
+  "recent_signals": [],
   "recent_opens": [
     {
       "trade_id": "ADAUSDT_20260809_CB_001",
@@ -3386,6 +3372,12 @@
       "direction": "Short",
       "trading_system": "John",
       "entry_price": 1.75809932
+    },
+    {
+      "coin": "XLMUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "entry_price": 0.16509081
     },
     {
       "coin": "ADAUSDT",
