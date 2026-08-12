@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-12T13:23:48Z",
+  "updated": "2026-08-12T13:25:18Z",
   "positions": {
     "1414291495": {
       "position_id": "1414291495",
@@ -2566,8 +2566,16 @@
       "leverage": 3,
       "entry_price": 0.1981,
       "opened_at": "2026-08-09T17:06:12Z",
-      "status": "OPEN",
-      "braam_trade_id": "ADAUSDT_20260809_CB_001"
+      "status": "CLOSED",
+      "braam_trade_id": "ADAUSDT_20260809_CB_001",
+      "closed_at": "2026-08-12T12:48:05Z",
+      "close_price": 0.1832,
+      "pnl_usd": 21.5344,
+      "margin_usd": 135.58,
+      "fees_usd": 0.5515,
+      "tag": "WIN",
+      "close_type": 3,
+      "close_reason": "take_profit"
     },
     "1465492075": {
       "position_id": "1465492075",
@@ -2670,6 +2678,16 @@
       "tag": "WIN",
       "close_type": 1,
       "close_reason": "manual"
+    },
+    "1467687452": {
+      "position_id": "1467687452",
+      "coin": "AVAXUSDT",
+      "direction": "Short",
+      "leverage": 3,
+      "entry_price": 6.456,
+      "opened_at": "2026-08-12T12:28:38Z",
+      "status": "OPEN",
+      "braam_trade_id": "AVAXUSDT_20260811_CB_001"
     }
   },
   "orders": {
@@ -2707,15 +2725,6 @@
       "entry_price": 0.35135977,
       "resting_at": "2026-08-11T00:04:00Z",
       "braam_trade_id": "ONDOUSDT_20260811_CB_001",
-      "status": "RESTING"
-    },
-    "842250731833932800": {
-      "order_id": "842250731833932800",
-      "coin": "AVAXUSDT",
-      "direction": "Short",
-      "entry_price": 6.45638054,
-      "resting_at": "2026-08-11T20:03:00Z",
-      "braam_trade_id": "AVAXUSDT_20260811_CB_001",
       "status": "RESTING"
     },
     "842311164473252352": {
