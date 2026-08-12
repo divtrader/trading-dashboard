@@ -1,9 +1,9 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-08-12T14:07Z",
+  "generated_utc": "2026-08-12T16:07Z",
   "master": "braam",
   "retention_hours": 48,
-  "trade_count": 19,
+  "trade_count": 20,
   "trades": [
     {
       "trade_id": "NEARUSDT_20260801_CJ_001",
@@ -441,6 +441,29 @@
       "time_opened_utc": "00:03",
       "sl_mode": "initial",
       "feed_updated_utc": "2026-08-12T00:03Z"
+    },
+    {
+      "trade_id": "SOLUSDT_20260812_CB_001",
+      "coin": "SOLUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "conviction": "MEDIUM",
+      "leverage": 3,
+      "entry_price": 76.00911799,
+      "entry_lo": 75.6290724,
+      "entry_hi": 76.38916358,
+      "sl": 77.35922563,
+      "tp1": 71.85116705,
+      "tp2": 66.07229313,
+      "status": "PENDING",
+      "tp1_hit": false,
+      "tp2_hit": false,
+      "sl_hit": false,
+      "close_reason": null,
+      "date_opened": "2026-08-12",
+      "time_opened_utc": "16:03",
+      "sl_mode": "initial",
+      "feed_updated_utc": "2026-08-12T16:03Z"
     }
   ]
 }
