@@ -1,9 +1,9 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-08-12T19:20Z",
+  "generated_utc": "2026-08-12T20:07Z",
   "master": "braam",
   "retention_hours": 48,
-  "trade_count": 20,
+  "trade_count": 22,
   "trades": [
     {
       "trade_id": "NEARUSDT_20260801_CJ_001",
@@ -61,7 +61,7 @@
       "entry_price": 0.16509081,
       "entry_lo": 0.16426536,
       "entry_hi": 0.16591626,
-      "sl": 0.16411995,
+      "sl": 0.16321182,
       "tp1": 0.1599,
       "tp2": 0.1509,
       "status": "OPEN",
@@ -463,7 +463,53 @@
       "date_opened": "2026-08-12",
       "time_opened_utc": "16:03",
       "sl_mode": "initial",
-      "feed_updated_utc": "2026-08-12T17:36Z"
+      "feed_updated_utc": "2026-08-12T20:03Z"
+    },
+    {
+      "trade_id": "ADAUSDT_20260812_CB_001",
+      "coin": "ADAUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "conviction": "MEDIUM",
+      "leverage": 3,
+      "entry_price": 0.18925614,
+      "entry_lo": 0.18830986,
+      "entry_hi": 0.19020242,
+      "sl": 0.19438424,
+      "tp1": 0.15861928,
+      "tp2": 0.1372032,
+      "status": "PENDING",
+      "tp1_hit": false,
+      "tp2_hit": false,
+      "sl_hit": false,
+      "close_reason": null,
+      "date_opened": "2026-08-12",
+      "time_opened_utc": "20:03",
+      "sl_mode": "initial",
+      "feed_updated_utc": "2026-08-12T20:03Z"
+    },
+    {
+      "trade_id": "DOGEUSDT_20260812_CB_001",
+      "coin": "DOGEUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "conviction": "MEDIUM",
+      "leverage": 3,
+      "entry_price": 0.07076673,
+      "entry_lo": 0.0704129,
+      "entry_hi": 0.07112057,
+      "sl": 0.07207933,
+      "tp1": 0.06799536,
+      "tp2": 0.06259501,
+      "status": "PENDING",
+      "tp1_hit": false,
+      "tp2_hit": false,
+      "sl_hit": false,
+      "close_reason": null,
+      "date_opened": "2026-08-12",
+      "time_opened_utc": "20:03",
+      "sl_mode": "initial",
+      "feed_updated_utc": "2026-08-12T20:03Z"
     }
   ]
 }
