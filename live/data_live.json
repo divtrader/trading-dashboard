@@ -1,11 +1,11 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-08-12T13:25:08Z",
+  "last_updated_iso": "2026-08-12T14:07:24Z",
   "mexc_account": {
-    "unrealized_pnl": 9.6133,
-    "equity": 2771.2627,
-    "available": 1329.9123,
+    "unrealized_pnl": 22.0522,
+    "equity": 2787.3057,
+    "available": 1403.0318,
     "position_margin": 0.0
   },
   "order_levels": {
@@ -74,7 +74,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$2,771.26",
+      "value": "$2,787.31",
       "status": "ok",
       "action": null
     },
@@ -98,7 +98,7 @@
       "key": "position_protection",
       "tier": 1,
       "label": "Position protection",
-      "value": "all protected (6 open, 4 pre-TP1 runners)",
+      "value": "all protected (6 open, 3 pre-TP1 runners)",
       "status": "ok",
       "action": null
     },
@@ -149,7 +149,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "OPEN",
-      "price_at_run": 1.649,
+      "price_at_run": 1.636,
       "date_activated": "2026-08-04",
       "time_activated_utc": "01:52",
       "date_opened": "2026-08-01",
@@ -429,7 +429,7 @@
       "coin": "AVAXUSDT",
       "direction": "Short",
       "entry_price": 6.45638054,
-      "sl": 6.62349635,
+      "sl": 6.45638054,
       "tp1": 6.34,
       "tp2": 6.16,
       "capital_usd": 139.02,
@@ -443,17 +443,17 @@
       "date_opened": "2026-08-11",
       "time_opened_utc": "20:03",
       "conviction": "HIGH",
-      "tp1_hit": false,
+      "tp1_hit": true,
       "sl_moved_to_be": false,
-      "pnl_tp1_realized_usd": null,
+      "pnl_tp1_realized_usd": 3.83,
       "tp2_hit": false,
       "live_executed": true,
       "live_entry_fill": 6.456,
       "live_exit_fill": null,
       "live_entry_slippage_pct": 0.0059,
-      "live_fees_usd": 0.2498,
+      "live_fees_usd": 0.413,
       "live_funding_usd": null,
-      "live_tp1_pnl_usd": null,
+      "live_tp1_pnl_usd": 3.7674,
       "rehearsal": false
     },
     {
@@ -590,7 +590,7 @@
       "trading_system": "Braam",
       "entry_price": 6.45638054,
       "live_entry_fill": 6.456,
-      "tp1_hit": false,
+      "tp1_hit": true,
       "iso": "2026-08-12T12:28:00Z",
       "_iso_ms": 1786537680000,
       "rehearsal": false
@@ -3385,6 +3385,12 @@
       "direction": "Short",
       "trading_system": "Braam",
       "entry_price": 0.16509081
+    },
+    {
+      "coin": "AVAXUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "entry_price": 6.45638054
     }
   ],
   "stats": {
