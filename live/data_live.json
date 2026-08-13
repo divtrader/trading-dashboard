@@ -1,16 +1,16 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-08-13T02:06:11Z",
+  "last_updated_iso": "2026-08-13T04:07:08Z",
   "mexc_account": {
-    "unrealized_pnl": 33.5059,
-    "equity": 2798.5937,
-    "available": 982.6259,
+    "unrealized_pnl": 14.1877,
+    "equity": 2779.1287,
+    "available": 1052.2104,
     "position_margin": 0.0
   },
   "order_levels": {
-    "checked": 15,
-    "in_sync": 15,
+    "checked": 14,
+    "in_sync": 14,
     "drifted": [],
     "reconciling": [],
     "detail": []
@@ -74,7 +74,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$2,798.59",
+      "value": "$2,779.13",
       "status": "ok",
       "action": null
     },
@@ -98,7 +98,7 @@
       "key": "position_protection",
       "tier": 1,
       "label": "Position protection",
-      "value": "all protected (7 open, 4 pre-TP1 runners)",
+      "value": "all protected (6 open, 4 pre-TP1 runners)",
       "status": "ok",
       "action": null
     },
@@ -149,7 +149,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "OPEN",
-      "price_at_run": 1.645,
+      "price_at_run": 1.655,
       "date_activated": "2026-08-04",
       "time_activated_utc": "01:52",
       "date_opened": "2026-08-01",
@@ -422,38 +422,6 @@
       "live_fees_usd": null,
       "live_funding_usd": null,
       "live_tp1_pnl_usd": null,
-      "rehearsal": false
-    },
-    {
-      "trade_id": "AVAXUSDT_20260811_CB_001",
-      "coin": "AVAXUSDT",
-      "direction": "Short",
-      "entry_price": 6.45638054,
-      "sl": 6.45638054,
-      "tp1": 6.34,
-      "tp2": 6.16,
-      "capital_usd": 139.02,
-      "leverage": 3,
-      "trading_system": "Braam",
-      "track_only": false,
-      "status": "OPEN",
-      "price_at_run": 6.281,
-      "date_activated": "2026-08-12",
-      "time_activated_utc": "12:28",
-      "date_opened": "2026-08-11",
-      "time_opened_utc": "20:03",
-      "conviction": "HIGH",
-      "tp1_hit": true,
-      "sl_moved_to_be": false,
-      "pnl_tp1_realized_usd": 3.83,
-      "tp2_hit": false,
-      "live_executed": true,
-      "live_entry_fill": 6.456,
-      "live_exit_fill": null,
-      "live_entry_slippage_pct": 0.0059,
-      "live_fees_usd": 0.413,
-      "live_funding_usd": null,
-      "live_tp1_pnl_usd": 3.7674,
       "rehearsal": false
     },
     {
@@ -3469,6 +3437,25 @@
       "won": true,
       "close_iso": "2026-08-12T12:48:00Z",
       "rehearsal": false
+    },
+    {
+      "trade_id": "AVAXUSDT_20260811_CB_001",
+      "coin": "AVAXUSDT",
+      "direction": "Short",
+      "status": "STOPPED_AFTER_TP1",
+      "pnl_usd": 3.17,
+      "close_reason": "live MEXC exit: manual @ 6.456",
+      "date_closed": "2026-08-13",
+      "time_closed_utc": "03:16",
+      "trading_system": "Braam",
+      "live_entry_fill": 6.456,
+      "live_exit_fill": 6.456,
+      "live_entry_slippage_pct": 0.0059,
+      "live_fees_usd": 0.5798,
+      "live_funding_usd": 0.021691,
+      "won": true,
+      "close_iso": "2026-08-13T03:16:00Z",
+      "rehearsal": false
     }
   ],
   "recent_cancels": [],
@@ -3484,29 +3471,23 @@
       "direction": "Short",
       "trading_system": "Braam",
       "entry_price": 0.16509081
-    },
-    {
-      "coin": "AVAXUSDT",
-      "direction": "Short",
-      "trading_system": "Braam",
-      "entry_price": 6.45638054
     }
   ],
   "stats": {
-    "realized_pnl_usd": -54.24,
-    "realized_pnl_pct": -0.43,
+    "realized_pnl_usd": -51.07,
+    "realized_pnl_pct": -0.4,
     "peak_capital_usd": 1293.69,
     "peak_concurrent": 10,
     "peak_date": "2026-08-11",
     "deployed_trades": 153,
-    "return_on_peak_pct": -4.19,
-    "win_rate_pct": 39.7,
-    "closed_count": 146,
+    "return_on_peak_pct": -3.95,
+    "win_rate_pct": 40.1,
+    "closed_count": 147,
     "per_system": {
       "Braam": {
-        "realized_pnl_usd": -11.21,
-        "win_rate_pct": 42.2,
-        "closed_count": 135
+        "realized_pnl_usd": -8.04,
+        "win_rate_pct": 42.6,
+        "closed_count": 136
       },
       "John": {
         "realized_pnl_usd": -43.03,
