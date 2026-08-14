@@ -1,9 +1,9 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-08-14T14:07Z",
+  "generated_utc": "2026-08-14T16:07Z",
   "master": "braam",
   "retention_hours": 48,
-  "trade_count": 16,
+  "trade_count": 17,
   "trades": [
     {
       "trade_id": "NEARUSDT_20260801_CJ_001",
@@ -176,17 +176,17 @@
       "entry_price": 201.50793788,
       "entry_lo": 200.50039819,
       "entry_hi": 202.51547757,
-      "sl": 207.5176461,
+      "sl": 201.50793788,
       "tp1": 195.1,
       "tp2": 191.1,
       "status": "OPEN",
-      "tp1_hit": false,
+      "tp1_hit": true,
       "tp2_hit": false,
       "sl_hit": false,
       "close_reason": null,
       "date_opened": "2026-08-10",
       "time_opened_utc": "20:04",
-      "sl_mode": "initial",
+      "sl_mode": "breakeven",
       "feed_updated_utc": "2026-08-10T20:11Z"
     },
     {
@@ -372,6 +372,29 @@
       "time_opened_utc": "04:03",
       "sl_mode": "initial",
       "feed_updated_utc": "2026-08-14T14:03Z"
+    },
+    {
+      "trade_id": "TRXUSDT_20260814_CJ_001",
+      "coin": "TRXUSDT",
+      "direction": "Long",
+      "trading_system": "John",
+      "conviction": "HIGH",
+      "leverage": 3,
+      "entry_price": 0.32431858,
+      "entry_lo": 0.32296216,
+      "entry_hi": 0.32838784,
+      "sl": 0.32291754,
+      "tp1": 0.34806392,
+      "tp2": 0.35020575,
+      "status": "PENDING",
+      "tp1_hit": false,
+      "tp2_hit": false,
+      "sl_hit": false,
+      "close_reason": null,
+      "date_opened": "2026-08-14",
+      "time_opened_utc": "16:03",
+      "sl_mode": "initial",
+      "feed_updated_utc": "2026-08-14T16:03Z"
     }
   ]
 }
