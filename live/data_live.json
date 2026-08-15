@@ -1,19 +1,31 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-08-15T06:06:51Z",
+  "last_updated_iso": "2026-08-15T06:58:08Z",
   "mexc_account": {
-    "unrealized_pnl": 23.3161,
-    "equity": 2793.9985,
+    "unrealized_pnl": 23.8094,
+    "equity": 2794.4918,
     "available": 1192.9728,
     "position_margin": 0.0
   },
   "order_levels": {
     "checked": 15,
-    "in_sync": 15,
-    "drifted": [],
+    "in_sync": 14,
+    "drifted": [
+      "NEAR"
+    ],
     "reconciling": [],
-    "detail": []
+    "detail": [
+      {
+        "coin": "NEAR",
+        "trade_id": "NEARUSDT_20260801_CJ_001",
+        "status": "OPEN",
+        "fields": [
+          "tp2"
+        ],
+        "synced_at": "2026-08-12T22:16:25.131485+00:00"
+      }
+    ]
   },
   "api_keys": [
     {
@@ -74,7 +86,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$2,794.00",
+      "value": "$2,794.49",
       "status": "ok",
       "action": null
     },
@@ -143,7 +155,7 @@
       "entry_price": 1.75809932,
       "sl": 1.79489017,
       "tp1": 1.59571584,
-      "tp2": 1.487,
+      "tp2": 1.555,
       "capital_usd": 110.88,
       "leverage": 3,
       "trading_system": "John",
