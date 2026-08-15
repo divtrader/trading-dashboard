@@ -1,6 +1,6 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-08-15T10:06Z",
+  "generated_utc": "2026-08-15T12:07Z",
   "master": "braam",
   "retention_hours": 48,
   "trade_count": 16,
@@ -38,7 +38,7 @@
       "entry_price": 0.16509081,
       "entry_lo": 0.16426536,
       "entry_hi": 0.16591626,
-      "sl": 0.16199698,
+      "sl": 0.16177056,
       "tp1": 0.1599,
       "tp2": 0.1509,
       "status": "OPEN",
@@ -225,15 +225,15 @@
       "sl": 4.04786053,
       "tp1": 3.48240706,
       "tp2": 2.92876392,
-      "status": "PENDING",
+      "status": "CANCELLED",
       "tp1_hit": false,
       "tp2_hit": false,
       "sl_hit": false,
-      "close_reason": null,
+      "close_reason": "Stale 24.0h \u2265 24h grace: Price $3.2630 is 20.1% below entry $3.9184",
       "date_opened": "2026-08-12",
       "time_opened_utc": "00:03",
       "sl_mode": "initial",
-      "feed_updated_utc": "2026-08-12T00:03Z"
+      "feed_updated_utc": "2026-08-15T12:04Z"
     },
     {
       "trade_id": "HBARUSDT_20260812_CB_001",
