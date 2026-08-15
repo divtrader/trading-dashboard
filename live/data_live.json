@@ -1,16 +1,16 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-08-15T02:07:17Z",
+  "last_updated_iso": "2026-08-15T04:07:00Z",
   "mexc_account": {
-    "unrealized_pnl": 16.5203,
-    "equity": 2798.0331,
-    "available": 1063.7865,
+    "unrealized_pnl": 21.3179,
+    "equity": 2792.0003,
+    "available": 1192.9728,
     "position_margin": 0.0
   },
   "order_levels": {
-    "checked": 16,
-    "in_sync": 16,
+    "checked": 15,
+    "in_sync": 15,
     "drifted": [],
     "reconciling": [],
     "detail": []
@@ -74,7 +74,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$2,798.03",
+      "value": "$2,792.00",
       "status": "ok",
       "action": null
     },
@@ -98,7 +98,7 @@
       "key": "position_protection",
       "tier": 1,
       "label": "Position protection",
-      "value": "all protected (8 open, 2 pre-TP1 runners)",
+      "value": "all protected (7 open, 1 pre-TP1 runners)",
       "status": "ok",
       "action": null
     },
@@ -149,7 +149,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "OPEN",
-      "price_at_run": 1.639,
+      "price_at_run": 1.65,
       "date_activated": "2026-08-04",
       "time_activated_utc": "01:52",
       "date_opened": "2026-08-01",
@@ -585,38 +585,6 @@
       "rehearsal": false
     },
     {
-      "trade_id": "AVAXUSDT_20260814_CB_001",
-      "coin": "AVAXUSDT",
-      "direction": "Short",
-      "entry_price": 6.42239646,
-      "sl": 6.58025823,
-      "tp1": 6.233,
-      "tp2": 6.086,
-      "capital_usd": 139.61,
-      "leverage": 3,
-      "trading_system": "Braam",
-      "track_only": false,
-      "status": "OPEN",
-      "price_at_run": 6.414,
-      "date_activated": "2026-08-14",
-      "time_activated_utc": "04:16",
-      "date_opened": "2026-08-14",
-      "time_opened_utc": "04:03",
-      "conviction": "HIGH",
-      "tp1_hit": false,
-      "sl_moved_to_be": false,
-      "pnl_tp1_realized_usd": null,
-      "tp2_hit": false,
-      "live_executed": true,
-      "live_entry_fill": 6.422,
-      "live_exit_fill": null,
-      "live_entry_slippage_pct": 0.0062,
-      "live_fees_usd": 0.2512,
-      "live_funding_usd": null,
-      "live_tp1_pnl_usd": null,
-      "rehearsal": false
-    },
-    {
       "trade_id": "TRXUSDT_20260814_CJ_001",
       "coin": "TRXUSDT",
       "direction": "Long",
@@ -629,7 +597,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 0.3328,
+      "price_at_run": 0.3333,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-08-14",
@@ -649,21 +617,7 @@
       "rehearsal": false
     }
   ],
-  "recent_signals": [
-    {
-      "trade_id": "TRXUSDT_20260814_CJ_001",
-      "coin": "TRXUSDT",
-      "direction": "Long",
-      "trading_system": "John",
-      "entry_price": 0.32431858,
-      "tp1": 0.34806392,
-      "sl": 0.32291754,
-      "conviction": "HIGH",
-      "track_only": false,
-      "iso": "2026-08-14T16:03:00Z",
-      "rehearsal": false
-    }
-  ],
+  "recent_signals": [],
   "recent_opens": [
     {
       "trade_id": "DOGEUSDT_20260812_CB_001",
@@ -3483,6 +3437,25 @@
       "won": true,
       "close_iso": "2026-08-13T03:16:00Z",
       "rehearsal": false
+    },
+    {
+      "trade_id": "AVAXUSDT_20260814_CB_001",
+      "coin": "AVAXUSDT",
+      "direction": "Short",
+      "status": "STOPPED",
+      "pnl_usd": -11.15,
+      "close_reason": "live MEXC exit: sl @ 6.583",
+      "date_closed": "2026-08-15",
+      "time_closed_utc": "02:12",
+      "trading_system": "Braam",
+      "live_entry_fill": 6.422,
+      "live_exit_fill": 6.583,
+      "live_entry_slippage_pct": 0.0062,
+      "live_fees_usd": 0.5945,
+      "live_funding_usd": 0.058157,
+      "won": false,
+      "close_iso": "2026-08-15T02:12:00Z",
+      "rehearsal": false
     }
   ],
   "recent_cancels": [],
@@ -3525,20 +3498,20 @@
     }
   ],
   "stats": {
-    "realized_pnl_usd": -51.07,
-    "realized_pnl_pct": -0.4,
+    "realized_pnl_usd": -62.22,
+    "realized_pnl_pct": -0.48,
     "peak_capital_usd": 1293.69,
     "peak_concurrent": 10,
     "peak_date": "2026-08-11",
     "deployed_trades": 155,
-    "return_on_peak_pct": -3.95,
-    "win_rate_pct": 40.1,
-    "closed_count": 147,
+    "return_on_peak_pct": -4.81,
+    "win_rate_pct": 39.9,
+    "closed_count": 148,
     "per_system": {
       "Braam": {
-        "realized_pnl_usd": -8.04,
-        "win_rate_pct": 42.6,
-        "closed_count": 136
+        "realized_pnl_usd": -19.19,
+        "win_rate_pct": 42.3,
+        "closed_count": 137
       },
       "John": {
         "realized_pnl_usd": -43.03,
