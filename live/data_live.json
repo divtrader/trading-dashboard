@@ -1,11 +1,11 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-08-16T02:07:17Z",
+  "last_updated_iso": "2026-08-16T04:07:32Z",
   "mexc_account": {
-    "unrealized_pnl": 36.5295,
-    "equity": 2807.3721,
-    "available": 1191.2214,
+    "unrealized_pnl": 33.6384,
+    "equity": 2804.4911,
+    "available": 1191.2314,
     "position_margin": 0.0
   },
   "order_levels": {
@@ -74,7 +74,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$2,807.37",
+      "value": "$2,804.49",
       "status": "ok",
       "action": null
     },
@@ -98,9 +98,9 @@
       "key": "position_protection",
       "tier": 1,
       "label": "Position protection",
-      "value": "all protected (7 open, 1 pre-TP1 runners)",
-      "status": "ok",
-      "action": null
+      "value": "live read failed",
+      "status": "warn",
+      "action": "Worker health read failed \u2014 can't confirm SL protection; check the Worker."
     },
     {
       "key": "apikey_MEXC_ALGO_KEY",
@@ -149,7 +149,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "OPEN",
-      "price_at_run": 1.61,
+      "price_at_run": 1.613,
       "date_activated": "2026-08-04",
       "time_activated_utc": "01:52",
       "date_opened": "2026-08-01",
@@ -173,7 +173,7 @@
       "coin": "XLMUSDT",
       "direction": "Short",
       "entry_price": 0.16509081,
-      "sl": 0.1606187,
+      "sl": 0.16047451,
       "tp1": 0.1599,
       "tp2": 0.1509,
       "capital_usd": 113.18,
@@ -565,7 +565,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 0.3314,
+      "price_at_run": 0.3311,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-08-14",
