@@ -1,16 +1,16 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-08-15T22:06:08Z",
+  "last_updated_iso": "2026-08-16T00:06:46Z",
   "mexc_account": {
-    "unrealized_pnl": 26.7859,
-    "equity": 2797.5841,
-    "available": 1332.0361,
+    "unrealized_pnl": 34.6231,
+    "equity": 2805.4657,
+    "available": 1191.2214,
     "position_margin": 0.0
   },
   "order_levels": {
-    "checked": 14,
-    "in_sync": 14,
+    "checked": 15,
+    "in_sync": 15,
     "drifted": [],
     "reconciling": [],
     "detail": []
@@ -20,28 +20,28 @@
       "label": "MEXC AlgoTrading sub-account (live orders)",
       "name": "MEXC_ALGO_KEY",
       "expires": "2026-08-27",
-      "days_left": 12,
+      "days_left": 11,
       "status": "warn"
     },
     {
       "label": "GitHub PAT (dashboard deploy)",
       "name": "DASHBOARD_PAT",
       "expires": "2126-01-01",
-      "days_left": 36298,
+      "days_left": 36297,
       "status": "ok"
     },
     {
       "label": "Google Drive OAuth (journal sync)",
       "name": "GDRIVE_OAUTH_TOKEN",
       "expires": "2126-01-01",
-      "days_left": 36298,
+      "days_left": 36297,
       "status": "ok"
     },
     {
       "label": "Telegram Bot (trade alerts)",
       "name": "TELEGRAM_TOKEN",
       "expires": "2126-01-01",
-      "days_left": 36298,
+      "days_left": 36297,
       "status": "ok"
     }
   ],
@@ -66,7 +66,7 @@
       "key": "state_file",
       "tier": 1,
       "label": "Trade journal",
-      "value": "OK (959 records)",
+      "value": "OK (962 records)",
       "status": "ok",
       "action": null
     },
@@ -74,7 +74,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$2,797.58",
+      "value": "$2,805.47",
       "status": "ok",
       "action": null
     },
@@ -90,7 +90,7 @@
       "key": "orphan_orders",
       "tier": 1,
       "label": "Order reconciliation",
-      "value": "in sync (7 resting = journal)",
+      "value": "in sync (8 resting = journal)",
       "status": "ok",
       "action": null
     },
@@ -106,7 +106,7 @@
       "key": "apikey_MEXC_ALGO_KEY",
       "tier": 1,
       "label": "MEXC AlgoTrading sub-account (live orders)",
-      "value": "12d left (2026-08-27)",
+      "value": "11d left (2026-08-27)",
       "status": "warn",
       "action": "Rotate key + update GitHub/Cloudflare secret."
     },
@@ -114,7 +114,7 @@
       "key": "apikey_DASHBOARD_PAT",
       "tier": 1,
       "label": "GitHub PAT (dashboard deploy)",
-      "value": "36298d left (2126-01-01)",
+      "value": "36297d left (2126-01-01)",
       "status": "ok",
       "action": null
     },
@@ -122,7 +122,7 @@
       "key": "apikey_GDRIVE_OAUTH_TOKEN",
       "tier": 1,
       "label": "Google Drive OAuth (journal sync)",
-      "value": "36298d left (2126-01-01)",
+      "value": "36297d left (2126-01-01)",
       "status": "ok",
       "action": null
     },
@@ -130,7 +130,7 @@
       "key": "apikey_TELEGRAM_TOKEN",
       "tier": 1,
       "label": "Telegram Bot (trade alerts)",
-      "value": "36298d left (2126-01-01)",
+      "value": "36297d left (2126-01-01)",
       "status": "ok",
       "action": null
     }
@@ -149,7 +149,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "OPEN",
-      "price_at_run": 1.638,
+      "price_at_run": 1.619,
       "date_activated": "2026-08-04",
       "time_activated_utc": "01:52",
       "date_opened": "2026-08-01",
@@ -565,7 +565,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 0.3314,
+      "price_at_run": 0.3313,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-08-14",
@@ -583,9 +583,55 @@
       "live_funding_usd": null,
       "live_tp1_pnl_usd": null,
       "rehearsal": false
+    },
+    {
+      "trade_id": "AVAXUSDT_20260816_CB_001",
+      "coin": "AVAXUSDT",
+      "direction": "Short",
+      "entry_price": 6.47547724,
+      "sl": 6.65767425,
+      "tp1": 5.91382173,
+      "tp2": 5.271351,
+      "capital_usd": 140.25,
+      "leverage": 3,
+      "trading_system": "Braam",
+      "track_only": false,
+      "status": "PENDING",
+      "price_at_run": 6.248,
+      "date_activated": null,
+      "time_activated_utc": null,
+      "date_opened": "2026-08-16",
+      "time_opened_utc": "00:03",
+      "conviction": "HIGH",
+      "tp1_hit": false,
+      "sl_moved_to_be": false,
+      "pnl_tp1_realized_usd": null,
+      "tp2_hit": false,
+      "live_executed": null,
+      "live_entry_fill": null,
+      "live_exit_fill": null,
+      "live_entry_slippage_pct": null,
+      "live_fees_usd": null,
+      "live_funding_usd": null,
+      "live_tp1_pnl_usd": null,
+      "rehearsal": false
     }
   ],
-  "recent_signals": [],
+  "recent_signals": [
+    {
+      "trade_id": "AVAXUSDT_20260816_CB_001",
+      "coin": "AVAXUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "entry_price": 6.47547724,
+      "tp1": 5.91382173,
+      "sl": 6.65767425,
+      "conviction": "HIGH",
+      "track_only": false,
+      "iso": "2026-08-16T00:03:00Z",
+      "rehearsal": false
+    }
+  ],
   "recent_opens": [
     {
       "trade_id": "AVAXUSDT_20260814_CB_001",
@@ -3414,15 +3460,7 @@
       "rehearsal": false
     }
   ],
-  "recent_cancels": [
-    {
-      "coin": "UNIUSDT",
-      "direction": "Short",
-      "trading_system": "Braam",
-      "close_reason": "Stale 24.0h \u2265 24h grace: Price $3.2630 is 20.1% below entry $3.9184",
-      "iso": "2026-08-15T12:04:00Z"
-    }
-  ],
+  "recent_cancels": [],
   "tp1_hits_open": [
     {
       "coin": "NEARUSDT",
@@ -3483,8 +3521,8 @@
         "closed_count": 11
       }
     },
-    "live_trade_count_total": 227,
-    "live_real_count": 204,
+    "live_trade_count_total": 228,
+    "live_real_count": 205,
     "live_rehearsal_count": 23
   }
 }
