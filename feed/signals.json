@@ -1,9 +1,9 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-08-16T22:07Z",
+  "generated_utc": "2026-08-17T00:07Z",
   "master": "braam",
   "retention_hours": 48,
-  "trade_count": 17,
+  "trade_count": 18,
   "trades": [
     {
       "trade_id": "NEARUSDT_20260801_CJ_001",
@@ -395,6 +395,29 @@
       "time_opened_utc": "00:03",
       "sl_mode": "initial",
       "feed_updated_utc": "2026-08-16T00:03Z"
+    },
+    {
+      "trade_id": "BNBUSDT_20260817_CB_001",
+      "coin": "BNBUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "conviction": "MEDIUM",
+      "leverage": 3,
+      "entry_price": 607.7123192,
+      "entry_lo": 604.67375761,
+      "entry_hi": 610.7508808,
+      "sl": 613.05774904,
+      "tp1": 582.75938332,
+      "tp2": 554.70732774,
+      "status": "PENDING",
+      "tp1_hit": false,
+      "tp2_hit": false,
+      "sl_hit": false,
+      "close_reason": null,
+      "date_opened": "2026-08-17",
+      "time_opened_utc": "00:03",
+      "sl_mode": "initial",
+      "feed_updated_utc": "2026-08-17T00:03Z"
     }
   ]
 }
