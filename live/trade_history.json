@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-17T01:45:07Z",
+  "updated": "2026-08-17T01:46:31Z",
   "positions": {
     "1414291495": {
       "position_id": "1414291495",
@@ -2612,8 +2612,16 @@
       "leverage": 3,
       "entry_price": 1911.62,
       "opened_at": "2026-08-12T10:02:42Z",
-      "status": "OPEN",
-      "braam_trade_id": "ETHUSDT_20260810_CB_001"
+      "status": "CLOSED",
+      "braam_trade_id": "ETHUSDT_20260810_CB_001",
+      "closed_at": "2026-08-17T01:06:29Z",
+      "close_price": 1893.08,
+      "pnl_usd": 6.0289,
+      "margin_usd": 136.74,
+      "fees_usd": 0.5564,
+      "tag": "WIN",
+      "close_type": 1,
+      "close_reason": "manual"
     },
     "1466258774": {
       "position_id": "1466258774",
@@ -2809,8 +2817,8 @@
       "braam_trade_id": "AVAXUSDT_20260816_CB_001",
       "status": "RESTING"
     },
-    "844123141235390976": {
-      "order_id": "844123141235390976",
+    "844148712963156480": {
+      "order_id": "844148712963156480",
       "coin": "BNBUSDT",
       "direction": "Short",
       "entry_price": 607.7123192,

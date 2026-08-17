@@ -1,5 +1,5 @@
 {
-  "last_updated_iso": "2026-08-17T01:44:49Z",
+  "last_updated_iso": "2026-08-17T01:46:13Z",
   "mexc_account": null,
   "api_keys": [
     {
@@ -583,29 +583,6 @@
       "tp1_hit": false,
       "sl_moved_to_be": null,
       "pnl_tp1_realized_usd": null
-    },
-    {
-      "trade_id": "ETHUSDT_20260810_CB_001",
-      "coin": "ETHUSDT",
-      "direction": "Short",
-      "entry_price": 1911.6217511,
-      "sl": 1892.80341653,
-      "tp1": 1864.56,
-      "tp2": 1835.33,
-      "capital_usd": 150.0,
-      "leverage": 3,
-      "trading_system": "Braam",
-      "track_only": false,
-      "status": "OPEN",
-      "price_at_run": 1877.54,
-      "date_activated": "2026-08-12",
-      "time_activated_utc": "10:02",
-      "date_opened": "2026-08-10",
-      "time_opened_utc": "16:04",
-      "conviction": "HIGH",
-      "tp1_hit": true,
-      "sl_moved_to_be": false,
-      "pnl_tp1_realized_usd": 5.68
     },
     {
       "trade_id": "XRPUSDT_20260810_CJ_M_001",
@@ -1268,22 +1245,6 @@
   ],
   "recent_closes": [
     {
-      "trade_id": "DOGEUSDT_20260803_CB_001",
-      "coin": "DOGEUSDT",
-      "direction": "Short",
-      "status": "STOPPED_AFTER_TP1",
-      "pnl_usd": 4.47,
-      "close_reason": "live MEXC exit: sl @ 0.07017",
-      "date_closed": "2026-08-07",
-      "time_closed_utc": "12:30",
-      "trading_system": "Braam",
-      "won": true,
-      "close_iso": "2026-08-07T12:30:00Z",
-      "margin_usd": 100,
-      "fees_usd": 0.408,
-      "fees_modeled": true
-    },
-    {
       "trade_id": "TAOUSDT_20260807_CB_001",
       "coin": "TAOUSDT",
       "direction": "Short",
@@ -1906,6 +1867,22 @@
       "margin_usd": 100,
       "fees_usd": 0.612,
       "fees_modeled": true
+    },
+    {
+      "trade_id": "ETHUSDT_20260810_CB_001",
+      "coin": "ETHUSDT",
+      "direction": "Short",
+      "status": "STOPPED_AFTER_TP1",
+      "pnl_usd": 9.96,
+      "close_reason": "live MEXC exit: manual @ 1893.08",
+      "date_closed": "2026-08-17",
+      "time_closed_utc": "01:06",
+      "trading_system": "Braam",
+      "won": true,
+      "close_iso": "2026-08-17T01:06:00Z",
+      "margin_usd": 100,
+      "fees_usd": 0.612,
+      "fees_modeled": true
     }
   ],
   "recent_cancels": [],
@@ -1953,12 +1930,6 @@
       "entry_price": 0.59530868
     },
     {
-      "coin": "ETHUSDT",
-      "direction": "Short",
-      "trading_system": "Braam",
-      "entry_price": 1911.6217511
-    },
-    {
       "coin": "TAOUSDT",
       "direction": "Short",
       "trading_system": "Braam",
@@ -1984,15 +1955,15 @@
     }
   ],
   "stats": {
-    "realized_pnl_usd": 602.83,
-    "realized_pnl_pct": 1.06,
+    "realized_pnl_usd": 612.79,
+    "realized_pnl_pct": 1.08,
     "peak_capital_usd": 3300,
     "peak_concurrent": 33,
     "peak_date": "2026-06-22",
     "deployed_trades": 605,
-    "return_on_peak_pct": 18.27,
-    "win_rate_pct": 32.7,
-    "closed_count": 568,
+    "return_on_peak_pct": 18.57,
+    "win_rate_pct": 32.9,
+    "closed_count": 569,
     "per_system": {
       "John": {
         "realized_pnl_usd": 214.0,
@@ -2005,16 +1976,16 @@
         "closed_count": 23
       },
       "Braam": {
-        "realized_pnl_usd": 343.59,
-        "win_rate_pct": 44.5,
-        "closed_count": 209
+        "realized_pnl_usd": 353.55,
+        "win_rate_pct": 44.8,
+        "closed_count": 210
       }
     },
     "real_only": {
-      "realized_pnl_usd": 58.75,
-      "realized_pnl_pct": 0.4,
-      "win_rate_pct": 39.9,
-      "closed_count": 148
+      "realized_pnl_usd": 68.71,
+      "realized_pnl_pct": 0.46,
+      "win_rate_pct": 40.3,
+      "closed_count": 149
     },
     "track_only": {
       "realized_pnl_usd": 544.08,
