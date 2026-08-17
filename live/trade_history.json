@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-17T02:06:44Z",
+  "updated": "2026-08-17T04:07:44Z",
   "positions": {
     "1414291495": {
       "position_id": "1414291495",
@@ -2712,8 +2712,16 @@
       "leverage": 3,
       "entry_price": 76.01,
       "opened_at": "2026-08-12T17:36:39Z",
-      "status": "OPEN",
-      "braam_trade_id": "SOLUSDT_20260812_CB_001"
+      "status": "CLOSED",
+      "braam_trade_id": "SOLUSDT_20260812_CB_001",
+      "closed_at": "2026-08-17T02:51:51Z",
+      "close_price": 75.42,
+      "pnl_usd": 4.5105,
+      "margin_usd": 139.53,
+      "fees_usd": 0.5812,
+      "tag": "WIN",
+      "close_type": 1,
+      "close_reason": "manual"
     },
     "1468411212": {
       "position_id": "1468411212",
@@ -2824,6 +2832,24 @@
       "entry_price": 607.7123192,
       "resting_at": "2026-08-17T00:03:00Z",
       "braam_trade_id": "BNBUSDT_20260817_CB_001",
+      "status": "RESTING"
+    },
+    "844183555683736576": {
+      "order_id": "844183555683736576",
+      "coin": "BTCUSDT",
+      "direction": "Short",
+      "entry_price": 65767.71515075,
+      "resting_at": "2026-08-17T04:04:00Z",
+      "braam_trade_id": "BTCUSDT_20260817_CJ_001",
+      "status": "RESTING"
+    },
+    "844183564332702720": {
+      "order_id": "844183564332702720",
+      "coin": "UNIUSDT",
+      "direction": "Short",
+      "entry_price": 3.32835357,
+      "resting_at": "2026-08-17T04:04:00Z",
+      "braam_trade_id": "UNIUSDT_20260817_CB_001",
       "status": "RESTING"
     }
   }
