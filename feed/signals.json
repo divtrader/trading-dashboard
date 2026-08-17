@@ -1,9 +1,9 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-08-17T10:07Z",
+  "generated_utc": "2026-08-17T12:07Z",
   "master": "braam",
   "retention_hours": 48,
-  "trade_count": 19,
+  "trade_count": 18,
   "trades": [
     {
       "trade_id": "NEARUSDT_20260801_CJ_001",
@@ -211,29 +211,6 @@
       "time_opened_utc": "00:04",
       "sl_mode": "initial",
       "feed_updated_utc": "2026-08-11T00:04Z"
-    },
-    {
-      "trade_id": "UNIUSDT_20260812_CB_001",
-      "coin": "UNIUSDT",
-      "direction": "Short",
-      "trading_system": "Braam",
-      "conviction": "HIGH",
-      "leverage": 3,
-      "entry_price": 3.91843228,
-      "entry_lo": 3.89884012,
-      "entry_hi": 3.93802444,
-      "sl": 4.04786053,
-      "tp1": 3.48240706,
-      "tp2": 2.92876392,
-      "status": "CANCELLED",
-      "tp1_hit": false,
-      "tp2_hit": false,
-      "sl_hit": false,
-      "close_reason": "Stale 24.0h \u2265 24h grace: Price $3.2630 is 20.1% below entry $3.9184",
-      "date_opened": "2026-08-12",
-      "time_opened_utc": "00:03",
-      "sl_mode": "initial",
-      "feed_updated_utc": "2026-08-15T12:04Z"
     },
     {
       "trade_id": "HBARUSDT_20260812_CB_001",
