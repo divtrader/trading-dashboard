@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-18T14:06:32Z",
+  "updated": "2026-08-18T16:07:48Z",
   "positions": {
     "1414291495": {
       "position_id": "1414291495",
@@ -2792,8 +2792,26 @@
       "leverage": 3,
       "entry_price": 1894.1,
       "opened_at": "2026-08-18T04:13:32Z",
+      "status": "CLOSED",
+      "braam_trade_id": "ETHUSDT_20260818_CB_001",
+      "closed_at": "2026-08-18T14:28:45Z",
+      "close_price": 1916.33,
+      "pnl_usd": -5.4866,
+      "margin_usd": 140.75,
+      "fees_usd": 0.5872,
+      "tag": "LOSS",
+      "close_type": 4,
+      "close_reason": "stop_loss"
+    },
+    "1472594449": {
+      "position_id": "1472594449",
+      "coin": "DOGEUSDT",
+      "direction": "Short",
+      "leverage": 3,
+      "entry_price": 0.07011,
+      "opened_at": "2026-08-18T14:25:12Z",
       "status": "OPEN",
-      "braam_trade_id": "ETHUSDT_20260818_CB_001"
+      "braam_trade_id": "DOGEUSDT_20260818_CB_001"
     },
     "1472180829": {
       "position_id": "1472180829",
@@ -2802,8 +2820,16 @@
       "leverage": 3,
       "entry_price": 75.61,
       "opened_at": "2026-08-18T04:11:22Z",
-      "status": "OPEN",
-      "braam_trade_id": "SOLUSDT_20260818_CB_001"
+      "status": "CLOSED",
+      "braam_trade_id": "SOLUSDT_20260818_CB_001",
+      "closed_at": "2026-08-18T14:25:21Z",
+      "close_price": 76.62,
+      "pnl_usd": -6.1249,
+      "margin_usd": 140.75,
+      "fees_usd": 0.5866,
+      "tag": "LOSS",
+      "close_type": 4,
+      "close_reason": "stop_loss"
     }
   },
   "orders": {
@@ -2904,15 +2930,6 @@
       "entry_price": 196.80274759,
       "resting_at": "2026-08-18T04:04:00Z",
       "braam_trade_id": "TAOUSDT_20260818_CB_001",
-      "status": "RESTING"
-    },
-    "844697143523968000": {
-      "order_id": "844697143523968000",
-      "coin": "DOGEUSDT",
-      "direction": "Short",
-      "entry_price": 0.07011316,
-      "resting_at": "2026-08-18T04:04:00Z",
-      "braam_trade_id": "DOGEUSDT_20260818_CB_001",
       "status": "RESTING"
     }
   }
