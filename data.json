@@ -1,5 +1,5 @@
 {
-  "last_updated_iso": "2026-08-18T05:49:32Z",
+  "last_updated_iso": "2026-08-18T05:51:56Z",
   "mexc_account": null,
   "api_keys": [
     {
@@ -1102,10 +1102,10 @@
       "leverage": 3,
       "trading_system": "Braam",
       "track_only": false,
-      "status": "PENDING",
+      "status": "OPEN",
       "price_at_run": 1891.8,
-      "date_activated": null,
-      "time_activated_utc": null,
+      "date_activated": "2026-08-18",
+      "time_activated_utc": "04:13",
       "date_opened": "2026-08-18",
       "time_opened_utc": "04:04",
       "conviction": "MEDIUM",
@@ -1148,10 +1148,10 @@
       "leverage": 3,
       "trading_system": "Braam",
       "track_only": false,
-      "status": "PENDING",
+      "status": "OPEN",
       "price_at_run": 75.43,
-      "date_activated": null,
-      "time_activated_utc": null,
+      "date_activated": "2026-08-18",
+      "time_activated_utc": "04:11",
       "date_opened": "2026-08-18",
       "time_opened_utc": "04:04",
       "conviction": "MEDIUM",
@@ -1174,18 +1174,6 @@
       "iso": "2026-08-18T04:04:00Z"
     },
     {
-      "trade_id": "ETHUSDT_20260818_CB_001",
-      "coin": "ETHUSDT",
-      "direction": "Short",
-      "trading_system": "Braam",
-      "entry_price": 1894.10315079,
-      "tp1": 1871.83,
-      "sl": 1916.27249087,
-      "conviction": "MEDIUM",
-      "track_only": false,
-      "iso": "2026-08-18T04:04:00Z"
-    },
-    {
       "trade_id": "DOGEUSDT_20260818_CB_001",
       "coin": "DOGEUSDT",
       "direction": "Short",
@@ -1193,18 +1181,6 @@
       "entry_price": 0.07011316,
       "tp1": 0.0669894,
       "sl": 0.0709485,
-      "conviction": "MEDIUM",
-      "track_only": false,
-      "iso": "2026-08-18T04:04:00Z"
-    },
-    {
-      "trade_id": "SOLUSDT_20260818_CB_001",
-      "coin": "SOLUSDT",
-      "direction": "Short",
-      "trading_system": "Braam",
-      "entry_price": 75.61355813,
-      "tp1": 74.4,
-      "sl": 76.62248017,
       "conviction": "MEDIUM",
       "track_only": false,
       "iso": "2026-08-18T04:04:00Z"
@@ -1230,6 +1206,26 @@
       "tp1_hit": false,
       "iso": "2026-08-17T04:59:00Z",
       "_iso_ms": 1786942740000
+    },
+    {
+      "trade_id": "SOLUSDT_20260818_CB_001",
+      "coin": "SOLUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "entry_price": 75.61355813,
+      "tp1_hit": false,
+      "iso": "2026-08-18T04:11:00Z",
+      "_iso_ms": 1787026260000
+    },
+    {
+      "trade_id": "ETHUSDT_20260818_CB_001",
+      "coin": "ETHUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "entry_price": 1894.10315079,
+      "tp1_hit": false,
+      "iso": "2026-08-18T04:13:00Z",
+      "_iso_ms": 1787026380000
     }
   ],
   "recent_closes": [
@@ -1919,7 +1915,7 @@
     "peak_capital_usd": 3300,
     "peak_concurrent": 33,
     "peak_date": "2026-06-22",
-    "deployed_trades": 607,
+    "deployed_trades": 609,
     "return_on_peak_pct": 20.31,
     "win_rate_pct": 33.3,
     "closed_count": 576,
