@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-19T15:40:03Z",
+  "updated": "2026-08-19T15:41:37Z",
   "positions": {
     "1414291495": {
       "position_id": "1414291495",
@@ -2585,6 +2585,16 @@
       "close_type": 3,
       "close_reason": "take_profit"
     },
+    "1473568708": {
+      "position_id": "1473568708",
+      "coin": "LTCUSDT",
+      "direction": "Short",
+      "leverage": 3,
+      "entry_price": 45.76,
+      "opened_at": "2026-08-19T15:27:40Z",
+      "status": "OPEN",
+      "braam_trade_id": "LTCUSDT_20260810_CB_001"
+    },
     "1465492075": {
       "position_id": "1465492075",
       "coin": "SUIUSDT",
@@ -2736,8 +2746,16 @@
       "leverage": 3,
       "entry_price": 0.06778,
       "opened_at": "2026-08-19T04:57:53Z",
-      "status": "OPEN",
-      "braam_trade_id": "HBARUSDT_20260812_CB_001"
+      "status": "CLOSED",
+      "braam_trade_id": "HBARUSDT_20260812_CB_001",
+      "closed_at": "2026-08-19T15:16:29Z",
+      "close_price": 0.06884,
+      "pnl_usd": -7.1581,
+      "margin_usd": 138.26,
+      "fees_usd": 0.5858,
+      "tag": "LOSS",
+      "close_type": 4,
+      "close_reason": "stop_loss"
     },
     "1467990608": {
       "position_id": "1467990608",
@@ -2793,6 +2811,16 @@
       "close_type": 4,
       "close_reason": "stop_loss"
     },
+    "1473524952": {
+      "position_id": "1473524952",
+      "coin": "AVAXUSDT",
+      "direction": "Short",
+      "leverage": 3,
+      "entry_price": 6.475,
+      "opened_at": "2026-08-19T15:07:44Z",
+      "status": "OPEN",
+      "braam_trade_id": "AVAXUSDT_20260816_CB_001"
+    },
     "1471288348": {
       "position_id": "1471288348",
       "coin": "BNBUSDT",
@@ -2800,8 +2828,26 @@
       "leverage": 3,
       "entry_price": 607.7,
       "opened_at": "2026-08-17T04:59:43Z",
+      "status": "CLOSED",
+      "braam_trade_id": "BNBUSDT_20260817_CB_001",
+      "closed_at": "2026-08-19T15:06:47Z",
+      "close_price": 613.4,
+      "pnl_usd": -4.5753,
+      "margin_usd": 140.64,
+      "fees_usd": 0.59,
+      "tag": "LOSS",
+      "close_type": 4,
+      "close_reason": "stop_loss"
+    },
+    "1473494560": {
+      "position_id": "1473494560",
+      "coin": "BTCUSDT",
+      "direction": "Short",
+      "leverage": 3,
+      "entry_price": 65767.7,
+      "opened_at": "2026-08-19T14:55:02Z",
       "status": "OPEN",
-      "braam_trade_id": "BNBUSDT_20260817_CB_001"
+      "braam_trade_id": "BTCUSDT_20260817_CJ_001"
     },
     "1473090919": {
       "position_id": "1473090919",
@@ -2810,8 +2856,26 @@
       "leverage": 3,
       "entry_price": 3.328,
       "opened_at": "2026-08-19T05:38:29Z",
+      "status": "CLOSED",
+      "braam_trade_id": "UNIUSDT_20260817_CB_001",
+      "closed_at": "2026-08-19T15:05:12Z",
+      "close_price": 3.43,
+      "pnl_usd": -13.5045,
+      "margin_usd": 140.04,
+      "fees_usd": 0.5981,
+      "tag": "LOSS",
+      "close_type": 4,
+      "close_reason": "stop_loss"
+    },
+    "1473561751": {
+      "position_id": "1473561751",
+      "coin": "TAOUSDT",
+      "direction": "Short",
+      "leverage": 3,
+      "entry_price": 196.8,
+      "opened_at": "2026-08-19T15:26:45Z",
       "status": "OPEN",
-      "braam_trade_id": "UNIUSDT_20260817_CB_001"
+      "braam_trade_id": "TAOUSDT_20260818_CB_001"
     },
     "1472181888": {
       "position_id": "1472181888",
@@ -2838,8 +2902,16 @@
       "leverage": 3,
       "entry_price": 0.07011,
       "opened_at": "2026-08-18T14:25:12Z",
-      "status": "OPEN",
-      "braam_trade_id": "DOGEUSDT_20260818_CB_001"
+      "status": "CLOSED",
+      "braam_trade_id": "DOGEUSDT_20260818_CB_001",
+      "closed_at": "2026-08-19T14:51:29Z",
+      "close_price": 0.07093,
+      "pnl_usd": -5.5607,
+      "margin_usd": 140.75,
+      "fees_usd": 0.5927,
+      "tag": "LOSS",
+      "close_type": 4,
+      "close_reason": "stop_loss"
     },
     "1472180829": {
       "position_id": "1472180829",
@@ -2870,15 +2942,6 @@
       "braam_trade_id": "ALGOUSDT_20260809_CB_001",
       "status": "RESTING"
     },
-    "841586551921165824": {
-      "order_id": "841586551921165824",
-      "coin": "LTCUSDT",
-      "direction": "Short",
-      "entry_price": 45.75792537,
-      "resting_at": "2026-08-10T00:04:00Z",
-      "braam_trade_id": "LTCUSDT_20260810_CB_001",
-      "status": "RESTING"
-    },
     "841948836577553472": {
       "order_id": "841948836577553472",
       "coin": "ONDOUSDT",
@@ -2904,33 +2967,6 @@
       "entry_price": 0.32431858,
       "resting_at": "2026-08-14T16:03:00Z",
       "braam_trade_id": "TRXUSDT_20260814_CJ_001",
-      "status": "RESTING"
-    },
-    "843760712672485888": {
-      "order_id": "843760712672485888",
-      "coin": "AVAXUSDT",
-      "direction": "Short",
-      "entry_price": 6.47547724,
-      "resting_at": "2026-08-16T00:03:00Z",
-      "braam_trade_id": "AVAXUSDT_20260816_CB_001",
-      "status": "RESTING"
-    },
-    "844183555683736576": {
-      "order_id": "844183555683736576",
-      "coin": "BTCUSDT",
-      "direction": "Short",
-      "entry_price": 65767.71515075,
-      "resting_at": "2026-08-17T04:04:00Z",
-      "braam_trade_id": "BTCUSDT_20260817_CJ_001",
-      "status": "RESTING"
-    },
-    "844545983424654912": {
-      "order_id": "844545983424654912",
-      "coin": "TAOUSDT",
-      "direction": "Short",
-      "entry_price": 196.80274759,
-      "resting_at": "2026-08-18T04:04:00Z",
-      "braam_trade_id": "TAOUSDT_20260818_CB_001",
       "status": "RESTING"
     }
   },
