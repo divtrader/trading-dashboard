@@ -1,19 +1,43 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-08-19T08:07:56Z",
+  "last_updated_iso": "2026-08-19T09:23:15Z",
   "mexc_account": {
-    "unrealized_pnl": 9.7069,
-    "equity": 2802.6087,
+    "unrealized_pnl": 12.7485,
+    "equity": 2805.6503,
     "available": 1096.2367,
     "position_margin": 0.0
   },
   "order_levels": {
     "checked": 13,
-    "in_sync": 13,
-    "drifted": [],
+    "in_sync": 11,
+    "drifted": [
+      "HBAR",
+      "UNI"
+    ],
     "reconciling": [],
-    "detail": []
+    "detail": [
+      {
+        "coin": "HBAR",
+        "trade_id": "HBARUSDT_20260812_CB_001",
+        "status": "OPEN",
+        "fields": [
+          "tp1",
+          "tp2"
+        ],
+        "synced_at": null
+      },
+      {
+        "coin": "UNI",
+        "trade_id": "UNIUSDT_20260817_CB_001",
+        "status": "OPEN",
+        "fields": [
+          "tp1",
+          "tp2"
+        ],
+        "synced_at": null
+      }
+    ]
   },
   "api_keys": [
     {
@@ -74,7 +98,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$2,802.61",
+      "value": "$2,805.65",
       "status": "ok",
       "action": null
     },
@@ -270,8 +294,8 @@
       "direction": "Short",
       "entry_price": 0.06778454,
       "sl": 0.06884033,
-      "tp1": 0.06340097,
-      "tp2": 0.05862897,
+      "tp1": 0.06635,
+      "tp2": 0.06548,
       "capital_usd": 138.26,
       "leverage": 3,
       "trading_system": "Braam",
@@ -462,8 +486,8 @@
       "direction": "Short",
       "entry_price": 3.32835357,
       "sl": 3.42837282,
-      "tp1": 3.09028265,
-      "tp2": 2.59327409,
+      "tp1": 3.26,
+      "tp2": 3.192,
       "capital_usd": 140.04,
       "leverage": 3,
       "trading_system": "Braam",
