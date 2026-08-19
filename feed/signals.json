@@ -1,6 +1,6 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-08-19T20:07Z",
+  "generated_utc": "2026-08-19T22:08Z",
   "master": "braam",
   "retention_hours": 48,
   "trade_count": 19,
@@ -18,15 +18,15 @@
       "sl": 1.79489017,
       "tp1": 1.59571584,
       "tp2": 1.555,
-      "status": "OPEN",
+      "status": "STOPPED_AFTER_TP1",
       "tp1_hit": true,
       "tp2_hit": false,
       "sl_hit": false,
-      "close_reason": null,
+      "close_reason": "live MEXC exit: sl @ 1.759",
       "date_opened": "2026-08-01",
       "time_opened_utc": "04:04",
       "sl_mode": "breakeven",
-      "feed_updated_utc": "2026-08-15T08:03Z"
+      "feed_updated_utc": "2026-08-19T21:31Z"
     },
     {
       "trade_id": "XLMUSDT_20260807_CB_001",
@@ -110,15 +110,15 @@
       "sl": 46.34175366,
       "tp1": 44.11,
       "tp2": 41.51,
-      "status": "OPEN",
+      "status": "STOPPED",
       "tp1_hit": false,
       "tp2_hit": false,
       "sl_hit": false,
-      "close_reason": null,
+      "close_reason": "live MEXC exit: sl @ 46.34",
       "date_opened": "2026-08-10",
       "time_opened_utc": "00:04",
       "sl_mode": "initial",
-      "feed_updated_utc": "2026-08-19T15:27Z"
+      "feed_updated_utc": "2026-08-19T20:50Z"
     },
     {
       "trade_id": "SUIUSDT_20260810_CB_001",
@@ -179,7 +179,7 @@
       "sl": 0.36155956,
       "tp1": 0.32250844,
       "tp2": 0.26536688,
-      "status": "PENDING",
+      "status": "OPEN",
       "tp1_hit": false,
       "tp2_hit": false,
       "sl_hit": false,
@@ -187,7 +187,7 @@
       "date_opened": "2026-08-11",
       "time_opened_utc": "00:04",
       "sl_mode": "initial",
-      "feed_updated_utc": "2026-08-11T00:04Z"
+      "feed_updated_utc": "2026-08-19T21:06Z"
     },
     {
       "trade_id": "HBARUSDT_20260812_CB_001",
@@ -225,7 +225,7 @@
       "sl": 0.19438424,
       "tp1": 0.15861928,
       "tp2": 0.1372032,
-      "status": "PENDING",
+      "status": "OPEN",
       "tp1_hit": false,
       "tp2_hit": false,
       "sl_hit": false,
@@ -233,7 +233,7 @@
       "date_opened": "2026-08-12",
       "time_opened_utc": "20:03",
       "sl_mode": "initial",
-      "feed_updated_utc": "2026-08-12T20:03Z"
+      "feed_updated_utc": "2026-08-19T21:14Z"
     },
     {
       "trade_id": "TRXUSDT_20260814_CJ_001",
@@ -363,15 +363,15 @@
       "sl": 201.09502852,
       "tp1": 191.1,
       "tp2": 188.9,
-      "status": "OPEN",
+      "status": "STOPPED",
       "tp1_hit": false,
       "tp2_hit": false,
       "sl_hit": false,
-      "close_reason": null,
+      "close_reason": "live MEXC exit: sl @ 201.14",
       "date_opened": "2026-08-18",
       "time_opened_utc": "04:04",
       "sl_mode": "initial",
-      "feed_updated_utc": "2026-08-19T15:26Z"
+      "feed_updated_utc": "2026-08-19T20:33Z"
     },
     {
       "trade_id": "ETHUSDT_20260818_CB_001",
