@@ -1,43 +1,19 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-08-19T09:23:15Z",
+  "last_updated_iso": "2026-08-19T09:24:42Z",
   "mexc_account": {
-    "unrealized_pnl": 12.7485,
-    "equity": 2805.6503,
+    "unrealized_pnl": 12.0524,
+    "equity": 2804.9541,
     "available": 1096.2367,
     "position_margin": 0.0
   },
   "order_levels": {
     "checked": 13,
-    "in_sync": 11,
-    "drifted": [
-      "HBAR",
-      "UNI"
-    ],
+    "in_sync": 13,
+    "drifted": [],
     "reconciling": [],
-    "detail": [
-      {
-        "coin": "HBAR",
-        "trade_id": "HBARUSDT_20260812_CB_001",
-        "status": "OPEN",
-        "fields": [
-          "tp1",
-          "tp2"
-        ],
-        "synced_at": null
-      },
-      {
-        "coin": "UNI",
-        "trade_id": "UNIUSDT_20260817_CB_001",
-        "status": "OPEN",
-        "fields": [
-          "tp1",
-          "tp2"
-        ],
-        "synced_at": null
-      }
-    ]
+    "detail": []
   },
   "api_keys": [
     {
@@ -98,7 +74,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$2,805.65",
+      "value": "$2,804.95",
       "status": "ok",
       "action": null
     },
