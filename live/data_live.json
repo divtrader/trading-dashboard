@@ -1,11 +1,11 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-08-19T18:07:26Z",
+  "last_updated_iso": "2026-08-19T20:07:34Z",
   "mexc_account": {
-    "unrealized_pnl": -0.4258,
-    "equity": 2748.2785,
-    "available": 1892.4524,
+    "unrealized_pnl": -6.2342,
+    "equity": 2742.4914,
+    "available": 1892.4737,
     "position_margin": 0.0
   },
   "order_levels": {
@@ -66,7 +66,7 @@
       "key": "state_file",
       "tier": 1,
       "label": "Trade journal",
-      "value": "OK (980 records)",
+      "value": "OK (981 records)",
       "status": "ok",
       "action": null
     },
@@ -74,7 +74,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$2,748.28",
+      "value": "$2,742.49",
       "status": "ok",
       "action": null
     },
@@ -309,7 +309,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 0.3321,
+      "price_at_run": 0.3323,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-08-14",
@@ -3552,15 +3552,7 @@
       "rehearsal": false
     }
   ],
-  "recent_cancels": [
-    {
-      "coin": "XRPUSDT",
-      "direction": "Short",
-      "trading_system": "Braam",
-      "close_reason": "Entry window expired: unfilled 12.0d \u2265 72\u00d74H (288h) \u2014 mirrors backtest ENTRY_WIN",
-      "iso": "2026-08-19T08:04:00Z"
-    }
-  ],
+  "recent_cancels": [],
   "tp1_hits_open": [
     {
       "coin": "NEARUSDT",
