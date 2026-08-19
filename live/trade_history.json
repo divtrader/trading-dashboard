@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-19T04:07:49Z",
+  "updated": "2026-08-19T06:08:00Z",
   "positions": {
     "1414291495": {
       "position_id": "1414291495",
@@ -2466,8 +2466,16 @@
       "leverage": 3,
       "entry_price": 0.16509,
       "opened_at": "2026-08-08T13:06:12Z",
-      "status": "OPEN",
-      "braam_trade_id": "XLMUSDT_20260807_CB_001"
+      "status": "CLOSED",
+      "braam_trade_id": "XLMUSDT_20260807_CB_001",
+      "closed_at": "2026-08-19T05:01:23Z",
+      "close_price": 0.15721,
+      "pnl_usd": 13.024,
+      "margin_usd": 113.18,
+      "fees_usd": 0.4629,
+      "tag": "WIN",
+      "close_type": 1,
+      "close_reason": "manual"
     },
     "1464103729": {
       "position_id": "1464103729",
@@ -2721,6 +2729,16 @@
       "close_type": 1,
       "close_reason": "manual"
     },
+    "1473073821": {
+      "position_id": "1473073821",
+      "coin": "HBARUSDT",
+      "direction": "Short",
+      "leverage": 3,
+      "entry_price": 0.06778,
+      "opened_at": "2026-08-19T04:57:53Z",
+      "status": "OPEN",
+      "braam_trade_id": "HBARUSDT_20260812_CB_001"
+    },
     "1467990608": {
       "position_id": "1467990608",
       "coin": "SOLUSDT",
@@ -2784,6 +2802,16 @@
       "opened_at": "2026-08-17T04:59:43Z",
       "status": "OPEN",
       "braam_trade_id": "BNBUSDT_20260817_CB_001"
+    },
+    "1473090919": {
+      "position_id": "1473090919",
+      "coin": "UNIUSDT",
+      "direction": "Short",
+      "leverage": 3,
+      "entry_price": 3.328,
+      "opened_at": "2026-08-19T05:38:29Z",
+      "status": "OPEN",
+      "braam_trade_id": "UNIUSDT_20260817_CB_001"
     },
     "1472181888": {
       "position_id": "1472181888",
@@ -2869,15 +2897,6 @@
       "braam_trade_id": "ONDOUSDT_20260811_CB_001",
       "status": "RESTING"
     },
-    "842311173227234304": {
-      "order_id": "842311173227234304",
-      "coin": "HBARUSDT",
-      "direction": "Short",
-      "entry_price": 0.06778454,
-      "resting_at": "2026-08-12T00:03:00Z",
-      "braam_trade_id": "HBARUSDT_20260812_CB_001",
-      "status": "RESTING"
-    },
     "842613118193596928": {
       "order_id": "842613118193596928",
       "coin": "ADAUSDT",
@@ -2912,15 +2931,6 @@
       "entry_price": 65767.71515075,
       "resting_at": "2026-08-17T04:04:00Z",
       "braam_trade_id": "BTCUSDT_20260817_CJ_001",
-      "status": "RESTING"
-    },
-    "844183564332702720": {
-      "order_id": "844183564332702720",
-      "coin": "UNIUSDT",
-      "direction": "Short",
-      "entry_price": 3.32835357,
-      "resting_at": "2026-08-17T04:04:00Z",
-      "braam_trade_id": "UNIUSDT_20260817_CB_001",
       "status": "RESTING"
     },
     "844545983424654912": {

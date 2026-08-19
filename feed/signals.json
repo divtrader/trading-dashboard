@@ -1,6 +1,6 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-08-19T04:07Z",
+  "generated_utc": "2026-08-19T06:08Z",
   "master": "braam",
   "retention_hours": 48,
   "trade_count": 20,
@@ -41,15 +41,15 @@
       "sl": 0.15719042,
       "tp1": 0.1599,
       "tp2": 0.1509,
-      "status": "OPEN",
+      "status": "STOPPED_AFTER_TP1",
       "tp1_hit": true,
       "tp2_hit": false,
       "sl_hit": false,
-      "close_reason": null,
+      "close_reason": "live MEXC exit: manual @ 0.15721",
       "date_opened": "2026-08-07",
       "time_opened_utc": "04:04",
       "sl_mode": "breakeven",
-      "feed_updated_utc": "2026-08-08T16:04Z"
+      "feed_updated_utc": "2026-08-19T05:01Z"
     },
     {
       "trade_id": "XRPUSDT_20260807_CB_001",
@@ -202,7 +202,7 @@
       "sl": 0.06884033,
       "tp1": 0.06340097,
       "tp2": 0.05862897,
-      "status": "PENDING",
+      "status": "OPEN",
       "tp1_hit": false,
       "tp2_hit": false,
       "sl_hit": false,
@@ -210,7 +210,7 @@
       "date_opened": "2026-08-12",
       "time_opened_utc": "00:03",
       "sl_mode": "initial",
-      "feed_updated_utc": "2026-08-12T00:03Z"
+      "feed_updated_utc": "2026-08-19T04:57Z"
     },
     {
       "trade_id": "ADAUSDT_20260812_CB_001",
@@ -363,7 +363,7 @@
       "sl": 3.42837282,
       "tp1": 3.09028265,
       "tp2": 2.59327409,
-      "status": "PENDING",
+      "status": "OPEN",
       "tp1_hit": false,
       "tp2_hit": false,
       "sl_hit": false,
@@ -371,7 +371,7 @@
       "date_opened": "2026-08-17",
       "time_opened_utc": "04:04",
       "sl_mode": "initial",
-      "feed_updated_utc": "2026-08-17T04:04Z"
+      "feed_updated_utc": "2026-08-19T05:38Z"
     },
     {
       "trade_id": "TAOUSDT_20260818_CB_001",
