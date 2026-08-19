@@ -1,19 +1,46 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-08-19T14:06:45Z",
+  "last_updated_iso": "2026-08-19T15:39:55Z",
   "mexc_account": {
-    "unrealized_pnl": -4.8435,
-    "equity": 2788.0582,
-    "available": 1096.2367,
+    "unrealized_pnl": -3.7542,
+    "equity": 2744.8855,
+    "available": 1892.3877,
     "position_margin": 0.0
   },
   "order_levels": {
-    "checked": 13,
-    "in_sync": 13,
-    "drifted": [],
-    "reconciling": [],
-    "detail": []
+    "checked": 9,
+    "in_sync": 7,
+    "drifted": [
+      "LTC",
+      "TAO"
+    ],
+    "reconciling": [
+      "HBAR",
+      "BNB",
+      "UNI",
+      "DOGE"
+    ],
+    "detail": [
+      {
+        "coin": "LTC",
+        "trade_id": "LTCUSDT_20260810_CB_001",
+        "status": "PENDING",
+        "fields": [
+          "tp1"
+        ],
+        "synced_at": null
+      },
+      {
+        "coin": "TAO",
+        "trade_id": "TAOUSDT_20260818_CB_001",
+        "status": "PENDING",
+        "fields": [
+          "tp1"
+        ],
+        "synced_at": null
+      }
+    ]
   },
   "api_keys": [
     {
@@ -74,7 +101,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$2,788.06",
+      "value": "$2,744.89",
       "status": "ok",
       "action": null
     },
@@ -90,7 +117,7 @@
       "key": "orphan_orders",
       "tier": 1,
       "label": "Order reconciliation",
-      "value": "in sync (8 resting = journal)",
+      "value": "in sync (4 resting = journal)",
       "status": "ok",
       "action": null
     },
@@ -98,7 +125,7 @@
       "key": "position_protection",
       "tier": 1,
       "label": "Position protection",
-      "value": "all protected (5 open, 4 pre-TP1 runners)",
+      "value": "all protected (3 open, 0 pre-TP1 runners)",
       "status": "ok",
       "action": null
     },
@@ -206,8 +233,8 @@
       "direction": "Short",
       "entry_price": 45.75792537,
       "sl": 46.34175366,
-      "tp1": 43.79732666,
-      "tp2": 41.01784132,
+      "tp1": 44.11,
+      "tp2": 41.51,
       "capital_usd": 136.99,
       "leverage": 3,
       "trading_system": "Braam",
@@ -494,8 +521,8 @@
       "direction": "Short",
       "entry_price": 196.80274759,
       "sl": 201.09502852,
-      "tp1": 180.28745441,
-      "tp2": 162.54107826,
+      "tp1": 191.1,
+      "tp2": 188.9,
       "capital_usd": 140.75,
       "leverage": 3,
       "trading_system": "Braam",
