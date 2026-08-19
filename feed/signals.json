@@ -1,9 +1,9 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-08-19T06:08Z",
+  "generated_utc": "2026-08-19T08:08Z",
   "master": "braam",
   "retention_hours": 48,
-  "trade_count": 20,
+  "trade_count": 19,
   "trades": [
     {
       "trade_id": "NEARUSDT_20260801_CJ_001",
@@ -64,15 +64,15 @@
       "sl": 1.07154073,
       "tp1": 0.99068703,
       "tp2": 0.89068703,
-      "status": "PENDING",
+      "status": "CANCELLED",
       "tp1_hit": false,
       "tp2_hit": false,
       "sl_hit": false,
-      "close_reason": null,
+      "close_reason": "Entry window expired: unfilled 12.0d \u2265 72\u00d74H (288h) \u2014 mirrors backtest ENTRY_WINDOW",
       "date_opened": "2026-08-07",
       "time_opened_utc": "08:04",
       "sl_mode": "initial",
-      "feed_updated_utc": "2026-08-07T08:04Z"
+      "feed_updated_utc": "2026-08-19T08:04Z"
     },
     {
       "trade_id": "ALGOUSDT_20260809_CB_001",
@@ -234,29 +234,6 @@
       "time_opened_utc": "20:03",
       "sl_mode": "initial",
       "feed_updated_utc": "2026-08-12T20:03Z"
-    },
-    {
-      "trade_id": "DOGEUSDT_20260812_CB_001",
-      "coin": "DOGEUSDT",
-      "direction": "Short",
-      "trading_system": "Braam",
-      "conviction": "MEDIUM",
-      "leverage": 3,
-      "entry_price": 0.07076673,
-      "entry_lo": 0.0704129,
-      "entry_hi": 0.07112057,
-      "sl": 0.07039501,
-      "tp1": 0.06969,
-      "tp2": 0.06874,
-      "status": "STOPPED_AFTER_TP1",
-      "tp1_hit": true,
-      "tp2_hit": false,
-      "sl_hit": false,
-      "close_reason": "live MEXC exit: manual @ 0.0704",
-      "date_opened": "2026-08-12",
-      "time_opened_utc": "20:03",
-      "sl_mode": "breakeven",
-      "feed_updated_utc": "2026-08-17T06:23Z"
     },
     {
       "trade_id": "TRXUSDT_20260814_CJ_001",
