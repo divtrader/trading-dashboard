@@ -1,12 +1,12 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-08-20T16:07:40Z",
+  "last_updated_iso": "2026-08-20T18:06:27Z",
   "mexc_account": {
-    "unrealized_pnl": 0.0,
-    "equity": 2718.6829,
-    "available": 2442.0943,
-    "position_margin": 0.0
+    "unrealized_pnl": 7.9822,
+    "equity": 2726.4216,
+    "available": 2442.1757,
+    "position_margin": 135.7449
   },
   "order_levels": {
     "checked": 2,
@@ -74,7 +74,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$2,718.68",
+      "value": "$2,726.42",
       "status": "ok",
       "action": null
     },
@@ -90,7 +90,7 @@
       "key": "orphan_orders",
       "tier": 1,
       "label": "Order reconciliation",
-      "value": "in sync (2 resting = journal)",
+      "value": "in sync (1 resting = journal)",
       "status": "ok",
       "action": null
     },
@@ -98,7 +98,7 @@
       "key": "position_protection",
       "tier": 1,
       "label": "Position protection",
-      "value": "all protected (0 open, 0 pre-TP1 runners)",
+      "value": "all protected (1 open, 1 pre-TP1 runners)",
       "status": "ok",
       "action": null
     },
@@ -142,8 +142,8 @@
       "direction": "Short",
       "entry_price": 0.08798427,
       "sl": 0.09034515,
-      "tp1": 0.0821299,
-      "tp2": 0.0729633,
+      "tp1": 0.0819,
+      "tp2": 0.0777,
       "capital_usd": 135.34,
       "leverage": 3,
       "trading_system": "Braam",
