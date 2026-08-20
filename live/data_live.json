@@ -1,19 +1,43 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-08-20T04:07:15Z",
+  "last_updated_iso": "2026-08-20T05:47:21Z",
   "mexc_account": {
-    "unrealized_pnl": 26.5462,
-    "equity": 2759.5845,
+    "unrealized_pnl": 18.9176,
+    "equity": 2751.9559,
     "available": 2178.0339,
     "position_margin": 0.0
   },
   "order_levels": {
     "checked": 4,
-    "in_sync": 4,
-    "drifted": [],
+    "in_sync": 2,
+    "drifted": [
+      "ONDO",
+      "ADA"
+    ],
     "reconciling": [],
-    "detail": []
+    "detail": [
+      {
+        "coin": "ONDO",
+        "trade_id": "ONDOUSDT_20260811_CB_001",
+        "status": "OPEN",
+        "fields": [
+          "tp1",
+          "tp2"
+        ],
+        "synced_at": null
+      },
+      {
+        "coin": "ADA",
+        "trade_id": "ADAUSDT_20260812_CB_001",
+        "status": "OPEN",
+        "fields": [
+          "tp1",
+          "tp2"
+        ],
+        "synced_at": null
+      }
+    ]
   },
   "api_keys": [
     {
@@ -74,7 +98,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$2,759.58",
+      "value": "$2,751.96",
       "status": "ok",
       "action": null
     },
@@ -174,8 +198,8 @@
       "direction": "Short",
       "entry_price": 0.35135977,
       "sl": 0.36155956,
-      "tp1": 0.32250844,
-      "tp2": 0.26536688,
+      "tp1": 0.3248,
+      "tp2": 0.3067,
       "capital_usd": 138.27,
       "leverage": 3,
       "trading_system": "Braam",
@@ -206,8 +230,8 @@
       "direction": "Short",
       "entry_price": 0.18925614,
       "sl": 0.19438424,
-      "tp1": 0.15861928,
-      "tp2": 0.1372032,
+      "tp1": 0.1736,
+      "tp2": 0.1625,
       "capital_usd": 139.68,
       "leverage": 3,
       "trading_system": "Braam",
@@ -267,30 +291,6 @@
   ],
   "recent_signals": [],
   "recent_opens": [
-    {
-      "trade_id": "SOLUSDT_20260818_CB_001",
-      "coin": "SOLUSDT",
-      "direction": "Short",
-      "trading_system": "Braam",
-      "entry_price": 75.61355813,
-      "live_entry_fill": 75.61,
-      "tp1_hit": false,
-      "iso": "2026-08-18T04:11:00Z",
-      "_iso_ms": 1787026260000,
-      "rehearsal": false
-    },
-    {
-      "trade_id": "ETHUSDT_20260818_CB_001",
-      "coin": "ETHUSDT",
-      "direction": "Short",
-      "trading_system": "Braam",
-      "entry_price": 1894.10315079,
-      "live_entry_fill": 1894.1,
-      "tp1_hit": false,
-      "iso": "2026-08-18T04:13:00Z",
-      "_iso_ms": 1787026380000,
-      "rehearsal": false
-    },
     {
       "trade_id": "DOGEUSDT_20260818_CB_001",
       "coin": "DOGEUSDT",
