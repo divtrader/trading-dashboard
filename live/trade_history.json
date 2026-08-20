@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-20T10:07:21Z",
+  "updated": "2026-08-20T12:07:24Z",
   "positions": {
     "1414291495": {
       "position_id": "1414291495",
@@ -2708,8 +2708,16 @@
       "leverage": 3,
       "entry_price": 0.3514,
       "opened_at": "2026-08-19T21:06:20Z",
-      "status": "OPEN",
-      "braam_trade_id": "ONDOUSDT_20260811_CB_001"
+      "status": "CLOSED",
+      "braam_trade_id": "ONDOUSDT_20260811_CB_001",
+      "closed_at": "2026-08-20T12:00:10Z",
+      "close_price": 0.3534,
+      "pnl_usd": -2.7997,
+      "margin_usd": 138.27,
+      "fees_usd": 0.4155,
+      "tag": "LOSS",
+      "close_type": 4,
+      "close_reason": "stop_loss"
     },
     "1466405004": {
       "position_id": "1466405004",
@@ -2808,8 +2816,16 @@
       "leverage": 3,
       "entry_price": 0.1893,
       "opened_at": "2026-08-19T21:14:58Z",
-      "status": "OPEN",
-      "braam_trade_id": "ADAUSDT_20260812_CB_001"
+      "status": "CLOSED",
+      "braam_trade_id": "ADAUSDT_20260812_CB_001",
+      "closed_at": "2026-08-20T11:48:05Z",
+      "close_price": 0.1945,
+      "pnl_usd": -12.1908,
+      "margin_usd": 139.68,
+      "fees_usd": 0.5958,
+      "tag": "LOSS",
+      "close_type": 4,
+      "close_reason": "stop_loss"
     },
     "1468411212": {
       "position_id": "1468411212",
@@ -2993,8 +3009,8 @@
     }
   },
   "orders": {
-    "841224182233811968": {
-      "order_id": "841224182233811968",
+    "845391778617214464": {
+      "order_id": "845391778617214464",
       "coin": "ALGOUSDT",
       "direction": "Short",
       "entry_price": 0.08798427,
@@ -3002,11 +3018,11 @@
       "braam_trade_id": "ALGOUSDT_20260809_CB_001",
       "status": "RESTING"
     },
-    "843277570828329984": {
-      "order_id": "843277570828329984",
+    "845391809751737344": {
+      "order_id": "845391809751737344",
       "coin": "TRXUSDT",
       "direction": "Long",
-      "entry_price": 0.32431858,
+      "entry_price": 0.33296598,
       "resting_at": "2026-08-14T16:03:00Z",
       "braam_trade_id": "TRXUSDT_20260814_CJ_001",
       "status": "RESTING"
