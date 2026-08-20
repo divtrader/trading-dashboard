@@ -1,43 +1,19 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-08-20T05:47:21Z",
+  "last_updated_iso": "2026-08-20T05:48:41Z",
   "mexc_account": {
-    "unrealized_pnl": 18.9176,
-    "equity": 2751.9559,
+    "unrealized_pnl": 20.2752,
+    "equity": 2753.3135,
     "available": 2178.0339,
     "position_margin": 0.0
   },
   "order_levels": {
     "checked": 4,
-    "in_sync": 2,
-    "drifted": [
-      "ONDO",
-      "ADA"
-    ],
+    "in_sync": 4,
+    "drifted": [],
     "reconciling": [],
-    "detail": [
-      {
-        "coin": "ONDO",
-        "trade_id": "ONDOUSDT_20260811_CB_001",
-        "status": "OPEN",
-        "fields": [
-          "tp1",
-          "tp2"
-        ],
-        "synced_at": null
-      },
-      {
-        "coin": "ADA",
-        "trade_id": "ADAUSDT_20260812_CB_001",
-        "status": "OPEN",
-        "fields": [
-          "tp1",
-          "tp2"
-        ],
-        "synced_at": null
-      }
-    ]
+    "detail": []
   },
   "api_keys": [
     {
@@ -98,7 +74,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$2,751.96",
+      "value": "$2,753.31",
       "status": "ok",
       "action": null
     },
