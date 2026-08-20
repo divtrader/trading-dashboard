@@ -1,9 +1,9 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-08-20T18:08Z",
+  "generated_utc": "2026-08-20T20:07Z",
   "master": "braam",
   "retention_hours": 48,
-  "trade_count": 15,
+  "trade_count": 16,
   "trades": [
     {
       "trade_id": "NEARUSDT_20260801_CJ_001",
@@ -95,7 +95,7 @@
       "date_opened": "2026-08-09",
       "time_opened_utc": "00:04",
       "sl_mode": "initial",
-      "feed_updated_utc": "2026-08-20T17:12Z"
+      "feed_updated_utc": "2026-08-20T20:04Z"
     },
     {
       "trade_id": "LTCUSDT_20260810_CB_001",
@@ -349,6 +349,29 @@
       "time_opened_utc": "04:04",
       "sl_mode": "initial",
       "feed_updated_utc": "2026-08-19T14:51Z"
+    },
+    {
+      "trade_id": "XLMUSDT_20260820_CJ_001",
+      "coin": "XLMUSDT",
+      "direction": "Long",
+      "trading_system": "John",
+      "conviction": "HIGH",
+      "leverage": 3,
+      "entry_price": 0.17216155,
+      "entry_lo": 0.1691981,
+      "entry_hi": 0.1810519,
+      "sl": 0.16738116,
+      "tp1": 0.19247231,
+      "tp2": 0.19863768,
+      "status": "PENDING",
+      "tp1_hit": false,
+      "tp2_hit": false,
+      "sl_hit": false,
+      "close_reason": null,
+      "date_opened": "2026-08-20",
+      "time_opened_utc": "20:04",
+      "sl_mode": "initial",
+      "feed_updated_utc": "2026-08-20T20:04Z"
     }
   ]
 }

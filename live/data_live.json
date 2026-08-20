@@ -1,31 +1,19 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-08-20T18:08:39Z",
+  "last_updated_iso": "2026-08-20T20:07:16Z",
   "mexc_account": {
-    "unrealized_pnl": 8.2129,
-    "equity": 2726.6523,
-    "available": 2442.1757,
+    "unrealized_pnl": 9.6433,
+    "equity": 2728.0826,
+    "available": 2305.5165,
     "position_margin": 135.7449
   },
   "order_levels": {
-    "checked": 2,
-    "in_sync": 1,
-    "drifted": [
-      "ALGO"
-    ],
+    "checked": 3,
+    "in_sync": 3,
+    "drifted": [],
     "reconciling": [],
-    "detail": [
-      {
-        "coin": "ALGO",
-        "trade_id": "ALGOUSDT_20260809_CB_001",
-        "status": "OPEN",
-        "fields": [
-          "tp2"
-        ],
-        "synced_at": null
-      }
-    ]
+    "detail": []
   },
   "api_keys": [
     {
@@ -78,7 +66,7 @@
       "key": "state_file",
       "tier": 1,
       "label": "Trade journal",
-      "value": "OK (988 records)",
+      "value": "OK (990 records)",
       "status": "ok",
       "action": null
     },
@@ -86,7 +74,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$2,726.65",
+      "value": "$2,728.08",
       "status": "ok",
       "action": null
     },
@@ -102,7 +90,7 @@
       "key": "orphan_orders",
       "tier": 1,
       "label": "Order reconciliation",
-      "value": "in sync (1 resting = journal)",
+      "value": "in sync (2 resting = journal)",
       "status": "ok",
       "action": null
     },
@@ -193,7 +181,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 0.3392,
+      "price_at_run": 0.3395,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-08-14",
@@ -211,9 +199,55 @@
       "live_funding_usd": null,
       "live_tp1_pnl_usd": null,
       "rehearsal": false
+    },
+    {
+      "trade_id": "XLMUSDT_20260820_CJ_001",
+      "coin": "XLMUSDT",
+      "direction": "Long",
+      "entry_price": 0.17216155,
+      "sl": 0.16738116,
+      "tp1": 0.19247231,
+      "tp2": 0.19863768,
+      "capital_usd": 136.43,
+      "leverage": 3,
+      "trading_system": "John",
+      "track_only": false,
+      "status": "PENDING",
+      "price_at_run": 0.1778,
+      "date_activated": null,
+      "time_activated_utc": null,
+      "date_opened": "2026-08-20",
+      "time_opened_utc": "20:04",
+      "conviction": "HIGH",
+      "tp1_hit": false,
+      "sl_moved_to_be": null,
+      "pnl_tp1_realized_usd": null,
+      "tp2_hit": false,
+      "live_executed": null,
+      "live_entry_fill": null,
+      "live_exit_fill": null,
+      "live_entry_slippage_pct": null,
+      "live_fees_usd": null,
+      "live_funding_usd": null,
+      "live_tp1_pnl_usd": null,
+      "rehearsal": false
     }
   ],
-  "recent_signals": [],
+  "recent_signals": [
+    {
+      "trade_id": "XLMUSDT_20260820_CJ_001",
+      "coin": "XLMUSDT",
+      "direction": "Long",
+      "trading_system": "John",
+      "entry_price": 0.17216155,
+      "tp1": 0.19247231,
+      "sl": 0.16738116,
+      "conviction": "HIGH",
+      "track_only": false,
+      "iso": "2026-08-20T20:04:00Z",
+      "rehearsal": false
+    }
+  ],
   "recent_opens": [
     {
       "trade_id": "HBARUSDT_20260812_CB_001",
@@ -3523,8 +3557,8 @@
         "closed_count": 13
       }
     },
-    "live_trade_count_total": 235,
-    "live_real_count": 212,
+    "live_trade_count_total": 236,
+    "live_real_count": 213,
     "live_rehearsal_count": 23
   }
 }
