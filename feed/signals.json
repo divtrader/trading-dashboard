@@ -1,9 +1,9 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-08-21T06:07Z",
+  "generated_utc": "2026-08-21T08:07Z",
   "master": "braam",
   "retention_hours": 48,
-  "trade_count": 15,
+  "trade_count": 14,
   "trades": [
     {
       "trade_id": "NEARUSDT_20260801_CJ_001",
@@ -27,29 +27,6 @@
       "time_opened_utc": "04:04",
       "sl_mode": "breakeven",
       "feed_updated_utc": "2026-08-19T21:31Z"
-    },
-    {
-      "trade_id": "XRPUSDT_20260807_CB_001",
-      "coin": "XRPUSDT",
-      "direction": "Short",
-      "trading_system": "Braam",
-      "conviction": "HIGH",
-      "leverage": 3,
-      "entry_price": 1.0522877,
-      "entry_lo": 1.04702626,
-      "entry_hi": 1.05754914,
-      "sl": 1.07154073,
-      "tp1": 0.99068703,
-      "tp2": 0.89068703,
-      "status": "CANCELLED",
-      "tp1_hit": false,
-      "tp2_hit": false,
-      "sl_hit": false,
-      "close_reason": "Entry window expired: unfilled 12.0d \u2265 72\u00d74H (288h) \u2014 mirrors backtest ENTRY_WINDOW",
-      "date_opened": "2026-08-07",
-      "time_opened_utc": "08:04",
-      "sl_mode": "initial",
-      "feed_updated_utc": "2026-08-19T08:04Z"
     },
     {
       "trade_id": "ALGOUSDT_20260809_CB_001",
