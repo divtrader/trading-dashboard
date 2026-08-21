@@ -1,5 +1,5 @@
 {
-  "last_updated_iso": "2026-08-21T12:07:07Z",
+  "last_updated_iso": "2026-08-21T13:49:08Z",
   "mexc_account": null,
   "api_keys": [
     {
@@ -32,29 +32,6 @@
     }
   ],
   "active_trades": [
-    {
-      "trade_id": "ALGOUSDT_20260809_CB_001",
-      "coin": "ALGOUSDT",
-      "direction": "Short",
-      "entry_price": 0.08798427,
-      "sl": 0.09034515,
-      "tp1": 0.0819,
-      "tp2": 0.0777,
-      "capital_usd": 100.0,
-      "leverage": 3,
-      "trading_system": "Braam",
-      "track_only": false,
-      "status": "OPEN",
-      "price_at_run": 0.0874,
-      "date_activated": "2026-08-20",
-      "time_activated_utc": "17:12",
-      "date_opened": "2026-08-09",
-      "time_opened_utc": "00:04",
-      "conviction": "MEDIUM",
-      "tp1_hit": false,
-      "sl_moved_to_be": false,
-      "pnl_tp1_realized_usd": null
-    },
     {
       "trade_id": "TRXUSDT_20260814_CJ_001",
       "coin": "TRXUSDT",
@@ -707,22 +684,6 @@
   ],
   "recent_closes": [
     {
-      "trade_id": "ETHUSDT_20260731_CJ_M_001",
-      "coin": "ETHUSDT",
-      "direction": "Long",
-      "status": "TP2_HIT",
-      "pnl_usd": 28.29,
-      "close_reason": "TP2 hit",
-      "date_closed": "2026-08-19",
-      "time_closed_utc": "12:00",
-      "trading_system": "John",
-      "won": true,
-      "close_iso": "2026-08-19T12:00:00Z",
-      "margin_usd": 100,
-      "fees_usd": 0.408,
-      "fees_modeled": true
-    },
-    {
       "trade_id": "DOGEUSDT_20260810_CJ_M_001",
       "coin": "DOGEUSDT",
       "direction": "Short",
@@ -1331,6 +1292,22 @@
       "fees_modeled": true
     },
     {
+      "trade_id": "ALGOUSDT_20260809_CB_001",
+      "coin": "ALGOUSDT",
+      "direction": "Short",
+      "status": "STOPPED",
+      "pnl_usd": -15.26,
+      "close_reason": "SL hit",
+      "date_closed": "2026-08-21",
+      "time_closed_utc": "07:46",
+      "trading_system": "Braam",
+      "won": false,
+      "close_iso": "2026-08-21T07:46:00Z",
+      "margin_usd": 100,
+      "fees_usd": 0.408,
+      "fees_modeled": true
+    },
+    {
       "trade_id": "LTCUSDT_20260819_CJ_M_001",
       "coin": "LTCUSDT",
       "direction": "Long",
@@ -1371,15 +1348,15 @@
     }
   ],
   "stats": {
-    "realized_pnl_usd": 947.9,
-    "realized_pnl_pct": 1.52,
+    "realized_pnl_usd": 932.64,
+    "realized_pnl_pct": 1.49,
     "peak_capital_usd": 3300,
     "peak_concurrent": 33,
     "peak_date": "2026-06-22",
     "deployed_trades": 639,
-    "return_on_peak_pct": 28.72,
-    "win_rate_pct": 33.2,
-    "closed_count": 624,
+    "return_on_peak_pct": 28.26,
+    "win_rate_pct": 33.1,
+    "closed_count": 625,
     "per_system": {
       "John": {
         "realized_pnl_usd": 546.42,
@@ -1392,16 +1369,16 @@
         "closed_count": 23
       },
       "Braam": {
-        "realized_pnl_usd": 356.24,
-        "win_rate_pct": 43.7,
-        "closed_count": 229
+        "realized_pnl_usd": 340.98,
+        "win_rate_pct": 43.5,
+        "closed_count": 230
       }
     },
     "real_only": {
-      "realized_pnl_usd": 87.56,
-      "realized_pnl_pct": 0.52,
-      "win_rate_pct": 39.5,
-      "closed_count": 167
+      "realized_pnl_usd": 72.3,
+      "realized_pnl_pct": 0.43,
+      "win_rate_pct": 39.3,
+      "closed_count": 168
     },
     "track_only": {
       "realized_pnl_usd": 860.34,
