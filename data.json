@@ -1,5 +1,5 @@
 {
-  "last_updated_iso": "2026-08-22T00:07:14Z",
+  "last_updated_iso": "2026-08-22T02:07:22Z",
   "mexc_account": null,
   "api_keys": [
     {
@@ -45,7 +45,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 0.3435,
+      "price_at_run": 0.3434,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-08-14",
@@ -68,7 +68,7 @@
       "trading_system": "John",
       "track_only": true,
       "status": "PENDING",
-      "price_at_run": 1.772,
+      "price_at_run": 1.78,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-08-16",
@@ -91,7 +91,7 @@
       "trading_system": "John",
       "track_only": true,
       "status": "PENDING",
-      "price_at_run": 4.164,
+      "price_at_run": 4.273,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-08-19",
@@ -114,7 +114,7 @@
       "trading_system": "John",
       "track_only": true,
       "status": "PENDING",
-      "price_at_run": 12.012,
+      "price_at_run": 12.048,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-08-19",
@@ -137,7 +137,7 @@
       "trading_system": "John",
       "track_only": true,
       "status": "PENDING",
-      "price_at_run": 0.0975,
+      "price_at_run": 0.0985,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-08-20",
@@ -160,7 +160,7 @@
       "trading_system": "John",
       "track_only": true,
       "status": "PENDING",
-      "price_at_run": 0.09172,
+      "price_at_run": 0.09176,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-08-20",
@@ -183,7 +183,7 @@
       "trading_system": "John",
       "track_only": true,
       "status": "PENDING",
-      "price_at_run": 0.8481,
+      "price_at_run": 0.8623,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-08-20",
@@ -206,7 +206,7 @@
       "trading_system": "John",
       "track_only": true,
       "status": "PENDING",
-      "price_at_run": 1.528,
+      "price_at_run": 1.557,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-08-20",
@@ -229,7 +229,7 @@
       "trading_system": "John",
       "track_only": true,
       "status": "PENDING",
-      "price_at_run": 0.3435,
+      "price_at_run": 0.3434,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-08-20",
@@ -252,7 +252,7 @@
       "trading_system": "John",
       "track_only": true,
       "status": "PENDING",
-      "price_at_run": 7.857,
+      "price_at_run": 7.871,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-08-20",
@@ -275,7 +275,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 0.2034,
+      "price_at_run": 0.2057,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-08-20",
@@ -290,7 +290,7 @@
       "coin": "XRPUSDT",
       "direction": "Long",
       "entry_price": 1.33613896,
-      "sl": 1.29139461,
+      "sl": 1.33613896,
       "tp1": 1.48050751,
       "tp2": 1.53111077,
       "capital_usd": 100,
@@ -298,15 +298,15 @@
       "trading_system": "John",
       "track_only": true,
       "status": "OPEN",
-      "price_at_run": 1.4559,
+      "price_at_run": 1.4856,
       "date_activated": "2026-08-21",
       "time_activated_utc": "08:00",
       "date_opened": "2026-08-21",
       "time_opened_utc": "08:04",
       "conviction": "MEDIUM",
-      "tp1_hit": false,
-      "sl_moved_to_be": null,
-      "pnl_tp1_realized_usd": null
+      "tp1_hit": true,
+      "sl_moved_to_be": true,
+      "pnl_tp1_realized_usd": 25.93
     },
     {
       "trade_id": "ALGOUSDT_20260821_CJ_001",
@@ -321,7 +321,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 0.0975,
+      "price_at_run": 0.0985,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-08-21",
@@ -344,30 +344,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 0.8481,
-      "date_activated": null,
-      "time_activated_utc": null,
-      "date_opened": "2026-08-21",
-      "time_opened_utc": "12:04",
-      "conviction": "MEDIUM",
-      "tp1_hit": false,
-      "sl_moved_to_be": null,
-      "pnl_tp1_realized_usd": null
-    },
-    {
-      "trade_id": "RENDERUSDT_20260821_CJ_001",
-      "coin": "RENDERUSDT",
-      "direction": "Long",
-      "entry_price": 1.49653744,
-      "sl": 1.45978684,
-      "tp1": 1.65443975,
-      "tp2": 1.68371804,
-      "capital_usd": 100,
-      "leverage": 3,
-      "trading_system": "John",
-      "track_only": false,
-      "status": "PENDING",
-      "price_at_run": 1.528,
+      "price_at_run": 0.8623,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-08-21",
@@ -390,7 +367,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "OPEN",
-      "price_at_run": 1.4559,
+      "price_at_run": 1.4856,
       "date_activated": "2026-08-21",
       "time_activated_utc": "18:46",
       "date_opened": "2026-08-21",
@@ -413,7 +390,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 1.975,
+      "price_at_run": 2.019,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-08-21",
@@ -436,7 +413,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 2518.16,
+      "price_at_run": 2509.8,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-08-21",
@@ -459,7 +436,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 0.65,
+      "price_at_run": 0.662,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-08-21",
@@ -482,7 +459,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 12.012,
+      "price_at_run": 12.048,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-08-22",
@@ -590,9 +567,19 @@
       "direction": "Long",
       "trading_system": "John",
       "entry_price": 1.33613896,
-      "tp1_hit": false,
+      "tp1_hit": true,
       "iso": "2026-08-21T08:00:00Z",
       "_iso_ms": 1787299200000
+    },
+    {
+      "trade_id": "RENDERUSDT_20260821_CJ_001",
+      "coin": "RENDERUSDT",
+      "direction": "Long",
+      "trading_system": "John",
+      "entry_price": 1.49653744,
+      "tp1_hit": false,
+      "iso": "2026-08-21T12:00:00Z",
+      "_iso_ms": 1787313600000
     },
     {
       "trade_id": "XRPUSDT_20260821_CJ_001",
@@ -606,22 +593,6 @@
     }
   ],
   "recent_closes": [
-    {
-      "trade_id": "LINKUSDT_20260811_CJ_M_001",
-      "coin": "LINKUSDT",
-      "direction": "Long",
-      "status": "TP2_HIT",
-      "pnl_usd": 35.64,
-      "close_reason": "TP2 hit",
-      "date_closed": "2026-08-19",
-      "time_closed_utc": "12:00",
-      "trading_system": "John",
-      "won": true,
-      "close_iso": "2026-08-19T12:00:00Z",
-      "margin_usd": 100,
-      "fees_usd": 0.408,
-      "fees_modeled": true
-    },
     {
       "trade_id": "RENDERUSDT_20260812_CB_001",
       "coin": "RENDERUSDT",
@@ -1231,6 +1202,22 @@
       "fees_modeled": true
     },
     {
+      "trade_id": "RENDERUSDT_20260821_CJ_001",
+      "coin": "RENDERUSDT",
+      "direction": "Long",
+      "status": "STOPPED",
+      "pnl_usd": -7.37,
+      "close_reason": "SL hit",
+      "date_closed": "2026-08-21",
+      "time_closed_utc": "16:00",
+      "trading_system": "John",
+      "won": false,
+      "close_iso": "2026-08-21T16:00:00Z",
+      "margin_usd": 100,
+      "fees_usd": 0.408,
+      "fees_modeled": true
+    },
+    {
       "trade_id": "HBARUSDT_20260819_CJ_M_002",
       "coin": "HBARUSDT",
       "direction": "Long",
@@ -1249,13 +1236,6 @@
   ],
   "recent_cancels": [
     {
-      "coin": "ADAUSDT",
-      "direction": "Long",
-      "trading_system": "John",
-      "close_reason": "Stale 26.0h \u2265 24h grace: Price $0.2161 is 24.7% above entry $0.1627",
-      "iso": "2026-08-21T14:04:00Z"
-    },
-    {
       "coin": "NEARUSDT",
       "direction": "Long",
       "trading_system": "John",
@@ -1263,22 +1243,29 @@
       "iso": "2026-08-21T22:04:00Z"
     }
   ],
-  "tp1_hits_open": [],
+  "tp1_hits_open": [
+    {
+      "coin": "XRPUSDT",
+      "direction": "Long",
+      "trading_system": "John",
+      "entry_price": 1.33613896
+    }
+  ],
   "stats": {
-    "realized_pnl_usd": 982.19,
-    "realized_pnl_pct": 1.57,
+    "realized_pnl_usd": 974.82,
+    "realized_pnl_pct": 1.55,
     "peak_capital_usd": 3300,
     "peak_concurrent": 33,
     "peak_date": "2026-06-22",
-    "deployed_trades": 641,
-    "return_on_peak_pct": 29.76,
+    "deployed_trades": 642,
+    "return_on_peak_pct": 29.54,
     "win_rate_pct": 33.3,
-    "closed_count": 627,
+    "closed_count": 628,
     "per_system": {
       "John": {
-        "realized_pnl_usd": 595.97,
+        "realized_pnl_usd": 588.6,
         "win_rate_pct": 26.7,
-        "closed_count": 374
+        "closed_count": 375
       },
       "William": {
         "realized_pnl_usd": 45.24,
@@ -1298,10 +1285,10 @@
       "closed_count": 168
     },
     "track_only": {
-      "realized_pnl_usd": 909.89,
-      "realized_pnl_pct": 1.98,
-      "win_rate_pct": 31.2,
-      "closed_count": 459
+      "realized_pnl_usd": 902.52,
+      "realized_pnl_pct": 1.96,
+      "win_rate_pct": 31.1,
+      "closed_count": 460
     }
   }
 }
