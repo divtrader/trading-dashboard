@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-22T06:07:24Z",
+  "updated": "2026-08-22T06:19:23Z",
   "positions": {
     "1414291495": {
       "position_id": "1414291495",
@@ -3032,8 +3032,16 @@
       "leverage": 3,
       "entry_price": 1.3737,
       "opened_at": "2026-08-21T18:46:12Z",
-      "status": "OPEN",
-      "braam_trade_id": "XRPUSDT_20260821_CJ_001"
+      "status": "CLOSED",
+      "braam_trade_id": "XRPUSDT_20260821_CJ_001",
+      "closed_at": "2026-08-22T02:30:19Z",
+      "close_price": 1.52,
+      "pnl_usd": 34.0397,
+      "margin_usd": 135.36,
+      "fees_usd": 0.53,
+      "tag": "WIN",
+      "close_type": 3,
+      "close_reason": "take_profit"
     },
     "1476923735": {
       "position_id": "1476923735",
@@ -3042,8 +3050,16 @@
       "leverage": 3,
       "entry_price": 1.845,
       "opened_at": "2026-08-22T05:10:48Z",
-      "status": "OPEN",
-      "braam_trade_id": "NEARUSDT_20260821_CJ_001"
+      "status": "CLOSED",
+      "braam_trade_id": "NEARUSDT_20260821_CJ_001",
+      "closed_at": "2026-08-22T05:12:19Z",
+      "close_price": 1.665,
+      "pnl_usd": -40.1365,
+      "margin_usd": 135.36,
+      "fees_usd": 0.5365,
+      "tag": "LOSS",
+      "close_type": 4,
+      "close_reason": "stop_loss"
     },
     "1476924251": {
       "position_id": "1476924251",
@@ -3052,8 +3068,16 @@
       "leverage": 3,
       "entry_price": 11.835,
       "opened_at": "2026-08-22T05:10:51Z",
-      "status": "OPEN",
-      "braam_trade_id": "LINKUSDT_20260822_CJ_001"
+      "status": "CLOSED",
+      "braam_trade_id": "LINKUSDT_20260822_CJ_001",
+      "closed_at": "2026-08-22T05:11:24Z",
+      "close_price": 10.888,
+      "pnl_usd": -33.2169,
+      "margin_usd": 136.4,
+      "fees_usd": 0.5454,
+      "tag": "LOSS",
+      "close_type": 4,
+      "close_reason": "stop_loss"
     }
   },
   "orders": {
