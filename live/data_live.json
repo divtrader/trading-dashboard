@@ -1,19 +1,52 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-08-23T12:07:04Z",
+  "last_updated_iso": "2026-08-23T13:53:59Z",
   "mexc_account": {
-    "unrealized_pnl": 51.7307,
-    "equity": 2730.7433,
-    "available": 1326.2313,
-    "position_margin": 534.2211
+    "unrealized_pnl": 65.1319,
+    "equity": 2762.2817,
+    "available": 1451.8083,
+    "position_margin": 426.7814
   },
   "order_levels": {
     "checked": 10,
-    "in_sync": 10,
-    "drifted": [],
+    "in_sync": 7,
+    "drifted": [
+      "LTC",
+      "ONDO",
+      "HBAR"
+    ],
     "reconciling": [],
-    "detail": []
+    "detail": [
+      {
+        "coin": "LTC",
+        "trade_id": "LTCUSDT_20260822_CJ_001",
+        "status": "OPEN",
+        "fields": [
+          "tp1",
+          "tp2"
+        ],
+        "synced_at": null
+      },
+      {
+        "coin": "ONDO",
+        "trade_id": "ONDOUSDT_20260823_CJ_001",
+        "status": "OPEN",
+        "fields": [
+          "tp2"
+        ],
+        "synced_at": null
+      },
+      {
+        "coin": "HBAR",
+        "trade_id": "HBARUSDT_20260823_CJ_001",
+        "status": "OPEN",
+        "fields": [
+          "tp2"
+        ],
+        "synced_at": null
+      }
+    ]
   },
   "api_keys": [
     {
@@ -74,7 +107,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$2,730.74",
+      "value": "$2,762.28",
       "status": "ok",
       "action": null
     },
@@ -98,7 +131,7 @@
       "key": "position_protection",
       "tier": 1,
       "label": "Position protection",
-      "value": "all protected (4 open, 4 pre-TP1 runners)",
+      "value": "all protected (4 open, 3 pre-TP1 runners)",
       "status": "ok",
       "action": null
     },
@@ -334,8 +367,8 @@
       "direction": "Long",
       "entry_price": 51.52014001,
       "sl": 50.09236771,
-      "tp1": 57.04950076,
-      "tp2": 59.20526458,
+      "tp1": 54.45,
+      "tp2": 58.49,
       "capital_usd": 134.0,
       "leverage": 3,
       "trading_system": "John",
@@ -399,7 +432,7 @@
       "entry_price": 0.35204442,
       "sl": 0.33291579,
       "tp1": 0.3832864,
-      "tp2": 0.42826841,
+      "tp2": 0.4205,
       "capital_usd": 134.0,
       "leverage": 3,
       "trading_system": "John",
@@ -431,7 +464,7 @@
       "entry_price": 0.07598433,
       "sl": 0.0733913,
       "tp1": 0.08030176,
-      "tp2": 0.0855074,
+      "tp2": 0.08436,
       "capital_usd": 134.0,
       "leverage": 3,
       "trading_system": "John",
