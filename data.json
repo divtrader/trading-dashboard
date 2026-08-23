@@ -1,5 +1,5 @@
 {
-  "last_updated_iso": "2026-08-23T14:30:21Z",
+  "last_updated_iso": "2026-08-23T14:31:53Z",
   "mexc_account": null,
   "api_keys": [
     {
@@ -378,29 +378,6 @@
       "pnl_tp1_realized_usd": null
     },
     {
-      "trade_id": "ONDOUSDT_20260823_CJ_001",
-      "coin": "ONDOUSDT",
-      "direction": "Long",
-      "entry_price": 0.35204442,
-      "sl": 0.33291579,
-      "tp1": 0.3832864,
-      "tp2": 0.4205,
-      "capital_usd": 100,
-      "leverage": 3,
-      "trading_system": "John",
-      "track_only": false,
-      "status": "OPEN",
-      "price_at_run": 0.3817,
-      "date_activated": "2026-08-23",
-      "time_activated_utc": "04:48",
-      "date_opened": "2026-08-23",
-      "time_opened_utc": "00:03",
-      "conviction": "MEDIUM",
-      "tp1_hit": false,
-      "sl_moved_to_be": null,
-      "pnl_tp1_realized_usd": null
-    },
-    {
       "trade_id": "HBARUSDT_20260823_CJ_001",
       "coin": "HBARUSDT",
       "direction": "Long",
@@ -584,22 +561,6 @@
     }
   ],
   "recent_closes": [
-    {
-      "trade_id": "UNIUSDT_20260817_CB_001",
-      "coin": "UNIUSDT",
-      "direction": "Short",
-      "status": "STOPPED",
-      "pnl_usd": -9.19,
-      "close_reason": "live MEXC exit: sl @ 3.43",
-      "date_closed": "2026-08-19",
-      "time_closed_utc": "15:05",
-      "trading_system": "Braam",
-      "won": false,
-      "close_iso": "2026-08-19T15:05:00Z",
-      "margin_usd": 100,
-      "fees_usd": 0.612,
-      "fees_modeled": true
-    },
     {
       "trade_id": "BNBUSDT_20260817_CB_001",
       "coin": "BNBUSDT",
@@ -1223,6 +1184,22 @@
       "margin_usd": 100,
       "fees_usd": 0.408,
       "fees_modeled": true
+    },
+    {
+      "trade_id": "ONDOUSDT_20260823_CJ_001",
+      "coin": "ONDOUSDT",
+      "direction": "Long",
+      "status": "CLOSED",
+      "pnl_usd": 25.27,
+      "close_reason": "live MEXC exit: tp2 @ 0.3834",
+      "date_closed": "2026-08-23",
+      "time_closed_utc": "14:17",
+      "trading_system": "John",
+      "won": true,
+      "close_iso": "2026-08-23T14:17:00Z",
+      "margin_usd": 100,
+      "fees_usd": 0.408,
+      "fees_modeled": true
     }
   ],
   "recent_cancels": [],
@@ -1235,20 +1212,20 @@
     }
   ],
   "stats": {
-    "realized_pnl_usd": 962.25,
-    "realized_pnl_pct": 1.52,
+    "realized_pnl_usd": 987.52,
+    "realized_pnl_pct": 1.55,
     "peak_capital_usd": 3300,
     "peak_concurrent": 33,
     "peak_date": "2026-06-22",
     "deployed_trades": 654,
-    "return_on_peak_pct": 29.16,
-    "win_rate_pct": 33.2,
-    "closed_count": 635,
+    "return_on_peak_pct": 29.92,
+    "win_rate_pct": 33.3,
+    "closed_count": 636,
     "per_system": {
       "John": {
-        "realized_pnl_usd": 576.03,
-        "win_rate_pct": 26.7,
-        "closed_count": 382
+        "realized_pnl_usd": 601.3,
+        "win_rate_pct": 26.9,
+        "closed_count": 383
       },
       "William": {
         "realized_pnl_usd": 45.24,
@@ -1262,10 +1239,10 @@
       }
     },
     "real_only": {
-      "realized_pnl_usd": 53.17,
-      "realized_pnl_pct": 0.31,
-      "win_rate_pct": 39.2,
-      "closed_count": 171
+      "realized_pnl_usd": 78.44,
+      "realized_pnl_pct": 0.46,
+      "win_rate_pct": 39.5,
+      "closed_count": 172
     },
     "track_only": {
       "realized_pnl_usd": 909.08,

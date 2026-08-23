@@ -1,32 +1,19 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-08-23T14:30:25Z",
+  "last_updated_iso": "2026-08-23T14:31:57Z",
   "mexc_account": {
-    "unrealized_pnl": 42.6714,
-    "equity": 2768.1161,
+    "unrealized_pnl": 43.5824,
+    "equity": 2769.0271,
     "available": 1587.1327,
     "position_margin": 319.7518
   },
   "order_levels": {
-    "checked": 10,
+    "checked": 9,
     "in_sync": 9,
-    "drifted": [
-      "HBAR"
-    ],
+    "drifted": [],
     "reconciling": [],
-    "detail": [
-      {
-        "coin": "HBAR",
-        "trade_id": "HBARUSDT_20260823_CJ_001",
-        "status": "OPEN",
-        "fields": [
-          "tp2",
-          "sl"
-        ],
-        "synced_at": null
-      }
-    ]
+    "detail": []
   },
   "api_keys": [
     {
@@ -87,7 +74,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$2,768.12",
+      "value": "$2,769.03",
       "status": "ok",
       "action": null
     },
@@ -401,38 +388,6 @@
       "live_exit_fill": null,
       "live_entry_slippage_pct": -0.0025,
       "live_fees_usd": 0.2362,
-      "live_funding_usd": null,
-      "live_tp1_pnl_usd": null,
-      "rehearsal": false
-    },
-    {
-      "trade_id": "ONDOUSDT_20260823_CJ_001",
-      "coin": "ONDOUSDT",
-      "direction": "Long",
-      "entry_price": 0.35204442,
-      "sl": 0.33291579,
-      "tp1": 0.3832864,
-      "tp2": 0.4205,
-      "capital_usd": 134.0,
-      "leverage": 3,
-      "trading_system": "John",
-      "track_only": false,
-      "status": "OPEN",
-      "price_at_run": 0.3817,
-      "date_activated": "2026-08-23",
-      "time_activated_utc": "04:48",
-      "date_opened": "2026-08-23",
-      "time_opened_utc": "00:03",
-      "conviction": "MEDIUM",
-      "tp1_hit": false,
-      "sl_moved_to_be": null,
-      "pnl_tp1_realized_usd": null,
-      "tp2_hit": false,
-      "live_executed": true,
-      "live_entry_fill": 0.352,
-      "live_exit_fill": null,
-      "live_entry_slippage_pct": -0.0126,
-      "live_fees_usd": 0.2407,
       "live_funding_usd": null,
       "live_tp1_pnl_usd": null,
       "rehearsal": false
@@ -3806,6 +3761,25 @@
       "won": false,
       "close_iso": "2026-08-22T05:12:00Z",
       "rehearsal": false
+    },
+    {
+      "trade_id": "ONDOUSDT_20260823_CJ_001",
+      "coin": "ONDOUSDT",
+      "direction": "Long",
+      "status": "CLOSED",
+      "pnl_usd": 28.06,
+      "close_reason": "live MEXC exit: tp2 @ 0.3834",
+      "date_closed": "2026-08-23",
+      "time_closed_utc": "14:17",
+      "trading_system": "John",
+      "live_entry_fill": 0.352,
+      "live_exit_fill": 0.3834,
+      "live_entry_slippage_pct": -0.0126,
+      "live_fees_usd": 0.5198,
+      "live_funding_usd": -0.008119,
+      "won": true,
+      "close_iso": "2026-08-23T14:17:00Z",
+      "rehearsal": false
     }
   ],
   "recent_cancels": [],
@@ -3818,15 +3792,15 @@
     }
   ],
   "stats": {
-    "realized_pnl_usd": -122.8,
-    "realized_pnl_pct": -0.76,
+    "realized_pnl_usd": -94.73,
+    "realized_pnl_pct": -0.58,
     "peak_capital_usd": 1293.69,
     "peak_concurrent": 10,
     "peak_date": "2026-08-11",
     "deployed_trades": 175,
-    "return_on_peak_pct": -9.49,
-    "win_rate_pct": 39.2,
-    "closed_count": 171,
+    "return_on_peak_pct": -7.32,
+    "win_rate_pct": 39.5,
+    "closed_count": 172,
     "per_system": {
       "Braam": {
         "realized_pnl_usd": -61.29,
@@ -3834,9 +3808,9 @@
         "closed_count": 155
       },
       "John": {
-        "realized_pnl_usd": -61.5,
-        "win_rate_pct": 18.8,
-        "closed_count": 16
+        "realized_pnl_usd": -33.44,
+        "win_rate_pct": 23.5,
+        "closed_count": 17
       }
     },
     "live_trade_count_total": 247,
