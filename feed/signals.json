@@ -1,6 +1,6 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-08-23T14:55Z",
+  "generated_utc": "2026-08-23T14:56Z",
   "master": "braam",
   "retention_hours": 48,
   "trade_count": 14,
@@ -111,13 +111,13 @@
       "tp1": 1.51986991,
       "tp2": 1.5841,
       "status": "CLOSED",
-      "tp1_hit": false,
+      "tp1_hit": true,
       "tp2_hit": false,
       "sl_hit": false,
       "close_reason": "live MEXC exit: tp2 @ 1.52",
       "date_opened": "2026-08-21",
       "time_opened_utc": "16:04",
-      "sl_mode": "initial",
+      "sl_mode": "breakeven",
       "feed_updated_utc": "2026-08-22T02:30Z"
     },
     {
@@ -271,15 +271,15 @@
       "sl": 0.352,
       "tp1": 0.3832864,
       "tp2": 0.4205,
-      "status": "OPEN",
+      "status": "TP2_HIT",
       "tp1_hit": true,
       "tp2_hit": false,
       "sl_hit": false,
-      "close_reason": null,
+      "close_reason": "live MEXC exit: tp2 @ 0.3834",
       "date_opened": "2026-08-23",
       "time_opened_utc": "00:03",
       "sl_mode": "breakeven",
-      "feed_updated_utc": "2026-08-23T14:03Z"
+      "feed_updated_utc": "2026-08-23T14:17Z"
     },
     {
       "trade_id": "HBARUSDT_20260823_CJ_001",
@@ -294,14 +294,15 @@
       "sl": 0.07598433,
       "tp1": 0.08030176,
       "tp2": 0.08436,
-      "status": "OPEN",
+      "status": "TP2_HIT",
       "tp1_hit": true,
       "tp2_hit": false,
       "sl_hit": false,
+      "close_reason": "live MEXC exit: tp2 @ 0.08033",
       "date_opened": "2026-08-23",
       "time_opened_utc": "00:03",
       "sl_mode": "breakeven",
-      "feed_updated_utc": "2026-08-23T05:17Z"
+      "feed_updated_utc": "2026-08-23T13:12Z"
     },
     {
       "trade_id": "RENDERUSDT_20260823_CJ_001",
