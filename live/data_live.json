@@ -1,11 +1,11 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-08-23T22:06:20Z",
+  "last_updated_iso": "2026-08-24T00:07:20Z",
   "mexc_account": {
-    "unrealized_pnl": 32.9363,
-    "equity": 2758.2826,
-    "available": 1588.0233,
+    "unrealized_pnl": 27.9457,
+    "equity": 2753.2109,
+    "available": 1587.6485,
     "position_margin": 319.7518
   },
   "order_levels": {
@@ -20,28 +20,28 @@
       "label": "MEXC AlgoTrading sub-account (live orders)",
       "name": "MEXC_ALGO_KEY",
       "expires": "2026-08-27",
-      "days_left": 4,
-      "status": "warn"
+      "days_left": 3,
+      "status": "urgent"
     },
     {
       "label": "GitHub PAT (dashboard deploy)",
       "name": "DASHBOARD_PAT",
       "expires": "2126-01-01",
-      "days_left": 36290,
+      "days_left": 36289,
       "status": "ok"
     },
     {
       "label": "Google Drive OAuth (journal sync)",
       "name": "GDRIVE_OAUTH_TOKEN",
       "expires": "2126-01-01",
-      "days_left": 36290,
+      "days_left": 36289,
       "status": "ok"
     },
     {
       "label": "Telegram Bot (trade alerts)",
       "name": "TELEGRAM_TOKEN",
       "expires": "2126-01-01",
-      "days_left": 36290,
+      "days_left": 36289,
       "status": "ok"
     }
   ],
@@ -74,7 +74,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$2,758.28",
+      "value": "$2,753.21",
       "status": "ok",
       "action": null
     },
@@ -106,15 +106,15 @@
       "key": "apikey_MEXC_ALGO_KEY",
       "tier": 1,
       "label": "MEXC AlgoTrading sub-account (live orders)",
-      "value": "4d left (2026-08-27)",
-      "status": "warn",
+      "value": "3d left (2026-08-27)",
+      "status": "urgent",
       "action": "Rotate key + update GitHub/Cloudflare secret."
     },
     {
       "key": "apikey_DASHBOARD_PAT",
       "tier": 1,
       "label": "GitHub PAT (dashboard deploy)",
-      "value": "36290d left (2126-01-01)",
+      "value": "36289d left (2126-01-01)",
       "status": "ok",
       "action": null
     },
@@ -122,7 +122,7 @@
       "key": "apikey_GDRIVE_OAUTH_TOKEN",
       "tier": 1,
       "label": "Google Drive OAuth (journal sync)",
-      "value": "36290d left (2126-01-01)",
+      "value": "36289d left (2126-01-01)",
       "status": "ok",
       "action": null
     },
@@ -130,7 +130,7 @@
       "key": "apikey_TELEGRAM_TOKEN",
       "tier": 1,
       "label": "Telegram Bot (trade alerts)",
-      "value": "36290d left (2126-01-01)",
+      "value": "36289d left (2126-01-01)",
       "status": "ok",
       "action": null
     }
@@ -140,16 +140,16 @@
       "trade_id": "TRXUSDT_20260814_CJ_001",
       "coin": "TRXUSDT",
       "direction": "Long",
-      "entry_price": 0.33282477,
-      "sl": 0.33054107,
-      "tp1": 0.36496533,
-      "tp2": 0.37001786,
+      "entry_price": 0.33088777,
+      "sl": 0.32886754,
+      "tp1": 0.36506166,
+      "tp2": 0.37396492,
       "capital_usd": 140.44,
       "leverage": 3,
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 0.3441,
+      "price_at_run": 0.3439,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-08-14",
@@ -181,7 +181,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 0.1986,
+      "price_at_run": 0.199,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-08-20",
@@ -245,7 +245,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 0.841,
+      "price_at_run": 0.845,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-08-21",
@@ -277,7 +277,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 2459.98,
+      "price_at_run": 2461.14,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-08-21",
@@ -309,7 +309,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 243.9,
+      "price_at_run": 236.8,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-08-22",
@@ -341,7 +341,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "OPEN",
-      "price_at_run": 52.32,
+      "price_at_run": 52.24,
       "date_activated": "2026-08-23",
       "time_activated_utc": "02:23",
       "date_opened": "2026-08-22",
@@ -373,7 +373,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "OPEN",
-      "price_at_run": 0.09292,
+      "price_at_run": 0.09339,
       "date_activated": "2026-08-23",
       "time_activated_utc": "04:48",
       "date_opened": "2026-08-23",
@@ -405,7 +405,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "OPEN",
-      "price_at_run": 0.3832,
+      "price_at_run": 0.3813,
       "date_activated": "2026-08-23",
       "time_activated_utc": "04:48",
       "date_opened": "2026-08-23",
@@ -421,7 +421,7 @@
       "live_entry_slippage_pct": -0.0126,
       "live_fees_usd": 0.7989,
       "live_funding_usd": -0.008119,
-      "live_tp1_pnl_usd": 28.0371,
+      "live_tp1_pnl_usd": 28.0327,
       "rehearsal": false
     },
     {
@@ -437,7 +437,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "OPEN",
-      "price_at_run": 0.08012,
+      "price_at_run": 0.07966,
       "date_activated": "2026-08-23",
       "time_activated_utc": "05:17",
       "date_opened": "2026-08-23",
@@ -453,7 +453,7 @@
       "live_entry_slippage_pct": -0.0057,
       "live_fees_usd": 0.7849,
       "live_funding_usd": -0.040553,
-      "live_tp1_pnl_usd": 17.8471,
+      "live_tp1_pnl_usd": 17.8523,
       "rehearsal": false
     }
   ],
