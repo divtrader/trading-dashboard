@@ -1,6 +1,6 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-08-26T14:06Z",
+  "generated_utc": "2026-08-26T15:56Z",
   "master": "braam",
   "retention_hours": 48,
   "trade_count": 14,
@@ -87,15 +87,15 @@
       "sl": 0.73095193,
       "tp1": 0.8238,
       "tp2": 0.9211,
-      "status": "OPEN",
+      "status": "STOPPED",
       "tp1_hit": false,
       "tp2_hit": false,
       "sl_hit": false,
-      "close_reason": null,
+      "close_reason": "live MEXC exit: sl @ 0.731",
       "date_opened": "2026-08-21",
       "time_opened_utc": "12:04",
       "sl_mode": "initial",
-      "feed_updated_utc": "2026-08-25T22:03Z"
+      "feed_updated_utc": "2026-08-26T15:01Z"
     },
     {
       "trade_id": "ETHUSDT_20260821_CJ_001",
@@ -269,9 +269,9 @@
       "entry_lo": 0.16757694,
       "entry_hi": 0.18441406,
       "sl": 0.16553807,
-      "tp1": 0.19490495,
-      "tp2": 0.20052386,
-      "status": "PENDING",
+      "tp1": 0.1914,
+      "tp2": 0.2059,
+      "status": "OPEN",
       "tp1_hit": false,
       "tp2_hit": false,
       "sl_hit": false,
@@ -279,7 +279,7 @@
       "date_opened": "2026-08-25",
       "time_opened_utc": "20:03",
       "sl_mode": "initial",
-      "feed_updated_utc": "2026-08-25T20:03Z"
+      "feed_updated_utc": "2026-08-26T15:04Z"
     },
     {
       "trade_id": "APTUSDT_20260826_CJ_001",
@@ -315,9 +315,9 @@
       "entry_lo": 1.33395862,
       "entry_hi": 1.46054138,
       "sl": 1.31303035,
-      "tp1": 1.56799924,
-      "tp2": 1.6153393,
-      "status": "PENDING",
+      "tp1": 1.5227,
+      "tp2": 1.8273,
+      "status": "OPEN",
       "tp1_hit": false,
       "tp2_hit": false,
       "sl_hit": false,
@@ -325,7 +325,7 @@
       "date_opened": "2026-08-26",
       "time_opened_utc": "12:03",
       "sl_mode": "initial",
-      "feed_updated_utc": "2026-08-26T12:03Z"
+      "feed_updated_utc": "2026-08-26T15:02Z"
     }
   ]
 }

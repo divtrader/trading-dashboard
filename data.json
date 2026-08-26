@@ -1,5 +1,5 @@
 {
-  "last_updated_iso": "2026-08-26T14:06:32Z",
+  "last_updated_iso": "2026-08-26T15:56:44Z",
   "mexc_account": null,
   "api_keys": [
     {
@@ -194,29 +194,6 @@
       "pnl_tp1_realized_usd": null
     },
     {
-      "trade_id": "SUIUSDT_20260821_CJ_001",
-      "coin": "SUIUSDT",
-      "direction": "Long",
-      "entry_price": 0.77348301,
-      "sl": 0.73095193,
-      "tp1": 0.8238,
-      "tp2": 0.9211,
-      "capital_usd": 100,
-      "leverage": 3,
-      "trading_system": "John",
-      "track_only": false,
-      "status": "OPEN",
-      "price_at_run": 0.7506,
-      "date_activated": "2026-08-25",
-      "time_activated_utc": "19:42",
-      "date_opened": "2026-08-21",
-      "time_opened_utc": "12:04",
-      "conviction": "MEDIUM",
-      "tp1_hit": false,
-      "sl_moved_to_be": null,
-      "pnl_tp1_realized_usd": null
-    },
-    {
       "trade_id": "ETHUSDT_20260821_CJ_001",
       "coin": "ETHUSDT",
       "direction": "Long",
@@ -337,16 +314,16 @@
       "direction": "Long",
       "entry_price": 0.17178622,
       "sl": 0.16553807,
-      "tp1": 0.19490495,
-      "tp2": 0.20052386,
+      "tp1": 0.1914,
+      "tp2": 0.2059,
       "capital_usd": 100,
       "leverage": 3,
       "trading_system": "John",
       "track_only": false,
-      "status": "PENDING",
+      "status": "OPEN",
       "price_at_run": 0.1751,
-      "date_activated": null,
-      "time_activated_utc": null,
+      "date_activated": "2026-08-26",
+      "time_activated_utc": "15:04",
       "date_opened": "2026-08-25",
       "time_opened_utc": "20:03",
       "conviction": "MEDIUM",
@@ -383,16 +360,16 @@
       "direction": "Long",
       "entry_price": 1.36560431,
       "sl": 1.31303035,
-      "tp1": 1.56799924,
-      "tp2": 1.6153393,
+      "tp1": 1.5227,
+      "tp2": 1.8273,
       "capital_usd": 100,
       "leverage": 3,
       "trading_system": "John",
       "track_only": false,
-      "status": "PENDING",
+      "status": "OPEN",
       "price_at_run": 1.3973,
-      "date_activated": null,
-      "time_activated_utc": null,
+      "date_activated": "2026-08-26",
+      "time_activated_utc": "15:02",
       "date_opened": "2026-08-26",
       "time_opened_utc": "12:03",
       "conviction": "HIGH",
@@ -413,18 +390,6 @@
       "conviction": "MEDIUM",
       "track_only": false,
       "iso": "2026-08-26T04:03:00Z"
-    },
-    {
-      "trade_id": "XRPUSDT_20260826_CJ_001",
-      "coin": "XRPUSDT",
-      "direction": "Long",
-      "trading_system": "John",
-      "entry_price": 1.36560431,
-      "tp1": 1.56799924,
-      "sl": 1.31303035,
-      "conviction": "HIGH",
-      "track_only": false,
-      "iso": "2026-08-26T12:03:00Z"
     }
   ],
   "recent_opens": [
@@ -457,25 +422,29 @@
       "tp1_hit": false,
       "iso": "2026-08-25T21:08:00Z",
       "_iso_ms": 1787692080000
+    },
+    {
+      "trade_id": "XRPUSDT_20260826_CJ_001",
+      "coin": "XRPUSDT",
+      "direction": "Long",
+      "trading_system": "John",
+      "entry_price": 1.36560431,
+      "tp1_hit": false,
+      "iso": "2026-08-26T15:02:00Z",
+      "_iso_ms": 1787756520000
+    },
+    {
+      "trade_id": "THETAUSDT_20260825_CJ_001",
+      "coin": "THETAUSDT",
+      "direction": "Long",
+      "trading_system": "John",
+      "entry_price": 0.17178622,
+      "tp1_hit": false,
+      "iso": "2026-08-26T15:04:00Z",
+      "_iso_ms": 1787756640000
     }
   ],
   "recent_closes": [
-    {
-      "trade_id": "DOGEUSDT_20260726_CJ_M_001",
-      "coin": "DOGEUSDT",
-      "direction": "Long",
-      "status": "TP2_HIT",
-      "pnl_usd": 29.71,
-      "close_reason": "TP2 hit",
-      "date_closed": "2026-08-19",
-      "time_closed_utc": "20:00",
-      "trading_system": "John",
-      "won": true,
-      "close_iso": "2026-08-19T20:00:00Z",
-      "margin_usd": 100,
-      "fees_usd": 0.408,
-      "fees_modeled": true
-    },
     {
       "trade_id": "LTCUSDT_20260729_CJ_M_001",
       "coin": "LTCUSDT",
@@ -1099,6 +1068,22 @@
       "margin_usd": 100,
       "fees_usd": 0.408,
       "fees_modeled": true
+    },
+    {
+      "trade_id": "SUIUSDT_20260821_CJ_001",
+      "coin": "SUIUSDT",
+      "direction": "Long",
+      "status": "STOPPED",
+      "pnl_usd": -16.48,
+      "close_reason": "live MEXC exit: sl @ 0.731",
+      "date_closed": "2026-08-26",
+      "time_closed_utc": "15:01",
+      "trading_system": "John",
+      "won": false,
+      "close_iso": "2026-08-26T15:01:00Z",
+      "margin_usd": 100,
+      "fees_usd": 0.408,
+      "fees_modeled": true
     }
   ],
   "recent_cancels": [],
@@ -1123,20 +1108,20 @@
     }
   ],
   "stats": {
-    "realized_pnl_usd": 908.58,
-    "realized_pnl_pct": 1.42,
+    "realized_pnl_usd": 892.1,
+    "realized_pnl_pct": 1.39,
     "peak_capital_usd": 3300,
     "peak_concurrent": 33,
     "peak_date": "2026-06-22",
-    "deployed_trades": 657,
-    "return_on_peak_pct": 27.53,
-    "win_rate_pct": 33.0,
-    "closed_count": 640,
+    "deployed_trades": 659,
+    "return_on_peak_pct": 27.03,
+    "win_rate_pct": 32.9,
+    "closed_count": 641,
     "per_system": {
       "John": {
-        "realized_pnl_usd": 522.36,
-        "win_rate_pct": 26.4,
-        "closed_count": 387
+        "realized_pnl_usd": 505.88,
+        "win_rate_pct": 26.3,
+        "closed_count": 388
       },
       "William": {
         "realized_pnl_usd": 45.24,
@@ -1150,10 +1135,10 @@
       }
     },
     "real_only": {
-      "realized_pnl_usd": 21.62,
-      "realized_pnl_pct": 0.12,
-      "win_rate_pct": 38.5,
-      "closed_count": 174
+      "realized_pnl_usd": 5.14,
+      "realized_pnl_pct": 0.03,
+      "win_rate_pct": 38.3,
+      "closed_count": 175
     },
     "track_only": {
       "realized_pnl_usd": 886.96,

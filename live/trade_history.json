@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-26T14:06:45Z",
+  "updated": "2026-08-26T15:56:58Z",
   "positions": {
     "1414291495": {
       "position_id": "1414291495",
@@ -3050,8 +3050,16 @@
       "leverage": 3,
       "entry_price": 0.7735,
       "opened_at": "2026-08-25T19:42:26Z",
-      "status": "OPEN",
-      "braam_trade_id": "SUIUSDT_20260821_CJ_001"
+      "status": "CLOSED",
+      "braam_trade_id": "SUIUSDT_20260821_CJ_001",
+      "closed_at": "2026-08-26T15:01:41Z",
+      "close_price": 0.731,
+      "pnl_usd": -22.7834,
+      "margin_usd": 135.36,
+      "fees_usd": 0.5506,
+      "tag": "LOSS",
+      "close_type": 4,
+      "close_reason": "stop_loss"
     },
     "1476389433": {
       "position_id": "1476389433",
@@ -3172,6 +3180,26 @@
       "opened_at": "2026-08-25T21:08:15Z",
       "status": "OPEN",
       "braam_trade_id": "RENDERUSDT_20260823_CJ_001"
+    },
+    "1481591381": {
+      "position_id": "1481591381",
+      "coin": "THETAUSDT",
+      "direction": "Long",
+      "leverage": 3,
+      "entry_price": 0.1718,
+      "opened_at": "2026-08-26T15:04:47Z",
+      "status": "OPEN",
+      "braam_trade_id": "THETAUSDT_20260825_CJ_001"
+    },
+    "1481585691": {
+      "position_id": "1481585691",
+      "coin": "XRPUSDT",
+      "direction": "Long",
+      "leverage": 3,
+      "entry_price": 1.3656,
+      "opened_at": "2026-08-26T15:02:22Z",
+      "status": "OPEN",
+      "braam_trade_id": "XRPUSDT_20260826_CJ_001"
     }
   },
   "orders": {
@@ -3211,15 +3239,6 @@
       "braam_trade_id": "TAOUSDT_20260822_CJ_001",
       "status": "RESTING"
     },
-    "847324218869118464": {
-      "order_id": "847324218869118464",
-      "coin": "THETAUSDT",
-      "direction": "Long",
-      "entry_price": 0.17178622,
-      "resting_at": "2026-08-25T20:03:00Z",
-      "braam_trade_id": "THETAUSDT_20260825_CJ_001",
-      "status": "RESTING"
-    },
     "847505650788735488": {
       "order_id": "847505650788735488",
       "coin": "APTUSDT",
@@ -3227,15 +3246,6 @@
       "entry_price": 0.53670639,
       "resting_at": "2026-08-26T04:03:00Z",
       "braam_trade_id": "APTUSDT_20260826_CJ_001",
-      "status": "RESTING"
-    },
-    "847565804332519936": {
-      "order_id": "847565804332519936",
-      "coin": "XRPUSDT",
-      "direction": "Long",
-      "entry_price": 1.36560431,
-      "resting_at": "2026-08-26T12:03:00Z",
-      "braam_trade_id": "XRPUSDT_20260826_CJ_001",
       "status": "RESTING"
     }
   },
