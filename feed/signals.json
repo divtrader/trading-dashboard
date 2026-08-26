@@ -1,9 +1,9 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-08-26T02:06Z",
+  "generated_utc": "2026-08-26T04:07Z",
   "master": "braam",
   "retention_hours": 48,
-  "trade_count": 12,
+  "trade_count": 13,
   "trades": [
     {
       "trade_id": "TRXUSDT_20260814_CJ_001",
@@ -35,12 +35,12 @@
       "trading_system": "John",
       "conviction": "HIGH",
       "leverage": 3,
-      "entry_price": 0.17216155,
-      "entry_lo": 0.1691981,
-      "entry_hi": 0.1810519,
-      "sl": 0.16738116,
-      "tp1": 0.19247231,
-      "tp2": 0.19863768,
+      "entry_price": 0.16704202,
+      "entry_lo": 0.16293404,
+      "entry_hi": 0.17936596,
+      "sl": 0.16063975,
+      "tp1": 0.19141049,
+      "tp2": 0.2313205,
       "status": "PENDING",
       "tp1_hit": false,
       "tp2_hit": false,
@@ -280,6 +280,29 @@
       "time_opened_utc": "20:03",
       "sl_mode": "initial",
       "feed_updated_utc": "2026-08-25T20:03Z"
+    },
+    {
+      "trade_id": "APTUSDT_20260826_CJ_001",
+      "coin": "APTUSDT",
+      "direction": "Long",
+      "trading_system": "John",
+      "conviction": "MEDIUM",
+      "leverage": 3,
+      "entry_price": 0.55101598,
+      "entry_lo": 0.53653196,
+      "entry_hi": 0.59446804,
+      "sl": 0.52944976,
+      "tp1": 0.64370655,
+      "tp2": 0.65110049,
+      "status": "PENDING",
+      "tp1_hit": false,
+      "tp2_hit": false,
+      "sl_hit": false,
+      "close_reason": null,
+      "date_opened": "2026-08-26",
+      "time_opened_utc": "04:03",
+      "sl_mode": "initial",
+      "feed_updated_utc": "2026-08-26T04:03Z"
     }
   ]
 }
