@@ -1,19 +1,32 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-08-26T06:06:17Z",
+  "last_updated_iso": "2026-08-26T06:08:07Z",
   "mexc_account": {
-    "unrealized_pnl": 20.7047,
-    "equity": 2701.6854,
+    "unrealized_pnl": 21.7225,
+    "equity": 2702.7031,
     "available": 1535.8502,
     "position_margin": 326.3314
   },
   "order_levels": {
     "checked": 10,
-    "in_sync": 10,
-    "drifted": [],
+    "in_sync": 9,
+    "drifted": [
+      "RENDER"
+    ],
     "reconciling": [],
-    "detail": []
+    "detail": [
+      {
+        "coin": "RENDER",
+        "trade_id": "RENDERUSDT_20260823_CJ_001",
+        "status": "OPEN",
+        "fields": [
+          "tp1",
+          "tp2"
+        ],
+        "synced_at": "2026-08-25T04:04:57.620708+00:00"
+      }
+    ]
   },
   "api_keys": [
     {
@@ -74,7 +87,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$2,701.69",
+      "value": "$2,702.70",
       "status": "ok",
       "action": null
     },
@@ -366,8 +379,8 @@
       "direction": "Long",
       "entry_price": 1.47168277,
       "sl": 1.41413425,
-      "tp1": 1.59355156,
-      "tp2": 1.76773149,
+      "tp1": 1.555,
+      "tp2": 1.626,
       "capital_usd": 136.75,
       "leverage": 3,
       "trading_system": "John",
