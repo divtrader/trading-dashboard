@@ -1,9 +1,9 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-08-26T16:11Z",
+  "generated_utc": "2026-08-26T16:38Z",
   "master": "braam",
   "retention_hours": 48,
-  "trade_count": 14,
+  "trade_count": 15,
   "trades": [
     {
       "trade_id": "TRXUSDT_20260814_CJ_001",
@@ -326,6 +326,29 @@
       "time_opened_utc": "12:03",
       "sl_mode": "initial",
       "feed_updated_utc": "2026-08-26T15:02Z"
+    },
+    {
+      "trade_id": "NEARUSDT_20260826_CJ_001",
+      "coin": "NEARUSDT",
+      "direction": "Long",
+      "trading_system": "John",
+      "conviction": "HIGH",
+      "leverage": 3,
+      "entry_price": 1.77544312,
+      "entry_lo": 1.74788624,
+      "entry_hi": 1.85811376,
+      "sl": 1.70452956,
+      "tp1": 1.909474,
+      "tp2": 2.08094087,
+      "status": "PENDING",
+      "tp1_hit": false,
+      "tp2_hit": false,
+      "sl_hit": false,
+      "close_reason": null,
+      "date_opened": "2026-08-26",
+      "time_opened_utc": "16:22",
+      "sl_mode": "initial",
+      "feed_updated_utc": "2026-08-26T16:22Z"
     }
   ]
 }
