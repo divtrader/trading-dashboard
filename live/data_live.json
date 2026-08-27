@@ -1,16 +1,16 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-08-27T20:07:14Z",
+  "last_updated_iso": "2026-08-27T22:07:05Z",
   "mexc_account": {
-    "unrealized_pnl": 54.4743,
-    "equity": 2728.8751,
-    "available": 1241.1827,
+    "unrealized_pnl": 62.2754,
+    "equity": 2736.6762,
+    "available": 1376.4627,
     "position_margin": 351.5375
   },
   "order_levels": {
-    "checked": 13,
-    "in_sync": 13,
+    "checked": 12,
+    "in_sync": 12,
     "drifted": [],
     "reconciling": [],
     "detail": []
@@ -74,7 +74,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$2,728.88",
+      "value": "$2,736.68",
       "status": "ok",
       "action": null
     },
@@ -90,7 +90,7 @@
       "key": "orphan_orders",
       "tier": 1,
       "label": "Order reconciliation",
-      "value": "in sync (8 resting = journal)",
+      "value": "in sync (7 resting = journal)",
       "status": "ok",
       "action": null
     },
@@ -149,7 +149,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 0.3377,
+      "price_at_run": 0.3376,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-08-14",
@@ -181,7 +181,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 0.1867,
+      "price_at_run": 0.1875,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-08-20",
@@ -213,7 +213,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 2498.54,
+      "price_at_run": 2509.18,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-08-21",
@@ -245,7 +245,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 249.1,
+      "price_at_run": 251.4,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-08-22",
@@ -277,7 +277,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "OPEN",
-      "price_at_run": 0.3745,
+      "price_at_run": 0.3816,
       "date_activated": "2026-08-23",
       "time_activated_utc": "04:48",
       "date_opened": "2026-08-23",
@@ -293,7 +293,7 @@
       "live_entry_slippage_pct": -0.0126,
       "live_fees_usd": 0.7989,
       "live_funding_usd": -0.008119,
-      "live_tp1_pnl_usd": 28.062319,
+      "live_tp1_pnl_usd": 27.9538,
       "rehearsal": false
     },
     {
@@ -309,7 +309,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "OPEN",
-      "price_at_run": 0.07845,
+      "price_at_run": 0.07906,
       "date_activated": "2026-08-23",
       "time_activated_utc": "05:17",
       "date_opened": "2026-08-23",
@@ -325,7 +325,7 @@
       "live_entry_slippage_pct": -0.0057,
       "live_fees_usd": 0.7849,
       "live_funding_usd": -0.040553,
-      "live_tp1_pnl_usd": 17.936753,
+      "live_tp1_pnl_usd": 17.7965,
       "rehearsal": false
     },
     {
@@ -341,7 +341,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "OPEN",
-      "price_at_run": 1.538,
+      "price_at_run": 1.547,
       "date_activated": "2026-08-25",
       "time_activated_utc": "21:08",
       "date_opened": "2026-08-23",
@@ -357,7 +357,7 @@
       "live_entry_slippage_pct": 0.0216,
       "live_fees_usd": 0.5207,
       "live_funding_usd": null,
-      "live_tp1_pnl_usd": 17.316,
+      "live_tp1_pnl_usd": 16.6271,
       "rehearsal": false
     },
     {
@@ -373,7 +373,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "OPEN",
-      "price_at_run": 0.1797,
+      "price_at_run": 0.1806,
       "date_activated": "2026-08-26",
       "time_activated_utc": "15:04",
       "date_opened": "2026-08-25",
@@ -393,38 +393,6 @@
       "rehearsal": false
     },
     {
-      "trade_id": "APTUSDT_20260826_CJ_001",
-      "coin": "APTUSDT",
-      "direction": "Long",
-      "entry_price": 0.55105183,
-      "sl": 0.53327763,
-      "tp1": 0.63958408,
-      "tp2": 0.64742481,
-      "capital_usd": 134.64,
-      "leverage": 3,
-      "trading_system": "John",
-      "track_only": false,
-      "status": "PENDING",
-      "price_at_run": 0.57,
-      "date_activated": null,
-      "time_activated_utc": null,
-      "date_opened": "2026-08-26",
-      "time_opened_utc": "04:03",
-      "conviction": "MEDIUM",
-      "tp1_hit": false,
-      "sl_moved_to_be": null,
-      "pnl_tp1_realized_usd": null,
-      "tp2_hit": false,
-      "live_executed": null,
-      "live_entry_fill": null,
-      "live_exit_fill": null,
-      "live_entry_slippage_pct": null,
-      "live_fees_usd": null,
-      "live_funding_usd": null,
-      "live_tp1_pnl_usd": null,
-      "rehearsal": false
-    },
-    {
       "trade_id": "XRPUSDT_20260826_CJ_001",
       "coin": "XRPUSDT",
       "direction": "Long",
@@ -437,7 +405,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "OPEN",
-      "price_at_run": 1.4513,
+      "price_at_run": 1.4543,
       "date_activated": "2026-08-26",
       "time_activated_utc": "15:02",
       "date_opened": "2026-08-26",
@@ -469,7 +437,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 1.917,
+      "price_at_run": 1.936,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-08-26",
@@ -501,7 +469,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 0.0908,
+      "price_at_run": 0.0915,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-08-27",
@@ -533,7 +501,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 0.08851,
+      "price_at_run": 0.08893,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-08-27",
@@ -555,18 +523,6 @@
   ],
   "recent_signals": [],
   "recent_opens": [
-    {
-      "trade_id": "RENDERUSDT_20260823_CJ_001",
-      "coin": "RENDERUSDT",
-      "direction": "Long",
-      "trading_system": "John",
-      "entry_price": 1.47168277,
-      "live_entry_fill": 1.472,
-      "tp1_hit": true,
-      "iso": "2026-08-25T21:08:00Z",
-      "_iso_ms": 1787692080000,
-      "rehearsal": false
-    },
     {
       "trade_id": "XRPUSDT_20260826_CJ_001",
       "coin": "XRPUSDT",
@@ -3919,7 +3875,15 @@
       "rehearsal": false
     }
   ],
-  "recent_cancels": [],
+  "recent_cancels": [
+    {
+      "coin": "APTUSDT",
+      "direction": "Long",
+      "trading_system": "John",
+      "close_reason": "Signal direction flipped to Short (5/8 signals) \u2014 original setup no longer valid",
+      "iso": "2026-08-27T22:03:00Z"
+    }
+  ],
   "tp1_hits_open": [
     {
       "coin": "ONDOUSDT",
