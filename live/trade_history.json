@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-28T14:06:51Z",
+  "updated": "2026-08-28T16:07:56Z",
   "positions": {
     "1414291495": {
       "position_id": "1414291495",
@@ -3168,8 +3168,16 @@
       "leverage": 3,
       "entry_price": 0.07598,
       "opened_at": "2026-08-23T05:17:06Z",
-      "status": "OPEN",
-      "braam_trade_id": "HBARUSDT_20260823_CJ_001"
+      "status": "CLOSED",
+      "braam_trade_id": "HBARUSDT_20260823_CJ_001",
+      "closed_at": "2026-08-28T15:59:33Z",
+      "close_price": 0.07593,
+      "pnl_usd": 17.1348,
+      "margin_usd": 134.0,
+      "fees_usd": 0.8491,
+      "tag": "WIN",
+      "close_type": 4,
+      "close_reason": "stop_loss"
     },
     "1480841056": {
       "position_id": "1480841056",
@@ -3218,6 +3226,26 @@
       "opened_at": "2026-08-28T10:07:35Z",
       "status": "OPEN",
       "braam_trade_id": "ALGOUSDT_20260827_CJ_001"
+    },
+    "1483695036": {
+      "position_id": "1483695036",
+      "coin": "DOGEUSDT",
+      "direction": "Long",
+      "leverage": 3,
+      "entry_price": 0.08543,
+      "opened_at": "2026-08-28T16:01:23Z",
+      "status": "OPEN",
+      "braam_trade_id": "DOGEUSDT_20260827_CJ_001"
+    },
+    "1483691527": {
+      "position_id": "1483691527",
+      "coin": "LINKUSDT",
+      "direction": "Long",
+      "leverage": 3,
+      "entry_price": 11.546,
+      "opened_at": "2026-08-28T16:00:27Z",
+      "status": "OPEN",
+      "braam_trade_id": "LINKUSDT_20260828_CJ_001"
     }
   },
   "orders": {
@@ -3266,22 +3294,13 @@
       "braam_trade_id": "NEARUSDT_20260826_CJ_001",
       "status": "RESTING"
     },
-    "847747026887676416": {
-      "order_id": "847747026887676416",
-      "coin": "DOGEUSDT",
+    "848350991749142080": {
+      "order_id": "848350991749142080",
+      "coin": "RENDERUSDT",
       "direction": "Long",
-      "entry_price": 0.08543355,
-      "resting_at": "2026-08-27T00:03:00Z",
-      "braam_trade_id": "DOGEUSDT_20260827_CJ_001",
-      "status": "RESTING"
-    },
-    "848109414010477056": {
-      "order_id": "848109414010477056",
-      "coin": "LINKUSDT",
-      "direction": "Long",
-      "entry_price": 11.54572483,
-      "resting_at": "2026-08-28T00:03:00Z",
-      "braam_trade_id": "LINKUSDT_20260828_CJ_001",
+      "entry_price": 1.39943129,
+      "resting_at": "2026-08-28T16:03:00Z",
+      "braam_trade_id": "RENDERUSDT_20260828_CJ_001",
       "status": "RESTING"
     }
   },
