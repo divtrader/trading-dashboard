@@ -1,6 +1,6 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-08-28T16:12Z",
+  "generated_utc": "2026-08-28T18:07Z",
   "master": "braam",
   "retention_hours": 48,
   "trade_count": 15,
@@ -64,7 +64,7 @@
       "sl": 2364.01679862,
       "tp1": 2656.98773929,
       "tp2": 2781.29640275,
-      "status": "PENDING",
+      "status": "OPEN",
       "tp1_hit": false,
       "tp2_hit": false,
       "sl_hit": false,
@@ -72,7 +72,7 @@
       "date_opened": "2026-08-21",
       "time_opened_utc": "20:04",
       "sl_mode": "initial",
-      "feed_updated_utc": "2026-08-21T20:04Z"
+      "feed_updated_utc": "2026-08-28T16:25Z"
     },
     {
       "trade_id": "TAOUSDT_20260822_CJ_001",
@@ -110,15 +110,15 @@
       "sl": 0.35204442,
       "tp1": 0.3832864,
       "tp2": 0.4205,
-      "status": "OPEN",
+      "status": "STOPPED_AFTER_TP1",
       "tp1_hit": true,
       "tp2_hit": false,
       "sl_hit": false,
-      "close_reason": null,
+      "close_reason": "live MEXC exit: sl @ 0.3518",
       "date_opened": "2026-08-23",
       "time_opened_utc": "00:03",
       "sl_mode": "breakeven",
-      "feed_updated_utc": "2026-08-23T14:03Z"
+      "feed_updated_utc": "2026-08-28T16:25Z"
     },
     {
       "trade_id": "HBARUSDT_20260823_CJ_001",
@@ -302,7 +302,7 @@
       "date_opened": "2026-08-27",
       "time_opened_utc": "00:03",
       "sl_mode": "initial",
-      "feed_updated_utc": "2026-08-28T16:01Z"
+      "feed_updated_utc": "2026-08-28T18:04Z"
     },
     {
       "trade_id": "LINKUSDT_20260828_CJ_001",
@@ -325,7 +325,7 @@
       "date_opened": "2026-08-28",
       "time_opened_utc": "00:03",
       "sl_mode": "initial",
-      "feed_updated_utc": "2026-08-28T16:00Z"
+      "feed_updated_utc": "2026-08-28T18:04Z"
     },
     {
       "trade_id": "RENDERUSDT_20260828_CJ_001",

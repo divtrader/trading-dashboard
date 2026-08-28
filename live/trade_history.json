@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-28T16:12:40Z",
+  "updated": "2026-08-28T18:07:49Z",
   "positions": {
     "1414291495": {
       "position_id": "1414291495",
@@ -3097,6 +3097,16 @@
       "close_type": 4,
       "close_reason": "stop_loss"
     },
+    "1483743225": {
+      "position_id": "1483743225",
+      "coin": "ETHUSDT",
+      "direction": "Long",
+      "leverage": 3,
+      "entry_price": 2409.8,
+      "opened_at": "2026-08-28T16:25:11Z",
+      "status": "OPEN",
+      "braam_trade_id": "ETHUSDT_20260821_CJ_001"
+    },
     "1476924251": {
       "position_id": "1476924251",
       "coin": "LINKUSDT",
@@ -3158,8 +3168,16 @@
       "leverage": 3,
       "entry_price": 0.352,
       "opened_at": "2026-08-23T04:48:27Z",
-      "status": "OPEN",
-      "braam_trade_id": "ONDOUSDT_20260823_CJ_001"
+      "status": "CLOSED",
+      "braam_trade_id": "ONDOUSDT_20260823_CJ_001",
+      "closed_at": "2026-08-28T16:25:11Z",
+      "close_price": 0.3518,
+      "pnl_usd": 27.2542,
+      "margin_usd": 134.0,
+      "fees_usd": 0.8636,
+      "tag": "WIN",
+      "close_type": 4,
+      "close_reason": "stop_loss"
     },
     "1477961868": {
       "position_id": "1477961868",
@@ -3265,15 +3283,6 @@
       "entry_price": 0.17154537,
       "resting_at": "2026-08-20T20:04:00Z",
       "braam_trade_id": "XLMUSDT_20260820_CJ_001",
-      "status": "RESTING"
-    },
-    "847747282500679168": {
-      "order_id": "847747282500679168",
-      "coin": "ETHUSDT",
-      "direction": "Long",
-      "entry_price": 2409.80010522,
-      "resting_at": "2026-08-21T20:04:00Z",
-      "braam_trade_id": "ETHUSDT_20260821_CJ_001",
       "status": "RESTING"
     },
     "847988847630513216": {
