@@ -1,9 +1,9 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-08-29T14:06Z",
+  "generated_utc": "2026-08-29T16:07Z",
   "master": "braam",
   "retention_hours": 48,
-  "trade_count": 16,
+  "trade_count": 17,
   "trades": [
     {
       "trade_id": "TRXUSDT_20260814_CJ_001",
@@ -18,15 +18,15 @@
       "sl": 0.32909274,
       "tp1": 0.36506963,
       "tp2": 0.37681451,
-      "status": "PENDING",
+      "status": "CANCELLED",
       "tp1_hit": false,
       "tp2_hit": false,
       "sl_hit": false,
-      "close_reason": null,
+      "close_reason": "Entry window expired: unfilled 15.0d \u2265 90\u00d74H (360h) \u2014 mirrors backtest ENTRY_WINDOW",
       "date_opened": "2026-08-14",
       "time_opened_utc": "16:03",
       "sl_mode": "initial",
-      "feed_updated_utc": "2026-08-14T16:03Z"
+      "feed_updated_utc": "2026-08-29T16:03Z"
     },
     {
       "trade_id": "XLMUSDT_20260820_CJ_001",
@@ -372,6 +372,29 @@
       "time_opened_utc": "08:03",
       "sl_mode": "initial",
       "feed_updated_utc": "2026-08-29T08:03Z"
+    },
+    {
+      "trade_id": "TRXUSDT_20260829_CJ_001",
+      "coin": "TRXUSDT",
+      "direction": "Long",
+      "trading_system": "John",
+      "conviction": "HIGH",
+      "leverage": 3,
+      "entry_price": 0.3308,
+      "entry_lo": 0.32903373,
+      "entry_hi": 0.3360988,
+      "sl": 0.32896428,
+      "tp1": 0.35453141,
+      "tp2": 0.36705148,
+      "status": "PENDING",
+      "tp1_hit": false,
+      "tp2_hit": false,
+      "sl_hit": false,
+      "close_reason": null,
+      "date_opened": "2026-08-29",
+      "time_opened_utc": "16:03",
+      "sl_mode": "initial",
+      "feed_updated_utc": "2026-08-29T16:03Z"
     }
   ]
 }
