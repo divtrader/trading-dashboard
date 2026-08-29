@@ -1,19 +1,32 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-08-29T00:07:24Z",
+  "last_updated_iso": "2026-08-29T00:48:15Z",
   "mexc_account": {
-    "unrealized_pnl": 14.4213,
-    "equity": 2676.6055,
+    "unrealized_pnl": 8.2189,
+    "equity": 2670.4032,
     "available": 1312.611,
     "position_margin": 669.2524
   },
   "order_levels": {
     "checked": 10,
-    "in_sync": 10,
-    "drifted": [],
+    "in_sync": 9,
+    "drifted": [
+      "ETH"
+    ],
     "reconciling": [],
-    "detail": []
+    "detail": [
+      {
+        "coin": "ETH",
+        "trade_id": "ETHUSDT_20260821_CJ_001",
+        "status": "OPEN",
+        "fields": [
+          "tp1",
+          "tp2"
+        ],
+        "synced_at": "2026-08-27T00:05:02.799655+00:00"
+      }
+    ]
   },
   "api_keys": [
     {
@@ -74,7 +87,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$2,676.61",
+      "value": "$2,670.40",
       "status": "ok",
       "action": null
     },
@@ -206,8 +219,8 @@
       "direction": "Long",
       "entry_price": 2409.80010522,
       "sl": 2364.01679862,
-      "tp1": 2656.98773929,
-      "tp2": 2781.29640275,
+      "tp1": 2519.76,
+      "tp2": 2629.42,
       "capital_usd": 135.34,
       "leverage": 3,
       "trading_system": "John",
