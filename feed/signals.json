@@ -1,9 +1,9 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-08-29T06:06Z",
+  "generated_utc": "2026-08-29T08:07Z",
   "master": "braam",
   "retention_hours": 48,
-  "trade_count": 15,
+  "trade_count": 16,
   "trades": [
     {
       "trade_id": "TRXUSDT_20260814_CJ_001",
@@ -349,6 +349,29 @@
       "time_opened_utc": "16:03",
       "sl_mode": "initial",
       "feed_updated_utc": "2026-08-28T16:03Z"
+    },
+    {
+      "trade_id": "ONDOUSDT_20260829_CJ_001",
+      "coin": "ONDOUSDT",
+      "direction": "Long",
+      "trading_system": "John",
+      "conviction": "MEDIUM",
+      "leverage": 3,
+      "entry_price": 0.33230878,
+      "entry_lo": 0.32246756,
+      "entry_hi": 0.36183244,
+      "sl": 0.32195085,
+      "tp1": 0.36238015,
+      "tp2": 0.4000983,
+      "status": "PENDING",
+      "tp1_hit": false,
+      "tp2_hit": false,
+      "sl_hit": false,
+      "close_reason": null,
+      "date_opened": "2026-08-29",
+      "time_opened_utc": "08:03",
+      "sl_mode": "initial",
+      "feed_updated_utc": "2026-08-29T08:03Z"
     }
   ]
 }
