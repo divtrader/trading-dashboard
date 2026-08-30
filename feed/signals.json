@@ -1,9 +1,9 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-08-30T16:07Z",
+  "generated_utc": "2026-08-30T18:07Z",
   "master": "braam",
   "retention_hours": 48,
-  "trade_count": 14,
+  "trade_count": 13,
   "trades": [
     {
       "trade_id": "TRXUSDT_20260814_CJ_001",
@@ -65,13 +65,13 @@
       "tp1": 2519.76,
       "tp2": 2629.42,
       "status": "OPEN",
-      "tp1_hit": false,
+      "tp1_hit": true,
       "tp2_hit": false,
       "sl_hit": false,
       "close_reason": null,
       "date_opened": "2026-08-21",
       "time_opened_utc": "20:04",
-      "sl_mode": "initial",
+      "sl_mode": "breakeven",
       "feed_updated_utc": "2026-08-29T02:03Z"
     },
     {
@@ -96,29 +96,6 @@
       "time_opened_utc": "16:03",
       "sl_mode": "initial",
       "feed_updated_utc": "2026-08-22T16:03Z"
-    },
-    {
-      "trade_id": "ONDOUSDT_20260823_CJ_001",
-      "coin": "ONDOUSDT",
-      "direction": "Long",
-      "trading_system": "John",
-      "conviction": "MEDIUM",
-      "leverage": 3,
-      "entry_price": 0.35204442,
-      "entry_lo": 0.34653885,
-      "entry_hi": 0.36856115,
-      "sl": 0.35204442,
-      "tp1": 0.3832864,
-      "tp2": 0.4205,
-      "status": "STOPPED_AFTER_TP1",
-      "tp1_hit": true,
-      "tp2_hit": false,
-      "sl_hit": false,
-      "close_reason": "live MEXC exit: sl @ 0.3518",
-      "date_opened": "2026-08-23",
-      "time_opened_utc": "00:03",
-      "sl_mode": "breakeven",
-      "feed_updated_utc": "2026-08-28T16:25Z"
     },
     {
       "trade_id": "THETAUSDT_20260825_CJ_001",
