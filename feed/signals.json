@@ -1,9 +1,9 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-08-30T22:06Z",
+  "generated_utc": "2026-08-31T00:07Z",
   "master": "braam",
   "retention_hours": 48,
-  "trade_count": 12,
+  "trade_count": 14,
   "trades": [
     {
       "trade_id": "TRXUSDT_20260814_CJ_001",
@@ -64,15 +64,15 @@
       "sl": 2364.01679862,
       "tp1": 2519.76,
       "tp2": 2629.42,
-      "status": "OPEN",
+      "status": "STOPPED_AFTER_TP1",
       "tp1_hit": true,
       "tp2_hit": false,
       "sl_hit": false,
-      "close_reason": null,
+      "close_reason": "live MEXC exit: sl @ 2409.79",
       "date_opened": "2026-08-21",
       "time_opened_utc": "20:04",
       "sl_mode": "breakeven",
-      "feed_updated_utc": "2026-08-29T02:03Z"
+      "feed_updated_utc": "2026-08-30T23:38Z"
     },
     {
       "trade_id": "TAOUSDT_20260822_CJ_001",
@@ -81,12 +81,12 @@
       "trading_system": "John",
       "conviction": "MEDIUM",
       "leverage": 3,
-      "entry_price": 213.82595854,
-      "entry_lo": 208.42691709,
-      "entry_hi": 230.02308291,
-      "sl": 207.72661897,
-      "tp1": 242.8342,
-      "tp2": 298.24676207,
+      "entry_price": 212.69043089,
+      "entry_lo": 207.30586179,
+      "entry_hi": 228.84413821,
+      "sl": 206.07674684,
+      "tp1": 254.04095576,
+      "tp2": 268.24650633,
       "status": "PENDING",
       "tp1_hit": false,
       "tp2_hit": false,
@@ -110,15 +110,15 @@
       "sl": 0.16553807,
       "tp1": 0.1914,
       "tp2": 0.2059,
-      "status": "OPEN",
+      "status": "STOPPED",
       "tp1_hit": false,
       "tp2_hit": false,
       "sl_hit": false,
-      "close_reason": null,
+      "close_reason": "live MEXC exit: sl @ 0.1653",
       "date_opened": "2026-08-25",
       "time_opened_utc": "20:03",
       "sl_mode": "initial",
-      "feed_updated_utc": "2026-08-26T15:04Z"
+      "feed_updated_utc": "2026-08-30T23:41Z"
     },
     {
       "trade_id": "XRPUSDT_20260826_CJ_001",
@@ -179,15 +179,15 @@
       "sl": 0.08539251,
       "tp1": 0.0923,
       "tp2": 0.10281497,
-      "status": "OPEN",
+      "status": "STOPPED",
       "tp1_hit": false,
       "tp2_hit": false,
       "sl_hit": false,
-      "close_reason": null,
+      "close_reason": "live MEXC exit: sl @ 0.08531",
       "date_opened": "2026-08-27",
       "time_opened_utc": "00:03",
       "sl_mode": "initial",
-      "feed_updated_utc": "2026-08-28T10:07Z"
+      "feed_updated_utc": "2026-08-30T23:23Z"
     },
     {
       "trade_id": "DOGEUSDT_20260827_CJ_001",
@@ -202,15 +202,15 @@
       "sl": 0.08271019,
       "tp1": 0.08951,
       "tp2": 0.09704962,
-      "status": "OPEN",
+      "status": "STOPPED",
       "tp1_hit": false,
       "tp2_hit": false,
       "sl_hit": false,
-      "close_reason": null,
+      "close_reason": "live MEXC exit: sl @ 0.08282",
       "date_opened": "2026-08-27",
       "time_opened_utc": "00:03",
       "sl_mode": "initial",
-      "feed_updated_utc": "2026-08-28T18:04Z"
+      "feed_updated_utc": "2026-08-30T23:17Z"
     },
     {
       "trade_id": "RENDERUSDT_20260828_CJ_001",
@@ -225,7 +225,7 @@
       "sl": 1.35310593,
       "tp1": 1.5150362,
       "tp2": 1.65278814,
-      "status": "PENDING",
+      "status": "OPEN",
       "tp1_hit": false,
       "tp2_hit": false,
       "sl_hit": false,
@@ -233,7 +233,7 @@
       "date_opened": "2026-08-28",
       "time_opened_utc": "16:03",
       "sl_mode": "initial",
-      "feed_updated_utc": "2026-08-28T16:03Z"
+      "feed_updated_utc": "2026-08-30T23:29Z"
     },
     {
       "trade_id": "ONDOUSDT_20260829_CJ_001",
@@ -280,6 +280,52 @@
       "time_opened_utc": "16:03",
       "sl_mode": "initial",
       "feed_updated_utc": "2026-08-29T16:03Z"
+    },
+    {
+      "trade_id": "AVAXUSDT_20260831_CJ_001",
+      "coin": "AVAXUSDT",
+      "direction": "Long",
+      "trading_system": "John",
+      "conviction": "MEDIUM",
+      "leverage": 3,
+      "entry_price": 6.95627461,
+      "entry_lo": 6.86154922,
+      "entry_hi": 7.24045078,
+      "sl": 6.82385305,
+      "tp1": 7.64216413,
+      "tp2": 8.05454922,
+      "status": "PENDING",
+      "tp1_hit": false,
+      "tp2_hit": false,
+      "sl_hit": false,
+      "close_reason": null,
+      "date_opened": "2026-08-31",
+      "time_opened_utc": "00:03",
+      "sl_mode": "initial",
+      "feed_updated_utc": "2026-08-31T00:03Z"
+    },
+    {
+      "trade_id": "ONDOUSDT_20260831_CJ_001",
+      "coin": "ONDOUSDT",
+      "direction": "Short",
+      "trading_system": "John",
+      "conviction": "MEDIUM",
+      "leverage": 3,
+      "entry_price": 0.35287068,
+      "entry_lo": 0.33942008,
+      "entry_hi": 0.35735421,
+      "sl": 0.3617926,
+      "tp1": 0.31177428,
+      "tp2": 0.30735421,
+      "status": "PENDING",
+      "tp1_hit": false,
+      "tp2_hit": false,
+      "sl_hit": false,
+      "close_reason": null,
+      "date_opened": "2026-08-31",
+      "time_opened_utc": "00:03",
+      "sl_mode": "initial",
+      "feed_updated_utc": "2026-08-31T00:03Z"
     }
   ]
 }

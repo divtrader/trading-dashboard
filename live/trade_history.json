@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-30T22:06:37Z",
+  "updated": "2026-08-31T00:07:55Z",
   "positions": {
     "1414291495": {
       "position_id": "1414291495",
@@ -3104,8 +3104,16 @@
       "leverage": 3,
       "entry_price": 2409.8,
       "opened_at": "2026-08-28T16:25:11Z",
-      "status": "OPEN",
-      "braam_trade_id": "ETHUSDT_20260821_CJ_001"
+      "status": "CLOSED",
+      "braam_trade_id": "ETHUSDT_20260821_CJ_001",
+      "closed_at": "2026-08-30T23:38:40Z",
+      "close_price": 2409.79,
+      "pnl_usd": 13.869,
+      "margin_usd": 135.34,
+      "fees_usd": 0.5511,
+      "tag": "WIN",
+      "close_type": 4,
+      "close_reason": "stop_loss"
     },
     "1476924251": {
       "position_id": "1476924251",
@@ -3222,8 +3230,16 @@
       "leverage": 3,
       "entry_price": 0.1718,
       "opened_at": "2026-08-26T15:04:47Z",
-      "status": "OPEN",
-      "braam_trade_id": "THETAUSDT_20260825_CJ_001"
+      "status": "CLOSED",
+      "braam_trade_id": "THETAUSDT_20260825_CJ_001",
+      "closed_at": "2026-08-30T23:41:42Z",
+      "close_price": 0.1653,
+      "pnl_usd": -15.4893,
+      "margin_usd": 135.65,
+      "fees_usd": 0.5571,
+      "tag": "LOSS",
+      "close_type": 4,
+      "close_reason": "stop_loss"
     },
     "1481585691": {
       "position_id": "1481585691",
@@ -3242,8 +3258,16 @@
       "leverage": 3,
       "entry_price": 0.08774,
       "opened_at": "2026-08-28T10:07:35Z",
-      "status": "OPEN",
-      "braam_trade_id": "ALGOUSDT_20260827_CJ_001"
+      "status": "CLOSED",
+      "braam_trade_id": "ALGOUSDT_20260827_CJ_001",
+      "closed_at": "2026-08-30T23:23:35Z",
+      "close_price": 0.08531,
+      "pnl_usd": -11.7905,
+      "margin_usd": 135.85,
+      "fees_usd": 0.5615,
+      "tag": "LOSS",
+      "close_type": 4,
+      "close_reason": "stop_loss"
     },
     "1483695036": {
       "position_id": "1483695036",
@@ -3252,8 +3276,16 @@
       "leverage": 3,
       "entry_price": 0.08543,
       "opened_at": "2026-08-28T16:01:23Z",
-      "status": "OPEN",
-      "braam_trade_id": "DOGEUSDT_20260827_CJ_001"
+      "status": "CLOSED",
+      "braam_trade_id": "DOGEUSDT_20260827_CJ_001",
+      "closed_at": "2026-08-30T23:17:10Z",
+      "close_price": 0.08282,
+      "pnl_usd": -12.6999,
+      "margin_usd": 135.85,
+      "fees_usd": 0.5523,
+      "tag": "LOSS",
+      "close_type": 4,
+      "close_reason": "stop_loss"
     },
     "1483691527": {
       "position_id": "1483691527",
@@ -3272,6 +3304,16 @@
       "tag": "LOSS",
       "close_type": 4,
       "close_reason": "stop_loss"
+    },
+    "1485446428": {
+      "position_id": "1485446428",
+      "coin": "RENDERUSDT",
+      "direction": "Long",
+      "leverage": 3,
+      "entry_price": 1.399,
+      "opened_at": "2026-08-30T23:29:36Z",
+      "status": "OPEN",
+      "braam_trade_id": "RENDERUSDT_20260828_CJ_001"
     }
   },
   "orders": {
@@ -3284,11 +3326,11 @@
       "braam_trade_id": "XLMUSDT_20260820_CJ_001",
       "status": "RESTING"
     },
-    "849015594278876224": {
-      "order_id": "849015594278876224",
+    "849196838623013440": {
+      "order_id": "849196838623013440",
       "coin": "TAOUSDT",
       "direction": "Long",
-      "entry_price": 213.82595854,
+      "entry_price": 212.69043089,
       "resting_at": "2026-08-22T16:03:00Z",
       "braam_trade_id": "TAOUSDT_20260822_CJ_001",
       "status": "RESTING"
@@ -3300,15 +3342,6 @@
       "entry_price": 1.77691742,
       "resting_at": "2026-08-26T16:22:00Z",
       "braam_trade_id": "NEARUSDT_20260826_CJ_001",
-      "status": "RESTING"
-    },
-    "848350991749142080": {
-      "order_id": "848350991749142080",
-      "coin": "RENDERUSDT",
-      "direction": "Long",
-      "entry_price": 1.39943129,
-      "resting_at": "2026-08-28T16:03:00Z",
-      "braam_trade_id": "RENDERUSDT_20260828_CJ_001",
       "status": "RESTING"
     },
     "848592562603305536": {
@@ -3327,6 +3360,24 @@
       "entry_price": 0.3308,
       "resting_at": "2026-08-29T16:03:00Z",
       "braam_trade_id": "TRXUSDT_20260829_CJ_001",
+      "status": "RESTING"
+    },
+    "849196562197657600": {
+      "order_id": "849196562197657600",
+      "coin": "AVAXUSDT",
+      "direction": "Long",
+      "entry_price": 6.95627461,
+      "resting_at": "2026-08-31T00:03:00Z",
+      "braam_trade_id": "AVAXUSDT_20260831_CJ_001",
+      "status": "RESTING"
+    },
+    "849196571273868352": {
+      "order_id": "849196571273868352",
+      "coin": "ONDOUSDT",
+      "direction": "Short",
+      "entry_price": 0.35287068,
+      "resting_at": "2026-08-31T00:03:00Z",
+      "braam_trade_id": "ONDOUSDT_20260831_CJ_001",
       "status": "RESTING"
     }
   },
