@@ -1,31 +1,19 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-09-01T09:00:13Z",
+  "last_updated_iso": "2026-09-01T09:01:35Z",
   "mexc_account": {
-    "unrealized_pnl": 11.8384,
-    "equity": 2638.2243,
+    "unrealized_pnl": 9.1097,
+    "equity": 2635.4956,
     "available": 1033.223,
     "position_margin": 400.7539
   },
   "order_levels": {
     "checked": 12,
-    "in_sync": 11,
-    "drifted": [
-      "UNI"
-    ],
+    "in_sync": 12,
+    "drifted": [],
     "reconciling": [],
-    "detail": [
-      {
-        "coin": "UNI",
-        "trade_id": "UNIUSDT_20260901_CJ_001",
-        "status": "PENDING",
-        "fields": [
-          "tp1"
-        ],
-        "synced_at": null
-      }
-    ]
+    "detail": []
   },
   "api_keys": [
     {
@@ -86,7 +74,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$2,638.22",
+      "value": "$2,635.50",
       "status": "ok",
       "action": null
     },
@@ -110,7 +98,7 @@
       "key": "position_protection",
       "tier": 1,
       "label": "Position protection",
-      "value": "all protected (3 open, 2 pre-TP1 runners)",
+      "value": "all protected (3 open, 3 pre-TP1 runners)",
       "status": "ok",
       "action": null
     },
@@ -512,10 +500,10 @@
       "leverage": 3,
       "trading_system": "John",
       "track_only": false,
-      "status": "PENDING",
+      "status": "OPEN",
       "price_at_run": 5.821,
-      "date_activated": null,
-      "time_activated_utc": null,
+      "date_activated": "2026-09-01",
+      "time_activated_utc": "08:26",
       "date_opened": "2026-09-01",
       "time_opened_utc": "08:03",
       "conviction": "MEDIUM",
@@ -523,31 +511,17 @@
       "sl_moved_to_be": null,
       "pnl_tp1_realized_usd": null,
       "tp2_hit": false,
-      "live_executed": null,
-      "live_entry_fill": null,
+      "live_executed": true,
+      "live_entry_fill": 5.687,
       "live_exit_fill": null,
-      "live_entry_slippage_pct": null,
-      "live_fees_usd": null,
+      "live_entry_slippage_pct": 0.0064,
+      "live_fees_usd": 0.2378,
       "live_funding_usd": null,
       "live_tp1_pnl_usd": null,
       "rehearsal": false
     }
   ],
-  "recent_signals": [
-    {
-      "trade_id": "UNIUSDT_20260901_CJ_001",
-      "coin": "UNIUSDT",
-      "direction": "Long",
-      "trading_system": "John",
-      "entry_price": 5.6866386,
-      "tp1": 5.816,
-      "sl": 5.47224083,
-      "conviction": "MEDIUM",
-      "track_only": false,
-      "iso": "2026-09-01T08:03:00Z",
-      "rehearsal": false
-    }
-  ],
+  "recent_signals": [],
   "recent_opens": [
     {
       "trade_id": "RENDERUSDT_20260828_CJ_001",
@@ -571,6 +545,18 @@
       "tp1_hit": false,
       "iso": "2026-09-01T01:48:00Z",
       "_iso_ms": 1788227280000,
+      "rehearsal": false
+    },
+    {
+      "trade_id": "UNIUSDT_20260901_CJ_001",
+      "coin": "UNIUSDT",
+      "direction": "Long",
+      "trading_system": "John",
+      "entry_price": 5.6866386,
+      "live_entry_fill": 5.687,
+      "tp1_hit": false,
+      "iso": "2026-09-01T08:26:00Z",
+      "_iso_ms": 1788251160000,
       "rehearsal": false
     }
   ],
@@ -4080,7 +4066,7 @@
     "peak_capital_usd": 1293.69,
     "peak_concurrent": 10,
     "peak_date": "2026-08-11",
-    "deployed_trades": 186,
+    "deployed_trades": 187,
     "return_on_peak_pct": -12.43,
     "win_rate_pct": 38.6,
     "closed_count": 184,
