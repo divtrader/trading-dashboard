@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-09-01T14:07:09+00:00",
+  "generated_at_utc": "2026-09-01T15:38:28+00:00",
   "all_time": {
     "total_trades": 653,
     "wins": 212,
@@ -6946,16 +6946,20 @@
         "pct": 1.724
       },
       {
+        "iso": "2026-08-28",
+        "pct": 1.471
+      },
+      {
         "iso": "2026-08-31",
         "pct": 1.134
       },
       {
         "iso": "2026-09-01",
-        "pct": 0.576
+        "pct": 0.755
       }
     ],
     "ours_pct": 51.264,
-    "spx_pct": 0.576
+    "spx_pct": 0.755
   },
   "by_direction": {
     "Long": {
@@ -7472,7 +7476,7 @@
       "system": "John",
       "pnl_usd": 7.89,
       "won": true,
-      "close_reason": "live MEXC exit: tp2 @ 5.687",
+      "close_reason": "live MEXC exit: sl @ 5.687 (stop at break-even after TP1; TP2 6.329 never reached \u2014 high 5.917)",
       "iso": "2026-09-01T13:02:00+00:00"
     },
     {
@@ -7575,24 +7579,24 @@
     "capital_pending_usd": 1300
   },
   "macro": {
-    "vix": 15.78,
+    "vix": 15.4,
     "vix_5d": [
-      15.45,
       15.21,
       14.51,
+      14.43,
       14.92,
-      15.78
+      15.4
     ],
-    "vix_ma14": 15.2,
-    "dxy": 99.56,
+    "vix_ma14": 15.12,
+    "dxy": 99.64,
     "dxy_5d": [
-      98.92,
       99.17,
       99.16,
+      99.7,
       99.43,
-      99.56
+      99.64
     ],
-    "dxy_ma14": 99.19,
+    "dxy_ma14": 99.24,
     "btc_price_last_seen": 77951.33,
     "btc_7d_change_pct": -1.475,
     "btc_30d_change_pct": 23.669,

@@ -1,5 +1,5 @@
 {
-  "last_updated_iso": "2026-09-01T14:07:06Z",
+  "last_updated_iso": "2026-09-01T15:38:24Z",
   "mexc_account": null,
   "api_keys": [
     {
@@ -1065,9 +1065,9 @@
       "trade_id": "UNIUSDT_20260901_CJ_001",
       "coin": "UNIUSDT",
       "direction": "Long",
-      "status": "TP2_HIT",
+      "status": "STOPPED_AFTER_TP1",
       "pnl_usd": 7.89,
-      "close_reason": "live MEXC exit: tp2 @ 5.687",
+      "close_reason": "live MEXC exit: sl @ 5.687 (stop at break-even after TP1; TP2 6.329 never reached \u2014 high 5.917)",
       "date_closed": "2026-09-01",
       "time_closed_utc": "13:02",
       "trading_system": "John",

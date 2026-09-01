@@ -1,10 +1,10 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-09-01T14:07:12Z",
+  "last_updated_iso": "2026-09-01T15:38:31Z",
   "mexc_account": {
-    "unrealized_pnl": 15.6114,
-    "equity": 2648.7403,
+    "unrealized_pnl": 20.314,
+    "equity": 2653.4429,
     "available": 1037.7527,
     "position_margin": 268.3089
   },
@@ -74,7 +74,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$2,648.74",
+      "value": "$2,653.44",
       "status": "ok",
       "action": null
     },
@@ -4088,9 +4088,9 @@
       "trade_id": "UNIUSDT_20260901_CJ_001",
       "coin": "UNIUSDT",
       "direction": "Long",
-      "status": "TP2_HIT",
+      "status": "STOPPED_AFTER_TP1",
       "pnl_usd": 6.53,
-      "close_reason": "live MEXC exit: tp2 @ 5.687",
+      "close_reason": "live MEXC exit: sl @ 5.687 (stop at break-even after TP1; TP2 6.329 never reached \u2014 high 5.917)",
       "date_closed": "2026-09-01",
       "time_closed_utc": "13:02",
       "trading_system": "John",
