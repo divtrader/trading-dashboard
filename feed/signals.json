@@ -1,9 +1,9 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-09-01T18:06Z",
+  "generated_utc": "2026-09-01T20:07Z",
   "master": "braam",
   "retention_hours": 48,
-  "trade_count": 21,
+  "trade_count": 22,
   "trades": [
     {
       "trade_id": "XLMUSDT_20260820_CJ_001",
@@ -127,12 +127,12 @@
       "trading_system": "John",
       "conviction": "HIGH",
       "leverage": 3,
-      "entry_price": 1.81455692,
-      "entry_lo": 1.76908538,
-      "entry_hi": 1.95097154,
-      "sl": 1.76199946,
-      "tp1": 2.00247254,
-      "tp2": 2.26000108,
+      "entry_price": 1.77489245,
+      "entry_lo": 1.7467849,
+      "entry_hi": 1.8592151,
+      "sl": 1.71036432,
+      "tp1": 1.99872019,
+      "tp2": 2.28227136,
       "status": "PENDING",
       "tp1_hit": false,
       "tp2_hit": false,
@@ -432,15 +432,15 @@
       "sl": 0.16841299,
       "tp1": 0.19176858,
       "tp2": 0.19927402,
-      "status": "PENDING",
+      "status": "CANCELLED",
       "tp1_hit": false,
       "tp2_hit": false,
       "sl_hit": false,
-      "close_reason": null,
+      "close_reason": "Signal direction flipped to Short (5/8 signals) \u2014 original setup no longer valid",
       "date_opened": "2026-09-01",
       "time_opened_utc": "12:04",
       "sl_mode": "initial",
-      "feed_updated_utc": "2026-09-01T12:04Z"
+      "feed_updated_utc": "2026-09-01T20:04Z"
     },
     {
       "trade_id": "TRXUSDT_20260901_CJ_001",
@@ -487,6 +487,29 @@
       "time_opened_utc": "16:03",
       "sl_mode": "initial",
       "feed_updated_utc": "2026-09-01T16:03Z"
+    },
+    {
+      "trade_id": "UNIUSDT_20260901_CJ_002",
+      "coin": "UNIUSDT",
+      "direction": "Long",
+      "trading_system": "John",
+      "conviction": "MEDIUM",
+      "leverage": 3,
+      "entry_price": 5.44631715,
+      "entry_lo": 5.29963429,
+      "entry_hi": 5.88636571,
+      "sl": 5.21655661,
+      "tp1": 5.845714,
+      "tp2": 6.49288679,
+      "status": "PENDING",
+      "tp1_hit": false,
+      "tp2_hit": false,
+      "sl_hit": false,
+      "close_reason": null,
+      "date_opened": "2026-09-01",
+      "time_opened_utc": "20:04",
+      "sl_mode": "initial",
+      "feed_updated_utc": "2026-09-01T20:04Z"
     }
   ]
 }
