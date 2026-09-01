@@ -1,19 +1,31 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-09-01T08:07:09Z",
+  "last_updated_iso": "2026-09-01T09:00:13Z",
   "mexc_account": {
-    "unrealized_pnl": 13.7662,
-    "equity": 2640.3899,
-    "available": 1033.1438,
-    "position_margin": 268.3089
+    "unrealized_pnl": 11.8384,
+    "equity": 2638.2243,
+    "available": 1033.223,
+    "position_margin": 400.7539
   },
   "order_levels": {
     "checked": 12,
-    "in_sync": 12,
-    "drifted": [],
+    "in_sync": 11,
+    "drifted": [
+      "UNI"
+    ],
     "reconciling": [],
-    "detail": []
+    "detail": [
+      {
+        "coin": "UNI",
+        "trade_id": "UNIUSDT_20260901_CJ_001",
+        "status": "PENDING",
+        "fields": [
+          "tp1"
+        ],
+        "synced_at": null
+      }
+    ]
   },
   "api_keys": [
     {
@@ -74,7 +86,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$2,640.39",
+      "value": "$2,638.22",
       "status": "ok",
       "action": null
     },
@@ -90,7 +102,7 @@
       "key": "orphan_orders",
       "tier": 1,
       "label": "Order reconciliation",
-      "value": "in sync (10 resting = journal)",
+      "value": "in sync (9 resting = journal)",
       "status": "ok",
       "action": null
     },
@@ -98,7 +110,7 @@
       "key": "position_protection",
       "tier": 1,
       "label": "Position protection",
-      "value": "all protected (2 open, 2 pre-TP1 runners)",
+      "value": "all protected (3 open, 2 pre-TP1 runners)",
       "status": "ok",
       "action": null
     },
@@ -494,8 +506,8 @@
       "direction": "Long",
       "entry_price": 5.6866386,
       "sl": 5.47224083,
-      "tp1": 6.134471,
-      "tp2": 6.51851835,
+      "tp1": 5.816,
+      "tp2": 6.329,
       "capital_usd": 132.22,
       "leverage": 3,
       "trading_system": "John",
@@ -528,7 +540,7 @@
       "direction": "Long",
       "trading_system": "John",
       "entry_price": 5.6866386,
-      "tp1": 6.134471,
+      "tp1": 5.816,
       "sl": 5.47224083,
       "conviction": "MEDIUM",
       "track_only": false,
