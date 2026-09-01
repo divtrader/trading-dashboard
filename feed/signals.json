@@ -1,9 +1,9 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-09-01T15:40Z",
+  "generated_utc": "2026-09-01T16:07Z",
   "master": "braam",
   "retention_hours": 48,
-  "trade_count": 20,
+  "trade_count": 21,
   "trades": [
     {
       "trade_id": "XLMUSDT_20260820_CJ_001",
@@ -311,12 +311,12 @@
       "trading_system": "John",
       "conviction": "MEDIUM",
       "leverage": 3,
-      "entry_price": 2404.41332764,
-      "entry_lo": 2368.24902972,
-      "entry_hi": 2512.90622139,
-      "sl": 2368.76203221,
-      "tp1": 2655.0421503,
-      "tp2": 2708.77593559,
+      "entry_price": 2362.17032597,
+      "entry_lo": 2340.18460847,
+      "entry_hi": 2428.12747845,
+      "sl": 2329.11492183,
+      "tp1": 2556.44128642,
+      "tp2": 2673.80015634,
       "status": "PENDING",
       "tp1_hit": false,
       "tp2_hit": false,
@@ -464,6 +464,29 @@
       "time_opened_utc": "12:04",
       "sl_mode": "initial",
       "feed_updated_utc": "2026-09-01T12:04Z"
+    },
+    {
+      "trade_id": "ALGOUSDT_20260901_CJ_001",
+      "coin": "ALGOUSDT",
+      "direction": "Long",
+      "trading_system": "John",
+      "conviction": "MEDIUM",
+      "leverage": 3,
+      "entry_price": 0.08537258,
+      "entry_lo": 0.08354515,
+      "entry_hi": 0.09085485,
+      "sl": 0.08330584,
+      "tp1": 0.09695283,
+      "tp2": 0.09918831,
+      "status": "PENDING",
+      "tp1_hit": false,
+      "tp2_hit": false,
+      "sl_hit": false,
+      "close_reason": null,
+      "date_opened": "2026-09-01",
+      "time_opened_utc": "16:03",
+      "sl_mode": "initial",
+      "feed_updated_utc": "2026-09-01T16:03Z"
     }
   ]
 }
