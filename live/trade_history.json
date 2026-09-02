@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-02T11:57:21Z",
+  "updated": "2026-09-02T11:58:59Z",
   "positions": {
     "1414291495": {
       "position_id": "1414291495",
@@ -3248,8 +3248,16 @@
       "leverage": 3,
       "entry_price": 1.3656,
       "opened_at": "2026-08-26T15:02:22Z",
-      "status": "OPEN",
-      "braam_trade_id": "XRPUSDT_20260826_CJ_001"
+      "status": "CLOSED",
+      "braam_trade_id": "XRPUSDT_20260826_CJ_001",
+      "closed_at": "2026-09-02T10:49:27Z",
+      "close_price": 1.3134,
+      "pnl_usd": -15.5665,
+      "margin_usd": 134.26,
+      "fees_usd": 0.5497,
+      "tag": "LOSS",
+      "close_type": 4,
+      "close_reason": "stop_loss"
     },
     "1483362908": {
       "position_id": "1483362908",
@@ -3314,6 +3322,16 @@
       "opened_at": "2026-08-30T23:29:36Z",
       "status": "OPEN",
       "braam_trade_id": "RENDERUSDT_20260828_CJ_001"
+    },
+    "1487699980": {
+      "position_id": "1487699980",
+      "coin": "ETHUSDT",
+      "direction": "Long",
+      "leverage": 3,
+      "entry_price": 2362.39,
+      "opened_at": "2026-09-02T10:32:11Z",
+      "status": "OPEN",
+      "braam_trade_id": "ETHUSDT_20260831_CJ_001"
     },
     "1486434636": {
       "position_id": "1486434636",
@@ -3396,15 +3414,6 @@
       "entry_price": 0.35735,
       "resting_at": "2026-08-31T00:03:00Z",
       "braam_trade_id": "ONDOUSDT_20260831_CJ_001",
-      "status": "RESTING"
-    },
-    "849981999065167360": {
-      "order_id": "849981999065167360",
-      "coin": "ETHUSDT",
-      "direction": "Long",
-      "entry_price": 2362.38523891,
-      "resting_at": "2026-08-31T04:04:00Z",
-      "braam_trade_id": "ETHUSDT_20260831_CJ_001",
       "status": "RESTING"
     },
     "849498591229752832": {
