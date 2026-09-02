@@ -1,9 +1,9 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-09-02T14:06Z",
+  "generated_utc": "2026-09-02T16:07Z",
   "master": "braam",
   "retention_hours": 48,
-  "trade_count": 19,
+  "trade_count": 21,
   "trades": [
     {
       "trade_id": "TAOUSDT_20260822_CJ_001",
@@ -441,6 +441,52 @@
       "time_opened_utc": "12:04",
       "sl_mode": "initial",
       "feed_updated_utc": "2026-09-02T12:04Z"
+    },
+    {
+      "trade_id": "XRPUSDT_20260902_CJ_001",
+      "coin": "XRPUSDT",
+      "direction": "Long",
+      "trading_system": "John",
+      "conviction": "MEDIUM",
+      "leverage": 3,
+      "entry_price": 1.30240186,
+      "entry_lo": 1.2787,
+      "entry_hi": 1.37350743,
+      "sl": 1.27443012,
+      "tp1": 1.43681962,
+      "tp2": 1.45793976,
+      "status": "PENDING",
+      "tp1_hit": false,
+      "tp2_hit": false,
+      "sl_hit": false,
+      "close_reason": null,
+      "date_opened": "2026-09-02",
+      "time_opened_utc": "16:04",
+      "sl_mode": "initial",
+      "feed_updated_utc": "2026-09-02T16:04Z"
+    },
+    {
+      "trade_id": "RENDERUSDT_20260902_CJ_001",
+      "coin": "RENDERUSDT",
+      "direction": "Short",
+      "trading_system": "John",
+      "conviction": "MEDIUM",
+      "leverage": 3,
+      "entry_price": 1.45583486,
+      "entry_lo": 1.36633027,
+      "entry_hi": 1.48566973,
+      "sl": 1.48914378,
+      "tp1": 1.26136895,
+      "tp2": 1.23671245,
+      "status": "PENDING",
+      "tp1_hit": false,
+      "tp2_hit": false,
+      "sl_hit": false,
+      "close_reason": null,
+      "date_opened": "2026-09-02",
+      "time_opened_utc": "16:04",
+      "sl_mode": "initial",
+      "feed_updated_utc": "2026-09-02T16:04Z"
     }
   ]
 }
