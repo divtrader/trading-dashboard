@@ -1,9 +1,9 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-09-03T15:53Z",
+  "generated_utc": "2026-09-03T16:07Z",
   "master": "braam",
   "retention_hours": 48,
-  "trade_count": 21,
+  "trade_count": 22,
   "trades": [
     {
       "trade_id": "TAOUSDT_20260822_CJ_001",
@@ -487,6 +487,29 @@
       "time_opened_utc": "12:03",
       "sl_mode": "initial",
       "feed_updated_utc": "2026-09-03T12:03Z"
+    },
+    {
+      "trade_id": "DOGEUSDT_20260903_CJ_001",
+      "coin": "DOGEUSDT",
+      "direction": "Long",
+      "trading_system": "John",
+      "conviction": "MEDIUM",
+      "leverage": 3,
+      "entry_price": 0.08541794,
+      "entry_lo": 0.08368087,
+      "entry_hi": 0.09062913,
+      "sl": 0.08365258,
+      "tp1": 0.09611321,
+      "tp2": 0.09921483,
+      "status": "PENDING",
+      "tp1_hit": false,
+      "tp2_hit": false,
+      "sl_hit": false,
+      "close_reason": null,
+      "date_opened": "2026-09-03",
+      "time_opened_utc": "16:03",
+      "sl_mode": "initial",
+      "feed_updated_utc": "2026-09-03T16:03Z"
     }
   ]
 }
