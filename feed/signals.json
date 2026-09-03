@@ -1,6 +1,6 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-09-03T18:06Z",
+  "generated_utc": "2026-09-03T20:08Z",
   "master": "braam",
   "retention_hours": 48,
   "trade_count": 22,
@@ -234,29 +234,6 @@
       "time_opened_utc": "20:04",
       "sl_mode": "initial",
       "feed_updated_utc": "2026-09-03T02:51Z"
-    },
-    {
-      "trade_id": "XLMUSDT_20260901_CJ_001",
-      "coin": "XLMUSDT",
-      "direction": "Long",
-      "trading_system": "John",
-      "conviction": "HIGH",
-      "leverage": 3,
-      "entry_price": 0.17167801,
-      "entry_lo": 0.16795602,
-      "entry_hi": 0.18284398,
-      "sl": 0.16841299,
-      "tp1": 0.19176858,
-      "tp2": 0.19927402,
-      "status": "CANCELLED",
-      "tp1_hit": false,
-      "tp2_hit": false,
-      "sl_hit": false,
-      "close_reason": "Signal direction flipped to Short (5/8 signals) \u2014 original setup no longer valid",
-      "date_opened": "2026-09-01",
-      "time_opened_utc": "12:04",
-      "sl_mode": "initial",
-      "feed_updated_utc": "2026-09-01T20:04Z"
     },
     {
       "trade_id": "TRXUSDT_20260901_CJ_001",
@@ -510,6 +487,29 @@
       "time_opened_utc": "16:03",
       "sl_mode": "initial",
       "feed_updated_utc": "2026-09-03T16:03Z"
+    },
+    {
+      "trade_id": "THETAUSDT_20260903_CJ_001",
+      "coin": "THETAUSDT",
+      "direction": "Long",
+      "trading_system": "John",
+      "conviction": "MEDIUM",
+      "leverage": 3,
+      "entry_price": 0.17210895,
+      "entry_lo": 0.1682224,
+      "entry_hi": 0.1837686,
+      "sl": 0.16816379,
+      "tp1": 0.19554654,
+      "tp2": 0.20067243,
+      "status": "PENDING",
+      "tp1_hit": false,
+      "tp2_hit": false,
+      "sl_hit": false,
+      "close_reason": null,
+      "date_opened": "2026-09-03",
+      "time_opened_utc": "20:04",
+      "sl_mode": "initial",
+      "feed_updated_utc": "2026-09-03T20:04Z"
     }
   ]
 }
