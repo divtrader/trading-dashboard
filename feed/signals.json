@@ -1,9 +1,9 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-09-03T12:07Z",
+  "generated_utc": "2026-09-03T13:12Z",
   "master": "braam",
   "retention_hours": 48,
-  "trade_count": 22,
+  "trade_count": 21,
   "trades": [
     {
       "trade_id": "TAOUSDT_20260822_CJ_001",
@@ -177,8 +177,8 @@
       "entry_lo": 0.3383,
       "entry_hi": 0.3637,
       "sl": 0.36535102,
-      "tp1": 0.3088271,
-      "tp2": 0.30549797,
+      "tp1": 0.3402,
+      "tp2": 0.3261,
       "status": "PENDING",
       "tp1_hit": false,
       "tp2_hit": false,
@@ -234,29 +234,6 @@
       "time_opened_utc": "20:04",
       "sl_mode": "initial",
       "feed_updated_utc": "2026-09-03T02:51Z"
-    },
-    {
-      "trade_id": "UNIUSDT_20260901_CJ_001",
-      "coin": "UNIUSDT",
-      "direction": "Long",
-      "trading_system": "John",
-      "conviction": "MEDIUM",
-      "leverage": 3,
-      "entry_price": 5.6866386,
-      "entry_lo": 5.58357514,
-      "entry_hi": 5.995829,
-      "sl": 5.47224083,
-      "tp1": 5.816,
-      "tp2": 6.329,
-      "status": "STOPPED_AFTER_TP1",
-      "tp1_hit": true,
-      "tp2_hit": false,
-      "sl_hit": false,
-      "close_reason": "live MEXC exit: sl @ 5.687 (stop at break-even after TP1; TP2 6.329 never reached \u2014 high 5.917)",
-      "date_opened": "2026-09-01",
-      "time_opened_utc": "08:03",
-      "sl_mode": "breakeven",
-      "feed_updated_utc": "2026-09-01T13:02Z"
     },
     {
       "trade_id": "XLMUSDT_20260901_CJ_001",
