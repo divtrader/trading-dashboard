@@ -1,19 +1,34 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-09-03T14:06:51Z",
+  "last_updated_iso": "2026-09-03T15:51:12Z",
   "mexc_account": {
-    "unrealized_pnl": 30.7417,
-    "equity": 2655.5835,
-    "available": 511.4389,
-    "position_margin": 522.6818
+    "unrealized_pnl": 5.8028,
+    "equity": 2641.8141,
+    "available": 995.2795,
+    "position_margin": 181.7463
   },
   "order_levels": {
-    "checked": 16,
-    "in_sync": 16,
-    "drifted": [],
-    "reconciling": [],
-    "detail": []
+    "checked": 14,
+    "in_sync": 13,
+    "drifted": [
+      "RENDER"
+    ],
+    "reconciling": [
+      "ONDO",
+      "TAO"
+    ],
+    "detail": [
+      {
+        "coin": "RENDER",
+        "trade_id": "RENDERUSDT_20260902_CJ_001",
+        "status": "PENDING",
+        "fields": [
+          "tp1"
+        ],
+        "synced_at": "2026-09-03T00:05:29.283841+00:00"
+      }
+    ]
   },
   "api_keys": [
     {
@@ -74,7 +89,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$2,655.58",
+      "value": "$2,641.81",
       "status": "ok",
       "action": null
     },
@@ -90,7 +105,7 @@
       "key": "orphan_orders",
       "tier": 1,
       "label": "Order reconciliation",
-      "value": "in sync (12 resting = journal)",
+      "value": "in sync (11 resting = journal)",
       "status": "ok",
       "action": null
     },
@@ -98,7 +113,7 @@
       "key": "position_protection",
       "tier": 1,
       "label": "Position protection",
-      "value": "all protected (4 open, 4 pre-TP1 runners)",
+      "value": "all protected (3 open, 1 pre-TP1 runners)",
       "status": "ok",
       "action": null
     },
@@ -526,8 +541,8 @@
       "direction": "Short",
       "entry_price": 1.46099094,
       "sl": 1.49231342,
-      "tp1": 1.2618994,
-      "tp2": 1.25198188,
+      "tp1": 1.4,
+      "tp2": 1.275,
       "capital_usd": 131.13,
       "leverage": 3,
       "trading_system": "John",
