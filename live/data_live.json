@@ -1,34 +1,19 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-09-03T15:51:12Z",
+  "last_updated_iso": "2026-09-03T15:53:02Z",
   "mexc_account": {
-    "unrealized_pnl": 5.8028,
-    "equity": 2641.8141,
+    "unrealized_pnl": 4.9472,
+    "equity": 2640.9585,
     "available": 995.2795,
     "position_margin": 181.7463
   },
   "order_levels": {
     "checked": 14,
-    "in_sync": 13,
-    "drifted": [
-      "RENDER"
-    ],
-    "reconciling": [
-      "ONDO",
-      "TAO"
-    ],
-    "detail": [
-      {
-        "coin": "RENDER",
-        "trade_id": "RENDERUSDT_20260902_CJ_001",
-        "status": "PENDING",
-        "fields": [
-          "tp1"
-        ],
-        "synced_at": "2026-09-03T00:05:29.283841+00:00"
-      }
-    ]
+    "in_sync": 14,
+    "drifted": [],
+    "reconciling": [],
+    "detail": []
   },
   "api_keys": [
     {
@@ -89,7 +74,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$2,641.81",
+      "value": "$2,640.96",
       "status": "ok",
       "action": null
     },
@@ -113,9 +98,9 @@
       "key": "position_protection",
       "tier": 1,
       "label": "Position protection",
-      "value": "all protected (3 open, 1 pre-TP1 runners)",
-      "status": "ok",
-      "action": null
+      "value": "\ud83d\udd34 1 NAKED: RENDERUSDT",
+      "status": "urgent",
+      "action": "Position(s) with NO stop-loss on MEXC \u2014 place SL NOW: RENDERUSDT"
     },
     {
       "key": "apikey_MEXC_ALGO_KEY",
@@ -234,7 +219,7 @@
       "date_opened": "2026-08-28",
       "time_opened_utc": "16:03",
       "conviction": "MEDIUM",
-      "tp1_hit": false,
+      "tp1_hit": true,
       "sl_moved_to_be": null,
       "pnl_tp1_realized_usd": null,
       "tp2_hit": false,
@@ -242,9 +227,9 @@
       "live_entry_fill": 1.399,
       "live_exit_fill": null,
       "live_entry_slippage_pct": -0.0308,
-      "live_fees_usd": 0.2409,
+      "live_fees_usd": 0.5106,
       "live_funding_usd": null,
-      "live_tp1_pnl_usd": null,
+      "live_tp1_pnl_usd": 14.5517,
       "rehearsal": false
     },
     {
@@ -312,38 +297,6 @@
       "rehearsal": false
     },
     {
-      "trade_id": "ONDOUSDT_20260831_CJ_001",
-      "coin": "ONDOUSDT",
-      "direction": "Short",
-      "entry_price": 0.35735,
-      "sl": 0.36535102,
-      "tp1": 0.3402,
-      "tp2": 0.3261,
-      "capital_usd": 131.63,
-      "leverage": 3,
-      "trading_system": "John",
-      "track_only": false,
-      "status": "OPEN",
-      "price_at_run": 0.3542,
-      "date_activated": "2026-09-03",
-      "time_activated_utc": "12:32",
-      "date_opened": "2026-08-31",
-      "time_opened_utc": "00:03",
-      "conviction": "MEDIUM",
-      "tp1_hit": false,
-      "sl_moved_to_be": null,
-      "pnl_tp1_realized_usd": null,
-      "tp2_hit": false,
-      "live_executed": true,
-      "live_entry_fill": 0.3574,
-      "live_exit_fill": null,
-      "live_entry_slippage_pct": -0.014,
-      "live_fees_usd": 0.2358,
-      "live_funding_usd": null,
-      "live_tp1_pnl_usd": null,
-      "rehearsal": false
-    },
-    {
       "trade_id": "ETHUSDT_20260831_CJ_001",
       "coin": "ETHUSDT",
       "direction": "Long",
@@ -362,7 +315,7 @@
       "date_opened": "2026-08-31",
       "time_opened_utc": "04:04",
       "conviction": "MEDIUM",
-      "tp1_hit": false,
+      "tp1_hit": true,
       "sl_moved_to_be": null,
       "pnl_tp1_realized_usd": null,
       "tp2_hit": false,
@@ -370,9 +323,9 @@
       "live_entry_fill": 2362.39,
       "live_exit_fill": null,
       "live_entry_slippage_pct": 0.0002,
-      "live_fees_usd": 0.2267,
+      "live_fees_usd": 0.4844,
       "live_funding_usd": null,
-      "live_tp1_pnl_usd": null,
+      "live_tp1_pnl_usd": 14.5299,
       "rehearsal": false
     },
     {
@@ -472,38 +425,6 @@
       "rehearsal": false
     },
     {
-      "trade_id": "TAOUSDT_20260902_CJ_001",
-      "coin": "TAOUSDT",
-      "direction": "Short",
-      "entry_price": 223.44555503,
-      "sl": 228.67491729,
-      "tp1": 216.8,
-      "tp2": 194.25016542,
-      "capital_usd": 130.93,
-      "leverage": 3,
-      "trading_system": "John",
-      "track_only": false,
-      "status": "OPEN",
-      "price_at_run": 221.1,
-      "date_activated": "2026-09-03",
-      "time_activated_utc": "08:06",
-      "date_opened": "2026-09-02",
-      "time_opened_utc": "12:04",
-      "conviction": "MEDIUM",
-      "tp1_hit": false,
-      "sl_moved_to_be": null,
-      "pnl_tp1_realized_usd": null,
-      "tp2_hit": false,
-      "live_executed": true,
-      "live_entry_fill": 223.45,
-      "live_exit_fill": null,
-      "live_entry_slippage_pct": -0.002,
-      "live_fees_usd": 0.2346,
-      "live_funding_usd": null,
-      "live_tp1_pnl_usd": null,
-      "rehearsal": false
-    },
-    {
       "trade_id": "XRPUSDT_20260902_CJ_001",
       "coin": "XRPUSDT",
       "direction": "Long",
@@ -547,10 +468,10 @@
       "leverage": 3,
       "trading_system": "John",
       "track_only": false,
-      "status": "PENDING",
+      "status": "OPEN",
       "price_at_run": 1.443,
-      "date_activated": null,
-      "time_activated_utc": null,
+      "date_activated": "2026-09-03",
+      "time_activated_utc": "14:47",
       "date_opened": "2026-09-02",
       "time_opened_utc": "16:04",
       "conviction": "MEDIUM",
@@ -558,11 +479,11 @@
       "sl_moved_to_be": null,
       "pnl_tp1_realized_usd": null,
       "tp2_hit": false,
-      "live_executed": null,
-      "live_entry_fill": null,
+      "live_executed": true,
+      "live_entry_fill": 1.461,
       "live_exit_fill": null,
-      "live_entry_slippage_pct": null,
-      "live_fees_usd": null,
+      "live_entry_slippage_pct": -0.0006,
+      "live_fees_usd": 0.2358,
       "live_funding_usd": null,
       "live_tp1_pnl_usd": null,
       "rehearsal": false
@@ -700,7 +621,7 @@
       "trading_system": "John",
       "entry_price": 2362.38523891,
       "live_entry_fill": 2362.39,
-      "tp1_hit": false,
+      "tp1_hit": true,
       "iso": "2026-09-02T10:32:00Z",
       "_iso_ms": 1788345120000,
       "rehearsal": false
@@ -751,6 +672,18 @@
       "tp1_hit": false,
       "iso": "2026-09-03T12:32:00Z",
       "_iso_ms": 1788438720000,
+      "rehearsal": false
+    },
+    {
+      "trade_id": "RENDERUSDT_20260902_CJ_001",
+      "coin": "RENDERUSDT",
+      "direction": "Short",
+      "trading_system": "John",
+      "entry_price": 1.46099094,
+      "live_entry_fill": 1.461,
+      "tp1_hit": false,
+      "iso": "2026-09-03T14:47:00Z",
+      "_iso_ms": 1788446820000,
       "rehearsal": false
     }
   ],
@@ -4326,20 +4259,71 @@
       "won": true,
       "close_iso": "2026-09-03T12:56:00Z",
       "rehearsal": false
+    },
+    {
+      "trade_id": "ONDOUSDT_20260831_CJ_001",
+      "coin": "ONDOUSDT",
+      "direction": "Short",
+      "status": "STOPPED",
+      "pnl_usd": -9.36,
+      "close_reason": "live MEXC exit: sl @ 0.3654",
+      "date_closed": "2026-09-03",
+      "time_closed_utc": "14:48",
+      "trading_system": "John",
+      "live_entry_fill": 0.3574,
+      "live_exit_fill": 0.3654,
+      "live_entry_slippage_pct": -0.014,
+      "live_fees_usd": 0.5573,
+      "live_funding_usd": 0.0,
+      "won": false,
+      "close_iso": "2026-09-03T14:48:00Z",
+      "rehearsal": false
+    },
+    {
+      "trade_id": "TAOUSDT_20260902_CJ_001",
+      "coin": "TAOUSDT",
+      "direction": "Short",
+      "status": "STOPPED",
+      "pnl_usd": -9.68,
+      "close_reason": "live MEXC exit: sl @ 228.67",
+      "date_closed": "2026-09-03",
+      "time_closed_utc": "15:04",
+      "trading_system": "John",
+      "live_entry_fill": 223.45,
+      "live_exit_fill": 228.67,
+      "live_entry_slippage_pct": -0.002,
+      "live_fees_usd": 0.5547,
+      "live_funding_usd": -0.012469,
+      "won": false,
+      "close_iso": "2026-09-03T15:04:00Z",
+      "rehearsal": false
     }
   ],
   "recent_cancels": [],
-  "tp1_hits_open": [],
+  "tp1_hits_open": [
+    {
+      "coin": "RENDERUSDT",
+      "direction": "Long",
+      "trading_system": "John",
+      "entry_price": 1.39943129
+    },
+    {
+      "coin": "ETHUSDT",
+      "direction": "Long",
+      "trading_system": "John",
+      "entry_price": 2362.38523891
+    }
+  ],
   "stats": {
-    "realized_pnl_usd": -161.3,
-    "realized_pnl_pct": -0.87,
+    "realized_pnl_usd": -180.33,
+    "realized_pnl_pct": -0.96,
     "peak_capital_usd": 1293.69,
     "peak_concurrent": 10,
     "peak_date": "2026-08-11",
-    "deployed_trades": 192,
-    "return_on_peak_pct": -12.47,
-    "win_rate_pct": 38.8,
-    "closed_count": 188,
+    "deployed_trades": 193,
+    "return_on_peak_pct": -13.94,
+    "win_rate_pct": 38.4,
+    "closed_count": 190,
     "per_system": {
       "Braam": {
         "realized_pnl_usd": -61.29,
@@ -4347,9 +4331,9 @@
         "closed_count": 155
       },
       "John": {
-        "realized_pnl_usd": -100.01,
-        "win_rate_pct": 27.3,
-        "closed_count": 33
+        "realized_pnl_usd": -119.04,
+        "win_rate_pct": 25.7,
+        "closed_count": 35
       }
     },
     "live_trade_count_total": 276,

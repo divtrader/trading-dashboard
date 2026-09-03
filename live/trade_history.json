@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-03T15:51:29Z",
+  "updated": "2026-09-03T15:53:17Z",
   "positions": {
     "1414291495": {
       "position_id": "1414291495",
@@ -3330,8 +3330,16 @@
       "leverage": 3,
       "entry_price": 0.3574,
       "opened_at": "2026-09-03T12:32:13Z",
-      "status": "OPEN",
-      "braam_trade_id": "ONDOUSDT_20260831_CJ_001"
+      "status": "CLOSED",
+      "braam_trade_id": "ONDOUSDT_20260831_CJ_001",
+      "closed_at": "2026-09-03T14:48:14Z",
+      "close_price": 0.3654,
+      "pnl_usd": -9.3573,
+      "margin_usd": 131.63,
+      "fees_usd": 0.5573,
+      "tag": "LOSS",
+      "close_type": 4,
+      "close_reason": "stop_loss"
     },
     "1487699980": {
       "position_id": "1487699980",
@@ -3422,8 +3430,26 @@
       "leverage": 3,
       "entry_price": 223.45,
       "opened_at": "2026-09-03T08:06:18Z",
+      "status": "CLOSED",
+      "braam_trade_id": "TAOUSDT_20260902_CJ_001",
+      "closed_at": "2026-09-03T15:04:02Z",
+      "close_price": 228.67,
+      "pnl_usd": -9.6772,
+      "margin_usd": 130.93,
+      "fees_usd": 0.5547,
+      "tag": "LOSS",
+      "close_type": 4,
+      "close_reason": "stop_loss"
+    },
+    "1488906969": {
+      "position_id": "1488906969",
+      "coin": "RENDERUSDT",
+      "direction": "Short",
+      "leverage": 3,
+      "entry_price": 1.461,
+      "opened_at": "2026-09-03T14:47:46Z",
       "status": "OPEN",
-      "braam_trade_id": "TAOUSDT_20260902_CJ_001"
+      "braam_trade_id": "RENDERUSDT_20260902_CJ_001"
     }
   },
   "orders": {
@@ -3497,15 +3523,6 @@
       "entry_price": 1.33316251,
       "resting_at": "2026-09-02T16:04:00Z",
       "braam_trade_id": "XRPUSDT_20260902_CJ_001",
-      "status": "RESTING"
-    },
-    "850284108470735936": {
-      "order_id": "850284108470735936",
-      "coin": "RENDERUSDT",
-      "direction": "Short",
-      "entry_price": 1.46099094,
-      "resting_at": "2026-09-02T16:04:00Z",
-      "braam_trade_id": "RENDERUSDT_20260902_CJ_001",
       "status": "RESTING"
     },
     "850283790711785984": {
