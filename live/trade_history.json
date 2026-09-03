@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-03T13:12:17Z",
+  "updated": "2026-09-03T13:13:54Z",
   "positions": {
     "1414291495": {
       "position_id": "1414291495",
@@ -3323,6 +3323,16 @@
       "status": "OPEN",
       "braam_trade_id": "RENDERUSDT_20260828_CJ_001"
     },
+    "1488756354": {
+      "position_id": "1488756354",
+      "coin": "ONDOUSDT",
+      "direction": "Short",
+      "leverage": 3,
+      "entry_price": 0.3574,
+      "opened_at": "2026-09-03T12:32:13Z",
+      "status": "OPEN",
+      "braam_trade_id": "ONDOUSDT_20260831_CJ_001"
+    },
     "1487699980": {
       "position_id": "1487699980",
       "coin": "ETHUSDT",
@@ -3394,8 +3404,16 @@
       "leverage": 3,
       "entry_price": 5.687,
       "opened_at": "2026-09-03T01:47:35Z",
-      "status": "OPEN",
-      "braam_trade_id": "UNIUSDT_20260901_CJ_002"
+      "status": "CLOSED",
+      "braam_trade_id": "UNIUSDT_20260901_CJ_002",
+      "closed_at": "2026-09-03T12:56:51Z",
+      "close_price": 6.266,
+      "pnl_usd": 19.1745,
+      "margin_usd": 131.74,
+      "fees_usd": 0.5682,
+      "tag": "WIN",
+      "close_type": 3,
+      "close_reason": "take_profit"
     },
     "1488568034": {
       "position_id": "1488568034",
@@ -3443,15 +3461,6 @@
       "entry_price": 6.95627461,
       "resting_at": "2026-08-31T00:03:00Z",
       "braam_trade_id": "AVAXUSDT_20260831_CJ_001",
-      "status": "RESTING"
-    },
-    "849559331690133056": {
-      "order_id": "849559331690133056",
-      "coin": "ONDOUSDT",
-      "direction": "Short",
-      "entry_price": 0.35735,
-      "resting_at": "2026-08-31T00:03:00Z",
-      "braam_trade_id": "ONDOUSDT_20260831_CJ_001",
       "status": "RESTING"
     },
     "849740194277423616": {

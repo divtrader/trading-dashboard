@@ -1,6 +1,6 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-09-03T13:12Z",
+  "generated_utc": "2026-09-03T13:13Z",
   "master": "braam",
   "retention_hours": 48,
   "trade_count": 21,
@@ -179,7 +179,7 @@
       "sl": 0.36535102,
       "tp1": 0.3402,
       "tp2": 0.3261,
-      "status": "PENDING",
+      "status": "OPEN",
       "tp1_hit": false,
       "tp2_hit": false,
       "sl_hit": false,
@@ -187,7 +187,7 @@
       "date_opened": "2026-08-31",
       "time_opened_utc": "00:03",
       "sl_mode": "initial",
-      "feed_updated_utc": "2026-08-31T00:03Z"
+      "feed_updated_utc": "2026-09-03T12:32Z"
     },
     {
       "trade_id": "ETHUSDT_20260831_CJ_001",
@@ -317,15 +317,15 @@
       "sl": 5.43825264,
       "tp1": 5.898,
       "tp2": 6.266,
-      "status": "OPEN",
+      "status": "TP2_HIT",
       "tp1_hit": true,
       "tp2_hit": false,
       "sl_hit": false,
-      "close_reason": null,
+      "close_reason": "live MEXC exit: tp2 @ 6.266",
       "date_opened": "2026-09-01",
       "time_opened_utc": "20:04",
       "sl_mode": "breakeven",
-      "feed_updated_utc": "2026-09-03T08:03Z"
+      "feed_updated_utc": "2026-09-03T12:56Z"
     },
     {
       "trade_id": "SUIUSDT_20260902_CJ_001",

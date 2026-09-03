@@ -1,5 +1,5 @@
 {
-  "last_updated_iso": "2026-09-03T13:11:58Z",
+  "last_updated_iso": "2026-09-03T13:13:38Z",
   "mexc_account": null,
   "api_keys": [
     {
@@ -228,10 +228,10 @@
       "leverage": 3,
       "trading_system": "John",
       "track_only": false,
-      "status": "PENDING",
+      "status": "OPEN",
       "price_at_run": 0.3554,
-      "date_activated": null,
-      "time_activated_utc": null,
+      "date_activated": "2026-09-03",
+      "time_activated_utc": "12:32",
       "date_opened": "2026-08-31",
       "time_opened_utc": "00:03",
       "conviction": "MEDIUM",
@@ -307,29 +307,6 @@
       "tp1_hit": false,
       "sl_moved_to_be": null,
       "pnl_tp1_realized_usd": null
-    },
-    {
-      "trade_id": "UNIUSDT_20260901_CJ_002",
-      "coin": "UNIUSDT",
-      "direction": "Long",
-      "entry_price": 5.68725677,
-      "sl": 5.43825264,
-      "tp1": 5.898,
-      "tp2": 6.266,
-      "capital_usd": 100,
-      "leverage": 3,
-      "trading_system": "John",
-      "track_only": false,
-      "status": "OPEN",
-      "price_at_run": 6.211,
-      "date_activated": "2026-09-03",
-      "time_activated_utc": "01:47",
-      "date_opened": "2026-09-01",
-      "time_opened_utc": "20:04",
-      "conviction": "MEDIUM",
-      "tp1_hit": true,
-      "sl_moved_to_be": null,
-      "pnl_tp1_realized_usd": 8.89
     },
     {
       "trade_id": "SUIUSDT_20260902_CJ_001",
@@ -559,25 +536,19 @@
       "tp1_hit": false,
       "iso": "2026-09-03T08:06:00Z",
       "_iso_ms": 1788422760000
+    },
+    {
+      "trade_id": "ONDOUSDT_20260831_CJ_001",
+      "coin": "ONDOUSDT",
+      "direction": "Short",
+      "trading_system": "John",
+      "entry_price": 0.35735,
+      "tp1_hit": false,
+      "iso": "2026-09-03T12:32:00Z",
+      "_iso_ms": 1788438720000
     }
   ],
   "recent_closes": [
-    {
-      "trade_id": "ONDOUSDT_20260811_CB_001",
-      "coin": "ONDOUSDT",
-      "direction": "Short",
-      "status": "STOPPED",
-      "pnl_usd": -1.71,
-      "close_reason": "live MEXC exit: sl @ 0.3534",
-      "date_closed": "2026-08-20",
-      "time_closed_utc": "12:00",
-      "trading_system": "Braam",
-      "won": false,
-      "close_iso": "2026-08-20T12:00:00Z",
-      "margin_usd": 100,
-      "fees_usd": 0.612,
-      "fees_modeled": true
-    },
     {
       "trade_id": "XLMUSDT_20260819_CJ_M_001",
       "coin": "XLMUSDT",
@@ -1201,32 +1172,41 @@
       "margin_usd": 100,
       "fees_usd": 0.408,
       "fees_modeled": true
+    },
+    {
+      "trade_id": "UNIUSDT_20260901_CJ_002",
+      "coin": "UNIUSDT",
+      "direction": "Long",
+      "status": "TP2_HIT",
+      "pnl_usd": 14.42,
+      "close_reason": "live MEXC exit: tp2 @ 6.266",
+      "date_closed": "2026-09-03",
+      "time_closed_utc": "12:56",
+      "trading_system": "John",
+      "won": true,
+      "close_iso": "2026-09-03T12:56:00Z",
+      "margin_usd": 100,
+      "fees_usd": 0.408,
+      "fees_modeled": true
     }
   ],
   "recent_cancels": [],
-  "tp1_hits_open": [
-    {
-      "coin": "UNIUSDT",
-      "direction": "Long",
-      "trading_system": "John",
-      "entry_price": 5.68725677
-    }
-  ],
+  "tp1_hits_open": [],
   "stats": {
-    "realized_pnl_usd": 1006.21,
-    "realized_pnl_pct": 1.54,
+    "realized_pnl_usd": 1020.63,
+    "realized_pnl_pct": 1.56,
     "peak_capital_usd": 3300,
     "peak_concurrent": 33,
     "peak_date": "2026-06-22",
-    "deployed_trades": 671,
-    "return_on_peak_pct": 30.49,
-    "win_rate_pct": 33.3,
-    "closed_count": 655,
+    "deployed_trades": 672,
+    "return_on_peak_pct": 30.93,
+    "win_rate_pct": 33.4,
+    "closed_count": 656,
     "per_system": {
       "John": {
-        "realized_pnl_usd": 619.99,
-        "win_rate_pct": 27.1,
-        "closed_count": 402
+        "realized_pnl_usd": 634.41,
+        "win_rate_pct": 27.3,
+        "closed_count": 403
       },
       "William": {
         "realized_pnl_usd": 45.24,
@@ -1240,10 +1220,10 @@
       }
     },
     "real_only": {
-      "realized_pnl_usd": 15.03,
-      "realized_pnl_pct": 0.08,
-      "win_rate_pct": 38.5,
-      "closed_count": 187
+      "realized_pnl_usd": 29.45,
+      "realized_pnl_pct": 0.16,
+      "win_rate_pct": 38.8,
+      "closed_count": 188
     },
     "track_only": {
       "realized_pnl_usd": 991.18,
