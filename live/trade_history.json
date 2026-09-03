@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-03T02:08:10Z",
+  "updated": "2026-09-03T04:08:01Z",
   "positions": {
     "1414291495": {
       "position_id": "1414291495",
@@ -3358,8 +3358,16 @@
       "leverage": 3,
       "entry_price": 0.761,
       "opened_at": "2026-09-03T01:43:05Z",
-      "status": "OPEN",
-      "braam_trade_id": "SUIUSDT_20260831_CJ_001"
+      "status": "CLOSED",
+      "braam_trade_id": "SUIUSDT_20260831_CJ_001",
+      "closed_at": "2026-09-03T02:51:44Z",
+      "close_price": 0.7803,
+      "pnl_usd": -10.6183,
+      "margin_usd": 132.37,
+      "fees_usd": 0.563,
+      "tag": "LOSS",
+      "close_type": 4,
+      "close_reason": "stop_loss"
     },
     "1486642509": {
       "position_id": "1486642509",
@@ -3472,11 +3480,11 @@
       "braam_trade_id": "TAOUSDT_20260902_CJ_001",
       "status": "RESTING"
     },
-    "850162953264173568": {
-      "order_id": "850162953264173568",
+    "850344457311229952": {
+      "order_id": "850344457311229952",
       "coin": "XRPUSDT",
       "direction": "Long",
-      "entry_price": 1.30240186,
+      "entry_price": 1.33316251,
       "resting_at": "2026-09-02T16:04:00Z",
       "braam_trade_id": "XRPUSDT_20260902_CJ_001",
       "status": "RESTING"
@@ -3497,6 +3505,15 @@
       "entry_price": 0.56650593,
       "resting_at": "2026-09-03T00:04:00Z",
       "braam_trade_id": "APTUSDT_20260903_CJ_001",
+      "status": "RESTING"
+    },
+    "850344153367194112": {
+      "order_id": "850344153367194112",
+      "coin": "XLMUSDT",
+      "direction": "Long",
+      "entry_price": 0.17198703,
+      "resting_at": "2026-09-03T04:04:00Z",
+      "braam_trade_id": "XLMUSDT_20260903_CJ_001",
       "status": "RESTING"
     }
   },
