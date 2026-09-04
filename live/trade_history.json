@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-04T14:07:02Z",
+  "updated": "2026-09-04T16:07:57Z",
   "positions": {
     "1414291495": {
       "position_id": "1414291495",
@@ -3448,8 +3448,16 @@
       "leverage": 3,
       "entry_price": 1.461,
       "opened_at": "2026-09-03T14:47:46Z",
-      "status": "OPEN",
-      "braam_trade_id": "RENDERUSDT_20260902_CJ_001"
+      "status": "CLOSED",
+      "braam_trade_id": "RENDERUSDT_20260902_CJ_001",
+      "closed_at": "2026-09-04T14:50:09Z",
+      "close_price": 1.403,
+      "pnl_usd": 11.6581,
+      "margin_usd": 131.13,
+      "fees_usd": 0.7184,
+      "tag": "WIN",
+      "close_type": 3,
+      "close_reason": "take_profit"
     },
     "1489730624": {
       "position_id": "1489730624",
@@ -3528,11 +3536,11 @@
       "braam_trade_id": "TRXUSDT_20260901_CJ_001",
       "status": "RESTING"
     },
-    "849982017767723520": {
-      "order_id": "849982017767723520",
+    "850887970381877760": {
+      "order_id": "850887970381877760",
       "coin": "ALGOUSDT",
       "direction": "Long",
-      "entry_price": 0.08541739,
+      "entry_price": 0.08427277,
       "resting_at": "2026-09-01T16:03:00Z",
       "braam_trade_id": "ALGOUSDT_20260901_CJ_001",
       "status": "RESTING"
