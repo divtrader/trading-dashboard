@@ -1,5 +1,5 @@
 {
-  "last_updated_iso": "2026-09-04T12:39:02Z",
+  "last_updated_iso": "2026-09-04T12:41:12Z",
   "mexc_account": null,
   "api_keys": [
     {
@@ -412,10 +412,10 @@
       "leverage": 3,
       "trading_system": "John",
       "track_only": false,
-      "status": "PENDING",
+      "status": "OPEN",
       "price_at_run": 0.08773,
-      "date_activated": null,
-      "time_activated_utc": null,
+      "date_activated": "2026-09-04",
+      "time_activated_utc": "12:30",
       "date_opened": "2026-09-03",
       "time_opened_utc": "16:03",
       "conviction": "MEDIUM",
@@ -435,10 +435,10 @@
       "leverage": 3,
       "trading_system": "John",
       "track_only": false,
-      "status": "PENDING",
+      "status": "OPEN",
       "price_at_run": 0.1797,
-      "date_activated": null,
-      "time_activated_utc": null,
+      "date_activated": "2026-09-04",
+      "time_activated_utc": "12:32",
       "date_opened": "2026-09-03",
       "time_opened_utc": "20:04",
       "conviction": "MEDIUM",
@@ -458,10 +458,10 @@
       "leverage": 3,
       "trading_system": "John",
       "track_only": false,
-      "status": "PENDING",
+      "status": "OPEN",
       "price_at_run": 12.041,
-      "date_activated": null,
-      "time_activated_utc": null,
+      "date_activated": "2026-09-04",
+      "time_activated_utc": "12:32",
       "date_opened": "2026-09-04",
       "time_opened_utc": "04:04",
       "conviction": "MEDIUM",
@@ -494,18 +494,6 @@
     }
   ],
   "recent_signals": [
-    {
-      "trade_id": "LINKUSDT_20260904_CJ_001",
-      "coin": "LINKUSDT",
-      "direction": "Long",
-      "trading_system": "John",
-      "entry_price": 11.54319579,
-      "tp1": 12.034,
-      "sl": 11.30760838,
-      "conviction": "MEDIUM",
-      "track_only": false,
-      "iso": "2026-09-04T04:04:00Z"
-    },
     {
       "trade_id": "HBARUSDT_20260904_CJ_001",
       "coin": "HBARUSDT",
@@ -569,6 +557,36 @@
       "tp1_hit": false,
       "iso": "2026-09-03T14:47:00Z",
       "_iso_ms": 1788446820000
+    },
+    {
+      "trade_id": "DOGEUSDT_20260903_CJ_001",
+      "coin": "DOGEUSDT",
+      "direction": "Long",
+      "trading_system": "John",
+      "entry_price": 0.08541794,
+      "tp1_hit": false,
+      "iso": "2026-09-04T12:30:00Z",
+      "_iso_ms": 1788525000000
+    },
+    {
+      "trade_id": "THETAUSDT_20260903_CJ_001",
+      "coin": "THETAUSDT",
+      "direction": "Long",
+      "trading_system": "John",
+      "entry_price": 0.17210895,
+      "tp1_hit": false,
+      "iso": "2026-09-04T12:32:00Z",
+      "_iso_ms": 1788525120000
+    },
+    {
+      "trade_id": "LINKUSDT_20260904_CJ_001",
+      "coin": "LINKUSDT",
+      "direction": "Long",
+      "trading_system": "John",
+      "entry_price": 11.54319579,
+      "tp1_hit": false,
+      "iso": "2026-09-04T12:32:00Z",
+      "_iso_ms": 1788525120000
     }
   ],
   "recent_closes": [
@@ -1242,7 +1260,7 @@
     "peak_capital_usd": 3300,
     "peak_concurrent": 33,
     "peak_date": "2026-06-22",
-    "deployed_trades": 673,
+    "deployed_trades": 676,
     "return_on_peak_pct": 30.51,
     "win_rate_pct": 33.3,
     "closed_count": 658,

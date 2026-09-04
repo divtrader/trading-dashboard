@@ -1,51 +1,19 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-09-04T12:39:07Z",
+  "last_updated_iso": "2026-09-04T12:41:16Z",
   "mexc_account": {
-    "unrealized_pnl": 24.0208,
-    "equity": 2659.3965,
+    "unrealized_pnl": 27.4084,
+    "equity": 2662.7841,
     "available": 466.0656,
     "position_margin": 577.6472
   },
   "order_levels": {
     "checked": 18,
-    "in_sync": 15,
-    "drifted": [
-      "DOGE",
-      "THETA",
-      "LINK"
-    ],
+    "in_sync": 18,
+    "drifted": [],
     "reconciling": [],
-    "detail": [
-      {
-        "coin": "DOGE",
-        "trade_id": "DOGEUSDT_20260903_CJ_001",
-        "status": "PENDING",
-        "fields": [
-          "tp1"
-        ],
-        "synced_at": null
-      },
-      {
-        "coin": "THETA",
-        "trade_id": "THETAUSDT_20260903_CJ_001",
-        "status": "PENDING",
-        "fields": [
-          "tp1"
-        ],
-        "synced_at": "2026-09-04T12:06:12.057457+00:00"
-      },
-      {
-        "coin": "LINK",
-        "trade_id": "LINKUSDT_20260904_CJ_001",
-        "status": "PENDING",
-        "fields": [
-          "tp1"
-        ],
-        "synced_at": null
-      }
-    ]
+    "detail": []
   },
   "api_keys": [
     {
@@ -106,7 +74,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$2,659.40",
+      "value": "$2,662.78",
       "status": "ok",
       "action": null
     },
@@ -130,7 +98,7 @@
       "key": "position_protection",
       "tier": 1,
       "label": "Position protection",
-      "value": "all protected (6 open, 1 pre-TP1 runners)",
+      "value": "all protected (6 open, 4 pre-TP1 runners)",
       "status": "ok",
       "action": null
     },
@@ -628,10 +596,10 @@
       "leverage": 3,
       "trading_system": "John",
       "track_only": false,
-      "status": "PENDING",
+      "status": "OPEN",
       "price_at_run": 0.08773,
-      "date_activated": null,
-      "time_activated_utc": null,
+      "date_activated": "2026-09-04",
+      "time_activated_utc": "12:30",
       "date_opened": "2026-09-03",
       "time_opened_utc": "16:03",
       "conviction": "MEDIUM",
@@ -639,11 +607,11 @@
       "sl_moved_to_be": null,
       "pnl_tp1_realized_usd": null,
       "tp2_hit": false,
-      "live_executed": null,
-      "live_entry_fill": null,
+      "live_executed": true,
+      "live_entry_fill": 0.08542,
       "live_exit_fill": null,
-      "live_entry_slippage_pct": null,
-      "live_fees_usd": null,
+      "live_entry_slippage_pct": 0.0024,
+      "live_fees_usd": 0.2357,
       "live_funding_usd": null,
       "live_tp1_pnl_usd": null,
       "rehearsal": false
@@ -660,10 +628,10 @@
       "leverage": 3,
       "trading_system": "John",
       "track_only": false,
-      "status": "PENDING",
+      "status": "OPEN",
       "price_at_run": 0.1797,
-      "date_activated": null,
-      "time_activated_utc": null,
+      "date_activated": "2026-09-04",
+      "time_activated_utc": "12:32",
       "date_opened": "2026-09-03",
       "time_opened_utc": "20:04",
       "conviction": "MEDIUM",
@@ -671,11 +639,11 @@
       "sl_moved_to_be": null,
       "pnl_tp1_realized_usd": null,
       "tp2_hit": false,
-      "live_executed": null,
-      "live_entry_fill": null,
+      "live_executed": true,
+      "live_entry_fill": 0.1721,
       "live_exit_fill": null,
-      "live_entry_slippage_pct": null,
-      "live_fees_usd": null,
+      "live_entry_slippage_pct": 0.0,
+      "live_fees_usd": 0.2376,
       "live_funding_usd": null,
       "live_tp1_pnl_usd": null,
       "rehearsal": false
@@ -692,10 +660,10 @@
       "leverage": 3,
       "trading_system": "John",
       "track_only": false,
-      "status": "PENDING",
+      "status": "OPEN",
       "price_at_run": 12.041,
-      "date_activated": null,
-      "time_activated_utc": null,
+      "date_activated": "2026-09-04",
+      "time_activated_utc": "12:32",
       "date_opened": "2026-09-04",
       "time_opened_utc": "04:04",
       "conviction": "MEDIUM",
@@ -703,11 +671,11 @@
       "sl_moved_to_be": null,
       "pnl_tp1_realized_usd": null,
       "tp2_hit": false,
-      "live_executed": null,
-      "live_entry_fill": null,
+      "live_executed": true,
+      "live_entry_fill": 11.543,
       "live_exit_fill": null,
-      "live_entry_slippage_pct": null,
-      "live_fees_usd": null,
+      "live_entry_slippage_pct": -0.0017,
+      "live_fees_usd": 0.2375,
       "live_funding_usd": null,
       "live_tp1_pnl_usd": null,
       "rehearsal": false
@@ -746,19 +714,6 @@
     }
   ],
   "recent_signals": [
-    {
-      "trade_id": "LINKUSDT_20260904_CJ_001",
-      "coin": "LINKUSDT",
-      "direction": "Long",
-      "trading_system": "John",
-      "entry_price": 11.54319579,
-      "tp1": 12.034,
-      "sl": 11.30760838,
-      "conviction": "MEDIUM",
-      "track_only": false,
-      "iso": "2026-09-04T04:04:00Z",
-      "rehearsal": false
-    },
     {
       "trade_id": "HBARUSDT_20260904_CJ_001",
       "coin": "HBARUSDT",
@@ -832,6 +787,42 @@
       "tp1_hit": false,
       "iso": "2026-09-03T14:47:00Z",
       "_iso_ms": 1788446820000,
+      "rehearsal": false
+    },
+    {
+      "trade_id": "DOGEUSDT_20260903_CJ_001",
+      "coin": "DOGEUSDT",
+      "direction": "Long",
+      "trading_system": "John",
+      "entry_price": 0.08541794,
+      "live_entry_fill": 0.08542,
+      "tp1_hit": false,
+      "iso": "2026-09-04T12:30:00Z",
+      "_iso_ms": 1788525000000,
+      "rehearsal": false
+    },
+    {
+      "trade_id": "THETAUSDT_20260903_CJ_001",
+      "coin": "THETAUSDT",
+      "direction": "Long",
+      "trading_system": "John",
+      "entry_price": 0.17210895,
+      "live_entry_fill": 0.1721,
+      "tp1_hit": false,
+      "iso": "2026-09-04T12:32:00Z",
+      "_iso_ms": 1788525120000,
+      "rehearsal": false
+    },
+    {
+      "trade_id": "LINKUSDT_20260904_CJ_001",
+      "coin": "LINKUSDT",
+      "direction": "Long",
+      "trading_system": "John",
+      "entry_price": 11.54319579,
+      "live_entry_fill": 11.543,
+      "tp1_hit": false,
+      "iso": "2026-09-04T12:32:00Z",
+      "_iso_ms": 1788525120000,
       "rehearsal": false
     }
   ],
@@ -4468,7 +4459,7 @@
     "peak_capital_usd": 1293.69,
     "peak_concurrent": 10,
     "peak_date": "2026-08-11",
-    "deployed_trades": 193,
+    "deployed_trades": 196,
     "return_on_peak_pct": -13.94,
     "win_rate_pct": 38.4,
     "closed_count": 190,
