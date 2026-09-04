@@ -1,6 +1,6 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-09-04T16:07Z",
+  "generated_utc": "2026-09-04T16:29Z",
   "master": "braam",
   "retention_hours": 48,
   "trade_count": 22,
@@ -340,15 +340,15 @@
       "sl": 1.49225615,
       "tp1": 1.4,
       "tp2": 1.275,
-      "status": "CLOSED",
-      "tp1_hit": false,
+      "status": "OPEN",
+      "tp1_hit": true,
       "tp2_hit": false,
       "sl_hit": false,
-      "close_reason": "live MEXC exit: tp2 @ 1.403",
+      "close_reason": null,
       "date_opened": "2026-09-02",
       "time_opened_utc": "16:04",
-      "sl_mode": "initial",
-      "feed_updated_utc": "2026-09-04T14:50Z"
+      "sl_mode": "breakeven",
+      "feed_updated_utc": "2026-09-03T14:47Z"
     },
     {
       "trade_id": "APTUSDT_20260903_CJ_001",

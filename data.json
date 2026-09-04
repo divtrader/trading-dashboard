@@ -1,5 +1,5 @@
 {
-  "last_updated_iso": "2026-09-04T16:07:38Z",
+  "last_updated_iso": "2026-09-04T16:29:14Z",
   "mexc_account": null,
   "api_keys": [
     {
@@ -309,6 +309,29 @@
       "pnl_tp1_realized_usd": null
     },
     {
+      "trade_id": "RENDERUSDT_20260902_CJ_001",
+      "coin": "RENDERUSDT",
+      "direction": "Short",
+      "entry_price": 1.46099094,
+      "sl": 1.49225615,
+      "tp1": 1.4,
+      "tp2": 1.275,
+      "capital_usd": 100,
+      "leverage": 3,
+      "trading_system": "John",
+      "track_only": false,
+      "status": "OPEN",
+      "price_at_run": 1.418,
+      "date_activated": "2026-09-03",
+      "time_activated_utc": "14:47",
+      "date_opened": "2026-09-02",
+      "time_opened_utc": "16:04",
+      "conviction": "MEDIUM",
+      "tp1_hit": true,
+      "sl_moved_to_be": false,
+      "pnl_tp1_realized_usd": null
+    },
+    {
       "trade_id": "APTUSDT_20260903_CJ_001",
       "coin": "APTUSDT",
       "direction": "Long",
@@ -518,7 +541,7 @@
       "direction": "Short",
       "trading_system": "John",
       "entry_price": 1.46099094,
-      "tp1_hit": false,
+      "tp1_hit": true,
       "iso": "2026-09-03T14:47:00Z",
       "_iso_ms": 1788446820000
     },
@@ -554,6 +577,22 @@
     }
   ],
   "recent_closes": [
+    {
+      "trade_id": "BNBUSDT_20260812_CJ_M_001",
+      "coin": "BNBUSDT",
+      "direction": "Long",
+      "status": "TP2_HIT",
+      "pnl_usd": 24.33,
+      "close_reason": "TP2 hit",
+      "date_closed": "2026-08-21",
+      "time_closed_utc": "00:00",
+      "trading_system": "John",
+      "won": true,
+      "close_iso": "2026-08-21T00:00:00Z",
+      "margin_usd": 100,
+      "fees_usd": 0.408,
+      "fees_modeled": true
+    },
     {
       "trade_id": "SUIUSDT_20260708_CJ_M_001",
       "coin": "SUIUSDT",
@@ -1177,22 +1216,6 @@
       "margin_usd": 100,
       "fees_usd": 0.408,
       "fees_modeled": true
-    },
-    {
-      "trade_id": "RENDERUSDT_20260902_CJ_001",
-      "coin": "RENDERUSDT",
-      "direction": "Short",
-      "status": "CLOSED",
-      "pnl_usd": 9.1,
-      "close_reason": "live MEXC exit: tp2 @ 1.403",
-      "date_closed": "2026-09-04",
-      "time_closed_utc": "14:50",
-      "trading_system": "John",
-      "won": true,
-      "close_iso": "2026-09-04T14:50:00Z",
-      "margin_usd": 100,
-      "fees_usd": 0.408,
-      "fees_modeled": true
     }
   ],
   "recent_cancels": [],
@@ -1208,23 +1231,29 @@
       "direction": "Long",
       "trading_system": "John",
       "entry_price": 2362.38523891
+    },
+    {
+      "coin": "RENDERUSDT",
+      "direction": "Short",
+      "trading_system": "John",
+      "entry_price": 1.46099094
     }
   ],
   "stats": {
-    "realized_pnl_usd": 1016.0,
-    "realized_pnl_pct": 1.54,
+    "realized_pnl_usd": 1006.9,
+    "realized_pnl_pct": 1.53,
     "peak_capital_usd": 3300,
     "peak_concurrent": 33,
     "peak_date": "2026-06-22",
     "deployed_trades": 676,
-    "return_on_peak_pct": 30.79,
-    "win_rate_pct": 33.4,
-    "closed_count": 659,
+    "return_on_peak_pct": 30.51,
+    "win_rate_pct": 33.3,
+    "closed_count": 658,
     "per_system": {
       "John": {
-        "realized_pnl_usd": 629.78,
-        "win_rate_pct": 27.3,
-        "closed_count": 406
+        "realized_pnl_usd": 620.68,
+        "win_rate_pct": 27.2,
+        "closed_count": 405
       },
       "William": {
         "realized_pnl_usd": 45.24,
@@ -1238,10 +1267,10 @@
       }
     },
     "real_only": {
-      "realized_pnl_usd": 24.82,
-      "realized_pnl_pct": 0.13,
-      "win_rate_pct": 38.7,
-      "closed_count": 191
+      "realized_pnl_usd": 15.72,
+      "realized_pnl_pct": 0.08,
+      "win_rate_pct": 38.4,
+      "closed_count": 190
     },
     "track_only": {
       "realized_pnl_usd": 991.18,
