@@ -946,11 +946,14 @@ function renderPaperBars(enrichedOpen) {
     return t.leveragedPct || 0;
   }
   const sorted = [...enrichedOpen].sort((a, b) => totalPct(b) - totalPct(a));
-  const realTrades  = sorted.filter(t => !t.track_only);
-  const trackTrades = sorted.filter(t =>  t.track_only);
+  // Single unified list (track-only split removed 2026-09 — everything routes
+  // live now). Balance across two layout columns for density; no REAL/TRACK split.
+  const half = Math.ceil(sorted.length / 2);
+  const colA = sorted.slice(0, half);
+  const colB = sorted.slice(half);
 
-  // Density tier based on per-column count (the larger column drives the tier)
-  const maxCol = Math.max(realTrades.length, trackTrades.length);
+  // Density tier based on the larger layout column
+  const maxCol = Math.max(colA.length, colB.length);
   host.classList.remove("pb-compact", "pb-mini", "pb-tiny");
   if      (maxCol >= 13) host.classList.add("pb-tiny");
   else if (maxCol >= 10) host.classList.add("pb-mini");
@@ -1006,7 +1009,7 @@ function renderPaperBars(enrichedOpen) {
     const achieved = tp1Hit ? `<div class="pb-achieved" style="left:${Math.min(ePct,t1Pct).toFixed(1)}%;width:${Math.abs(t1Pct-ePct).toFixed(1)}%"></div>` : "";
 
     return `
-      <div class="paper-bar-row ${dirCls}${tp1Cls}${t.track_only ? " pb-track-only" : ""}" data-trade-id="${t.trade_id}" title="${t.trade_id}">
+      <div class="paper-bar-row ${dirCls}${tp1Cls}" data-trade-id="${t.trade_id}" title="${t.trade_id}">
         <div class="pb-head">
           <div class="pb-coin-row">
             <span class="pb-coin">${coin}</span>
@@ -1047,24 +1050,13 @@ function renderPaperBars(enrichedOpen) {
       </div>`;
   };
 
-  const colHtml = (trades, label, count) => {
-    const body = trades.length
-      ? trades.map(barHtml).join("")
-      : `<div class="paper-bars-empty">No ${label.toLowerCase()} open</div>`;
-    return `
-      <div class="pb-col">
-        <div class="pb-col-head">
-          <span class="pb-col-label">${label}</span>
-          <span class="pb-col-count">${count}</span>
-        </div>
-        <div class="pb-col-body">${body}</div>
-      </div>`;
-  };
+  const colHtml = (trades) =>
+    `<div class="pb-col"><div class="pb-col-body">${trades.map(barHtml).join("")}</div></div>`;
 
   flipReplace(host, `
     <div class="pb-cols">
-      ${colHtml(realTrades,  "REAL TRADES", realTrades.length)}
-      ${colHtml(trackTrades, "TRACK ONLY",  trackTrades.length)}
+      ${colHtml(colA)}
+      ${colHtml(colB)}
     </div>`);
 }
 
@@ -1698,7 +1690,7 @@ function renderPendingTriggers() {
     const proximity = t.inZone ? 100 : Math.max(0, 100 - (t.distPct / MAX_DIST) * 100);
     const distLabel = t.inZone ? "IN ZONE" : `${t.distPct.toFixed(1)}%`;
     return `
-      <div class="pt-row ${dirCls}${t.inZone ? " pt-in-zone" : ""}${t.track_only ? " pt-track-only" : ""}" data-trade-id="${t.trade_id}" title="${t.trade_id}${t.track_only ? " (track-only)" : ""}">
+      <div class="pt-row ${dirCls}${t.inZone ? " pt-in-zone" : ""}" data-trade-id="${t.trade_id}" title="${t.trade_id}">
         <div class="pt-info">
           <div class="pt-info-top">
             <span class="pt-coin">${coin}</span>
@@ -1725,27 +1717,19 @@ function renderPendingTriggers() {
       </div>`;
   };
 
-  const realRows  = enriched.filter(t => !t.track_only);
-  const trackRows = enriched.filter(t =>  t.track_only);
+  // Single unified list (track-only split removed 2026-09). Balance across two
+  // layout columns for density; no REAL/TRACK split.
+  const half = Math.ceil(enriched.length / 2);
+  const colA = enriched.slice(0, half);
+  const colB = enriched.slice(half);
 
-  const colHtml = (rows, label, count) => {
-    const body = rows.length
-      ? rows.map(rowHtml).join("")
-      : '<div class="pt-col-empty">no pending</div>';
-    return `
-      <div class="pt-col">
-        <div class="pt-col-head">
-          <span class="pt-col-label">${label}</span>
-          <span class="pt-col-count">${count}</span>
-        </div>
-        <div class="pt-col-body">${body}</div>
-      </div>`;
-  };
+  const colHtml = (rows) =>
+    `<div class="pt-col"><div class="pt-col-body">${rows.map(rowHtml).join("")}</div></div>`;
 
   flipReplace(host, `
     <div class="pt-cols">
-      ${colHtml(realRows,  "REAL TRADES", realRows.length)}
-      ${colHtml(trackRows, "TRACK ONLY",  trackRows.length)}
+      ${colHtml(colA)}
+      ${colHtml(colB)}
     </div>`);
 }
 
