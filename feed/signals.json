@@ -1,9 +1,9 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-09-05T06:07Z",
+  "generated_utc": "2026-09-05T08:07Z",
   "master": "braam",
   "retention_hours": 48,
-  "trade_count": 22,
+  "trade_count": 23,
   "trades": [
     {
       "trade_id": "TAOUSDT_20260822_CJ_001",
@@ -510,6 +510,29 @@
       "time_opened_utc": "00:04",
       "sl_mode": "initial",
       "feed_updated_utc": "2026-09-05T00:04Z"
+    },
+    {
+      "trade_id": "LTCUSDT_20260905_CJ_001",
+      "coin": "LTCUSDT",
+      "direction": "Long",
+      "trading_system": "John",
+      "conviction": "MEDIUM",
+      "leverage": 3,
+      "entry_price": 52.15290009,
+      "entry_lo": 51.3776047,
+      "entry_hi": 54.47878627,
+      "sl": 51.22754271,
+      "tp1": 55.73993262,
+      "tp2": 59.03491457,
+      "status": "PENDING",
+      "tp1_hit": false,
+      "tp2_hit": false,
+      "sl_hit": false,
+      "close_reason": null,
+      "date_opened": "2026-09-05",
+      "time_opened_utc": "08:03",
+      "sl_mode": "initial",
+      "feed_updated_utc": "2026-09-05T08:03Z"
     }
   ]
 }
