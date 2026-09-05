@@ -937,7 +937,7 @@ function renderPaperBars(enrichedOpen) {
   const host = $("paper-bars");
   if (!host) return;
   if (!enrichedOpen.length) {
-    host.innerHTML = '<div class="paper-bars-empty">No open paper trades — system is watching.</div>';
+    host.innerHTML = '<div class="paper-bars-empty">No open trades — system is watching.</div>';
     return;
   }
   // Winners on top, losers below — sorted by total blended % P&L descending.
