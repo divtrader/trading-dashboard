@@ -1,9 +1,9 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-09-05T12:08Z",
+  "generated_utc": "2026-09-05T13:41Z",
   "master": "braam",
   "retention_hours": 48,
-  "trade_count": 24,
+  "trade_count": 23,
   "trades": [
     {
       "trade_id": "TAOUSDT_20260822_CJ_001",
@@ -177,8 +177,8 @@
       "entry_lo": 0.32900432,
       "entry_hi": 0.33618703,
       "sl": 0.33621785,
-      "tp1": 0.31524449,
-      "tp2": 0.30548366,
+      "tp1": 0.329,
+      "tp2": 0.3228,
       "status": "PENDING",
       "tp1_hit": false,
       "tp2_hit": false,
@@ -211,29 +211,6 @@
       "time_opened_utc": "16:03",
       "sl_mode": "initial",
       "feed_updated_utc": "2026-09-01T16:03Z"
-    },
-    {
-      "trade_id": "UNIUSDT_20260901_CJ_002",
-      "coin": "UNIUSDT",
-      "direction": "Long",
-      "trading_system": "John",
-      "conviction": "MEDIUM",
-      "leverage": 3,
-      "entry_price": 5.68725677,
-      "entry_lo": 5.58492387,
-      "entry_hi": 5.99425549,
-      "sl": 5.43825264,
-      "tp1": 5.898,
-      "tp2": 6.266,
-      "status": "TP2_HIT",
-      "tp1_hit": true,
-      "tp2_hit": false,
-      "sl_hit": false,
-      "close_reason": "live MEXC exit: tp2 @ 6.266",
-      "date_opened": "2026-09-01",
-      "time_opened_utc": "20:04",
-      "sl_mode": "breakeven",
-      "feed_updated_utc": "2026-09-03T12:56Z"
     },
     {
       "trade_id": "SUIUSDT_20260902_CJ_001",

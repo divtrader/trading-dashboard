@@ -1,19 +1,31 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-09-05T12:07:51Z",
+  "last_updated_iso": "2026-09-05T13:41:02Z",
   "mexc_account": {
-    "unrealized_pnl": 26.9305,
-    "equity": 2674.2207,
+    "unrealized_pnl": 43.4955,
+    "equity": 2690.7857,
     "available": 207.2839,
     "position_margin": 446.2263
   },
   "order_levels": {
     "checked": 20,
-    "in_sync": 20,
-    "drifted": [],
+    "in_sync": 19,
+    "drifted": [
+      "TRX"
+    ],
     "reconciling": [],
-    "detail": []
+    "detail": [
+      {
+        "coin": "TRX",
+        "trade_id": "TRXUSDT_20260901_CJ_001",
+        "status": "PENDING",
+        "fields": [
+          "tp1"
+        ],
+        "synced_at": null
+      }
+    ]
   },
   "api_keys": [
     {
@@ -74,7 +86,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$2,674.22",
+      "value": "$2,690.79",
       "status": "ok",
       "action": null
     },
@@ -334,8 +346,8 @@
       "direction": "Short",
       "entry_price": 0.33439135,
       "sl": 0.33621785,
-      "tp1": 0.31524449,
-      "tp2": 0.30548366,
+      "tp1": 0.329,
+      "tp2": 0.3228,
       "capital_usd": 132.77,
       "leverage": 3,
       "trading_system": "John",
@@ -806,18 +818,6 @@
     }
   ],
   "recent_opens": [
-    {
-      "trade_id": "ONDOUSDT_20260831_CJ_001",
-      "coin": "ONDOUSDT",
-      "direction": "Short",
-      "trading_system": "John",
-      "entry_price": 0.35735,
-      "live_entry_fill": 0.3574,
-      "tp1_hit": false,
-      "iso": "2026-09-03T12:32:00Z",
-      "_iso_ms": 1788438720000,
-      "rehearsal": false
-    },
     {
       "trade_id": "RENDERUSDT_20260902_CJ_001",
       "coin": "RENDERUSDT",
