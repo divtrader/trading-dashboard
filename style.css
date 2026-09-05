@@ -677,6 +677,17 @@ main {
   letter-spacing: 1.8px;
   font-weight: 700;
 }
+/* "vs S&P 500" edge — how far we're beating/losing the benchmark */
+.hero-vs-spx {
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.3px;
+  font-variant-numeric: tabular-nums;
+  color: var(--muted);
+  white-space: nowrap;
+}
+.hero-vs-spx.pos { color: var(--green); }
+.hero-vs-spx.neg { color: var(--red); }
 .hero-spark-legend {
   display: flex;
   align-items: center;

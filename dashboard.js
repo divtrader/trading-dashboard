@@ -2348,6 +2348,18 @@ function _renderMacroSpark(svgId, values, isInverted) {
   `;
 }
 
+// Screen-1 header "vs S&P 500" edge (how far we're beating/losing the benchmark).
+// Set from BOTH updateEdgeLivePnL (WS ticks) and _renderBenchmark (analytics load)
+// so it's populated regardless of which fires first.
+function _setHeroVsSpx(oursNowPct, spxPct) {
+  const vs = document.getElementById("hero-vs-spx");
+  if (!vs) return;
+  const edge = (spxPct != null && oursNowPct != null) ? oursNowPct - spxPct : null;
+  if (edge == null || !isFinite(edge)) { vs.textContent = "—"; vs.className = "hero-vs-spx"; return; }
+  vs.textContent = (edge >= 0 ? "▲ " : "▼ ") + Math.abs(edge).toFixed(1) + "% vs S&P 500";
+  vs.className = "hero-vs-spx " + cls(edge);
+}
+
 // ── Refresh just the Edge hero P&L number — called from renderLive on every WS tick ──
 function updateEdgeLivePnL() {
   // Keep the Screen-4 "vs S&P 500" headline in sync with the paper hero —
@@ -2379,6 +2391,8 @@ function updateEdgeLivePnL() {
     setPct("an-spx-pct", b.spx_pct);
     setPct("an-edge-pct", (b.spx_pct != null) ? oursNowPct - b.spx_pct : null);
   }
+  // Screen-1 header "vs S&P 500" — same edge, surfaced on the first page
+  _setHeroVsSpx(oursNowPct, b ? b.spx_pct : null);
 }
 
 // ── Economic events calendar (static, hardcoded for now) ──
@@ -2850,6 +2864,7 @@ function _renderBenchmark(b, liveTotalPnl, equity) {
   setPct("an-ours-pct", oursNowPct);
   setPct("an-spx-pct", b.spx_pct);
   setPct("an-edge-pct", (b.spx_pct != null) ? oursNowPct - b.spx_pct : null);
+  _setHeroVsSpx(oursNowPct, b.spx_pct);
 
   const sinceEl = document.getElementById("an-bench-since");
   if (sinceEl) sinceEl.textContent = b.inception_iso ? "since " + b.inception_iso.slice(0, 10) : "";
