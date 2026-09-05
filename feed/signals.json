@@ -1,9 +1,9 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-09-04T22:07Z",
+  "generated_utc": "2026-09-05T00:07Z",
   "master": "braam",
   "retention_hours": 48,
-  "trade_count": 22,
+  "trade_count": 23,
   "trades": [
     {
       "trade_id": "TAOUSDT_20260822_CJ_001",
@@ -219,12 +219,12 @@
       "trading_system": "John",
       "conviction": "MEDIUM",
       "leverage": 3,
-      "entry_price": 0.08427277,
-      "entry_lo": 0.08242054,
-      "entry_hi": 0.08982946,
-      "sl": 0.08185912,
-      "tp1": 0.0923426,
-      "tp2": 0.10868175,
+      "entry_price": 0.08773887,
+      "entry_lo": 0.086112,
+      "entry_hi": 0.0926195,
+      "sl": 0.08548425,
+      "tp1": 0.09703618,
+      "tp2": 0.1002315,
       "status": "PENDING",
       "tp1_hit": false,
       "tp2_hit": false,
@@ -510,6 +510,29 @@
       "time_opened_utc": "04:04",
       "sl_mode": "initial",
       "feed_updated_utc": "2026-09-04T04:04Z"
+    },
+    {
+      "trade_id": "UNIUSDT_20260905_CJ_001",
+      "coin": "UNIUSDT",
+      "direction": "Long",
+      "trading_system": "John",
+      "conviction": "MEDIUM",
+      "leverage": 3,
+      "entry_price": 5.93081344,
+      "entry_lo": 5.77537688,
+      "entry_hi": 6.39712312,
+      "sl": 5.67736919,
+      "tp1": 6.69272812,
+      "tp2": 7.17626161,
+      "status": "PENDING",
+      "tp1_hit": false,
+      "tp2_hit": false,
+      "sl_hit": false,
+      "close_reason": null,
+      "date_opened": "2026-09-05",
+      "time_opened_utc": "00:04",
+      "sl_mode": "initial",
+      "feed_updated_utc": "2026-09-05T00:04Z"
     }
   ]
 }
