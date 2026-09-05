@@ -1,6 +1,6 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-09-05T16:07Z",
+  "generated_utc": "2026-09-05T18:08Z",
   "master": "braam",
   "retention_hours": 48,
   "trade_count": 21,
@@ -156,7 +156,7 @@
       "sl": 0.33621785,
       "tp1": 0.329,
       "tp2": 0.3228,
-      "status": "PENDING",
+      "status": "OPEN",
       "tp1_hit": false,
       "tp2_hit": false,
       "sl_hit": false,
@@ -164,7 +164,7 @@
       "date_opened": "2026-09-01",
       "time_opened_utc": "12:04",
       "sl_mode": "initial",
-      "feed_updated_utc": "2026-09-01T12:04Z"
+      "feed_updated_utc": "2026-09-05T16:53Z"
     },
     {
       "trade_id": "ALGOUSDT_20260901_CJ_001",
@@ -340,15 +340,15 @@
       "sl": 0.08365258,
       "tp1": 0.08907,
       "tp2": 0.0949,
-      "status": "OPEN",
-      "tp1_hit": false,
+      "status": "TP2_HIT",
+      "tp1_hit": true,
       "tp2_hit": false,
       "sl_hit": false,
-      "close_reason": null,
+      "close_reason": "live MEXC exit: tp2 @ 0.09488",
       "date_opened": "2026-09-03",
       "time_opened_utc": "16:03",
-      "sl_mode": "initial",
-      "feed_updated_utc": "2026-09-04T12:30Z"
+      "sl_mode": "breakeven",
+      "feed_updated_utc": "2026-09-05T17:58Z"
     },
     {
       "trade_id": "THETAUSDT_20260903_CJ_001",
@@ -387,13 +387,13 @@
       "tp1": 12.034,
       "tp2": 12.409,
       "status": "OPEN",
-      "tp1_hit": false,
+      "tp1_hit": true,
       "tp2_hit": false,
       "sl_hit": false,
       "close_reason": null,
       "date_opened": "2026-09-04",
       "time_opened_utc": "04:04",
-      "sl_mode": "initial",
+      "sl_mode": "breakeven",
       "feed_updated_utc": "2026-09-04T12:32Z"
     },
     {

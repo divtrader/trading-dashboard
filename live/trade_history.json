@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-05T16:07:51Z",
+  "updated": "2026-09-05T18:08:40Z",
   "positions": {
     "1414291495": {
       "position_id": "1414291495",
@@ -3405,6 +3405,16 @@
       "close_type": 4,
       "close_reason": "stop_loss"
     },
+    "1490603413": {
+      "position_id": "1490603413",
+      "coin": "TRXUSDT",
+      "direction": "Short",
+      "leverage": 3,
+      "entry_price": 0.33439,
+      "opened_at": "2026-09-05T16:53:04Z",
+      "status": "OPEN",
+      "braam_trade_id": "TRXUSDT_20260901_CJ_001"
+    },
     "1488357626": {
       "position_id": "1488357626",
       "coin": "UNIUSDT",
@@ -3466,8 +3476,16 @@
       "leverage": 3,
       "entry_price": 0.08542,
       "opened_at": "2026-09-04T12:30:21Z",
-      "status": "OPEN",
-      "braam_trade_id": "DOGEUSDT_20260903_CJ_001"
+      "status": "CLOSED",
+      "braam_trade_id": "DOGEUSDT_20260903_CJ_001",
+      "closed_at": "2026-09-05T17:58:21Z",
+      "close_price": 0.09488,
+      "pnl_usd": 21.4128,
+      "margin_usd": 132.07,
+      "fees_usd": 0.5675,
+      "tag": "WIN",
+      "close_type": 3,
+      "close_reason": "take_profit"
     },
     "1489741780": {
       "position_id": "1489741780",
@@ -3525,15 +3543,6 @@
       "entry_price": 6.95627461,
       "resting_at": "2026-08-31T00:03:00Z",
       "braam_trade_id": "AVAXUSDT_20260831_CJ_001",
-      "status": "RESTING"
-    },
-    "851220212589458432": {
-      "order_id": "851220212589458432",
-      "coin": "TRXUSDT",
-      "direction": "Short",
-      "entry_price": 0.33439135,
-      "resting_at": "2026-09-01T12:04:00Z",
-      "braam_trade_id": "TRXUSDT_20260901_CJ_001",
       "status": "RESTING"
     },
     "851190016762959360": {
