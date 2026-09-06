@@ -3250,6 +3250,18 @@ main {
     padding-bottom: env(safe-area-inset-bottom, 0px);
   }
 
+  /* ── iPhone = ONE scrollable page (not the 4-screen swipe carousel) ── */
+  #screen-wrap { overflow-y: auto; -webkit-overflow-scrolling: touch; }
+  .screen {
+    position: static;
+    inset: auto;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    transform: none !important;
+    margin-bottom: 22px;
+  }
+  .dots { display: none; }
+
   /* Compact header */
   .brand {
     font-size: 12px;
@@ -3261,10 +3273,14 @@ main {
   .meta { gap: 8px; font-size: 11px; }
   #last-cron { display: none; } /* too wide on small screen */
 
-  /* Screen 1: allow vertical scroll if content overflows */
+  /* Screen 1: rows size to CONTENT and stack from the top so tall content scrolls
+     instead of being distributed/compressed into the fixed viewport (which clipped
+     the hero + overlapped the tiles). align-content:start is the key. */
   #screen-1 {
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto auto auto auto;
+    grid-template-rows: none;
+    grid-auto-rows: min-content;
+    align-content: start;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
     padding-bottom: 8px;
@@ -3273,13 +3289,27 @@ main {
   .recent-closes-list .rc-row { font-size: 11px; }
 
   /* ── Hero tile ── */
-  .hero-tile { padding: 16px 14px; }
+  /* Grow to content + let Screen 1 scroll — the desktop tile is overflow:hidden at a
+     fixed height, which clipped the stacked systems (John/Braam/Mong) on iPhone. */
+  .hero-tile { padding: 16px 14px; overflow: visible; }
+  .hero-main { height: auto; }
   .hero-value {
-    font-size: 48px !important;
+    font-size: 46px !important;
     letter-spacing: -2px !important;
     margin: 4px 0 8px;
   }
+  /* Let the inline (+%) wrap under the $ value instead of clipping off-screen */
+  .hero-value-row { flex-wrap: wrap; gap: 2px 12px; }
   .hero-return { margin-bottom: 6px; }
+
+  /* Stack the win-rate donut BELOW the P&L — the desktop "main donut" side-by-side
+     crammed the donut over the headline on iPhone. */
+  .paper-block {
+    grid-template-columns: 1fr;
+    grid-template-areas: "main" "donut";
+    gap: 10px;
+  }
+  .paper-block .hero-donut-inline { align-self: center; }
 
   /* Stack Paper + MEXC vertically on mobile */
   .hero-pnls { grid-template-columns: 1fr; gap: 14px; }
@@ -3305,15 +3335,24 @@ main {
   /* Open / Pending tiles */
   .tile { padding: 12px 14px; }
 
-  /* Price bar */
-  .price-bar { padding: 8px 12px; }
-  .px-val  { font-size: 16px; }
-  .px-chg  { font-size: 11px; }
-  .px-sep  { margin: 0 10px; font-size: 14px; }
+  /* Price bar — drop the % change on mobile so all 3 prices fit without clipping */
+  .price-bar { padding: 8px 10px; }
+  .px-val  { font-size: 14px; }
+  .px-chg  { display: none; }
+  .px-sep  { margin: 0 7px; font-size: 12px; }
 
-  /* ── Screen 2: paper bars — reflow to name/pnl on row 1, bar on row 2 ── */
-  #screen-2 { overflow-y: auto; -webkit-overflow-scrolling: touch; }
-  .paper-bars { overflow: visible; }
+  /* ── Screens 2 & 3: single-column bar/pending lists that grow to content and
+     scroll. The desktop 2-column layout is height-locked (flex:1 + min-height:0),
+     which compressed + overlapped the taller mobile rows on iPhone. ── */
+  #screen-2, #screen-3 { overflow-y: auto; -webkit-overflow-scrolling: touch; }
+  .paper-bars, .triggers { flex: 0 0 auto; min-height: auto; overflow: visible; }
+  .triggers-body { flex: 0 0 auto; min-height: auto; display: block; }
+  .pb-cols, .pt-cols { grid-template-columns: 1fr; flex: 0 0 auto; min-height: auto; gap: 8px; }
+  /* Kill the FLIP slide-transform on list rows — in the tall stacked 1-page layout
+     it flings rows hundreds of px and they overlap mid-animation on every price tick.
+     Rows snap into place (opacity crossfade still applies). */
+  #screen-2 .paper-bar-row, #screen-3 .pt-row { transform: none !important; }
+  /* Screen 2: paper bars reflow to name/pnl on row 1, bar on row 2 */
   .paper-bar-row {
     grid-template-columns: 1fr auto;
     grid-template-rows: auto auto;
@@ -3372,6 +3411,21 @@ main {
   .edge-strip { grid-template-columns: 1fr 1fr 1fr; row-gap: 10px; }
   .strip-cell:nth-child(3n) { border-right: none; padding-right: 0; }
   .strip-cell { border-right: 1px solid var(--border); padding-right: 8px; }
+
+  /* Screen 4 (analytics): flow to content. .an-screen is height:100% fill, which
+     collapsed to 0 in the stacked 1-page layout. Give each piece content height and
+     the vs-S&P chart a fixed height so the SVG (height:100%) has something to fill. */
+  #screen-4 .an-screen { height: auto; flex: none; }
+  #screen-4 .an-hero,
+  #screen-4 .an-tile,
+  #screen-4 .edge-row,
+  #screen-4 .edge-tile { flex: none; height: auto; min-height: 0; }
+  #screen-4 .an-bench-chart { flex: none; height: 190px; min-height: 190px; }
+  #screen-4 .an-screen .housekeeping-tile { flex: none; height: auto; max-height: 320px; }
+  #screen-4 .an-monthly { flex: none; height: auto; }
+  /* The by-entry/confluence/conviction breakdown grid is a nested flex-fill that
+     collapses + overlaps on a phone; drop it from the 1-page mobile view. */
+  #screen-4 .an-grid { display: none; }
 }
 
 /* ══════════════════════════════════════════════════════════════════════════
