@@ -1,9 +1,9 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-09-06T15:41Z",
+  "generated_utc": "2026-09-06T16:08Z",
   "master": "braam",
   "retention_hours": 48,
-  "trade_count": 23,
+  "trade_count": 24,
   "trades": [
     {
       "trade_id": "TAOUSDT_20260822_CJ_001",
@@ -18,15 +18,15 @@
       "sl": 207.23959772,
       "tp1": 270.34588056,
       "tp2": 294.42080455,
-      "status": "PENDING",
+      "status": "CANCELLED",
       "tp1_hit": false,
       "tp2_hit": false,
       "sl_hit": false,
-      "close_reason": null,
+      "close_reason": "Entry window expired: unfilled 15.0d \u2265 90\u00d74H (360h) \u2014 mirrors backtest ENTRY_WINDOW",
       "date_opened": "2026-08-22",
       "time_opened_utc": "16:03",
       "sl_mode": "initial",
-      "feed_updated_utc": "2026-08-22T16:03Z"
+      "feed_updated_utc": "2026-09-06T16:04Z"
     },
     {
       "trade_id": "NEARUSDT_20260826_CJ_001",
@@ -104,12 +104,12 @@
       "trading_system": "John",
       "conviction": "MEDIUM",
       "leverage": 3,
-      "entry_price": 6.82863297,
-      "entry_lo": 6.72926595,
-      "entry_hi": 7.12673405,
-      "sl": 6.72358314,
-      "tp1": 8.52282036,
-      "tp2": 9.63483372,
+      "entry_price": 6.96048297,
+      "entry_lo": 6.86996595,
+      "entry_hi": 7.23203405,
+      "sl": 6.85000813,
+      "tp1": 8.52152816,
+      "tp2": 9.18398374,
       "status": "PENDING",
       "tp1_hit": false,
       "tp2_hit": false,
@@ -533,6 +533,29 @@
       "time_opened_utc": "12:04",
       "sl_mode": "initial",
       "feed_updated_utc": "2026-09-06T12:04Z"
+    },
+    {
+      "trade_id": "DOGEUSDT_20260906_CJ_001",
+      "coin": "DOGEUSDT",
+      "direction": "Long",
+      "trading_system": "John",
+      "conviction": "MEDIUM",
+      "leverage": 3,
+      "entry_price": 0.08525447,
+      "entry_lo": 0.08335393,
+      "entry_hi": 0.09095607,
+      "sl": 0.08311112,
+      "tp1": 0.09215321,
+      "tp2": 0.10029776,
+      "status": "PENDING",
+      "tp1_hit": false,
+      "tp2_hit": false,
+      "sl_hit": false,
+      "close_reason": null,
+      "date_opened": "2026-09-06",
+      "time_opened_utc": "16:04",
+      "sl_mode": "initial",
+      "feed_updated_utc": "2026-09-06T16:04Z"
     }
   ]
 }
