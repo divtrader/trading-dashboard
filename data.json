@@ -1,5 +1,5 @@
 {
-  "last_updated_iso": "2026-09-06T15:39:10Z",
+  "last_updated_iso": "2026-09-06T15:40:53Z",
   "mexc_account": null,
   "api_keys": [
     {
@@ -412,10 +412,10 @@
       "leverage": 3,
       "trading_system": "John",
       "track_only": false,
-      "status": "PENDING",
+      "status": "OPEN",
       "price_at_run": 2.202,
-      "date_activated": null,
-      "time_activated_utc": null,
+      "date_activated": "2026-09-06",
+      "time_activated_utc": "14:32",
       "date_opened": "2026-09-05",
       "time_opened_utc": "12:04",
       "conviction": "MEDIUM",
@@ -506,6 +506,16 @@
       "tp1_hit": false,
       "iso": "2026-09-05T16:53:00Z",
       "_iso_ms": 1788627180000
+    },
+    {
+      "trade_id": "CAKEUSDT_20260905_CJ_001",
+      "coin": "CAKEUSDT",
+      "direction": "Long",
+      "trading_system": "John",
+      "entry_price": 2.152,
+      "tp1_hit": false,
+      "iso": "2026-09-06T14:32:00Z",
+      "_iso_ms": 1788705120000
     }
   ],
   "recent_closes": [
@@ -1177,7 +1187,7 @@
     "peak_capital_usd": 3300,
     "peak_concurrent": 33,
     "peak_date": "2026-06-22",
-    "deployed_trades": 677,
+    "deployed_trades": 678,
     "return_on_peak_pct": 31.46,
     "win_rate_pct": 33.6,
     "closed_count": 661,
