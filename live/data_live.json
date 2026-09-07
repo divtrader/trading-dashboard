@@ -1,42 +1,19 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-09-07T09:03:44Z",
+  "last_updated_iso": "2026-09-07T09:05:32Z",
   "mexc_account": {
-    "unrealized_pnl": 23.5382,
-    "equity": 2728.2667,
+    "unrealized_pnl": 25.642,
+    "equity": 2730.3706,
     "available": 383.9093,
     "position_margin": 588.0502
   },
   "order_levels": {
     "checked": 19,
-    "in_sync": 17,
-    "drifted": [
-      "NEAR",
-      "BTC"
-    ],
+    "in_sync": 19,
+    "drifted": [],
     "reconciling": [],
-    "detail": [
-      {
-        "coin": "NEAR",
-        "trade_id": "NEARUSDT_20260906_CJ_001",
-        "status": "OPEN",
-        "fields": [
-          "tp1",
-          "tp2"
-        ],
-        "synced_at": null
-      },
-      {
-        "coin": "BTC",
-        "trade_id": "BTCUSDT_20260907_CJ_001",
-        "status": "OPEN",
-        "fields": [
-          "tp1"
-        ],
-        "synced_at": null
-      }
-    ]
+    "detail": []
   },
   "api_keys": [
     {
@@ -97,7 +74,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$2,728.27",
+      "value": "$2,730.37",
       "status": "ok",
       "action": null
     },
