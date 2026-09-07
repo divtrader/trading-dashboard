@@ -1,5 +1,5 @@
 {
-  "last_updated_iso": "2026-09-07T05:36:51Z",
+  "last_updated_iso": "2026-09-07T05:38:34Z",
   "mexc_account": null,
   "api_keys": [
     {
@@ -100,29 +100,6 @@
       "tp1_hit": true,
       "sl_moved_to_be": null,
       "pnl_tp1_realized_usd": 11.73
-    },
-    {
-      "trade_id": "TRXUSDT_20260901_CJ_001",
-      "coin": "TRXUSDT",
-      "direction": "Short",
-      "entry_price": 0.33439135,
-      "sl": 0.33621785,
-      "tp1": 0.329,
-      "tp2": 0.3228,
-      "capital_usd": 100,
-      "leverage": 3,
-      "trading_system": "John",
-      "track_only": false,
-      "status": "OPEN",
-      "price_at_run": 0.3357,
-      "date_activated": "2026-09-05",
-      "time_activated_utc": "16:53",
-      "date_opened": "2026-09-01",
-      "time_opened_utc": "12:04",
-      "conviction": "MEDIUM",
-      "tp1_hit": false,
-      "sl_moved_to_be": null,
-      "pnl_tp1_realized_usd": null
     },
     {
       "trade_id": "ALGOUSDT_20260901_CJ_001",
@@ -494,22 +471,6 @@
     }
   ],
   "recent_closes": [
-    {
-      "trade_id": "APTUSDT_20260813_CJ_M_001",
-      "coin": "APTUSDT",
-      "direction": "Short",
-      "status": "STOPPED",
-      "pnl_usd": -4.11,
-      "close_reason": "SL hit",
-      "date_closed": "2026-08-21",
-      "time_closed_utc": "04:00",
-      "trading_system": "John",
-      "won": false,
-      "close_iso": "2026-08-21T04:00:00Z",
-      "margin_usd": 100,
-      "fees_usd": 0.408,
-      "fees_modeled": true
-    },
     {
       "trade_id": "ALGOUSDT_20260809_CB_001",
       "coin": "ALGOUSDT",
@@ -1133,6 +1094,22 @@
       "margin_usd": 100,
       "fees_usd": 0.408,
       "fees_modeled": true
+    },
+    {
+      "trade_id": "TRXUSDT_20260901_CJ_001",
+      "coin": "TRXUSDT",
+      "direction": "Short",
+      "status": "STOPPED",
+      "pnl_usd": -1.75,
+      "close_reason": "live MEXC exit: sl @ 0.33634",
+      "date_closed": "2026-09-07",
+      "time_closed_utc": "04:46",
+      "trading_system": "John",
+      "won": false,
+      "close_iso": "2026-09-07T04:46:00Z",
+      "margin_usd": 100,
+      "fees_usd": 0.408,
+      "fees_modeled": true
     }
   ],
   "recent_cancels": [
@@ -1159,20 +1136,20 @@
     }
   ],
   "stats": {
-    "realized_pnl_usd": 1055.52,
+    "realized_pnl_usd": 1053.77,
     "realized_pnl_pct": 1.59,
     "peak_capital_usd": 3300,
     "peak_concurrent": 33,
     "peak_date": "2026-06-22",
     "deployed_trades": 679,
-    "return_on_peak_pct": 31.99,
-    "win_rate_pct": 33.7,
-    "closed_count": 662,
+    "return_on_peak_pct": 31.93,
+    "win_rate_pct": 33.6,
+    "closed_count": 663,
     "per_system": {
       "John": {
-        "realized_pnl_usd": 669.3,
-        "win_rate_pct": 27.9,
-        "closed_count": 409
+        "realized_pnl_usd": 667.55,
+        "win_rate_pct": 27.8,
+        "closed_count": 410
       },
       "William": {
         "realized_pnl_usd": 45.24,
@@ -1186,10 +1163,10 @@
       }
     },
     "real_only": {
-      "realized_pnl_usd": 64.34,
-      "realized_pnl_pct": 0.33,
-      "win_rate_pct": 39.7,
-      "closed_count": 194
+      "realized_pnl_usd": 62.59,
+      "realized_pnl_pct": 0.32,
+      "win_rate_pct": 39.5,
+      "closed_count": 195
     },
     "track_only": {
       "realized_pnl_usd": 991.18,
