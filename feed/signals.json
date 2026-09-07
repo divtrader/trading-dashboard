@@ -1,9 +1,9 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-09-07T16:07Z",
+  "generated_utc": "2026-09-07T18:07Z",
   "master": "braam",
   "retention_hours": 48,
-  "trade_count": 26,
+  "trade_count": 25,
   "trades": [
     {
       "trade_id": "TAOUSDT_20260822_CJ_001",
@@ -305,29 +305,6 @@
       "feed_updated_utc": "2026-09-03T12:03Z"
     },
     {
-      "trade_id": "DOGEUSDT_20260903_CJ_001",
-      "coin": "DOGEUSDT",
-      "direction": "Long",
-      "trading_system": "John",
-      "conviction": "MEDIUM",
-      "leverage": 3,
-      "entry_price": 0.08541794,
-      "entry_lo": 0.08368087,
-      "entry_hi": 0.09062913,
-      "sl": 0.08365258,
-      "tp1": 0.08907,
-      "tp2": 0.0949,
-      "status": "TP2_HIT",
-      "tp1_hit": true,
-      "tp2_hit": false,
-      "sl_hit": false,
-      "close_reason": "live MEXC exit: tp2 @ 0.09488",
-      "date_opened": "2026-09-03",
-      "time_opened_utc": "16:03",
-      "sl_mode": "breakeven",
-      "feed_updated_utc": "2026-09-05T17:58Z"
-    },
-    {
       "trade_id": "THETAUSDT_20260903_CJ_001",
       "coin": "THETAUSDT",
       "direction": "Long",
@@ -340,15 +317,15 @@
       "sl": 0.16816379,
       "tp1": 0.1792,
       "tp2": 0.193,
-      "status": "OPEN",
+      "status": "TP2_HIT",
       "tp1_hit": true,
       "tp2_hit": false,
       "sl_hit": false,
-      "close_reason": null,
+      "close_reason": "live MEXC exit: tp2 @ 0.1929",
       "date_opened": "2026-09-03",
       "time_opened_utc": "20:04",
       "sl_mode": "breakeven",
-      "feed_updated_utc": "2026-09-04T12:32Z"
+      "feed_updated_utc": "2026-09-07T16:56Z"
     },
     {
       "trade_id": "LINKUSDT_20260904_CJ_001",
