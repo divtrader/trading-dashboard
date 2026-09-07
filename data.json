@@ -1,5 +1,5 @@
 {
-  "last_updated_iso": "2026-09-07T15:32:23Z",
+  "last_updated_iso": "2026-09-07T15:34:14Z",
   "mexc_account": null,
   "api_keys": [
     {
@@ -412,10 +412,10 @@
       "leverage": 3,
       "trading_system": "John",
       "track_only": false,
-      "status": "PENDING",
+      "status": "OPEN",
       "price_at_run": 264.8,
-      "date_activated": null,
-      "time_activated_utc": null,
+      "date_activated": "2026-09-07",
+      "time_activated_utc": "15:15",
       "date_opened": "2026-09-07",
       "time_opened_utc": "08:03",
       "conviction": "MEDIUM",
@@ -448,18 +448,6 @@
     }
   ],
   "recent_signals": [
-    {
-      "trade_id": "TAOUSDT_20260907_CJ_001",
-      "coin": "TAOUSDT",
-      "direction": "Long",
-      "trading_system": "John",
-      "entry_price": 258.13954458,
-      "tp1": 272.5,
-      "sl": 249.43904391,
-      "conviction": "MEDIUM",
-      "track_only": false,
-      "iso": "2026-09-07T08:03:00Z"
-    },
     {
       "trade_id": "RENDERUSDT_20260907_CJ_001",
       "coin": "RENDERUSDT",
@@ -523,6 +511,16 @@
       "tp1_hit": false,
       "iso": "2026-09-07T07:40:00Z",
       "_iso_ms": 1788766800000
+    },
+    {
+      "trade_id": "TAOUSDT_20260907_CJ_001",
+      "coin": "TAOUSDT",
+      "direction": "Long",
+      "trading_system": "John",
+      "entry_price": 258.13954458,
+      "tp1_hit": false,
+      "iso": "2026-09-07T15:15:00Z",
+      "_iso_ms": 1788794100000
     }
   ],
   "recent_closes": [
@@ -1194,7 +1192,7 @@
     "peak_capital_usd": 3300,
     "peak_concurrent": 33,
     "peak_date": "2026-06-22",
-    "deployed_trades": 681,
+    "deployed_trades": 682,
     "return_on_peak_pct": 32.29,
     "win_rate_pct": 33.7,
     "closed_count": 664,
