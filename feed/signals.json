@@ -1,6 +1,6 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-09-08T08:08Z",
+  "generated_utc": "2026-09-08T10:08Z",
   "master": "braam",
   "retention_hours": 48,
   "trade_count": 24,
@@ -179,15 +179,15 @@
       "sl": 0.66685416,
       "tp1": 0.79826751,
       "tp2": 0.80829168,
-      "status": "PENDING",
+      "status": "CANCELLED",
       "tp1_hit": false,
       "tp2_hit": false,
       "sl_hit": false,
-      "close_reason": null,
+      "close_reason": "Stale 24.0h \u2265 24h grace: Price $0.8300 is 17.5% above entry $0.6847",
       "date_opened": "2026-09-02",
       "time_opened_utc": "12:04",
       "sl_mode": "initial",
-      "feed_updated_utc": "2026-09-02T12:04Z"
+      "feed_updated_utc": "2026-09-08T10:04Z"
     },
     {
       "trade_id": "XRPUSDT_20260902_CJ_001",
