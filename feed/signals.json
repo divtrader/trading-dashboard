@@ -1,9 +1,9 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-09-09T15:41Z",
+  "generated_utc": "2026-09-09T16:08Z",
   "master": "braam",
   "retention_hours": 48,
-  "trade_count": 20,
+  "trade_count": 21,
   "trades": [
     {
       "trade_id": "TRXUSDT_20260829_CJ_001",
@@ -464,6 +464,29 @@
       "time_opened_utc": "04:04",
       "sl_mode": "initial",
       "feed_updated_utc": "2026-09-09T04:04Z"
+    },
+    {
+      "trade_id": "SUIUSDT_20260909_CJ_001",
+      "coin": "SUIUSDT",
+      "direction": "Long",
+      "trading_system": "John",
+      "conviction": "HIGH",
+      "leverage": 3,
+      "entry_price": 0.77314406,
+      "entry_lo": 0.76243812,
+      "entry_hi": 0.80526188,
+      "sl": 0.74858677,
+      "tp1": 0.8524291,
+      "tp2": 0.89352645,
+      "status": "PENDING",
+      "tp1_hit": false,
+      "tp2_hit": false,
+      "sl_hit": false,
+      "close_reason": null,
+      "date_opened": "2026-09-09",
+      "time_opened_utc": "16:03",
+      "sl_mode": "initial",
+      "feed_updated_utc": "2026-09-09T16:03Z"
     }
   ]
 }
