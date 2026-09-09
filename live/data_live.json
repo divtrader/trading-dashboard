@@ -1,42 +1,19 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-09-09T10:52:00Z",
+  "last_updated_iso": "2026-09-09T10:53:48Z",
   "mexc_account": {
-    "unrealized_pnl": 19.5955,
-    "equity": 3240.963,
+    "unrealized_pnl": 18.7119,
+    "equity": 3240.0794,
     "available": 1243.7083,
     "position_margin": 213.8142
   },
   "order_levels": {
     "checked": 17,
-    "in_sync": 15,
-    "drifted": [
-      "NEAR",
-      "TAO"
-    ],
+    "in_sync": 17,
+    "drifted": [],
     "reconciling": [],
-    "detail": [
-      {
-        "coin": "NEAR",
-        "trade_id": "NEARUSDT_20260906_CJ_001",
-        "status": "OPEN",
-        "fields": [
-          "tp2"
-        ],
-        "synced_at": "2026-09-07T09:04:43.613783+00:00"
-      },
-      {
-        "coin": "TAO",
-        "trade_id": "TAOUSDT_20260907_CJ_001",
-        "status": "OPEN",
-        "fields": [
-          "tp1",
-          "tp2"
-        ],
-        "synced_at": "2026-09-07T15:33:33.942769+00:00"
-      }
-    ]
+    "detail": []
   },
   "api_keys": [
     {
@@ -97,7 +74,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$3,240.96",
+      "value": "$3,240.08",
       "status": "ok",
       "action": null
     },
