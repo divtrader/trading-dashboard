@@ -1,19 +1,32 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-09-09T10:53:48Z",
+  "last_updated_iso": "2026-09-09T12:06:09Z",
   "mexc_account": {
-    "unrealized_pnl": 18.7119,
-    "equity": 3240.0794,
-    "available": 1243.7083,
+    "unrealized_pnl": 29.4176,
+    "equity": 3250.7648,
+    "available": 1243.7627,
     "position_margin": 213.8142
   },
   "order_levels": {
     "checked": 17,
-    "in_sync": 17,
-    "drifted": [],
+    "in_sync": 16,
+    "drifted": [
+      "TAO"
+    ],
     "reconciling": [],
-    "detail": []
+    "detail": [
+      {
+        "coin": "TAO",
+        "trade_id": "TAOUSDT_20260907_CJ_001",
+        "status": "OPEN",
+        "fields": [
+          "tp1",
+          "tp2"
+        ],
+        "synced_at": "2026-09-09T10:53:02.260855+00:00"
+      }
+    ]
   },
   "api_keys": [
     {
@@ -74,7 +87,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$3,240.08",
+      "value": "$3,250.76",
       "status": "ok",
       "action": null
     },
@@ -90,9 +103,9 @@
       "key": "orphan_orders",
       "tier": 1,
       "label": "Order reconciliation",
-      "value": "in sync (13 resting = journal)",
-      "status": "ok",
-      "action": null
+      "value": "1 ORPHAN order(s) on MEXC",
+      "status": "urgent",
+      "action": "Untracked resting order(s) \u2014 cancel on MEXC (double-fill risk): AVAX_USDT Long @ 6.826 (id 852639427225597952)"
     },
     {
       "key": "position_protection",
@@ -453,7 +466,7 @@
       "live_entry_slippage_pct": 0.0,
       "live_fees_usd": 0.51,
       "live_funding_usd": null,
-      "live_tp1_pnl_usd": 16.208,
+      "live_tp1_pnl_usd": 16.2087,
       "rehearsal": false
     },
     {
@@ -558,8 +571,8 @@
       "direction": "Long",
       "entry_price": 258.13954458,
       "sl": 249.43904391,
-      "tp1": 289.8,
-      "tp2": 322.4,
+      "tp1": 275.6,
+      "tp2": 289.8,
       "capital_usd": 136.15,
       "leverage": 3,
       "trading_system": "John",
