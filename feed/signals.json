@@ -1,6 +1,6 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-09-09T20:07Z",
+  "generated_utc": "2026-09-10T00:09Z",
   "master": "braam",
   "retention_hours": 48,
   "trade_count": 20,
@@ -12,12 +12,12 @@
       "trading_system": "John",
       "conviction": "HIGH",
       "leverage": 3,
-      "entry_price": 0.3308,
-      "entry_lo": 0.32897778,
-      "entry_hi": 0.33626665,
-      "sl": 0.32925824,
-      "tp1": 0.34052802,
-      "tp2": 0.36699927,
+      "entry_price": 0.33280069,
+      "entry_lo": 0.3311145,
+      "entry_hi": 0.33785928,
+      "sl": 0.33124623,
+      "tp1": 0.35267869,
+      "tp2": 0.36712622,
       "status": "PENDING",
       "tp1_hit": false,
       "tp2_hit": false,
@@ -81,12 +81,12 @@
       "trading_system": "John",
       "conviction": "MEDIUM",
       "leverage": 3,
-      "entry_price": 0.09006324,
-      "entry_lo": 0.08817647,
-      "entry_hi": 0.09572353,
-      "sl": 0.08737526,
-      "tp1": 0.10961481,
-      "tp2": 0.12644948,
+      "entry_price": 0.09068276,
+      "entry_lo": 0.08886553,
+      "entry_hi": 0.09613447,
+      "sl": 0.08778255,
+      "tp1": 0.10666392,
+      "tp2": 0.12173489,
       "status": "PENDING",
       "tp1_hit": false,
       "tp2_hit": false,
@@ -127,12 +127,12 @@
       "trading_system": "John",
       "conviction": "MEDIUM",
       "leverage": 3,
-      "entry_price": 1.33480873,
-      "entry_lo": 1.30796747,
-      "entry_hi": 1.41533253,
-      "sl": 1.3110609,
-      "tp1": 1.57245646,
-      "tp2": 1.70507819,
+      "entry_price": 1.32579459,
+      "entry_lo": 1.29993918,
+      "entry_hi": 1.40336082,
+      "sl": 1.30061642,
+      "tp1": 1.47695308,
+      "tp2": 1.58406716,
       "status": "PENDING",
       "tp1_hit": false,
       "tp2_hit": false,
@@ -225,7 +225,7 @@
       "sl": 0.07461605,
       "tp1": 0.08272233,
       "tp2": 0.0853079,
-      "status": "PENDING",
+      "status": "OPEN",
       "tp1_hit": false,
       "tp2_hit": false,
       "sl_hit": false,
@@ -233,7 +233,7 @@
       "date_opened": "2026-09-04",
       "time_opened_utc": "04:04",
       "sl_mode": "initial",
-      "feed_updated_utc": "2026-09-04T04:04Z"
+      "feed_updated_utc": "2026-09-09T22:09Z"
     },
     {
       "trade_id": "CAKEUSDT_20260905_CJ_001",
@@ -271,15 +271,15 @@
       "sl": 11.59539526,
       "tp1": 12.453,
       "tp2": 13.4,
-      "status": "OPEN",
+      "status": "STOPPED",
       "tp1_hit": false,
       "tp2_hit": false,
       "sl_hit": false,
-      "close_reason": null,
+      "close_reason": "live MEXC exit: sl @ 11.603",
       "date_opened": "2026-09-06",
       "time_opened_utc": "04:04",
       "sl_mode": "initial",
-      "feed_updated_utc": "2026-09-09T15:21Z"
+      "feed_updated_utc": "2026-09-09T22:09Z"
     },
     {
       "trade_id": "NEARUSDT_20260906_CJ_001",
@@ -317,7 +317,7 @@
       "sl": 0.08311112,
       "tp1": 0.09215321,
       "tp2": 0.10029776,
-      "status": "PENDING",
+      "status": "OPEN",
       "tp1_hit": false,
       "tp2_hit": false,
       "sl_hit": false,
@@ -325,7 +325,7 @@
       "date_opened": "2026-09-06",
       "time_opened_utc": "16:04",
       "sl_mode": "initial",
-      "feed_updated_utc": "2026-09-06T16:04Z"
+      "feed_updated_utc": "2026-09-09T22:09Z"
     },
     {
       "trade_id": "BTCUSDT_20260907_CJ_001",
@@ -386,7 +386,7 @@
       "sl": 1.42514945,
       "tp1": 1.61679922,
       "tp2": 1.69470111,
-      "status": "PENDING",
+      "status": "OPEN",
       "tp1_hit": false,
       "tp2_hit": false,
       "sl_hit": false,
@@ -394,7 +394,7 @@
       "date_opened": "2026-09-07",
       "time_opened_utc": "08:03",
       "sl_mode": "initial",
-      "feed_updated_utc": "2026-09-07T08:03Z"
+      "feed_updated_utc": "2026-09-09T22:09Z"
     },
     {
       "trade_id": "LTCUSDT_20260908_CJ_001",
@@ -455,7 +455,7 @@
       "sl": 0.74858677,
       "tp1": 0.8524291,
       "tp2": 0.89352645,
-      "status": "PENDING",
+      "status": "OPEN",
       "tp1_hit": false,
       "tp2_hit": false,
       "sl_hit": false,
@@ -463,7 +463,7 @@
       "date_opened": "2026-09-09",
       "time_opened_utc": "16:03",
       "sl_mode": "initial",
-      "feed_updated_utc": "2026-09-09T16:03Z"
+      "feed_updated_utc": "2026-09-09T22:07Z"
     }
   ]
 }
