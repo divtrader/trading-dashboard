@@ -1,9 +1,9 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-09-10T16:04Z",
+  "generated_utc": "2026-09-10T16:09Z",
   "master": "braam",
   "retention_hours": 48,
-  "trade_count": 21,
+  "trade_count": 22,
   "trades": [
     {
       "trade_id": "TRXUSDT_20260829_CJ_001",
@@ -35,12 +35,12 @@
       "trading_system": "John",
       "conviction": "MEDIUM",
       "leverage": 3,
-      "entry_price": 6.82614595,
-      "entry_lo": 6.7242919,
-      "entry_hi": 7.1317081,
-      "sl": 6.67962889,
-      "tp1": 8.51787615,
-      "tp2": 10.56874221,
+      "entry_price": 6.95645696,
+      "entry_lo": 6.86191391,
+      "entry_hi": 7.24008609,
+      "sl": 6.80510102,
+      "tp1": 8.51352442,
+      "tp2": 9.12079795,
       "status": "PENDING",
       "tp1_hit": false,
       "tp2_hit": false,
@@ -104,12 +104,12 @@
       "trading_system": "John",
       "conviction": "MEDIUM",
       "leverage": 3,
-      "entry_price": 1.32579459,
-      "entry_lo": 1.29993918,
-      "entry_hi": 1.40336082,
-      "sl": 1.30061642,
-      "tp1": 1.47695308,
-      "tp2": 1.58406716,
+      "entry_price": 1.29418996,
+      "entry_lo": 1.26805328,
+      "entry_hi": 1.3726,
+      "sl": 1.26956271,
+      "tp1": 1.43906677,
+      "tp2": 1.52497458,
       "status": "PENDING",
       "tp1_hit": false,
       "tp2_hit": false,
@@ -179,15 +179,15 @@
       "sl": 0.33538721,
       "tp1": 0.3639937,
       "tp2": 0.39542558,
-      "status": "PENDING",
+      "status": "CANCELLED",
       "tp1_hit": false,
       "tp2_hit": false,
       "sl_hit": false,
-      "close_reason": null,
+      "close_reason": "Signal direction flipped to Short (5/8 signals) \u2014 original setup no longer valid",
       "date_opened": "2026-09-03",
       "time_opened_utc": "12:03",
       "sl_mode": "initial",
-      "feed_updated_utc": "2026-09-03T12:03Z"
+      "feed_updated_utc": "2026-09-10T16:05Z"
     },
     {
       "trade_id": "HBARUSDT_20260904_CJ_001",
@@ -371,7 +371,7 @@
       "date_opened": "2026-09-08",
       "time_opened_utc": "00:04",
       "sl_mode": "initial",
-      "feed_updated_utc": "2026-09-10T12:47Z"
+      "feed_updated_utc": "2026-09-10T16:05Z"
     },
     {
       "trade_id": "THETAUSDT_20260909_CJ_001",
@@ -486,7 +486,30 @@
       "date_opened": "2026-09-10",
       "time_opened_utc": "12:04",
       "sl_mode": "initial",
-      "feed_updated_utc": "2026-09-10T12:47Z"
+      "feed_updated_utc": "2026-09-10T16:05Z"
+    },
+    {
+      "trade_id": "ONDOUSDT_20260910_CJ_001",
+      "coin": "ONDOUSDT",
+      "direction": "Short",
+      "trading_system": "John",
+      "conviction": "MEDIUM",
+      "leverage": 3,
+      "entry_price": 0.3567,
+      "entry_lo": 0.3357,
+      "entry_hi": 0.3637,
+      "sl": 0.36648382,
+      "tp1": 0.31138956,
+      "tp2": 0.30681908,
+      "status": "PENDING",
+      "tp1_hit": false,
+      "tp2_hit": false,
+      "sl_hit": false,
+      "close_reason": null,
+      "date_opened": "2026-09-10",
+      "time_opened_utc": "16:05",
+      "sl_mode": "initial",
+      "feed_updated_utc": "2026-09-10T16:05Z"
     }
   ]
 }
