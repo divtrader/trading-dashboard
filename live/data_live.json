@@ -1,19 +1,36 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-09-10T12:07:53Z",
+  "last_updated_iso": "2026-09-10T12:59:26Z",
   "mexc_account": {
-    "unrealized_pnl": -2.0592,
-    "equity": 3181.7466,
-    "available": 971.99,
-    "position_margin": 506.3909
+    "unrealized_pnl": 8.3202,
+    "equity": 3157.4636,
+    "available": 1393.5014,
+    "position_margin": 348.3146
   },
   "order_levels": {
-    "checked": 18,
-    "in_sync": 18,
-    "drifted": [],
-    "reconciling": [],
-    "detail": []
+    "checked": 14,
+    "in_sync": 13,
+    "drifted": [
+      "LTC"
+    ],
+    "reconciling": [
+      "HBAR",
+      "CAKE",
+      "DOGE",
+      "SUI"
+    ],
+    "detail": [
+      {
+        "coin": "LTC",
+        "trade_id": "LTCUSDT_20260908_CJ_001",
+        "status": "PENDING",
+        "fields": [
+          "tp1"
+        ],
+        "synced_at": "2026-09-09T20:04:52.898240+00:00"
+      }
+    ]
   },
   "api_keys": [
     {
@@ -74,7 +91,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$3,181.75",
+      "value": "$3,157.46",
       "status": "ok",
       "action": null
     },
@@ -90,7 +107,7 @@
       "key": "orphan_orders",
       "tier": 1,
       "label": "Order reconciliation",
-      "value": "in sync (12 resting = journal)",
+      "value": "in sync (10 resting = journal)",
       "status": "ok",
       "action": null
     },
@@ -98,7 +115,7 @@
       "key": "position_protection",
       "tier": 1,
       "label": "Position protection",
-      "value": "all protected (6 open, 3 pre-TP1 runners)",
+      "value": "all protected (4 open, 0 pre-TP1 runners)",
       "status": "ok",
       "action": null
     },
@@ -453,7 +470,7 @@
       "live_entry_slippage_pct": 0.0,
       "live_fees_usd": 0.51,
       "live_funding_usd": null,
-      "live_tp1_pnl_usd": 16.2082,
+      "live_tp1_pnl_usd": 16.8221,
       "rehearsal": false
     },
     {
@@ -526,8 +543,8 @@
       "direction": "Long",
       "entry_price": 51.73938428,
       "sl": 50.56260806,
-      "tp1": 57.84670406,
-      "tp2": 59.70478387,
+      "tp1": 56.22,
+      "tp2": 59.18,
       "capital_usd": 137.65,
       "leverage": 3,
       "trading_system": "John",
@@ -687,7 +704,7 @@
       "entry_price": 11.52547213,
       "sl": 11.23453277,
       "tp1": 12.41934148,
-      "tp2": 13.04493446,
+      "tp2": 13.294,
       "capital_usd": 159.12,
       "leverage": 3,
       "trading_system": "John",
