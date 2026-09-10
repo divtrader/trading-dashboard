@@ -1,19 +1,31 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-09-10T15:50:03Z",
+  "last_updated_iso": "2026-09-10T16:02:45Z",
   "mexc_account": {
-    "unrealized_pnl": 13.8915,
-    "equity": 3163.0349,
-    "available": 1393.5014,
+    "unrealized_pnl": 14.1251,
+    "equity": 3163.2325,
+    "available": 1393.4654,
     "position_margin": 348.3146
   },
   "order_levels": {
     "checked": 14,
-    "in_sync": 14,
-    "drifted": [],
+    "in_sync": 13,
+    "drifted": [
+      "LTC"
+    ],
     "reconciling": [],
-    "detail": []
+    "detail": [
+      {
+        "coin": "LTC",
+        "trade_id": "LTCUSDT_20260908_CJ_001",
+        "status": "OPEN",
+        "fields": [
+          "tp1"
+        ],
+        "synced_at": "2026-09-10T13:00:21.957468+00:00"
+      }
+    ]
   },
   "api_keys": [
     {
@@ -74,7 +86,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$3,163.03",
+      "value": "$3,163.23",
       "status": "ok",
       "action": null
     },
@@ -229,7 +241,7 @@
       "live_entry_slippage_pct": 0.0002,
       "live_fees_usd": 0.4844,
       "live_funding_usd": null,
-      "live_tp1_pnl_usd": 14.4617,
+      "live_tp1_pnl_usd": 14.4695,
       "rehearsal": false
     },
     {
@@ -421,7 +433,7 @@
       "live_entry_slippage_pct": 0.0,
       "live_fees_usd": 0.5186,
       "live_funding_usd": null,
-      "live_tp1_pnl_usd": 19.6559,
+      "live_tp1_pnl_usd": 19.6558,
       "rehearsal": false
     },
     {
@@ -430,7 +442,7 @@
       "direction": "Long",
       "entry_price": 51.73938428,
       "sl": 50.56260806,
-      "tp1": 56.22,
+      "tp1": 54.86,
       "tp2": 59.18,
       "capital_usd": 137.65,
       "leverage": 3,
