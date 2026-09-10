@@ -1,9 +1,9 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-09-10T06:31Z",
+  "generated_utc": "2026-09-10T08:08Z",
   "master": "braam",
   "retention_hours": 48,
-  "trade_count": 20,
+  "trade_count": 21,
   "trades": [
     {
       "trade_id": "TRXUSDT_20260829_CJ_001",
@@ -81,12 +81,12 @@
       "trading_system": "John",
       "conviction": "MEDIUM",
       "leverage": 3,
-      "entry_price": 0.09068276,
-      "entry_lo": 0.08886553,
-      "entry_hi": 0.09613447,
-      "sl": 0.08778255,
-      "tp1": 0.10666392,
-      "tp2": 0.12173489,
+      "entry_price": 0.0900283,
+      "entry_lo": 0.0881066,
+      "entry_hi": 0.0957934,
+      "sl": 0.08699189,
+      "tp1": 0.10646396,
+      "tp2": 0.11941621,
       "status": "PENDING",
       "tp1_hit": false,
       "tp2_hit": false,
@@ -325,7 +325,7 @@
       "date_opened": "2026-09-06",
       "time_opened_utc": "16:04",
       "sl_mode": "initial",
-      "feed_updated_utc": "2026-09-09T22:09Z"
+      "feed_updated_utc": "2026-09-10T08:04Z"
     },
     {
       "trade_id": "TAOUSDT_20260907_CJ_001",
@@ -440,7 +440,7 @@
       "date_opened": "2026-09-09",
       "time_opened_utc": "16:03",
       "sl_mode": "initial",
-      "feed_updated_utc": "2026-09-09T22:07Z"
+      "feed_updated_utc": "2026-09-10T08:04Z"
     },
     {
       "trade_id": "XLMUSDT_20260910_CJ_001",
@@ -464,6 +464,29 @@
       "time_opened_utc": "04:04",
       "sl_mode": "initial",
       "feed_updated_utc": "2026-09-10T04:04Z"
+    },
+    {
+      "trade_id": "RENDERUSDT_20260910_CJ_001",
+      "coin": "RENDERUSDT",
+      "direction": "Short",
+      "trading_system": "John",
+      "conviction": "MEDIUM",
+      "leverage": 3,
+      "entry_price": 1.4626755,
+      "entry_lo": 1.367649,
+      "entry_hi": 1.494351,
+      "sl": 1.50900101,
+      "tp1": 1.3569441,
+      "tp2": 1.25999798,
+      "status": "PENDING",
+      "tp1_hit": false,
+      "tp2_hit": false,
+      "sl_hit": false,
+      "close_reason": null,
+      "date_opened": "2026-09-10",
+      "time_opened_utc": "08:04",
+      "sl_mode": "initial",
+      "feed_updated_utc": "2026-09-10T08:04Z"
     }
   ]
 }
