@@ -1,6 +1,6 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-09-10T12:59Z",
+  "generated_utc": "2026-09-10T13:01Z",
   "master": "braam",
   "retention_hours": 48,
   "trade_count": 21,
@@ -202,15 +202,15 @@
       "sl": 0.07461605,
       "tp1": 0.08272233,
       "tp2": 0.0853079,
-      "status": "OPEN",
+      "status": "STOPPED",
       "tp1_hit": false,
       "tp2_hit": false,
       "sl_hit": false,
-      "close_reason": null,
+      "close_reason": "live MEXC exit: sl @ 0.07483",
       "date_opened": "2026-09-04",
       "time_opened_utc": "04:04",
       "sl_mode": "initial",
-      "feed_updated_utc": "2026-09-09T22:09Z"
+      "feed_updated_utc": "2026-09-10T12:47Z"
     },
     {
       "trade_id": "CAKEUSDT_20260905_CJ_001",
@@ -225,15 +225,15 @@
       "sl": 2.08871073,
       "tp1": 2.265,
       "tp2": 2.46157853,
-      "status": "OPEN",
+      "status": "STOPPED_AFTER_TP1",
       "tp1_hit": true,
       "tp2_hit": false,
       "sl_hit": false,
-      "close_reason": null,
+      "close_reason": "live MEXC exit: sl @ 2.1519",
       "date_opened": "2026-09-05",
       "time_opened_utc": "12:04",
       "sl_mode": "breakeven",
-      "feed_updated_utc": "2026-09-06T14:32Z"
+      "feed_updated_utc": "2026-09-10T12:12Z"
     },
     {
       "trade_id": "LINKUSDT_20260906_CJ_001",
@@ -294,15 +294,15 @@
       "sl": 0.08311112,
       "tp1": 0.09134,
       "tp2": 0.09471,
-      "status": "OPEN",
+      "status": "STOPPED",
       "tp1_hit": false,
       "tp2_hit": false,
       "sl_hit": false,
-      "close_reason": null,
+      "close_reason": "live MEXC exit: sl @ 0.0831",
       "date_opened": "2026-09-06",
       "time_opened_utc": "16:04",
       "sl_mode": "initial",
-      "feed_updated_utc": "2026-09-10T08:04Z"
+      "feed_updated_utc": "2026-09-10T12:47Z"
     },
     {
       "trade_id": "TAOUSDT_20260907_CJ_001",
@@ -363,7 +363,7 @@
       "sl": 50.56260806,
       "tp1": 56.22,
       "tp2": 59.18,
-      "status": "PENDING",
+      "status": "OPEN",
       "tp1_hit": false,
       "tp2_hit": false,
       "sl_hit": false,
@@ -371,7 +371,7 @@
       "date_opened": "2026-09-08",
       "time_opened_utc": "00:04",
       "sl_mode": "initial",
-      "feed_updated_utc": "2026-09-08T00:04Z"
+      "feed_updated_utc": "2026-09-10T12:47Z"
     },
     {
       "trade_id": "THETAUSDT_20260909_CJ_001",
@@ -409,15 +409,15 @@
       "sl": 0.74858677,
       "tp1": 0.8294,
       "tp2": 0.89352645,
-      "status": "OPEN",
+      "status": "STOPPED",
       "tp1_hit": false,
       "tp2_hit": false,
       "sl_hit": false,
-      "close_reason": null,
+      "close_reason": "live MEXC exit: sl @ 0.7459",
       "date_opened": "2026-09-09",
       "time_opened_utc": "16:03",
       "sl_mode": "initial",
-      "feed_updated_utc": "2026-09-10T08:04Z"
+      "feed_updated_utc": "2026-09-10T12:47Z"
     },
     {
       "trade_id": "XLMUSDT_20260910_CJ_001",
@@ -478,7 +478,7 @@
       "sl": 11.23453277,
       "tp1": 12.41934148,
       "tp2": 13.294,
-      "status": "PENDING",
+      "status": "OPEN",
       "tp1_hit": false,
       "tp2_hit": false,
       "sl_hit": false,
@@ -486,7 +486,7 @@
       "date_opened": "2026-09-10",
       "time_opened_utc": "12:04",
       "sl_mode": "initial",
-      "feed_updated_utc": "2026-09-10T12:04Z"
+      "feed_updated_utc": "2026-09-10T12:47Z"
     }
   ]
 }

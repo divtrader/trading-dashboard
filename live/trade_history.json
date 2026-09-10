@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-10T12:59:37Z",
+  "updated": "2026-09-10T13:01:24Z",
   "positions": {
     "1414291495": {
       "position_id": "1414291495",
@@ -3546,8 +3546,16 @@
       "leverage": 3,
       "entry_price": 0.07595,
       "opened_at": "2026-09-09T22:09:17Z",
-      "status": "OPEN",
-      "braam_trade_id": "HBARUSDT_20260904_CJ_001"
+      "status": "CLOSED",
+      "braam_trade_id": "HBARUSDT_20260904_CJ_001",
+      "closed_at": "2026-09-10T12:47:29Z",
+      "close_price": 0.07483,
+      "pnl_usd": -6.37,
+      "margin_usd": 132.2,
+      "fees_usd": 0.5504,
+      "tag": "LOSS",
+      "close_type": 4,
+      "close_reason": "stop_loss"
     },
     "1491640029": {
       "position_id": "1491640029",
@@ -3574,8 +3582,16 @@
       "leverage": 3,
       "entry_price": 2.152,
       "opened_at": "2026-09-06T14:32:22Z",
-      "status": "OPEN",
-      "braam_trade_id": "CAKEUSDT_20260905_CJ_001"
+      "status": "CLOSED",
+      "braam_trade_id": "CAKEUSDT_20260905_CJ_001",
+      "closed_at": "2026-09-10T12:12:50Z",
+      "close_price": 2.1519,
+      "pnl_usd": 16.3492,
+      "margin_usd": 133.69,
+      "fees_usd": 0.5736,
+      "tag": "WIN",
+      "close_type": 4,
+      "close_reason": "stop_loss"
     },
     "1493679465": {
       "position_id": "1493679465",
@@ -3612,8 +3628,16 @@
       "leverage": 3,
       "entry_price": 0.08525,
       "opened_at": "2026-09-09T22:09:06Z",
-      "status": "OPEN",
-      "braam_trade_id": "DOGEUSDT_20260906_CJ_001"
+      "status": "CLOSED",
+      "braam_trade_id": "DOGEUSDT_20260906_CJ_001",
+      "closed_at": "2026-09-10T12:47:18Z",
+      "close_price": 0.0831,
+      "pnl_usd": -10.6676,
+      "margin_usd": 135.87,
+      "fees_usd": 0.5528,
+      "tag": "LOSS",
+      "close_type": 4,
+      "close_reason": "stop_loss"
     },
     "1491759442": {
       "position_id": "1491759442",
@@ -3669,6 +3693,16 @@
       "close_type": 4,
       "close_reason": "stop_loss"
     },
+    "1494394217": {
+      "position_id": "1494394217",
+      "coin": "LTCUSDT",
+      "direction": "Long",
+      "leverage": 3,
+      "entry_price": 51.74,
+      "opened_at": "2026-09-10T12:47:11Z",
+      "status": "OPEN",
+      "braam_trade_id": "LTCUSDT_20260908_CJ_001"
+    },
     "1493935021": {
       "position_id": "1493935021",
       "coin": "SUIUSDT",
@@ -3676,8 +3710,26 @@
       "leverage": 3,
       "entry_price": 0.7731,
       "opened_at": "2026-09-09T22:07:33Z",
+      "status": "CLOSED",
+      "braam_trade_id": "SUIUSDT_20260909_CJ_001",
+      "closed_at": "2026-09-10T12:47:17Z",
+      "close_price": 0.7459,
+      "pnl_usd": -17.8081,
+      "margin_usd": 162.19,
+      "fees_usd": 0.667,
+      "tag": "LOSS",
+      "close_type": 4,
+      "close_reason": "stop_loss"
+    },
+    "1494395587": {
+      "position_id": "1494395587",
+      "coin": "LINKUSDT",
+      "direction": "Long",
+      "leverage": 3,
+      "entry_price": 11.525,
+      "opened_at": "2026-09-10T12:47:18Z",
       "status": "OPEN",
-      "braam_trade_id": "SUIUSDT_20260909_CJ_001"
+      "braam_trade_id": "LINKUSDT_20260910_CJ_001"
     }
   },
   "orders": {
@@ -3744,15 +3796,6 @@
       "braam_trade_id": "ONDOUSDT_20260903_CJ_001",
       "status": "RESTING"
     },
-    "852760273084336640": {
-      "order_id": "852760273084336640",
-      "coin": "LTCUSDT",
-      "direction": "Long",
-      "entry_price": 51.73938428,
-      "resting_at": "2026-09-08T00:04:00Z",
-      "braam_trade_id": "LTCUSDT_20260908_CJ_001",
-      "status": "RESTING"
-    },
     "852881237156001280": {
       "order_id": "852881237156001280",
       "coin": "THETAUSDT",
@@ -3778,15 +3821,6 @@
       "entry_price": 1.4626755,
       "resting_at": "2026-09-10T08:04:00Z",
       "braam_trade_id": "RENDERUSDT_20260910_CJ_001",
-      "status": "RESTING"
-    },
-    "853001665769527296": {
-      "order_id": "853001665769527296",
-      "coin": "LINKUSDT",
-      "direction": "Long",
-      "entry_price": 11.52547213,
-      "resting_at": "2026-09-10T12:04:00Z",
-      "braam_trade_id": "LINKUSDT_20260910_CJ_001",
       "status": "RESTING"
     }
   },
