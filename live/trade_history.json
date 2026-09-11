@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-11T18:07:17Z",
+  "updated": "2026-09-11T20:08:48Z",
   "positions": {
     "1414291495": {
       "position_id": "1414291495",
@@ -3764,8 +3764,16 @@
       "leverage": 3,
       "entry_price": 11.525,
       "opened_at": "2026-09-10T12:47:18Z",
-      "status": "OPEN",
-      "braam_trade_id": "LINKUSDT_20260910_CJ_001"
+      "status": "CLOSED",
+      "braam_trade_id": "LINKUSDT_20260910_CJ_001",
+      "closed_at": "2026-09-11T18:52:22Z",
+      "close_price": 11.52,
+      "pnl_usd": 16.5388,
+      "margin_usd": 159.12,
+      "fees_usd": 0.6815,
+      "tag": "WIN",
+      "close_type": 4,
+      "close_reason": "stop_loss"
     },
     "1495163171": {
       "position_id": "1495163171",
@@ -3815,11 +3823,11 @@
       "braam_trade_id": "AVAXUSDT_20260831_CJ_001",
       "status": "RESTING"
     },
-    "853424854089734656": {
-      "order_id": "853424854089734656",
+    "853485283784660480": {
+      "order_id": "853485283784660480",
       "coin": "XRPUSDT",
       "direction": "Long",
-      "entry_price": 1.33284045,
+      "entry_price": 1.29310832,
       "resting_at": "2026-09-02T16:04:00Z",
       "braam_trade_id": "XRPUSDT_20260902_CJ_001",
       "status": "RESTING"
