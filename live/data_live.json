@@ -1,31 +1,19 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-09-11T13:33:16Z",
+  "last_updated_iso": "2026-09-11T13:35:03Z",
   "mexc_account": {
-    "unrealized_pnl": 41.37,
-    "equity": 3189.956,
+    "unrealized_pnl": 42.0159,
+    "equity": 3190.6019,
     "available": 1023.0107,
     "position_margin": 638.6116
   },
   "order_levels": {
     "checked": 16,
-    "in_sync": 15,
-    "drifted": [
-      "ONDO"
-    ],
+    "in_sync": 16,
+    "drifted": [],
     "reconciling": [],
-    "detail": [
-      {
-        "coin": "ONDO",
-        "trade_id": "ONDOUSDT_20260910_CJ_001",
-        "status": "OPEN",
-        "fields": [
-          "tp2"
-        ],
-        "synced_at": "2026-09-11T13:30:20.553365+00:00"
-      }
-    ]
+    "detail": []
   },
   "api_keys": [
     {
@@ -86,7 +74,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$3,189.96",
+      "value": "$3,190.60",
       "status": "ok",
       "action": null
     },
@@ -110,9 +98,9 @@
       "key": "position_protection",
       "tier": 1,
       "label": "Position protection",
-      "value": "live read failed",
-      "status": "warn",
-      "action": "Worker health read failed \u2014 can't confirm SL protection; check the Worker."
+      "value": "all protected (6 open, 4 pre-TP1 runners)",
+      "status": "ok",
+      "action": null
     },
     {
       "key": "apikey_MEXC_ALGO_KEY",
