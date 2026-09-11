@@ -1,6 +1,6 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-09-11T14:08Z",
+  "generated_utc": "2026-09-11T14:09Z",
   "master": "braam",
   "retention_hours": 48,
   "trade_count": 25,
@@ -64,15 +64,15 @@
       "sl": 2327.3825848,
       "tp1": 2477.89,
       "tp2": 2542.48,
-      "status": "OPEN",
+      "status": "TP2_HIT",
       "tp1_hit": true,
       "tp2_hit": false,
       "sl_hit": false,
-      "close_reason": null,
+      "close_reason": "live MEXC exit: tp2 @ 2542.91",
       "date_opened": "2026-08-31",
       "time_opened_utc": "04:04",
       "sl_mode": "breakeven",
-      "feed_updated_utc": "2026-09-09T12:03Z"
+      "feed_updated_utc": "2026-09-11T13:49Z"
     },
     {
       "trade_id": "ALGOUSDT_20260901_CJ_001",
@@ -271,15 +271,15 @@
       "sl": 2.23914326,
       "tp1": 2.478,
       "tp2": 2.625,
-      "status": "OPEN",
+      "status": "TP2_HIT",
       "tp1_hit": true,
       "tp2_hit": false,
       "sl_hit": false,
-      "close_reason": null,
+      "close_reason": "live MEXC exit: tp2 @ 2.608",
       "date_opened": "2026-09-06",
       "time_opened_utc": "12:04",
       "sl_mode": "breakeven",
-      "feed_updated_utc": "2026-09-09T12:03Z"
+      "feed_updated_utc": "2026-09-11T13:43Z"
     },
     {
       "trade_id": "DOGEUSDT_20260906_CJ_001",
@@ -432,7 +432,7 @@
       "sl": 0.18865535,
       "tp1": 0.1741,
       "tp2": 0.1567,
-      "status": "PENDING",
+      "status": "OPEN",
       "tp1_hit": false,
       "tp2_hit": false,
       "sl_hit": false,
@@ -440,7 +440,7 @@
       "date_opened": "2026-09-10",
       "time_opened_utc": "04:04",
       "sl_mode": "initial",
-      "feed_updated_utc": "2026-09-10T04:04Z"
+      "feed_updated_utc": "2026-09-11T14:02Z"
     },
     {
       "trade_id": "RENDERUSDT_20260910_CJ_001",
@@ -479,13 +479,13 @@
       "tp1": 12.045,
       "tp2": 13.294,
       "status": "OPEN",
-      "tp1_hit": false,
+      "tp1_hit": true,
       "tp2_hit": false,
       "sl_hit": false,
       "close_reason": null,
       "date_opened": "2026-09-10",
       "time_opened_utc": "12:04",
-      "sl_mode": "initial",
+      "sl_mode": "breakeven",
       "feed_updated_utc": "2026-09-10T16:05Z"
     },
     {
@@ -501,15 +501,15 @@
       "sl": 0.36648382,
       "tp1": 0.3444,
       "tp2": 0.3257,
-      "status": "OPEN",
+      "status": "STOPPED",
       "tp1_hit": false,
       "tp2_hit": false,
       "sl_hit": false,
-      "close_reason": null,
+      "close_reason": "live MEXC exit: sl @ 0.3666",
       "date_opened": "2026-09-10",
       "time_opened_utc": "16:05",
       "sl_mode": "initial",
-      "feed_updated_utc": "2026-09-11T12:47Z"
+      "feed_updated_utc": "2026-09-11T13:59Z"
     },
     {
       "trade_id": "SUIUSDT_20260910_CJ_001",
@@ -524,7 +524,7 @@
       "sl": 0.7831165,
       "tp1": 0.714,
       "tp2": 0.6754,
-      "status": "PENDING",
+      "status": "OPEN",
       "tp1_hit": false,
       "tp2_hit": false,
       "sl_hit": false,
@@ -532,7 +532,7 @@
       "date_opened": "2026-09-10",
       "time_opened_utc": "20:03",
       "sl_mode": "initial",
-      "feed_updated_utc": "2026-09-10T20:03Z"
+      "feed_updated_utc": "2026-09-11T14:01Z"
     },
     {
       "trade_id": "CAKEUSDT_20260910_CJ_001",
