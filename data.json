@@ -1,5 +1,5 @@
 {
-  "last_updated_iso": "2026-09-11T13:29:20Z",
+  "last_updated_iso": "2026-09-11T13:31:04Z",
   "mexc_account": null,
   "api_keys": [
     {
@@ -320,10 +320,10 @@
       "leverage": 3,
       "trading_system": "John",
       "track_only": false,
-      "status": "PENDING",
+      "status": "OPEN",
       "price_at_run": 0.3489,
-      "date_activated": null,
-      "time_activated_utc": null,
+      "date_activated": "2026-09-11",
+      "time_activated_utc": "12:47",
       "date_opened": "2026-09-10",
       "time_opened_utc": "16:05",
       "conviction": "MEDIUM",
@@ -482,6 +482,16 @@
       "tp1_hit": false,
       "iso": "2026-09-11T11:11:00Z",
       "_iso_ms": 1789125060000
+    },
+    {
+      "trade_id": "ONDOUSDT_20260910_CJ_001",
+      "coin": "ONDOUSDT",
+      "direction": "Short",
+      "trading_system": "John",
+      "entry_price": 0.3567,
+      "tp1_hit": false,
+      "iso": "2026-09-11T12:47:00Z",
+      "_iso_ms": 1789130820000
     }
   ],
   "recent_closes": [
@@ -1147,7 +1157,7 @@
     "peak_capital_usd": 3300,
     "peak_concurrent": 33,
     "peak_date": "2026-06-22",
-    "deployed_trades": 690,
+    "deployed_trades": 691,
     "return_on_peak_pct": 31.6,
     "win_rate_pct": 33.6,
     "closed_count": 673,
