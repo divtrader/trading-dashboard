@@ -1,5 +1,5 @@
 {
-  "last_updated_iso": "2026-09-11T11:16:36Z",
+  "last_updated_iso": "2026-09-11T13:29:20Z",
   "mexc_account": null,
   "api_keys": [
     {
@@ -314,8 +314,8 @@
       "direction": "Short",
       "entry_price": 0.3567,
       "sl": 0.36648382,
-      "tp1": 0.31138956,
-      "tp2": 0.30681908,
+      "tp1": 0.3444,
+      "tp2": 0.3382,
       "capital_usd": 100,
       "leverage": 3,
       "trading_system": "John",
@@ -401,20 +401,7 @@
       "pnl_tp1_realized_usd": null
     }
   ],
-  "recent_signals": [
-    {
-      "trade_id": "UNIUSDT_20260911_CJ_001",
-      "coin": "UNIUSDT",
-      "direction": "Long",
-      "trading_system": "John",
-      "entry_price": 5.69043999,
-      "tp1": 6.60703848,
-      "sl": 5.46106435,
-      "conviction": "HIGH",
-      "track_only": false,
-      "iso": "2026-09-11T00:03:00Z"
-    }
-  ],
+  "recent_signals": [],
   "recent_opens": [
     {
       "trade_id": "LINKUSDT_20260906_CJ_001",
@@ -1139,15 +1126,7 @@
       "fees_modeled": true
     }
   ],
-  "recent_cancels": [
-    {
-      "coin": "XLMUSDT",
-      "direction": "Long",
-      "trading_system": "John",
-      "close_reason": "Signal direction flipped to Short (5/8 signals) \u2014 original setup no longer valid",
-      "iso": "2026-09-11T00:03:00Z"
-    }
-  ],
+  "recent_cancels": [],
   "tp1_hits_open": [
     {
       "coin": "ETHUSDT",

@@ -1,19 +1,31 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-09-11T11:16:42Z",
+  "last_updated_iso": "2026-09-11T13:29:24Z",
   "mexc_account": {
-    "unrealized_pnl": -1.0494,
-    "equity": 3147.8192,
-    "available": 1022.9162,
-    "position_margin": 481.1629
+    "unrealized_pnl": 45.3037,
+    "equity": 3193.8898,
+    "available": 1023.0107,
+    "position_margin": 638.6116
   },
   "order_levels": {
     "checked": 16,
-    "in_sync": 16,
-    "drifted": [],
+    "in_sync": 15,
+    "drifted": [
+      "ONDO"
+    ],
     "reconciling": [],
-    "detail": []
+    "detail": [
+      {
+        "coin": "ONDO",
+        "trade_id": "ONDOUSDT_20260910_CJ_001",
+        "status": "PENDING",
+        "fields": [
+          "tp1"
+        ],
+        "synced_at": null
+      }
+    ]
   },
   "api_keys": [
     {
@@ -74,7 +86,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$3,147.82",
+      "value": "$3,193.89",
       "status": "ok",
       "action": null
     },
@@ -90,7 +102,7 @@
       "key": "orphan_orders",
       "tier": 1,
       "label": "Order reconciliation",
-      "value": "in sync (11 resting = journal)",
+      "value": "in sync (10 resting = journal)",
       "status": "ok",
       "action": null
     },
@@ -98,7 +110,7 @@
       "key": "position_protection",
       "tier": 1,
       "label": "Position protection",
-      "value": "all protected (5 open, 3 pre-TP1 runners)",
+      "value": "all protected (6 open, 3 pre-TP1 runners)",
       "status": "ok",
       "action": null
     },
@@ -526,8 +538,8 @@
       "direction": "Short",
       "entry_price": 0.3567,
       "sl": 0.36648382,
-      "tp1": 0.31138956,
-      "tp2": 0.30681908,
+      "tp1": 0.3444,
+      "tp2": 0.3382,
       "capital_usd": 158.06,
       "leverage": 3,
       "trading_system": "John",
@@ -649,21 +661,7 @@
       "rehearsal": false
     }
   ],
-  "recent_signals": [
-    {
-      "trade_id": "UNIUSDT_20260911_CJ_001",
-      "coin": "UNIUSDT",
-      "direction": "Long",
-      "trading_system": "John",
-      "entry_price": 5.69043999,
-      "tp1": 6.60703848,
-      "sl": 5.46106435,
-      "conviction": "HIGH",
-      "track_only": false,
-      "iso": "2026-09-11T00:03:00Z",
-      "rehearsal": false
-    }
-  ],
+  "recent_signals": [],
   "recent_opens": [
     {
       "trade_id": "LINKUSDT_20260906_CJ_001",
@@ -4564,15 +4562,7 @@
       "rehearsal": false
     }
   ],
-  "recent_cancels": [
-    {
-      "coin": "XLMUSDT",
-      "direction": "Long",
-      "trading_system": "John",
-      "close_reason": "Signal direction flipped to Short (5/8 signals) \u2014 original setup no longer valid",
-      "iso": "2026-09-11T00:03:00Z"
-    }
-  ],
+  "recent_cancels": [],
   "tp1_hits_open": [
     {
       "coin": "ETHUSDT",
