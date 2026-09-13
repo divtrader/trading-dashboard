@@ -1,19 +1,32 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-09-13T10:07:25Z",
+  "last_updated_iso": "2026-09-13T10:16:51Z",
   "mexc_account": {
-    "unrealized_pnl": 33.0041,
-    "equity": 3239.4157,
+    "unrealized_pnl": 34.0725,
+    "equity": 3240.4841,
     "available": 1059.1541,
     "position_margin": 656.5583
   },
   "order_levels": {
     "checked": 16,
-    "in_sync": 16,
-    "drifted": [],
+    "in_sync": 15,
+    "drifted": [
+      "ALGO"
+    ],
     "reconciling": [],
-    "detail": []
+    "detail": [
+      {
+        "coin": "ALGO",
+        "trade_id": "ALGOUSDT_20260901_CJ_001",
+        "status": "OPEN",
+        "fields": [
+          "tp1",
+          "tp2"
+        ],
+        "synced_at": "2026-09-11T11:15:42.187804+00:00"
+      }
+    ]
   },
   "api_keys": [
     {
@@ -74,7 +87,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$3,239.42",
+      "value": "$3,240.48",
       "status": "ok",
       "action": null
     },
@@ -98,9 +111,9 @@
       "key": "position_protection",
       "tier": 1,
       "label": "Position protection",
-      "value": "all protected (6 open, 4 pre-TP1 runners)",
-      "status": "ok",
-      "action": null
+      "value": "live read failed",
+      "status": "warn",
+      "action": "Worker health read failed \u2014 can't confirm SL protection; check the Worker."
     },
     {
       "key": "apikey_MEXC_ALGO_KEY",
@@ -206,8 +219,8 @@
       "direction": "Long",
       "entry_price": 0.08857088,
       "sl": 0.08559013,
-      "tp1": 0.1017,
-      "tp2": 0.1323,
+      "tp1": 0.0948,
+      "tp2": 0.1017,
       "capital_usd": 132.54,
       "leverage": 3,
       "trading_system": "John",
@@ -389,7 +402,7 @@
       "live_entry_slippage_pct": -0.0027,
       "live_fees_usd": 0.5828,
       "live_funding_usd": null,
-      "live_tp1_pnl_usd": 16.131,
+      "live_tp1_pnl_usd": 16.4736,
       "rehearsal": false
     },
     {
@@ -453,7 +466,7 @@
       "live_entry_slippage_pct": 0.0002,
       "live_fees_usd": 0.5676,
       "live_funding_usd": null,
-      "live_tp1_pnl_usd": 24.0047,
+      "live_tp1_pnl_usd": 24.6012,
       "rehearsal": false
     },
     {
