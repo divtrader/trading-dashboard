@@ -1,6 +1,6 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-09-13T14:07Z",
+  "generated_utc": "2026-09-13T16:07Z",
   "master": "braam",
   "retention_hours": 48,
   "trade_count": 18,
@@ -18,15 +18,15 @@
       "sl": 0.32904219,
       "tp1": 0.35884953,
       "tp2": 0.36709074,
-      "status": "PENDING",
+      "status": "CANCELLED",
       "tp1_hit": false,
       "tp2_hit": false,
       "sl_hit": false,
-      "close_reason": null,
+      "close_reason": "Entry window expired: unfilled 15.0d \u2265 90\u00d74H (360h) \u2014 mirrors backtest ENTRY_WINDOW",
       "date_opened": "2026-08-29",
       "time_opened_utc": "16:03",
       "sl_mode": "initial",
-      "feed_updated_utc": "2026-08-29T16:03Z"
+      "feed_updated_utc": "2026-09-13T16:03Z"
     },
     {
       "trade_id": "AVAXUSDT_20260831_CJ_001",
@@ -134,13 +134,13 @@
       "tp1": 54.09,
       "tp2": 58.74,
       "status": "OPEN",
-      "tp1_hit": false,
+      "tp1_hit": true,
       "tp2_hit": false,
       "sl_hit": false,
       "close_reason": null,
       "date_opened": "2026-09-08",
       "time_opened_utc": "00:04",
-      "sl_mode": "initial",
+      "sl_mode": "breakeven",
       "feed_updated_utc": "2026-09-13T12:04Z"
     },
     {
