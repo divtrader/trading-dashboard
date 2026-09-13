@@ -1,19 +1,31 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-09-13T10:31:20Z",
+  "last_updated_iso": "2026-09-13T10:33:25Z",
   "mexc_account": {
-    "unrealized_pnl": 31.4727,
-    "equity": 3237.8843,
+    "unrealized_pnl": 31.9524,
+    "equity": 3238.364,
     "available": 1059.1541,
     "position_margin": 656.5583
   },
   "order_levels": {
     "checked": 16,
-    "in_sync": 16,
-    "drifted": [],
+    "in_sync": 15,
+    "drifted": [
+      "LTC"
+    ],
     "reconciling": [],
-    "detail": []
+    "detail": [
+      {
+        "coin": "LTC",
+        "trade_id": "LTCUSDT_20260908_CJ_001",
+        "status": "OPEN",
+        "fields": [
+          "tp2"
+        ],
+        "synced_at": "2026-09-13T10:30:23.711096+00:00"
+      }
+    ]
   },
   "api_keys": [
     {
@@ -74,7 +86,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$3,237.88",
+      "value": "$3,238.36",
       "status": "ok",
       "action": null
     },
@@ -303,7 +315,7 @@
       "entry_price": 51.73938428,
       "sl": 50.56260806,
       "tp1": 54.09,
-      "tp2": 59.18,
+      "tp2": 58.74,
       "capital_usd": 137.65,
       "leverage": 3,
       "trading_system": "John",
