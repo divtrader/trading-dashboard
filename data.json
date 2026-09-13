@@ -1,5 +1,5 @@
 {
-  "last_updated_iso": "2026-09-13T09:09:33Z",
+  "last_updated_iso": "2026-09-13T09:13:06Z",
   "mexc_account": null,
   "api_keys": [
     {
@@ -200,7 +200,7 @@
       "entry_price": 0.184875,
       "sl": 0.18865535,
       "tp1": 0.17706,
-      "tp2": 0.1741,
+      "tp2": 0.1567,
       "capital_usd": 100,
       "leverage": 3,
       "trading_system": "John",
@@ -258,7 +258,7 @@
       "date_opened": "2026-09-10",
       "time_opened_utc": "20:03",
       "conviction": "MEDIUM",
-      "tp1_hit": false,
+      "tp1_hit": true,
       "sl_moved_to_be": null,
       "pnl_tp1_realized_usd": null
     },
@@ -429,7 +429,7 @@
       "direction": "Short",
       "trading_system": "John",
       "entry_price": 0.76060183,
-      "tp1_hit": false,
+      "tp1_hit": true,
       "iso": "2026-09-11T14:01:00Z",
       "_iso_ms": 1789135260000
     },
@@ -1107,7 +1107,14 @@
     }
   ],
   "recent_cancels": [],
-  "tp1_hits_open": [],
+  "tp1_hits_open": [
+    {
+      "coin": "SUIUSDT",
+      "direction": "Short",
+      "trading_system": "John",
+      "entry_price": 0.76060183
+    }
+  ],
   "stats": {
     "realized_pnl_usd": 1079.23,
     "realized_pnl_pct": 1.59,
