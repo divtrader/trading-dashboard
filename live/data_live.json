@@ -1,19 +1,41 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-09-14T18:11:34Z",
+  "last_updated_iso": "2026-09-14T18:17:01Z",
   "mexc_account": {
-    "unrealized_pnl": 14.0439,
-    "equity": 3268.4088,
+    "unrealized_pnl": 14.2932,
+    "equity": 3268.658,
     "available": 1323.3247,
     "position_margin": 86.0293
   },
   "order_levels": {
     "checked": 15,
-    "in_sync": 15,
-    "drifted": [],
+    "in_sync": 13,
+    "drifted": [
+      "ALGO",
+      "LTC"
+    ],
     "reconciling": [],
-    "detail": []
+    "detail": [
+      {
+        "coin": "ALGO",
+        "trade_id": "ALGOUSDT_20260901_CJ_001",
+        "status": "OPEN",
+        "fields": [
+          "tp2"
+        ],
+        "synced_at": "2026-09-13T10:17:45.100801+00:00"
+      },
+      {
+        "coin": "LTC",
+        "trade_id": "LTCUSDT_20260908_CJ_001",
+        "status": "OPEN",
+        "fields": [
+          "tp2"
+        ],
+        "synced_at": "2026-09-13T10:34:51.520157+00:00"
+      }
+    ]
   },
   "api_keys": [
     {
@@ -74,7 +96,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$3,268.41",
+      "value": "$3,268.66",
       "status": "ok",
       "action": null
     },
@@ -175,7 +197,7 @@
       "entry_price": 0.08857088,
       "sl": 0.08559013,
       "tp1": 0.0948,
-      "tp2": 0.1017,
+      "tp2": 0.1007,
       "capital_usd": 132.54,
       "leverage": 3,
       "trading_system": "John",
@@ -271,7 +293,7 @@
       "entry_price": 51.73938428,
       "sl": 50.56260806,
       "tp1": 54.09,
-      "tp2": 58.74,
+      "tp2": 55.05,
       "capital_usd": 137.65,
       "leverage": 3,
       "trading_system": "John",
