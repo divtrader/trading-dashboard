@@ -1,9 +1,9 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-09-14T18:19Z",
+  "generated_utc": "2026-09-14T20:08Z",
   "master": "braam",
   "retention_hours": 48,
-  "trade_count": 20,
+  "trade_count": 22,
   "trades": [
     {
       "trade_id": "TRXUSDT_20260829_CJ_001",
@@ -72,7 +72,7 @@
       "date_opened": "2026-09-01",
       "time_opened_utc": "16:03",
       "sl_mode": "breakeven",
-      "feed_updated_utc": "2026-09-13T12:04Z"
+      "feed_updated_utc": "2026-09-14T20:03Z"
     },
     {
       "trade_id": "XRPUSDT_20260902_CJ_001",
@@ -81,12 +81,12 @@
       "trading_system": "John",
       "conviction": "MEDIUM",
       "leverage": 3,
-      "entry_price": 1.35501418,
-      "entry_lo": 1.32904627,
-      "entry_hi": 1.43291791,
-      "sl": 1.33179246,
-      "tp1": 1.48664138,
-      "tp2": 1.58276328,
+      "entry_price": 1.36838209,
+      "entry_lo": 1.34001418,
+      "entry_hi": 1.45348582,
+      "sl": 1.34072134,
+      "tp1": 1.57104014,
+      "tp2": 1.71625733,
       "status": "PENDING",
       "tp1_hit": false,
       "tp2_hit": false,
@@ -141,7 +141,7 @@
       "date_opened": "2026-09-08",
       "time_opened_utc": "00:04",
       "sl_mode": "breakeven",
-      "feed_updated_utc": "2026-09-13T12:04Z"
+      "feed_updated_utc": "2026-09-14T20:03Z"
     },
     {
       "trade_id": "THETAUSDT_20260909_CJ_001",
@@ -233,7 +233,7 @@
       "date_opened": "2026-09-10",
       "time_opened_utc": "20:03",
       "sl_mode": "breakeven",
-      "feed_updated_utc": "2026-09-13T08:03Z"
+      "feed_updated_utc": "2026-09-14T20:03Z"
     },
     {
       "trade_id": "CAKEUSDT_20260910_CJ_001",
@@ -464,6 +464,52 @@
       "time_opened_utc": "00:04",
       "sl_mode": "initial",
       "feed_updated_utc": "2026-09-14T00:04Z"
+    },
+    {
+      "trade_id": "HBARUSDT_20260914_CJ_001",
+      "coin": "HBARUSDT",
+      "direction": "Long",
+      "trading_system": "John",
+      "conviction": "MEDIUM",
+      "leverage": 3,
+      "entry_price": 0.07627808,
+      "entry_lo": 0.07544115,
+      "entry_hi": 0.07878885,
+      "sl": 0.07500683,
+      "tp1": 0.08155884,
+      "tp2": 0.08395633,
+      "status": "PENDING",
+      "tp1_hit": false,
+      "tp2_hit": false,
+      "sl_hit": false,
+      "close_reason": null,
+      "date_opened": "2026-09-14",
+      "time_opened_utc": "20:03",
+      "sl_mode": "initial",
+      "feed_updated_utc": "2026-09-14T20:03Z"
+    },
+    {
+      "trade_id": "RENDERUSDT_20260914_CJ_001",
+      "coin": "RENDERUSDT",
+      "direction": "Long",
+      "trading_system": "John",
+      "conviction": "MEDIUM",
+      "leverage": 3,
+      "entry_price": 1.35475,
+      "entry_lo": 1.333,
+      "entry_hi": 1.42,
+      "sl": 1.32370641,
+      "tp1": 1.45563753,
+      "tp2": 1.53158717,
+      "status": "PENDING",
+      "tp1_hit": false,
+      "tp2_hit": false,
+      "sl_hit": false,
+      "close_reason": null,
+      "date_opened": "2026-09-14",
+      "time_opened_utc": "20:03",
+      "sl_mode": "initial",
+      "feed_updated_utc": "2026-09-14T20:03Z"
     }
   ]
 }
