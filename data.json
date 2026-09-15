@@ -1,5 +1,5 @@
 {
-  "last_updated_iso": "2026-09-15T08:21:14Z",
+  "last_updated_iso": "2026-09-15T08:23:05Z",
   "mexc_account": null,
   "api_keys": [
     {
@@ -343,10 +343,10 @@
       "leverage": 3,
       "trading_system": "John",
       "track_only": false,
-      "status": "PENDING",
+      "status": "OPEN",
       "price_at_run": 0.07643,
-      "date_activated": null,
-      "time_activated_utc": null,
+      "date_activated": "2026-09-15",
+      "time_activated_utc": "08:08",
       "date_opened": "2026-09-14",
       "time_opened_utc": "20:03",
       "conviction": "MEDIUM",
@@ -402,6 +402,16 @@
       "tp1_hit": false,
       "iso": "2026-09-14T20:18:00Z",
       "_iso_ms": 1789417080000
+    },
+    {
+      "trade_id": "HBARUSDT_20260914_CJ_001",
+      "coin": "HBARUSDT",
+      "direction": "Long",
+      "trading_system": "John",
+      "entry_price": 0.07627808,
+      "tp1_hit": false,
+      "iso": "2026-09-15T08:08:00Z",
+      "_iso_ms": 1789459680000
     }
   ],
   "recent_closes": [
@@ -1095,7 +1105,7 @@
     "peak_capital_usd": 3300,
     "peak_concurrent": 33,
     "peak_date": "2026-06-22",
-    "deployed_trades": 696,
+    "deployed_trades": 697,
     "return_on_peak_pct": 33.17,
     "win_rate_pct": 34.0,
     "closed_count": 680,
