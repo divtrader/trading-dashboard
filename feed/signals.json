@@ -1,6 +1,6 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-09-15T14:49Z",
+  "generated_utc": "2026-09-15T14:51Z",
   "master": "braam",
   "retention_hours": 48,
   "trade_count": 22,
@@ -133,15 +133,15 @@
       "sl": 50.56260806,
       "tp1": 54.09,
       "tp2": 55.05,
-      "status": "OPEN",
+      "status": "STOPPED_AFTER_TP1",
       "tp1_hit": true,
       "tp2_hit": false,
       "sl_hit": false,
-      "close_reason": null,
+      "close_reason": "live MEXC exit: sl @ 51.73",
       "date_opened": "2026-09-08",
       "time_opened_utc": "00:04",
       "sl_mode": "breakeven",
-      "feed_updated_utc": "2026-09-14T20:03Z"
+      "feed_updated_utc": "2026-09-15T14:50Z"
     },
     {
       "trade_id": "THETAUSDT_20260909_CJ_001",
@@ -225,15 +225,15 @@
       "sl": 0.7831165,
       "tp1": 0.7111,
       "tp2": 0.698,
-      "status": "OPEN",
+      "status": "TP2_HIT",
       "tp1_hit": true,
       "tp2_hit": false,
       "sl_hit": false,
-      "close_reason": null,
+      "close_reason": "live MEXC exit: tp2 @ 0.6989",
       "date_opened": "2026-09-10",
       "time_opened_utc": "20:03",
       "sl_mode": "breakeven",
-      "feed_updated_utc": "2026-09-14T20:03Z"
+      "feed_updated_utc": "2026-09-15T14:40Z"
     },
     {
       "trade_id": "CAKEUSDT_20260910_CJ_001",
@@ -295,13 +295,13 @@
       "tp1": 0.3433,
       "tp2": 0.3266,
       "status": "OPEN",
-      "tp1_hit": false,
+      "tp1_hit": true,
       "tp2_hit": false,
       "sl_hit": false,
       "close_reason": null,
       "date_opened": "2026-09-11",
       "time_opened_utc": "16:04",
-      "sl_mode": "initial",
+      "sl_mode": "breakeven",
       "feed_updated_utc": "2026-09-15T06:03Z"
     },
     {
@@ -363,7 +363,7 @@
       "sl": 2376.14136547,
       "tp1": 2525.82,
       "tp2": 2641,
-      "status": "PENDING",
+      "status": "OPEN",
       "tp1_hit": false,
       "tp2_hit": false,
       "sl_hit": false,
@@ -371,7 +371,7 @@
       "date_opened": "2026-09-13",
       "time_opened_utc": "12:04",
       "sl_mode": "initial",
-      "feed_updated_utc": "2026-09-13T12:04Z"
+      "feed_updated_utc": "2026-09-15T14:46Z"
     },
     {
       "trade_id": "RENDERUSDT_20260913_CJ_001",

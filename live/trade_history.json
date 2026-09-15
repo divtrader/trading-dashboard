@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-15T14:49:52Z",
+  "updated": "2026-09-15T14:51:43Z",
   "positions": {
     "1414291495": {
       "position_id": "1414291495",
@@ -3726,8 +3726,16 @@
       "leverage": 3,
       "entry_price": 51.74,
       "opened_at": "2026-09-10T12:47:11Z",
-      "status": "OPEN",
-      "braam_trade_id": "LTCUSDT_20260908_CJ_001"
+      "status": "CLOSED",
+      "braam_trade_id": "LTCUSDT_20260908_CJ_001",
+      "closed_at": "2026-09-15T14:50:07Z",
+      "close_price": 51.73,
+      "pnl_usd": 14.6196,
+      "margin_usd": 137.65,
+      "fees_usd": 0.59,
+      "tag": "WIN",
+      "close_type": 4,
+      "close_reason": "stop_loss"
     },
     "1493935021": {
       "position_id": "1493935021",
@@ -3808,8 +3816,16 @@
       "leverage": 3,
       "entry_price": 0.7606,
       "opened_at": "2026-09-11T14:01:42Z",
-      "status": "OPEN",
-      "braam_trade_id": "SUIUSDT_20260910_CJ_001"
+      "status": "CLOSED",
+      "braam_trade_id": "SUIUSDT_20260910_CJ_001",
+      "closed_at": "2026-09-15T14:40:43Z",
+      "close_price": 0.6989,
+      "pnl_usd": 31.6928,
+      "margin_usd": 158.17,
+      "fees_usd": 0.6374,
+      "tag": "WIN",
+      "close_type": 3,
+      "close_reason": "take_profit"
     },
     "1495580371": {
       "position_id": "1495580371",
@@ -3856,6 +3872,16 @@
       "tag": "WIN",
       "close_type": 3,
       "close_reason": "take_profit"
+    },
+    "1498095676": {
+      "position_id": "1498095676",
+      "coin": "ETHUSDT",
+      "direction": "Long",
+      "leverage": 3,
+      "entry_price": 2409.29,
+      "opened_at": "2026-09-15T14:46:04Z",
+      "status": "OPEN",
+      "braam_trade_id": "ETHUSDT_20260913_CJ_001"
     },
     "1497826045": {
       "position_id": "1497826045",
@@ -3921,15 +3947,6 @@
       "entry_price": 0.33277042,
       "resting_at": "2026-09-12T16:03:00Z",
       "braam_trade_id": "ONDOUSDT_20260912_CJ_001",
-      "status": "RESTING"
-    },
-    "854088891110618624": {
-      "order_id": "854088891110618624",
-      "coin": "ETHUSDT",
-      "direction": "Long",
-      "entry_price": 2409.28726939,
-      "resting_at": "2026-09-13T12:04:00Z",
-      "braam_trade_id": "ETHUSDT_20260913_CJ_001",
       "status": "RESTING"
     },
     "854632678400913920": {
