@@ -1,9 +1,9 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-09-17T10:07Z",
+  "generated_utc": "2026-09-17T12:08Z",
   "master": "braam",
   "retention_hours": 48,
-  "trade_count": 24,
+  "trade_count": 25,
   "trades": [
     {
       "trade_id": "ALGOUSDT_20260901_CJ_001",
@@ -265,12 +265,12 @@
       "trading_system": "John",
       "conviction": "HIGH",
       "leverage": 3,
-      "entry_price": 0.32398843,
-      "entry_lo": 0.32230186,
-      "entry_hi": 0.32904814,
-      "sl": 0.32226053,
-      "tp1": 0.36070167,
-      "tp2": 0.36712587,
+      "entry_price": 0.3308,
+      "entry_lo": 0.32907593,
+      "entry_hi": 0.33597221,
+      "sl": 0.32924847,
+      "tp1": 0.34293304,
+      "tp2": 0.36709087,
       "status": "PENDING",
       "tp1_hit": false,
       "tp2_hit": false,
@@ -556,6 +556,29 @@
       "time_opened_utc": "00:03",
       "sl_mode": "initial",
       "feed_updated_utc": "2026-09-17T00:03Z"
+    },
+    {
+      "trade_id": "LTCUSDT_20260917_CJ_001",
+      "coin": "LTCUSDT",
+      "direction": "Long",
+      "trading_system": "John",
+      "conviction": "MEDIUM",
+      "leverage": 3,
+      "entry_price": 51.8680936,
+      "entry_lo": 51.08270287,
+      "entry_hi": 54.22426579,
+      "sl": 51.01775373,
+      "tp1": 56.17540558,
+      "tp2": 58.26696865,
+      "status": "PENDING",
+      "tp1_hit": false,
+      "tp2_hit": false,
+      "sl_hit": false,
+      "close_reason": null,
+      "date_opened": "2026-09-17",
+      "time_opened_utc": "12:04",
+      "sl_mode": "initial",
+      "feed_updated_utc": "2026-09-17T12:04Z"
     }
   ]
 }
