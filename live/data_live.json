@@ -1,19 +1,31 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-09-18T16:08:29Z",
+  "last_updated_iso": "2026-09-18T17:15:22Z",
   "mexc_account": {
-    "unrealized_pnl": -4.6879,
-    "equity": 3250.0134,
+    "unrealized_pnl": -1.7105,
+    "equity": 3252.9909,
     "available": 1126.8258,
     "position_margin": 165.1296
   },
   "order_levels": {
     "checked": 13,
-    "in_sync": 13,
-    "drifted": [],
+    "in_sync": 12,
+    "drifted": [
+      "HBAR"
+    ],
     "reconciling": [],
-    "detail": []
+    "detail": [
+      {
+        "coin": "HBAR",
+        "trade_id": "HBARUSDT_20260916_CJ_001",
+        "status": "OPEN",
+        "fields": [
+          "tp1"
+        ],
+        "synced_at": "2026-09-18T10:36:03.903626+00:00"
+      }
+    ]
   },
   "api_keys": [
     {
@@ -74,7 +86,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$3,250.01",
+      "value": "$3,252.99",
       "status": "ok",
       "action": null
     },
@@ -206,7 +218,7 @@
       "direction": "Short",
       "entry_price": 0.07795031,
       "sl": 0.07963613,
-      "tp1": 0.07385,
+      "tp1": 0.07417,
       "tp2": 0.06764,
       "capital_usd": 164.61,
       "leverage": 3,
