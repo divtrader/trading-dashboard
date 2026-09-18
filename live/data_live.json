@@ -1,31 +1,19 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-09-18T08:58:38Z",
+  "last_updated_iso": "2026-09-18T09:00:21Z",
   "mexc_account": {
-    "unrealized_pnl": 4.6969,
-    "equity": 3257.0177,
+    "unrealized_pnl": 4.2232,
+    "equity": 3256.5439,
     "available": 639.0907,
     "position_margin": 327.4166
   },
   "order_levels": {
     "checked": 16,
-    "in_sync": 15,
-    "drifted": [
-      "BTC"
-    ],
+    "in_sync": 16,
+    "drifted": [],
     "reconciling": [],
-    "detail": [
-      {
-        "coin": "BTC",
-        "trade_id": "BTCUSDT_20260916_CJ_001",
-        "status": "PENDING",
-        "fields": [
-          "tp1"
-        ],
-        "synced_at": null
-      }
-    ]
+    "detail": []
   },
   "api_keys": [
     {
@@ -86,7 +74,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$3,257.02",
+      "value": "$3,256.54",
       "status": "ok",
       "action": null
     },
@@ -110,7 +98,7 @@
       "key": "position_protection",
       "tier": 1,
       "label": "Position protection",
-      "value": "all protected (2 open, 1 pre-TP1 runners)",
+      "value": "all protected (2 open, 2 pre-TP1 runners)",
       "status": "ok",
       "action": null
     },
@@ -320,10 +308,10 @@
       "leverage": 3,
       "trading_system": "John",
       "track_only": false,
-      "status": "PENDING",
+      "status": "OPEN",
       "price_at_run": 77943.99,
-      "date_activated": null,
-      "time_activated_utc": null,
+      "date_activated": "2026-09-18",
+      "time_activated_utc": "08:54",
       "date_opened": "2026-09-16",
       "time_opened_utc": "00:03",
       "conviction": "MEDIUM",
@@ -331,11 +319,11 @@
       "sl_moved_to_be": null,
       "pnl_tp1_realized_usd": null,
       "tp2_hit": false,
-      "live_executed": null,
-      "live_entry_fill": null,
+      "live_executed": true,
+      "live_entry_fill": 78038.2,
       "live_exit_fill": null,
-      "live_entry_slippage_pct": null,
-      "live_fees_usd": null,
+      "live_entry_slippage_pct": -0.0001,
+      "live_fees_usd": 0.2949,
       "live_funding_usd": null,
       "live_tp1_pnl_usd": null,
       "rehearsal": false
@@ -749,6 +737,18 @@
       "tp1_hit": false,
       "iso": "2026-09-18T05:47:00Z",
       "_iso_ms": 1789710420000,
+      "rehearsal": false
+    },
+    {
+      "trade_id": "BTCUSDT_20260916_CJ_001",
+      "coin": "BTCUSDT",
+      "direction": "Short",
+      "trading_system": "John",
+      "entry_price": 78038.15744488,
+      "live_entry_fill": 78038.2,
+      "tp1_hit": false,
+      "iso": "2026-09-18T08:54:00Z",
+      "_iso_ms": 1789721640000,
       "rehearsal": false
     }
   ],
@@ -4577,7 +4577,7 @@
     "peak_capital_usd": 1293.69,
     "peak_concurrent": 10,
     "peak_date": "2026-08-11",
-    "deployed_trades": 223,
+    "deployed_trades": 224,
     "return_on_peak_pct": 0.98,
     "win_rate_pct": 40.5,
     "closed_count": 222,
