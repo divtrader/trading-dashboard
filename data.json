@@ -1,5 +1,5 @@
 {
-  "last_updated_iso": "2026-09-18T10:07:00Z",
+  "last_updated_iso": "2026-09-18T10:07:58Z",
   "mexc_account": null,
   "api_keys": [
     {
@@ -32,52 +32,6 @@
     }
   ],
   "active_trades": [
-    {
-      "trade_id": "THETAUSDT_20260909_CJ_001",
-      "coin": "THETAUSDT",
-      "direction": "Long",
-      "entry_price": 0.17087315,
-      "sl": 0.1653021,
-      "tp1": 0.19532181,
-      "tp2": 0.2246958,
-      "capital_usd": 100,
-      "leverage": 3,
-      "trading_system": "John",
-      "track_only": false,
-      "status": "PENDING",
-      "price_at_run": 0.2038,
-      "date_activated": null,
-      "time_activated_utc": null,
-      "date_opened": "2026-09-09",
-      "time_opened_utc": "04:04",
-      "conviction": "MEDIUM",
-      "tp1_hit": false,
-      "sl_moved_to_be": null,
-      "pnl_tp1_realized_usd": null
-    },
-    {
-      "trade_id": "CAKEUSDT_20260910_CJ_001",
-      "coin": "CAKEUSDT",
-      "direction": "Long",
-      "entry_price": 2.15214524,
-      "sl": 2.09524491,
-      "tp1": 2.510844,
-      "tp2": 2.73651018,
-      "capital_usd": 100,
-      "leverage": 3,
-      "trading_system": "John",
-      "track_only": false,
-      "status": "PENDING",
-      "price_at_run": 2.53,
-      "date_activated": null,
-      "time_activated_utc": null,
-      "date_opened": "2026-09-10",
-      "time_opened_utc": "20:03",
-      "conviction": "HIGH",
-      "tp1_hit": false,
-      "sl_moved_to_be": null,
-      "pnl_tp1_realized_usd": null
-    },
     {
       "trade_id": "TRXUSDT_20260914_CJ_001",
       "coin": "TRXUSDT",
@@ -276,29 +230,6 @@
       "track_only": false,
       "status": "PENDING",
       "price_at_run": 0.1881,
-      "date_activated": null,
-      "time_activated_utc": null,
-      "date_opened": "2026-09-17",
-      "time_opened_utc": "16:04",
-      "conviction": "MEDIUM",
-      "tp1_hit": false,
-      "sl_moved_to_be": null,
-      "pnl_tp1_realized_usd": null
-    },
-    {
-      "trade_id": "APTUSDT_20260917_CJ_001",
-      "coin": "APTUSDT",
-      "direction": "Long",
-      "entry_price": 0.56535895,
-      "sl": 0.54901095,
-      "tp1": 0.62196359,
-      "tp2": 0.6899781,
-      "capital_usd": 100,
-      "leverage": 3,
-      "trading_system": "John",
-      "track_only": false,
-      "status": "PENDING",
-      "price_at_run": 0.666,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-09-17",
@@ -1147,6 +1078,27 @@
       "trading_system": "John",
       "close_reason": "Stale 24.0h \u2265 24h grace: Price $3.5110 is 35.0% above entry $2.2835",
       "iso": "2026-09-18T08:04:00Z"
+    },
+    {
+      "coin": "THETAUSDT",
+      "direction": "Long",
+      "trading_system": "John",
+      "close_reason": "Manual cancel by Braam 2026-09-18 \u2014 resting MEXC order cancelled by Main (verifi",
+      "iso": "2026-09-18T10:07:00Z"
+    },
+    {
+      "coin": "CAKEUSDT",
+      "direction": "Long",
+      "trading_system": "John",
+      "close_reason": "Manual cancel by Braam 2026-09-18 \u2014 resting MEXC order cancelled by Main (verifi",
+      "iso": "2026-09-18T10:07:00Z"
+    },
+    {
+      "coin": "APTUSDT",
+      "direction": "Long",
+      "trading_system": "John",
+      "close_reason": "Manual cancel by Braam 2026-09-18 \u2014 resting MEXC order cancelled by Main (verifi",
+      "iso": "2026-09-18T10:07:00Z"
     }
   ],
   "tp1_hits_open": [
