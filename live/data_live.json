@@ -1,31 +1,19 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-09-18T05:52:26Z",
+  "last_updated_iso": "2026-09-18T05:54:04Z",
   "mexc_account": {
-    "unrealized_pnl": -0.128,
-    "equity": 3252.5137,
+    "unrealized_pnl": -0.7679,
+    "equity": 3251.8738,
     "available": 474.5165,
     "position_margin": 163.0316
   },
   "order_levels": {
     "checked": 17,
-    "in_sync": 16,
-    "drifted": [
-      "HBAR"
-    ],
+    "in_sync": 17,
+    "drifted": [],
     "reconciling": [],
-    "detail": [
-      {
-        "coin": "HBAR",
-        "trade_id": "HBARUSDT_20260918_CJ_001",
-        "status": "PENDING",
-        "fields": [
-          "tp1"
-        ],
-        "synced_at": null
-      }
-    ]
+    "detail": []
   },
   "api_keys": [
     {
@@ -86,7 +74,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$3,252.51",
+      "value": "$3,251.87",
       "status": "ok",
       "action": null
     },
@@ -110,7 +98,7 @@
       "key": "position_protection",
       "tier": 1,
       "label": "Position protection",
-      "value": "all protected (1 open, 0 pre-TP1 runners)",
+      "value": "all protected (1 open, 1 pre-TP1 runners)",
       "status": "ok",
       "action": null
     },
@@ -672,10 +660,10 @@
       "leverage": 3,
       "trading_system": "John",
       "track_only": false,
-      "status": "PENDING",
+      "status": "OPEN",
       "price_at_run": 0.07758,
-      "date_activated": null,
-      "time_activated_utc": null,
+      "date_activated": "2026-09-18",
+      "time_activated_utc": "05:47",
       "date_opened": "2026-09-18",
       "time_opened_utc": "04:03",
       "conviction": "MEDIUM",
@@ -683,11 +671,11 @@
       "sl_moved_to_be": null,
       "pnl_tp1_realized_usd": null,
       "tp2_hit": false,
-      "live_executed": null,
-      "live_entry_fill": null,
+      "live_executed": true,
+      "live_entry_fill": 0.07625,
       "live_exit_fill": null,
-      "live_entry_slippage_pct": null,
-      "live_fees_usd": null,
+      "live_entry_slippage_pct": 0.0007,
+      "live_fees_usd": 0.2927,
       "live_funding_usd": null,
       "live_tp1_pnl_usd": null,
       "rehearsal": false
@@ -732,19 +720,6 @@
       "track_only": false,
       "iso": "2026-09-18T04:03:00Z",
       "rehearsal": false
-    },
-    {
-      "trade_id": "HBARUSDT_20260918_CJ_001",
-      "coin": "HBARUSDT",
-      "direction": "Long",
-      "trading_system": "John",
-      "entry_price": 0.0762495,
-      "tp1": 0.07755,
-      "sl": 0.07455255,
-      "conviction": "MEDIUM",
-      "track_only": false,
-      "iso": "2026-09-18T04:03:00Z",
-      "rehearsal": false
     }
   ],
   "recent_opens": [
@@ -782,6 +757,18 @@
       "tp1_hit": false,
       "iso": "2026-09-18T02:16:00Z",
       "_iso_ms": 1789697760000,
+      "rehearsal": false
+    },
+    {
+      "trade_id": "HBARUSDT_20260918_CJ_001",
+      "coin": "HBARUSDT",
+      "direction": "Long",
+      "trading_system": "John",
+      "entry_price": 0.0762495,
+      "live_entry_fill": 0.07625,
+      "tp1_hit": false,
+      "iso": "2026-09-18T05:47:00Z",
+      "_iso_ms": 1789710420000,
       "rehearsal": false
     }
   ],
@@ -4603,7 +4590,7 @@
     "peak_capital_usd": 1293.69,
     "peak_concurrent": 10,
     "peak_date": "2026-08-11",
-    "deployed_trades": 222,
+    "deployed_trades": 223,
     "return_on_peak_pct": 0.98,
     "win_rate_pct": 40.5,
     "closed_count": 222,
