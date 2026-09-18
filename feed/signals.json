@@ -1,9 +1,9 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-09-18T12:09Z",
+  "generated_utc": "2026-09-18T14:08Z",
   "master": "braam",
   "retention_hours": 48,
-  "trade_count": 25,
+  "trade_count": 24,
   "trades": [
     {
       "trade_id": "THETAUSDT_20260909_CJ_001",
@@ -225,15 +225,15 @@
       "sl": 0.34567061,
       "tp1": 0.30890114,
       "tp2": 0.3055317,
-      "status": "PENDING",
+      "status": "CANCELLED",
       "tp1_hit": false,
       "tp2_hit": false,
       "sl_hit": false,
-      "close_reason": null,
+      "close_reason": "Signal direction flipped to Long (5/8 signals) \u2014 original setup no longer valid",
       "date_opened": "2026-09-15",
       "time_opened_utc": "20:03",
       "sl_mode": "initial",
-      "feed_updated_utc": "2026-09-15T20:03Z"
+      "feed_updated_utc": "2026-09-18T14:04Z"
     },
     {
       "trade_id": "BTCUSDT_20260916_CJ_001",
@@ -248,15 +248,15 @@
       "sl": 78976.65647661,
       "tp1": 76483,
       "tp2": 66745,
-      "status": "OPEN",
+      "status": "STOPPED",
       "tp1_hit": false,
       "tp2_hit": false,
       "sl_hit": false,
-      "close_reason": null,
+      "close_reason": "live MEXC exit: sl @ 78979.0",
       "date_opened": "2026-09-16",
       "time_opened_utc": "00:03",
       "sl_mode": "initial",
-      "feed_updated_utc": "2026-09-18T08:54Z"
+      "feed_updated_utc": "2026-09-18T13:40Z"
     },
     {
       "trade_id": "HBARUSDT_20260916_CJ_001",
@@ -280,29 +280,6 @@
       "time_opened_utc": "00:03",
       "sl_mode": "initial",
       "feed_updated_utc": "2026-09-18T10:24Z"
-    },
-    {
-      "trade_id": "ALGOUSDT_20260916_CJ_001",
-      "coin": "ALGOUSDT",
-      "direction": "Long",
-      "trading_system": "John",
-      "conviction": "MEDIUM",
-      "leverage": 3,
-      "entry_price": 0.08442483,
-      "entry_lo": 0.08227466,
-      "entry_hi": 0.09087534,
-      "sl": 0.08177426,
-      "tp1": 0.09219317,
-      "tp2": 0.10105149,
-      "status": "CANCELLED",
-      "tp1_hit": false,
-      "tp2_hit": false,
-      "sl_hit": false,
-      "close_reason": "Signal direction flipped to Short (5/8 signals) \u2014 original setup no longer valid",
-      "date_opened": "2026-09-16",
-      "time_opened_utc": "08:03",
-      "sl_mode": "initial",
-      "feed_updated_utc": "2026-09-16T14:04Z"
     },
     {
       "trade_id": "ALGOUSDT_20260916_CJ_002",
