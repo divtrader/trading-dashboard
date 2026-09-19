@@ -1,9 +1,9 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-09-19T18:07Z",
+  "generated_utc": "2026-09-19T20:08Z",
   "master": "braam",
   "retention_hours": 48,
-  "trade_count": 27,
+  "trade_count": 28,
   "trades": [
     {
       "trade_id": "THETAUSDT_20260909_CJ_001",
@@ -625,6 +625,29 @@
       "time_opened_utc": "00:03",
       "sl_mode": "initial",
       "feed_updated_utc": "2026-09-19T00:03Z"
+    },
+    {
+      "trade_id": "AVAXUSDT_20260919_CJ_001",
+      "coin": "AVAXUSDT",
+      "direction": "Long",
+      "trading_system": "John",
+      "conviction": "MEDIUM",
+      "leverage": 3,
+      "entry_price": 9.09600336,
+      "entry_lo": 8.91950672,
+      "entry_hi": 9.62549328,
+      "sl": 8.82822037,
+      "tp1": 9.89904987,
+      "tp2": 11.12855926,
+      "status": "PENDING",
+      "tp1_hit": false,
+      "tp2_hit": false,
+      "sl_hit": false,
+      "close_reason": null,
+      "date_opened": "2026-09-19",
+      "time_opened_utc": "20:04",
+      "sl_mode": "initial",
+      "feed_updated_utc": "2026-09-19T20:04Z"
     }
   ]
 }
