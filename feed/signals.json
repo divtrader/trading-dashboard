@@ -1,9 +1,9 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-09-21T06:07Z",
+  "generated_utc": "2026-09-21T08:08Z",
   "master": "braam",
   "retention_hours": 48,
-  "trade_count": 18,
+  "trade_count": 20,
   "trades": [
     {
       "trade_id": "TRXUSDT_20260914_CJ_001",
@@ -226,13 +226,13 @@
       "tp1": 1.4388,
       "tp2": 1.5338,
       "status": "OPEN",
-      "tp1_hit": false,
+      "tp1_hit": true,
       "tp2_hit": false,
       "sl_hit": false,
       "close_reason": null,
       "date_opened": "2026-09-18",
       "time_opened_utc": "12:04",
-      "sl_mode": "initial",
+      "sl_mode": "breakeven",
       "feed_updated_utc": "2026-09-20T02:56Z"
     },
     {
@@ -272,13 +272,13 @@
       "tp1": 0.09005,
       "tp2": 0.09854,
       "status": "OPEN",
-      "tp1_hit": false,
+      "tp1_hit": true,
       "tp2_hit": false,
       "sl_hit": false,
       "close_reason": null,
       "date_opened": "2026-09-18",
       "time_opened_utc": "16:04",
-      "sl_mode": "initial",
+      "sl_mode": "breakeven",
       "feed_updated_utc": "2026-09-20T02:56Z"
     },
     {
@@ -418,6 +418,52 @@
       "time_opened_utc": "12:04",
       "sl_mode": "initial",
       "feed_updated_utc": "2026-09-20T12:04Z"
+    },
+    {
+      "trade_id": "NEARUSDT_20260921_CJ_001",
+      "coin": "NEARUSDT",
+      "direction": "Long",
+      "trading_system": "John",
+      "conviction": "MEDIUM",
+      "leverage": 3,
+      "entry_price": 4.15047646,
+      "entry_lo": 4.10095292,
+      "entry_hi": 4.29904708,
+      "sl": 3.93721405,
+      "tp1": 4.90297647,
+      "tp2": 5.02634523,
+      "status": "PENDING",
+      "tp1_hit": false,
+      "tp2_hit": false,
+      "sl_hit": false,
+      "close_reason": null,
+      "date_opened": "2026-09-21",
+      "time_opened_utc": "08:04",
+      "sl_mode": "initial",
+      "feed_updated_utc": "2026-09-21T08:04Z"
+    },
+    {
+      "trade_id": "UNIUSDT_20260921_CJ_001",
+      "coin": "UNIUSDT",
+      "direction": "Long",
+      "trading_system": "John",
+      "conviction": "MEDIUM",
+      "leverage": 3,
+      "entry_price": 8.27621777,
+      "entry_lo": 8.01793554,
+      "entry_hi": 9.05106446,
+      "sl": 7.90711085,
+      "tp1": 8.81572296,
+      "tp2": 10.12077829,
+      "status": "PENDING",
+      "tp1_hit": false,
+      "tp2_hit": false,
+      "sl_hit": false,
+      "close_reason": null,
+      "date_opened": "2026-09-21",
+      "time_opened_utc": "08:04",
+      "sl_mode": "initial",
+      "feed_updated_utc": "2026-09-21T08:04Z"
     }
   ]
 }
