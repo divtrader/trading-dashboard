@@ -1,9 +1,9 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-09-21T10:08Z",
+  "generated_utc": "2026-09-21T12:08Z",
   "master": "braam",
   "retention_hours": 48,
-  "trade_count": 20,
+  "trade_count": 21,
   "trades": [
     {
       "trade_id": "TRXUSDT_20260914_CJ_001",
@@ -426,12 +426,12 @@
       "trading_system": "John",
       "conviction": "MEDIUM",
       "leverage": 3,
-      "entry_price": 4.15047646,
-      "entry_lo": 4.10095292,
-      "entry_hi": 4.29904708,
-      "sl": 3.93721405,
-      "tp1": 4.90297647,
-      "tp2": 5.02634523,
+      "entry_price": 4.05047646,
+      "entry_lo": 4.00095292,
+      "entry_hi": 4.19904708,
+      "sl": 3.83587565,
+      "tp1": 4.77343521,
+      "tp2": 4.92634523,
       "status": "PENDING",
       "tp1_hit": false,
       "tp2_hit": false,
@@ -464,6 +464,29 @@
       "time_opened_utc": "08:04",
       "sl_mode": "initial",
       "feed_updated_utc": "2026-09-21T08:04Z"
+    },
+    {
+      "trade_id": "DOGEUSDT_20260921_CJ_001",
+      "coin": "DOGEUSDT",
+      "direction": "Long",
+      "trading_system": "John",
+      "conviction": "MEDIUM",
+      "leverage": 3,
+      "entry_price": 0.0893229,
+      "entry_lo": 0.0875458,
+      "entry_hi": 0.0946542,
+      "sl": 0.08725118,
+      "tp1": 0.09991825,
+      "tp2": 0.10518764,
+      "status": "PENDING",
+      "tp1_hit": false,
+      "tp2_hit": false,
+      "sl_hit": false,
+      "close_reason": null,
+      "date_opened": "2026-09-21",
+      "time_opened_utc": "12:04",
+      "sl_mode": "initial",
+      "feed_updated_utc": "2026-09-21T12:04Z"
     }
   ]
 }
