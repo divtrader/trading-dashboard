@@ -1,6 +1,6 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-09-22T00:08Z",
+  "generated_utc": "2026-09-22T02:08Z",
   "master": "braam",
   "retention_hours": 48,
   "trade_count": 22,
@@ -179,15 +179,15 @@
       "sl": 0.74401067,
       "tp1": 0.94753784,
       "tp2": 1.16307866,
-      "status": "PENDING",
+      "status": "CANCELLED",
       "tp1_hit": false,
       "tp2_hit": false,
       "sl_hit": false,
-      "close_reason": null,
+      "close_reason": "Stale 24.0h \u2265 24h grace: Price $1.0446 is 25.8% above entry $0.7749",
       "date_opened": "2026-09-18",
       "time_opened_utc": "04:03",
       "sl_mode": "initial",
-      "feed_updated_utc": "2026-09-18T04:03Z"
+      "feed_updated_utc": "2026-09-22T02:04Z"
     },
     {
       "trade_id": "TAOUSDT_20260918_CJ_001",
@@ -433,13 +433,13 @@
       "tp1": 4.388,
       "tp2": 4.792,
       "status": "OPEN",
-      "tp1_hit": false,
+      "tp1_hit": true,
       "tp2_hit": false,
       "sl_hit": false,
       "close_reason": null,
       "date_opened": "2026-09-21",
       "time_opened_utc": "08:04",
-      "sl_mode": "initial",
+      "sl_mode": "breakeven",
       "feed_updated_utc": "2026-09-21T18:04Z"
     },
     {
