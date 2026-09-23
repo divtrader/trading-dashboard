@@ -1,9 +1,9 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-09-23T16:03Z",
+  "generated_utc": "2026-09-23T16:09Z",
   "master": "braam",
   "retention_hours": 48,
-  "trade_count": 24,
+  "trade_count": 25,
   "trades": [
     {
       "trade_id": "TRXUSDT_20260914_CJ_001",
@@ -455,15 +455,15 @@
       "sl": 0.93258459,
       "tp1": 1.0289,
       "tp2": 1.0782,
-      "status": "OPEN",
+      "status": "STOPPED",
       "tp1_hit": false,
       "tp2_hit": false,
       "sl_hit": false,
-      "close_reason": null,
+      "close_reason": "live MEXC exit: sl @ 0.9375",
       "date_opened": "2026-09-22",
       "time_opened_utc": "04:04",
       "sl_mode": "initial",
-      "feed_updated_utc": "2026-09-23T14:11Z"
+      "feed_updated_utc": "2026-09-23T16:01Z"
     },
     {
       "trade_id": "ALGOUSDT_20260922_CJ_001",
@@ -556,6 +556,29 @@
       "time_opened_utc": "12:04",
       "sl_mode": "initial",
       "feed_updated_utc": "2026-09-23T15:53Z"
+    },
+    {
+      "trade_id": "HBARUSDT_20260923_CJ_001",
+      "coin": "HBARUSDT",
+      "direction": "Long",
+      "trading_system": "John",
+      "conviction": "VERY HIGH",
+      "leverage": 3,
+      "entry_price": 0.08580091,
+      "entry_lo": 0.0837672,
+      "entry_hi": 0.09190203,
+      "sl": 0.08224417,
+      "tp1": 0.09187302,
+      "tp2": 0.10314166,
+      "status": "PENDING",
+      "tp1_hit": false,
+      "tp2_hit": false,
+      "sl_hit": false,
+      "close_reason": null,
+      "date_opened": "2026-09-23",
+      "time_opened_utc": "16:04",
+      "sl_mode": "initial",
+      "feed_updated_utc": "2026-09-23T16:04Z"
     }
   ]
 }
