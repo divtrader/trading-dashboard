@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-23T15:58:05Z",
+  "updated": "2026-09-23T15:59:22Z",
   "positions": {
     "1414291495": {
       "position_id": "1414291495",
@@ -4135,6 +4135,16 @@
       "status": "OPEN",
       "braam_trade_id": "SUIUSDT_20260922_CJ_001"
     },
+    "1505368586": {
+      "position_id": "1505368586",
+      "coin": "TAOUSDT",
+      "direction": "Long",
+      "leverage": 3,
+      "entry_price": 290.3,
+      "opened_at": "2026-09-23T15:53:15Z",
+      "status": "OPEN",
+      "braam_trade_id": "TAOUSDT_20260922_CJ_001"
+    },
     "1505222433": {
       "position_id": "1505222433",
       "coin": "APTUSDT",
@@ -4142,8 +4152,16 @@
       "leverage": 3,
       "entry_price": 0.7943,
       "opened_at": "2026-09-23T14:11:17Z",
-      "status": "OPEN",
-      "braam_trade_id": "APTUSDT_20260923_CJ_001"
+      "status": "CLOSED",
+      "braam_trade_id": "APTUSDT_20260923_CJ_001",
+      "closed_at": "2026-09-23T14:13:24Z",
+      "close_price": 0.7462,
+      "pnl_usd": -31.0235,
+      "margin_usd": 167.05,
+      "fees_usd": 0.6772,
+      "tag": "LOSS",
+      "close_type": 4,
+      "close_reason": "stop_loss"
     },
     "1505224479": {
       "position_id": "1505224479",
@@ -4152,8 +4170,16 @@
       "leverage": 3,
       "entry_price": 4.546,
       "opened_at": "2026-09-23T14:11:44Z",
-      "status": "OPEN",
-      "braam_trade_id": "NEARUSDT_20260923_CJ_001"
+      "status": "CLOSED",
+      "braam_trade_id": "NEARUSDT_20260923_CJ_001",
+      "closed_at": "2026-09-23T15:53:06Z",
+      "close_price": 4.292,
+      "pnl_usd": -28.6176,
+      "margin_usd": 167.3,
+      "fees_usd": 0.6776,
+      "tag": "LOSS",
+      "close_type": 4,
+      "close_reason": "stop_loss"
     }
   },
   "orders": {
@@ -4211,8 +4237,8 @@
       "braam_trade_id": "BTCUSDT_20260919_CJ_001",
       "status": "RESTING"
     },
-    "857230056827795008": {
-      "order_id": "857230056827795008",
+    "857771684445435456": {
+      "order_id": "857771684445435456",
       "coin": "ONDOUSDT",
       "direction": "Long",
       "entry_price": 0.38901783,
@@ -4254,15 +4280,6 @@
       "entry_price": 0.10256453,
       "resting_at": "2026-09-22T16:04:00Z",
       "braam_trade_id": "ALGOUSDT_20260922_CJ_001",
-      "status": "RESTING"
-    },
-    "857410854264665152": {
-      "order_id": "857410854264665152",
-      "coin": "TAOUSDT",
-      "direction": "Long",
-      "entry_price": 290.29795959,
-      "resting_at": "2026-09-22T16:04:00Z",
-      "braam_trade_id": "TAOUSDT_20260922_CJ_001",
       "status": "RESTING"
     }
   },
