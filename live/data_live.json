@@ -1,47 +1,60 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-09-22T22:08:03Z",
+  "last_updated_iso": "2026-09-23T00:08:42Z",
   "mexc_account": {
-    "unrealized_pnl": 6.696,
-    "equity": 3339.0628,
-    "available": 825.4944,
+    "unrealized_pnl": 8.784,
+    "equity": 3341.1402,
+    "available": 825.3672,
     "position_margin": 32.4778
   },
   "order_levels": {
-    "checked": 16,
+    "checked": 17,
     "in_sync": 16,
-    "drifted": [],
+    "drifted": [
+      "ADA"
+    ],
     "reconciling": [],
-    "detail": []
+    "detail": [
+      {
+        "coin": "ADA",
+        "trade_id": "ADAUSDT_20260922_CJ_001",
+        "status": "PENDING",
+        "fields": [
+          "tp1",
+          "sl"
+        ],
+        "synced_at": "2026-09-22T16:06:08.476465+00:00"
+      }
+    ]
   },
   "api_keys": [
     {
       "label": "MEXC AlgoTrading sub-account (live orders)",
       "name": "MEXC_ALGO_KEY",
       "expires": "2026-08-27",
-      "days_left": -26,
+      "days_left": -27,
       "status": "urgent"
     },
     {
       "label": "GitHub PAT (dashboard deploy)",
       "name": "DASHBOARD_PAT",
       "expires": "2126-01-01",
-      "days_left": 36260,
+      "days_left": 36259,
       "status": "ok"
     },
     {
       "label": "Google Drive OAuth (journal sync)",
       "name": "GDRIVE_OAUTH_TOKEN",
       "expires": "2126-01-01",
-      "days_left": 36260,
+      "days_left": 36259,
       "status": "ok"
     },
     {
       "label": "Telegram Bot (trade alerts)",
       "name": "TELEGRAM_TOKEN",
       "expires": "2126-01-01",
-      "days_left": 36260,
+      "days_left": 36259,
       "status": "ok"
     }
   ],
@@ -66,7 +79,7 @@
       "key": "state_file",
       "tier": 1,
       "label": "Trade journal",
-      "value": "OK (1104 records)",
+      "value": "OK (1105 records)",
       "status": "ok",
       "action": null
     },
@@ -74,7 +87,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$3,339.06",
+      "value": "$3,341.14",
       "status": "ok",
       "action": null
     },
@@ -106,7 +119,7 @@
       "key": "apikey_MEXC_ALGO_KEY",
       "tier": 1,
       "label": "MEXC AlgoTrading sub-account (live orders)",
-      "value": "-26d left (2026-08-27)",
+      "value": "-27d left (2026-08-27)",
       "status": "urgent",
       "action": "Rotate key + update GitHub/Cloudflare secret."
     },
@@ -114,7 +127,7 @@
       "key": "apikey_DASHBOARD_PAT",
       "tier": 1,
       "label": "GitHub PAT (dashboard deploy)",
-      "value": "36260d left (2126-01-01)",
+      "value": "36259d left (2126-01-01)",
       "status": "ok",
       "action": null
     },
@@ -122,7 +135,7 @@
       "key": "apikey_GDRIVE_OAUTH_TOKEN",
       "tier": 1,
       "label": "Google Drive OAuth (journal sync)",
-      "value": "36260d left (2126-01-01)",
+      "value": "36259d left (2126-01-01)",
       "status": "ok",
       "action": null
     },
@@ -130,7 +143,7 @@
       "key": "apikey_TELEGRAM_TOKEN",
       "tier": 1,
       "label": "Telegram Bot (trade alerts)",
-      "value": "36260d left (2126-01-01)",
+      "value": "36259d left (2126-01-01)",
       "status": "ok",
       "action": null
     }
@@ -149,7 +162,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 0.3415,
+      "price_at_run": 0.342,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-09-14",
@@ -181,7 +194,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 62.44,
+      "price_at_run": 62.99,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-09-17",
@@ -213,7 +226,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 0.2142,
+      "price_at_run": 0.2163,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-09-17",
@@ -245,7 +258,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 12.891,
+      "price_at_run": 13.039,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-09-18",
@@ -277,7 +290,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 0.2282,
+      "price_at_run": 0.2325,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-09-18",
@@ -309,7 +322,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 2.542,
+      "price_at_run": 2.571,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-09-18",
@@ -341,7 +354,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 86160.0,
+      "price_at_run": 86224.01,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-09-19",
@@ -373,7 +386,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 0.4339,
+      "price_at_run": 0.4417,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-09-20",
@@ -405,7 +418,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "OPEN",
-      "price_at_run": 4.34,
+      "price_at_run": 4.404,
       "date_activated": "2026-09-21",
       "time_activated_utc": "15:15",
       "date_opened": "2026-09-21",
@@ -421,7 +434,7 @@
       "live_entry_slippage_pct": -0.0118,
       "live_fees_usd": 0.6343,
       "live_funding_usd": null,
-      "live_tp1_pnl_usd": 31.8422,
+      "live_tp1_pnl_usd": 31.8316,
       "rehearsal": false
     },
     {
@@ -437,7 +450,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 9.434,
+      "price_at_run": 10.372,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-09-21",
@@ -469,7 +482,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 0.09981,
+      "price_at_run": 0.10054,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-09-21",
@@ -501,7 +514,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 1.5637,
+      "price_at_run": 1.5738,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-09-22",
@@ -524,16 +537,16 @@
       "trade_id": "ADAUSDT_20260922_CJ_001",
       "coin": "ADAUSDT",
       "direction": "Long",
-      "entry_price": 0.24442013,
-      "sl": 0.23716691,
-      "tp1": 0.27967798,
-      "tp2": 0.28374244,
+      "entry_price": 0.249525,
+      "sl": 0.2421985,
+      "tp1": 0.27832298,
+      "tp2": 0.28399245,
       "capital_usd": 167.02,
       "leverage": 3,
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 0.2501,
+      "price_at_run": 0.2548,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-09-22",
@@ -565,7 +578,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 1.0087,
+      "price_at_run": 1.023,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-09-22",
@@ -597,7 +610,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 0.1111,
+      "price_at_run": 0.1121,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-09-22",
@@ -629,11 +642,43 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 309.1,
+      "price_at_run": 314.7,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-09-22",
       "time_opened_utc": "16:04",
+      "conviction": "MEDIUM",
+      "tp1_hit": false,
+      "sl_moved_to_be": null,
+      "pnl_tp1_realized_usd": null,
+      "tp2_hit": false,
+      "live_executed": null,
+      "live_entry_fill": null,
+      "live_exit_fill": null,
+      "live_entry_slippage_pct": null,
+      "live_fees_usd": null,
+      "live_funding_usd": null,
+      "live_tp1_pnl_usd": null,
+      "rehearsal": false
+    },
+    {
+      "trade_id": "APTUSDT_20260923_CJ_001",
+      "coin": "APTUSDT",
+      "direction": "Long",
+      "entry_price": 0.79433931,
+      "sl": 0.76073129,
+      "tp1": 0.8688916,
+      "tp2": 0.96853742,
+      "capital_usd": 167.05,
+      "leverage": 3,
+      "trading_system": "John",
+      "track_only": false,
+      "status": "PENDING",
+      "price_at_run": 0.83,
+      "date_activated": null,
+      "time_activated_utc": null,
+      "date_opened": "2026-09-23",
+      "time_opened_utc": "00:04",
       "conviction": "MEDIUM",
       "tp1_hit": false,
       "sl_moved_to_be": null,
@@ -674,6 +719,19 @@
       "conviction": "MEDIUM",
       "track_only": false,
       "iso": "2026-09-22T16:04:00Z",
+      "rehearsal": false
+    },
+    {
+      "trade_id": "APTUSDT_20260923_CJ_001",
+      "coin": "APTUSDT",
+      "direction": "Long",
+      "trading_system": "John",
+      "entry_price": 0.79433931,
+      "tp1": 0.8688916,
+      "sl": 0.76073129,
+      "conviction": "MEDIUM",
+      "track_only": false,
+      "iso": "2026-09-23T00:04:00Z",
       "rehearsal": false
     }
   ],
@@ -4493,29 +4551,7 @@
       "rehearsal": false
     }
   ],
-  "recent_cancels": [
-    {
-      "coin": "ETHUSDT",
-      "direction": "Long",
-      "trading_system": "John",
-      "close_reason": "Stale 26.0h \u2265 24h grace: Price $2,743.2 is 16.0% above entry $2,304.2",
-      "iso": "2026-09-22T12:04:00Z"
-    },
-    {
-      "coin": "SOLUSDT",
-      "direction": "Long",
-      "trading_system": "John",
-      "close_reason": "Stale 26.0h \u2265 24h grace: Price $117.34 is 18.5% above entry $95.640",
-      "iso": "2026-09-22T12:04:00Z"
-    },
-    {
-      "coin": "HBARUSDT",
-      "direction": "Long",
-      "trading_system": "John",
-      "close_reason": "Stale 24.0h \u2265 24h grace: Price $0.0938 is 19.6% above entry $0.0755",
-      "iso": "2026-09-22T12:04:00Z"
-    }
-  ],
+  "recent_cancels": [],
   "tp1_hits_open": [
     {
       "coin": "NEARUSDT",
@@ -4546,8 +4582,8 @@
         "closed_count": 72
       }
     },
-    "live_trade_count_total": 343,
-    "live_real_count": 320,
+    "live_trade_count_total": 344,
+    "live_real_count": 321,
     "live_rehearsal_count": 23
   }
 }
