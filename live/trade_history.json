@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-24T18:07:59Z",
+  "updated": "2026-09-24T20:09:02Z",
   "positions": {
     "1414291495": {
       "position_id": "1414291495",
@@ -4040,8 +4040,16 @@
       "leverage": 3,
       "entry_price": 12.26,
       "opened_at": "2026-09-23T14:13:15Z",
-      "status": "OPEN",
-      "braam_trade_id": "LINKUSDT_20260918_CJ_001"
+      "status": "CLOSED",
+      "braam_trade_id": "LINKUSDT_20260918_CJ_001",
+      "closed_at": "2026-09-24T18:16:17Z",
+      "close_price": 13.135,
+      "pnl_usd": 16.3871,
+      "margin_usd": 162.65,
+      "fees_usd": 0.6966,
+      "tag": "WIN",
+      "close_type": 3,
+      "close_reason": "take_profit"
     },
     "1500364614": {
       "position_id": "1500364614",
@@ -4210,11 +4218,11 @@
       "braam_trade_id": "TRXUSDT_20260914_CJ_001",
       "status": "RESTING"
     },
-    "858015149771053568": {
-      "order_id": "858015149771053568",
+    "858196338574218241": {
+      "order_id": "858196338574218241",
       "coin": "LTCUSDT",
       "direction": "Long",
-      "entry_price": 56.36344937,
+      "entry_price": 56.85082437,
       "resting_at": "2026-09-17T12:04:00Z",
       "braam_trade_id": "LTCUSDT_20260917_CJ_001",
       "status": "RESTING"
@@ -4273,11 +4281,11 @@
       "braam_trade_id": "UNIUSDT_20260921_CJ_001",
       "status": "RESTING"
     },
-    "856988066073055744": {
-      "order_id": "856988066073055744",
+    "858196373085394432": {
+      "order_id": "858196373085394432",
       "coin": "DOGEUSDT",
       "direction": "Long",
-      "entry_price": 0.0893229,
+      "entry_price": 0.0922225,
       "resting_at": "2026-09-21T12:04:00Z",
       "braam_trade_id": "DOGEUSDT_20260921_CJ_001",
       "status": "RESTING"
@@ -4316,6 +4324,15 @@
       "entry_price": 4.43983073,
       "resting_at": "2026-09-24T16:04:00Z",
       "braam_trade_id": "NEARUSDT_20260924_CJ_001",
+      "status": "RESTING"
+    },
+    "858196015158007808": {
+      "order_id": "858196015158007808",
+      "coin": "APTUSDT",
+      "direction": "Long",
+      "entry_price": 0.79274763,
+      "resting_at": "2026-09-24T20:04:00Z",
+      "braam_trade_id": "APTUSDT_20260924_CJ_001",
       "status": "RESTING"
     }
   },
