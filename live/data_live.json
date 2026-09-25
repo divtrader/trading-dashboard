@@ -1,41 +1,19 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-09-25T05:16:40Z",
+  "last_updated_iso": "2026-09-25T05:18:29Z",
   "mexc_account": {
-    "unrealized_pnl": 55.5242,
-    "equity": 3337.3114,
+    "unrealized_pnl": 53.5494,
+    "equity": 3335.3366,
     "available": 477.4779,
     "position_margin": 836.467
   },
   "order_levels": {
     "checked": 17,
-    "in_sync": 15,
-    "drifted": [
-      "NEAR",
-      "APT"
-    ],
+    "in_sync": 17,
+    "drifted": [],
     "reconciling": [],
-    "detail": [
-      {
-        "coin": "NEAR",
-        "trade_id": "NEARUSDT_20260924_CJ_001",
-        "status": "OPEN",
-        "fields": [
-          "tp1"
-        ],
-        "synced_at": "2026-09-25T00:07:47.385471+00:00"
-      },
-      {
-        "coin": "APT",
-        "trade_id": "APTUSDT_20260924_CJ_001",
-        "status": "OPEN",
-        "fields": [
-          "tp1"
-        ],
-        "synced_at": null
-      }
-    ]
+    "detail": []
   },
   "api_keys": [
     {
@@ -96,7 +74,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$3,337.31",
+      "value": "$3,335.34",
       "status": "ok",
       "action": null
     },
