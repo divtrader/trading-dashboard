@@ -1,9 +1,9 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-09-25T22:07Z",
+  "generated_utc": "2026-09-26T00:08Z",
   "master": "braam",
   "retention_hours": 48,
-  "trade_count": 20,
+  "trade_count": 21,
   "trades": [
     {
       "trade_id": "TRXUSDT_20260914_CJ_001",
@@ -64,15 +64,15 @@
       "sl": 0.17669114,
       "tp1": 0.2019808,
       "tp2": 0.20731773,
-      "status": "PENDING",
+      "status": "CANCELLED",
       "tp1_hit": false,
       "tp2_hit": false,
       "sl_hit": false,
-      "close_reason": null,
+      "close_reason": "Stale 26.0h \u2265 24h grace: Price $0.2198 is 17.3% above entry $0.1817",
       "date_opened": "2026-09-17",
       "time_opened_utc": "16:04",
       "sl_mode": "initial",
-      "feed_updated_utc": "2026-09-17T16:04Z"
+      "feed_updated_utc": "2026-09-26T00:04Z"
     },
     {
       "trade_id": "LINKUSDT_20260918_CJ_001",
@@ -318,13 +318,13 @@
       "tp1": 318.44683352,
       "tp2": 345.8,
       "status": "OPEN",
-      "tp1_hit": false,
+      "tp1_hit": true,
       "tp2_hit": false,
       "sl_hit": false,
       "close_reason": null,
       "date_opened": "2026-09-22",
       "time_opened_utc": "16:04",
-      "sl_mode": "initial",
+      "sl_mode": "breakeven",
       "feed_updated_utc": "2026-09-23T15:53Z"
     },
     {
@@ -464,6 +464,29 @@
       "time_opened_utc": "20:04",
       "sl_mode": "initial",
       "feed_updated_utc": "2026-09-25T20:04Z"
+    },
+    {
+      "trade_id": "XLMUSDT_20260926_CJ_001",
+      "coin": "XLMUSDT",
+      "direction": "Long",
+      "trading_system": "John",
+      "conviction": "MEDIUM",
+      "leverage": 3,
+      "entry_price": 0.21264877,
+      "entry_lo": 0.20802315,
+      "entry_hi": 0.22652562,
+      "sl": 0.20584646,
+      "tp1": 0.2303098,
+      "tp2": 0.24770707,
+      "status": "PENDING",
+      "tp1_hit": false,
+      "tp2_hit": false,
+      "sl_hit": false,
+      "close_reason": null,
+      "date_opened": "2026-09-26",
+      "time_opened_utc": "00:04",
+      "sl_mode": "initial",
+      "feed_updated_utc": "2026-09-26T00:04Z"
     }
   ]
 }
