@@ -1,9 +1,9 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-09-27T02:08Z",
+  "generated_utc": "2026-09-27T04:09Z",
   "master": "braam",
   "retention_hours": 48,
-  "trade_count": 21,
+  "trade_count": 22,
   "trades": [
     {
       "trade_id": "TRXUSDT_20260914_CJ_001",
@@ -363,15 +363,15 @@
       "sl": 4.25091665,
       "tp1": 4.774,
       "tp2": 5.163,
-      "status": "OPEN",
+      "status": "TP2_HIT",
       "tp1_hit": true,
       "tp2_hit": false,
       "sl_hit": false,
-      "close_reason": null,
+      "close_reason": "live MEXC exit: tp2 @ 5.161",
       "date_opened": "2026-09-24",
       "time_opened_utc": "16:04",
       "sl_mode": "breakeven",
-      "feed_updated_utc": "2026-09-26T06:04Z"
+      "feed_updated_utc": "2026-09-27T02:11Z"
     },
     {
       "trade_id": "APTUSDT_20260924_CJ_001",
@@ -487,6 +487,29 @@
       "time_opened_utc": "00:04",
       "sl_mode": "initial",
       "feed_updated_utc": "2026-09-27T00:04Z"
+    },
+    {
+      "trade_id": "NEARUSDT_20260927_CJ_001",
+      "coin": "NEARUSDT",
+      "direction": "Long",
+      "trading_system": "John",
+      "conviction": "MEDIUM",
+      "leverage": 3,
+      "entry_price": 4.93914596,
+      "entry_lo": 4.87829193,
+      "entry_hi": 5.12170807,
+      "sl": 4.68997369,
+      "tp1": 5.64299031,
+      "tp2": 5.99252582,
+      "status": "PENDING",
+      "tp1_hit": false,
+      "tp2_hit": false,
+      "sl_hit": false,
+      "close_reason": null,
+      "date_opened": "2026-09-27",
+      "time_opened_utc": "04:04",
+      "sl_mode": "initial",
+      "feed_updated_utc": "2026-09-27T04:04Z"
     }
   ]
 }

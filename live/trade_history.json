@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-27T02:08:02Z",
+  "updated": "2026-09-27T04:09:13Z",
   "positions": {
     "1414291495": {
       "position_id": "1414291495",
@@ -4214,8 +4214,16 @@
       "leverage": 3,
       "entry_price": 4.543,
       "opened_at": "2026-09-25T01:37:18Z",
-      "status": "OPEN",
-      "braam_trade_id": "NEARUSDT_20260924_CJ_001"
+      "status": "CLOSED",
+      "braam_trade_id": "NEARUSDT_20260924_CJ_001",
+      "closed_at": "2026-09-27T02:11:11Z",
+      "close_price": 5.161,
+      "pnl_usd": 33.6556,
+      "margin_usd": 165.38,
+      "fees_usd": 0.7333,
+      "tag": "WIN",
+      "close_type": 3,
+      "close_reason": "take_profit"
     },
     "1506510848": {
       "position_id": "1506510848",
@@ -4326,6 +4334,15 @@
       "entry_price": 0.3442979,
       "resting_at": "2026-09-27T00:04:00Z",
       "braam_trade_id": "TRXUSDT_20260927_CJ_001",
+      "status": "RESTING"
+    },
+    "859041609000924672": {
+      "order_id": "859041609000924672",
+      "coin": "NEARUSDT",
+      "direction": "Long",
+      "entry_price": 4.93914596,
+      "resting_at": "2026-09-27T04:04:00Z",
+      "braam_trade_id": "NEARUSDT_20260927_CJ_001",
       "status": "RESTING"
     }
   },
