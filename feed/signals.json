@@ -1,9 +1,9 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-09-26T22:07Z",
+  "generated_utc": "2026-09-27T00:08Z",
   "master": "braam",
   "retention_hours": 48,
-  "trade_count": 20,
+  "trade_count": 21,
   "trades": [
     {
       "trade_id": "TRXUSDT_20260914_CJ_001",
@@ -464,6 +464,29 @@
       "time_opened_utc": "00:04",
       "sl_mode": "initial",
       "feed_updated_utc": "2026-09-26T00:04Z"
+    },
+    {
+      "trade_id": "TRXUSDT_20260927_CJ_001",
+      "coin": "TRXUSDT",
+      "direction": "Short",
+      "trading_system": "John",
+      "conviction": "MEDIUM",
+      "leverage": 3,
+      "entry_price": 0.3442979,
+      "entry_lo": 0.33900783,
+      "entry_hi": 0.34606126,
+      "sl": 0.34589697,
+      "tp1": 0.31727858,
+      "tp2": 0.31110607,
+      "status": "PENDING",
+      "tp1_hit": false,
+      "tp2_hit": false,
+      "sl_hit": false,
+      "close_reason": null,
+      "date_opened": "2026-09-27",
+      "time_opened_utc": "00:04",
+      "sl_mode": "initial",
+      "feed_updated_utc": "2026-09-27T00:04Z"
     }
   ]
 }
