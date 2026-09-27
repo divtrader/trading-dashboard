@@ -1,19 +1,31 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-09-27T20:22:56Z",
+  "last_updated_iso": "2026-09-27T20:25:13Z",
   "mexc_account": {
-    "unrealized_pnl": 31.6548,
-    "equity": 4474.2156,
+    "unrealized_pnl": 31.5958,
+    "equity": 4474.1566,
     "available": 2294.3857,
     "position_margin": 133.393
   },
   "order_levels": {
     "checked": 16,
-    "in_sync": 16,
-    "drifted": [],
+    "in_sync": 15,
+    "drifted": [
+      "TAO"
+    ],
     "reconciling": [],
-    "detail": []
+    "detail": [
+      {
+        "coin": "TAO",
+        "trade_id": "TAOUSDT_20260922_CJ_001",
+        "status": "OPEN",
+        "fields": [
+          "tp2"
+        ],
+        "synced_at": null
+      }
+    ]
   },
   "api_keys": [
     {
@@ -74,7 +86,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$4,474.22",
+      "value": "$4,474.16",
       "status": "ok",
       "action": null
     },
@@ -325,7 +337,7 @@
       "live_entry_slippage_pct": 0.0006,
       "live_fees_usd": 0.6486,
       "live_funding_usd": null,
-      "live_tp1_pnl_usd": 38.961,
+      "live_tp1_pnl_usd": 38.2201,
       "rehearsal": false
     },
     {
@@ -357,7 +369,7 @@
       "live_entry_slippage_pct": -0.0112,
       "live_fees_usd": 0.6457,
       "live_funding_usd": null,
-      "live_tp1_pnl_usd": 30.7623,
+      "live_tp1_pnl_usd": 29.7691,
       "rehearsal": false
     },
     {
@@ -399,7 +411,7 @@
       "entry_price": 290.29795959,
       "sl": 277.95237868,
       "tp1": 318.44683352,
-      "tp2": 345.8,
+      "tp2": 335,
       "capital_usd": 167.06,
       "leverage": 3,
       "trading_system": "John",
@@ -421,7 +433,7 @@
       "live_entry_slippage_pct": 0.0007,
       "live_fees_usd": 0.6509,
       "live_funding_usd": null,
-      "live_tp1_pnl_usd": 38.7228,
+      "live_tp1_pnl_usd": 37.6523,
       "rehearsal": false
     },
     {
@@ -485,7 +497,7 @@
       "live_entry_slippage_pct": -0.006,
       "live_fees_usd": 0.6395,
       "live_funding_usd": null,
-      "live_tp1_pnl_usd": 23.63868,
+      "live_tp1_pnl_usd": 22.8891,
       "rehearsal": false
     },
     {
