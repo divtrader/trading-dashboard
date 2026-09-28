@@ -1,41 +1,19 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-09-28T16:14:49Z",
+  "last_updated_iso": "2026-09-28T16:16:39Z",
   "mexc_account": {
-    "unrealized_pnl": -4.9933,
-    "equity": 4454.2446,
+    "unrealized_pnl": -5.2079,
+    "equity": 4454.0299,
     "available": 2334.2094,
     "position_margin": 356.7323
   },
   "order_levels": {
     "checked": 15,
-    "in_sync": 13,
-    "drifted": [
-      "ADA",
-      "TAO"
-    ],
+    "in_sync": 15,
+    "drifted": [],
     "reconciling": [],
-    "detail": [
-      {
-        "coin": "ADA",
-        "trade_id": "ADAUSDT_20260922_CJ_001",
-        "status": "OPEN",
-        "fields": [
-          "tp2"
-        ],
-        "synced_at": "2026-09-27T16:33:10.078650+00:00"
-      },
-      {
-        "coin": "TAO",
-        "trade_id": "TAOUSDT_20260922_CJ_001",
-        "status": "OPEN",
-        "fields": [
-          "tp2"
-        ],
-        "synced_at": "2026-09-28T13:02:38.210199+00:00"
-      }
-    ]
+    "detail": []
   },
   "api_keys": [
     {
@@ -96,7 +74,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$4,454.24",
+      "value": "$4,454.03",
       "status": "ok",
       "action": null
     },
