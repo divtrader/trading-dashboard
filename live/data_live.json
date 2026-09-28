@@ -1,19 +1,31 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-09-28T14:08:01Z",
+  "last_updated_iso": "2026-09-28T15:30:33Z",
   "mexc_account": {
-    "unrealized_pnl": 17.4343,
-    "equity": 4477.1373,
-    "available": 2557.5968,
-    "position_margin": 134.7047
+    "unrealized_pnl": -7.5754,
+    "equity": 4451.729,
+    "available": 2557.7297,
+    "position_margin": 356.7323
   },
   "order_levels": {
     "checked": 14,
-    "in_sync": 14,
-    "drifted": [],
+    "in_sync": 13,
+    "drifted": [
+      "NEAR"
+    ],
     "reconciling": [],
-    "detail": []
+    "detail": [
+      {
+        "coin": "NEAR",
+        "trade_id": "NEARUSDT_20260928_CJ_001",
+        "status": "PENDING",
+        "fields": [
+          "tp1"
+        ],
+        "synced_at": null
+      }
+    ]
   },
   "api_keys": [
     {
@@ -74,7 +86,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$4,477.14",
+      "value": "$4,451.73",
       "status": "ok",
       "action": null
     },
@@ -90,7 +102,7 @@
       "key": "orphan_orders",
       "tier": 1,
       "label": "Order reconciliation",
-      "value": "in sync (10 resting = journal)",
+      "value": "in sync (9 resting = journal)",
       "status": "ok",
       "action": null
     },
@@ -98,7 +110,7 @@
       "key": "position_protection",
       "tier": 1,
       "label": "Position protection",
-      "value": "all protected (4 open, 0 pre-TP1 runners)",
+      "value": "all protected (5 open, 0 pre-TP1 runners)",
       "status": "ok",
       "action": null
     },
@@ -558,8 +570,8 @@
       "direction": "Long",
       "entry_price": 5.03419422,
       "sl": 4.77444081,
-      "tp1": 5.78817968,
-      "tp2": 6.16515152,
+      "tp1": 5.394,
+      "tp2": 5.552,
       "capital_usd": 221.93,
       "leverage": 3,
       "trading_system": "John",
@@ -605,7 +617,7 @@
       "direction": "Long",
       "trading_system": "John",
       "entry_price": 5.03419422,
-      "tp1": 5.78817968,
+      "tp1": 5.394,
       "sl": 4.77444081,
       "conviction": "MEDIUM",
       "track_only": false,
