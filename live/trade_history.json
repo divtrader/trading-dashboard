@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-28T09:50:24Z",
+  "updated": "2026-09-28T09:52:16Z",
   "positions": {
     "1414291495": {
       "position_id": "1414291495",
@@ -4243,6 +4243,16 @@
       "status": "OPEN",
       "braam_trade_id": "APTUSDT_20260924_CJ_001"
     },
+    "1508929201": {
+      "position_id": "1508929201",
+      "coin": "LINKUSDT",
+      "direction": "Long",
+      "leverage": 3,
+      "entry_price": 13.534,
+      "opened_at": "2026-09-28T09:46:55Z",
+      "status": "OPEN",
+      "braam_trade_id": "LINKUSDT_20260925_CJ_001"
+    },
     "1508557532": {
       "position_id": "1508557532",
       "coin": "SOLUSDT",
@@ -4278,8 +4288,16 @@
       "leverage": 3,
       "entry_price": 5.239,
       "opened_at": "2026-09-28T02:04:53Z",
-      "status": "OPEN",
-      "braam_trade_id": "NEARUSDT_20260927_CJ_001"
+      "status": "CLOSED",
+      "braam_trade_id": "NEARUSDT_20260927_CJ_001",
+      "closed_at": "2026-09-28T09:44:14Z",
+      "close_price": 4.97,
+      "pnl_usd": -27.285,
+      "margin_usd": 173.5,
+      "fees_usd": 0.7047,
+      "tag": "LOSS",
+      "close_type": 4,
+      "close_reason": "stop_loss"
     }
   },
   "orders": {
@@ -4344,15 +4362,6 @@
       "entry_price": 0.08580091,
       "resting_at": "2026-09-23T16:04:00Z",
       "braam_trade_id": "HBARUSDT_20260923_CJ_001",
-      "status": "RESTING"
-    },
-    "858498013528741888": {
-      "order_id": "858498013528741888",
-      "coin": "LINKUSDT",
-      "direction": "Long",
-      "entry_price": 13.53419142,
-      "resting_at": "2026-09-25T16:04:00Z",
-      "braam_trade_id": "LINKUSDT_20260925_CJ_001",
       "status": "RESTING"
     },
     "858981169818432512": {
