@@ -1,9 +1,9 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-09-28T18:08Z",
+  "generated_utc": "2026-09-28T20:09Z",
   "master": "braam",
   "retention_hours": 48,
-  "trade_count": 20,
+  "trade_count": 22,
   "trades": [
     {
       "trade_id": "TRXUSDT_20260914_CJ_001",
@@ -340,15 +340,15 @@
       "sl": 0.20584646,
       "tp1": 0.222,
       "tp2": 0.2332,
-      "status": "OPEN",
+      "status": "TP2_HIT",
       "tp1_hit": true,
       "tp2_hit": false,
       "sl_hit": false,
-      "close_reason": null,
+      "close_reason": "live MEXC exit: tp2 @ 0.23329",
       "date_opened": "2026-09-26",
       "time_opened_utc": "00:04",
       "sl_mode": "breakeven",
-      "feed_updated_utc": "2026-09-28T08:04Z"
+      "feed_updated_utc": "2026-09-28T18:22Z"
     },
     {
       "trade_id": "TRXUSDT_20260927_CJ_001",
@@ -432,15 +432,15 @@
       "sl": 4.77444081,
       "tp1": 5.18,
       "tp2": 5.542,
-      "status": "OPEN",
+      "status": "STOPPED",
       "tp1_hit": false,
       "tp2_hit": false,
       "sl_hit": false,
-      "close_reason": null,
+      "close_reason": "live MEXC exit: sl @ 4.774",
       "date_opened": "2026-09-28",
       "time_opened_utc": "12:04",
       "sl_mode": "initial",
-      "feed_updated_utc": "2026-09-28T18:04Z"
+      "feed_updated_utc": "2026-09-28T19:35Z"
     },
     {
       "trade_id": "CAKEUSDT_20260928_CJ_001",
@@ -464,6 +464,52 @@
       "time_opened_utc": "16:04",
       "sl_mode": "initial",
       "feed_updated_utc": "2026-09-28T16:04Z"
+    },
+    {
+      "trade_id": "NEARUSDT_20260928_CJ_002",
+      "coin": "NEARUSDT",
+      "direction": "Long",
+      "trading_system": "John",
+      "conviction": "HIGH",
+      "leverage": 3,
+      "entry_price": 4.6312585,
+      "entry_lo": 4.562517,
+      "entry_hi": 4.837483,
+      "sl": 4.34963949,
+      "tp1": 5.5174167,
+      "tp2": 5.80820867,
+      "status": "PENDING",
+      "tp1_hit": false,
+      "tp2_hit": false,
+      "sl_hit": false,
+      "close_reason": null,
+      "date_opened": "2026-09-28",
+      "time_opened_utc": "20:04",
+      "sl_mode": "initial",
+      "feed_updated_utc": "2026-09-28T20:04Z"
+    },
+    {
+      "trade_id": "ONDOUSDT_20260928_CM_001",
+      "coin": "ONDOUSDT",
+      "direction": "Long",
+      "trading_system": "Mong",
+      "conviction": "HIGH",
+      "leverage": 3,
+      "entry_price": 0.5125,
+      "entry_lo": 0.5125,
+      "entry_hi": 0.5125,
+      "sl": 0.45188795,
+      "tp1": 0.57311205,
+      "tp2": 0.66403012,
+      "status": "OPEN",
+      "tp1_hit": false,
+      "tp2_hit": false,
+      "sl_hit": false,
+      "close_reason": null,
+      "date_opened": "2026-09-28",
+      "time_opened_utc": "20:04",
+      "sl_mode": "initial",
+      "feed_updated_utc": "2026-09-28T20:04Z"
     }
   ]
 }

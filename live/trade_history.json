@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-28T18:08:00Z",
+  "updated": "2026-09-28T20:09:24Z",
   "positions": {
     "1414291495": {
       "position_id": "1414291495",
@@ -4286,8 +4286,16 @@
       "leverage": 3,
       "entry_price": 0.21265,
       "opened_at": "2026-09-28T03:25:13Z",
-      "status": "OPEN",
-      "braam_trade_id": "XLMUSDT_20260926_CJ_001"
+      "status": "CLOSED",
+      "braam_trade_id": "XLMUSDT_20260926_CJ_001",
+      "closed_at": "2026-09-28T18:22:24Z",
+      "close_price": 0.23329,
+      "pnl_usd": 27.7864,
+      "margin_usd": 173.7,
+      "fees_usd": 0.752,
+      "tag": "WIN",
+      "close_type": 3,
+      "close_reason": "take_profit"
     },
     "1508678444": {
       "position_id": "1508678444",
@@ -4314,8 +4322,16 @@
       "leverage": 3,
       "entry_price": 5.034,
       "opened_at": "2026-09-28T14:29:36Z",
-      "status": "OPEN",
-      "braam_trade_id": "NEARUSDT_20260928_CJ_001"
+      "status": "CLOSED",
+      "braam_trade_id": "NEARUSDT_20260928_CJ_001",
+      "closed_at": "2026-09-28T19:35:38Z",
+      "close_price": 4.774,
+      "pnl_usd": -35.1774,
+      "margin_usd": 221.93,
+      "fees_usd": 0.9027,
+      "tag": "LOSS",
+      "close_type": 4,
+      "close_reason": "stop_loss"
     }
   },
   "orders": {
@@ -4407,6 +4423,15 @@
       "entry_price": 2.48939606,
       "resting_at": "2026-09-28T16:04:00Z",
       "braam_trade_id": "CAKEUSDT_20260928_CJ_001",
+      "status": "RESTING"
+    },
+    "859645623669340672": {
+      "order_id": "859645623669340672",
+      "coin": "NEARUSDT",
+      "direction": "Long",
+      "entry_price": 4.6312585,
+      "resting_at": "2026-09-28T20:04:00Z",
+      "braam_trade_id": "NEARUSDT_20260928_CJ_002",
       "status": "RESTING"
     }
   },
