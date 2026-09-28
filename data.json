@@ -1,5 +1,5 @@
 {
-  "last_updated_iso": "2026-09-28T15:30:28Z",
+  "last_updated_iso": "2026-09-28T15:32:22Z",
   "mexc_account": null,
   "api_keys": [
     {
@@ -343,10 +343,10 @@
       "leverage": 3,
       "trading_system": "John",
       "track_only": false,
-      "status": "PENDING",
+      "status": "OPEN",
       "price_at_run": 5.175,
-      "date_activated": null,
-      "time_activated_utc": null,
+      "date_activated": "2026-09-28",
+      "time_activated_utc": "14:29",
       "date_opened": "2026-09-28",
       "time_opened_utc": "12:04",
       "conviction": "MEDIUM",
@@ -367,18 +367,6 @@
       "conviction": "HIGH",
       "track_only": false,
       "iso": "2026-09-28T08:04:00Z"
-    },
-    {
-      "trade_id": "NEARUSDT_20260928_CJ_001",
-      "coin": "NEARUSDT",
-      "direction": "Long",
-      "trading_system": "John",
-      "entry_price": 5.03419422,
-      "tp1": 5.394,
-      "sl": 4.77444081,
-      "conviction": "MEDIUM",
-      "track_only": false,
-      "iso": "2026-09-28T12:04:00Z"
     }
   ],
   "recent_opens": [
@@ -421,6 +409,16 @@
       "tp1_hit": true,
       "iso": "2026-09-28T09:46:00Z",
       "_iso_ms": 1790588760000
+    },
+    {
+      "trade_id": "NEARUSDT_20260928_CJ_001",
+      "coin": "NEARUSDT",
+      "direction": "Long",
+      "trading_system": "John",
+      "entry_price": 5.03419422,
+      "tp1_hit": false,
+      "iso": "2026-09-28T14:29:00Z",
+      "_iso_ms": 1790605740000
     }
   ],
   "recent_closes": [
@@ -1098,7 +1096,7 @@
     "peak_capital_usd": 3300,
     "peak_concurrent": 33,
     "peak_date": "2026-06-22",
-    "deployed_trades": 721,
+    "deployed_trades": 722,
     "return_on_peak_pct": 36.2,
     "win_rate_pct": 34.6,
     "closed_count": 705,
