@@ -1,19 +1,31 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-09-28T16:16:39Z",
+  "last_updated_iso": "2026-09-28T16:34:15Z",
   "mexc_account": {
-    "unrealized_pnl": -5.2079,
-    "equity": 4454.0299,
+    "unrealized_pnl": 9.4507,
+    "equity": 4468.6885,
     "available": 2334.2094,
     "position_margin": 356.7323
   },
   "order_levels": {
     "checked": 15,
-    "in_sync": 15,
-    "drifted": [],
+    "in_sync": 14,
+    "drifted": [
+      "NEAR"
+    ],
     "reconciling": [],
-    "detail": []
+    "detail": [
+      {
+        "coin": "NEAR",
+        "trade_id": "NEARUSDT_20260928_CJ_001",
+        "status": "OPEN",
+        "fields": [
+          "tp1"
+        ],
+        "synced_at": "2026-09-28T15:31:42.345105+00:00"
+      }
+    ]
   },
   "api_keys": [
     {
@@ -74,7 +86,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$4,454.03",
+      "value": "$4,468.69",
       "status": "ok",
       "action": null
     },
@@ -325,7 +337,7 @@
       "live_entry_slippage_pct": -0.0112,
       "live_fees_usd": 0.6457,
       "live_funding_usd": null,
-      "live_tp1_pnl_usd": 30.7623,
+      "live_tp1_pnl_usd": 29.7532,
       "rehearsal": false
     },
     {
@@ -389,7 +401,7 @@
       "live_entry_slippage_pct": 0.0007,
       "live_fees_usd": 0.6509,
       "live_funding_usd": null,
-      "live_tp1_pnl_usd": 38.7228,
+      "live_tp1_pnl_usd": 37.6263,
       "rehearsal": false
     },
     {
@@ -453,7 +465,7 @@
       "live_entry_slippage_pct": -0.006,
       "live_fees_usd": 0.6395,
       "live_funding_usd": null,
-      "live_tp1_pnl_usd": 23.63868,
+      "live_tp1_pnl_usd": 22.8646,
       "rehearsal": false
     },
     {
@@ -485,7 +497,7 @@
       "live_entry_slippage_pct": 0.0006,
       "live_fees_usd": 0.6606,
       "live_funding_usd": null,
-      "live_tp1_pnl_usd": 18.3632,
+      "live_tp1_pnl_usd": 17.6409,
       "rehearsal": false
     },
     {
@@ -558,8 +570,8 @@
       "direction": "Long",
       "entry_price": 5.03419422,
       "sl": 4.77444081,
-      "tp1": 5.394,
-      "tp2": 5.552,
+      "tp1": 5.18,
+      "tp2": 5.542,
       "capital_usd": 221.93,
       "leverage": 3,
       "trading_system": "John",
