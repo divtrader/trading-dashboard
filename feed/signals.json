@@ -1,9 +1,9 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-09-28T15:32Z",
+  "generated_utc": "2026-09-28T16:09Z",
   "master": "braam",
   "retention_hours": 48,
-  "trade_count": 19,
+  "trade_count": 20,
   "trades": [
     {
       "trade_id": "TRXUSDT_20260914_CJ_001",
@@ -441,6 +441,29 @@
       "time_opened_utc": "12:04",
       "sl_mode": "initial",
       "feed_updated_utc": "2026-09-28T14:29Z"
+    },
+    {
+      "trade_id": "CAKEUSDT_20260928_CJ_001",
+      "coin": "CAKEUSDT",
+      "direction": "Long",
+      "trading_system": "John",
+      "conviction": "MEDIUM",
+      "leverage": 3,
+      "entry_price": 2.48939606,
+      "entry_lo": 2.42904212,
+      "entry_hi": 2.67045788,
+      "sl": 2.42387024,
+      "tp1": 2.87431964,
+      "tp2": 2.94925953,
+      "status": "PENDING",
+      "tp1_hit": false,
+      "tp2_hit": false,
+      "sl_hit": false,
+      "close_reason": null,
+      "date_opened": "2026-09-28",
+      "time_opened_utc": "16:04",
+      "sl_mode": "initial",
+      "feed_updated_utc": "2026-09-28T16:04Z"
     }
   ]
 }
