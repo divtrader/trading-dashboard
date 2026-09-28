@@ -1,6 +1,6 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-09-28T13:01Z",
+  "generated_utc": "2026-09-28T13:03Z",
   "master": "braam",
   "retention_hours": 48,
   "trade_count": 19,
@@ -294,15 +294,15 @@
       "sl": 13.15088027,
       "tp1": 14.44,
       "tp2": 14.89,
-      "status": "OPEN",
-      "tp1_hit": false,
+      "status": "TP2_HIT",
+      "tp1_hit": true,
       "tp2_hit": false,
       "sl_hit": false,
-      "close_reason": null,
+      "close_reason": "live MEXC exit: tp2 @ 14.882",
       "date_opened": "2026-09-25",
       "time_opened_utc": "16:04",
-      "sl_mode": "initial",
-      "feed_updated_utc": "2026-09-28T09:46Z"
+      "sl_mode": "breakeven",
+      "feed_updated_utc": "2026-09-28T12:18Z"
     },
     {
       "trade_id": "SOLUSDT_20260925_CJ_001",
@@ -341,13 +341,13 @@
       "tp1": 0.222,
       "tp2": 0.2332,
       "status": "OPEN",
-      "tp1_hit": false,
+      "tp1_hit": true,
       "tp2_hit": false,
       "sl_hit": false,
       "close_reason": null,
       "date_opened": "2026-09-26",
       "time_opened_utc": "00:04",
-      "sl_mode": "initial",
+      "sl_mode": "breakeven",
       "feed_updated_utc": "2026-09-28T08:04Z"
     },
     {
