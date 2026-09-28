@@ -1,32 +1,19 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-09-28T22:45:21Z",
+  "last_updated_iso": "2026-09-28T22:47:14Z",
   "mexc_account": {
-    "unrealized_pnl": 12.4601,
-    "equity": 4446.4911,
+    "unrealized_pnl": 12.3138,
+    "equity": 4446.3447,
     "available": 2121.4261,
     "position_margin": 322.5048
   },
   "order_levels": {
     "checked": 15,
-    "in_sync": 14,
-    "drifted": [
-      "ONDO"
-    ],
+    "in_sync": 15,
+    "drifted": [],
     "reconciling": [],
-    "detail": [
-      {
-        "coin": "ONDO",
-        "trade_id": "ONDOUSDT_20260928_CM_001",
-        "status": "OPEN",
-        "fields": [
-          "tp1",
-          "tp2"
-        ],
-        "synced_at": null
-      }
-    ]
+    "detail": []
   },
   "api_keys": [
     {
@@ -87,7 +74,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$4,446.49",
+      "value": "$4,446.34",
       "status": "ok",
       "action": null
     },
@@ -111,9 +98,9 @@
       "key": "position_protection",
       "tier": 1,
       "label": "Position protection",
-      "value": "all protected (4 open, 1 pre-TP1 runners)",
-      "status": "ok",
-      "action": null
+      "value": "live read failed",
+      "status": "warn",
+      "action": "Worker health read failed \u2014 can't confirm SL protection; check the Worker."
     },
     {
       "key": "apikey_MEXC_ALGO_KEY",
@@ -338,7 +325,7 @@
       "live_entry_slippage_pct": -0.0112,
       "live_fees_usd": 0.6457,
       "live_funding_usd": null,
-      "live_tp1_pnl_usd": 29.7532,
+      "live_tp1_pnl_usd": 30.7623,
       "rehearsal": false
     },
     {
@@ -402,7 +389,7 @@
       "live_entry_slippage_pct": 0.0007,
       "live_fees_usd": 0.6509,
       "live_funding_usd": null,
-      "live_tp1_pnl_usd": 37.6211,
+      "live_tp1_pnl_usd": 38.7228,
       "rehearsal": false
     },
     {
@@ -466,7 +453,7 @@
       "live_entry_slippage_pct": -0.006,
       "live_fees_usd": 0.6395,
       "live_funding_usd": null,
-      "live_tp1_pnl_usd": 22.8646,
+      "live_tp1_pnl_usd": 23.63868,
       "rehearsal": false
     },
     {
