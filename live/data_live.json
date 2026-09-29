@@ -1,19 +1,31 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-09-29T14:44:57Z",
+  "last_updated_iso": "2026-09-29T16:08:50Z",
   "mexc_account": {
-    "unrealized_pnl": 71.7245,
-    "equity": 4529.9884,
-    "available": 2099.0016,
-    "position_margin": 576.9445
+    "unrealized_pnl": 38.0699,
+    "equity": 4495.8628,
+    "available": 2099.0708,
+    "position_margin": 802.5587
   },
   "order_levels": {
     "checked": 15,
-    "in_sync": 15,
-    "drifted": [],
+    "in_sync": 14,
+    "drifted": [
+      "SOL"
+    ],
     "reconciling": [],
-    "detail": []
+    "detail": [
+      {
+        "coin": "SOL",
+        "trade_id": "SOLUSDT_20260929_CJ_001",
+        "status": "PENDING",
+        "fields": [
+          "tp1"
+        ],
+        "synced_at": null
+      }
+    ]
   },
   "api_keys": [
     {
@@ -74,7 +86,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$4,529.99",
+      "value": "$4,495.86",
       "status": "ok",
       "action": null
     },
@@ -90,7 +102,7 @@
       "key": "orphan_orders",
       "tier": 1,
       "label": "Order reconciliation",
-      "value": "in sync (9 resting = journal)",
+      "value": "in sync (8 resting = journal)",
       "status": "ok",
       "action": null
     },
@@ -98,7 +110,7 @@
       "key": "position_protection",
       "tier": 1,
       "label": "Position protection",
-      "value": "all protected (6 open, 2 pre-TP1 runners)",
+      "value": "all protected (7 open, 3 pre-TP1 runners)",
       "status": "ok",
       "action": null
     },
@@ -229,7 +241,7 @@
       "live_entry_slippage_pct": -0.0001,
       "live_fees_usd": 0.6331,
       "live_funding_usd": null,
-      "live_tp1_pnl_usd": 24.8952,
+      "live_tp1_pnl_usd": 24.885,
       "rehearsal": false
     },
     {
@@ -293,7 +305,7 @@
       "live_entry_slippage_pct": -0.0112,
       "live_fees_usd": 0.6457,
       "live_funding_usd": null,
-      "live_tp1_pnl_usd": 29.7323,
+      "live_tp1_pnl_usd": 29.722,
       "rehearsal": false
     },
     {
@@ -325,7 +337,7 @@
       "live_entry_slippage_pct": 0.0007,
       "live_fees_usd": 0.6509,
       "live_funding_usd": null,
-      "live_tp1_pnl_usd": 37.6,
+      "live_tp1_pnl_usd": 37.5948,
       "rehearsal": false
     },
     {
@@ -357,7 +369,7 @@
       "live_entry_slippage_pct": -0.006,
       "live_fees_usd": 0.6395,
       "live_funding_usd": null,
-      "live_tp1_pnl_usd": 22.8436,
+      "live_tp1_pnl_usd": 22.8376,
       "rehearsal": false
     },
     {
@@ -590,8 +602,8 @@
       "direction": "Long",
       "entry_price": 118.45692847,
       "sl": 116.15213405,
-      "tp1": 127.55577751,
-      "tp2": 129.63771388,
+      "tp1": 122.17,
+      "tp2": 126.99,
       "capital_usd": 226.26,
       "leverage": 3,
       "trading_system": "John",
@@ -624,7 +636,7 @@
       "direction": "Long",
       "trading_system": "John",
       "entry_price": 118.45692847,
-      "tp1": 127.55577751,
+      "tp1": 122.17,
       "sl": 116.15213405,
       "conviction": "MEDIUM",
       "track_only": false,
