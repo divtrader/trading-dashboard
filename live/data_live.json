@@ -1,19 +1,32 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-09-29T04:09:02Z",
+  "last_updated_iso": "2026-09-29T05:46:45Z",
   "mexc_account": {
-    "unrealized_pnl": -16.6102,
-    "equity": 4416.6285,
+    "unrealized_pnl": -1.1465,
+    "equity": 4432.0923,
     "available": 1836.7301,
     "position_margin": 709.1003
   },
   "order_levels": {
     "checked": 16,
-    "in_sync": 16,
-    "drifted": [],
+    "in_sync": 15,
+    "drifted": [
+      "UNI"
+    ],
     "reconciling": [],
-    "detail": []
+    "detail": [
+      {
+        "coin": "UNI",
+        "trade_id": "UNIUSDT_20260921_CJ_001",
+        "status": "OPEN",
+        "fields": [
+          "tp1",
+          "tp2"
+        ],
+        "synced_at": "2026-09-29T00:06:14.129104+00:00"
+      }
+    ]
   },
   "api_keys": [
     {
@@ -74,7 +87,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$4,416.63",
+      "value": "$4,432.09",
       "status": "ok",
       "action": null
     },
@@ -98,9 +111,9 @@
       "key": "position_protection",
       "tier": 1,
       "label": "Position protection",
-      "value": "all protected (6 open, 3 pre-TP1 runners)",
-      "status": "ok",
-      "action": null
+      "value": "live read failed",
+      "status": "warn",
+      "action": "Worker health read failed \u2014 can't confirm SL protection; check the Worker."
     },
     {
       "key": "apikey_MEXC_ALGO_KEY",
@@ -206,8 +219,8 @@
       "direction": "Long",
       "entry_price": 8.56101088,
       "sl": 8.20100311,
-      "tp1": 9.56833046,
-      "tp2": 9.99499378,
+      "tp1": 9.086,
+      "tp2": 9.826,
       "capital_usd": 164.7,
       "leverage": 3,
       "trading_system": "John",
