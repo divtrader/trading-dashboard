@@ -1,6 +1,6 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-09-29T16:13Z",
+  "generated_utc": "2026-09-29T18:08Z",
   "master": "braam",
   "retention_hours": 48,
   "trade_count": 24,
@@ -258,15 +258,15 @@
       "sl": 0.75421103,
       "tp1": 0.8394,
       "tp2": 0.8819,
-      "status": "OPEN",
+      "status": "STOPPED_AFTER_TP1",
       "tp1_hit": true,
       "tp2_hit": false,
       "sl_hit": false,
-      "close_reason": null,
+      "close_reason": "live MEXC exit: sl @ 0.792",
       "date_opened": "2026-09-24",
       "time_opened_utc": "20:04",
       "sl_mode": "breakeven",
-      "feed_updated_utc": "2026-09-27T22:04Z",
+      "feed_updated_utc": "2026-09-29T17:50Z",
       "activated_utc": "2026-09-25T02:39Z"
     },
     {
@@ -578,7 +578,7 @@
       "date_opened": "2026-09-29",
       "time_opened_utc": "12:04",
       "sl_mode": "initial",
-      "feed_updated_utc": "2026-09-29T15:23Z",
+      "feed_updated_utc": "2026-09-29T18:04Z",
       "activated_utc": "2026-09-29T15:23Z"
     }
   ]
