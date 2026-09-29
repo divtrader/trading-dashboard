@@ -1,6 +1,6 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-09-29T08:09Z",
+  "generated_utc": "2026-09-29T10:09Z",
   "master": "braam",
   "retention_hours": 48,
   "trade_count": 23,
@@ -88,13 +88,13 @@
       "tp1": 9.086,
       "tp2": 9.826,
       "status": "OPEN",
-      "tp1_hit": false,
+      "tp1_hit": true,
       "tp2_hit": false,
       "sl_hit": false,
       "close_reason": null,
       "date_opened": "2026-09-21",
       "time_opened_utc": "08:04",
-      "sl_mode": "initial",
+      "sl_mode": "breakeven",
       "feed_updated_utc": "2026-09-29T06:04Z"
     },
     {
@@ -179,15 +179,15 @@
       "sl": 0.09873933,
       "tp1": 0.12369522,
       "tp2": 0.13732135,
-      "status": "PENDING",
+      "status": "CANCELLED",
       "tp1_hit": false,
       "tp2_hit": false,
       "sl_hit": false,
-      "close_reason": null,
+      "close_reason": "Stale 24.0h \u2265 24h grace: Price $0.1328 is 22.8% above entry $0.1026",
       "date_opened": "2026-09-22",
       "time_opened_utc": "16:04",
       "sl_mode": "initial",
-      "feed_updated_utc": "2026-09-22T16:04Z"
+      "feed_updated_utc": "2026-09-29T10:04Z"
     },
     {
       "trade_id": "TAOUSDT_20260922_CJ_001",
@@ -225,15 +225,15 @@
       "sl": 0.08224417,
       "tp1": 0.09187302,
       "tp2": 0.10314166,
-      "status": "PENDING",
+      "status": "CANCELLED",
       "tp1_hit": false,
       "tp2_hit": false,
       "sl_hit": false,
-      "close_reason": null,
+      "close_reason": "Stale 24.0h \u2265 24h grace: Price $0.1180 is 27.3% above entry $0.0858",
       "date_opened": "2026-09-23",
       "time_opened_utc": "16:04",
       "sl_mode": "initial",
-      "feed_updated_utc": "2026-09-23T16:04Z"
+      "feed_updated_utc": "2026-09-29T10:04Z"
     },
     {
       "trade_id": "APTUSDT_20260924_CJ_001",
