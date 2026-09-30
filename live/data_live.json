@@ -1,19 +1,42 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-09-30T08:09:05Z",
+  "last_updated_iso": "2026-09-30T09:39:35Z",
   "mexc_account": {
-    "unrealized_pnl": 26.6579,
-    "equity": 4483.9848,
+    "unrealized_pnl": 59.5948,
+    "equity": 4516.9217,
     "available": 1906.4148,
     "position_margin": 769.1059
   },
   "order_levels": {
     "checked": 15,
-    "in_sync": 15,
-    "drifted": [],
+    "in_sync": 13,
+    "drifted": [
+      "ONDO",
+      "SOL"
+    ],
     "reconciling": [],
-    "detail": []
+    "detail": [
+      {
+        "coin": "ONDO",
+        "trade_id": "ONDOUSDT_20260928_CM_001",
+        "status": "OPEN",
+        "fields": [
+          "tp1"
+        ],
+        "synced_at": "2026-09-28T22:46:33.399669+00:00"
+      },
+      {
+        "coin": "SOL",
+        "trade_id": "SOLUSDT_20260929_CJ_001",
+        "status": "OPEN",
+        "fields": [
+          "tp1",
+          "tp2"
+        ],
+        "synced_at": "2026-09-29T18:07:10.806326+00:00"
+      }
+    ]
   },
   "api_keys": [
     {
@@ -74,7 +97,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$4,483.98",
+      "value": "$4,516.92",
       "status": "ok",
       "action": null
     },
@@ -229,7 +252,7 @@
       "live_entry_slippage_pct": -0.0001,
       "live_fees_usd": 0.6331,
       "live_funding_usd": null,
-      "live_tp1_pnl_usd": 25.5486,
+      "live_tp1_pnl_usd": 24.8646,
       "rehearsal": false
     },
     {
@@ -293,7 +316,7 @@
       "live_entry_slippage_pct": -0.0112,
       "live_fees_usd": 0.6457,
       "live_funding_usd": null,
-      "live_tp1_pnl_usd": 30.7623,
+      "live_tp1_pnl_usd": 29.7055,
       "rehearsal": false
     },
     {
@@ -325,7 +348,7 @@
       "live_entry_slippage_pct": 0.0007,
       "live_fees_usd": 0.6509,
       "live_funding_usd": null,
-      "live_tp1_pnl_usd": 38.7228,
+      "live_tp1_pnl_usd": 37.5808,
       "rehearsal": false
     },
     {
@@ -462,7 +485,7 @@
       "direction": "Long",
       "entry_price": 0.5125,
       "sl": 0.45188795,
-      "tp1": 0.5572,
+      "tp1": 0.5392,
       "tp2": 0.591,
       "capital_usd": 222.25,
       "leverage": 3,
@@ -558,8 +581,8 @@
       "direction": "Long",
       "entry_price": 118.45692847,
       "sl": 116.15213405,
-      "tp1": 122.17,
-      "tp2": 126.99,
+      "tp1": 120.58,
+      "tp2": 124.23,
       "capital_usd": 226.26,
       "leverage": 3,
       "trading_system": "John",
