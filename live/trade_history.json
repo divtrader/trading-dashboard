@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-30T14:08:47Z",
+  "updated": "2026-09-30T16:08:48Z",
   "positions": {
     "1414291495": {
       "position_id": "1414291495",
@@ -4386,8 +4386,26 @@
       "leverage": 3,
       "entry_price": 118.46,
       "opened_at": "2026-09-29T15:23:58Z",
+      "status": "CLOSED",
+      "braam_trade_id": "SOLUSDT_20260929_CJ_001",
+      "closed_at": "2026-09-30T14:32:51Z",
+      "close_price": 118.44,
+      "pnl_usd": 8.5987,
+      "margin_usd": 226.26,
+      "fees_usd": 0.9528,
+      "tag": "WIN",
+      "close_type": 1,
+      "close_reason": "manual"
+    },
+    "1510713152": {
+      "position_id": "1510713152",
+      "coin": "XLMUSDT",
+      "direction": "Long",
+      "leverage": 3,
+      "entry_price": 0.22135,
+      "opened_at": "2026-09-30T14:33:02Z",
       "status": "OPEN",
-      "braam_trade_id": "SOLUSDT_20260929_CJ_001"
+      "braam_trade_id": "XLMUSDT_20260930_CJ_001"
     }
   },
   "orders": {
@@ -4436,11 +4454,11 @@
       "braam_trade_id": "CAKEUSDT_20260928_CJ_001",
       "status": "RESTING"
     },
-    "860068800173840384": {
-      "order_id": "860068800173840384",
+    "860310235443762688": {
+      "order_id": "860310235443762688",
       "coin": "XRPUSDT",
       "direction": "Long",
-      "entry_price": 1.46430961,
+      "entry_price": 1.47480586,
       "resting_at": "2026-09-29T00:04:00Z",
       "braam_trade_id": "XRPUSDT_20260929_CJ_001",
       "status": "RESTING"
@@ -4452,15 +4470,6 @@
       "entry_price": 0.3308,
       "resting_at": "2026-09-29T00:04:00Z",
       "braam_trade_id": "TRXUSDT_20260929_CJ_001",
-      "status": "RESTING"
-    },
-    "860249873998948864": {
-      "order_id": "860249873998948864",
-      "coin": "XLMUSDT",
-      "direction": "Long",
-      "entry_price": 0.22135,
-      "resting_at": "2026-09-30T08:04:00Z",
-      "braam_trade_id": "XLMUSDT_20260930_CJ_001",
       "status": "RESTING"
     }
   },

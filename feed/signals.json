@@ -1,6 +1,6 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-09-30T14:08Z",
+  "generated_utc": "2026-09-30T16:08Z",
   "master": "braam",
   "retention_hours": 48,
   "trade_count": 21,
@@ -420,12 +420,12 @@
       "trading_system": "John",
       "conviction": "MEDIUM",
       "leverage": 3,
-      "entry_price": 1.46430961,
-      "entry_lo": 1.44396923,
-      "entry_hi": 1.52533077,
-      "sl": 1.4292455,
-      "tp1": 1.56830262,
-      "tp2": 1.614809,
+      "entry_price": 1.47480586,
+      "entry_lo": 1.45286173,
+      "entry_hi": 1.54063827,
+      "sl": 1.44081346,
+      "tp1": 1.63222063,
+      "tp2": 1.66926173,
       "status": "PENDING",
       "tp1_hit": false,
       "tp2_hit": false,
@@ -474,15 +474,15 @@
       "sl": 116.15213405,
       "tp1": 120.58,
       "tp2": 124.23,
-      "status": "OPEN",
+      "status": "STOPPED_AFTER_TP1",
       "tp1_hit": true,
       "tp2_hit": false,
       "sl_hit": false,
-      "close_reason": null,
+      "close_reason": "live MEXC exit: manual @ 118.44",
       "date_opened": "2026-09-29",
       "time_opened_utc": "12:04",
       "sl_mode": "breakeven",
-      "feed_updated_utc": "2026-09-30T10:04Z",
+      "feed_updated_utc": "2026-09-30T14:32Z",
       "activated_utc": "2026-09-29T15:23Z"
     },
     {
@@ -498,7 +498,7 @@
       "sl": 0.21399146,
       "tp1": 0.24098224,
       "tp2": 0.25811709,
-      "status": "PENDING",
+      "status": "OPEN",
       "tp1_hit": false,
       "tp2_hit": false,
       "sl_hit": false,
@@ -506,8 +506,8 @@
       "date_opened": "2026-09-30",
       "time_opened_utc": "08:04",
       "sl_mode": "initial",
-      "feed_updated_utc": "2026-09-30T08:04Z",
-      "activated_utc": null
+      "feed_updated_utc": "2026-09-30T14:33Z",
+      "activated_utc": "2026-09-30T14:33Z"
     }
   ]
 }
