@@ -1,9 +1,9 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-09-30T06:08Z",
+  "generated_utc": "2026-09-30T08:09Z",
   "master": "braam",
   "retention_hours": 48,
-  "trade_count": 22,
+  "trade_count": 23,
   "trades": [
     {
       "trade_id": "TRXUSDT_20260914_CJ_001",
@@ -532,6 +532,30 @@
       "sl_mode": "initial",
       "feed_updated_utc": "2026-09-29T18:04Z",
       "activated_utc": "2026-09-29T15:23Z"
+    },
+    {
+      "trade_id": "XLMUSDT_20260930_CJ_001",
+      "coin": "XLMUSDT",
+      "direction": "Long",
+      "trading_system": "John",
+      "conviction": "MEDIUM",
+      "leverage": 3,
+      "entry_price": 0.22031344,
+      "entry_lo": 0.21792687,
+      "entry_hi": 0.22747313,
+      "sl": 0.21288116,
+      "tp1": 0.2410717,
+      "tp2": 0.24893769,
+      "status": "PENDING",
+      "tp1_hit": false,
+      "tp2_hit": false,
+      "sl_hit": false,
+      "close_reason": null,
+      "date_opened": "2026-09-30",
+      "time_opened_utc": "08:04",
+      "sl_mode": "initial",
+      "feed_updated_utc": "2026-09-30T08:04Z",
+      "activated_utc": null
     }
   ]
 }
