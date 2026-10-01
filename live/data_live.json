@@ -1,31 +1,19 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-10-01T13:56:19Z",
+  "last_updated_iso": "2026-10-01T13:58:15Z",
   "mexc_account": {
-    "unrealized_pnl": -4.3684,
-    "equity": 4550.0091,
+    "unrealized_pnl": -4.2179,
+    "equity": 4550.1596,
     "available": 2398.6289,
     "position_margin": 773.9736
   },
   "order_levels": {
     "checked": 13,
-    "in_sync": 12,
-    "drifted": [
-      "NEAR"
-    ],
+    "in_sync": 13,
+    "drifted": [],
     "reconciling": [],
-    "detail": [
-      {
-        "coin": "NEAR",
-        "trade_id": "NEARUSDT_20261001_CJ_002",
-        "status": "PENDING",
-        "fields": [
-          "tp1"
-        ],
-        "synced_at": null
-      }
-    ]
+    "detail": []
   },
   "api_keys": [
     {
@@ -86,7 +74,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$4,550.01",
+      "value": "$4,550.16",
       "status": "ok",
       "action": null
     },
@@ -110,9 +98,9 @@
       "key": "position_protection",
       "tier": 1,
       "label": "Position protection",
-      "value": "live read failed",
-      "status": "warn",
-      "action": "Worker health read failed \u2014 can't confirm SL protection; check the Worker."
+      "value": "all protected (6 open, 3 pre-TP1 runners)",
+      "status": "ok",
+      "action": null
     },
     {
       "key": "apikey_MEXC_ALGO_KEY",
@@ -241,7 +229,7 @@
       "live_entry_slippage_pct": -0.0001,
       "live_fees_usd": 0.6331,
       "live_funding_usd": null,
-      "live_tp1_pnl_usd": 25.5486,
+      "live_tp1_pnl_usd": 24.834,
       "rehearsal": false
     },
     {
@@ -305,7 +293,7 @@
       "live_entry_slippage_pct": -0.0112,
       "live_fees_usd": 0.6457,
       "live_funding_usd": null,
-      "live_tp1_pnl_usd": 30.7623,
+      "live_tp1_pnl_usd": 29.6799,
       "rehearsal": false
     },
     {
@@ -337,7 +325,7 @@
       "live_entry_slippage_pct": 0.0007,
       "live_fees_usd": 0.6509,
       "live_funding_usd": null,
-      "live_tp1_pnl_usd": 38.7228,
+      "live_tp1_pnl_usd": 37.5525,
       "rehearsal": false
     },
     {
@@ -544,10 +532,10 @@
       "leverage": 3,
       "trading_system": "John",
       "track_only": false,
-      "status": "PENDING",
+      "status": "OPEN",
       "price_at_run": 5.113,
-      "date_activated": null,
-      "time_activated_utc": null,
+      "date_activated": "2026-10-01",
+      "time_activated_utc": "13:06",
       "date_opened": "2026-10-01",
       "time_opened_utc": "12:04",
       "conviction": "MEDIUM",
@@ -555,31 +543,17 @@
       "sl_moved_to_be": null,
       "pnl_tp1_realized_usd": null,
       "tp2_hit": false,
-      "live_executed": null,
-      "live_entry_fill": null,
+      "live_executed": true,
+      "live_entry_fill": 4.927,
       "live_exit_fill": null,
-      "live_entry_slippage_pct": null,
-      "live_fees_usd": null,
+      "live_entry_slippage_pct": -0.0047,
+      "live_fees_usd": 0.4079,
       "live_funding_usd": null,
       "live_tp1_pnl_usd": null,
       "rehearsal": false
     }
   ],
-  "recent_signals": [
-    {
-      "trade_id": "NEARUSDT_20261001_CJ_002",
-      "coin": "NEARUSDT",
-      "direction": "Long",
-      "trading_system": "John",
-      "entry_price": 4.92723252,
-      "tp1": 5.406,
-      "sl": 4.6641935,
-      "conviction": "MEDIUM",
-      "track_only": false,
-      "iso": "2026-10-01T12:04:00Z",
-      "rehearsal": false
-    }
-  ],
+  "recent_signals": [],
   "recent_opens": [
     {
       "trade_id": "SOLUSDT_20260929_CJ_001",
@@ -615,6 +589,18 @@
       "tp1_hit": true,
       "iso": "2026-10-01T01:48:00Z",
       "_iso_ms": 1790819280000,
+      "rehearsal": false
+    },
+    {
+      "trade_id": "NEARUSDT_20261001_CJ_002",
+      "coin": "NEARUSDT",
+      "direction": "Long",
+      "trading_system": "John",
+      "entry_price": 4.92723252,
+      "live_entry_fill": 4.927,
+      "tp1_hit": false,
+      "iso": "2026-10-01T13:06:00Z",
+      "_iso_ms": 1790859960000,
       "rehearsal": false
     }
   ],
@@ -4447,7 +4433,7 @@
     "peak_capital_usd": 1336.39,
     "peak_concurrent": 7,
     "peak_date": "2026-09-29",
-    "deployed_trades": 248,
+    "deployed_trades": 249,
     "return_on_peak_pct": 17.17,
     "win_rate_pct": 42.4,
     "closed_count": 243,
