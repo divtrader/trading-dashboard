@@ -1,42 +1,19 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-10-01T07:14:12Z",
+  "last_updated_iso": "2026-10-01T07:16:12Z",
   "mexc_account": {
-    "unrealized_pnl": 33.4926,
-    "equity": 4588.5899,
+    "unrealized_pnl": 36.2292,
+    "equity": 4591.3265,
     "available": 2581.0818,
     "position_margin": 592.2405
   },
   "order_levels": {
     "checked": 13,
-    "in_sync": 11,
-    "drifted": [
-      "XLM",
-      "NEAR"
-    ],
+    "in_sync": 13,
+    "drifted": [],
     "reconciling": [],
-    "detail": [
-      {
-        "coin": "XLM",
-        "trade_id": "XLMUSDT_20260930_CJ_001",
-        "status": "OPEN",
-        "fields": [
-          "tp1",
-          "tp2"
-        ],
-        "synced_at": "2026-09-30T12:05:52.904042+00:00"
-      },
-      {
-        "coin": "NEAR",
-        "trade_id": "NEARUSDT_20261001_CJ_001",
-        "status": "OPEN",
-        "fields": [
-          "tp2"
-        ],
-        "synced_at": "2026-10-01T01:55:31.724757+00:00"
-      }
-    ]
+    "detail": []
   },
   "api_keys": [
     {
@@ -97,7 +74,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$4,588.59",
+      "value": "$4,591.33",
       "status": "ok",
       "action": null
     },
@@ -121,9 +98,9 @@
       "key": "position_protection",
       "tier": 1,
       "label": "Position protection",
-      "value": "all protected (6 open, 2 pre-TP1 runners)",
-      "status": "ok",
-      "action": null
+      "value": "live read failed",
+      "status": "warn",
+      "action": "Worker health read failed \u2014 can't confirm SL protection; check the Worker."
     },
     {
       "key": "apikey_MEXC_ALGO_KEY",
