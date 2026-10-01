@@ -1,34 +1,10 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-09-30T22:07Z",
+  "generated_utc": "2026-10-01T00:08Z",
   "master": "braam",
   "retention_hours": 48,
   "trade_count": 19,
   "trades": [
-    {
-      "trade_id": "TRXUSDT_20260914_CJ_001",
-      "coin": "TRXUSDT",
-      "direction": "Long",
-      "trading_system": "John",
-      "conviction": "HIGH",
-      "leverage": 3,
-      "entry_price": 0.3308,
-      "entry_lo": 0.32909443,
-      "entry_hi": 0.3359167,
-      "sl": 0.3293217,
-      "tp1": 0.36490549,
-      "tp2": 0.36915659,
-      "status": "CANCELLED",
-      "tp1_hit": false,
-      "tp2_hit": false,
-      "sl_hit": false,
-      "close_reason": "Entry window expired: unfilled 15.0d \u2265 90\u00d74H (360h) \u2014 mirrors backtest ENTRY_WINDOW",
-      "date_opened": "2026-09-14",
-      "time_opened_utc": "00:04",
-      "sl_mode": "initial",
-      "feed_updated_utc": "2026-09-29T00:04Z",
-      "activated_utc": null
-    },
     {
       "trade_id": "THETAUSDT_20260918_CJ_001",
       "coin": "THETAUSDT",
@@ -460,6 +436,30 @@
       "sl_mode": "initial",
       "feed_updated_utc": "2026-09-30T14:33Z",
       "activated_utc": "2026-09-30T14:33Z"
+    },
+    {
+      "trade_id": "NEARUSDT_20261001_CJ_001",
+      "coin": "NEARUSDT",
+      "direction": "Long",
+      "trading_system": "John",
+      "conviction": "MEDIUM",
+      "leverage": 3,
+      "entry_price": 5.23216109,
+      "entry_lo": 5.16432218,
+      "entry_hi": 5.43567782,
+      "sl": 4.96817745,
+      "tp1": 6.00837722,
+      "tp2": 6.39497072,
+      "status": "PENDING",
+      "tp1_hit": false,
+      "tp2_hit": false,
+      "sl_hit": false,
+      "close_reason": null,
+      "date_opened": "2026-10-01",
+      "time_opened_utc": "00:04",
+      "sl_mode": "initial",
+      "feed_updated_utc": "2026-10-01T00:04Z",
+      "activated_utc": null
     }
   ]
 }
