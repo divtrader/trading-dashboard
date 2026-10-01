@@ -1,9 +1,9 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-10-01T10:08Z",
+  "generated_utc": "2026-10-01T12:08Z",
   "master": "braam",
   "retention_hours": 48,
-  "trade_count": 17,
+  "trade_count": 18,
   "trades": [
     {
       "trade_id": "THETAUSDT_20260918_CJ_001",
@@ -412,6 +412,30 @@
       "sl_mode": "breakeven",
       "feed_updated_utc": "2026-10-01T08:29Z",
       "activated_utc": "2026-10-01T01:48Z"
+    },
+    {
+      "trade_id": "NEARUSDT_20261001_CJ_002",
+      "coin": "NEARUSDT",
+      "direction": "Long",
+      "trading_system": "John",
+      "conviction": "MEDIUM",
+      "leverage": 3,
+      "entry_price": 4.92723252,
+      "entry_lo": 4.85446503,
+      "entry_hi": 5.14553497,
+      "sl": 4.6641935,
+      "tp1": 5.97454931,
+      "tp2": 6.26725643,
+      "status": "PENDING",
+      "tp1_hit": false,
+      "tp2_hit": false,
+      "sl_hit": false,
+      "close_reason": null,
+      "date_opened": "2026-10-01",
+      "time_opened_utc": "12:04",
+      "sl_mode": "initial",
+      "feed_updated_utc": "2026-10-01T12:04Z",
+      "activated_utc": null
     }
   ]
 }
