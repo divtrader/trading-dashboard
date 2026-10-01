@@ -1,9 +1,9 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-10-01T08:08Z",
+  "generated_utc": "2026-10-01T10:08Z",
   "master": "braam",
   "retention_hours": 48,
-  "trade_count": 19,
+  "trade_count": 17,
   "trades": [
     {
       "trade_id": "THETAUSDT_20260918_CJ_001",
@@ -126,30 +126,6 @@
       "activated_utc": "2026-09-23T14:13Z"
     },
     {
-      "trade_id": "ALGOUSDT_20260922_CJ_001",
-      "coin": "ALGOUSDT",
-      "direction": "Long",
-      "trading_system": "John",
-      "conviction": "MEDIUM",
-      "leverage": 3,
-      "entry_price": 0.10256453,
-      "entry_lo": 0.1007,
-      "entry_hi": 0.10815813,
-      "sl": 0.09873933,
-      "tp1": 0.12369522,
-      "tp2": 0.13732135,
-      "status": "CANCELLED",
-      "tp1_hit": false,
-      "tp2_hit": false,
-      "sl_hit": false,
-      "close_reason": "Stale 24.0h \u2265 24h grace: Price $0.1328 is 22.8% above entry $0.1026",
-      "date_opened": "2026-09-22",
-      "time_opened_utc": "16:04",
-      "sl_mode": "initial",
-      "feed_updated_utc": "2026-09-29T10:04Z",
-      "activated_utc": null
-    },
-    {
       "trade_id": "TAOUSDT_20260922_CJ_001",
       "coin": "TAOUSDT",
       "direction": "Long",
@@ -172,30 +148,6 @@
       "sl_mode": "breakeven",
       "feed_updated_utc": "2026-09-28T18:04Z",
       "activated_utc": "2026-09-23T15:53Z"
-    },
-    {
-      "trade_id": "HBARUSDT_20260923_CJ_001",
-      "coin": "HBARUSDT",
-      "direction": "Long",
-      "trading_system": "John",
-      "conviction": "VERY HIGH",
-      "leverage": 3,
-      "entry_price": 0.08580091,
-      "entry_lo": 0.0837672,
-      "entry_hi": 0.09190203,
-      "sl": 0.08224417,
-      "tp1": 0.09187302,
-      "tp2": 0.10314166,
-      "status": "CANCELLED",
-      "tp1_hit": false,
-      "tp2_hit": false,
-      "sl_hit": false,
-      "close_reason": "Stale 24.0h \u2265 24h grace: Price $0.1180 is 27.3% above entry $0.0858",
-      "date_opened": "2026-09-23",
-      "time_opened_utc": "16:04",
-      "sl_mode": "initial",
-      "feed_updated_utc": "2026-09-29T10:04Z",
-      "activated_utc": null
     },
     {
       "trade_id": "APTUSDT_20260924_CJ_001",
@@ -450,15 +402,15 @@
       "sl": 4.96817745,
       "tp1": 5.446,
       "tp2": 6.111,
-      "status": "OPEN",
+      "status": "STOPPED_AFTER_TP1",
       "tp1_hit": true,
       "tp2_hit": false,
       "sl_hit": false,
-      "close_reason": null,
+      "close_reason": "live MEXC exit: manual @ 5.23",
       "date_opened": "2026-10-01",
       "time_opened_utc": "00:04",
       "sl_mode": "breakeven",
-      "feed_updated_utc": "2026-10-01T08:04Z",
+      "feed_updated_utc": "2026-10-01T08:29Z",
       "activated_utc": "2026-10-01T01:48Z"
     }
   ]
