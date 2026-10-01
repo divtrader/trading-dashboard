@@ -1,19 +1,31 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-10-01T00:08:21Z",
+  "last_updated_iso": "2026-10-01T01:54:15Z",
   "mexc_account": {
-    "unrealized_pnl": 10.2704,
-    "equity": 4544.3057,
-    "available": 2377.5731,
-    "position_margin": 546.7876
+    "unrealized_pnl": 22.9452,
+    "equity": 4556.5724,
+    "available": 2377.7092,
+    "position_margin": 774.0518
   },
   "order_levels": {
     "checked": 13,
-    "in_sync": 13,
-    "drifted": [],
+    "in_sync": 12,
+    "drifted": [
+      "NEAR"
+    ],
     "reconciling": [],
-    "detail": []
+    "detail": [
+      {
+        "coin": "NEAR",
+        "trade_id": "NEARUSDT_20261001_CJ_001",
+        "status": "PENDING",
+        "fields": [
+          "tp1"
+        ],
+        "synced_at": null
+      }
+    ]
   },
   "api_keys": [
     {
@@ -74,7 +86,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$4,544.31",
+      "value": "$4,556.57",
       "status": "ok",
       "action": null
     },
@@ -90,7 +102,7 @@
       "key": "orphan_orders",
       "tier": 1,
       "label": "Order reconciliation",
-      "value": "in sync (8 resting = journal)",
+      "value": "in sync (7 resting = journal)",
       "status": "ok",
       "action": null
     },
@@ -98,7 +110,7 @@
       "key": "position_protection",
       "tier": 1,
       "label": "Position protection",
-      "value": "all protected (5 open, 2 pre-TP1 runners)",
+      "value": "all protected (6 open, 2 pre-TP1 runners)",
       "status": "ok",
       "action": null
     },
@@ -526,7 +538,7 @@
       "direction": "Long",
       "entry_price": 5.23216109,
       "sl": 4.96817745,
-      "tp1": 6.00837722,
+      "tp1": 5.446,
       "tp2": 6.39497072,
       "capital_usd": 227.05,
       "leverage": 3,
@@ -560,7 +572,7 @@
       "direction": "Long",
       "trading_system": "John",
       "entry_price": 5.23216109,
-      "tp1": 6.00837722,
+      "tp1": 5.446,
       "sl": 4.96817745,
       "conviction": "MEDIUM",
       "track_only": false,
@@ -569,30 +581,6 @@
     }
   ],
   "recent_opens": [
-    {
-      "trade_id": "NEARUSDT_20260928_CJ_002",
-      "coin": "NEARUSDT",
-      "direction": "Long",
-      "trading_system": "John",
-      "entry_price": 4.73596504,
-      "live_entry_fill": 4.736,
-      "tp1_hit": true,
-      "iso": "2026-09-29T01:10:00Z",
-      "_iso_ms": 1790644200000,
-      "rehearsal": false
-    },
-    {
-      "trade_id": "UNIUSDT_20260921_CJ_001",
-      "coin": "UNIUSDT",
-      "direction": "Long",
-      "trading_system": "John",
-      "entry_price": 8.56101088,
-      "live_entry_fill": 8.561,
-      "tp1_hit": true,
-      "iso": "2026-09-29T01:32:00Z",
-      "_iso_ms": 1790645520000,
-      "rehearsal": false
-    },
     {
       "trade_id": "SOLUSDT_20260929_CJ_001",
       "coin": "SOLUSDT",
