@@ -1,19 +1,76 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-10-02T18:07:35Z",
+  "last_updated_iso": "2026-10-02T19:10:40Z",
   "mexc_account": {
-    "unrealized_pnl": -41.6723,
-    "equity": 4512.2438,
-    "available": 1482.8054,
-    "position_margin": 773.9736
+    "unrealized_pnl": -58.7319,
+    "equity": 4433.0738,
+    "available": 1941.865,
+    "position_margin": 1386.8726
   },
   "order_levels": {
-    "checked": 17,
-    "in_sync": 17,
-    "drifted": [],
-    "reconciling": [],
-    "detail": []
+    "checked": 13,
+    "in_sync": 8,
+    "drifted": [
+      "CAKE",
+      "XRP",
+      "SOL",
+      "LINK",
+      "APT"
+    ],
+    "reconciling": [
+      "ADA",
+      "TAO",
+      "XLM",
+      "NEAR"
+    ],
+    "detail": [
+      {
+        "coin": "CAKE",
+        "trade_id": "CAKEUSDT_20260928_CJ_001",
+        "status": "PENDING",
+        "fields": [
+          "tp1"
+        ],
+        "synced_at": null
+      },
+      {
+        "coin": "XRP",
+        "trade_id": "XRPUSDT_20260929_CJ_001",
+        "status": "PENDING",
+        "fields": [
+          "tp1"
+        ],
+        "synced_at": "2026-10-01T04:05:43.927113+00:00"
+      },
+      {
+        "coin": "SOL",
+        "trade_id": "SOLUSDT_20261002_CJ_001",
+        "status": "PENDING",
+        "fields": [
+          "tp1"
+        ],
+        "synced_at": null
+      },
+      {
+        "coin": "LINK",
+        "trade_id": "LINKUSDT_20261002_CJ_001",
+        "status": "PENDING",
+        "fields": [
+          "tp1"
+        ],
+        "synced_at": null
+      },
+      {
+        "coin": "APT",
+        "trade_id": "APTUSDT_20261002_CJ_001",
+        "status": "PENDING",
+        "fields": [
+          "tp1"
+        ],
+        "synced_at": null
+      }
+    ]
   },
   "api_keys": [
     {
@@ -74,7 +131,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$4,512.24",
+      "value": "$4,433.07",
       "status": "ok",
       "action": null
     },
@@ -90,7 +147,7 @@
       "key": "orphan_orders",
       "tier": 1,
       "label": "Order reconciliation",
-      "value": "in sync (11 resting = journal)",
+      "value": "in sync (6 resting = journal)",
       "status": "ok",
       "action": null
     },
@@ -98,9 +155,9 @@
       "key": "position_protection",
       "tier": 1,
       "label": "Position protection",
-      "value": "all protected (6 open, 3 pre-TP1 runners)",
-      "status": "ok",
-      "action": null
+      "value": "live read failed",
+      "status": "warn",
+      "action": "Worker health read failed \u2014 can't confirm SL protection; check the Worker."
     },
     {
       "key": "apikey_MEXC_ALGO_KEY",
@@ -293,7 +350,7 @@
       "live_entry_slippage_pct": -0.0112,
       "live_fees_usd": 0.6457,
       "live_funding_usd": null,
-      "live_tp1_pnl_usd": 29.6492,
+      "live_tp1_pnl_usd": 30.7623,
       "rehearsal": false
     },
     {
@@ -325,7 +382,7 @@
       "live_entry_slippage_pct": 0.0007,
       "live_fees_usd": 0.6509,
       "live_funding_usd": null,
-      "live_tp1_pnl_usd": 37.516,
+      "live_tp1_pnl_usd": 38.7228,
       "rehearsal": false
     },
     {
@@ -366,8 +423,8 @@
       "direction": "Long",
       "entry_price": 2.48939606,
       "sl": 2.42387024,
-      "tp1": 2.87431964,
-      "tp2": 2.94925953,
+      "tp1": 2.619,
+      "tp2": 2.82,
       "capital_usd": 222.5,
       "leverage": 3,
       "trading_system": "John",
@@ -430,8 +487,8 @@
       "direction": "Long",
       "entry_price": 1.46449187,
       "sl": 1.43356891,
-      "tp1": 1.56866495,
-      "tp2": 1.63526217,
+      "tp1": 1.544,
+      "tp2": 1.62,
       "capital_usd": 222.91,
       "leverage": 3,
       "trading_system": "John",
@@ -590,8 +647,8 @@
       "direction": "Long",
       "entry_price": 117.9475,
       "sl": 115.71594394,
-      "tp1": 128.87600554,
-      "tp2": 134.56811212,
+      "tp1": 121.96,
+      "tp2": 124.5,
       "capital_usd": 229.13,
       "leverage": 3,
       "trading_system": "John",
@@ -622,8 +679,8 @@
       "direction": "Long",
       "entry_price": 13.52043944,
       "sl": 13.14651563,
-      "tp1": 15.1444636,
-      "tp2": 16.70596873,
+      "tp1": 14.444,
+      "tp2": 15.436,
       "capital_usd": 227.7,
       "leverage": 3,
       "trading_system": "John",
@@ -654,8 +711,8 @@
       "direction": "Long",
       "entry_price": 0.79776968,
       "sl": 0.76849053,
-      "tp1": 0.89198387,
-      "tp2": 0.97041894,
+      "tp1": 0.8296,
+      "tp2": 0.8741,
       "capital_usd": 228.04,
       "leverage": 3,
       "trading_system": "John",
@@ -688,7 +745,7 @@
       "direction": "Long",
       "trading_system": "John",
       "entry_price": 117.9475,
-      "tp1": 128.87600554,
+      "tp1": 121.96,
       "sl": 115.71594394,
       "conviction": "MEDIUM",
       "track_only": false,
@@ -701,7 +758,7 @@
       "direction": "Long",
       "trading_system": "John",
       "entry_price": 13.52043944,
-      "tp1": 15.1444636,
+      "tp1": 14.444,
       "sl": 13.14651563,
       "conviction": "MEDIUM",
       "track_only": false,
@@ -714,7 +771,7 @@
       "direction": "Long",
       "trading_system": "John",
       "entry_price": 0.79776968,
-      "tp1": 0.89198387,
+      "tp1": 0.8296,
       "sl": 0.76849053,
       "conviction": "MEDIUM",
       "track_only": false,
