@@ -1,9 +1,9 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-10-02T19:13Z",
+  "generated_utc": "2026-10-02T20:08Z",
   "master": "braam",
   "retention_hours": 48,
-  "trade_count": 18,
+  "trade_count": 19,
   "trades": [
     {
       "trade_id": "THETAUSDT_20260918_CJ_001",
@@ -436,6 +436,30 @@
       "sl_mode": "initial",
       "feed_updated_utc": "2026-10-02T18:35Z",
       "activated_utc": "2026-10-02T18:35Z"
+    },
+    {
+      "trade_id": "TRXUSDT_20261002_CJ_001",
+      "coin": "TRXUSDT",
+      "direction": "Short",
+      "trading_system": "John",
+      "conviction": "MEDIUM",
+      "leverage": 3,
+      "entry_price": 0.34429937,
+      "entry_lo": 0.33899983,
+      "entry_hi": 0.34606589,
+      "sl": 0.3460389,
+      "tp1": 0.31728323,
+      "tp2": 0.3126222,
+      "status": "PENDING",
+      "tp1_hit": false,
+      "tp2_hit": false,
+      "sl_hit": false,
+      "close_reason": null,
+      "date_opened": "2026-10-02",
+      "time_opened_utc": "20:04",
+      "sl_mode": "initial",
+      "feed_updated_utc": "2026-10-02T20:04Z",
+      "activated_utc": null
     }
   ]
 }
