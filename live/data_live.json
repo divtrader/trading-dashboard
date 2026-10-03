@@ -1,19 +1,31 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-10-03T14:34:27Z",
+  "last_updated_iso": "2026-10-03T15:59:41Z",
   "mexc_account": {
-    "unrealized_pnl": 35.4849,
-    "equity": 4527.3509,
+    "unrealized_pnl": 31.9393,
+    "equity": 4523.8053,
     "available": 1207.5531,
     "position_margin": 1386.8726
   },
   "order_levels": {
     "checked": 16,
-    "in_sync": 16,
-    "drifted": [],
+    "in_sync": 15,
+    "drifted": [
+      "APT"
+    ],
     "reconciling": [],
-    "detail": []
+    "detail": [
+      {
+        "coin": "APT",
+        "trade_id": "APTUSDT_20261002_CJ_001",
+        "status": "OPEN",
+        "fields": [
+          "tp1"
+        ],
+        "synced_at": "2026-10-02T19:12:26.255627+00:00"
+      }
+    ]
   },
   "api_keys": [
     {
@@ -74,7 +86,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$4,527.35",
+      "value": "$4,523.81",
       "status": "ok",
       "action": null
     },
@@ -494,7 +506,7 @@
       "direction": "Long",
       "entry_price": 0.79776968,
       "sl": 0.76849053,
-      "tp1": 0.8296,
+      "tp1": 0.8396,
       "tp2": 0.8741,
       "capital_usd": 228.04,
       "leverage": 3,
