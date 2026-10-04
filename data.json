@@ -1,5 +1,5 @@
 {
-  "last_updated_iso": "2026-10-04T15:12:36Z",
+  "last_updated_iso": "2026-10-04T15:14:38Z",
   "mexc_account": null,
   "api_keys": [
     {
@@ -235,7 +235,7 @@
       "date_opened": "2026-10-02",
       "time_opened_utc": "08:04",
       "conviction": "MEDIUM",
-      "tp1_hit": false,
+      "tp1_hit": true,
       "sl_moved_to_be": null,
       "pnl_tp1_realized_usd": null
     },
@@ -416,7 +416,7 @@
       "direction": "Long",
       "trading_system": "John",
       "entry_price": 117.9475,
-      "tp1_hit": false,
+      "tp1_hit": true,
       "iso": "2026-10-02T18:39:00Z",
       "_iso_ms": 1790966340000
     },
@@ -1080,6 +1080,12 @@
       "direction": "Long",
       "trading_system": "John",
       "entry_price": 8.56101088
+    },
+    {
+      "coin": "SOLUSDT",
+      "direction": "Long",
+      "trading_system": "John",
+      "entry_price": 117.9475
     }
   ],
   "stats": {
