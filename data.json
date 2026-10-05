@@ -1,5 +1,5 @@
 {
-  "last_updated_iso": "2026-10-05T15:44:50Z",
+  "last_updated_iso": "2026-10-05T15:46:52Z",
   "mexc_account": null,
   "api_keys": [
     {
@@ -412,10 +412,10 @@
       "leverage": 3,
       "trading_system": "John",
       "track_only": false,
-      "status": "PENDING",
+      "status": "OPEN",
       "price_at_run": 0.221,
-      "date_activated": null,
-      "time_activated_utc": null,
+      "date_activated": "2026-10-05",
+      "time_activated_utc": "15:40",
       "date_opened": "2026-10-05",
       "time_opened_utc": "00:04",
       "conviction": "MEDIUM",
@@ -425,7 +425,18 @@
     }
   ],
   "recent_signals": [],
-  "recent_opens": [],
+  "recent_opens": [
+    {
+      "trade_id": "XLMUSDT_20261005_CJ_001",
+      "coin": "XLMUSDT",
+      "direction": "Long",
+      "trading_system": "John",
+      "entry_price": 0.21197094,
+      "tp1_hit": false,
+      "iso": "2026-10-05T15:40:00Z",
+      "_iso_ms": 1791214800000
+    }
+  ],
   "recent_closes": [
     {
       "trade_id": "ONDOUSDT_20260910_CJ_001",
@@ -1089,7 +1100,7 @@
     "peak_capital_usd": 3300,
     "peak_concurrent": 33,
     "peak_date": "2026-06-22",
-    "deployed_trades": 734,
+    "deployed_trades": 735,
     "return_on_peak_pct": 38.7,
     "win_rate_pct": 35.1,
     "closed_count": 715,
