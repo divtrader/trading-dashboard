@@ -1,9 +1,9 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-10-06T22:08Z",
+  "generated_utc": "2026-10-07T00:08Z",
   "master": "braam",
   "retention_hours": 48,
-  "trade_count": 17,
+  "trade_count": 18,
   "trades": [
     {
       "trade_id": "UNIUSDT_20260921_CJ_001",
@@ -276,12 +276,12 @@
       "trading_system": "John",
       "conviction": "MEDIUM",
       "leverage": 3,
-      "entry_price": 0.34429937,
-      "entry_lo": 0.33899983,
-      "entry_hi": 0.34606589,
-      "sl": 0.3460389,
-      "tp1": 0.31728323,
-      "tp2": 0.3126222,
+      "entry_price": 0.34779085,
+      "entry_lo": 0.34354329,
+      "entry_hi": 0.34920671,
+      "sl": 0.34891892,
+      "tp1": 0.31021234,
+      "tp2": 0.30398171,
       "status": "PENDING",
       "tp1_hit": false,
       "tp2_hit": false,
@@ -412,6 +412,30 @@
       "sl_mode": "initial",
       "feed_updated_utc": "2026-10-05T15:40Z",
       "activated_utc": "2026-10-05T15:40Z"
+    },
+    {
+      "trade_id": "ETHUSDT_20261007_CJ_001",
+      "coin": "ETHUSDT",
+      "direction": "Long",
+      "trading_system": "John",
+      "conviction": "MEDIUM",
+      "leverage": 3,
+      "entry_price": 2642.99935417,
+      "entry_lo": 2614.80868453,
+      "entry_hi": 2727.57136309,
+      "sl": 2618.88878427,
+      "tp1": 2833.98587688,
+      "tp2": 2852.90870834,
+      "status": "PENDING",
+      "tp1_hit": false,
+      "tp2_hit": false,
+      "sl_hit": false,
+      "close_reason": null,
+      "date_opened": "2026-10-07",
+      "time_opened_utc": "00:04",
+      "sl_mode": "initial",
+      "feed_updated_utc": "2026-10-07T00:04Z",
+      "activated_utc": null
     }
   ]
 }
