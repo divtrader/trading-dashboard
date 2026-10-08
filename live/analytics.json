@@ -1,37 +1,37 @@
 {
-  "generated_at_utc": "2026-10-08T08:09:00+00:00",
+  "generated_at_utc": "2026-10-08T10:08:44+00:00",
   "all_time": {
-    "total_trades": 257,
-    "wins": 108,
+    "total_trades": 258,
+    "wins": 109,
     "losses": 149,
-    "win_rate": 42.0,
-    "total_pnl_usd": 193.79,
-    "avg_pnl_usd": 0.75,
+    "win_rate": 42.2,
+    "total_pnl_usd": 224.02,
+    "avg_pnl_usd": 0.87,
     "best_usd": 68.07,
     "worst_usd": -40.14,
-    "avg_win_usd": 15.51,
+    "avg_win_usd": 15.65,
     "avg_loss_usd": -9.94,
-    "expectancy_usd": 0.75,
-    "profit_factor": 1.13,
+    "expectancy_usd": 0.87,
+    "profit_factor": 1.15,
     "longest_win_streak": 5,
     "longest_loss_streak": 14,
-    "current_streak_type": "loss",
-    "current_streak_count": 4,
-    "avg_hold_hours": 54.6,
-    "median_hold_hours": 30.1
+    "current_streak_type": "win",
+    "current_streak_count": 1,
+    "avg_hold_hours": 54.5,
+    "median_hold_hours": 30.4
   },
   "by_system": {
     "John": {
-      "n": 102,
-      "wins": 44,
-      "wr": 43.1,
-      "pnl": 255.08,
-      "avg": 2.5,
+      "n": 103,
+      "wins": 45,
+      "wr": 43.7,
+      "pnl": 285.31,
+      "avg": 2.77,
       "inception": "2026-06-11",
       "days_active": 119,
-      "pnl_per_day": 2.14,
+      "pnl_per_day": 2.4,
       "status": "active",
-      "open": 1,
+      "open": 0,
       "pending": 7
     },
     "Braam": {
@@ -76,12 +76,12 @@
       "name": "John",
       "inception": "2026-06-11",
       "days_active": 119,
-      "closed": 102,
-      "wins": 44,
-      "wr": 43.1,
-      "pnl": 255.08,
-      "pnl_per_day": 2.14,
-      "open": 1,
+      "closed": 103,
+      "wins": 45,
+      "wr": 43.7,
+      "pnl": 285.31,
+      "pnl_per_day": 2.4,
+      "open": 0,
       "pending": 7
     },
     {
@@ -144,11 +144,11 @@
     },
     {
       "month": "2026-10",
-      "n": 15,
-      "wins": 6,
-      "wr": 40.0,
-      "pnl": -14.71,
-      "cumulative_pnl": 193.79
+      "n": 16,
+      "wins": 7,
+      "wr": 43.8,
+      "pnl": 15.53,
+      "cumulative_pnl": 224.02
     }
   ],
   "equity_curve": [
@@ -1693,6 +1693,12 @@
       "pnl": -18.77,
       "cumulative": 193.79,
       "won": false
+    },
+    {
+      "iso": "2026-10-08T09:25:00+00:00",
+      "pnl": 30.23,
+      "cumulative": 224.02,
+      "won": true
     }
   ],
   "benchmark": {
@@ -2726,6 +2732,10 @@
       {
         "iso": "2026-10-08",
         "pct": 11.67
+      },
+      {
+        "iso": "2026-10-08",
+        "pct": 13.49
       }
     ],
     "spx": [
@@ -2990,7 +3000,7 @@
         "pct": 4.264
       }
     ],
-    "ours_pct": 11.67,
+    "ours_pct": 13.49,
     "spx_pct": 4.264
   },
   "by_direction": {
@@ -3002,20 +3012,20 @@
       "avg": -0.4
     },
     "Long": {
-      "n": 80,
-      "wins": 38,
-      "wr": 47.5,
-      "pnl": 264.25,
-      "avg": 3.3
+      "n": 81,
+      "wins": 39,
+      "wr": 48.1,
+      "pnl": 294.48,
+      "avg": 3.64
     }
   },
   "by_conviction": {
     "MEDIUM": {
-      "n": 219,
-      "wins": 97,
-      "wr": 44.3,
-      "pnl": 190.34,
-      "avg": 0.87
+      "n": 220,
+      "wins": 98,
+      "wr": 44.5,
+      "pnl": 220.57,
+      "avg": 1.0
     },
     "HIGH": {
       "n": 38,
@@ -3041,11 +3051,11 @@
       "avg": -2.97
     },
     "near_support": {
-      "n": 13,
-      "wins": 5,
-      "wr": 38.5,
-      "pnl": 9.54,
-      "avg": 0.73
+      "n": 14,
+      "wins": 6,
+      "wr": 42.9,
+      "pnl": 39.77,
+      "avg": 2.84
     },
     "at_support": {
       "n": 67,
@@ -3092,11 +3102,11 @@
       "avg": -0.92
     },
     "2": {
-      "n": 15,
-      "wins": 8,
-      "wr": 53.3,
-      "pnl": 39.7,
-      "avg": 2.65
+      "n": 16,
+      "wins": 9,
+      "wr": 56.2,
+      "pnl": 69.93,
+      "avg": 4.37
     }
   },
   "by_session": {
@@ -3108,11 +3118,11 @@
       "avg": 1.07
     },
     "asia": {
-      "n": 75,
-      "wins": 28,
-      "wr": 37.3,
-      "pnl": 18.89,
-      "avg": 0.25
+      "n": 76,
+      "wins": 29,
+      "wr": 38.2,
+      "pnl": 49.12,
+      "avg": 0.65
     },
     "europe": {
       "n": 115,
@@ -3124,11 +3134,11 @@
   },
   "by_audit_verdict": {
     "PASS": {
-      "n": 211,
-      "wins": 88,
-      "wr": 41.7,
-      "pnl": 141.0,
-      "avg": 0.67
+      "n": 212,
+      "wins": 89,
+      "wr": 42.0,
+      "pnl": 171.24,
+      "avg": 0.81
     },
     "DEGRADED": {
       "n": 44,
@@ -3189,11 +3199,11 @@
       "avg": 1.79
     },
     "Wednesday": {
-      "n": 48,
-      "wins": 17,
-      "wr": 35.4,
-      "pnl": -66.61,
-      "avg": -1.39
+      "n": 49,
+      "wins": 18,
+      "wr": 36.7,
+      "pnl": -36.37,
+      "avg": -0.74
     }
   },
   "by_hour": {
@@ -3310,11 +3320,11 @@
       "avg": -5.05
     },
     "2": {
-      "n": 12,
-      "wins": 5,
-      "wr": 41.7,
-      "pnl": -17.0,
-      "avg": -1.42
+      "n": 13,
+      "wins": 6,
+      "wr": 46.2,
+      "pnl": 13.24,
+      "avg": 1.02
     },
     "17": {
       "n": 7,
@@ -3474,6 +3484,16 @@
   },
   "recent_closes": [
     {
+      "trade_id": "ALGOUSDT_20261002_CJ_001",
+      "coin": "ALGO",
+      "direction": "Long",
+      "system": "John",
+      "pnl_usd": 30.23,
+      "won": true,
+      "close_reason": "live MEXC exit: tp2 @ 0.1327",
+      "iso": "2026-10-08T09:25:00+00:00"
+    },
+    {
       "trade_id": "TAOUSDT_20261003_CJ_001",
       "coin": "TAO",
       "direction": "Long",
@@ -3562,24 +3582,14 @@
       "won": true,
       "close_reason": "live MEXC exit: sl @ 8.548",
       "iso": "2026-10-06T21:32:00+00:00"
-    },
-    {
-      "trade_id": "CAKEUSDT_20260928_CJ_001",
-      "coin": "CAKE",
-      "direction": "Long",
-      "system": "John",
-      "pnl_usd": -19.8,
-      "won": false,
-      "close_reason": "live MEXC exit: sl @ 2.4186",
-      "iso": "2026-10-06T17:18:00+00:00"
     }
   ],
   "live_positions": {
-    "open_count": 2,
-    "open_long": 2,
+    "open_count": 1,
+    "open_long": 1,
     "open_short": 0,
     "pending_count": 7,
-    "capital_open_usd": 200,
+    "capital_open_usd": 100,
     "capital_pending_usd": 700
   },
   "macro": {
