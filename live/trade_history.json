@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-08T16:10:19Z",
+  "updated": "2026-10-08T18:09:13Z",
   "positions": {
     "1414291495": {
       "position_id": "1414291495",
@@ -4364,8 +4364,16 @@
       "leverage": 3,
       "entry_price": 1.855,
       "opened_at": "2026-10-08T15:23:17Z",
-      "status": "OPEN",
-      "braam_trade_id": "RENDERUSDT_20260928_CJ_001"
+      "status": "CLOSED",
+      "braam_trade_id": "RENDERUSDT_20260928_CJ_001",
+      "closed_at": "2026-10-08T17:23:17Z",
+      "close_price": 1.785,
+      "pnl_usd": -25.8645,
+      "margin_usd": 220.99,
+      "fees_usd": 0.907,
+      "tag": "LOSS",
+      "close_type": 4,
+      "close_reason": "stop_loss"
     },
     "1509129691": {
       "position_id": "1509129691",
@@ -4644,8 +4652,16 @@
       "leverage": 3,
       "entry_price": 4.709,
       "opened_at": "2026-10-08T15:34:28Z",
-      "status": "OPEN",
-      "braam_trade_id": "NEARUSDT_20261003_CJ_001"
+      "status": "CLOSED",
+      "braam_trade_id": "NEARUSDT_20261003_CJ_001",
+      "closed_at": "2026-10-08T17:21:00Z",
+      "close_price": 4.531,
+      "pnl_usd": -26.2195,
+      "margin_usd": 223.64,
+      "fees_usd": 0.9159,
+      "tag": "LOSS",
+      "close_type": 4,
+      "close_reason": "stop_loss"
     },
     "1516304479": {
       "position_id": "1516304479",
@@ -4738,6 +4754,16 @@
       "opened_at": "2026-10-08T15:23:07Z",
       "status": "OPEN",
       "braam_trade_id": "THETAUSDT_20261008_CJ_001"
+    },
+    "1516460360": {
+      "position_id": "1516460360",
+      "coin": "ALGOUSDT",
+      "direction": "Long",
+      "leverage": 3,
+      "entry_price": 0.11515,
+      "opened_at": "2026-10-08T17:21:30Z",
+      "status": "OPEN",
+      "braam_trade_id": "ALGOUSDT_20261008_CJ_001"
     }
   },
   "orders": {
@@ -4766,15 +4792,6 @@
       "entry_price": 10.65965794,
       "resting_at": "2026-10-08T16:04:00Z",
       "braam_trade_id": "AVAXUSDT_20261008_CJ_001",
-      "status": "RESTING"
-    },
-    "863209012609665536": {
-      "order_id": "863209012609665536",
-      "coin": "ALGOUSDT",
-      "direction": "Long",
-      "entry_price": 0.11515,
-      "resting_at": "2026-10-08T16:04:00Z",
-      "braam_trade_id": "ALGOUSDT_20261008_CJ_001",
       "status": "RESTING"
     },
     "863209023473199616": {
