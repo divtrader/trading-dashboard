@@ -1,53 +1,19 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-10-09T06:23:24Z",
+  "last_updated_iso": "2026-10-09T06:25:21Z",
   "mexc_account": {
-    "unrealized_pnl": 96.1243,
-    "equity": 4803.2875,
-    "available": 1383.1528,
-    "position_margin": 725.5216
+    "unrealized_pnl": 63.8841,
+    "equity": 4803.6145,
+    "available": 1610.4613,
+    "position_margin": 530.7803
   },
   "order_levels": {
     "checked": 14,
-    "in_sync": 11,
-    "drifted": [
-      "HBAR",
-      "THETA",
-      "ALGO"
-    ],
+    "in_sync": 14,
+    "drifted": [],
     "reconciling": [],
-    "detail": [
-      {
-        "coin": "HBAR",
-        "trade_id": "HBARUSDT_20261007_CJ_001",
-        "status": "OPEN",
-        "fields": [
-          "tp1",
-          "tp2"
-        ],
-        "synced_at": "2026-10-07T12:05:55.440073+00:00"
-      },
-      {
-        "coin": "THETA",
-        "trade_id": "THETAUSDT_20261008_CJ_001",
-        "status": "OPEN",
-        "fields": [
-          "tp1",
-          "tp2"
-        ],
-        "synced_at": null
-      },
-      {
-        "coin": "ALGO",
-        "trade_id": "ALGOUSDT_20261008_CJ_001",
-        "status": "OPEN",
-        "fields": [
-          "tp1"
-        ],
-        "synced_at": null
-      }
-    ]
+    "detail": []
   },
   "api_keys": [
     {
@@ -108,7 +74,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$4,803.29",
+      "value": "$4,803.61",
       "status": "ok",
       "action": null
     },
@@ -132,9 +98,9 @@
       "key": "position_protection",
       "tier": 1,
       "label": "Position protection",
-      "value": "all protected (3 open, 3 pre-TP1 runners)",
-      "status": "ok",
-      "action": null
+      "value": "SL not trailed: THETAUSDT",
+      "status": "warn",
+      "action": "Runner leg(s) need attention \u2014 verify on MEXC / check the mover cron."
     },
     {
       "key": "apikey_MEXC_ALGO_KEY",
