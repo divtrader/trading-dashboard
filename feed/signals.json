@@ -1,9 +1,9 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-10-09T11:15Z",
+  "generated_utc": "2026-10-09T12:09Z",
   "master": "braam",
   "retention_hours": 48,
-  "trade_count": 23,
+  "trade_count": 25,
   "trades": [
     {
       "trade_id": "RENDERUSDT_20260928_CJ_001",
@@ -338,7 +338,7 @@
       "date_opened": "2026-10-08",
       "time_opened_utc": "16:04",
       "sl_mode": "initial",
-      "feed_updated_utc": "2026-10-09T08:04Z",
+      "feed_updated_utc": "2026-10-09T12:04Z",
       "activated_utc": "2026-10-08T17:21Z"
     },
     {
@@ -555,6 +555,54 @@
       "time_opened_utc": "04:04",
       "sl_mode": "initial",
       "feed_updated_utc": "2026-10-09T04:04Z",
+      "activated_utc": null
+    },
+    {
+      "trade_id": "ONDOUSDT_20261009_CJ_001",
+      "coin": "ONDOUSDT",
+      "direction": "Long",
+      "trading_system": "John",
+      "conviction": "MEDIUM",
+      "leverage": 3,
+      "entry_price": 0.46732465,
+      "entry_lo": 0.45252431,
+      "entry_hi": 0.51172569,
+      "sl": 0.44734974,
+      "tp1": 0.53277043,
+      "tp2": 0.57950052,
+      "status": "PENDING",
+      "tp1_hit": false,
+      "tp2_hit": false,
+      "sl_hit": false,
+      "close_reason": null,
+      "date_opened": "2026-10-09",
+      "time_opened_utc": "12:04",
+      "sl_mode": "initial",
+      "feed_updated_utc": "2026-10-09T12:04Z",
+      "activated_utc": null
+    },
+    {
+      "trade_id": "APTUSDT_20261009_CJ_001",
+      "coin": "APTUSDT",
+      "direction": "Long",
+      "trading_system": "John",
+      "conviction": "MEDIUM",
+      "leverage": 3,
+      "entry_price": 0.776925,
+      "entry_lo": 0.7529,
+      "entry_hi": 0.849,
+      "sl": 0.74178542,
+      "tp1": 0.87299876,
+      "tp2": 0.94702917,
+      "status": "PENDING",
+      "tp1_hit": false,
+      "tp2_hit": false,
+      "sl_hit": false,
+      "close_reason": null,
+      "date_opened": "2026-10-09",
+      "time_opened_utc": "12:04",
+      "sl_mode": "initial",
+      "feed_updated_utc": "2026-10-09T12:04Z",
       "activated_utc": null
     }
   ]
