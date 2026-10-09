@@ -1,9 +1,9 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-10-09T02:08Z",
+  "generated_utc": "2026-10-09T04:09Z",
   "master": "braam",
   "retention_hours": 48,
-  "trade_count": 22,
+  "trade_count": 23,
   "trades": [
     {
       "trade_id": "RENDERUSDT_20260928_CJ_001",
@@ -402,7 +402,7 @@
       "sl": 0.79643087,
       "tp1": 0.6661237,
       "tp2": 0.55453826,
-      "status": "PENDING",
+      "status": "OPEN",
       "tp1_hit": false,
       "tp2_hit": false,
       "sl_hit": false,
@@ -410,8 +410,8 @@
       "date_opened": "2026-10-08",
       "time_opened_utc": "16:04",
       "sl_mode": "initial",
-      "feed_updated_utc": "2026-10-08T16:04Z",
-      "activated_utc": null
+      "feed_updated_utc": "2026-10-09T03:18Z",
+      "activated_utc": "2026-10-09T03:18Z"
     },
     {
       "trade_id": "ETHUSDT_20261008_CJ_001",
@@ -531,6 +531,30 @@
       "time_opened_utc": "00:04",
       "sl_mode": "initial",
       "feed_updated_utc": "2026-10-09T00:04Z",
+      "activated_utc": null
+    },
+    {
+      "trade_id": "BTCUSDT_20261009_CJ_001",
+      "coin": "BTCUSDT",
+      "direction": "Long",
+      "trading_system": "John",
+      "conviction": "HIGH",
+      "leverage": 3,
+      "entry_price": 81444.05695062,
+      "entry_lo": 80723.67890124,
+      "entry_hi": 83605.19109876,
+      "sl": 80580.73913086,
+      "tp1": 85751.66604786,
+      "tp2": 89583.2333598,
+      "status": "PENDING",
+      "tp1_hit": false,
+      "tp2_hit": false,
+      "sl_hit": false,
+      "close_reason": null,
+      "date_opened": "2026-10-09",
+      "time_opened_utc": "04:04",
+      "sl_mode": "initial",
+      "feed_updated_utc": "2026-10-09T04:04Z",
       "activated_utc": null
     }
   ]
