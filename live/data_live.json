@@ -1,19 +1,31 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-10-09T10:07:39Z",
+  "last_updated_iso": "2026-10-09T11:13:16Z",
   "mexc_account": {
-    "unrealized_pnl": 52.5579,
-    "equity": 4792.2901,
+    "unrealized_pnl": 34.5385,
+    "equity": 4774.2707,
     "available": 1610.4631,
     "position_margin": 530.7803
   },
   "order_levels": {
     "checked": 14,
-    "in_sync": 14,
-    "drifted": [],
+    "in_sync": 13,
+    "drifted": [
+      "ALGO"
+    ],
     "reconciling": [],
-    "detail": []
+    "detail": [
+      {
+        "coin": "ALGO",
+        "trade_id": "ALGOUSDT_20261008_CJ_001",
+        "status": "OPEN",
+        "fields": [
+          "tp2"
+        ],
+        "synced_at": "2026-10-09T06:24:42.920034+00:00"
+      }
+    ]
   },
   "api_keys": [
     {
@@ -74,7 +86,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$4,792.29",
+      "value": "$4,774.27",
       "status": "ok",
       "action": null
     },
@@ -303,7 +315,7 @@
       "entry_price": 0.11515,
       "sl": 0.10971798,
       "tp1": 0.1226,
-      "tp2": 0.13696403,
+      "tp2": 0.1323,
       "capital_usd": 237.77,
       "leverage": 3,
       "trading_system": "John",
