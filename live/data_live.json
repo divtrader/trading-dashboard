@@ -1,19 +1,53 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-10-09T06:09:21Z",
+  "last_updated_iso": "2026-10-09T06:23:24Z",
   "mexc_account": {
-    "unrealized_pnl": 95.8609,
-    "equity": 4803.0241,
+    "unrealized_pnl": 96.1243,
+    "equity": 4803.2875,
     "available": 1383.1528,
     "position_margin": 725.5216
   },
   "order_levels": {
     "checked": 14,
-    "in_sync": 14,
-    "drifted": [],
+    "in_sync": 11,
+    "drifted": [
+      "HBAR",
+      "THETA",
+      "ALGO"
+    ],
     "reconciling": [],
-    "detail": []
+    "detail": [
+      {
+        "coin": "HBAR",
+        "trade_id": "HBARUSDT_20261007_CJ_001",
+        "status": "OPEN",
+        "fields": [
+          "tp1",
+          "tp2"
+        ],
+        "synced_at": "2026-10-07T12:05:55.440073+00:00"
+      },
+      {
+        "coin": "THETA",
+        "trade_id": "THETAUSDT_20261008_CJ_001",
+        "status": "OPEN",
+        "fields": [
+          "tp1",
+          "tp2"
+        ],
+        "synced_at": null
+      },
+      {
+        "coin": "ALGO",
+        "trade_id": "ALGOUSDT_20261008_CJ_001",
+        "status": "OPEN",
+        "fields": [
+          "tp1"
+        ],
+        "synced_at": null
+      }
+    ]
   },
   "api_keys": [
     {
@@ -74,7 +108,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$4,803.02",
+      "value": "$4,803.29",
       "status": "ok",
       "action": null
     },
@@ -206,8 +240,8 @@
       "direction": "Long",
       "entry_price": 0.08915532,
       "sl": 0.08705252,
-      "tp1": 0.09725361,
-      "tp2": 0.10747497,
+      "tp1": 0.09592,
+      "tp2": 0.10386,
       "capital_usd": 243.23,
       "leverage": 3,
       "trading_system": "John",
@@ -238,8 +272,8 @@
       "direction": "Long",
       "entry_price": 0.20452275,
       "sl": 0.1981595,
-      "tp1": 0.23251454,
-      "tp2": 0.245981,
+      "tp1": 0.2162,
+      "tp2": 0.2364,
       "capital_usd": 242.9,
       "leverage": 3,
       "trading_system": "John",
@@ -302,7 +336,7 @@
       "direction": "Long",
       "entry_price": 0.11515,
       "sl": 0.10971798,
-      "tp1": 0.12425,
+      "tp1": 0.1226,
       "tp2": 0.13696403,
       "capital_usd": 237.77,
       "leverage": 3,
