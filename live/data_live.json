@@ -1,31 +1,21 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-10-10T05:54:24Z",
+  "last_updated_iso": "2026-10-10T05:56:09Z",
   "mexc_account": {
-    "unrealized_pnl": 35.3326,
-    "equity": 4797.0981,
+    "unrealized_pnl": 35.9175,
+    "equity": 4797.683,
     "available": 961.8808,
     "position_margin": 720.6056
   },
   "order_levels": {
     "checked": 17,
-    "in_sync": 15,
+    "in_sync": 16,
     "drifted": [
-      "AVAX",
       "ADA"
     ],
     "reconciling": [],
     "detail": [
-      {
-        "coin": "AVAX",
-        "trade_id": "AVAXUSDT_20261008_CJ_001",
-        "status": "PENDING",
-        "fields": [
-          "tp1"
-        ],
-        "synced_at": null
-      },
       {
         "coin": "ADA",
         "trade_id": "ADAUSDT_20261010_CJ_001",
@@ -97,7 +87,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$4,797.10",
+      "value": "$4,797.68",
       "status": "ok",
       "action": null
     },
@@ -121,9 +111,9 @@
       "key": "position_protection",
       "tier": 1,
       "label": "Position protection",
-      "value": "all protected (3 open, 2 pre-TP1 runners)",
-      "status": "ok",
-      "action": null
+      "value": "live read failed",
+      "status": "warn",
+      "action": "Worker health read failed \u2014 can't confirm SL protection; check the Worker."
     },
     {
       "key": "apikey_MEXC_ALGO_KEY",
@@ -267,10 +257,10 @@
       "leverage": 3,
       "trading_system": "John",
       "track_only": false,
-      "status": "PENDING",
+      "status": "OPEN",
       "price_at_run": 10.456,
-      "date_activated": null,
-      "time_activated_utc": null,
+      "date_activated": "2026-10-10",
+      "time_activated_utc": "05:42",
       "date_opened": "2026-10-08",
       "time_opened_utc": "16:04",
       "conviction": "MEDIUM",
@@ -278,11 +268,11 @@
       "sl_moved_to_be": null,
       "pnl_tp1_realized_usd": null,
       "tp2_hit": false,
-      "live_executed": null,
-      "live_entry_fill": null,
+      "live_executed": true,
+      "live_entry_fill": 10.66,
       "live_exit_fill": null,
-      "live_entry_slippage_pct": null,
-      "live_fees_usd": null,
+      "live_entry_slippage_pct": -0.0032,
+      "live_fees_usd": 0.4278,
       "live_funding_usd": null,
       "live_tp1_pnl_usd": null,
       "rehearsal": false
@@ -814,6 +804,18 @@
       "tp1_hit": false,
       "iso": "2026-10-09T03:18:00Z",
       "_iso_ms": 1791515880000,
+      "rehearsal": false
+    },
+    {
+      "trade_id": "AVAXUSDT_20261008_CJ_001",
+      "coin": "AVAXUSDT",
+      "direction": "Short",
+      "trading_system": "John",
+      "entry_price": 10.65965794,
+      "live_entry_fill": 10.66,
+      "tp1_hit": false,
+      "iso": "2026-10-10T05:42:00Z",
+      "_iso_ms": 1791610920000,
       "rehearsal": false
     }
   ],
@@ -4635,7 +4637,7 @@
     "peak_capital_usd": 1828.12,
     "peak_concurrent": 8,
     "peak_date": "2026-10-07",
-    "deployed_trades": 267,
+    "deployed_trades": 268,
     "return_on_peak_pct": 4.82,
     "win_rate_pct": 41.5,
     "closed_count": 265,
