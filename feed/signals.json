@@ -1,9 +1,9 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-10-09T22:08Z",
+  "generated_utc": "2026-10-10T00:08Z",
   "master": "braam",
   "retention_hours": 48,
-  "trade_count": 27,
+  "trade_count": 28,
   "trades": [
     {
       "trade_id": "RENDERUSDT_20260928_CJ_001",
@@ -651,6 +651,30 @@
       "time_opened_utc": "16:04",
       "sl_mode": "initial",
       "feed_updated_utc": "2026-10-09T20:04Z",
+      "activated_utc": null
+    },
+    {
+      "trade_id": "ADAUSDT_20261010_CJ_001",
+      "coin": "ADAUSDT",
+      "direction": "Long",
+      "trading_system": "John",
+      "conviction": "MEDIUM",
+      "leverage": 3,
+      "entry_price": 0.23571917,
+      "entry_lo": 0.23268912,
+      "entry_hi": 0.24480933,
+      "sl": 0.22873992,
+      "tp1": 0.26081478,
+      "tp2": 0.27152016,
+      "status": "PENDING",
+      "tp1_hit": false,
+      "tp2_hit": false,
+      "sl_hit": false,
+      "close_reason": null,
+      "date_opened": "2026-10-10",
+      "time_opened_utc": "00:04",
+      "sl_mode": "initial",
+      "feed_updated_utc": "2026-10-10T00:04Z",
       "activated_utc": null
     }
   ]
