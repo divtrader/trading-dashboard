@@ -1,9 +1,9 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-10-10T10:08Z",
+  "generated_utc": "2026-10-10T12:09Z",
   "master": "braam",
   "retention_hours": 48,
-  "trade_count": 25,
+  "trade_count": 26,
   "trades": [
     {
       "trade_id": "RENDERUSDT_20260928_CJ_001",
@@ -603,6 +603,30 @@
       "time_opened_utc": "00:04",
       "sl_mode": "initial",
       "feed_updated_utc": "2026-10-10T00:04Z",
+      "activated_utc": null
+    },
+    {
+      "trade_id": "UNIUSDT_20261010_CJ_001",
+      "coin": "UNIUSDT",
+      "direction": "Long",
+      "trading_system": "John",
+      "conviction": "MEDIUM",
+      "leverage": 3,
+      "entry_price": 7.22900103,
+      "entry_lo": 6.97800206,
+      "entry_hi": 7.98199794,
+      "sl": 7.02082768,
+      "tp1": 7.860552,
+      "tp2": 8.46734463,
+      "status": "PENDING",
+      "tp1_hit": false,
+      "tp2_hit": false,
+      "sl_hit": false,
+      "close_reason": null,
+      "date_opened": "2026-10-10",
+      "time_opened_utc": "12:04",
+      "sl_mode": "initial",
+      "feed_updated_utc": "2026-10-10T12:04Z",
       "activated_utc": null
     }
   ]
