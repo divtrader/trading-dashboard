@@ -1,6 +1,6 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-10-11T15:24Z",
+  "generated_utc": "2026-10-11T15:26Z",
   "master": "braam",
   "retention_hours": 48,
   "trade_count": 21,
@@ -114,15 +114,15 @@
       "sl": 10.98065781,
       "tp1": 10.473,
       "tp2": 10.172,
-      "status": "OPEN",
+      "status": "STOPPED_AFTER_TP1",
       "tp1_hit": true,
       "tp2_hit": false,
       "sl_hit": false,
-      "close_reason": null,
+      "close_reason": "live MEXC exit: manual @ 10.662",
       "date_opened": "2026-10-08",
       "time_opened_utc": "16:04",
       "sl_mode": "breakeven",
-      "feed_updated_utc": "2026-10-10T05:42Z",
+      "feed_updated_utc": "2026-10-11T15:05Z",
       "activated_utc": "2026-10-10T05:42Z"
     },
     {
@@ -139,13 +139,13 @@
       "tp1": 0.1226,
       "tp2": 0.1323,
       "status": "OPEN",
-      "tp1_hit": false,
+      "tp1_hit": true,
       "tp2_hit": false,
       "sl_hit": false,
       "close_reason": null,
       "date_opened": "2026-10-08",
       "time_opened_utc": "16:04",
-      "sl_mode": "initial",
+      "sl_mode": "breakeven",
       "feed_updated_utc": "2026-10-09T12:04Z",
       "activated_utc": "2026-10-08T17:21Z"
     },
@@ -162,7 +162,7 @@
       "sl": 0.2053483,
       "tp1": 0.1952,
       "tp2": 0.192,
-      "status": "PENDING",
+      "status": "OPEN",
       "tp1_hit": false,
       "tp2_hit": false,
       "sl_hit": false,
@@ -170,8 +170,8 @@
       "date_opened": "2026-10-08",
       "time_opened_utc": "16:04",
       "sl_mode": "initial",
-      "feed_updated_utc": "2026-10-08T16:04Z",
-      "activated_utc": null
+      "feed_updated_utc": "2026-10-11T15:17Z",
+      "activated_utc": "2026-10-11T15:17Z"
     },
     {
       "trade_id": "HBARUSDT_20261008_CJ_001",
