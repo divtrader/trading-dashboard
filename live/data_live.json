@@ -1,31 +1,19 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-10-12T16:57:17Z",
+  "last_updated_iso": "2026-10-12T16:59:17Z",
   "mexc_account": {
-    "unrealized_pnl": -7.1933,
-    "equity": 4803.7183,
+    "unrealized_pnl": -1.864,
+    "equity": 4809.0475,
     "available": 31.427,
     "position_margin": 728.3586
   },
   "order_levels": {
     "checked": 20,
-    "in_sync": 19,
-    "drifted": [
-      "XLM"
-    ],
+    "in_sync": 20,
+    "drifted": [],
     "reconciling": [],
-    "detail": [
-      {
-        "coin": "XLM",
-        "trade_id": "XLMUSDT_20261012_CJ_001",
-        "status": "PENDING",
-        "fields": [
-          "tp1"
-        ],
-        "synced_at": null
-      }
-    ]
+    "detail": []
   },
   "api_keys": [
     {
@@ -86,7 +74,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$4,803.72",
+      "value": "$4,809.05",
       "status": "ok",
       "action": null
     },
@@ -110,7 +98,7 @@
       "key": "position_protection",
       "tier": 1,
       "label": "Position protection",
-      "value": "all protected (3 open, 2 pre-TP1 runners)",
+      "value": "all protected (3 open, 3 pre-TP1 runners)",
       "status": "ok",
       "action": null
     },
@@ -704,10 +692,10 @@
       "leverage": 3,
       "trading_system": "John",
       "track_only": false,
-      "status": "PENDING",
+      "status": "OPEN",
       "price_at_run": 0.1975,
-      "date_activated": null,
-      "time_activated_utc": null,
+      "date_activated": "2026-10-12",
+      "time_activated_utc": "16:53",
       "date_opened": "2026-10-12",
       "time_opened_utc": "04:04",
       "conviction": "MEDIUM",
@@ -715,11 +703,11 @@
       "sl_moved_to_be": null,
       "pnl_tp1_realized_usd": null,
       "tp2_hit": false,
-      "live_executed": null,
-      "live_entry_fill": null,
+      "live_executed": true,
+      "live_entry_fill": 0.19519,
       "live_exit_fill": null,
-      "live_entry_slippage_pct": null,
-      "live_fees_usd": null,
+      "live_entry_slippage_pct": 0.0008,
+      "live_fees_usd": 0.4356,
       "live_funding_usd": null,
       "live_tp1_pnl_usd": null,
       "rehearsal": false
@@ -840,6 +828,18 @@
       "tp1_hit": false,
       "iso": "2026-10-12T16:45:00Z",
       "_iso_ms": 1791823500000,
+      "rehearsal": false
+    },
+    {
+      "trade_id": "XLMUSDT_20261012_CJ_001",
+      "coin": "XLMUSDT",
+      "direction": "Long",
+      "trading_system": "John",
+      "entry_price": 0.19518852,
+      "live_entry_fill": 0.19519,
+      "tp1_hit": false,
+      "iso": "2026-10-12T16:53:00Z",
+      "_iso_ms": 1791823980000,
       "rehearsal": false
     }
   ],
@@ -4653,7 +4653,7 @@
     "peak_capital_usd": 1828.12,
     "peak_concurrent": 8,
     "peak_date": "2026-10-07",
-    "deployed_trades": 270,
+    "deployed_trades": 271,
     "return_on_peak_pct": 7.53,
     "win_rate_pct": 41.8,
     "closed_count": 268,
