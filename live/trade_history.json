@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-12T21:51:11Z",
+  "updated": "2026-10-12T21:53:48Z",
   "positions": {
     "1414291495": {
       "position_id": "1414291495",
@@ -4845,6 +4845,26 @@
       "status": "OPEN",
       "braam_trade_id": "XRPUSDT_20261009_CJ_001"
     },
+    "1519052512": {
+      "position_id": "1519052512",
+      "coin": "UNIUSDT",
+      "direction": "Long",
+      "leverage": 3,
+      "entry_price": 7.229,
+      "opened_at": "2026-10-12T21:44:25Z",
+      "status": "OPEN",
+      "braam_trade_id": "UNIUSDT_20261010_CJ_001"
+    },
+    "1519057106": {
+      "position_id": "1519057106",
+      "coin": "TAOUSDT",
+      "direction": "Long",
+      "leverage": 3,
+      "entry_price": 276.56,
+      "opened_at": "2026-10-12T21:45:58Z",
+      "status": "OPEN",
+      "braam_trade_id": "TAOUSDT_20261010_CJ_001"
+    },
     "1518906158": {
       "position_id": "1518906158",
       "coin": "NEARUSDT",
@@ -4852,8 +4872,16 @@
       "leverage": 3,
       "entry_price": 5.444,
       "opened_at": "2026-10-12T16:45:40Z",
-      "status": "OPEN",
-      "braam_trade_id": "NEARUSDT_20261011_CJ_001"
+      "status": "CLOSED",
+      "braam_trade_id": "NEARUSDT_20261011_CJ_001",
+      "closed_at": "2026-10-12T21:44:54Z",
+      "close_price": 5.202,
+      "pnl_usd": -33.1738,
+      "margin_usd": 242.12,
+      "fees_usd": 0.9878,
+      "tag": "LOSS",
+      "close_type": 4,
+      "close_reason": "stop_loss"
     },
     "1518912410": {
       "position_id": "1518912410",
@@ -4974,24 +5002,6 @@
       "entry_price": 0.23560004,
       "resting_at": "2026-10-10T00:04:00Z",
       "braam_trade_id": "ADAUSDT_20261010_CJ_001",
-      "status": "RESTING"
-    },
-    "863873381089808896": {
-      "order_id": "863873381089808896",
-      "coin": "UNIUSDT",
-      "direction": "Long",
-      "entry_price": 7.22900103,
-      "resting_at": "2026-10-10T12:04:00Z",
-      "braam_trade_id": "UNIUSDT_20261010_CJ_001",
-      "status": "RESTING"
-    },
-    "864598606219475008": {
-      "order_id": "864598606219475008",
-      "coin": "TAOUSDT",
-      "direction": "Long",
-      "entry_price": 276.56272298,
-      "resting_at": "2026-10-10T20:04:00Z",
-      "braam_trade_id": "TAOUSDT_20261010_CJ_001",
       "status": "RESTING"
     },
     "864719371237419520": {
