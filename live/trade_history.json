@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-13T00:09:55Z",
+  "updated": "2026-10-13T02:09:26Z",
   "positions": {
     "1414291495": {
       "position_id": "1414291495",
@@ -4843,6 +4843,16 @@
       "close_type": 4,
       "close_reason": "stop_loss"
     },
+    "1519179648": {
+      "position_id": "1519179648",
+      "coin": "LINKUSDT",
+      "direction": "Long",
+      "leverage": 3,
+      "entry_price": 12.25,
+      "opened_at": "2026-10-13T00:52:29Z",
+      "status": "OPEN",
+      "braam_trade_id": "LINKUSDT_20261009_CJ_001"
+    },
     "1519104460": {
       "position_id": "1519104460",
       "coin": "BTCUSDT",
@@ -4850,8 +4860,16 @@
       "leverage": 3,
       "entry_price": 81931.3,
       "opened_at": "2026-10-12T23:05:36Z",
-      "status": "OPEN",
-      "braam_trade_id": "BTCUSDT_20261009_CJ_001"
+      "status": "CLOSED",
+      "braam_trade_id": "BTCUSDT_20261009_CJ_001",
+      "closed_at": "2026-10-13T00:07:28Z",
+      "close_price": 81344.4,
+      "pnl_usd": -6.1216,
+      "margin_usd": 240.89,
+      "fees_usd": 1.0051,
+      "tag": "LOSS",
+      "close_type": 4,
+      "close_reason": "stop_loss"
     },
     "1519124378": {
       "position_id": "1519124378",
@@ -4870,8 +4888,16 @@
       "leverage": 3,
       "entry_price": 0.7989,
       "opened_at": "2026-10-12T23:11:56Z",
-      "status": "OPEN",
-      "braam_trade_id": "APTUSDT_20261009_CJ_001"
+      "status": "CLOSED",
+      "braam_trade_id": "APTUSDT_20261009_CJ_001",
+      "closed_at": "2026-10-13T00:52:20Z",
+      "close_price": 0.7645,
+      "pnl_usd": -31.9436,
+      "margin_usd": 239.62,
+      "fees_usd": 0.9816,
+      "tag": "LOSS",
+      "close_type": 4,
+      "close_reason": "stop_loss"
     },
     "1518983480": {
       "position_id": "1518983480",
@@ -5006,8 +5032,16 @@
       "leverage": 3,
       "entry_price": 2.2588,
       "opened_at": "2026-10-12T23:39:08Z",
-      "status": "OPEN",
-      "braam_trade_id": "CAKEUSDT_20261012_CJ_001"
+      "status": "CLOSED",
+      "braam_trade_id": "CAKEUSDT_20261012_CJ_001",
+      "closed_at": "2026-10-13T00:52:26Z",
+      "close_price": 2.2131,
+      "pnl_usd": -15.6508,
+      "margin_usd": 241.25,
+      "fees_usd": 1.0001,
+      "tag": "LOSS",
+      "close_type": 4,
+      "close_reason": "stop_loss"
     }
   },
   "orders": {
@@ -5063,15 +5097,6 @@
       "entry_price": 1.84884479,
       "resting_at": "2026-10-08T20:04:00Z",
       "braam_trade_id": "RENDERUSDT_20261008_CJ_001",
-      "status": "RESTING"
-    },
-    "863329806979323392": {
-      "order_id": "863329806979323392",
-      "coin": "LINKUSDT",
-      "direction": "Long",
-      "entry_price": 12.25,
-      "resting_at": "2026-10-09T00:04:00Z",
-      "braam_trade_id": "LINKUSDT_20261009_CJ_001",
       "status": "RESTING"
     },
     "864719371237419520": {
