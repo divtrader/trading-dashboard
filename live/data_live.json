@@ -1,18 +1,19 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-10-13T14:13:11Z",
+  "last_updated_iso": "2026-10-13T14:24:09Z",
   "mexc_account": {
-    "unrealized_pnl": 59.4526,
-    "equity": 4667.2062,
+    "unrealized_pnl": 54.2986,
+    "equity": 4662.0522,
     "available": 1264.2094,
     "position_margin": 524.5328
   },
   "order_levels": {
     "checked": 17,
-    "in_sync": 16,
+    "in_sync": 15,
     "drifted": [
-      "LINK"
+      "LINK",
+      "ONDO"
     ],
     "reconciling": [],
     "detail": [
@@ -25,6 +26,15 @@
           "tp2"
         ],
         "synced_at": "2026-10-13T05:43:26.387605+00:00"
+      },
+      {
+        "coin": "ONDO",
+        "trade_id": "ONDOUSDT_20261009_CJ_001",
+        "status": "OPEN",
+        "fields": [
+          "tp1"
+        ],
+        "synced_at": "2026-10-13T05:43:32.957875+00:00"
       }
     ]
   },
@@ -71,7 +81,7 @@
       "key": "cron_watchlist",
       "tier": 1,
       "label": "Last cloud run",
-      "value": "0.1h ago",
+      "value": "0.0h ago",
       "status": "ok",
       "action": null
     },
@@ -87,7 +97,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$4,667.21",
+      "value": "$4,662.05",
       "status": "ok",
       "action": null
     },
@@ -379,7 +389,7 @@
       "direction": "Long",
       "entry_price": 0.46732465,
       "sl": 0.44734974,
-      "tp1": 0.529,
+      "tp1": 0.5081,
       "tp2": 0.5746,
       "capital_usd": 239.62,
       "leverage": 3,
