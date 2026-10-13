@@ -1,19 +1,32 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-10-13T13:45:20Z",
+  "last_updated_iso": "2026-10-13T14:07:49Z",
   "mexc_account": {
-    "unrealized_pnl": 53.5837,
-    "equity": 4641.0334,
+    "unrealized_pnl": 67.823,
+    "equity": 4655.2727,
     "available": 600.001,
     "position_margin": 710.9281
   },
   "order_levels": {
     "checked": 17,
-    "in_sync": 17,
-    "drifted": [],
+    "in_sync": 16,
+    "drifted": [
+      "LINK"
+    ],
     "reconciling": [],
-    "detail": []
+    "detail": [
+      {
+        "coin": "LINK",
+        "trade_id": "LINKUSDT_20261009_CJ_001",
+        "status": "OPEN",
+        "fields": [
+          "tp1",
+          "tp2"
+        ],
+        "synced_at": "2026-10-13T05:43:26.387605+00:00"
+      }
+    ]
   },
   "api_keys": [
     {
@@ -74,7 +87,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$4,641.03",
+      "value": "$4,655.27",
       "status": "ok",
       "action": null
     },
@@ -90,15 +103,15 @@
       "key": "orphan_orders",
       "tier": 1,
       "label": "Order reconciliation",
-      "value": "in sync (14 resting = journal)",
-      "status": "ok",
-      "action": null
+      "value": "2 ORPHAN order(s) on MEXC",
+      "status": "urgent",
+      "action": "Untracked resting order(s) \u2014 cancel on MEXC (double-fill risk): XRP_USDT Short @ 1.4411 (id 864991610490983936), TRX_USDT Long @ 0.32425 (id 864991236405524480)"
     },
     {
       "key": "position_protection",
       "tier": 1,
       "label": "Position protection",
-      "value": "all protected (3 open, 3 pre-TP1 runners)",
+      "value": "all protected (0 open, 0 pre-TP1 runners)",
       "status": "ok",
       "action": null
     },
@@ -334,8 +347,8 @@
       "direction": "Long",
       "entry_price": 12.25,
       "sl": 11.9451005,
-      "tp1": 13.433,
-      "tp2": 14.231,
+      "tp1": 13.115,
+      "tp2": 13.448,
       "capital_usd": 238.61,
       "leverage": 3,
       "trading_system": "John",
