@@ -1,42 +1,19 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-10-13T14:24:09Z",
+  "last_updated_iso": "2026-10-13T14:26:11Z",
   "mexc_account": {
-    "unrealized_pnl": 54.2986,
-    "equity": 4662.0522,
+    "unrealized_pnl": 59.5289,
+    "equity": 4667.2825,
     "available": 1264.2094,
     "position_margin": 524.5328
   },
   "order_levels": {
     "checked": 17,
-    "in_sync": 15,
-    "drifted": [
-      "LINK",
-      "ONDO"
-    ],
+    "in_sync": 17,
+    "drifted": [],
     "reconciling": [],
-    "detail": [
-      {
-        "coin": "LINK",
-        "trade_id": "LINKUSDT_20261009_CJ_001",
-        "status": "OPEN",
-        "fields": [
-          "tp1",
-          "tp2"
-        ],
-        "synced_at": "2026-10-13T05:43:26.387605+00:00"
-      },
-      {
-        "coin": "ONDO",
-        "trade_id": "ONDOUSDT_20261009_CJ_001",
-        "status": "OPEN",
-        "fields": [
-          "tp1"
-        ],
-        "synced_at": "2026-10-13T05:43:32.957875+00:00"
-      }
-    ]
+    "detail": []
   },
   "api_keys": [
     {
@@ -97,7 +74,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$4,662.05",
+      "value": "$4,667.28",
       "status": "ok",
       "action": null
     },
@@ -594,7 +571,7 @@
       "date_opened": "2026-10-13",
       "time_opened_utc": "08:04",
       "conviction": "MEDIUM",
-      "tp1_hit": false,
+      "tp1_hit": true,
       "sl_moved_to_be": null,
       "pnl_tp1_realized_usd": null,
       "tp2_hit": false,
@@ -602,9 +579,9 @@
       "live_entry_fill": 7.226,
       "live_exit_fill": null,
       "live_entry_slippage_pct": -0.0069,
-      "live_fees_usd": 0.4183,
+      "live_fees_usd": 0.8811,
       "live_funding_usd": null,
-      "live_tp1_pnl_usd": null,
+      "live_tp1_pnl_usd": 19.8855,
       "rehearsal": false
     },
     {
@@ -948,7 +925,7 @@
       "trading_system": "John",
       "entry_price": 7.2265,
       "live_entry_fill": 7.226,
-      "tp1_hit": false,
+      "tp1_hit": true,
       "iso": "2026-10-13T12:17:00Z",
       "_iso_ms": 1791893820000,
       "rehearsal": false
@@ -4757,7 +4734,14 @@
     }
   ],
   "recent_cancels": [],
-  "tp1_hits_open": [],
+  "tp1_hits_open": [
+    {
+      "coin": "UNIUSDT",
+      "direction": "Long",
+      "trading_system": "John",
+      "entry_price": 7.2265
+    }
+  ],
   "stats": {
     "realized_pnl_usd": -85.25,
     "realized_pnl_pct": -0.24,
