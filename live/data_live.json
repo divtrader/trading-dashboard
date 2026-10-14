@@ -1,31 +1,19 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-10-14T13:23:53Z",
+  "last_updated_iso": "2026-10-14T13:26:04Z",
   "mexc_account": {
-    "unrealized_pnl": -6.3851,
-    "equity": 4599.5727,
+    "unrealized_pnl": 2.1498,
+    "equity": 4608.1076,
     "available": 843.3736,
     "position_margin": 1397.5165
   },
   "order_levels": {
     "checked": 16,
-    "in_sync": 15,
-    "drifted": [
-      "APT"
-    ],
+    "in_sync": 16,
+    "drifted": [],
     "reconciling": [],
-    "detail": [
-      {
-        "coin": "APT",
-        "trade_id": "APTUSDT_20261013_CJ_001",
-        "status": "PENDING",
-        "fields": [
-          "tp1"
-        ],
-        "synced_at": "2026-10-14T12:05:45.691472+00:00"
-      }
-    ]
+    "detail": []
   },
   "api_keys": [
     {
@@ -86,7 +74,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$4,599.57",
+      "value": "$4,608.11",
       "status": "ok",
       "action": null
     },
@@ -110,7 +98,7 @@
       "key": "position_protection",
       "tier": 1,
       "label": "Position protection",
-      "value": "all protected (6 open, 5 pre-TP1 runners)",
+      "value": "all protected (6 open, 6 pre-TP1 runners)",
       "status": "ok",
       "action": null
     },
@@ -608,10 +596,10 @@
       "leverage": 3,
       "trading_system": "John",
       "track_only": false,
-      "status": "PENDING",
+      "status": "OPEN",
       "price_at_run": 0.8264,
-      "date_activated": null,
-      "time_activated_utc": null,
+      "date_activated": "2026-10-14",
+      "time_activated_utc": "13:21",
       "date_opened": "2026-10-13",
       "time_opened_utc": "12:04",
       "conviction": "HIGH",
@@ -619,11 +607,11 @@
       "sl_moved_to_be": null,
       "pnl_tp1_realized_usd": null,
       "tp2_hit": false,
-      "live_executed": null,
-      "live_entry_fill": null,
+      "live_executed": true,
+      "live_entry_fill": 0.7936,
       "live_exit_fill": null,
-      "live_entry_slippage_pct": null,
-      "live_fees_usd": null,
+      "live_entry_slippage_pct": 0.0061,
+      "live_fees_usd": 0.4152,
       "live_funding_usd": null,
       "live_tp1_pnl_usd": null,
       "rehearsal": false
@@ -853,6 +841,18 @@
       "tp1_hit": false,
       "iso": "2026-10-14T13:13:00Z",
       "_iso_ms": 1791983580000,
+      "rehearsal": false
+    },
+    {
+      "trade_id": "APTUSDT_20261013_CJ_001",
+      "coin": "APTUSDT",
+      "direction": "Long",
+      "trading_system": "John",
+      "entry_price": 0.79355183,
+      "live_entry_fill": 0.7936,
+      "tp1_hit": false,
+      "iso": "2026-10-14T13:21:00Z",
+      "_iso_ms": 1791984060000,
       "rehearsal": false
     }
   ],
@@ -4666,7 +4666,7 @@
     "peak_capital_usd": 1926.61,
     "peak_concurrent": 8,
     "peak_date": "2026-10-12",
-    "deployed_trades": 285,
+    "deployed_trades": 286,
     "return_on_peak_pct": -3.4,
     "win_rate_pct": 40.4,
     "closed_count": 280,
