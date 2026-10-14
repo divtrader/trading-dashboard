@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-14T14:08:11Z",
+  "updated": "2026-10-14T16:10:22Z",
   "positions": {
     "1414291495": {
       "position_id": "1414291495",
@@ -4888,8 +4888,16 @@
       "leverage": 3,
       "entry_price": 0.4673,
       "opened_at": "2026-10-12T23:38:27Z",
-      "status": "OPEN",
-      "braam_trade_id": "ONDOUSDT_20261009_CJ_001"
+      "status": "CLOSED",
+      "braam_trade_id": "ONDOUSDT_20261009_CJ_001",
+      "closed_at": "2026-10-14T14:11:45Z",
+      "close_price": 0.4473,
+      "pnl_usd": -31.6519,
+      "margin_usd": 239.62,
+      "fees_usd": 0.9763,
+      "tag": "LOSS",
+      "close_type": 4,
+      "close_reason": "stop_loss"
     },
     "1519106431": {
       "position_id": "1519106431",
@@ -5053,6 +5061,16 @@
       "close_type": 4,
       "close_reason": "stop_loss"
     },
+    "1520272250": {
+      "position_id": "1520272250",
+      "coin": "BTCUSDT",
+      "direction": "Long",
+      "leverage": 3,
+      "entry_price": 81664.0,
+      "opened_at": "2026-10-14T15:08:43Z",
+      "status": "OPEN",
+      "braam_trade_id": "BTCUSDT_20261013_CJ_001"
+    },
     "1520105799": {
       "position_id": "1520105799",
       "coin": "CAKEUSDT",
@@ -5080,6 +5098,16 @@
       "tag": "WIN",
       "close_type": 4,
       "close_reason": "stop_loss"
+    },
+    "1520303537": {
+      "position_id": "1520303537",
+      "coin": "XRPUSDT",
+      "direction": "Long",
+      "leverage": 3,
+      "entry_price": 1.3258,
+      "opened_at": "2026-10-14T15:57:00Z",
+      "status": "OPEN",
+      "braam_trade_id": "XRPUSDT_20261013_CJ_002"
     },
     "1520173328": {
       "position_id": "1520173328",
@@ -5130,11 +5158,11 @@
       "braam_trade_id": "DOGEUSDT_20261008_CJ_001",
       "status": "RESTING"
     },
-    "865202432203739712": {
-      "order_id": "865202432203739712",
+    "865383698475701824": {
+      "order_id": "865383698475701824",
       "coin": "RENDERUSDT",
       "direction": "Long",
-      "entry_price": 1.78773135,
+      "entry_price": 1.79458849,
       "resting_at": "2026-10-08T20:04:00Z",
       "braam_trade_id": "RENDERUSDT_20261008_CJ_001",
       "status": "RESTING"
@@ -5157,15 +5185,6 @@
       "braam_trade_id": "XLMUSDT_20261013_CJ_001",
       "status": "RESTING"
     },
-    "864839750173938176": {
-      "order_id": "864839750173938176",
-      "coin": "BTCUSDT",
-      "direction": "Long",
-      "entry_price": 81663.99935133,
-      "resting_at": "2026-10-13T04:04:00Z",
-      "braam_trade_id": "BTCUSDT_20261013_CJ_001",
-      "status": "RESTING"
-    },
     "865021465764959232": {
       "order_id": "865021465764959232",
       "coin": "XRPUSDT",
@@ -5175,15 +5194,6 @@
       "braam_trade_id": "XRPUSDT_20261013_CJ_001",
       "status": "RESTING"
     },
-    "864960532896160256": {
-      "order_id": "864960532896160256",
-      "coin": "XRPUSDT",
-      "direction": "Long",
-      "entry_price": 1.32580403,
-      "resting_at": "2026-10-13T12:04:00Z",
-      "braam_trade_id": "XRPUSDT_20261013_CJ_002",
-      "status": "RESTING"
-    },
     "864960542555646528": {
       "order_id": "864960542555646528",
       "coin": "ONDOUSDT",
@@ -5191,6 +5201,33 @@
       "entry_price": 0.49728501,
       "resting_at": "2026-10-13T12:04:00Z",
       "braam_trade_id": "ONDOUSDT_20261013_CJ_001",
+      "status": "RESTING"
+    },
+    "865383264356280832": {
+      "order_id": "865383264356280832",
+      "coin": "AVAXUSDT",
+      "direction": "Long",
+      "entry_price": 9.51,
+      "resting_at": "2026-10-14T16:04:00Z",
+      "braam_trade_id": "AVAXUSDT_20261014_CJ_001",
+      "status": "RESTING"
+    },
+    "865383273910653440": {
+      "order_id": "865383273910653440",
+      "coin": "LINKUSDT",
+      "direction": "Short",
+      "entry_price": 13.315,
+      "resting_at": "2026-10-14T16:04:00Z",
+      "braam_trade_id": "LINKUSDT_20261014_CJ_001",
+      "status": "RESTING"
+    },
+    "865383285365265920": {
+      "order_id": "865383285365265920",
+      "coin": "LTCUSDT",
+      "direction": "Short",
+      "entry_price": 61.22801762,
+      "resting_at": "2026-10-14T16:04:00Z",
+      "braam_trade_id": "LTCUSDT_20261014_CJ_001",
       "status": "RESTING"
     }
   },
