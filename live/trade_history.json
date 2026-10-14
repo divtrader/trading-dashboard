@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-14T13:19:12Z",
+  "updated": "2026-10-14T13:21:10Z",
   "positions": {
     "1414291495": {
       "position_id": "1414291495",
@@ -5070,8 +5070,26 @@
       "leverage": 3,
       "entry_price": 7.226,
       "opened_at": "2026-10-13T12:17:47Z",
+      "status": "CLOSED",
+      "braam_trade_id": "UNIUSDT_20261013_CJ_001",
+      "closed_at": "2026-10-14T12:58:15Z",
+      "close_price": 7.224,
+      "pnl_usd": 19.7677,
+      "margin_usd": 232.65,
+      "fees_usd": 0.9926,
+      "tag": "WIN",
+      "close_type": 4,
+      "close_reason": "stop_loss"
+    },
+    "1520164133": {
+      "position_id": "1520164133",
+      "coin": "ALGOUSDT",
+      "direction": "Long",
+      "leverage": 3,
+      "entry_price": 0.11859,
+      "opened_at": "2026-10-14T13:13:47Z",
       "status": "OPEN",
-      "braam_trade_id": "UNIUSDT_20261013_CJ_001"
+      "braam_trade_id": "ALGOUSDT_20261014_CJ_001"
     }
   },
   "orders": {
@@ -5172,15 +5190,6 @@
       "entry_price": 0.79355183,
       "resting_at": "2026-10-13T12:04:00Z",
       "braam_trade_id": "APTUSDT_20261013_CJ_001",
-      "status": "RESTING"
-    },
-    "865262423261827584": {
-      "order_id": "865262423261827584",
-      "coin": "ALGOUSDT",
-      "direction": "Long",
-      "entry_price": 0.11859144,
-      "resting_at": "2026-10-14T08:03:00Z",
-      "braam_trade_id": "ALGOUSDT_20261014_CJ_001",
       "status": "RESTING"
     }
   },
