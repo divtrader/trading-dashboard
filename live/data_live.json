@@ -1,19 +1,32 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-10-14T10:09:01Z",
+  "last_updated_iso": "2026-10-14T10:35:45Z",
   "mexc_account": {
-    "unrealized_pnl": 27.8528,
-    "equity": 4635.1971,
+    "unrealized_pnl": 34.6005,
+    "equity": 4641.9448,
     "available": 796.505,
     "position_margin": 746.4935
   },
   "order_levels": {
     "checked": 17,
-    "in_sync": 17,
-    "drifted": [],
+    "in_sync": 16,
+    "drifted": [
+      "TRX"
+    ],
     "reconciling": [],
-    "detail": []
+    "detail": [
+      {
+        "coin": "TRX",
+        "trade_id": "TRXUSDT_20261002_CJ_001",
+        "status": "OPEN",
+        "fields": [
+          "tp1",
+          "tp2"
+        ],
+        "synced_at": "2026-10-13T00:05:52.082911+00:00"
+      }
+    ]
   },
   "api_keys": [
     {
@@ -74,7 +87,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$4,635.20",
+      "value": "$4,641.94",
       "status": "ok",
       "action": null
     },
@@ -142,8 +155,8 @@
       "direction": "Short",
       "entry_price": 0.33355206,
       "sl": 0.33457865,
-      "tp1": 0.32005155,
-      "tp2": 0.30520654,
+      "tp1": 0.3304,
+      "tp2": 0.3279,
       "capital_usd": 222.13,
       "leverage": 3,
       "trading_system": "John",
@@ -549,7 +562,7 @@
       "live_entry_slippage_pct": -0.0069,
       "live_fees_usd": 0.8811,
       "live_funding_usd": null,
-      "live_tp1_pnl_usd": 19.8534,
+      "live_tp1_pnl_usd": 20.7668,
       "rehearsal": false
     },
     {
