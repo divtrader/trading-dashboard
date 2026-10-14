@@ -1,18 +1,20 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-10-14T20:09:13Z",
+  "last_updated_iso": "2026-10-14T22:09:11Z",
   "mexc_account": {
-    "unrealized_pnl": 2.9874,
-    "equity": 4574.3491,
-    "available": 583.819,
-    "position_margin": 1399.3973
+    "unrealized_pnl": 15.9032,
+    "equity": 4562.3358,
+    "available": 792.7003,
+    "position_margin": 1407.7477
   },
   "order_levels": {
-    "checked": 17,
-    "in_sync": 17,
+    "checked": 16,
+    "in_sync": 16,
     "drifted": [],
-    "reconciling": [],
+    "reconciling": [
+      "ALGO"
+    ],
     "detail": []
   },
   "api_keys": [
@@ -58,7 +60,7 @@
       "key": "cron_watchlist",
       "tier": 1,
       "label": "Last cloud run",
-      "value": "0.0h ago",
+      "value": "2.0h ago",
       "status": "ok",
       "action": null
     },
@@ -74,7 +76,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$4,574.35",
+      "value": "$4,562.34",
       "status": "ok",
       "action": null
     },
@@ -90,7 +92,7 @@
       "key": "orphan_orders",
       "tier": 1,
       "label": "Order reconciliation",
-      "value": "in sync (11 resting = journal)",
+      "value": "in sync (10 resting = journal)",
       "status": "ok",
       "action": null
     },
@@ -723,30 +725,6 @@
     }
   ],
   "recent_opens": [
-    {
-      "trade_id": "UNIUSDT_20261010_CJ_001",
-      "coin": "UNIUSDT",
-      "direction": "Long",
-      "trading_system": "John",
-      "entry_price": 7.22900103,
-      "live_entry_fill": 7.229,
-      "tp1_hit": false,
-      "iso": "2026-10-12T21:44:00Z",
-      "_iso_ms": 1791841440000,
-      "rehearsal": false
-    },
-    {
-      "trade_id": "TAOUSDT_20261010_CJ_001",
-      "coin": "TAOUSDT",
-      "direction": "Long",
-      "trading_system": "John",
-      "entry_price": 276.56272298,
-      "live_entry_fill": 276.56,
-      "tp1_hit": false,
-      "iso": "2026-10-12T21:45:00Z",
-      "_iso_ms": 1791841500000,
-      "rehearsal": false
-    },
     {
       "trade_id": "ADAUSDT_20261010_CJ_001",
       "coin": "ADAUSDT",
