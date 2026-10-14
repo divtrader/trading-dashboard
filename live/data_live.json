@@ -1,19 +1,31 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-10-14T12:08:51Z",
+  "last_updated_iso": "2026-10-14T12:47:02Z",
   "mexc_account": {
-    "unrealized_pnl": 43.6756,
-    "equity": 4651.0363,
-    "available": 796.5073,
-    "position_margin": 746.4935
+    "unrealized_pnl": 8.8078,
+    "equity": 4615.7498,
+    "available": 796.6469,
+    "position_margin": 979.6567
   },
   "order_levels": {
     "checked": 17,
-    "in_sync": 17,
-    "drifted": [],
+    "in_sync": 16,
+    "drifted": [
+      "CAKE"
+    ],
     "reconciling": [],
-    "detail": []
+    "detail": [
+      {
+        "coin": "CAKE",
+        "trade_id": "CAKEUSDT_20261013_CJ_001",
+        "status": "PENDING",
+        "fields": [
+          "tp1"
+        ],
+        "synced_at": null
+      }
+    ]
   },
   "api_keys": [
     {
@@ -74,7 +86,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$4,651.04",
+      "value": "$4,615.75",
       "status": "ok",
       "action": null
     },
@@ -90,7 +102,7 @@
       "key": "orphan_orders",
       "tier": 1,
       "label": "Order reconciliation",
-      "value": "in sync (13 resting = journal)",
+      "value": "in sync (12 resting = journal)",
       "status": "ok",
       "action": null
     },
@@ -98,7 +110,7 @@
       "key": "position_protection",
       "tier": 1,
       "label": "Position protection",
-      "value": "all protected (4 open, 3 pre-TP1 runners)",
+      "value": "all protected (5 open, 3 pre-TP1 runners)",
       "status": "ok",
       "action": null
     },
@@ -462,8 +474,8 @@
       "direction": "Long",
       "entry_price": 2.25831579,
       "sl": 2.2099382,
-      "tp1": 2.47519079,
-      "tp2": 2.54612359,
+      "tp1": 2.333,
+      "tp2": 2.384,
       "capital_usd": 232.69,
       "leverage": 3,
       "trading_system": "John",
