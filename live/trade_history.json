@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-14T22:09:26Z",
+  "updated": "2026-10-15T00:09:26Z",
   "positions": {
     "1414291495": {
       "position_id": "1414291495",
@@ -5015,6 +5015,16 @@
       "close_type": 4,
       "close_reason": "stop_loss"
     },
+    "1520442951": {
+      "position_id": "1520442951",
+      "coin": "ETHUSDT",
+      "direction": "Long",
+      "leverage": 3,
+      "entry_price": 2410.04,
+      "opened_at": "2026-10-14T20:45:35Z",
+      "status": "OPEN",
+      "braam_trade_id": "ETHUSDT_20261012_CJ_001"
+    },
     "1518912410": {
       "position_id": "1518912410",
       "coin": "XLMUSDT",
@@ -5134,8 +5144,16 @@
       "leverage": 3,
       "entry_price": 0.11859,
       "opened_at": "2026-10-14T13:13:47Z",
-      "status": "OPEN",
-      "braam_trade_id": "ALGOUSDT_20261014_CJ_001"
+      "status": "CLOSED",
+      "braam_trade_id": "ALGOUSDT_20261014_CJ_001",
+      "closed_at": "2026-10-14T21:03:35Z",
+      "close_price": 0.11452,
+      "pnl_usd": -24.8738,
+      "margin_usd": 232.68,
+      "fees_usd": 0.958,
+      "tag": "LOSS",
+      "close_type": 4,
+      "close_reason": "stop_loss"
     }
   },
   "orders": {
@@ -5173,15 +5191,6 @@
       "entry_price": 1.84983849,
       "resting_at": "2026-10-08T20:04:00Z",
       "braam_trade_id": "RENDERUSDT_20261008_CJ_001",
-      "status": "RESTING"
-    },
-    "864840190269683200": {
-      "order_id": "864840190269683200",
-      "coin": "ETHUSDT",
-      "direction": "Long",
-      "entry_price": 2410.03585335,
-      "resting_at": "2026-10-12T00:04:00Z",
-      "braam_trade_id": "ETHUSDT_20261012_CJ_001",
       "status": "RESTING"
     },
     "864779328280868372": {
@@ -5236,6 +5245,24 @@
       "entry_price": 61.22801762,
       "resting_at": "2026-10-14T16:04:00Z",
       "braam_trade_id": "LTCUSDT_20261014_CJ_001",
+      "status": "RESTING"
+    },
+    "865504063511836672": {
+      "order_id": "865504063511836672",
+      "coin": "NEARUSDT",
+      "direction": "Long",
+      "entry_price": 4.709,
+      "resting_at": "2026-10-15T00:04:00Z",
+      "braam_trade_id": "NEARUSDT_20261015_CJ_001",
+      "status": "RESTING"
+    },
+    "865504070881097728": {
+      "order_id": "865504070881097728",
+      "coin": "BNBUSDT",
+      "direction": "Short",
+      "entry_price": 752.165,
+      "resting_at": "2026-10-15T00:04:00Z",
+      "braam_trade_id": "BNBUSDT_20261015_CJ_001",
       "status": "RESTING"
     }
   },
