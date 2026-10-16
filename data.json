@@ -1,5 +1,5 @@
 {
-  "last_updated_iso": "2026-10-16T17:18:03Z",
+  "last_updated_iso": "2026-10-16T17:20:05Z",
   "mexc_account": null,
   "api_keys": [
     {
@@ -481,10 +481,10 @@
       "leverage": 3,
       "trading_system": "John",
       "track_only": false,
-      "status": "PENDING",
+      "status": "OPEN",
       "price_at_run": 12.306,
-      "date_activated": null,
-      "time_activated_utc": null,
+      "date_activated": "2026-10-16",
+      "time_activated_utc": "17:15",
       "date_opened": "2026-10-16",
       "time_opened_utc": "08:04",
       "conviction": "HIGH",
@@ -540,18 +540,6 @@
     }
   ],
   "recent_signals": [
-    {
-      "trade_id": "LINKUSDT_20261016_CJ_001",
-      "coin": "LINKUSDT",
-      "direction": "Long",
-      "trading_system": "John",
-      "entry_price": 12.25,
-      "tp1": 12.661,
-      "sl": 11.95488999,
-      "conviction": "HIGH",
-      "track_only": false,
-      "iso": "2026-10-16T08:04:00Z"
-    },
     {
       "trade_id": "ADAUSDT_20261016_CJ_001",
       "coin": "ADAUSDT",
@@ -655,6 +643,16 @@
       "tp1_hit": false,
       "iso": "2026-10-16T17:06:00Z",
       "_iso_ms": 1792170360000
+    },
+    {
+      "trade_id": "LINKUSDT_20261016_CJ_001",
+      "coin": "LINKUSDT",
+      "direction": "Long",
+      "trading_system": "John",
+      "entry_price": 12.25,
+      "tp1_hit": false,
+      "iso": "2026-10-16T17:15:00Z",
+      "_iso_ms": 1792170900000
     }
   ],
   "recent_closes": [
@@ -1326,7 +1324,7 @@
     "peak_capital_usd": 3300,
     "peak_concurrent": 33,
     "peak_date": "2026-06-22",
-    "deployed_trades": 778,
+    "deployed_trades": 779,
     "return_on_peak_pct": 32.48,
     "win_rate_pct": 34.2,
     "closed_count": 758,
