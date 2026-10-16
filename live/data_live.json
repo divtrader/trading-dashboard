@@ -1,41 +1,19 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-10-16T17:10:32Z",
+  "last_updated_iso": "2026-10-16T17:12:49Z",
   "mexc_account": {
-    "unrealized_pnl": 55.8416,
-    "equity": 4614.3789,
+    "unrealized_pnl": 55.5396,
+    "equity": 4614.0769,
     "available": 506.5559,
     "position_margin": 1036.3222
   },
   "order_levels": {
     "checked": 21,
-    "in_sync": 19,
-    "drifted": [
-      "UNI",
-      "TAO"
-    ],
+    "in_sync": 21,
+    "drifted": [],
     "reconciling": [],
-    "detail": [
-      {
-        "coin": "UNI",
-        "trade_id": "UNIUSDT_20261015_CJ_002",
-        "status": "PENDING",
-        "fields": [
-          "tp1"
-        ],
-        "synced_at": "2026-10-16T12:06:47.369522+00:00"
-      },
-      {
-        "coin": "TAO",
-        "trade_id": "TAOUSDT_20261016_CJ_001",
-        "status": "PENDING",
-        "fields": [
-          "tp1"
-        ],
-        "synced_at": null
-      }
-    ]
+    "detail": []
   },
   "api_keys": [
     {
@@ -96,7 +74,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$4,614.38",
+      "value": "$4,614.08",
       "status": "ok",
       "action": null
     },
@@ -120,7 +98,7 @@
       "key": "position_protection",
       "tier": 1,
       "label": "Position protection",
-      "value": "all protected (7 open, 2 pre-TP1 runners)",
+      "value": "all protected (7 open, 4 pre-TP1 runners)",
       "status": "ok",
       "action": null
     },
@@ -682,10 +660,10 @@
       "leverage": 3,
       "trading_system": "John",
       "track_only": false,
-      "status": "PENDING",
+      "status": "OPEN",
       "price_at_run": 7.245,
-      "date_activated": null,
-      "time_activated_utc": null,
+      "date_activated": "2026-10-16",
+      "time_activated_utc": "17:04",
       "date_opened": "2026-10-15",
       "time_opened_utc": "16:04",
       "conviction": "MEDIUM",
@@ -693,11 +671,11 @@
       "sl_moved_to_be": null,
       "pnl_tp1_realized_usd": null,
       "tp2_hit": false,
-      "live_executed": null,
-      "live_entry_fill": null,
+      "live_executed": true,
+      "live_entry_fill": 7.179,
       "live_exit_fill": null,
-      "live_entry_slippage_pct": null,
-      "live_fees_usd": null,
+      "live_entry_slippage_pct": 0.0031,
+      "live_fees_usd": 0.4109,
       "live_funding_usd": null,
       "live_tp1_pnl_usd": null,
       "rehearsal": false
@@ -778,10 +756,10 @@
       "leverage": 3,
       "trading_system": "John",
       "track_only": false,
-      "status": "PENDING",
+      "status": "OPEN",
       "price_at_run": 280.0,
-      "date_activated": null,
-      "time_activated_utc": null,
+      "date_activated": "2026-10-16",
+      "time_activated_utc": "17:06",
       "date_opened": "2026-10-16",
       "time_opened_utc": "08:04",
       "conviction": "MEDIUM",
@@ -789,11 +767,11 @@
       "sl_moved_to_be": null,
       "pnl_tp1_realized_usd": null,
       "tp2_hit": false,
-      "live_executed": null,
-      "live_entry_fill": null,
+      "live_executed": true,
+      "live_entry_fill": 276.55,
       "live_exit_fill": null,
-      "live_entry_slippage_pct": null,
-      "live_fees_usd": null,
+      "live_entry_slippage_pct": 0.0,
+      "live_fees_usd": 0.3882,
       "live_funding_usd": null,
       "live_tp1_pnl_usd": null,
       "rehearsal": false
@@ -841,19 +819,6 @@
       "tp1": 13.69638198,
       "sl": 11.95488999,
       "conviction": "HIGH",
-      "track_only": false,
-      "iso": "2026-10-16T08:04:00Z",
-      "rehearsal": false
-    },
-    {
-      "trade_id": "TAOUSDT_20261016_CJ_001",
-      "coin": "TAOUSDT",
-      "direction": "Long",
-      "trading_system": "John",
-      "entry_price": 276.55,
-      "tp1": 288.1,
-      "sl": 268.14013137,
-      "conviction": "MEDIUM",
       "track_only": false,
       "iso": "2026-10-16T08:04:00Z",
       "rehearsal": false
@@ -943,6 +908,30 @@
       "tp1_hit": false,
       "iso": "2026-10-16T00:18:00Z",
       "_iso_ms": 1792109880000,
+      "rehearsal": false
+    },
+    {
+      "trade_id": "UNIUSDT_20261015_CJ_002",
+      "coin": "UNIUSDT",
+      "direction": "Long",
+      "trading_system": "John",
+      "entry_price": 7.17877708,
+      "live_entry_fill": 7.179,
+      "tp1_hit": false,
+      "iso": "2026-10-16T17:04:00Z",
+      "_iso_ms": 1792170240000,
+      "rehearsal": false
+    },
+    {
+      "trade_id": "TAOUSDT_20261016_CJ_001",
+      "coin": "TAOUSDT",
+      "direction": "Long",
+      "trading_system": "John",
+      "entry_price": 276.55,
+      "live_entry_fill": 276.55,
+      "tp1_hit": false,
+      "iso": "2026-10-16T17:06:00Z",
+      "_iso_ms": 1792170360000,
       "rehearsal": false
     }
   ],
@@ -4775,7 +4764,7 @@
     "peak_capital_usd": 1926.61,
     "peak_concurrent": 8,
     "peak_date": "2026-10-12",
-    "deployed_trades": 294,
+    "deployed_trades": 296,
     "return_on_peak_pct": -11.61,
     "win_rate_pct": 39.1,
     "closed_count": 289,
