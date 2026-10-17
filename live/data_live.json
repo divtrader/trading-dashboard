@@ -1,19 +1,35 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-10-17T14:07:37Z",
+  "last_updated_iso": "2026-10-17T15:57:55Z",
   "mexc_account": {
-    "unrealized_pnl": 32.9593,
-    "equity": 4590.9308,
-    "available": 729.8196,
-    "position_margin": 1265.9469
+    "unrealized_pnl": 58.0403,
+    "equity": 4577.8377,
+    "available": 1186.2631,
+    "position_margin": 1001.8713
   },
   "order_levels": {
-    "checked": 21,
-    "in_sync": 21,
-    "drifted": [],
-    "reconciling": [],
-    "detail": []
+    "checked": 18,
+    "in_sync": 17,
+    "drifted": [
+      "APT"
+    ],
+    "reconciling": [
+      "RENDER",
+      "LINK",
+      "TAO"
+    ],
+    "detail": [
+      {
+        "coin": "APT",
+        "trade_id": "APTUSDT_20261015_CJ_001",
+        "status": "PENDING",
+        "fields": [
+          "tp1"
+        ],
+        "synced_at": null
+      }
+    ]
   },
   "api_keys": [
     {
@@ -74,7 +90,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$4,590.93",
+      "value": "$4,577.84",
       "status": "ok",
       "action": null
     },
@@ -90,7 +106,7 @@
       "key": "orphan_orders",
       "tier": 1,
       "label": "Order reconciliation",
-      "value": "in sync (13 resting = journal)",
+      "value": "in sync (12 resting = journal)",
       "status": "ok",
       "action": null
     },
@@ -98,7 +114,7 @@
       "key": "position_protection",
       "tier": 1,
       "label": "Position protection",
-      "value": "all protected (8 open, 5 pre-TP1 runners)",
+      "value": "all protected (6 open, 3 pre-TP1 runners)",
       "status": "ok",
       "action": null
     },
@@ -229,7 +245,7 @@
       "live_entry_slippage_pct": 0.0087,
       "live_fees_usd": 0.9128,
       "live_funding_usd": null,
-      "live_tp1_pnl_usd": 25.1222,
+      "live_tp1_pnl_usd": 26.124,
       "rehearsal": false
     },
     {
@@ -654,8 +670,8 @@
       "direction": "Long",
       "entry_price": 0.79626097,
       "sl": 0.76072924,
-      "tp1": 0.88925421,
-      "tp2": 0.96944151,
+      "tp1": 0.8797,
+      "tp2": 0.9404,
       "capital_usd": 229.45,
       "leverage": 3,
       "trading_system": "John",
@@ -811,18 +827,6 @@
   ],
   "recent_signals": [],
   "recent_opens": [
-    {
-      "trade_id": "UNIUSDT_20261015_CJ_001",
-      "coin": "UNIUSDT",
-      "direction": "Short",
-      "trading_system": "John",
-      "entry_price": 7.40835918,
-      "live_entry_fill": 7.408,
-      "tp1_hit": false,
-      "iso": "2026-10-15T14:57:00Z",
-      "_iso_ms": 1792076220000,
-      "rehearsal": false
-    },
     {
       "trade_id": "LTCUSDT_20261014_CJ_001",
       "coin": "LTCUSDT",
