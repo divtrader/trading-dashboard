@@ -1,16 +1,16 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-10-17T08:09:18Z",
+  "last_updated_iso": "2026-10-17T09:43:36Z",
   "mexc_account": {
-    "unrealized_pnl": 61.3847,
-    "equity": 4619.3955,
+    "unrealized_pnl": 60.8751,
+    "equity": 4618.8859,
     "available": 490.7639,
     "position_margin": 1265.9469
   },
   "order_levels": {
-    "checked": 22,
-    "in_sync": 22,
+    "checked": 21,
+    "in_sync": 21,
     "drifted": [],
     "reconciling": [],
     "detail": []
@@ -74,7 +74,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$4,619.40",
+      "value": "$4,618.89",
       "status": "ok",
       "action": null
     },
@@ -98,9 +98,9 @@
       "key": "position_protection",
       "tier": 1,
       "label": "Position protection",
-      "value": "\ud83d\udd34 1 NAKED: AVAXUSDT",
+      "value": "\ud83d\udd34 1 NAKED: RENDERUSDT",
       "status": "urgent",
-      "action": "Position(s) with NO stop-loss on MEXC \u2014 place SL NOW: AVAXUSDT"
+      "action": "Position(s) with NO stop-loss on MEXC \u2014 place SL NOW: RENDERUSDT"
     },
     {
       "key": "apikey_MEXC_ALGO_KEY",
@@ -136,38 +136,6 @@
     }
   ],
   "active_trades": [
-    {
-      "trade_id": "HBARUSDT_20261008_CJ_001",
-      "coin": "HBARUSDT",
-      "direction": "Short",
-      "entry_price": 0.09681052,
-      "sl": 0.09944449,
-      "tp1": 0.08587426,
-      "tp2": 0.07861102,
-      "capital_usd": 237.77,
-      "leverage": 3,
-      "trading_system": "John",
-      "track_only": false,
-      "status": "PENDING",
-      "price_at_run": 0.08383,
-      "date_activated": null,
-      "time_activated_utc": null,
-      "date_opened": "2026-10-08",
-      "time_opened_utc": "16:04",
-      "conviction": "MEDIUM",
-      "tp1_hit": false,
-      "sl_moved_to_be": null,
-      "pnl_tp1_realized_usd": null,
-      "tp2_hit": false,
-      "live_executed": null,
-      "live_entry_fill": null,
-      "live_exit_fill": null,
-      "live_entry_slippage_pct": null,
-      "live_fees_usd": null,
-      "live_funding_usd": null,
-      "live_tp1_pnl_usd": null,
-      "rehearsal": false
-    },
     {
       "trade_id": "ETHUSDT_20261008_CJ_001",
       "coin": "ETHUSDT",
@@ -4720,7 +4688,15 @@
       "rehearsal": false
     }
   ],
-  "recent_cancels": [],
+  "recent_cancels": [
+    {
+      "coin": "HBARUSDT",
+      "direction": "Short",
+      "trading_system": "John",
+      "close_reason": "Manual cancel requested by Braam (Trade Analysis) \u2014 setup abandoned before entry",
+      "iso": "2026-10-17T09:42:00Z"
+    }
+  ],
   "tp1_hits_open": [
     {
       "coin": "RENDERUSDT",
