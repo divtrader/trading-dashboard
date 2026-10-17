@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-17T15:58:08Z",
+  "updated": "2026-10-17T16:00:20Z",
   "positions": {
     "1414291495": {
       "position_id": "1414291495",
@@ -4868,8 +4868,16 @@
       "leverage": 3,
       "entry_price": 1.85,
       "opened_at": "2026-10-15T02:23:15Z",
-      "status": "OPEN",
-      "braam_trade_id": "RENDERUSDT_20261008_CJ_001"
+      "status": "CLOSED",
+      "braam_trade_id": "RENDERUSDT_20261008_CJ_001",
+      "closed_at": "2026-10-17T15:06:36Z",
+      "close_price": 1.85,
+      "pnl_usd": 25.1845,
+      "margin_usd": 240.22,
+      "fees_usd": 1.0282,
+      "tag": "WIN",
+      "close_type": 4,
+      "close_reason": "stop_loss"
     },
     "1519179648": {
       "position_id": "1519179648",
@@ -5263,6 +5271,16 @@
       "status": "OPEN",
       "braam_trade_id": "UNIUSDT_20261015_CJ_002"
     },
+    "1522280731": {
+      "position_id": "1522280731",
+      "coin": "APTUSDT",
+      "direction": "Long",
+      "leverage": 3,
+      "entry_price": 0.7963,
+      "opened_at": "2026-10-17T15:49:33Z",
+      "status": "OPEN",
+      "braam_trade_id": "APTUSDT_20261015_CJ_001"
+    },
     "1521801246": {
       "position_id": "1521801246",
       "coin": "LINKUSDT",
@@ -5270,8 +5288,16 @@
       "leverage": 3,
       "entry_price": 12.25,
       "opened_at": "2026-10-16T17:15:34Z",
-      "status": "OPEN",
-      "braam_trade_id": "LINKUSDT_20261016_CJ_001"
+      "status": "CLOSED",
+      "braam_trade_id": "LINKUSDT_20261016_CJ_001",
+      "closed_at": "2026-10-17T15:27:30Z",
+      "close_price": 11.952,
+      "pnl_usd": -17.6672,
+      "margin_usd": 229.43,
+      "fees_usd": 0.9487,
+      "tag": "LOSS",
+      "close_type": 4,
+      "close_reason": "stop_loss"
     },
     "1521793964": {
       "position_id": "1521793964",
@@ -5280,8 +5306,16 @@
       "leverage": 3,
       "entry_price": 276.55,
       "opened_at": "2026-10-16T17:06:35Z",
-      "status": "OPEN",
-      "braam_trade_id": "TAOUSDT_20261016_CJ_001"
+      "status": "CLOSED",
+      "braam_trade_id": "TAOUSDT_20261016_CJ_001",
+      "closed_at": "2026-10-17T15:49:55Z",
+      "close_price": 268.05,
+      "pnl_usd": -20.6186,
+      "margin_usd": 216.44,
+      "fees_usd": 0.8899,
+      "tag": "LOSS",
+      "close_type": 4,
+      "close_reason": "stop_loss"
     }
   },
   "orders": {
@@ -5373,15 +5407,6 @@
       "entry_price": 84424.88654106,
       "resting_at": "2026-10-15T16:04:00Z",
       "braam_trade_id": "BTCUSDT_20261015_CJ_002",
-      "status": "RESTING"
-    },
-    "865806111434216448": {
-      "order_id": "865806111434216448",
-      "coin": "APTUSDT",
-      "direction": "Long",
-      "entry_price": 0.79626097,
-      "resting_at": "2026-10-15T20:04:00Z",
-      "braam_trade_id": "APTUSDT_20261015_CJ_001",
       "status": "RESTING"
     },
     "866108237592885248": {

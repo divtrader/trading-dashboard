@@ -1,35 +1,19 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-10-17T15:57:55Z",
+  "last_updated_iso": "2026-10-17T16:00:07Z",
   "mexc_account": {
-    "unrealized_pnl": 58.0403,
-    "equity": 4577.8377,
-    "available": 1186.2631,
+    "unrealized_pnl": 57.8625,
+    "equity": 4577.6394,
+    "available": 1186.2426,
     "position_margin": 1001.8713
   },
   "order_levels": {
     "checked": 18,
-    "in_sync": 17,
-    "drifted": [
-      "APT"
-    ],
-    "reconciling": [
-      "RENDER",
-      "LINK",
-      "TAO"
-    ],
-    "detail": [
-      {
-        "coin": "APT",
-        "trade_id": "APTUSDT_20261015_CJ_001",
-        "status": "PENDING",
-        "fields": [
-          "tp1"
-        ],
-        "synced_at": null
-      }
-    ]
+    "in_sync": 18,
+    "drifted": [],
+    "reconciling": [],
+    "detail": []
   },
   "api_keys": [
     {
@@ -90,7 +74,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$4,577.84",
+      "value": "$4,577.64",
       "status": "ok",
       "action": null
     },
@@ -114,7 +98,7 @@
       "key": "position_protection",
       "tier": 1,
       "label": "Position protection",
-      "value": "all protected (6 open, 3 pre-TP1 runners)",
+      "value": "all protected (6 open, 4 pre-TP1 runners)",
       "status": "ok",
       "action": null
     },
@@ -217,38 +201,6 @@
       "rehearsal": false
     },
     {
-      "trade_id": "RENDERUSDT_20261008_CJ_001",
-      "coin": "RENDERUSDT",
-      "direction": "Long",
-      "entry_price": 1.84983849,
-      "sl": 1.76383667,
-      "tp1": 1.939,
-      "tp2": 1.99,
-      "capital_usd": 240.22,
-      "leverage": 3,
-      "trading_system": "John",
-      "track_only": false,
-      "status": "OPEN",
-      "price_at_run": 1.868,
-      "date_activated": "2026-10-15",
-      "time_activated_utc": "02:23",
-      "date_opened": "2026-10-08",
-      "time_opened_utc": "20:04",
-      "conviction": "VERY HIGH",
-      "tp1_hit": true,
-      "sl_moved_to_be": null,
-      "pnl_tp1_realized_usd": 27.79,
-      "tp2_hit": false,
-      "live_executed": true,
-      "live_entry_fill": 1.85,
-      "live_exit_fill": null,
-      "live_entry_slippage_pct": 0.0087,
-      "live_fees_usd": 0.9128,
-      "live_funding_usd": null,
-      "live_tp1_pnl_usd": 26.124,
-      "rehearsal": false
-    },
-    {
       "trade_id": "XLMUSDT_20261013_CJ_001",
       "coin": "XLMUSDT",
       "direction": "Short",
@@ -341,7 +293,7 @@
       "live_entry_slippage_pct": 0.0,
       "live_fees_usd": 0.8781,
       "live_funding_usd": null,
-      "live_tp1_pnl_usd": 37.0488,
+      "live_tp1_pnl_usd": 37.0458,
       "rehearsal": false
     },
     {
@@ -437,7 +389,7 @@
       "live_entry_slippage_pct": 0.0,
       "live_fees_usd": 0.8922,
       "live_funding_usd": null,
-      "live_tp1_pnl_usd": 47.6606,
+      "live_tp1_pnl_usd": 47.6639,
       "rehearsal": false
     },
     {
@@ -676,10 +628,10 @@
       "leverage": 3,
       "trading_system": "John",
       "track_only": false,
-      "status": "PENDING",
+      "status": "OPEN",
       "price_at_run": 0.8099,
-      "date_activated": null,
-      "time_activated_utc": null,
+      "date_activated": "2026-10-17",
+      "time_activated_utc": "15:49",
       "date_opened": "2026-10-15",
       "time_opened_utc": "20:04",
       "conviction": "MEDIUM",
@@ -687,75 +639,11 @@
       "sl_moved_to_be": null,
       "pnl_tp1_realized_usd": null,
       "tp2_hit": false,
-      "live_executed": null,
-      "live_entry_fill": null,
-      "live_exit_fill": null,
-      "live_entry_slippage_pct": null,
-      "live_fees_usd": null,
-      "live_funding_usd": null,
-      "live_tp1_pnl_usd": null,
-      "rehearsal": false
-    },
-    {
-      "trade_id": "LINKUSDT_20261016_CJ_001",
-      "coin": "LINKUSDT",
-      "direction": "Long",
-      "entry_price": 12.25,
-      "sl": 11.95488999,
-      "tp1": 12.661,
-      "tp2": 13.043,
-      "capital_usd": 229.43,
-      "leverage": 3,
-      "trading_system": "John",
-      "track_only": false,
-      "status": "OPEN",
-      "price_at_run": 12.022,
-      "date_activated": "2026-10-16",
-      "time_activated_utc": "17:15",
-      "date_opened": "2026-10-16",
-      "time_opened_utc": "08:04",
-      "conviction": "HIGH",
-      "tp1_hit": false,
-      "sl_moved_to_be": null,
-      "pnl_tp1_realized_usd": null,
-      "tp2_hit": false,
       "live_executed": true,
-      "live_entry_fill": 12.25,
+      "live_entry_fill": 0.7963,
       "live_exit_fill": null,
-      "live_entry_slippage_pct": 0.0,
-      "live_fees_usd": 0.4123,
-      "live_funding_usd": null,
-      "live_tp1_pnl_usd": null,
-      "rehearsal": false
-    },
-    {
-      "trade_id": "TAOUSDT_20261016_CJ_001",
-      "coin": "TAOUSDT",
-      "direction": "Long",
-      "entry_price": 276.55,
-      "sl": 268.14013137,
-      "tp1": 288.1,
-      "tp2": 297.7,
-      "capital_usd": 216.44,
-      "leverage": 3,
-      "trading_system": "John",
-      "track_only": false,
-      "status": "OPEN",
-      "price_at_run": 270.8,
-      "date_activated": "2026-10-16",
-      "time_activated_utc": "17:06",
-      "date_opened": "2026-10-16",
-      "time_opened_utc": "08:04",
-      "conviction": "MEDIUM",
-      "tp1_hit": false,
-      "sl_moved_to_be": null,
-      "pnl_tp1_realized_usd": null,
-      "tp2_hit": false,
-      "live_executed": true,
-      "live_entry_fill": 276.55,
-      "live_exit_fill": null,
-      "live_entry_slippage_pct": 0.0,
-      "live_fees_usd": 0.3882,
+      "live_entry_slippage_pct": 0.0049,
+      "live_fees_usd": 0.4129,
       "live_funding_usd": null,
       "live_tp1_pnl_usd": null,
       "rehearsal": false
@@ -874,66 +762,21 @@
       "iso": "2026-10-16T17:15:00Z",
       "_iso_ms": 1792170900000,
       "rehearsal": false
+    },
+    {
+      "trade_id": "APTUSDT_20261015_CJ_001",
+      "coin": "APTUSDT",
+      "direction": "Long",
+      "trading_system": "John",
+      "entry_price": 0.79626097,
+      "live_entry_fill": 0.7963,
+      "tp1_hit": false,
+      "iso": "2026-10-17T15:49:00Z",
+      "_iso_ms": 1792252140000,
+      "rehearsal": false
     }
   ],
   "recent_closes": [
-    {
-      "trade_id": "XRPUSDT_20260716_CB_001",
-      "coin": "XRPUSDT",
-      "direction": "Short",
-      "status": "STOPPED",
-      "pnl_usd": -5.49,
-      "close_reason": "live MEXC exit: sl @ 1.1269",
-      "date_closed": "2026-07-21",
-      "time_closed_utc": "04:04",
-      "trading_system": "Braam",
-      "live_entry_fill": 1.1029,
-      "live_exit_fill": 1.1269,
-      "live_entry_slippage_pct": 0.0041,
-      "live_fees_usd": 0.3345,
-      "live_funding_usd": 0.020913,
-      "won": false,
-      "close_iso": "2026-07-21T04:04:00Z",
-      "rehearsal": false
-    },
-    {
-      "trade_id": "ALGOUSDT_20260713_CB_001",
-      "coin": "ALGOUSDT",
-      "direction": "Short",
-      "status": "STOPPED_AFTER_TP1",
-      "pnl_usd": 4.16,
-      "close_reason": "live MEXC exit: manual @ 0.0842",
-      "date_closed": "2026-07-21",
-      "time_closed_utc": "05:57",
-      "trading_system": "Braam",
-      "live_entry_fill": 0.0848,
-      "live_exit_fill": 0.0842,
-      "live_entry_slippage_pct": 0.0224,
-      "live_fees_usd": 0.3293,
-      "live_funding_usd": -0.14464,
-      "won": true,
-      "close_iso": "2026-07-21T05:57:00Z",
-      "rehearsal": false
-    },
-    {
-      "trade_id": "BNBUSDT_20260720_CB_001",
-      "coin": "BNBUSDT",
-      "direction": "Short",
-      "status": "STOPPED",
-      "pnl_usd": -3.07,
-      "close_reason": "live MEXC exit: sl @ 576.7",
-      "date_closed": "2026-07-21",
-      "time_closed_utc": "06:34",
-      "trading_system": "Braam",
-      "live_entry_fill": 570.1,
-      "live_exit_fill": 576.7,
-      "live_entry_slippage_pct": -0.0086,
-      "live_fees_usd": 0.3293,
-      "live_funding_usd": 0.034285,
-      "won": false,
-      "close_iso": "2026-07-21T06:34:00Z",
-      "rehearsal": false
-    },
     {
       "trade_id": "ONDOUSDT_20260718_CB_001",
       "coin": "ONDOUSDT",
@@ -4676,6 +4519,63 @@
       "won": false,
       "close_iso": "2026-10-15T02:28:00Z",
       "rehearsal": false
+    },
+    {
+      "trade_id": "RENDERUSDT_20261008_CJ_001",
+      "coin": "RENDERUSDT",
+      "direction": "Long",
+      "status": "STOPPED_AFTER_TP1",
+      "pnl_usd": 25.18,
+      "close_reason": "live MEXC exit: sl @ 1.85",
+      "date_closed": "2026-10-17",
+      "time_closed_utc": "15:06",
+      "trading_system": "John",
+      "live_entry_fill": 1.85,
+      "live_exit_fill": 1.85,
+      "live_entry_slippage_pct": 0.0087,
+      "live_fees_usd": 1.0282,
+      "live_funding_usd": -0.088736,
+      "won": true,
+      "close_iso": "2026-10-17T15:06:00Z",
+      "rehearsal": false
+    },
+    {
+      "trade_id": "LINKUSDT_20261016_CJ_001",
+      "coin": "LINKUSDT",
+      "direction": "Long",
+      "status": "STOPPED",
+      "pnl_usd": -17.67,
+      "close_reason": "live MEXC exit: sl @ 11.952",
+      "date_closed": "2026-10-17",
+      "time_closed_utc": "15:27",
+      "trading_system": "John",
+      "live_entry_fill": 12.25,
+      "live_exit_fill": 11.952,
+      "live_entry_slippage_pct": 0.0,
+      "live_fees_usd": 0.9487,
+      "live_funding_usd": 0.000687,
+      "won": false,
+      "close_iso": "2026-10-17T15:27:00Z",
+      "rehearsal": false
+    },
+    {
+      "trade_id": "TAOUSDT_20261016_CJ_001",
+      "coin": "TAOUSDT",
+      "direction": "Long",
+      "status": "STOPPED",
+      "pnl_usd": -20.62,
+      "close_reason": "live MEXC exit: sl @ 268.05",
+      "date_closed": "2026-10-17",
+      "time_closed_utc": "15:49",
+      "trading_system": "John",
+      "live_entry_fill": 276.55,
+      "live_exit_fill": 268.05,
+      "live_entry_slippage_pct": 0.0,
+      "live_fees_usd": 0.8899,
+      "live_funding_usd": -0.160909,
+      "won": false,
+      "close_iso": "2026-10-17T15:49:00Z",
+      "rehearsal": false
     }
   ],
   "recent_cancels": [
@@ -4688,12 +4588,6 @@
     }
   ],
   "tp1_hits_open": [
-    {
-      "coin": "RENDERUSDT",
-      "direction": "Long",
-      "trading_system": "John",
-      "entry_price": 1.84983849
-    },
     {
       "coin": "AVAXUSDT",
       "direction": "Long",
@@ -4708,15 +4602,15 @@
     }
   ],
   "stats": {
-    "realized_pnl_usd": -223.73,
-    "realized_pnl_pct": -0.59,
+    "realized_pnl_usd": -236.83,
+    "realized_pnl_pct": -0.62,
     "peak_capital_usd": 1926.61,
     "peak_concurrent": 8,
     "peak_date": "2026-10-12",
-    "deployed_trades": 297,
-    "return_on_peak_pct": -11.61,
-    "win_rate_pct": 39.1,
-    "closed_count": 289,
+    "deployed_trades": 298,
+    "return_on_peak_pct": -12.29,
+    "win_rate_pct": 39.0,
+    "closed_count": 292,
     "per_system": {
       "Braam": {
         "realized_pnl_usd": -61.29,
@@ -4724,9 +4618,9 @@
         "closed_count": 155
       },
       "John": {
-        "realized_pnl_usd": -83.73,
+        "realized_pnl_usd": -96.83,
         "win_rate_pct": 36.8,
-        "closed_count": 133
+        "closed_count": 136
       },
       "Mong": {
         "realized_pnl_usd": -78.7,
