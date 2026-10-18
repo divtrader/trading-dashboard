@@ -1,12 +1,12 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-10-18T12:08:51Z",
+  "last_updated_iso": "2026-10-18T14:08:50Z",
   "mexc_account": {
-    "unrealized_pnl": 41.4642,
-    "equity": 4587.9228,
-    "available": 501.2378,
-    "position_margin": 839.8527
+    "unrealized_pnl": 8.6892,
+    "equity": 4554.3641,
+    "available": 513.8514,
+    "position_margin": 1276.3077
   },
   "order_levels": {
     "checked": 22,
@@ -58,7 +58,7 @@
       "key": "cron_watchlist",
       "tier": 1,
       "label": "Last cloud run",
-      "value": "0.0h ago",
+      "value": "2.0h ago",
       "status": "ok",
       "action": null
     },
@@ -74,7 +74,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$4,587.92",
+      "value": "$4,554.36",
       "status": "ok",
       "action": null
     },
@@ -90,7 +90,7 @@
       "key": "orphan_orders",
       "tier": 1,
       "label": "Order reconciliation",
-      "value": "in sync (15 resting = journal)",
+      "value": "in sync (12 resting = journal)",
       "status": "ok",
       "action": null
     },
@@ -98,9 +98,9 @@
       "key": "position_protection",
       "tier": 1,
       "label": "Position protection",
-      "value": "all protected (7 open, 4 pre-TP1 runners)",
-      "status": "ok",
-      "action": null
+      "value": "\ud83d\udd34 4 NAKED: APTUSDT, UNIUSDT, AVAXUSDT, NEARUSDT",
+      "status": "urgent",
+      "action": "Position(s) with NO stop-loss on MEXC \u2014 place SL NOW: APTUSDT, UNIUSDT, AVAXUSDT, NEARUSDT"
     },
     {
       "key": "apikey_MEXC_ALGO_KEY",
@@ -293,7 +293,7 @@
       "live_entry_slippage_pct": 0.0,
       "live_fees_usd": 0.8781,
       "live_funding_usd": null,
-      "live_tp1_pnl_usd": 38.065,
+      "live_tp1_pnl_usd": 37.0465,
       "rehearsal": false
     },
     {
@@ -357,7 +357,7 @@
       "live_entry_slippage_pct": -0.0032,
       "live_fees_usd": 0.8265,
       "live_funding_usd": null,
-      "live_tp1_pnl_usd": 27.0882,
+      "live_tp1_pnl_usd": 26.3278,
       "rehearsal": false
     },
     {
@@ -389,7 +389,7 @@
       "live_entry_slippage_pct": 0.0,
       "live_fees_usd": 0.8922,
       "live_funding_usd": null,
-      "live_tp1_pnl_usd": 48.672,
+      "live_tp1_pnl_usd": 47.6611,
       "rehearsal": false
     },
     {
