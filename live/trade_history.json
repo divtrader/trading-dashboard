@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-18T18:08:08Z",
+  "updated": "2026-10-18T20:09:28Z",
   "positions": {
     "1414291495": {
       "position_id": "1414291495",
@@ -5246,8 +5246,16 @@
       "leverage": 3,
       "entry_price": 61.23,
       "opened_at": "2026-10-16T00:18:22Z",
-      "status": "OPEN",
-      "braam_trade_id": "LTCUSDT_20261014_CJ_001"
+      "status": "CLOSED",
+      "braam_trade_id": "LTCUSDT_20261014_CJ_001",
+      "closed_at": "2026-10-18T19:56:57Z",
+      "close_price": 56.77,
+      "pnl_usd": 36.0371,
+      "margin_usd": 228.02,
+      "fees_usd": 0.9277,
+      "tag": "WIN",
+      "close_type": 3,
+      "close_reason": "take_profit"
     },
     "1520563681": {
       "position_id": "1520563681",
@@ -5277,6 +5285,16 @@
       "status": "OPEN",
       "braam_trade_id": "UNIUSDT_20261015_CJ_001"
     },
+    "1522945998": {
+      "position_id": "1522945998",
+      "coin": "SUIUSDT",
+      "direction": "Long",
+      "leverage": 3,
+      "entry_price": 0.9383,
+      "opened_at": "2026-10-18T19:43:00Z",
+      "status": "OPEN",
+      "braam_trade_id": "SUIUSDT_20261015_CJ_001"
+    },
     "1521792322": {
       "position_id": "1521792322",
       "coin": "UNIUSDT",
@@ -5284,8 +5302,16 @@
       "leverage": 3,
       "entry_price": 7.179,
       "opened_at": "2026-10-16T17:04:59Z",
-      "status": "OPEN",
-      "braam_trade_id": "UNIUSDT_20261015_CJ_002"
+      "status": "CLOSED",
+      "braam_trade_id": "UNIUSDT_20261015_CJ_002",
+      "closed_at": "2026-10-18T19:21:24Z",
+      "close_price": 6.931,
+      "pnl_usd": -24.5986,
+      "margin_usd": 228.31,
+      "fees_usd": 0.9398,
+      "tag": "LOSS",
+      "close_type": 4,
+      "close_reason": "stop_loss"
     },
     "1522280731": {
       "position_id": "1522280731",
@@ -5294,8 +5320,16 @@
       "leverage": 3,
       "entry_price": 0.7963,
       "opened_at": "2026-10-17T15:49:33Z",
-      "status": "OPEN",
-      "braam_trade_id": "APTUSDT_20261015_CJ_001"
+      "status": "CLOSED",
+      "braam_trade_id": "APTUSDT_20261015_CJ_001",
+      "closed_at": "2026-10-18T19:30:36Z",
+      "close_price": 0.7607,
+      "pnl_usd": -31.8416,
+      "margin_usd": 229.45,
+      "fees_usd": 0.9389,
+      "tag": "LOSS",
+      "close_type": 4,
+      "close_reason": "stop_loss"
     },
     "1521801246": {
       "position_id": "1521801246",
@@ -5340,8 +5374,16 @@
       "leverage": 3,
       "entry_price": 0.2185,
       "opened_at": "2026-10-17T17:05:03Z",
-      "status": "OPEN",
-      "braam_trade_id": "ADAUSDT_20261016_CJ_001"
+      "status": "CLOSED",
+      "braam_trade_id": "ADAUSDT_20261016_CJ_001",
+      "closed_at": "2026-10-18T19:33:29Z",
+      "close_price": 0.2121,
+      "pnl_usd": -1.9314,
+      "margin_usd": 21.01,
+      "fees_usd": 0.0865,
+      "tag": "LOSS",
+      "close_type": 4,
+      "close_reason": "stop_loss"
     },
     "1522783079": {
       "position_id": "1522783079",
@@ -5350,8 +5392,16 @@
       "leverage": 3,
       "entry_price": 2.152,
       "opened_at": "2026-10-18T14:05:42Z",
-      "status": "OPEN",
-      "braam_trade_id": "CAKEUSDT_20261017_CJ_001"
+      "status": "CLOSED",
+      "braam_trade_id": "CAKEUSDT_20261017_CJ_001",
+      "closed_at": "2026-10-18T19:57:03Z",
+      "close_price": 2.1022,
+      "pnl_usd": -16.799,
+      "margin_usd": 228.97,
+      "fees_usd": 0.9482,
+      "tag": "LOSS",
+      "close_type": 4,
+      "close_reason": "stop_loss"
     },
     "1522783303": {
       "position_id": "1522783303",
@@ -5360,8 +5410,16 @@
       "leverage": 3,
       "entry_price": 1.786,
       "opened_at": "2026-10-18T14:05:54Z",
-      "status": "OPEN",
-      "braam_trade_id": "RENDERUSDT_20261017_CJ_001"
+      "status": "CLOSED",
+      "braam_trade_id": "RENDERUSDT_20261017_CJ_001",
+      "closed_at": "2026-10-18T19:57:07Z",
+      "close_price": 1.72,
+      "pnl_usd": -23.7216,
+      "margin_usd": 206.89,
+      "fees_usd": 0.8492,
+      "tag": "LOSS",
+      "close_type": 4,
+      "close_reason": "stop_loss"
     }
   },
   "orders": {
@@ -5410,11 +5468,11 @@
       "braam_trade_id": "LINKUSDT_20261014_CJ_001",
       "status": "RESTING"
     },
-    "865504070881097728": {
-      "order_id": "865504070881097728",
+    "866893654412081664": {
+      "order_id": "866893654412081664",
       "coin": "BNBUSDT",
       "direction": "Short",
-      "entry_price": 752.165,
+      "entry_price": 732.11055409,
       "resting_at": "2026-10-15T00:04:00Z",
       "braam_trade_id": "BNBUSDT_20261015_CJ_001",
       "status": "RESTING"
@@ -5437,15 +5495,6 @@
       "braam_trade_id": "SOLUSDT_20261015_CJ_001",
       "status": "RESTING"
     },
-    "866652070503100928": {
-      "order_id": "866652070503100928",
-      "coin": "SUIUSDT",
-      "direction": "Long",
-      "entry_price": 0.93825904,
-      "resting_at": "2026-10-15T04:04:00Z",
-      "braam_trade_id": "SUIUSDT_20261015_CJ_001",
-      "status": "RESTING"
-    },
     "866169230465257984": {
       "order_id": "866169230465257984",
       "coin": "BTCUSDT",
@@ -5464,22 +5513,22 @@
       "braam_trade_id": "ALGOUSDT_20261017_CJ_001",
       "status": "RESTING"
     },
-    "866470399981017600": {
-      "order_id": "866470399981017600",
-      "coin": "LINKUSDT",
-      "direction": "Long",
-      "entry_price": 11.4495,
-      "resting_at": "2026-10-17T16:03:00Z",
-      "braam_trade_id": "LINKUSDT_20261017_CJ_001",
-      "status": "RESTING"
-    },
-    "866832782427927040": {
-      "order_id": "866832782427927040",
+    "866893684170799616": {
+      "order_id": "866893684170799616",
       "coin": "NEARUSDT",
       "direction": "Long",
-      "entry_price": 4.61616373,
+      "entry_price": 4.51568159,
       "resting_at": "2026-10-18T16:03:00Z",
       "braam_trade_id": "NEARUSDT_20261018_CJ_001",
+      "status": "RESTING"
+    },
+    "866893204543334912": {
+      "order_id": "866893204543334912",
+      "coin": "ETHUSDT",
+      "direction": "Long",
+      "entry_price": 2296.00525899,
+      "resting_at": "2026-10-18T20:04:00Z",
+      "braam_trade_id": "ETHUSDT_20261018_CJ_001",
       "status": "RESTING"
     }
   },
