@@ -1,18 +1,20 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-10-20T12:09:53Z",
+  "last_updated_iso": "2026-10-20T14:09:53Z",
   "mexc_account": {
-    "unrealized_pnl": 10.5846,
-    "equity": 4543.0515,
-    "available": 597.7179,
-    "position_margin": 499.5198
+    "unrealized_pnl": 36.901,
+    "equity": 4562.0288,
+    "available": 818.0538,
+    "position_margin": 271.8447
   },
   "order_levels": {
-    "checked": 18,
-    "in_sync": 18,
+    "checked": 17,
+    "in_sync": 17,
     "drifted": [],
-    "reconciling": [],
+    "reconciling": [
+      "BNB"
+    ],
     "detail": []
   },
   "api_keys": [
@@ -58,7 +60,7 @@
       "key": "cron_watchlist",
       "tier": 1,
       "label": "Last cloud run",
-      "value": "0.0h ago",
+      "value": "2.0h ago",
       "status": "ok",
       "action": null
     },
@@ -74,7 +76,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$4,543.05",
+      "value": "$4,562.03",
       "status": "ok",
       "action": null
     },
@@ -98,7 +100,7 @@
       "key": "position_protection",
       "tier": 1,
       "label": "Position protection",
-      "value": "all protected (3 open, 2 pre-TP1 runners)",
+      "value": "all protected (2 open, 1 pre-TP1 runners)",
       "status": "ok",
       "action": null
     },
@@ -715,30 +717,6 @@
   ],
   "recent_signals": [],
   "recent_opens": [
-    {
-      "trade_id": "CAKEUSDT_20261017_CJ_001",
-      "coin": "CAKEUSDT",
-      "direction": "Long",
-      "trading_system": "John",
-      "entry_price": 2.152,
-      "live_entry_fill": 2.152,
-      "tp1_hit": false,
-      "iso": "2026-10-18T14:05:00Z",
-      "_iso_ms": 1792332300000,
-      "rehearsal": false
-    },
-    {
-      "trade_id": "RENDERUSDT_20261017_CJ_001",
-      "coin": "RENDERUSDT",
-      "direction": "Long",
-      "trading_system": "John",
-      "entry_price": 1.78555167,
-      "live_entry_fill": 1.786,
-      "tp1_hit": false,
-      "iso": "2026-10-18T14:05:00Z",
-      "_iso_ms": 1792332300000,
-      "rehearsal": false
-    },
     {
       "trade_id": "SUIUSDT_20261015_CJ_001",
       "coin": "SUIUSDT",
