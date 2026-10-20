@@ -1,6 +1,6 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-10-20T14:19Z",
+  "generated_utc": "2026-10-20T14:21Z",
   "master": "braam",
   "retention_hours": 48,
   "trade_count": 29,
@@ -90,7 +90,7 @@
       "sl": 1.35990384,
       "tp1": 1.2952,
       "tp2": 1.2611,
-      "status": "PENDING",
+      "status": "OPEN",
       "tp1_hit": false,
       "tp2_hit": false,
       "sl_hit": false,
@@ -98,8 +98,8 @@
       "date_opened": "2026-10-13",
       "time_opened_utc": "08:04",
       "sl_mode": "initial",
-      "feed_updated_utc": "2026-10-13T08:04Z",
-      "activated_utc": null
+      "feed_updated_utc": "2026-10-20T14:14Z",
+      "activated_utc": "2026-10-20T14:14Z"
     },
     {
       "trade_id": "AVAXUSDT_20261014_CJ_001",
@@ -210,15 +210,15 @@
       "sl": 739.40963149,
       "tp1": 709.7,
       "tp2": 684.69,
-      "status": "OPEN",
+      "status": "STOPPED",
       "tp1_hit": false,
       "tp2_hit": false,
       "sl_hit": false,
-      "close_reason": null,
+      "close_reason": "live MEXC exit: sl @ 739.4",
       "date_opened": "2026-10-15",
       "time_opened_utc": "00:04",
       "sl_mode": "initial",
-      "feed_updated_utc": "2026-10-19T14:46Z",
+      "feed_updated_utc": "2026-10-20T14:08Z",
       "activated_utc": "2026-10-19T14:46Z"
     },
     {
@@ -595,13 +595,13 @@
       "tp1": 9.805,
       "tp2": 10.49,
       "status": "OPEN",
-      "tp1_hit": false,
+      "tp1_hit": true,
       "tp2_hit": false,
       "sl_hit": false,
       "close_reason": null,
       "date_opened": "2026-10-19",
       "time_opened_utc": "00:03",
-      "sl_mode": "initial",
+      "sl_mode": "breakeven",
       "feed_updated_utc": "2026-10-20T09:13Z",
       "activated_utc": "2026-10-20T09:13Z"
     },
