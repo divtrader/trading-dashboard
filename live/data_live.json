@@ -1,31 +1,19 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-10-20T18:02:35Z",
+  "last_updated_iso": "2026-10-20T18:04:41Z",
   "mexc_account": {
-    "unrealized_pnl": 15.2461,
-    "equity": 4562.167,
+    "unrealized_pnl": 17.2105,
+    "equity": 4564.1314,
     "available": 562.9799,
     "position_margin": 552.3742
   },
   "order_levels": {
     "checked": 19,
-    "in_sync": 18,
-    "drifted": [
-      "THETA"
-    ],
+    "in_sync": 19,
+    "drifted": [],
     "reconciling": [],
-    "detail": [
-      {
-        "coin": "THETA",
-        "trade_id": "THETAUSDT_20261020_CJ_001",
-        "status": "PENDING",
-        "fields": [
-          "tp1"
-        ],
-        "synced_at": null
-      }
-    ]
+    "detail": []
   },
   "api_keys": [
     {
@@ -86,7 +74,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$4,562.17",
+      "value": "$4,564.13",
       "status": "ok",
       "action": null
     },
@@ -110,7 +98,7 @@
       "key": "position_protection",
       "tier": 1,
       "label": "Position protection",
-      "value": "all protected (4 open, 1 pre-TP1 runners)",
+      "value": "all protected (4 open, 2 pre-TP1 runners)",
       "status": "ok",
       "action": null
     },
@@ -704,10 +692,10 @@
       "leverage": 3,
       "trading_system": "John",
       "track_only": false,
-      "status": "PENDING",
+      "status": "OPEN",
       "price_at_run": 0.2133,
-      "date_activated": null,
-      "time_activated_utc": null,
+      "date_activated": "2026-10-20",
+      "time_activated_utc": "17:44",
       "date_opened": "2026-10-20",
       "time_opened_utc": "16:04",
       "conviction": "HIGH",
@@ -715,11 +703,11 @@
       "sl_moved_to_be": null,
       "pnl_tp1_realized_usd": null,
       "tp2_hit": false,
-      "live_executed": null,
-      "live_entry_fill": null,
+      "live_executed": true,
+      "live_entry_fill": 0.2042,
       "live_exit_fill": null,
-      "live_entry_slippage_pct": null,
-      "live_fees_usd": null,
+      "live_entry_slippage_pct": 0.0049,
+      "live_fees_usd": 0.4111,
       "live_funding_usd": null,
       "live_tp1_pnl_usd": null,
       "rehearsal": false
@@ -758,19 +746,6 @@
     }
   ],
   "recent_signals": [
-    {
-      "trade_id": "THETAUSDT_20261020_CJ_001",
-      "coin": "THETAUSDT",
-      "direction": "Long",
-      "trading_system": "John",
-      "entry_price": 0.20419008,
-      "tp1": 0.2222,
-      "sl": 0.19755245,
-      "conviction": "HIGH",
-      "track_only": false,
-      "iso": "2026-10-20T16:04:00Z",
-      "rehearsal": false
-    },
     {
       "trade_id": "RENDERUSDT_20261020_CJ_001",
       "coin": "RENDERUSDT",
@@ -832,6 +807,18 @@
       "tp1_hit": false,
       "iso": "2026-10-20T14:14:00Z",
       "_iso_ms": 1792505640000,
+      "rehearsal": false
+    },
+    {
+      "trade_id": "THETAUSDT_20261020_CJ_001",
+      "coin": "THETAUSDT",
+      "direction": "Long",
+      "trading_system": "John",
+      "entry_price": 0.20419008,
+      "live_entry_fill": 0.2042,
+      "tp1_hit": false,
+      "iso": "2026-10-20T17:44:00Z",
+      "_iso_ms": 1792518240000,
       "rehearsal": false
     }
   ],
@@ -4658,7 +4645,7 @@
     "peak_capital_usd": 1926.61,
     "peak_concurrent": 8,
     "peak_date": "2026-10-12",
-    "deployed_trades": 305,
+    "deployed_trades": 306,
     "return_on_peak_pct": -9.6,
     "win_rate_pct": 39.1,
     "closed_count": 302,
