@@ -1,5 +1,5 @@
 {
-  "last_updated_iso": "2026-10-21T15:29:59Z",
+  "last_updated_iso": "2026-10-21T15:32:17Z",
   "mexc_account": null,
   "api_keys": [
     {
@@ -159,10 +159,10 @@
       "leverage": 3,
       "trading_system": "John",
       "track_only": false,
-      "status": "PENDING",
+      "status": "OPEN",
       "price_at_run": 106.52,
-      "date_activated": null,
-      "time_activated_utc": null,
+      "date_activated": "2026-10-21",
+      "time_activated_utc": "15:12",
       "date_opened": "2026-10-15",
       "time_opened_utc": "04:04",
       "conviction": "MEDIUM",
@@ -699,6 +699,16 @@
       "tp1_hit": false,
       "iso": "2026-10-20T22:19:00Z",
       "_iso_ms": 1792534740000
+    },
+    {
+      "trade_id": "SOLUSDT_20261015_CJ_001",
+      "coin": "SOLUSDT",
+      "direction": "Short",
+      "trading_system": "John",
+      "entry_price": 108.24516788,
+      "tp1_hit": false,
+      "iso": "2026-10-21T15:12:00Z",
+      "_iso_ms": 1792595520000
     }
   ],
   "recent_closes": [
@@ -1372,7 +1382,7 @@
     "peak_capital_usd": 3300,
     "peak_concurrent": 33,
     "peak_date": "2026-06-22",
-    "deployed_trades": 789,
+    "deployed_trades": 790,
     "return_on_peak_pct": 32.63,
     "win_rate_pct": 34.2,
     "closed_count": 773,
