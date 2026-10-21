@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-21T18:09:07Z",
+  "updated": "2026-10-21T20:10:33Z",
   "positions": {
     "1414291495": {
       "position_id": "1414291495",
@@ -5346,8 +5346,16 @@
       "leverage": 3,
       "entry_price": 0.9383,
       "opened_at": "2026-10-18T19:43:00Z",
-      "status": "OPEN",
-      "braam_trade_id": "SUIUSDT_20261015_CJ_001"
+      "status": "CLOSED",
+      "braam_trade_id": "SUIUSDT_20261015_CJ_001",
+      "closed_at": "2026-10-21T18:24:52Z",
+      "close_price": 1.0545,
+      "pnl_usd": 53.4598,
+      "margin_usd": 222.27,
+      "fees_usd": 0.976,
+      "tag": "WIN",
+      "close_type": 3,
+      "close_reason": "take_profit"
     },
     "1521792322": {
       "position_id": "1521792322",
@@ -5607,11 +5615,11 @@
       "braam_trade_id": "LINKUSDT_20261019_CJ_001",
       "status": "RESTING"
     },
-    "867920643122714176": {
-      "order_id": "867920643122714176",
+    "867981062923278912": {
+      "order_id": "867981062923278912",
       "coin": "RENDERUSDT",
       "direction": "Long",
-      "entry_price": 1.85108667,
+      "entry_price": 1.78899869,
       "resting_at": "2026-10-20T16:04:00Z",
       "braam_trade_id": "RENDERUSDT_20261020_CJ_001",
       "status": "RESTING"
@@ -5641,6 +5649,15 @@
       "entry_price": 105.33092018,
       "resting_at": "2026-10-21T12:04:00Z",
       "braam_trade_id": "SOLUSDT_20261021_CB_001",
+      "status": "RESTING"
+    },
+    "867980579474616833": {
+      "order_id": "867980579474616833",
+      "coin": "BNBUSDT",
+      "direction": "Long",
+      "entry_price": 736.12333299,
+      "resting_at": "2026-10-21T20:04:00Z",
+      "braam_trade_id": "BNBUSDT_20261021_CB_001",
       "status": "RESTING"
     }
   },
