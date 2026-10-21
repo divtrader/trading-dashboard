@@ -1,19 +1,32 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-10-21T06:08:29Z",
+  "last_updated_iso": "2026-10-21T06:54:20Z",
   "mexc_account": {
-    "unrealized_pnl": 20.6685,
-    "equity": 4567.1457,
+    "unrealized_pnl": 13.8252,
+    "equity": 4560.3024,
     "available": 335.4378,
     "position_margin": 779.9417
   },
   "order_levels": {
     "checked": 20,
-    "in_sync": 20,
-    "drifted": [],
+    "in_sync": 19,
+    "drifted": [
+      "LTC"
+    ],
     "reconciling": [],
-    "detail": []
+    "detail": [
+      {
+        "coin": "LTC",
+        "trade_id": "LTCUSDT_20261019_CJ_001",
+        "status": "OPEN",
+        "fields": [
+          "tp1",
+          "tp2"
+        ],
+        "synced_at": null
+      }
+    ]
   },
   "api_keys": [
     {
@@ -74,7 +87,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$4,567.15",
+      "value": "$4,560.30",
       "status": "ok",
       "action": null
     },
@@ -98,9 +111,9 @@
       "key": "position_protection",
       "tier": 1,
       "label": "Position protection",
-      "value": "live read failed",
-      "status": "warn",
-      "action": "Worker health read failed \u2014 can't confirm SL protection; check the Worker."
+      "value": "all protected (5 open, 3 pre-TP1 runners)",
+      "status": "ok",
+      "action": null
     },
     {
       "key": "apikey_MEXC_ALGO_KEY",
@@ -389,7 +402,7 @@
       "live_entry_slippage_pct": 0.0044,
       "live_fees_usd": 0.8563,
       "live_funding_usd": null,
-      "live_tp1_pnl_usd": 37.8856,
+      "live_tp1_pnl_usd": 36.993,
       "rehearsal": false
     },
     {
@@ -549,7 +562,7 @@
       "live_entry_slippage_pct": 0.0,
       "live_fees_usd": 0.8617,
       "live_funding_usd": null,
-      "live_tp1_pnl_usd": 23.0622,
+      "live_tp1_pnl_usd": 22.1798,
       "rehearsal": false
     },
     {
@@ -558,8 +571,8 @@
       "direction": "Short",
       "entry_price": 61.30797424,
       "sl": 62.56876665,
-      "tp1": 52.74670896,
-      "tp2": 52.3124667,
+      "tp1": 58.63,
+      "tp2": 56.94,
       "capital_usd": 227.04,
       "leverage": 3,
       "trading_system": "John",
