@@ -1,19 +1,31 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-10-21T14:15:01Z",
+  "last_updated_iso": "2026-10-21T15:30:05Z",
   "mexc_account": {
-    "unrealized_pnl": 19.7668,
-    "equity": 4553.4867,
-    "available": 575.6519,
-    "position_margin": 546.6577
+    "unrealized_pnl": 25.938,
+    "equity": 4559.2617,
+    "available": 575.7843,
+    "position_margin": 767.4598
   },
   "order_levels": {
     "checked": 19,
-    "in_sync": 19,
-    "drifted": [],
+    "in_sync": 18,
+    "drifted": [
+      "SOL"
+    ],
     "reconciling": [],
-    "detail": []
+    "detail": [
+      {
+        "coin": "SOL",
+        "trade_id": "SOLUSDT_20261015_CJ_001",
+        "status": "PENDING",
+        "fields": [
+          "tp1"
+        ],
+        "synced_at": null
+      }
+    ]
   },
   "api_keys": [
     {
@@ -58,7 +70,7 @@
       "key": "cron_watchlist",
       "tier": 1,
       "label": "Last cloud run",
-      "value": "0.1h ago",
+      "value": "0.0h ago",
       "status": "ok",
       "action": null
     },
@@ -74,7 +86,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$4,553.49",
+      "value": "$4,559.26",
       "status": "ok",
       "action": null
     },
@@ -90,7 +102,7 @@
       "key": "orphan_orders",
       "tier": 1,
       "label": "Order reconciliation",
-      "value": "in sync (15 resting = journal)",
+      "value": "in sync (14 resting = journal)",
       "status": "ok",
       "action": null
     },
@@ -98,7 +110,7 @@
       "key": "position_protection",
       "tier": 1,
       "label": "Position protection",
-      "value": "all protected (4 open, 2 pre-TP1 runners)",
+      "value": "all protected (5 open, 2 pre-TP1 runners)",
       "status": "ok",
       "action": null
     },
@@ -302,8 +314,8 @@
       "direction": "Short",
       "entry_price": 108.24516788,
       "sl": 110.50000629,
-      "tp1": 96.39525778,
-      "tp2": 87.66998742,
+      "tp1": 103.98,
+      "tp2": 96.95,
       "capital_usd": 222.27,
       "leverage": 3,
       "trading_system": "John",
@@ -774,18 +786,6 @@
     }
   ],
   "recent_opens": [
-    {
-      "trade_id": "BNBUSDT_20261015_CJ_001",
-      "coin": "BNBUSDT",
-      "direction": "Short",
-      "trading_system": "John",
-      "entry_price": 732.11055409,
-      "live_entry_fill": 732.1,
-      "tp1_hit": false,
-      "iso": "2026-10-19T14:46:00Z",
-      "_iso_ms": 1792421160000,
-      "rehearsal": false
-    },
     {
       "trade_id": "AVAXUSDT_20261019_CJ_001",
       "coin": "AVAXUSDT",
