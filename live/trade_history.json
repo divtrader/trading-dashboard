@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-22T18:10:01Z",
+  "updated": "2026-10-22T20:10:31Z",
   "positions": {
     "1414291495": {
       "position_id": "1414291495",
@@ -5594,8 +5594,16 @@
       "leverage": 3,
       "entry_price": 0.33178,
       "opened_at": "2026-10-21T16:04:52Z",
-      "status": "OPEN",
-      "braam_trade_id": "TRXUSDT_20261021_CB_001"
+      "status": "CLOSED",
+      "braam_trade_id": "TRXUSDT_20261021_CB_001",
+      "closed_at": "2026-10-22T16:59:43Z",
+      "close_price": 0.32884,
+      "pnl_usd": -7.1578,
+      "margin_usd": 227.69,
+      "fees_usd": 1.0833,
+      "tag": "LOSS",
+      "close_type": 4,
+      "close_reason": "stop_loss"
     },
     "1525092054": {
       "position_id": "1525092054",
@@ -5690,11 +5698,11 @@
       "braam_trade_id": "LINKUSDT_20261019_CJ_001",
       "status": "RESTING"
     },
-    "868282568921975296": {
-      "order_id": "868282568921975296",
+    "868343398975805952": {
+      "order_id": "868343398975805952",
       "coin": "XRPUSDT",
       "direction": "Short",
-      "entry_price": 1.38886049,
+      "entry_price": 1.34697268,
       "resting_at": "2026-10-22T16:04:00Z",
       "braam_trade_id": "XRPUSDT_20261022_CJ_001",
       "status": "RESTING"
@@ -5706,6 +5714,15 @@
       "entry_price": 9.81,
       "resting_at": "2026-10-22T16:04:00Z",
       "braam_trade_id": "AVAXUSDT_20261022_CJ_001",
+      "status": "RESTING"
+    },
+    "868342932796044800": {
+      "order_id": "868342932796044800",
+      "coin": "THETAUSDT",
+      "direction": "Long",
+      "entry_price": 0.18530634,
+      "resting_at": "2026-10-22T20:04:00Z",
+      "braam_trade_id": "THETAUSDT_20261022_CJ_001",
       "status": "RESTING"
     }
   },
