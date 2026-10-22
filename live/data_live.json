@@ -1,18 +1,20 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-10-22T08:09:48Z",
+  "last_updated_iso": "2026-10-22T08:46:49Z",
   "mexc_account": {
-    "unrealized_pnl": 22.7424,
-    "equity": 4547.6165,
-    "available": 438.0902,
-    "position_margin": 1563.0933
+    "unrealized_pnl": 6.8917,
+    "equity": 4532.1652,
+    "available": 845.2823,
+    "position_margin": 1611.981
   },
   "order_levels": {
-    "checked": 18,
-    "in_sync": 18,
+    "checked": 17,
+    "in_sync": 17,
     "drifted": [],
-    "reconciling": [],
+    "reconciling": [
+      "RENDER"
+    ],
     "detail": []
   },
   "api_keys": [
@@ -74,7 +76,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$4,547.62",
+      "value": "$4,532.17",
       "status": "ok",
       "action": null
     },
@@ -90,7 +92,7 @@
       "key": "orphan_orders",
       "tier": 1,
       "label": "Order reconciliation",
-      "value": "in sync (11 resting = journal)",
+      "value": "in sync (9 resting = journal)",
       "status": "ok",
       "action": null
     },
@@ -98,9 +100,9 @@
       "key": "position_protection",
       "tier": 1,
       "label": "Position protection",
-      "value": "SL not trailed: SOLUSDT",
-      "status": "warn",
-      "action": "Runner leg(s) need attention \u2014 verify on MEXC / check the mover cron."
+      "value": "\ud83d\udd34 1 NAKED: SOLUSDT",
+      "status": "urgent",
+      "action": "Position(s) with NO stop-loss on MEXC \u2014 place SL NOW: SOLUSDT"
     },
     {
       "key": "apikey_MEXC_ALGO_KEY",
@@ -559,7 +561,7 @@
       "entry_price": 0.776925,
       "sl": 0.75073193,
       "tp1": 0.83184551,
-      "tp2": 0.96093615,
+      "tp2": 0.8833,
       "capital_usd": 227.14,
       "leverage": 3,
       "trading_system": "John",
