@@ -1,18 +1,20 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-10-22T16:10:06Z",
+  "last_updated_iso": "2026-10-22T18:09:42Z",
   "mexc_account": {
-    "unrealized_pnl": -4.6608,
-    "equity": 4543.6349,
-    "available": 594.3667,
-    "position_margin": 1429.927
+    "unrealized_pnl": -45.5319,
+    "equity": 4496.1975,
+    "available": 815.0608,
+    "position_margin": 1202.6666
   },
   "order_levels": {
-    "checked": 19,
-    "in_sync": 19,
+    "checked": 18,
+    "in_sync": 18,
     "drifted": [],
-    "reconciling": [],
+    "reconciling": [
+      "TRX"
+    ],
     "detail": []
   },
   "api_keys": [
@@ -58,7 +60,7 @@
       "key": "cron_watchlist",
       "tier": 1,
       "label": "Last cloud run",
-      "value": "0.0h ago",
+      "value": "2.0h ago",
       "status": "ok",
       "action": null
     },
@@ -74,7 +76,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$4,543.63",
+      "value": "$4,496.20",
       "status": "ok",
       "action": null
     },
@@ -98,7 +100,7 @@
       "key": "position_protection",
       "tier": 1,
       "label": "Position protection",
-      "value": "all protected (8 open, 6 pre-TP1 runners)",
+      "value": "all protected (7 open, 5 pre-TP1 runners)",
       "status": "ok",
       "action": null
     },
@@ -774,18 +776,6 @@
     }
   ],
   "recent_opens": [
-    {
-      "trade_id": "THETAUSDT_20261020_CJ_001",
-      "coin": "THETAUSDT",
-      "direction": "Long",
-      "trading_system": "John",
-      "entry_price": 0.20419008,
-      "live_entry_fill": 0.2042,
-      "tp1_hit": false,
-      "iso": "2026-10-20T17:44:00Z",
-      "_iso_ms": 1792518240000,
-      "rehearsal": false
-    },
     {
       "trade_id": "LTCUSDT_20261019_CJ_001",
       "coin": "LTCUSDT",
