@@ -1,6 +1,6 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-10-22T08:47Z",
+  "generated_utc": "2026-10-22T08:49Z",
   "master": "braam",
   "retention_hours": 48,
   "trade_count": 24,
@@ -187,13 +187,13 @@
       "tp1": 103.98,
       "tp2": 96.95,
       "status": "OPEN",
-      "tp1_hit": false,
+      "tp1_hit": true,
       "tp2_hit": false,
       "sl_hit": false,
       "close_reason": null,
       "date_opened": "2026-10-15",
       "time_opened_utc": "04:04",
-      "sl_mode": "initial",
+      "sl_mode": "breakeven",
       "feed_updated_utc": "2026-10-21T15:12Z",
       "activated_utc": "2026-10-21T15:12Z"
     },
@@ -354,7 +354,7 @@
       "sl": 2.10396054,
       "tp1": 2.31544469,
       "tp2": 2.38307891,
-      "status": "PENDING",
+      "status": "OPEN",
       "tp1_hit": false,
       "tp2_hit": false,
       "sl_hit": false,
@@ -362,8 +362,8 @@
       "date_opened": "2026-10-19",
       "time_opened_utc": "04:04",
       "sl_mode": "initial",
-      "feed_updated_utc": "2026-10-19T04:04Z",
-      "activated_utc": null
+      "feed_updated_utc": "2026-10-22T08:31Z",
+      "activated_utc": "2026-10-22T08:31Z"
     },
     {
       "trade_id": "ONDOUSDT_20261019_CJ_001",
@@ -450,15 +450,15 @@
       "sl": 1.80823709,
       "tp1": 1.929,
       "tp2": 2.12552583,
-      "status": "OPEN",
+      "status": "STOPPED",
       "tp1_hit": false,
       "tp2_hit": false,
       "sl_hit": false,
-      "close_reason": null,
+      "close_reason": "live MEXC exit: sl @ 1.806",
       "date_opened": "2026-10-20",
       "time_opened_utc": "16:04",
       "sl_mode": "initial",
-      "feed_updated_utc": "2026-10-22T08:04Z",
+      "feed_updated_utc": "2026-10-22T08:35Z",
       "activated_utc": "2026-10-22T03:32Z"
     },
     {
@@ -474,7 +474,7 @@
       "sl": 0.75073193,
       "tp1": 0.83184551,
       "tp2": 0.8833,
-      "status": "PENDING",
+      "status": "OPEN",
       "tp1_hit": false,
       "tp2_hit": false,
       "sl_hit": false,
@@ -482,8 +482,8 @@
       "date_opened": "2026-10-20",
       "time_opened_utc": "20:04",
       "sl_mode": "initial",
-      "feed_updated_utc": "2026-10-20T20:04Z",
-      "activated_utc": null
+      "feed_updated_utc": "2026-10-22T08:08Z",
+      "activated_utc": "2026-10-22T08:08Z"
     },
     {
       "trade_id": "NEARUSDT_20261021_CB_001",
@@ -498,7 +498,7 @@
       "sl": 4.46959254,
       "tp1": 5.76176133,
       "tp2": 7.0484681,
-      "status": "PENDING",
+      "status": "OPEN",
       "tp1_hit": false,
       "tp2_hit": false,
       "sl_hit": false,
@@ -506,8 +506,8 @@
       "date_opened": "2026-10-21",
       "time_opened_utc": "12:04",
       "sl_mode": "initial",
-      "feed_updated_utc": "2026-10-21T12:04Z",
-      "activated_utc": null
+      "feed_updated_utc": "2026-10-22T08:36Z",
+      "activated_utc": "2026-10-22T08:36Z"
     },
     {
       "trade_id": "SOLUSDT_20261021_CB_001",

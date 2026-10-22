@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-22T08:47:05Z",
+  "updated": "2026-10-22T08:49:36Z",
   "positions": {
     "1414291495": {
       "position_id": "1414291495",
@@ -5511,6 +5511,16 @@
       "status": "OPEN",
       "braam_trade_id": "LTCUSDT_20261019_CJ_001"
     },
+    "1525108163": {
+      "position_id": "1525108163",
+      "coin": "CAKEUSDT",
+      "direction": "Long",
+      "leverage": 3,
+      "entry_price": 2.152,
+      "opened_at": "2026-10-22T08:31:07Z",
+      "status": "OPEN",
+      "braam_trade_id": "CAKEUSDT_20261019_CJ_001"
+    },
     "1524145664": {
       "position_id": "1524145664",
       "coin": "THETAUSDT",
@@ -5536,8 +5546,36 @@
       "leverage": 3,
       "entry_price": 1.857,
       "opened_at": "2026-10-22T03:32:22Z",
+      "status": "CLOSED",
+      "braam_trade_id": "RENDERUSDT_20261020_CJ_001",
+      "closed_at": "2026-10-22T08:35:11Z",
+      "close_price": 1.806,
+      "pnl_usd": -19.7035,
+      "margin_usd": 228.44,
+      "fees_usd": 0.9416,
+      "tag": "LOSS",
+      "close_type": 4,
+      "close_reason": "stop_loss"
+    },
+    "1525095783": {
+      "position_id": "1525095783",
+      "coin": "APTUSDT",
+      "direction": "Long",
+      "leverage": 3,
+      "entry_price": 0.7769,
+      "opened_at": "2026-10-22T08:08:16Z",
       "status": "OPEN",
-      "braam_trade_id": "RENDERUSDT_20261020_CJ_001"
+      "braam_trade_id": "APTUSDT_20261020_CJ_001"
+    },
+    "1525111399": {
+      "position_id": "1525111399",
+      "coin": "NEARUSDT",
+      "direction": "Long",
+      "leverage": 3,
+      "entry_price": 4.967,
+      "opened_at": "2026-10-22T08:36:08Z",
+      "status": "OPEN",
+      "braam_trade_id": "NEARUSDT_20261021_CB_001"
     },
     "1524960328": {
       "position_id": "1524960328",
@@ -5634,15 +5672,6 @@
       "braam_trade_id": "ETHUSDT_20261018_CJ_001",
       "status": "RESTING"
     },
-    "867013993996298752": {
-      "order_id": "867013993996298752",
-      "coin": "CAKEUSDT",
-      "direction": "Long",
-      "entry_price": 2.152,
-      "resting_at": "2026-10-19T04:04:00Z",
-      "braam_trade_id": "CAKEUSDT_20261019_CJ_001",
-      "status": "RESTING"
-    },
     "867014001899485260": {
       "order_id": "867014001899485260",
       "coin": "ONDOUSDT",
@@ -5659,24 +5688,6 @@
       "entry_price": 11.46718009,
       "resting_at": "2026-10-19T08:04:00Z",
       "braam_trade_id": "LINKUSDT_20261019_CJ_001",
-      "status": "RESTING"
-    },
-    "868041466304665606": {
-      "order_id": "868041466304665606",
-      "coin": "APTUSDT",
-      "direction": "Long",
-      "entry_price": 0.776925,
-      "resting_at": "2026-10-20T20:04:00Z",
-      "braam_trade_id": "APTUSDT_20261020_CJ_001",
-      "status": "RESTING"
-    },
-    "867859755870693888": {
-      "order_id": "867859755870693888",
-      "coin": "NEARUSDT",
-      "direction": "Long",
-      "entry_price": 4.96737088,
-      "resting_at": "2026-10-21T12:04:00Z",
-      "braam_trade_id": "NEARUSDT_20261021_CB_001",
       "status": "RESTING"
     }
   },
