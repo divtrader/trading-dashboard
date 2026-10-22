@@ -1,44 +1,19 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-10-22T06:24:26Z",
+  "last_updated_iso": "2026-10-22T06:26:38Z",
   "mexc_account": {
-    "unrealized_pnl": 20.282,
-    "equity": 4545.8901,
+    "unrealized_pnl": 19.7045,
+    "equity": 4545.3126,
     "available": 438.7137,
     "position_margin": 1111.6149
   },
   "order_levels": {
     "checked": 18,
-    "in_sync": 16,
-    "drifted": [
-      "RENDER",
-      "SOL"
-    ],
-    "reconciling": [
-      "THETA"
-    ],
-    "detail": [
-      {
-        "coin": "RENDER",
-        "trade_id": "RENDERUSDT_20261020_CJ_001",
-        "status": "OPEN",
-        "fields": [
-          "tp1"
-        ],
-        "synced_at": "2026-10-22T00:06:50.470176+00:00"
-      },
-      {
-        "coin": "SOL",
-        "trade_id": "SOLUSDT_20261021_CB_001",
-        "status": "OPEN",
-        "fields": [
-          "tp1",
-          "tp2"
-        ],
-        "synced_at": null
-      }
-    ]
+    "in_sync": 18,
+    "drifted": [],
+    "reconciling": [],
+    "detail": []
   },
   "api_keys": [
     {
@@ -99,7 +74,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$4,545.89",
+      "value": "$4,545.31",
       "status": "ok",
       "action": null
     },
@@ -546,38 +521,6 @@
       "rehearsal": false
     },
     {
-      "trade_id": "THETAUSDT_20261020_CJ_001",
-      "coin": "THETAUSDT",
-      "direction": "Long",
-      "entry_price": 0.20419008,
-      "sl": 0.19755245,
-      "tp1": 0.2222,
-      "tp2": 0.237,
-      "capital_usd": 228.44,
-      "leverage": 3,
-      "trading_system": "John",
-      "track_only": false,
-      "status": "OPEN",
-      "price_at_run": 0.1993,
-      "date_activated": "2026-10-20",
-      "time_activated_utc": "17:44",
-      "date_opened": "2026-10-20",
-      "time_opened_utc": "16:04",
-      "conviction": "HIGH",
-      "tp1_hit": false,
-      "sl_moved_to_be": null,
-      "pnl_tp1_realized_usd": null,
-      "tp2_hit": false,
-      "live_executed": true,
-      "live_entry_fill": 0.2042,
-      "live_exit_fill": null,
-      "live_entry_slippage_pct": 0.0049,
-      "live_fees_usd": 0.4111,
-      "live_funding_usd": null,
-      "live_tp1_pnl_usd": null,
-      "rehearsal": false
-    },
-    {
       "trade_id": "RENDERUSDT_20261020_CJ_001",
       "coin": "RENDERUSDT",
       "direction": "Long",
@@ -884,25 +827,6 @@
     }
   ],
   "recent_closes": [
-    {
-      "trade_id": "ETHUSDT_20260723_CB_001",
-      "coin": "ETHUSDT",
-      "direction": "Short",
-      "status": "STOPPED",
-      "pnl_usd": -4.91,
-      "close_reason": "live MEXC exit: sl @ 1951.51",
-      "date_closed": "2026-07-26",
-      "time_closed_utc": "22:48",
-      "trading_system": "Braam",
-      "live_entry_fill": 1913.31,
-      "live_exit_fill": 1951.51,
-      "live_entry_slippage_pct": -0.0003,
-      "live_fees_usd": 0.325,
-      "live_funding_usd": 0.004134,
-      "won": false,
-      "close_iso": "2026-07-26T22:48:00Z",
-      "rehearsal": false
-    },
     {
       "trade_id": "ALGOUSDT_20260726_CB_001",
       "coin": "ALGOUSDT",
@@ -4683,20 +4607,39 @@
       "won": true,
       "close_iso": "2026-10-22T02:18:00Z",
       "rehearsal": false
+    },
+    {
+      "trade_id": "THETAUSDT_20261020_CJ_001",
+      "coin": "THETAUSDT",
+      "direction": "Long",
+      "status": "STOPPED",
+      "pnl_usd": -22.82,
+      "close_reason": "live MEXC exit: sl @ 0.1976",
+      "date_closed": "2026-10-22",
+      "time_closed_utc": "05:55",
+      "trading_system": "John",
+      "live_entry_fill": 0.2042,
+      "live_exit_fill": 0.1976,
+      "live_entry_slippage_pct": 0.0049,
+      "live_fees_usd": 0.9416,
+      "live_funding_usd": -0.27546,
+      "won": false,
+      "close_iso": "2026-10-22T05:55:00Z",
+      "rehearsal": false
     }
   ],
   "recent_cancels": [],
   "tp1_hits_open": [],
   "stats": {
-    "realized_pnl_usd": -122.69,
-    "realized_pnl_pct": -0.3,
+    "realized_pnl_usd": -145.51,
+    "realized_pnl_pct": -0.35,
     "peak_capital_usd": 1926.61,
     "peak_concurrent": 8,
     "peak_date": "2026-10-12",
     "deployed_trades": 311,
-    "return_on_peak_pct": -6.37,
-    "win_rate_pct": 39.3,
-    "closed_count": 305,
+    "return_on_peak_pct": -7.55,
+    "win_rate_pct": 39.2,
+    "closed_count": 306,
     "per_system": {
       "Braam": {
         "realized_pnl_usd": -61.29,
@@ -4704,9 +4647,9 @@
         "closed_count": 155
       },
       "John": {
-        "realized_pnl_usd": 17.3,
-        "win_rate_pct": 37.6,
-        "closed_count": 149
+        "realized_pnl_usd": -5.51,
+        "win_rate_pct": 37.3,
+        "closed_count": 150
       },
       "Mong": {
         "realized_pnl_usd": -78.7,
