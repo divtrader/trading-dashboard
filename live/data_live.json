@@ -1,21 +1,44 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-10-22T06:09:44Z",
+  "last_updated_iso": "2026-10-22T06:24:26Z",
   "mexc_account": {
-    "unrealized_pnl": 19.8365,
-    "equity": 4545.4446,
+    "unrealized_pnl": 20.282,
+    "equity": 4545.8901,
     "available": 438.7137,
     "position_margin": 1111.6149
   },
   "order_levels": {
     "checked": 18,
-    "in_sync": 18,
-    "drifted": [],
+    "in_sync": 16,
+    "drifted": [
+      "RENDER",
+      "SOL"
+    ],
     "reconciling": [
       "THETA"
     ],
-    "detail": []
+    "detail": [
+      {
+        "coin": "RENDER",
+        "trade_id": "RENDERUSDT_20261020_CJ_001",
+        "status": "OPEN",
+        "fields": [
+          "tp1"
+        ],
+        "synced_at": "2026-10-22T00:06:50.470176+00:00"
+      },
+      {
+        "coin": "SOL",
+        "trade_id": "SOLUSDT_20261021_CB_001",
+        "status": "OPEN",
+        "fields": [
+          "tp1",
+          "tp2"
+        ],
+        "synced_at": null
+      }
+    ]
   },
   "api_keys": [
     {
@@ -60,7 +83,7 @@
       "key": "cron_watchlist",
       "tier": 1,
       "label": "Last cloud run",
-      "value": "2.0h ago",
+      "value": "0.0h ago",
       "status": "ok",
       "action": null
     },
@@ -76,7 +99,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$4,545.44",
+      "value": "$4,545.89",
       "status": "ok",
       "action": null
     },
@@ -560,7 +583,7 @@
       "direction": "Long",
       "entry_price": 1.85726543,
       "sl": 1.80823709,
-      "tp1": 2.06219269,
+      "tp1": 1.929,
       "tp2": 2.12552583,
       "capital_usd": 228.44,
       "leverage": 3,
@@ -656,8 +679,8 @@
       "direction": "Long",
       "entry_price": 105.33092018,
       "sl": 100.98126485,
-      "tp1": 123.49772839,
-      "tp2": 135.02348969,
+      "tp1": 108.37,
+      "tp2": 112.3,
       "capital_usd": 210.44,
       "leverage": 3,
       "trading_system": "Braam",
