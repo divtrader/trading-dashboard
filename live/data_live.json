@@ -1,43 +1,19 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-10-24T06:11:10Z",
+  "last_updated_iso": "2026-10-24T06:13:20Z",
   "mexc_account": {
-    "unrealized_pnl": -76.2938,
-    "equity": 4455.3361,
+    "unrealized_pnl": -73.7378,
+    "equity": 4457.8921,
     "available": 1104.921,
     "position_margin": 1382.8
   },
   "order_levels": {
     "checked": 15,
-    "in_sync": 13,
-    "drifted": [
-      "ALGO",
-      "ONDO"
-    ],
+    "in_sync": 15,
+    "drifted": [],
     "reconciling": [],
-    "detail": [
-      {
-        "coin": "ALGO",
-        "trade_id": "ALGOUSDT_20261017_CJ_001",
-        "status": "OPEN",
-        "fields": [
-          "tp1",
-          "tp2"
-        ],
-        "synced_at": null
-      },
-      {
-        "coin": "ONDO",
-        "trade_id": "ONDOUSDT_20261019_CJ_001",
-        "status": "OPEN",
-        "fields": [
-          "tp1",
-          "tp2"
-        ],
-        "synced_at": null
-      }
-    ]
+    "detail": []
   },
   "api_keys": [
     {
@@ -98,7 +74,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$4,455.34",
+      "value": "$4,457.89",
       "status": "ok",
       "action": null
     },
