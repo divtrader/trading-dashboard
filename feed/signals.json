@@ -1,9 +1,9 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-10-24T14:22Z",
+  "generated_utc": "2026-10-24T16:10Z",
   "master": "braam",
   "retention_hours": 48,
-  "trade_count": 29,
+  "trade_count": 30,
   "trades": [
     {
       "trade_id": "ETHUSDT_20261008_CJ_001",
@@ -162,15 +162,15 @@
       "sl": 0.10207019,
       "tp1": 0.1091,
       "tp2": 0.1152,
-      "status": "OPEN",
+      "status": "STOPPED",
       "tp1_hit": false,
       "tp2_hit": false,
       "sl_hit": false,
-      "close_reason": null,
+      "close_reason": "live MEXC exit: sl @ 0.10188",
       "date_opened": "2026-10-17",
       "time_opened_utc": "16:03",
       "sl_mode": "initial",
-      "feed_updated_utc": "2026-10-24T08:04Z",
+      "feed_updated_utc": "2026-10-24T15:06Z",
       "activated_utc": "2026-10-23T22:47Z"
     },
     {
@@ -709,6 +709,31 @@
       "code_sha": "4d1be59e706e",
       "sl_mode": "initial",
       "feed_updated_utc": "2026-10-24T12:04Z",
+      "activated_utc": null
+    },
+    {
+      "trade_id": "TRXUSDT_20261024_CJ_001",
+      "coin": "TRXUSDT",
+      "direction": "Long",
+      "trading_system": "John",
+      "conviction": "MEDIUM",
+      "leverage": 3,
+      "entry_price": 0.32139374,
+      "entry_lo": 0.32013997,
+      "entry_hi": 0.32515503,
+      "sl": 0.3202671,
+      "tp1": 0.344387,
+      "tp2": 0.3505137,
+      "status": "PENDING",
+      "tp1_hit": false,
+      "tp2_hit": false,
+      "sl_hit": false,
+      "close_reason": null,
+      "date_opened": "2026-10-24",
+      "time_opened_utc": "16:04",
+      "code_sha": "7723d17b5d6f",
+      "sl_mode": "initial",
+      "feed_updated_utc": "2026-10-24T16:04Z",
       "activated_utc": null
     }
   ]
