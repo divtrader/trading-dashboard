@@ -1,12 +1,12 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-10-24T04:09:26Z",
+  "last_updated_iso": "2026-10-24T06:09:33Z",
   "mexc_account": {
-    "unrealized_pnl": -66.9304,
-    "equity": 4465.2274,
-    "available": 1325.9513,
-    "position_margin": 1162.2976
+    "unrealized_pnl": -77.9877,
+    "equity": 4453.6422,
+    "available": 1104.921,
+    "position_margin": 1382.8
   },
   "order_levels": {
     "checked": 15,
@@ -58,7 +58,7 @@
       "key": "cron_watchlist",
       "tier": 1,
       "label": "Last cloud run",
-      "value": "0.0h ago",
+      "value": "0.3h ago",
       "status": "ok",
       "action": null
     },
@@ -74,7 +74,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$4,465.23",
+      "value": "$4,453.64",
       "status": "ok",
       "action": null
     },
@@ -98,9 +98,9 @@
       "key": "position_protection",
       "tier": 1,
       "label": "Position protection",
-      "value": "all protected (6 open, 5 pre-TP1 runners)",
-      "status": "ok",
-      "action": null
+      "value": "live read failed",
+      "status": "warn",
+      "action": "Worker health read failed \u2014 can't confirm SL protection; check the Worker."
     },
     {
       "key": "apikey_MEXC_ALGO_KEY",
@@ -261,7 +261,7 @@
       "live_entry_slippage_pct": -0.0045,
       "live_fees_usd": 0.8037,
       "live_funding_usd": null,
-      "live_tp1_pnl_usd": 20.2194,
+      "live_tp1_pnl_usd": 20.923,
       "rehearsal": false
     },
     {
