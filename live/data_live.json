@@ -1,19 +1,31 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-10-24T12:10:07Z",
+  "last_updated_iso": "2026-10-24T12:11:31Z",
   "mexc_account": {
-    "unrealized_pnl": -21.7616,
-    "equity": 4397.7559,
+    "unrealized_pnl": -21.9897,
+    "equity": 4397.5277,
     "available": 565.8543,
     "position_margin": 698.6629
   },
   "order_levels": {
     "checked": 18,
-    "in_sync": 18,
-    "drifted": [],
+    "in_sync": 17,
+    "drifted": [
+      "XRP"
+    ],
     "reconciling": [],
-    "detail": []
+    "detail": [
+      {
+        "coin": "XRP",
+        "trade_id": "XRPUSDT_20261021_CJ_001",
+        "status": "OPEN",
+        "fields": [
+          "tp2"
+        ],
+        "synced_at": null
+      }
+    ]
   },
   "api_keys": [
     {
@@ -74,7 +86,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$4,397.76",
+      "value": "$4,397.53",
       "status": "ok",
       "action": null
     },
@@ -366,8 +378,8 @@
       "direction": "Long",
       "entry_price": 1.29995755,
       "sl": 1.27673006,
-      "tp1": 1.3246,
-      "tp2": 1.3884,
+      "tp1": 1.324,
+      "tp2": 1.3836,
       "capital_usd": 221.29,
       "leverage": 3,
       "trading_system": "John",
