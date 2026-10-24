@@ -1,5 +1,5 @@
 {
-  "last_updated_iso": "2026-10-24T06:13:16Z",
+  "last_updated_iso": "2026-10-24T08:07:11Z",
   "mexc_account": null,
   "api_keys": [
     {
@@ -274,7 +274,7 @@
       "leverage": 3,
       "trading_system": "John",
       "track_only": false,
-      "status": "PENDING",
+      "status": "OPEN",
       "price_at_run": 1.2942,
       "date_activated": null,
       "time_activated_utc": null,
@@ -508,16 +508,6 @@
     }
   ],
   "recent_opens": [
-    {
-      "trade_id": "BNBUSDT_20261021_CB_001",
-      "coin": "BNBUSDT",
-      "direction": "Long",
-      "trading_system": "Braam",
-      "entry_price": 736.12333299,
-      "tp1_hit": true,
-      "iso": "2026-10-22T08:02:00Z",
-      "_iso_ms": 1792656120000
-    },
     {
       "trade_id": "APTUSDT_20261020_CJ_001",
       "coin": "APTUSDT",
@@ -1211,22 +1201,7 @@
       "fees_modeled": true
     }
   ],
-  "recent_cancels": [
-    {
-      "coin": "ETHUSDT",
-      "direction": "Short",
-      "trading_system": "John",
-      "close_reason": "Entry window expired: unfilled 15.0d \u2265 90\u00d74H (360h) \u2014 mirrors backtest ENTRY_WIN",
-      "iso": "2026-10-23T20:04:00Z"
-    },
-    {
-      "coin": "DOGEUSDT",
-      "direction": "Short",
-      "trading_system": "John",
-      "close_reason": "Entry window expired: unfilled 15.0d \u2265 90\u00d74H (360h) \u2014 mirrors backtest ENTRY_WIN",
-      "iso": "2026-10-23T20:04:00Z"
-    }
-  ],
+  "recent_cancels": [],
   "tp1_hits_open": [
     {
       "coin": "SOLUSDT",
@@ -1241,7 +1216,7 @@
     "peak_capital_usd": 3300,
     "peak_concurrent": 33,
     "peak_date": "2026-06-22",
-    "deployed_trades": 801,
+    "deployed_trades": 802,
     "return_on_peak_pct": 32.1,
     "win_rate_pct": 34.2,
     "closed_count": 783,

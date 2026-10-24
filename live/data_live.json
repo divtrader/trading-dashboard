@@ -1,19 +1,34 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-10-24T06:13:20Z",
+  "last_updated_iso": "2026-10-24T08:07:14Z",
   "mexc_account": {
-    "unrealized_pnl": -73.7378,
-    "equity": 4457.8921,
-    "available": 1104.921,
-    "position_margin": 1382.8
+    "unrealized_pnl": -93.2298,
+    "equity": 4422.5452,
+    "available": 873.0386,
+    "position_margin": 1155.5786
   },
   "order_levels": {
     "checked": 15,
-    "in_sync": 15,
-    "drifted": [],
-    "reconciling": [],
-    "detail": []
+    "in_sync": 14,
+    "drifted": [
+      "XRP"
+    ],
+    "reconciling": [
+      "CAKE"
+    ],
+    "detail": [
+      {
+        "coin": "XRP",
+        "trade_id": "XRPUSDT_20261021_CJ_001",
+        "status": "OPEN",
+        "fields": [
+          "tp1",
+          "tp2"
+        ],
+        "synced_at": null
+      }
+    ]
   },
   "api_keys": [
     {
@@ -74,7 +89,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$4,457.89",
+      "value": "$4,422.55",
       "status": "ok",
       "action": null
     },
@@ -90,15 +105,15 @@
       "key": "orphan_orders",
       "tier": 1,
       "label": "Order reconciliation",
-      "value": "in sync (9 resting = journal)",
-      "status": "ok",
-      "action": null
+      "value": "3 ORPHAN order(s) on MEXC",
+      "status": "urgent",
+      "action": "Untracked resting order(s) \u2014 cancel on MEXC (double-fill risk): APT_USDT Short @ 0.7665 (id 868886540408198656), ONDO_USDT Short @ 0.4325 (id 868886532260508224), CAKE_USDT Short @ 2.222 (id 868886523388441600)"
     },
     {
       "key": "position_protection",
       "tier": 1,
       "label": "Position protection",
-      "value": "all protected (7 open, 6 pre-TP1 runners)",
+      "value": "all protected (6 open, 5 pre-TP1 runners)",
       "status": "ok",
       "action": null
     },
@@ -261,7 +276,7 @@
       "live_entry_slippage_pct": -0.0045,
       "live_fees_usd": 0.8037,
       "live_funding_usd": null,
-      "live_tp1_pnl_usd": 20.2194,
+      "live_tp1_pnl_usd": 20.923,
       "rehearsal": false
     },
     {
@@ -416,6 +431,38 @@
       "pnl_tp1_realized_usd": null,
       "tp2_hit": false,
       "live_executed": null,
+      "live_entry_fill": null,
+      "live_exit_fill": null,
+      "live_entry_slippage_pct": null,
+      "live_fees_usd": null,
+      "live_funding_usd": null,
+      "live_tp1_pnl_usd": null,
+      "rehearsal": false
+    },
+    {
+      "trade_id": "XRPUSDT_20261021_CJ_001",
+      "coin": "XRPUSDT",
+      "direction": "Long",
+      "entry_price": 1.29995755,
+      "sl": 1.27673006,
+      "tp1": 1.3246,
+      "tp2": 1.3884,
+      "capital_usd": 100,
+      "leverage": 3,
+      "trading_system": "John",
+      "track_only": false,
+      "status": "OPEN",
+      "price_at_run": 1.2942,
+      "date_activated": null,
+      "time_activated_utc": null,
+      "date_opened": "2026-10-21",
+      "time_opened_utc": "04:04",
+      "conviction": "MEDIUM",
+      "tp1_hit": false,
+      "sl_moved_to_be": null,
+      "pnl_tp1_realized_usd": null,
+      "tp2_hit": false,
+      "live_executed": true,
       "live_entry_fill": null,
       "live_exit_fill": null,
       "live_entry_slippage_pct": null,
@@ -633,18 +680,6 @@
     }
   ],
   "recent_opens": [
-    {
-      "trade_id": "BNBUSDT_20261021_CB_001",
-      "coin": "BNBUSDT",
-      "direction": "Long",
-      "trading_system": "Braam",
-      "entry_price": 736.12333299,
-      "live_entry_fill": 736.1,
-      "tp1_hit": true,
-      "iso": "2026-10-22T08:02:00Z",
-      "_iso_ms": 1792656120000,
-      "rehearsal": false
-    },
     {
       "trade_id": "APTUSDT_20261020_CJ_001",
       "coin": "APTUSDT",
@@ -4508,22 +4543,7 @@
       "rehearsal": false
     }
   ],
-  "recent_cancels": [
-    {
-      "coin": "ETHUSDT",
-      "direction": "Short",
-      "trading_system": "John",
-      "close_reason": "Entry window expired: unfilled 15.0d \u2265 90\u00d74H (360h) \u2014 mirrors backtest ENTRY_WIN",
-      "iso": "2026-10-23T20:04:00Z"
-    },
-    {
-      "coin": "DOGEUSDT",
-      "direction": "Short",
-      "trading_system": "John",
-      "close_reason": "Entry window expired: unfilled 15.0d \u2265 90\u00d74H (360h) \u2014 mirrors backtest ENTRY_WIN",
-      "iso": "2026-10-23T20:04:00Z"
-    }
-  ],
+  "recent_cancels": [],
   "tp1_hits_open": [
     {
       "coin": "SOLUSDT",
@@ -4538,7 +4558,7 @@
     "peak_capital_usd": 1926.61,
     "peak_concurrent": 8,
     "peak_date": "2026-10-12",
-    "deployed_trades": 317,
+    "deployed_trades": 318,
     "return_on_peak_pct": -8.27,
     "win_rate_pct": 39.2,
     "closed_count": 311,
@@ -4559,8 +4579,8 @@
         "closed_count": 1
       }
     },
-    "live_trade_count_total": 448,
-    "live_real_count": 425,
+    "live_trade_count_total": 449,
+    "live_real_count": 426,
     "live_rehearsal_count": 23
   }
 }
