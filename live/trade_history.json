@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-24T08:07:28Z",
+  "updated": "2026-10-24T08:10:19Z",
   "positions": {
     "1414291495": {
       "position_id": "1414291495",
@@ -5536,8 +5536,16 @@
       "leverage": 3,
       "entry_price": 2.152,
       "opened_at": "2026-10-22T08:31:07Z",
-      "status": "OPEN",
-      "braam_trade_id": "CAKEUSDT_20261019_CJ_001"
+      "status": "CLOSED",
+      "braam_trade_id": "CAKEUSDT_20261019_CJ_001",
+      "closed_at": "2026-10-24T07:52:44Z",
+      "close_price": 2.1037,
+      "pnl_usd": -16.237,
+      "margin_usd": 227.21,
+      "fees_usd": 0.9398,
+      "tag": "LOSS",
+      "close_type": 4,
+      "close_reason": "stop_loss"
     },
     "1526151565": {
       "position_id": "1526151565",
@@ -5688,15 +5696,6 @@
       "braam_trade_id": "BTCUSDT_20261015_CJ_001",
       "status": "RESTING"
     },
-    "866893204543334912": {
-      "order_id": "866893204543334912",
-      "coin": "ETHUSDT",
-      "direction": "Long",
-      "entry_price": 2296.00525899,
-      "resting_at": "2026-10-18T20:04:00Z",
-      "braam_trade_id": "ETHUSDT_20261018_CJ_001",
-      "status": "RESTING"
-    },
     "868162181793994752": {
       "order_id": "868162181793994752",
       "coin": "LINKUSDT",
@@ -5740,6 +5739,33 @@
       "entry_price": 2478.93260158,
       "resting_at": "2026-10-24T00:04:00Z",
       "braam_trade_id": "ETHUSDT_20261024_CJ_001",
+      "status": "RESTING"
+    },
+    "868886523388441600": {
+      "order_id": "868886523388441600",
+      "coin": "CAKEUSDT",
+      "direction": "Short",
+      "entry_price": 2.222,
+      "resting_at": "2026-10-24T08:04:00Z",
+      "braam_trade_id": "CAKEUSDT_20261024_CJ_001",
+      "status": "RESTING"
+    },
+    "868886532260508224": {
+      "order_id": "868886532260508224",
+      "coin": "ONDOUSDT",
+      "direction": "Short",
+      "entry_price": 0.43254605,
+      "resting_at": "2026-10-24T08:04:00Z",
+      "braam_trade_id": "ONDOUSDT_20261024_CJ_001",
+      "status": "RESTING"
+    },
+    "868886540408198656": {
+      "order_id": "868886540408198656",
+      "coin": "APTUSDT",
+      "direction": "Short",
+      "entry_price": 0.76652358,
+      "resting_at": "2026-10-24T08:04:00Z",
+      "braam_trade_id": "APTUSDT_20261024_CJ_001",
       "status": "RESTING"
     }
   },
