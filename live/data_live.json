@@ -1,10 +1,10 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-10-25T04:10:03Z",
+  "last_updated_iso": "2026-10-25T06:09:32Z",
   "mexc_account": {
-    "unrealized_pnl": 25.6524,
-    "equity": 4391.4946,
+    "unrealized_pnl": 11.7483,
+    "equity": 4377.5905,
     "available": 964.9111,
     "position_margin": 497.0793
   },
@@ -58,7 +58,7 @@
       "key": "cron_watchlist",
       "tier": 1,
       "label": "Last cloud run",
-      "value": "0.0h ago",
+      "value": "2.0h ago",
       "status": "ok",
       "action": null
     },
@@ -74,7 +74,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$4,391.49",
+      "value": "$4,377.59",
       "status": "ok",
       "action": null
     },
@@ -90,17 +90,17 @@
       "key": "orphan_orders",
       "tier": 1,
       "label": "Order reconciliation",
-      "value": "in sync (13 resting = journal)",
-      "status": "ok",
-      "action": null
+      "value": "1 ORPHAN order(s) on MEXC",
+      "status": "urgent",
+      "action": "Untracked resting order(s) \u2014 cancel on MEXC (double-fill risk): ONDO_USDT Short @ 0.4325 (id 869219135601653824)"
     },
     {
       "key": "position_protection",
       "tier": 1,
       "label": "Position protection",
-      "value": "live read failed",
-      "status": "warn",
-      "action": "Worker health read failed \u2014 can't confirm SL protection; check the Worker."
+      "value": "all protected (3 open, 2 pre-TP1 runners)",
+      "status": "ok",
+      "action": null
     },
     {
       "key": "apikey_MEXC_ALGO_KEY",
@@ -229,7 +229,7 @@
       "live_entry_slippage_pct": -0.0045,
       "live_fees_usd": 0.8037,
       "live_funding_usd": null,
-      "live_tp1_pnl_usd": 20.923,
+      "live_tp1_pnl_usd": 20.2317,
       "rehearsal": false
     },
     {
