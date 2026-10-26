@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-26T02:08:46Z",
+  "updated": "2026-10-26T04:09:53Z",
   "positions": {
     "1414291495": {
       "position_id": "1414291495",
@@ -5501,6 +5501,16 @@
       "close_type": 4,
       "close_reason": "stop_loss"
     },
+    "1527262723": {
+      "position_id": "1527262723",
+      "coin": "NEARUSDT",
+      "direction": "Long",
+      "leverage": 3,
+      "entry_price": 4.441,
+      "opened_at": "2026-10-26T03:29:06Z",
+      "status": "OPEN",
+      "braam_trade_id": "NEARUSDT_20261018_CJ_001"
+    },
     "1523828180": {
       "position_id": "1523828180",
       "coin": "AVAXUSDT",
@@ -5734,27 +5744,26 @@
       "leverage": 3,
       "entry_price": 0.1853,
       "opened_at": "2026-10-24T14:16:52Z",
-      "status": "OPEN",
-      "braam_trade_id": "THETAUSDT_20261022_CJ_001"
+      "status": "CLOSED",
+      "braam_trade_id": "THETAUSDT_20261022_CJ_001",
+      "closed_at": "2026-10-26T03:29:15Z",
+      "close_price": 0.1794,
+      "pnl_usd": -22.4611,
+      "margin_usd": 225.52,
+      "fees_usd": 0.9298,
+      "tag": "LOSS",
+      "close_type": 4,
+      "close_reason": "stop_loss"
     }
   },
   "orders": {
-    "868162148872837120": {
-      "order_id": "868162148872837120",
+    "869551246527256576": {
+      "order_id": "869551246527256576",
       "coin": "BTCUSDT",
       "direction": "Long",
-      "entry_price": 79110.46352921,
+      "entry_price": 76452.905,
       "resting_at": "2026-10-15T04:04:00Z",
       "braam_trade_id": "BTCUSDT_20261015_CJ_001",
-      "status": "RESTING"
-    },
-    "869490903482873856": {
-      "order_id": "869490903482873856",
-      "coin": "NEARUSDT",
-      "direction": "Long",
-      "entry_price": 4.44147422,
-      "resting_at": "2026-10-18T16:03:00Z",
-      "braam_trade_id": "NEARUSDT_20261018_CJ_001",
       "status": "RESTING"
     },
     "869188923535741440": {
@@ -5766,11 +5775,11 @@
       "braam_trade_id": "HBARUSDT_20261021_CJ_001",
       "status": "RESTING"
     },
-    "869188956581923328": {
-      "order_id": "869188956581923328",
+    "869551296183671296": {
+      "order_id": "869551296183671296",
       "coin": "XRPUSDT",
       "direction": "Short",
-      "entry_price": 1.34410095,
+      "entry_price": 1.32252913,
       "resting_at": "2026-10-22T16:04:00Z",
       "braam_trade_id": "XRPUSDT_20261022_CJ_001",
       "status": "RESTING"
