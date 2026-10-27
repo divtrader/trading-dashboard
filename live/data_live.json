@@ -1,19 +1,31 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-10-27T14:10:30Z",
+  "last_updated_iso": "2026-10-27T15:28:13Z",
   "mexc_account": {
-    "unrealized_pnl": 24.6061,
-    "equity": 4366.0885,
-    "available": 742.0722,
-    "position_margin": 1372.9145
+    "unrealized_pnl": 67.9265,
+    "equity": 4409.001,
+    "available": 742.2086,
+    "position_margin": 1600.217
   },
   "order_levels": {
     "checked": 17,
-    "in_sync": 17,
-    "drifted": [],
+    "in_sync": 16,
+    "drifted": [
+      "XRP"
+    ],
     "reconciling": [],
-    "detail": []
+    "detail": [
+      {
+        "coin": "XRP",
+        "trade_id": "XRPUSDT_20261022_CJ_001",
+        "status": "PENDING",
+        "fields": [
+          "tp1"
+        ],
+        "synced_at": "2026-10-26T04:06:24.700208+00:00"
+      }
+    ]
   },
   "api_keys": [
     {
@@ -74,7 +86,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$4,366.09",
+      "value": "$4,409.00",
       "status": "ok",
       "action": null
     },
@@ -90,7 +102,7 @@
       "key": "orphan_orders",
       "tier": 1,
       "label": "Order reconciliation",
-      "value": "in sync (10 resting = journal)",
+      "value": "in sync (9 resting = journal)",
       "status": "ok",
       "action": null
     },
@@ -98,7 +110,7 @@
       "key": "position_protection",
       "tier": 1,
       "label": "Position protection",
-      "value": "all protected (7 open, 6 pre-TP1 runners)",
+      "value": "all protected (0 open, 0 pre-TP1 runners)",
       "status": "ok",
       "action": null
     },
@@ -197,7 +209,7 @@
       "live_entry_slippage_pct": -0.0045,
       "live_fees_usd": 0.8037,
       "live_funding_usd": null,
-      "live_tp1_pnl_usd": 20.2908,
+      "live_tp1_pnl_usd": 20.923,
       "rehearsal": false
     },
     {
@@ -270,8 +282,8 @@
       "direction": "Short",
       "entry_price": 1.32252913,
       "sl": 1.34170568,
-      "tp1": 1.16443357,
-      "tp2": 1.1215,
+      "tp1": 1.279,
+      "tp2": 1.2589,
       "capital_usd": 226.85,
       "leverage": 3,
       "trading_system": "John",
