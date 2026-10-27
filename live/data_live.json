@@ -1,31 +1,19 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-10-27T15:28:13Z",
+  "last_updated_iso": "2026-10-27T15:30:32Z",
   "mexc_account": {
-    "unrealized_pnl": 67.9265,
-    "equity": 4409.001,
+    "unrealized_pnl": 64.0452,
+    "equity": 4405.1197,
     "available": 742.2086,
     "position_margin": 1600.217
   },
   "order_levels": {
     "checked": 17,
-    "in_sync": 16,
-    "drifted": [
-      "XRP"
-    ],
+    "in_sync": 17,
+    "drifted": [],
     "reconciling": [],
-    "detail": [
-      {
-        "coin": "XRP",
-        "trade_id": "XRPUSDT_20261022_CJ_001",
-        "status": "PENDING",
-        "fields": [
-          "tp1"
-        ],
-        "synced_at": "2026-10-26T04:06:24.700208+00:00"
-      }
-    ]
+    "detail": []
   },
   "api_keys": [
     {
@@ -86,7 +74,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$4,409.00",
+      "value": "$4,405.12",
       "status": "ok",
       "action": null
     },
@@ -110,7 +98,7 @@
       "key": "position_protection",
       "tier": 1,
       "label": "Position protection",
-      "value": "all protected (0 open, 0 pre-TP1 runners)",
+      "value": "all protected (8 open, 7 pre-TP1 runners)",
       "status": "ok",
       "action": null
     },
@@ -209,7 +197,7 @@
       "live_entry_slippage_pct": -0.0045,
       "live_fees_usd": 0.8037,
       "live_funding_usd": null,
-      "live_tp1_pnl_usd": 20.923,
+      "live_tp1_pnl_usd": 20.2908,
       "rehearsal": false
     },
     {
@@ -288,10 +276,10 @@
       "leverage": 3,
       "trading_system": "John",
       "track_only": false,
-      "status": "PENDING",
+      "status": "OPEN",
       "price_at_run": 1.3089,
-      "date_activated": null,
-      "time_activated_utc": null,
+      "date_activated": "2026-10-27",
+      "time_activated_utc": "15:24",
       "date_opened": "2026-10-22",
       "time_opened_utc": "16:04",
       "conviction": "MEDIUM",
@@ -299,11 +287,11 @@
       "sl_moved_to_be": null,
       "pnl_tp1_realized_usd": null,
       "tp2_hit": false,
-      "live_executed": null,
-      "live_entry_fill": null,
+      "live_executed": true,
+      "live_entry_fill": 1.3225,
       "live_exit_fill": null,
-      "live_entry_slippage_pct": null,
-      "live_fees_usd": null,
+      "live_entry_slippage_pct": 0.0022,
+      "live_fees_usd": 0.4078,
       "live_funding_usd": null,
       "live_tp1_pnl_usd": null,
       "rehearsal": false
@@ -753,6 +741,18 @@
       "tp1_hit": false,
       "iso": "2026-10-27T12:26:00Z",
       "_iso_ms": 1793103960000,
+      "rehearsal": false
+    },
+    {
+      "trade_id": "XRPUSDT_20261022_CJ_001",
+      "coin": "XRPUSDT",
+      "direction": "Short",
+      "trading_system": "John",
+      "entry_price": 1.32252913,
+      "live_entry_fill": 1.3225,
+      "tp1_hit": false,
+      "iso": "2026-10-27T15:24:00Z",
+      "_iso_ms": 1793114640000,
       "rehearsal": false
     }
   ],
@@ -4573,7 +4573,7 @@
     "peak_capital_usd": 1926.61,
     "peak_concurrent": 8,
     "peak_date": "2026-10-12",
-    "deployed_trades": 325,
+    "deployed_trades": 326,
     "return_on_peak_pct": -17.79,
     "win_rate_pct": 38.4,
     "closed_count": 318,
