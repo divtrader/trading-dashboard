@@ -1,19 +1,41 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-10-27T10:09:38Z",
+  "last_updated_iso": "2026-10-27T11:49:48Z",
   "mexc_account": {
-    "unrealized_pnl": -16.0208,
-    "equity": 4325.8864,
+    "unrealized_pnl": 13.2841,
+    "equity": 4355.1913,
     "available": 741.9742,
     "position_margin": 1154.4929
   },
   "order_levels": {
     "checked": 17,
-    "in_sync": 17,
-    "drifted": [],
+    "in_sync": 15,
+    "drifted": [
+      "ALGO",
+      "RENDER"
+    ],
     "reconciling": [],
-    "detail": []
+    "detail": [
+      {
+        "coin": "ALGO",
+        "trade_id": "ALGOUSDT_20261025_CJ_001",
+        "status": "PENDING",
+        "fields": [
+          "tp1"
+        ],
+        "synced_at": "2026-10-27T00:06:38.542353+00:00"
+      },
+      {
+        "coin": "RENDER",
+        "trade_id": "RENDERUSDT_20261026_CJ_001",
+        "status": "PENDING",
+        "fields": [
+          "tp1"
+        ],
+        "synced_at": null
+      }
+    ]
   },
   "api_keys": [
     {
@@ -58,7 +80,7 @@
       "key": "cron_watchlist",
       "tier": 1,
       "label": "Last cloud run",
-      "value": "2.0h ago",
+      "value": "0.0h ago",
       "status": "ok",
       "action": null
     },
@@ -74,7 +96,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$4,325.89",
+      "value": "$4,355.19",
       "status": "ok",
       "action": null
     },
@@ -98,7 +120,7 @@
       "key": "position_protection",
       "tier": 1,
       "label": "Position protection",
-      "value": "all protected (0 open, 0 pre-TP1 runners)",
+      "value": "all protected (6 open, 5 pre-TP1 runners)",
       "status": "ok",
       "action": null
     },
@@ -558,8 +580,8 @@
       "direction": "Long",
       "entry_price": 0.10269744,
       "sl": 0.10053299,
-      "tp1": 0.10880647,
-      "tp2": 0.11633401,
+      "tp1": 0.106,
+      "tp2": 0.109,
       "capital_usd": 218.24,
       "leverage": 3,
       "trading_system": "John",
@@ -590,8 +612,8 @@
       "direction": "Long",
       "entry_price": 1.66469588,
       "sl": 1.62432141,
-      "tp1": 1.84884,
-      "tp2": 1.91135718,
+      "tp1": 1.737,
+      "tp2": 1.922,
       "capital_usd": 218.19,
       "leverage": 3,
       "trading_system": "John",
