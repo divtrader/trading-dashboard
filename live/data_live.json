@@ -1,31 +1,19 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-10-27T12:28:46Z",
+  "last_updated_iso": "2026-10-27T12:30:56Z",
   "mexc_account": {
-    "unrealized_pnl": 33.7865,
-    "equity": 4375.2688,
+    "unrealized_pnl": 36.4695,
+    "equity": 4377.9519,
     "available": 742.0722,
     "position_margin": 1372.9145
   },
   "order_levels": {
     "checked": 17,
-    "in_sync": 16,
-    "drifted": [
-      "CAKE"
-    ],
+    "in_sync": 17,
+    "drifted": [],
     "reconciling": [],
-    "detail": [
-      {
-        "coin": "CAKE",
-        "trade_id": "CAKEUSDT_20261026_CJ_001",
-        "status": "PENDING",
-        "fields": [
-          "tp1"
-        ],
-        "synced_at": null
-      }
-    ]
+    "detail": []
   },
   "api_keys": [
     {
@@ -86,7 +74,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$4,375.27",
+      "value": "$4,377.95",
       "status": "ok",
       "action": null
     },
@@ -110,7 +98,7 @@
       "key": "position_protection",
       "tier": 1,
       "label": "Position protection",
-      "value": "all protected (7 open, 5 pre-TP1 runners)",
+      "value": "all protected (7 open, 6 pre-TP1 runners)",
       "status": "ok",
       "action": null
     },
@@ -209,7 +197,7 @@
       "live_entry_slippage_pct": -0.0045,
       "live_fees_usd": 0.8037,
       "live_funding_usd": null,
-      "live_tp1_pnl_usd": 20.2908,
+      "live_tp1_pnl_usd": 20.923,
       "rehearsal": false
     },
     {
@@ -640,10 +628,10 @@
       "leverage": 3,
       "trading_system": "John",
       "track_only": false,
-      "status": "PENDING",
+      "status": "OPEN",
       "price_at_run": 2.117,
-      "date_activated": null,
-      "time_activated_utc": null,
+      "date_activated": "2026-10-27",
+      "time_activated_utc": "12:26",
       "date_opened": "2026-10-26",
       "time_opened_utc": "12:04",
       "conviction": "MEDIUM",
@@ -651,11 +639,11 @@
       "sl_moved_to_be": null,
       "pnl_tp1_realized_usd": null,
       "tp2_hit": false,
-      "live_executed": null,
-      "live_entry_fill": null,
+      "live_executed": true,
+      "live_entry_fill": 2.0428,
       "live_exit_fill": null,
-      "live_entry_slippage_pct": null,
-      "live_fees_usd": null,
+      "live_entry_slippage_pct": 0.001,
+      "live_fees_usd": 0.3922,
       "live_funding_usd": null,
       "live_tp1_pnl_usd": null,
       "rehearsal": false
@@ -741,6 +729,18 @@
       "tp1_hit": false,
       "iso": "2026-10-27T09:42:00Z",
       "_iso_ms": 1793094120000,
+      "rehearsal": false
+    },
+    {
+      "trade_id": "CAKEUSDT_20261026_CJ_001",
+      "coin": "CAKEUSDT",
+      "direction": "Long",
+      "trading_system": "John",
+      "entry_price": 2.04277864,
+      "live_entry_fill": 2.0428,
+      "tp1_hit": false,
+      "iso": "2026-10-27T12:26:00Z",
+      "_iso_ms": 1793103960000,
       "rehearsal": false
     }
   ],
@@ -4561,7 +4561,7 @@
     "peak_capital_usd": 1926.61,
     "peak_concurrent": 8,
     "peak_date": "2026-10-12",
-    "deployed_trades": 324,
+    "deployed_trades": 325,
     "return_on_peak_pct": -17.79,
     "win_rate_pct": 38.4,
     "closed_count": 318,
