@@ -1,9 +1,9 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-10-28T10:08Z",
+  "generated_utc": "2026-10-28T12:10Z",
   "master": "braam",
   "retention_hours": 48,
-  "trade_count": 21,
+  "trade_count": 22,
   "trades": [
     {
       "trade_id": "BTCUSDT_20261015_CJ_001",
@@ -524,6 +524,31 @@
       "code_sha": "f94019dee625",
       "sl_mode": "initial",
       "feed_updated_utc": "2026-10-28T04:04Z",
+      "activated_utc": null
+    },
+    {
+      "trade_id": "XRPUSDT_20261028_CJ_002",
+      "coin": "XRPUSDT",
+      "direction": "Short",
+      "trading_system": "John",
+      "conviction": "MEDIUM",
+      "leverage": 3,
+      "entry_price": 1.38420267,
+      "entry_lo": 1.32291967,
+      "entry_hi": 1.40463033,
+      "sl": 1.40270731,
+      "tp1": 1.21058601,
+      "tp2": 1.15968539,
+      "status": "PENDING",
+      "tp1_hit": false,
+      "tp2_hit": false,
+      "sl_hit": false,
+      "close_reason": null,
+      "date_opened": "2026-10-28",
+      "time_opened_utc": "12:04",
+      "code_sha": "f6f0322ae4be",
+      "sl_mode": "initial",
+      "feed_updated_utc": "2026-10-28T12:04Z",
       "activated_utc": null
     }
   ]
