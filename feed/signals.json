@@ -1,9 +1,9 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-10-28T18:09Z",
+  "generated_utc": "2026-10-28T20:10Z",
   "master": "braam",
   "retention_hours": 48,
-  "trade_count": 22,
+  "trade_count": 23,
   "trades": [
     {
       "trade_id": "BTCUSDT_20261015_CJ_001",
@@ -390,14 +390,14 @@
       "tp1": 2.119,
       "tp2": 2.186,
       "status": "OPEN",
-      "tp1_hit": false,
+      "tp1_hit": true,
       "tp2_hit": false,
       "sl_hit": false,
       "close_reason": null,
       "date_opened": "2026-10-26",
       "time_opened_utc": "12:04",
       "code_sha": "4852436c8d04",
-      "sl_mode": "initial",
+      "sl_mode": "breakeven",
       "feed_updated_utc": "2026-10-27T12:26Z",
       "activated_utc": "2026-10-27T12:26Z"
     },
@@ -549,6 +549,31 @@
       "code_sha": "f6f0322ae4be",
       "sl_mode": "initial",
       "feed_updated_utc": "2026-10-28T12:04Z",
+      "activated_utc": null
+    },
+    {
+      "trade_id": "XLMUSDT_20261028_CJ_001",
+      "coin": "XLMUSDT",
+      "direction": "Long",
+      "trading_system": "John",
+      "conviction": "MEDIUM",
+      "leverage": 3,
+      "entry_price": 0.16883979,
+      "entry_lo": 0.16562219,
+      "entry_hi": 0.1784926,
+      "sl": 0.16634106,
+      "tp1": 0.1829604,
+      "tp2": 0.19051789,
+      "status": "PENDING",
+      "tp1_hit": false,
+      "tp2_hit": false,
+      "sl_hit": false,
+      "close_reason": null,
+      "date_opened": "2026-10-28",
+      "time_opened_utc": "20:04",
+      "code_sha": "d3764503645e",
+      "sl_mode": "initial",
+      "feed_updated_utc": "2026-10-28T20:04Z",
       "activated_utc": null
     }
   ]
