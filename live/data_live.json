@@ -1,19 +1,31 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-10-29T14:08:51Z",
+  "last_updated_iso": "2026-10-29T15:00:35Z",
   "mexc_account": {
-    "unrealized_pnl": 52.611,
-    "equity": 4398.5673,
-    "available": 1070.0642,
-    "position_margin": 982.4801
+    "unrealized_pnl": 82.579,
+    "equity": 4428.1397,
+    "available": 1070.1965,
+    "position_margin": 1202.9528
   },
   "order_levels": {
     "checked": 18,
-    "in_sync": 18,
-    "drifted": [],
+    "in_sync": 17,
+    "drifted": [
+      "BTC"
+    ],
     "reconciling": [],
-    "detail": []
+    "detail": [
+      {
+        "coin": "BTC",
+        "trade_id": "BTCUSDT_20261024_CJ_001",
+        "status": "PENDING",
+        "fields": [
+          "tp1"
+        ],
+        "synced_at": "2026-10-29T08:06:12.227783+00:00"
+      }
+    ]
   },
   "api_keys": [
     {
@@ -74,7 +86,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$4,398.57",
+      "value": "$4,428.14",
       "status": "ok",
       "action": null
     },
@@ -90,7 +102,7 @@
       "key": "orphan_orders",
       "tier": 1,
       "label": "Order reconciliation",
-      "value": "in sync (12 resting = journal)",
+      "value": "in sync (11 resting = journal)",
       "status": "ok",
       "action": null
     },
@@ -98,7 +110,7 @@
       "key": "position_protection",
       "tier": 1,
       "label": "Position protection",
-      "value": "all protected (6 open, 4 pre-TP1 runners)",
+      "value": "all protected (7 open, 4 pre-TP1 runners)",
       "status": "ok",
       "action": null
     },
@@ -430,8 +442,8 @@
       "direction": "Short",
       "entry_price": 81405.77107255,
       "sl": 82210.25346227,
-      "tp1": 75619.68511392,
-      "tp2": 72903.66384069,
+      "tp1": 79750.1,
+      "tp2": 76617,
       "capital_usd": 219.92,
       "leverage": 3,
       "trading_system": "John",
