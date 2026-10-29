@@ -1,18 +1,19 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-10-29T08:17:28Z",
+  "last_updated_iso": "2026-10-29T08:18:17Z",
   "mexc_account": {
-    "unrealized_pnl": -5.3166,
-    "equity": 4340.6726,
+    "unrealized_pnl": -3.5682,
+    "equity": 4342.421,
     "available": 1069.2638,
     "position_margin": 982.4801
   },
   "order_levels": {
     "checked": 18,
-    "in_sync": 17,
+    "in_sync": 16,
     "drifted": [
-      "SUI"
+      "SUI",
+      "TAO"
     ],
     "reconciling": [],
     "detail": [
@@ -25,6 +26,16 @@
           "tp2"
         ],
         "synced_at": "2026-10-29T00:06:11.267628+00:00"
+      },
+      {
+        "coin": "TAO",
+        "trade_id": "TAOUSDT_20261028_CJ_001",
+        "status": "OPEN",
+        "fields": [
+          "tp1",
+          "tp2"
+        ],
+        "synced_at": null
       }
     ]
   },
@@ -87,7 +98,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$4,340.67",
+      "value": "$4,342.42",
       "status": "ok",
       "action": null
     },
@@ -603,8 +614,8 @@
       "direction": "Long",
       "entry_price": 247.925,
       "sl": 243.04453904,
-      "tp1": 268.12974776,
-      "tp2": 280.41092192,
+      "tp1": 261.4,
+      "tp2": 276.2,
       "capital_usd": 215.91,
       "leverage": 3,
       "trading_system": "John",
