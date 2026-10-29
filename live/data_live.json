@@ -1,42 +1,19 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-10-29T13:24:39Z",
+  "last_updated_iso": "2026-10-29T13:26:59Z",
   "mexc_account": {
-    "unrealized_pnl": 50.2635,
-    "equity": 4396.2198,
+    "unrealized_pnl": 51.8136,
+    "equity": 4397.7699,
     "available": 1070.0642,
     "position_margin": 982.4801
   },
   "order_levels": {
     "checked": 18,
-    "in_sync": 16,
-    "drifted": [
-      "NEAR",
-      "LINK"
-    ],
+    "in_sync": 18,
+    "drifted": [],
     "reconciling": [],
-    "detail": [
-      {
-        "coin": "NEAR",
-        "trade_id": "NEARUSDT_20261018_CJ_001",
-        "status": "OPEN",
-        "fields": [
-          "tp1"
-        ],
-        "synced_at": "2026-10-26T05:24:34.888633+00:00"
-      },
-      {
-        "coin": "LINK",
-        "trade_id": "LINKUSDT_20261019_CJ_001",
-        "status": "OPEN",
-        "fields": [
-          "tp1",
-          "tp2"
-        ],
-        "synced_at": "2026-10-24T14:21:17.337867+00:00"
-      }
-    ]
+    "detail": []
   },
   "api_keys": [
     {
@@ -97,7 +74,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$4,396.22",
+      "value": "$4,397.77",
       "status": "ok",
       "action": null
     },
@@ -220,7 +197,7 @@
       "live_entry_slippage_pct": -0.0045,
       "live_fees_usd": 0.8037,
       "live_funding_usd": null,
-      "live_tp1_pnl_usd": 20.3493,
+      "live_tp1_pnl_usd": 20.923,
       "rehearsal": false
     },
     {
@@ -348,7 +325,7 @@
       "live_entry_slippage_pct": 0.0,
       "live_fees_usd": 0.8038,
       "live_funding_usd": null,
-      "live_tp1_pnl_usd": 13.7523,
+      "live_tp1_pnl_usd": 14.4408,
       "rehearsal": false
     },
     {
