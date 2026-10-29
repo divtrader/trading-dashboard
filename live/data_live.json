@@ -1,18 +1,22 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-10-29T00:09:40Z",
+  "last_updated_iso": "2026-10-29T02:09:12Z",
   "mexc_account": {
-    "unrealized_pnl": 107.7214,
-    "equity": 4472.033,
-    "available": 387.7586,
-    "position_margin": 1244.7737
+    "unrealized_pnl": 15.7234,
+    "equity": 4361.9563,
+    "available": 1026.1946,
+    "position_margin": 1026.1645
   },
   "order_levels": {
-    "checked": 22,
-    "in_sync": 22,
+    "checked": 19,
+    "in_sync": 19,
     "drifted": [],
-    "reconciling": [],
+    "reconciling": [
+      "ALGO",
+      "RENDER",
+      "AVAX"
+    ],
     "detail": []
   },
   "api_keys": [
@@ -58,7 +62,7 @@
       "key": "cron_watchlist",
       "tier": 1,
       "label": "Last cloud run",
-      "value": "0.0h ago",
+      "value": "2.0h ago",
       "status": "ok",
       "action": null
     },
@@ -74,7 +78,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$4,472.03",
+      "value": "$4,361.96",
       "status": "ok",
       "action": null
     },
@@ -90,7 +94,7 @@
       "key": "orphan_orders",
       "tier": 1,
       "label": "Order reconciliation",
-      "value": "in sync (14 resting = journal)",
+      "value": "in sync (12 resting = journal)",
       "status": "ok",
       "action": null
     },
@@ -98,7 +102,7 @@
       "key": "position_protection",
       "tier": 1,
       "label": "Position protection",
-      "value": "all protected (8 open, 5 pre-TP1 runners)",
+      "value": "all protected (7 open, 4 pre-TP1 runners)",
       "status": "ok",
       "action": null
     },
@@ -645,7 +649,7 @@
       "live_entry_slippage_pct": -0.0003,
       "live_fees_usd": 0.8258,
       "live_funding_usd": null,
-      "live_tp1_pnl_usd": 15.0981,
+      "live_tp1_pnl_usd": 15.953,
       "rehearsal": false
     },
     {
