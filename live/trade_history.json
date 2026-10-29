@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-29T16:09:31Z",
+  "updated": "2026-10-29T16:10:17Z",
   "positions": {
     "1414291495": {
       "position_id": "1414291495",
@@ -5780,8 +5780,16 @@
       "leverage": 3,
       "entry_price": 2370.6,
       "opened_at": "2026-10-28T08:26:35Z",
-      "status": "OPEN",
-      "braam_trade_id": "ETHUSDT_20261024_CJ_001"
+      "status": "CLOSED",
+      "braam_trade_id": "ETHUSDT_20261024_CJ_001",
+      "closed_at": "2026-10-29T15:46:38Z",
+      "close_price": 2370.65,
+      "pnl_usd": 13.4048,
+      "margin_usd": 224.33,
+      "fees_usd": 0.9175,
+      "tag": "WIN",
+      "close_type": 4,
+      "close_reason": "stop_loss"
     },
     "1529269718": {
       "position_id": "1529269718",
@@ -5792,6 +5800,16 @@
       "opened_at": "2026-10-29T14:37:03Z",
       "status": "OPEN",
       "braam_trade_id": "BTCUSDT_20261024_CJ_001"
+    },
+    "1529336451": {
+      "position_id": "1529336451",
+      "coin": "DOGEUSDT",
+      "direction": "Short",
+      "leverage": 3,
+      "entry_price": 0.08088,
+      "opened_at": "2026-10-29T16:06:57Z",
+      "status": "OPEN",
+      "braam_trade_id": "DOGEUSDT_20261024_CJ_001"
     },
     "1527955415": {
       "position_id": "1527955415",
@@ -5941,15 +5959,6 @@
       "braam_trade_id": "TRXUSDT_20261024_CJ_001",
       "status": "RESTING"
     },
-    "869491003689046528": {
-      "order_id": "869491003689046528",
-      "coin": "DOGEUSDT",
-      "direction": "Short",
-      "entry_price": 0.08088125,
-      "resting_at": "2026-10-24T20:04:00Z",
-      "braam_trade_id": "DOGEUSDT_20261024_CJ_001",
-      "status": "RESTING"
-    },
     "870094411064187392": {
       "order_id": "870094411064187392",
       "coin": "DOGEUSDT",
@@ -5968,11 +5977,11 @@
       "braam_trade_id": "XRPUSDT_20261028_CJ_001",
       "status": "RESTING"
     },
-    "870396437714831872": {
-      "order_id": "870396437714831872",
+    "870819669324468736": {
+      "order_id": "870819669324468736",
       "coin": "XRPUSDT",
       "direction": "Short",
-      "entry_price": 1.38420267,
+      "entry_price": 1.33191536,
       "resting_at": "2026-10-28T12:04:00Z",
       "braam_trade_id": "XRPUSDT_20261028_CJ_002",
       "status": "RESTING"
@@ -5984,6 +5993,24 @@
       "entry_price": 0.16490151,
       "resting_at": "2026-10-28T20:04:00Z",
       "braam_trade_id": "XLMUSDT_20261028_CJ_001",
+      "status": "RESTING"
+    },
+    "870819169011069440": {
+      "order_id": "870819169011069440",
+      "coin": "ETHUSDT",
+      "direction": "Short",
+      "entry_price": 2478.42378239,
+      "resting_at": "2026-10-29T16:04:00Z",
+      "braam_trade_id": "ETHUSDT_20261029_CJ_001",
+      "status": "RESTING"
+    },
+    "870819179002214400": {
+      "order_id": "870819179002214400",
+      "coin": "AVAXUSDT",
+      "direction": "Long",
+      "entry_price": 8.69566463,
+      "resting_at": "2026-10-29T16:04:00Z",
+      "braam_trade_id": "AVAXUSDT_20261029_CJ_001",
       "status": "RESTING"
     }
   },
