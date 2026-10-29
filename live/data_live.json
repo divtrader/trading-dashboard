@@ -1,19 +1,33 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-10-29T15:03:14Z",
+  "last_updated_iso": "2026-10-29T16:09:14Z",
   "mexc_account": {
-    "unrealized_pnl": 87.3905,
-    "equity": 4432.9512,
-    "available": 1070.1965,
-    "position_margin": 1202.9528
+    "unrealized_pnl": 81.1365,
+    "equity": 4473.7608,
+    "available": 1075.1277,
+    "position_margin": 1015.8889
   },
   "order_levels": {
-    "checked": 18,
-    "in_sync": 18,
-    "drifted": [],
-    "reconciling": [],
-    "detail": []
+    "checked": 17,
+    "in_sync": 16,
+    "drifted": [
+      "DOGE"
+    ],
+    "reconciling": [
+      "ETH"
+    ],
+    "detail": [
+      {
+        "coin": "DOGE",
+        "trade_id": "DOGEUSDT_20261024_CJ_001",
+        "status": "PENDING",
+        "fields": [
+          "tp1"
+        ],
+        "synced_at": "2026-10-26T00:06:49.954772+00:00"
+      }
+    ]
   },
   "api_keys": [
     {
@@ -74,7 +88,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$4,432.95",
+      "value": "$4,473.76",
       "status": "ok",
       "action": null
     },
@@ -90,15 +104,15 @@
       "key": "orphan_orders",
       "tier": 1,
       "label": "Order reconciliation",
-      "value": "in sync (11 resting = journal)",
-      "status": "ok",
-      "action": null
+      "value": "3 ORPHAN order(s) on MEXC",
+      "status": "urgent",
+      "action": "Untracked resting order(s) \u2014 cancel on MEXC (double-fill risk): XRP_USDT Short @ 1.3319 (id 870819669324468736), AVAX_USDT Long @ 8.696 (id 870819179002214400), ETH_USDT Short @ 2478.42 (id 870819169011069440)"
     },
     {
       "key": "position_protection",
       "tier": 1,
       "label": "Position protection",
-      "value": "all protected (7 open, 5 pre-TP1 runners)",
+      "value": "all protected (7 open, 4 pre-TP1 runners)",
       "status": "ok",
       "action": null
     },
@@ -197,7 +211,7 @@
       "live_entry_slippage_pct": -0.0045,
       "live_fees_usd": 0.8037,
       "live_funding_usd": null,
-      "live_tp1_pnl_usd": 20.3493,
+      "live_tp1_pnl_usd": 20.3617,
       "rehearsal": false
     },
     {
@@ -325,7 +339,7 @@
       "live_entry_slippage_pct": 0.0,
       "live_fees_usd": 0.8038,
       "live_funding_usd": null,
-      "live_tp1_pnl_usd": 13.7523,
+      "live_tp1_pnl_usd": 14.4408,
       "rehearsal": false
     },
     {
@@ -494,8 +508,8 @@
       "direction": "Short",
       "entry_price": 0.08088125,
       "sl": 0.08214969,
-      "tp1": 0.07199942,
-      "tp2": 0.06631062,
+      "tp1": 0.07791,
+      "tp2": 0.07514,
       "capital_usd": 219.58,
       "leverage": 3,
       "trading_system": "John",
@@ -715,18 +729,6 @@
   ],
   "recent_signals": [],
   "recent_opens": [
-    {
-      "trade_id": "XRPUSDT_20261022_CJ_001",
-      "coin": "XRPUSDT",
-      "direction": "Short",
-      "trading_system": "John",
-      "entry_price": 1.32252913,
-      "live_entry_fill": 1.3225,
-      "tp1_hit": false,
-      "iso": "2026-10-27T15:24:00Z",
-      "_iso_ms": 1793114640000,
-      "rehearsal": false
-    },
     {
       "trade_id": "ETHUSDT_20261024_CJ_001",
       "coin": "ETHUSDT",
