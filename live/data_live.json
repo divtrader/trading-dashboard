@@ -1,16 +1,16 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-10-30T08:06:29Z",
+  "last_updated_iso": "2026-10-30T08:07:33Z",
   "mexc_account": {
-    "unrealized_pnl": 10.9692,
-    "equity": 4389.7809,
+    "unrealized_pnl": 11.8404,
+    "equity": 4390.6521,
     "available": 2584.2827,
     "position_margin": 219.1166
   },
   "order_levels": {
-    "checked": 8,
-    "in_sync": 7,
+    "checked": 9,
+    "in_sync": 8,
     "drifted": [
       "TRX"
     ],
@@ -19,9 +19,10 @@
       {
         "coin": "TRX",
         "trade_id": "TRXUSDT_20261024_CJ_001",
-        "status": "PENDING",
+        "status": "OPEN",
         "fields": [
-          "tp1"
+          "tp1",
+          "tp2"
         ],
         "synced_at": "2026-10-30T04:05:07.237396+00:00"
       }
@@ -78,7 +79,7 @@
       "key": "state_file",
       "tier": 1,
       "label": "Trade journal",
-      "value": "OK (1240 records)",
+      "value": "OK (1241 records)",
       "status": "ok",
       "action": null
     },
@@ -86,7 +87,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$4,389.78",
+      "value": "$4,390.65",
       "status": "ok",
       "action": null
     },
@@ -102,9 +103,9 @@
       "key": "orphan_orders",
       "tier": 1,
       "label": "Order reconciliation",
-      "value": "1 ORPHAN order(s) on MEXC",
-      "status": "urgent",
-      "action": "Untracked resting order(s) \u2014 cancel on MEXC (double-fill risk): HBAR_USDT Short @ 0.07329 (id 871060452791900160)"
+      "value": "in sync (8 resting = journal)",
+      "status": "ok",
+      "action": null
     },
     {
       "key": "position_protection",
@@ -161,7 +162,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 8.557,
+      "price_at_run": 8.491,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-10-22",
@@ -193,7 +194,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 1.889,
+      "price_at_run": 1.865,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-10-24",
@@ -225,7 +226,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 0.3904,
+      "price_at_run": 0.3888,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-10-24",
@@ -257,7 +258,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 0.6186,
+      "price_at_run": 0.62,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-10-24",
@@ -288,10 +289,10 @@
       "leverage": 3,
       "trading_system": "John",
       "track_only": false,
-      "status": "PENDING",
-      "price_at_run": 0.334,
-      "date_activated": null,
-      "time_activated_utc": null,
+      "status": "OPEN",
+      "price_at_run": 0.3351,
+      "date_activated": "2026-10-30",
+      "time_activated_utc": "07:36",
       "date_opened": "2026-10-24",
       "time_opened_utc": "16:04",
       "conviction": "MEDIUM",
@@ -299,11 +300,11 @@
       "sl_moved_to_be": null,
       "pnl_tp1_realized_usd": null,
       "tp2_hit": false,
-      "live_executed": null,
-      "live_entry_fill": null,
+      "live_executed": true,
+      "live_entry_fill": 0.3312,
       "live_exit_fill": null,
-      "live_entry_slippage_pct": null,
-      "live_fees_usd": null,
+      "live_entry_slippage_pct": 0.0,
+      "live_fees_usd": 0.3934,
       "live_funding_usd": null,
       "live_tp1_pnl_usd": null,
       "rehearsal": false
@@ -321,7 +322,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 1.2573,
+      "price_at_run": 1.2513,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-10-28",
@@ -353,7 +354,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 2241.02,
+      "price_at_run": 2233.02,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-10-29",
@@ -385,11 +386,43 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 97.96,
+      "price_at_run": 97.3,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-10-30",
       "time_opened_utc": "04:03",
+      "conviction": "MEDIUM",
+      "tp1_hit": false,
+      "sl_moved_to_be": null,
+      "pnl_tp1_realized_usd": null,
+      "tp2_hit": false,
+      "live_executed": null,
+      "live_entry_fill": null,
+      "live_exit_fill": null,
+      "live_entry_slippage_pct": null,
+      "live_fees_usd": null,
+      "live_funding_usd": null,
+      "live_tp1_pnl_usd": null,
+      "rehearsal": false
+    },
+    {
+      "trade_id": "HBARUSDT_20261030_CJ_001",
+      "coin": "HBARUSDT",
+      "direction": "Short",
+      "entry_price": 0.07329114,
+      "sl": 0.07541048,
+      "tp1": 0.06197869,
+      "tp2": 0.05875182,
+      "capital_usd": 219.35,
+      "leverage": 3,
+      "trading_system": "John",
+      "track_only": false,
+      "status": "PENDING",
+      "price_at_run": 0.07081,
+      "date_activated": null,
+      "time_activated_utc": null,
+      "date_opened": "2026-10-30",
+      "time_opened_utc": "08:03",
       "conviction": "MEDIUM",
       "tp1_hit": false,
       "sl_moved_to_be": null,
@@ -417,6 +450,19 @@
       "conviction": "MEDIUM",
       "track_only": false,
       "iso": "2026-10-30T04:03:00Z",
+      "rehearsal": false
+    },
+    {
+      "trade_id": "HBARUSDT_20261030_CJ_001",
+      "coin": "HBARUSDT",
+      "direction": "Short",
+      "trading_system": "John",
+      "entry_price": 0.07329114,
+      "tp1": 0.06197869,
+      "sl": 0.07541048,
+      "conviction": "MEDIUM",
+      "track_only": false,
+      "iso": "2026-10-30T08:03:00Z",
       "rehearsal": false
     }
   ],
@@ -527,6 +573,18 @@
       "tp1_hit": false,
       "iso": "2026-10-29T20:43:00Z",
       "_iso_ms": 1793306580000,
+      "rehearsal": false
+    },
+    {
+      "trade_id": "TRXUSDT_20261024_CJ_001",
+      "coin": "TRXUSDT",
+      "direction": "Long",
+      "trading_system": "John",
+      "entry_price": 0.3312,
+      "live_entry_fill": 0.3312,
+      "tp1_hit": false,
+      "iso": "2026-10-30T07:36:00Z",
+      "_iso_ms": 1793345760000,
       "rehearsal": false
     }
   ],
@@ -4348,7 +4406,7 @@
     "peak_capital_usd": 1926.61,
     "peak_concurrent": 8,
     "peak_date": "2026-10-12",
-    "deployed_trades": 335,
+    "deployed_trades": 336,
     "return_on_peak_pct": -14.77,
     "win_rate_pct": 38.8,
     "closed_count": 335,
@@ -4369,8 +4427,8 @@
         "closed_count": 1
       }
     },
-    "live_trade_count_total": 470,
-    "live_real_count": 447,
+    "live_trade_count_total": 471,
+    "live_real_count": 448,
     "live_rehearsal_count": 23
   }
 }

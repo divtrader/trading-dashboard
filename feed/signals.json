@@ -1,9 +1,9 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-10-30T08:06Z",
+  "generated_utc": "2026-10-30T08:07Z",
   "master": "braam",
   "retention_hours": 48,
-  "trade_count": 25,
+  "trade_count": 26,
   "trades": [
     {
       "trade_id": "BTCUSDT_20261015_CJ_001",
@@ -264,7 +264,7 @@
       "sl": 0.3265194,
       "tp1": 0.3478,
       "tp2": 0.36505826,
-      "status": "PENDING",
+      "status": "OPEN",
       "tp1_hit": false,
       "tp2_hit": false,
       "sl_hit": false,
@@ -273,8 +273,8 @@
       "time_opened_utc": "16:04",
       "code_sha": "7723d17b5d6f",
       "sl_mode": "initial",
-      "feed_updated_utc": "2026-10-24T16:04Z",
-      "activated_utc": null
+      "feed_updated_utc": "2026-10-30T07:36Z",
+      "activated_utc": "2026-10-30T07:36Z"
     },
     {
       "trade_id": "DOGEUSDT_20261024_CJ_001",
@@ -624,6 +624,31 @@
       "code_sha": "5d3e01795c5f",
       "sl_mode": "initial",
       "feed_updated_utc": "2026-10-30T04:03Z",
+      "activated_utc": null
+    },
+    {
+      "trade_id": "HBARUSDT_20261030_CJ_001",
+      "coin": "HBARUSDT",
+      "direction": "Short",
+      "trading_system": "John",
+      "conviction": "MEDIUM",
+      "leverage": 3,
+      "entry_price": 0.07329114,
+      "entry_lo": 0.06945818,
+      "entry_hi": 0.07456879,
+      "sl": 0.07541048,
+      "tp1": 0.06197869,
+      "tp2": 0.05875182,
+      "status": "PENDING",
+      "tp1_hit": false,
+      "tp2_hit": false,
+      "sl_hit": false,
+      "close_reason": null,
+      "date_opened": "2026-10-30",
+      "time_opened_utc": "08:03",
+      "code_sha": "c913f65cd841",
+      "sl_mode": "initial",
+      "feed_updated_utc": "2026-10-30T08:03Z",
       "activated_utc": null
     }
   ]
