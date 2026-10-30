@@ -1,16 +1,16 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-10-29T22:07:32Z",
+  "last_updated_iso": "2026-10-30T00:07:07Z",
   "mexc_account": {
-    "unrealized_pnl": 4.3712,
-    "equity": 4376.0823,
-    "available": 2750.251,
+    "unrealized_pnl": 5.268,
+    "equity": 4376.9835,
+    "available": 2974.0477,
     "position_margin": 43.5501
   },
   "order_levels": {
-    "checked": 9,
-    "in_sync": 9,
+    "checked": 8,
+    "in_sync": 8,
     "drifted": [],
     "reconciling": [],
     "detail": []
@@ -20,28 +20,28 @@
       "label": "MEXC AlgoTrading sub-account (live orders)",
       "name": "MEXC_ALGO_KEY",
       "expires": "2026-08-27",
-      "days_left": -63,
+      "days_left": -64,
       "status": "urgent"
     },
     {
       "label": "GitHub PAT (dashboard deploy)",
       "name": "DASHBOARD_PAT",
       "expires": "2126-01-01",
-      "days_left": 36223,
+      "days_left": 36222,
       "status": "ok"
     },
     {
       "label": "Google Drive OAuth (journal sync)",
       "name": "GDRIVE_OAUTH_TOKEN",
       "expires": "2126-01-01",
-      "days_left": 36223,
+      "days_left": 36222,
       "status": "ok"
     },
     {
       "label": "Telegram Bot (trade alerts)",
       "name": "TELEGRAM_TOKEN",
       "expires": "2126-01-01",
-      "days_left": 36223,
+      "days_left": 36222,
       "status": "ok"
     }
   ],
@@ -74,7 +74,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$4,376.08",
+      "value": "$4,376.98",
       "status": "ok",
       "action": null
     },
@@ -90,7 +90,7 @@
       "key": "orphan_orders",
       "tier": 1,
       "label": "Order reconciliation",
-      "value": "in sync (8 resting = journal)",
+      "value": "in sync (7 resting = journal)",
       "status": "ok",
       "action": null
     },
@@ -106,7 +106,7 @@
       "key": "apikey_MEXC_ALGO_KEY",
       "tier": 1,
       "label": "MEXC AlgoTrading sub-account (live orders)",
-      "value": "-63d left (2026-08-27)",
+      "value": "-64d left (2026-08-27)",
       "status": "urgent",
       "action": "Rotate key + update GitHub/Cloudflare secret."
     },
@@ -114,7 +114,7 @@
       "key": "apikey_DASHBOARD_PAT",
       "tier": 1,
       "label": "GitHub PAT (dashboard deploy)",
-      "value": "36223d left (2126-01-01)",
+      "value": "36222d left (2126-01-01)",
       "status": "ok",
       "action": null
     },
@@ -122,7 +122,7 @@
       "key": "apikey_GDRIVE_OAUTH_TOKEN",
       "tier": 1,
       "label": "Google Drive OAuth (journal sync)",
-      "value": "36223d left (2126-01-01)",
+      "value": "36222d left (2126-01-01)",
       "status": "ok",
       "action": null
     },
@@ -130,44 +130,12 @@
       "key": "apikey_TELEGRAM_TOKEN",
       "tier": 1,
       "label": "Telegram Bot (trade alerts)",
-      "value": "36223d left (2126-01-01)",
+      "value": "36222d left (2126-01-01)",
       "status": "ok",
       "action": null
     }
   ],
   "active_trades": [
-    {
-      "trade_id": "BTCUSDT_20261015_CJ_001",
-      "coin": "BTCUSDT",
-      "direction": "Long",
-      "entry_price": 76452.905,
-      "sl": 75724.19296348,
-      "tp1": 83268.83029104,
-      "tp2": 87723.64407304,
-      "capital_usd": 222.27,
-      "leverage": 3,
-      "trading_system": "John",
-      "track_only": false,
-      "status": "PENDING",
-      "price_at_run": 79012.61,
-      "date_activated": null,
-      "time_activated_utc": null,
-      "date_opened": "2026-10-15",
-      "time_opened_utc": "04:04",
-      "conviction": "HIGH",
-      "tp1_hit": false,
-      "sl_moved_to_be": null,
-      "pnl_tp1_realized_usd": null,
-      "tp2_hit": false,
-      "live_executed": null,
-      "live_entry_fill": null,
-      "live_exit_fill": null,
-      "live_entry_slippage_pct": null,
-      "live_fees_usd": null,
-      "live_funding_usd": null,
-      "live_tp1_pnl_usd": null,
-      "rehearsal": false
-    },
     {
       "trade_id": "AVAXUSDT_20261022_CJ_001",
       "coin": "AVAXUSDT",
@@ -181,7 +149,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 8.444,
+      "price_at_run": 8.275,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-10-22",
@@ -213,7 +181,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 1.951,
+      "price_at_run": 1.905,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-10-24",
@@ -245,7 +213,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 0.3925,
+      "price_at_run": 0.381,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-10-24",
@@ -277,7 +245,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 0.626,
+      "price_at_run": 0.6176,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-10-24",
@@ -309,7 +277,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "OPEN",
-      "price_at_run": 79012.61,
+      "price_at_run": 78034.31,
       "date_activated": "2026-10-29",
       "time_activated_utc": "14:37",
       "date_opened": "2026-10-24",
@@ -325,23 +293,23 @@
       "live_entry_slippage_pct": -0.0,
       "live_fees_usd": 0.8102,
       "live_funding_usd": null,
-      "live_tp1_pnl_usd": 10.079,
+      "live_tp1_pnl_usd": 10.0834,
       "rehearsal": false
     },
     {
       "trade_id": "TRXUSDT_20261024_CJ_001",
       "coin": "TRXUSDT",
       "direction": "Long",
-      "entry_price": 0.32141723,
-      "sl": 0.32031073,
-      "tp1": 0.34846107,
-      "tp2": 0.35357854,
+      "entry_price": 0.32962643,
+      "sl": 0.3259704,
+      "tp1": 0.401007,
+      "tp2": 0.41485921,
       "capital_usd": 218.61,
       "leverage": 3,
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 0.3643,
+      "price_at_run": 0.3556,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-10-24",
@@ -373,7 +341,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 1.2596,
+      "price_at_run": 1.2389,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-10-28",
@@ -405,7 +373,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 2268.68,
+      "price_at_run": 2252.25,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-10-29",
@@ -4352,7 +4320,15 @@
       "rehearsal": false
     }
   ],
-  "recent_cancels": [],
+  "recent_cancels": [
+    {
+      "coin": "BTCUSDT",
+      "direction": "Long",
+      "trading_system": "John",
+      "close_reason": "Signal direction flipped to Short (5/8 signals) \u2014 original setup no longer valid",
+      "iso": "2026-10-30T00:03:00Z"
+    }
+  ],
   "tp1_hits_open": [
     {
       "coin": "BTCUSDT",
