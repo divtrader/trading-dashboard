@@ -1,9 +1,9 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-10-30T14:06Z",
+  "generated_utc": "2026-10-30T16:07Z",
   "master": "braam",
   "retention_hours": 48,
-  "trade_count": 26,
+  "trade_count": 27,
   "trades": [
     {
       "trade_id": "BTCUSDT_20261015_CJ_001",
@@ -649,6 +649,31 @@
       "code_sha": "c913f65cd841",
       "sl_mode": "initial",
       "feed_updated_utc": "2026-10-30T08:03Z",
+      "activated_utc": null
+    },
+    {
+      "trade_id": "NEARUSDT_20261030_CJ_001",
+      "coin": "NEARUSDT",
+      "direction": "Long",
+      "trading_system": "John",
+      "conviction": "HIGH",
+      "leverage": 3,
+      "entry_price": 4.21551666,
+      "entry_lo": 4.13003332,
+      "entry_hi": 4.47196668,
+      "sl": 4.01614804,
+      "tp1": 4.56246,
+      "tp2": 4.94570391,
+      "status": "PENDING",
+      "tp1_hit": false,
+      "tp2_hit": false,
+      "sl_hit": false,
+      "close_reason": null,
+      "date_opened": "2026-10-30",
+      "time_opened_utc": "16:03",
+      "code_sha": "5d316cbcb474",
+      "sl_mode": "initial",
+      "feed_updated_utc": "2026-10-30T16:03Z",
       "activated_utc": null
     }
   ]
