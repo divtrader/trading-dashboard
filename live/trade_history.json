@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-31T00:07:31Z",
+  "updated": "2026-10-31T02:06:59Z",
   "positions": {
     "1414291495": {
       "position_id": "1414291495",
@@ -5840,8 +5840,16 @@
       "leverage": 3,
       "entry_price": 0.3312,
       "opened_at": "2026-10-30T07:36:12Z",
-      "status": "OPEN",
-      "braam_trade_id": "TRXUSDT_20261024_CJ_001"
+      "status": "CLOSED",
+      "braam_trade_id": "TRXUSDT_20261024_CJ_001",
+      "closed_at": "2026-10-31T00:09:26Z",
+      "close_price": 0.32634,
+      "pnl_usd": -11.1165,
+      "margin_usd": 218.61,
+      "fees_usd": 0.9103,
+      "tag": "LOSS",
+      "close_type": 4,
+      "close_reason": "stop_loss"
     },
     "1529336451": {
       "position_id": "1529336451",
@@ -6050,15 +6058,6 @@
       "entry_price": 9.72771946,
       "resting_at": "2026-10-22T16:04:00Z",
       "braam_trade_id": "AVAXUSDT_20261022_CJ_001",
-      "status": "RESTING"
-    },
-    "868886523388441600": {
-      "order_id": "868886523388441600",
-      "coin": "CAKEUSDT",
-      "direction": "Short",
-      "entry_price": 2.222,
-      "resting_at": "2026-10-24T08:04:00Z",
-      "braam_trade_id": "CAKEUSDT_20261024_CJ_001",
       "status": "RESTING"
     },
     "869490971858057280": {
