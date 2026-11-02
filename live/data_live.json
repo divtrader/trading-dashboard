@@ -1,19 +1,32 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-11-02T18:07:21Z",
+  "last_updated_iso": "2026-11-02T18:10:01Z",
   "mexc_account": {
-    "unrealized_pnl": 11.4352,
-    "equity": 4358.4539,
+    "unrealized_pnl": 12.265,
+    "equity": 4359.2837,
     "available": 1681.0547,
     "position_margin": 437.8215
   },
   "order_levels": {
     "checked": 13,
-    "in_sync": 13,
-    "drifted": [],
+    "in_sync": 12,
+    "drifted": [
+      "XLM"
+    ],
     "reconciling": [],
-    "detail": []
+    "detail": [
+      {
+        "coin": "XLM",
+        "trade_id": "XLMUSDT_20261031_CJ_001",
+        "status": "OPEN",
+        "fields": [
+          "tp1",
+          "tp2"
+        ],
+        "synced_at": null
+      }
+    ]
   },
   "api_keys": [
     {
@@ -74,7 +87,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$4,358.45",
+      "value": "$4,359.28",
       "status": "ok",
       "action": null
     },
@@ -98,9 +111,9 @@
       "key": "position_protection",
       "tier": 1,
       "label": "Position protection",
-      "value": "all protected (2 open, 2 pre-TP1 runners)",
-      "status": "ok",
-      "action": null
+      "value": "\ud83d\udd34 1 NAKED: XLMUSDT",
+      "status": "urgent",
+      "action": "Position(s) with NO stop-loss on MEXC \u2014 place SL NOW: XLMUSDT"
     },
     {
       "key": "apikey_MEXC_ALGO_KEY",
@@ -334,8 +347,8 @@
       "direction": "Long",
       "entry_price": 0.16463604,
       "sl": 0.16051854,
-      "tp1": 0.18286825,
-      "tp2": 0.19226291,
+      "tp1": 0.1727,
+      "tp2": 0.185,
       "capital_usd": 218.69,
       "leverage": 3,
       "trading_system": "John",
