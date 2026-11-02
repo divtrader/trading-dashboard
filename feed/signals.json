@@ -1,6 +1,6 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-11-02T16:07Z",
+  "generated_utc": "2026-11-02T18:07Z",
   "master": "braam",
   "retention_hours": 48,
   "trade_count": 16,
@@ -168,7 +168,7 @@
       "sl": 0.16051854,
       "tp1": 0.18286825,
       "tp2": 0.19226291,
-      "status": "PENDING",
+      "status": "OPEN",
       "tp1_hit": false,
       "tp2_hit": false,
       "sl_hit": false,
@@ -177,8 +177,8 @@
       "time_opened_utc": "00:03",
       "code_sha": "ab75f99539ad",
       "sl_mode": "initial",
-      "feed_updated_utc": "2026-10-31T00:03Z",
-      "activated_utc": null
+      "feed_updated_utc": "2026-11-02T17:46Z",
+      "activated_utc": "2026-11-02T17:46Z"
     },
     {
       "trade_id": "RENDERUSDT_20261031_CJ_001",
@@ -318,16 +318,16 @@
       "sl": 3.94813057,
       "tp1": 4.285,
       "tp2": 4.774,
-      "status": "OPEN",
+      "status": "STOPPED",
       "tp1_hit": false,
       "tp2_hit": false,
       "sl_hit": false,
-      "close_reason": null,
+      "close_reason": "live MEXC exit: sl @ 3.948",
       "date_opened": "2026-10-31",
       "time_opened_utc": "20:03",
       "code_sha": "313287ae8bee",
       "sl_mode": "initial",
-      "feed_updated_utc": "2026-11-02T07:46Z",
+      "feed_updated_utc": "2026-11-02T17:23Z",
       "activated_utc": "2026-11-02T07:46Z"
     },
     {
@@ -343,7 +343,7 @@
       "sl": 8.14246512,
       "tp1": 8.91236006,
       "tp2": 9.85406975,
-      "status": "PENDING",
+      "status": "OPEN",
       "tp1_hit": false,
       "tp2_hit": false,
       "sl_hit": false,
@@ -352,8 +352,8 @@
       "time_opened_utc": "00:03",
       "code_sha": "f689f5efb58f",
       "sl_mode": "initial",
-      "feed_updated_utc": "2026-11-01T00:03Z",
-      "activated_utc": null
+      "feed_updated_utc": "2026-11-02T17:45Z",
+      "activated_utc": "2026-11-02T17:45Z"
     },
     {
       "trade_id": "LTCUSDT_20261101_CJ_001",
@@ -368,16 +368,16 @@
       "sl": 52.12500491,
       "tp1": 60.83279023,
       "tp2": 61.20158963,
-      "status": "PENDING",
+      "status": "CANCELLED",
       "tp1_hit": false,
       "tp2_hit": false,
       "sl_hit": false,
-      "close_reason": null,
+      "close_reason": "Signal direction flipped to Short (5/8 signals) \u2014 original setup no longer valid",
       "date_opened": "2026-11-01",
       "time_opened_utc": "04:03",
       "code_sha": "2fe76c2cb639",
       "sl_mode": "initial",
-      "feed_updated_utc": "2026-11-01T04:03Z",
+      "feed_updated_utc": "2026-11-02T18:03Z",
       "activated_utc": null
     },
     {
