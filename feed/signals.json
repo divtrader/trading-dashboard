@@ -1,6 +1,6 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-11-04T14:51Z",
+  "generated_utc": "2026-11-04T14:52Z",
   "master": "braam",
   "retention_hours": 48,
   "trade_count": 19,
@@ -143,7 +143,7 @@
       "sl": 0.07366965,
       "tp1": 0.0697,
       "tp2": 0.06803,
-      "status": "PENDING",
+      "status": "OPEN",
       "tp1_hit": false,
       "tp2_hit": false,
       "sl_hit": false,
@@ -152,8 +152,8 @@
       "time_opened_utc": "08:03",
       "code_sha": "c913f65cd841",
       "sl_mode": "initial",
-      "feed_updated_utc": "2026-10-30T08:03Z",
-      "activated_utc": null
+      "feed_updated_utc": "2026-11-04T14:42Z",
+      "activated_utc": "2026-11-04T14:42Z"
     },
     {
       "trade_id": "XLMUSDT_20261031_CJ_001",
@@ -344,14 +344,14 @@
       "tp1": 8.91236006,
       "tp2": 9.85406975,
       "status": "OPEN",
-      "tp1_hit": false,
+      "tp1_hit": true,
       "tp2_hit": false,
       "sl_hit": false,
       "close_reason": null,
       "date_opened": "2026-11-01",
       "time_opened_utc": "00:03",
       "code_sha": "f689f5efb58f",
-      "sl_mode": "initial",
+      "sl_mode": "breakeven",
       "feed_updated_utc": "2026-11-02T17:45Z",
       "activated_utc": "2026-11-02T17:45Z"
     },
