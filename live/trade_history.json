@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-04T02:06:07Z",
+  "updated": "2026-11-04T04:06:59Z",
   "positions": {
     "1414291495": {
       "position_id": "1414291495",
@@ -6074,8 +6074,16 @@
       "leverage": 3,
       "entry_price": 1.497,
       "opened_at": "2026-11-02T19:40:26Z",
-      "status": "OPEN",
-      "braam_trade_id": "RENDERUSDT_20261031_CJ_002"
+      "status": "CLOSED",
+      "braam_trade_id": "RENDERUSDT_20261031_CJ_002",
+      "closed_at": "2026-11-04T02:59:56Z",
+      "close_price": 1.459,
+      "pnl_usd": -16.8551,
+      "margin_usd": 218.47,
+      "fees_usd": 0.9028,
+      "tag": "LOSS",
+      "close_type": 4,
+      "close_reason": "stop_loss"
     },
     "1531253124": {
       "position_id": "1531253124",
@@ -6125,11 +6133,11 @@
       "braam_trade_id": "ONDOUSDT_20261024_CJ_001",
       "status": "RESTING"
     },
-    "872752035018183680": {
-      "order_id": "872752035018183680",
+    "872812414826059294": {
+      "order_id": "872812414826059294",
       "coin": "XRPUSDT",
       "direction": "Short",
-      "entry_price": 1.34318188,
+      "entry_price": 1.36838545,
       "resting_at": "2026-10-28T12:04:00Z",
       "braam_trade_id": "XRPUSDT_20261028_CJ_002",
       "status": "RESTING"
