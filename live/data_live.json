@@ -1,19 +1,33 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-11-04T14:51:55Z",
+  "last_updated_iso": "2026-11-04T15:16:35Z",
   "mexc_account": {
-    "unrealized_pnl": 7.7915,
-    "equity": 4355.4226,
-    "available": 1426.3322,
-    "position_margin": 263.7489
+    "unrealized_pnl": 7.3766,
+    "equity": 4342.4476,
+    "available": 1634.3263,
+    "position_margin": 262.8022
   },
   "order_levels": {
-    "checked": 15,
-    "in_sync": 15,
-    "drifted": [],
-    "reconciling": [],
-    "detail": []
+    "checked": 14,
+    "in_sync": 13,
+    "drifted": [
+      "LTC"
+    ],
+    "reconciling": [
+      "HBAR"
+    ],
+    "detail": [
+      {
+        "coin": "LTC",
+        "trade_id": "LTCUSDT_20261031_CJ_001",
+        "status": "PENDING",
+        "fields": [
+          "tp1"
+        ],
+        "synced_at": "2026-11-02T12:05:23.354039+00:00"
+      }
+    ]
   },
   "api_keys": [
     {
@@ -74,7 +88,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$4,355.42",
+      "value": "$4,342.45",
       "status": "ok",
       "action": null
     },
@@ -90,7 +104,7 @@
       "key": "orphan_orders",
       "tier": 1,
       "label": "Order reconciliation",
-      "value": "in sync (13 resting = journal)",
+      "value": "in sync (12 resting = journal)",
       "status": "ok",
       "action": null
     },
@@ -98,9 +112,9 @@
       "key": "position_protection",
       "tier": 1,
       "label": "Position protection",
-      "value": "all protected (2 open, 1 pre-TP1 runners)",
-      "status": "ok",
-      "action": null
+      "value": "\ud83d\udd34 1 NAKED: LTCUSDT",
+      "status": "urgent",
+      "action": "Position(s) with NO stop-loss on MEXC \u2014 place SL NOW: LTCUSDT"
     },
     {
       "key": "apikey_MEXC_ALGO_KEY",
@@ -366,8 +380,8 @@
       "direction": "Short",
       "entry_price": 56.485,
       "sl": 57.3765428,
-      "tp1": 50.18623588,
-      "tp2": 49.21272876,
+      "tp1": 53.7,
+      "tp2": 52.39,
       "capital_usd": 218.47,
       "leverage": 3,
       "trading_system": "John",
