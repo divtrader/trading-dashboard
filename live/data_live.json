@@ -1,33 +1,19 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-11-04T15:16:35Z",
+  "last_updated_iso": "2026-11-04T15:17:28Z",
   "mexc_account": {
-    "unrealized_pnl": 7.3766,
-    "equity": 4342.4476,
+    "unrealized_pnl": 6.2332,
+    "equity": 4341.3042,
     "available": 1634.3263,
     "position_margin": 262.8022
   },
   "order_levels": {
     "checked": 14,
-    "in_sync": 13,
-    "drifted": [
-      "LTC"
-    ],
-    "reconciling": [
-      "HBAR"
-    ],
-    "detail": [
-      {
-        "coin": "LTC",
-        "trade_id": "LTCUSDT_20261031_CJ_001",
-        "status": "PENDING",
-        "fields": [
-          "tp1"
-        ],
-        "synced_at": "2026-11-02T12:05:23.354039+00:00"
-      }
-    ]
+    "in_sync": 14,
+    "drifted": [],
+    "reconciling": [],
+    "detail": []
   },
   "api_keys": [
     {
@@ -88,7 +74,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$4,342.45",
+      "value": "$4,341.30",
       "status": "ok",
       "action": null
     },
@@ -112,9 +98,9 @@
       "key": "position_protection",
       "tier": 1,
       "label": "Position protection",
-      "value": "\ud83d\udd34 1 NAKED: LTCUSDT",
-      "status": "urgent",
-      "action": "Position(s) with NO stop-loss on MEXC \u2014 place SL NOW: LTCUSDT"
+      "value": "all protected (2 open, 1 pre-TP1 runners)",
+      "status": "ok",
+      "action": null
     },
     {
       "key": "apikey_MEXC_ALGO_KEY",
@@ -311,38 +297,6 @@
       "rehearsal": false
     },
     {
-      "trade_id": "HBARUSDT_20261030_CJ_001",
-      "coin": "HBARUSDT",
-      "direction": "Short",
-      "entry_price": 0.07241396,
-      "sl": 0.07366965,
-      "tp1": 0.0697,
-      "tp2": 0.06803,
-      "capital_usd": 219.35,
-      "leverage": 3,
-      "trading_system": "John",
-      "track_only": false,
-      "status": "OPEN",
-      "price_at_run": 0.07012,
-      "date_activated": "2026-11-04",
-      "time_activated_utc": "14:42",
-      "date_opened": "2026-10-30",
-      "time_opened_utc": "08:03",
-      "conviction": "MEDIUM",
-      "tp1_hit": false,
-      "sl_moved_to_be": null,
-      "pnl_tp1_realized_usd": null,
-      "tp2_hit": false,
-      "live_executed": true,
-      "live_entry_fill": 0.07241,
-      "live_exit_fill": null,
-      "live_entry_slippage_pct": 0.0055,
-      "live_fees_usd": 0.3947,
-      "live_funding_usd": null,
-      "live_tp1_pnl_usd": null,
-      "rehearsal": false
-    },
-    {
       "trade_id": "RENDERUSDT_20261031_CJ_001",
       "coin": "RENDERUSDT",
       "direction": "Short",
@@ -386,10 +340,10 @@
       "leverage": 3,
       "trading_system": "John",
       "track_only": false,
-      "status": "PENDING",
+      "status": "OPEN",
       "price_at_run": 54.58,
-      "date_activated": null,
-      "time_activated_utc": null,
+      "date_activated": "2026-11-04",
+      "time_activated_utc": "15:04",
       "date_opened": "2026-10-31",
       "time_opened_utc": "04:03",
       "conviction": "MEDIUM",
@@ -397,11 +351,11 @@
       "sl_moved_to_be": null,
       "pnl_tp1_realized_usd": null,
       "tp2_hit": false,
-      "live_executed": null,
-      "live_entry_fill": null,
+      "live_executed": true,
+      "live_entry_fill": 56.48,
       "live_exit_fill": null,
-      "live_entry_slippage_pct": null,
-      "live_fees_usd": null,
+      "live_entry_slippage_pct": 0.0089,
+      "live_fees_usd": 0.3931,
       "live_funding_usd": null,
       "live_tp1_pnl_usd": null,
       "rehearsal": false
@@ -733,28 +687,21 @@
       "iso": "2026-11-04T14:42:00Z",
       "_iso_ms": 1793803320000,
       "rehearsal": false
+    },
+    {
+      "trade_id": "LTCUSDT_20261031_CJ_001",
+      "coin": "LTCUSDT",
+      "direction": "Short",
+      "trading_system": "John",
+      "entry_price": 56.485,
+      "live_entry_fill": 56.48,
+      "tp1_hit": false,
+      "iso": "2026-11-04T15:04:00Z",
+      "_iso_ms": 1793804640000,
+      "rehearsal": false
     }
   ],
   "recent_closes": [
-    {
-      "trade_id": "ONDOUSDT_20260809_CB_001",
-      "coin": "ONDOUSDT",
-      "direction": "Short",
-      "status": "TP2_HIT",
-      "pnl_usd": 15.9,
-      "close_reason": "live MEXC exit: tp2 @ 0.3391",
-      "date_closed": "2026-08-10",
-      "time_closed_utc": "22:58",
-      "trading_system": "Braam",
-      "live_entry_fill": 0.3578,
-      "live_exit_fill": 0.3391,
-      "live_entry_slippage_pct": 0.0019,
-      "live_fees_usd": 0.5527,
-      "live_funding_usd": 0.02586,
-      "won": true,
-      "close_iso": "2026-08-10T22:58:00Z",
-      "rehearsal": false
-    },
     {
       "trade_id": "BNBUSDT_20260810_CB_001",
       "coin": "BNBUSDT",
@@ -4535,6 +4482,25 @@
       "won": false,
       "close_iso": "2026-11-04T02:59:00Z",
       "rehearsal": false
+    },
+    {
+      "trade_id": "HBARUSDT_20261030_CJ_001",
+      "coin": "HBARUSDT",
+      "direction": "Short",
+      "status": "STOPPED",
+      "pnl_usd": -12.56,
+      "close_reason": "live MEXC exit: sl @ 0.07369",
+      "date_closed": "2026-11-04",
+      "time_closed_utc": "15:09",
+      "trading_system": "John",
+      "live_entry_fill": 0.07241,
+      "live_exit_fill": 0.07369,
+      "live_entry_slippage_pct": 0.0055,
+      "live_fees_usd": 0.9303,
+      "live_funding_usd": 0.0,
+      "won": false,
+      "close_iso": "2026-11-04T15:09:00Z",
+      "rehearsal": false
     }
   ],
   "recent_cancels": [],
@@ -4547,15 +4513,15 @@
     }
   ],
   "stats": {
-    "realized_pnl_usd": -351.16,
-    "realized_pnl_pct": -0.72,
+    "realized_pnl_usd": -363.72,
+    "realized_pnl_pct": -0.75,
     "peak_capital_usd": 1926.61,
     "peak_concurrent": 8,
     "peak_date": "2026-10-12",
-    "deployed_trades": 341,
-    "return_on_peak_pct": -18.23,
-    "win_rate_pct": 38.3,
-    "closed_count": 339,
+    "deployed_trades": 342,
+    "return_on_peak_pct": -18.88,
+    "win_rate_pct": 38.2,
+    "closed_count": 340,
     "per_system": {
       "Braam": {
         "realized_pnl_usd": -158.68,
@@ -4563,9 +4529,9 @@
         "closed_count": 159
       },
       "John": {
-        "realized_pnl_usd": -113.78,
-        "win_rate_pct": 36.3,
-        "closed_count": 179
+        "realized_pnl_usd": -126.34,
+        "win_rate_pct": 36.1,
+        "closed_count": 180
       },
       "Mong": {
         "realized_pnl_usd": -78.7,

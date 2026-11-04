@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-04T15:16:45Z",
+  "updated": "2026-11-04T15:17:43Z",
   "positions": {
     "1414291495": {
       "position_id": "1414291495",
@@ -6056,8 +6056,16 @@
       "leverage": 3,
       "entry_price": 0.07241,
       "opened_at": "2026-11-04T14:42:29Z",
-      "status": "OPEN",
-      "braam_trade_id": "HBARUSDT_20261030_CJ_001"
+      "status": "CLOSED",
+      "braam_trade_id": "HBARUSDT_20261030_CJ_001",
+      "closed_at": "2026-11-04T15:09:37Z",
+      "close_price": 0.07369,
+      "pnl_usd": -12.5617,
+      "margin_usd": 219.35,
+      "fees_usd": 0.9303,
+      "tag": "LOSS",
+      "close_type": 4,
+      "close_reason": "stop_loss"
     },
     "1531537558": {
       "position_id": "1531537558",
@@ -6076,6 +6084,16 @@
       "tag": "LOSS",
       "close_type": 4,
       "close_reason": "stop_loss"
+    },
+    "1532649370": {
+      "position_id": "1532649370",
+      "coin": "LTCUSDT",
+      "direction": "Short",
+      "leverage": 3,
+      "entry_price": 56.48,
+      "opened_at": "2026-11-04T15:04:39Z",
+      "status": "OPEN",
+      "braam_trade_id": "LTCUSDT_20261031_CJ_001"
     },
     "1531594941": {
       "position_id": "1531594941",
@@ -6177,15 +6195,6 @@
       "entry_price": 1.6576967,
       "resting_at": "2026-10-31T00:03:00Z",
       "braam_trade_id": "RENDERUSDT_20261031_CJ_001",
-      "status": "RESTING"
-    },
-    "872208548749236736": {
-      "order_id": "872208548749236736",
-      "coin": "LTCUSDT",
-      "direction": "Short",
-      "entry_price": 56.485,
-      "resting_at": "2026-10-31T04:03:00Z",
-      "braam_trade_id": "LTCUSDT_20261031_CJ_001",
       "status": "RESTING"
     },
     "872631256952009728": {
