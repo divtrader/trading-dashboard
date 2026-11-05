@@ -1,9 +1,9 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-11-04T22:06Z",
+  "generated_utc": "2026-11-05T00:07Z",
   "master": "braam",
   "retention_hours": 48,
-  "trade_count": 22,
+  "trade_count": 23,
   "trades": [
     {
       "trade_id": "AVAXUSDT_20261022_CJ_001",
@@ -553,6 +553,31 @@
       "code_sha": "aed85f5cf097",
       "sl_mode": "initial",
       "feed_updated_utc": "2026-11-04T20:03Z",
+      "activated_utc": null
+    },
+    {
+      "trade_id": "XLMUSDT_20261105_CJ_001",
+      "coin": "XLMUSDT",
+      "direction": "Short",
+      "trading_system": "John",
+      "conviction": "MEDIUM",
+      "leverage": 3,
+      "entry_price": 0.17707819,
+      "entry_lo": 0.16791862,
+      "entry_hi": 0.18013138,
+      "sl": 0.18068406,
+      "tp1": 0.15588611,
+      "tp2": 0.14173188,
+      "status": "PENDING",
+      "tp1_hit": false,
+      "tp2_hit": false,
+      "sl_hit": false,
+      "close_reason": null,
+      "date_opened": "2026-11-05",
+      "time_opened_utc": "00:03",
+      "code_sha": "83aed7377bff",
+      "sl_mode": "initial",
+      "feed_updated_utc": "2026-11-05T00:03Z",
       "activated_utc": null
     }
   ]
