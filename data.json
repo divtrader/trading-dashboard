@@ -1,5 +1,5 @@
 {
-  "last_updated_iso": "2026-11-05T13:46:40Z",
+  "last_updated_iso": "2026-11-05T13:47:47Z",
   "mexc_account": null,
   "api_keys": [
     {
@@ -412,10 +412,10 @@
       "leverage": 3,
       "trading_system": "John",
       "track_only": false,
-      "status": "PENDING",
+      "status": "OPEN",
       "price_at_run": 7.404,
-      "date_activated": null,
-      "time_activated_utc": null,
+      "date_activated": "2026-11-05",
+      "time_activated_utc": "13:31",
       "date_opened": "2026-11-04",
       "time_opened_utc": "20:03",
       "conviction": "HIGH",
@@ -792,6 +792,16 @@
       "tp1_hit": false,
       "iso": "2026-11-05T12:32:00Z",
       "_iso_ms": 1793881920000
+    },
+    {
+      "trade_id": "UNIUSDT_20261104_CJ_001",
+      "coin": "UNIUSDT",
+      "direction": "Long",
+      "trading_system": "John",
+      "entry_price": 7.26483954,
+      "tp1_hit": false,
+      "iso": "2026-11-05T13:31:00Z",
+      "_iso_ms": 1793885460000
     }
   ],
   "recent_closes": [
@@ -1451,7 +1461,7 @@
     "peak_capital_usd": 3300,
     "peak_concurrent": 33,
     "peak_date": "2026-06-22",
-    "deployed_trades": 828,
+    "deployed_trades": 829,
     "return_on_peak_pct": 29.58,
     "win_rate_pct": 34.0,
     "closed_count": 812,
