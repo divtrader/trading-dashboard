@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-05T18:08:01Z",
+  "updated": "2026-11-05T20:07:37Z",
   "positions": {
     "1414291495": {
       "position_id": "1414291495",
@@ -6308,8 +6308,16 @@
       "leverage": 3,
       "entry_price": 1.2323,
       "opened_at": "2026-11-05T18:05:12Z",
-      "status": "OPEN",
-      "braam_trade_id": "XRPUSDT_20261105_CJ_001"
+      "status": "CLOSED",
+      "braam_trade_id": "XRPUSDT_20261105_CJ_001",
+      "closed_at": "2026-11-05T18:18:00Z",
+      "close_price": 1.229,
+      "pnl_usd": -2.666,
+      "margin_usd": 210.75,
+      "fees_usd": 0.9962,
+      "tag": "LOSS",
+      "close_type": 4,
+      "close_reason": "stop_loss"
     }
   },
   "orders": {
@@ -6412,13 +6420,40 @@
       "braam_trade_id": "DOGEUSDT_20261105_CJ_001",
       "status": "RESTING"
     },
-    "873386274301490176": {
-      "order_id": "873386274301490176",
+    "873416495390077952": {
+      "order_id": "873416495390077952",
       "coin": "CAKEUSDT",
       "direction": "Long",
-      "entry_price": 1.8685,
+      "entry_price": 1.80425,
       "resting_at": "2026-11-05T12:03:00Z",
       "braam_trade_id": "CAKEUSDT_20261105_CJ_001",
+      "status": "RESTING"
+    },
+    "873416504681916928": {
+      "order_id": "873416504681916928",
+      "coin": "THETAUSDT",
+      "direction": "Short",
+      "entry_price": 0.16172608,
+      "resting_at": "2026-11-05T12:03:00Z",
+      "braam_trade_id": "THETAUSDT_20261105_CJ_001",
+      "status": "RESTING"
+    },
+    "873415950488417280": {
+      "order_id": "873415950488417280",
+      "coin": "BNBUSDT",
+      "direction": "Short",
+      "entry_price": 707.08933309,
+      "resting_at": "2026-11-05T20:03:00Z",
+      "braam_trade_id": "BNBUSDT_20261105_CJ_001",
+      "status": "RESTING"
+    },
+    "873415960328852544": {
+      "order_id": "873415960328852544",
+      "coin": "RENDERUSDT",
+      "direction": "Long",
+      "entry_price": 1.49272451,
+      "resting_at": "2026-11-05T20:03:00Z",
+      "braam_trade_id": "RENDERUSDT_20261105_CJ_001",
       "status": "RESTING"
     }
   },
