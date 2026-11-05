@@ -1,19 +1,32 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-11-05T06:06:03Z",
+  "last_updated_iso": "2026-11-05T07:15:20Z",
   "mexc_account": {
-    "unrealized_pnl": 10.6829,
-    "equity": 4345.4027,
+    "unrealized_pnl": 12.0806,
+    "equity": 4346.8004,
     "available": 151.3301,
     "position_margin": 479.7055
   },
   "order_levels": {
     "checked": 21,
-    "in_sync": 21,
-    "drifted": [],
+    "in_sync": 20,
+    "drifted": [
+      "NEAR"
+    ],
     "reconciling": [],
-    "detail": []
+    "detail": [
+      {
+        "coin": "NEAR",
+        "trade_id": "NEARUSDT_20261104_CJ_001",
+        "status": "OPEN",
+        "fields": [
+          "tp1",
+          "tp2"
+        ],
+        "synced_at": null
+      }
+    ]
   },
   "api_keys": [
     {
@@ -74,7 +87,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$4,345.40",
+      "value": "$4,346.80",
       "status": "ok",
       "action": null
     },
@@ -98,9 +111,9 @@
       "key": "position_protection",
       "tier": 1,
       "label": "Position protection",
-      "value": "all protected (3 open, 2 pre-TP1 runners)",
-      "status": "ok",
-      "action": null
+      "value": "live read failed",
+      "status": "warn",
+      "action": "Worker health read failed \u2014 can't confirm SL protection; check the Worker."
     },
     {
       "key": "apikey_MEXC_ALGO_KEY",
@@ -421,7 +434,7 @@
       "live_entry_slippage_pct": 0.0008,
       "live_fees_usd": 0.8412,
       "live_funding_usd": null,
-      "live_tp1_pnl_usd": 35.02,
+      "live_tp1_pnl_usd": 36.1046,
       "rehearsal": false
     },
     {
@@ -558,8 +571,8 @@
       "direction": "Long",
       "entry_price": 4.0319546,
       "sl": 3.88174185,
-      "tp1": 4.56246,
-      "tp2": 4.6475163,
+      "tp1": 4.252,
+      "tp2": 4.489,
       "capital_usd": 217.27,
       "leverage": 3,
       "trading_system": "John",
