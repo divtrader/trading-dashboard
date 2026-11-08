@@ -1,9 +1,9 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-11-08T06:06Z",
+  "generated_utc": "2026-11-08T08:07Z",
   "master": "braam",
   "retention_hours": 48,
-  "trade_count": 17,
+  "trade_count": 18,
   "trades": [
     {
       "trade_id": "AVAXUSDT_20261022_CJ_001",
@@ -428,6 +428,31 @@
       "code_sha": "898c52694e67",
       "sl_mode": "initial",
       "feed_updated_utc": "2026-11-07T20:03Z",
+      "activated_utc": null
+    },
+    {
+      "trade_id": "BNBUSDT_20261108_CJ_001",
+      "coin": "BNBUSDT",
+      "direction": "Long",
+      "trading_system": "John",
+      "conviction": "MEDIUM",
+      "leverage": 3,
+      "entry_price": 688.36,
+      "entry_lo": 680.1867987,
+      "entry_hi": 712.87960389,
+      "sl": 681.77229483,
+      "tp1": 733.73641787,
+      "tp2": 762.47552683,
+      "status": "PENDING",
+      "tp1_hit": false,
+      "tp2_hit": false,
+      "sl_hit": false,
+      "close_reason": null,
+      "date_opened": "2026-11-08",
+      "time_opened_utc": "08:02",
+      "code_sha": "4a5b30a5fbfd",
+      "sl_mode": "initial",
+      "feed_updated_utc": "2026-11-08T08:02Z",
       "activated_utc": null
     }
   ]
