@@ -1,6 +1,6 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-11-08T20:06Z",
+  "generated_utc": "2026-11-08T22:07Z",
   "master": "braam",
   "retention_hours": 48,
   "trade_count": 16,
@@ -243,16 +243,16 @@
       "sl": 1.75921597,
       "tp1": 2.15525639,
       "tp2": 2.22656807,
-      "status": "PENDING",
+      "status": "CANCELLED",
       "tp1_hit": false,
       "tp2_hit": false,
       "sl_hit": false,
-      "close_reason": null,
+      "close_reason": "Signal direction flipped to Short (5/8 signals) \u2014 original setup no longer valid",
       "date_opened": "2026-11-05",
       "time_opened_utc": "12:03",
       "code_sha": "a777f8f430f1",
       "sl_mode": "initial",
-      "feed_updated_utc": "2026-11-05T12:03Z",
+      "feed_updated_utc": "2026-11-08T22:02Z",
       "activated_utc": null
     },
     {
@@ -318,16 +318,16 @@
       "sl": 1.44013455,
       "tp1": 1.60923533,
       "tp2": 1.715,
-      "status": "OPEN",
+      "status": "STOPPED_AFTER_TP1",
       "tp1_hit": true,
       "tp2_hit": false,
       "sl_hit": false,
-      "close_reason": null,
+      "close_reason": "live MEXC exit: sl @ 1.488",
       "date_opened": "2026-11-05",
       "time_opened_utc": "20:03",
       "code_sha": "be0bbc0d913c",
       "sl_mode": "breakeven",
-      "feed_updated_utc": "2026-11-06T14:03Z",
+      "feed_updated_utc": "2026-11-08T21:55Z",
       "activated_utc": "2026-11-05T23:08Z"
     },
     {
@@ -393,17 +393,17 @@
       "sl": 681.77229483,
       "tp1": 733.73641787,
       "tp2": 762.47552683,
-      "status": "PENDING",
+      "status": "STOPPED",
       "tp1_hit": false,
       "tp2_hit": false,
       "sl_hit": false,
-      "close_reason": null,
+      "close_reason": "live MEXC exit: sl @ 680.1",
       "date_opened": "2026-11-08",
       "time_opened_utc": "08:02",
       "code_sha": "4a5b30a5fbfd",
       "sl_mode": "initial",
-      "feed_updated_utc": "2026-11-08T08:02Z",
-      "activated_utc": null
+      "feed_updated_utc": "2026-11-08T21:55Z",
+      "activated_utc": "2026-11-08T21:54Z"
     }
   ]
 }
