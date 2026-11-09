@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-09T14:05:57Z",
+  "updated": "2026-11-09T16:07:59Z",
   "positions": {
     "1414291495": {
       "position_id": "1414291495",
@@ -6092,8 +6092,16 @@
       "leverage": 3,
       "entry_price": 1.58,
       "opened_at": "2026-11-09T02:24:55Z",
-      "status": "OPEN",
-      "braam_trade_id": "RENDERUSDT_20261031_CJ_001"
+      "status": "CLOSED",
+      "braam_trade_id": "RENDERUSDT_20261031_CJ_001",
+      "closed_at": "2026-11-09T15:46:47Z",
+      "close_price": 1.626,
+      "pnl_usd": -20.1206,
+      "margin_usd": 218.69,
+      "fees_usd": 0.9332,
+      "tag": "LOSS",
+      "close_type": 4,
+      "close_reason": "stop_loss"
     },
     "1532649370": {
       "position_id": "1532649370",
@@ -6482,6 +6490,15 @@
       "entry_price": 1.53858147,
       "resting_at": "2026-11-09T12:02:00Z",
       "braam_trade_id": "RENDERUSDT_20261109_CJ_001",
+      "status": "RESTING"
+    },
+    "874805075502311936": {
+      "order_id": "874805075502311936",
+      "coin": "AVAXUSDT",
+      "direction": "Long",
+      "entry_price": 8.7159117,
+      "resting_at": "2026-11-09T16:03:00Z",
+      "braam_trade_id": "AVAXUSDT_20261109_CJ_001",
       "status": "RESTING"
     }
   },
