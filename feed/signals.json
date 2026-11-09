@@ -1,9 +1,9 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-11-09T18:06Z",
+  "generated_utc": "2026-11-09T20:07Z",
   "master": "braam",
   "retention_hours": 48,
-  "trade_count": 18,
+  "trade_count": 19,
   "trades": [
     {
       "trade_id": "SOLUSDT_20261030_CJ_001",
@@ -454,6 +454,31 @@
       "sl_mode": "initial",
       "feed_updated_utc": "2026-11-09T17:02Z",
       "activated_utc": "2026-11-09T17:02Z"
+    },
+    {
+      "trade_id": "APTUSDT_20261109_CJ_001",
+      "coin": "APTUSDT",
+      "direction": "Long",
+      "trading_system": "John",
+      "conviction": "MEDIUM",
+      "leverage": 3,
+      "entry_price": 0.56712352,
+      "entry_lo": 0.55659703,
+      "entry_hi": 0.59870297,
+      "sl": 0.55024899,
+      "tp1": 0.65998507,
+      "tp2": 0.66470202,
+      "status": "PENDING",
+      "tp1_hit": false,
+      "tp2_hit": false,
+      "sl_hit": false,
+      "close_reason": null,
+      "date_opened": "2026-11-09",
+      "time_opened_utc": "20:03",
+      "code_sha": "bfc1f9adbd2c",
+      "sl_mode": "initial",
+      "feed_updated_utc": "2026-11-09T20:03Z",
+      "activated_utc": null
     }
   ]
 }
