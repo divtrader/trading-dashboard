@@ -1,5 +1,5 @@
 {
-  "last_updated_iso": "2026-11-09T17:05:56Z",
+  "last_updated_iso": "2026-11-09T17:06:51Z",
   "mexc_account": null,
   "api_keys": [
     {
@@ -343,10 +343,10 @@
       "leverage": 3,
       "trading_system": "John",
       "track_only": false,
-      "status": "PENDING",
+      "status": "OPEN",
       "price_at_run": 8.961,
-      "date_activated": null,
-      "time_activated_utc": null,
+      "date_activated": "2026-11-09",
+      "time_activated_utc": "17:02",
       "date_opened": "2026-11-09",
       "time_opened_utc": "16:03",
       "conviction": "MEDIUM",
@@ -379,18 +379,6 @@
       "conviction": "MEDIUM",
       "track_only": false,
       "iso": "2026-11-09T12:02:00Z"
-    },
-    {
-      "trade_id": "AVAXUSDT_20261109_CJ_001",
-      "coin": "AVAXUSDT",
-      "direction": "Long",
-      "trading_system": "John",
-      "entry_price": 8.7159117,
-      "tp1": 8.983,
-      "sl": 8.4801106,
-      "conviction": "MEDIUM",
-      "track_only": false,
-      "iso": "2026-11-09T16:03:00Z"
     }
   ],
   "recent_opens": [
@@ -413,6 +401,16 @@
       "tp1_hit": false,
       "iso": "2026-11-09T02:24:00Z",
       "_iso_ms": 1794191040000
+    },
+    {
+      "trade_id": "AVAXUSDT_20261109_CJ_001",
+      "coin": "AVAXUSDT",
+      "direction": "Long",
+      "trading_system": "John",
+      "entry_price": 8.7159117,
+      "tp1_hit": false,
+      "iso": "2026-11-09T17:02:00Z",
+      "_iso_ms": 1794243720000
     }
   ],
   "recent_closes": [
@@ -1065,7 +1063,7 @@
     "peak_capital_usd": 3300,
     "peak_concurrent": 33,
     "peak_date": "2026-06-22",
-    "deployed_trades": 838,
+    "deployed_trades": 839,
     "return_on_peak_pct": 28.56,
     "win_rate_pct": 33.8,
     "closed_count": 826,
