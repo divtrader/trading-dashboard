@@ -1,6 +1,6 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-11-11T08:12Z",
+  "generated_utc": "2026-11-11T10:07Z",
   "master": "braam",
   "retention_hours": 48,
   "trade_count": 19,
@@ -93,16 +93,16 @@
       "sl": 0.69986806,
       "tp1": 0.60618525,
       "tp2": 0.52566389,
-      "status": "PENDING",
+      "status": "CANCELLED",
       "tp1_hit": false,
       "tp2_hit": false,
       "sl_hit": false,
-      "close_reason": null,
+      "close_reason": "Stale 26.0h \u2265 24h grace: Price $0.5707 is 18.7% below entry $0.6777",
       "date_opened": "2026-10-31",
       "time_opened_utc": "16:03",
       "code_sha": "f9d1000e49a5",
       "sl_mode": "initial",
-      "feed_updated_utc": "2026-10-31T16:03Z",
+      "feed_updated_utc": "2026-11-11T10:03Z",
       "activated_utc": null
     },
     {
@@ -452,7 +452,7 @@
       "time_opened_utc": "00:03",
       "code_sha": "c157e24a7c1e",
       "sl_mode": "initial",
-      "feed_updated_utc": "2026-11-11T00:03Z",
+      "feed_updated_utc": "2026-11-11T10:03Z",
       "activated_utc": "2026-11-11T00:03Z"
     },
     {
