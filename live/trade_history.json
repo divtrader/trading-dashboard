@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-12T12:08:09Z",
+  "updated": "2026-11-12T14:08:12Z",
   "positions": {
     "1414291495": {
       "position_id": "1414291495",
@@ -6380,8 +6380,16 @@
       "leverage": 3,
       "entry_price": 0.06546,
       "opened_at": "2026-11-10T15:40:36Z",
-      "status": "OPEN",
-      "braam_trade_id": "HBARUSDT_20261109_CJ_001"
+      "status": "CLOSED",
+      "braam_trade_id": "HBARUSDT_20261109_CJ_001",
+      "closed_at": "2026-11-12T13:09:51Z",
+      "close_price": 0.06416,
+      "pnl_usd": -13.4812,
+      "margin_usd": 211.68,
+      "fees_usd": 0.8787,
+      "tag": "LOSS",
+      "close_type": 4,
+      "close_reason": "stop_loss"
     },
     "1537004274": {
       "position_id": "1537004274",
@@ -6456,6 +6464,16 @@
       "opened_at": "2026-11-11T00:03:23Z",
       "status": "OPEN",
       "braam_trade_id": "SOLUSDT_20261111_CM_001"
+    },
+    "1537074659": {
+      "position_id": "1537074659",
+      "coin": "AVAXUSDT",
+      "direction": "Long",
+      "leverage": 3,
+      "entry_price": 8.327,
+      "opened_at": "2026-11-12T13:09:48Z",
+      "status": "OPEN",
+      "braam_trade_id": "AVAXUSDT_20261111_CJ_001"
     }
   },
   "orders": {
@@ -6520,15 +6538,6 @@
       "entry_price": 1.884,
       "resting_at": "2026-11-11T04:03:00Z",
       "braam_trade_id": "CAKEUSDT_20261111_CJ_001",
-      "status": "RESTING"
-    },
-    "875711722143757312": {
-      "order_id": "875711722143757312",
-      "coin": "AVAXUSDT",
-      "direction": "Long",
-      "entry_price": 8.3268714,
-      "resting_at": "2026-11-11T12:03:00Z",
-      "braam_trade_id": "AVAXUSDT_20261111_CJ_001",
       "status": "RESTING"
     }
   },
