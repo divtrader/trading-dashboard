@@ -1,5 +1,5 @@
 {
-  "last_updated_iso": "2026-11-12T10:22:41Z",
+  "last_updated_iso": "2026-11-12T10:23:40Z",
   "mexc_account": null,
   "api_keys": [
     {
@@ -205,10 +205,10 @@
       "leverage": 3,
       "trading_system": "John",
       "track_only": false,
-      "status": "PENDING",
+      "status": "OPEN",
       "price_at_run": 1.508,
-      "date_activated": null,
-      "time_activated_utc": null,
+      "date_activated": "2026-11-12",
+      "time_activated_utc": "10:11",
       "date_opened": "2026-11-09",
       "time_opened_utc": "12:02",
       "conviction": "MEDIUM",
@@ -373,6 +373,16 @@
       "tp1_hit": false,
       "iso": "2026-11-11T00:03:00Z",
       "_iso_ms": 1794355380000
+    },
+    {
+      "trade_id": "RENDERUSDT_20261109_CJ_001",
+      "coin": "RENDERUSDT",
+      "direction": "Long",
+      "trading_system": "John",
+      "entry_price": 1.49870117,
+      "tp1_hit": false,
+      "iso": "2026-11-12T10:11:00Z",
+      "_iso_ms": 1794478260000
     }
   ],
   "recent_closes": [
@@ -1033,7 +1043,7 @@
     "peak_capital_usd": 3300,
     "peak_concurrent": 33,
     "peak_date": "2026-06-22",
-    "deployed_trades": 843,
+    "deployed_trades": 844,
     "return_on_peak_pct": 28.31,
     "win_rate_pct": 33.7,
     "closed_count": 827,
