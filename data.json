@@ -1,5 +1,5 @@
 {
-  "last_updated_iso": "2026-11-13T10:23:02Z",
+  "last_updated_iso": "2026-11-13T12:07:03Z",
   "mexc_account": null,
   "api_keys": [
     {
@@ -45,7 +45,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 0.3116,
+      "price_at_run": 0.3126,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-10-31",
@@ -68,7 +68,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 638.13,
+      "price_at_run": 640.13,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-11-05",
@@ -91,7 +91,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 0.1711,
+      "price_at_run": 0.1719,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-11-06",
@@ -114,7 +114,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 0.8027,
+      "price_at_run": 0.8033,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-11-07",
@@ -137,7 +137,7 @@
       "trading_system": "Mong",
       "track_only": false,
       "status": "OPEN",
-      "price_at_run": 80.21,
+      "price_at_run": 80.72,
       "date_activated": "2026-11-11",
       "time_activated_utc": "00:03",
       "date_opened": "2026-11-11",
@@ -160,7 +160,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 1.73,
+      "price_at_run": 1.735,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-11-11",
@@ -183,7 +183,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 1.506,
+      "price_at_run": 1.533,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-11-13",
@@ -191,6 +191,29 @@
       "conviction": "MEDIUM",
       "tp1_hit": false,
       "sl_moved_to_be": null,
+      "pnl_tp1_realized_usd": null
+    },
+    {
+      "trade_id": "ETHUSDT_20261113_CM_001",
+      "coin": "ETHUSDT",
+      "direction": "Long",
+      "entry_price": 1962.54,
+      "sl": 1764.19983862,
+      "tp1": 2160.88016138,
+      "tp2": 2458.39040345,
+      "capital_usd": 100,
+      "leverage": 3,
+      "trading_system": "Mong",
+      "track_only": false,
+      "status": "OPEN",
+      "price_at_run": 1962.54,
+      "date_activated": "2026-11-13",
+      "time_activated_utc": "12:02",
+      "date_opened": "2026-11-13",
+      "time_opened_utc": "12:02",
+      "conviction": "HIGH",
+      "tp1_hit": false,
+      "sl_moved_to_be": false,
       "pnl_tp1_realized_usd": null
     }
   ],
@@ -228,6 +251,16 @@
       "tp1_hit": false,
       "iso": "2026-11-12T13:09:00Z",
       "_iso_ms": 1794488940000
+    },
+    {
+      "trade_id": "ETHUSDT_20261113_CM_001",
+      "coin": "ETHUSDT",
+      "direction": "Long",
+      "trading_system": "Mong",
+      "entry_price": 1962.54,
+      "tp1_hit": false,
+      "iso": "2026-11-13T12:02:00Z",
+      "_iso_ms": 1794571320000
     }
   ],
   "recent_closes": [
@@ -872,15 +905,7 @@
       "fees_modeled": true
     }
   ],
-  "recent_cancels": [
-    {
-      "coin": "LINKUSDT",
-      "direction": "Short",
-      "trading_system": "John",
-      "close_reason": "Stale 26.0h \u2265 24h grace: Price $10.157 is 18.1% below entry $11.990",
-      "iso": "2026-11-13T00:02:00Z"
-    }
-  ],
+  "recent_cancels": [],
   "tp1_hits_open": [],
   "stats": {
     "realized_pnl_usd": 892.78,
@@ -888,7 +913,7 @@
     "peak_capital_usd": 3300,
     "peak_concurrent": 33,
     "peak_date": "2026-06-22",
-    "deployed_trades": 845,
+    "deployed_trades": 846,
     "return_on_peak_pct": 27.05,
     "win_rate_pct": 33.5,
     "closed_count": 832,
