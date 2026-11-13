@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-13T02:06:05Z",
+  "updated": "2026-11-13T04:07:24Z",
   "positions": {
     "1414291495": {
       "position_id": "1414291495",
@@ -6398,8 +6398,16 @@
       "leverage": 3,
       "entry_price": 1.499,
       "opened_at": "2026-11-12T10:11:44Z",
-      "status": "OPEN",
-      "braam_trade_id": "RENDERUSDT_20261109_CJ_001"
+      "status": "CLOSED",
+      "braam_trade_id": "RENDERUSDT_20261109_CJ_001",
+      "closed_at": "2026-11-13T03:53:44Z",
+      "close_price": 1.448,
+      "pnl_usd": -22.3237,
+      "margin_usd": 211.68,
+      "fees_usd": 0.8704,
+      "tag": "LOSS",
+      "close_type": 4,
+      "close_reason": "stop_loss"
     },
     "1535588683": {
       "position_id": "1535588683",
@@ -6472,8 +6480,16 @@
       "leverage": 3,
       "entry_price": 8.327,
       "opened_at": "2026-11-12T13:09:48Z",
-      "status": "OPEN",
-      "braam_trade_id": "AVAXUSDT_20261111_CJ_001"
+      "status": "CLOSED",
+      "braam_trade_id": "AVAXUSDT_20261111_CJ_001",
+      "closed_at": "2026-11-13T03:22:11Z",
+      "close_price": 8.099,
+      "pnl_usd": -18.2501,
+      "margin_usd": 211.35,
+      "fees_usd": 0.8732,
+      "tag": "LOSS",
+      "close_type": 4,
+      "close_reason": "stop_loss"
     }
   },
   "orders": {
@@ -6513,13 +6529,22 @@
       "braam_trade_id": "SUIUSDT_20261107_CJ_001",
       "status": "RESTING"
     },
-    "875348741361578496": {
-      "order_id": "875348741361578496",
+    "876074012515578368": {
+      "order_id": "876074012515578368",
       "coin": "CAKEUSDT",
       "direction": "Short",
-      "entry_price": 1.884,
+      "entry_price": 1.871,
       "resting_at": "2026-11-11T04:03:00Z",
       "braam_trade_id": "CAKEUSDT_20261111_CJ_001",
+      "status": "RESTING"
+    },
+    "876073457481078336": {
+      "order_id": "876073457481078336",
+      "coin": "RENDERUSDT",
+      "direction": "Long",
+      "entry_price": 1.39380014,
+      "resting_at": "2026-11-13T04:03:00Z",
+      "braam_trade_id": "RENDERUSDT_20261113_CJ_001",
       "status": "RESTING"
     }
   },
