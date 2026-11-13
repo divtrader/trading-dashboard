@@ -1,19 +1,32 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-11-13T10:05:43Z",
+  "last_updated_iso": "2026-11-13T10:22:12Z",
   "mexc_account": {
-    "unrealized_pnl": -23.4,
-    "equity": 4086.5649,
+    "unrealized_pnl": -22.875,
+    "equity": 4087.0899,
     "available": 2626.4505,
     "position_margin": 208.9503
   },
   "order_levels": {
     "checked": 7,
-    "in_sync": 7,
-    "drifted": [],
+    "in_sync": 6,
+    "drifted": [
+      "SOL"
+    ],
     "reconciling": [],
-    "detail": []
+    "detail": [
+      {
+        "coin": "SOL",
+        "trade_id": "SOLUSDT_20261111_CM_001",
+        "status": "OPEN",
+        "fields": [
+          "tp1",
+          "tp2"
+        ],
+        "synced_at": "2026-11-11T08:11:39.474374+00:00"
+      }
+    ]
   },
   "api_keys": [
     {
@@ -74,7 +87,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$4,086.56",
+      "value": "$4,087.09",
       "status": "ok",
       "action": null
     },
@@ -270,8 +283,8 @@
       "direction": "Long",
       "entry_price": 83.43,
       "sl": 74.58088308,
-      "tp1": 88.41,
-      "tp2": 96.2,
+      "tp1": 119,
+      "tp2": 140,
       "capital_usd": 210.31,
       "leverage": 3,
       "trading_system": "Mong",
