@@ -1,9 +1,9 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-11-14T12:06Z",
+  "generated_utc": "2026-11-14T14:07Z",
   "master": "braam",
   "retention_hours": 48,
-  "trade_count": 12,
+  "trade_count": 11,
   "trades": [
     {
       "trade_id": "TRXUSDT_20261031_CJ_001",
@@ -156,31 +156,6 @@
       "activated_utc": null
     },
     {
-      "trade_id": "HBARUSDT_20261109_CJ_001",
-      "coin": "HBARUSDT",
-      "direction": "Long",
-      "trading_system": "John",
-      "conviction": "MEDIUM",
-      "leverage": 3,
-      "entry_price": 0.0654625,
-      "entry_lo": 0.06421,
-      "entry_hi": 0.06922,
-      "sl": 0.06408249,
-      "tp1": 0.07279,
-      "tp2": 0.08512,
-      "status": "STOPPED",
-      "tp1_hit": false,
-      "tp2_hit": false,
-      "sl_hit": false,
-      "close_reason": "live MEXC exit: sl @ 0.06416",
-      "date_opened": "2026-11-09",
-      "time_opened_utc": "12:02",
-      "code_sha": "335f78944a0b",
-      "sl_mode": "initial",
-      "feed_updated_utc": "2026-11-12T13:09Z",
-      "activated_utc": "2026-11-10T15:40Z"
-    },
-    {
       "trade_id": "RENDERUSDT_20261109_CJ_001",
       "coin": "RENDERUSDT",
       "direction": "Long",
@@ -218,16 +193,16 @@
       "sl": 74.58088308,
       "tp1": 119,
       "tp2": 140,
-      "status": "OPEN",
+      "status": "STOPPED",
       "tp1_hit": false,
       "tp2_hit": false,
       "sl_hit": false,
-      "close_reason": null,
+      "close_reason": "live MEXC exit: sl @ 74.63",
       "date_opened": "2026-11-11",
       "time_opened_utc": "00:03",
       "code_sha": "c157e24a7c1e",
       "sl_mode": "initial",
-      "feed_updated_utc": "2026-11-13T12:02Z",
+      "feed_updated_utc": "2026-11-14T14:01Z",
       "activated_utc": "2026-11-11T00:03Z"
     },
     {

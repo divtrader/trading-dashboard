@@ -1,16 +1,16 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-11-14T12:06:42Z",
+  "last_updated_iso": "2026-11-14T14:06:56Z",
   "mexc_account": {
-    "unrealized_pnl": -56.4,
-    "equity": 4053.5294,
-    "available": 2830.9159,
-    "position_margin": 208.9503
+    "unrealized_pnl": 0.0,
+    "equity": 4043.8566,
+    "available": 2973.7934,
+    "position_margin": 0.0
   },
   "order_levels": {
-    "checked": 7,
-    "in_sync": 6,
+    "checked": 6,
+    "in_sync": 5,
     "drifted": [
       "RENDER"
     ],
@@ -86,7 +86,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$4,053.53",
+      "value": "$4,043.86",
       "status": "ok",
       "action": null
     },
@@ -110,7 +110,7 @@
       "key": "position_protection",
       "tier": 1,
       "label": "Position protection",
-      "value": "all protected (1 open, 1 pre-TP1 runners)",
+      "value": "all protected (0 open, 0 pre-TP1 runners)",
       "status": "ok",
       "action": null
     },
@@ -161,7 +161,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 0.3132,
+      "price_at_run": 0.312,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-10-31",
@@ -193,7 +193,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 616.9,
+      "price_at_run": 604.28,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-11-05",
@@ -225,7 +225,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 0.1637,
+      "price_at_run": 0.1597,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-11-06",
@@ -257,7 +257,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 0.7729,
+      "price_at_run": 0.7581,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-11-07",
@@ -277,38 +277,6 @@
       "rehearsal": false
     },
     {
-      "trade_id": "SOLUSDT_20261111_CM_001",
-      "coin": "SOLUSDT",
-      "direction": "Long",
-      "entry_price": 83.43,
-      "sl": 74.58088308,
-      "tp1": 119,
-      "tp2": 140,
-      "capital_usd": 210.31,
-      "leverage": 3,
-      "trading_system": "Mong",
-      "track_only": false,
-      "status": "OPEN",
-      "price_at_run": 75.98,
-      "date_activated": "2026-11-11",
-      "time_activated_utc": "00:03",
-      "date_opened": "2026-11-11",
-      "time_opened_utc": "00:03",
-      "conviction": "HIGH",
-      "tp1_hit": false,
-      "sl_moved_to_be": false,
-      "pnl_tp1_realized_usd": null,
-      "tp2_hit": false,
-      "live_executed": true,
-      "live_entry_fill": 83.38,
-      "live_exit_fill": null,
-      "live_entry_slippage_pct": -0.0599,
-      "live_fees_usd": 0.5002,
-      "live_funding_usd": null,
-      "live_tp1_pnl_usd": null,
-      "rehearsal": false
-    },
-    {
       "trade_id": "CAKEUSDT_20261111_CJ_001",
       "coin": "CAKEUSDT",
       "direction": "Short",
@@ -321,7 +289,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 1.677,
+      "price_at_run": 1.652,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-11-11",
@@ -353,7 +321,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 1.49,
+      "price_at_run": 1.463,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-11-13",
@@ -374,40 +342,8 @@
     }
   ],
   "recent_signals": [],
-  "recent_opens": [
-    {
-      "trade_id": "AVAXUSDT_20261111_CJ_001",
-      "coin": "AVAXUSDT",
-      "direction": "Long",
-      "trading_system": "John",
-      "entry_price": 8.3268714,
-      "live_entry_fill": 8.327,
-      "tp1_hit": false,
-      "iso": "2026-11-12T13:09:00Z",
-      "_iso_ms": 1794488940000,
-      "rehearsal": false
-    }
-  ],
+  "recent_opens": [],
   "recent_closes": [
-    {
-      "trade_id": "HBARUSDT_20260812_CB_001",
-      "coin": "HBARUSDT",
-      "direction": "Short",
-      "status": "STOPPED",
-      "pnl_usd": -7.16,
-      "close_reason": "live MEXC exit: sl @ 0.06884",
-      "date_closed": "2026-08-19",
-      "time_closed_utc": "15:16",
-      "trading_system": "Braam",
-      "live_entry_fill": 0.06778,
-      "live_exit_fill": 0.06884,
-      "live_entry_slippage_pct": 0.0067,
-      "live_fees_usd": 0.5858,
-      "live_funding_usd": 0.034251,
-      "won": false,
-      "close_iso": "2026-08-19T15:16:00Z",
-      "rehearsal": false
-    },
     {
       "trade_id": "AVAXUSDT_20260816_CB_001",
       "coin": "AVAXUSDT",
@@ -4188,20 +4124,39 @@
       "won": false,
       "close_iso": "2026-11-13T03:53:00Z",
       "rehearsal": false
+    },
+    {
+      "trade_id": "SOLUSDT_20261111_CM_001",
+      "coin": "SOLUSDT",
+      "direction": "Long",
+      "status": "STOPPED",
+      "pnl_usd": -66.37,
+      "close_reason": "live MEXC exit: sl @ 74.63",
+      "date_closed": "2026-11-14",
+      "time_closed_utc": "14:01",
+      "trading_system": "Mong",
+      "live_entry_fill": 83.38,
+      "live_exit_fill": 74.63,
+      "live_entry_slippage_pct": -0.0599,
+      "live_fees_usd": 0.9479,
+      "live_funding_usd": -0.202804,
+      "won": false,
+      "close_iso": "2026-11-14T14:01:00Z",
+      "rehearsal": false
     }
   ],
   "recent_cancels": [],
   "tp1_hits_open": [],
   "stats": {
-    "realized_pnl_usd": -552.22,
-    "realized_pnl_pct": -1.04,
+    "realized_pnl_usd": -618.59,
+    "realized_pnl_pct": -1.16,
     "peak_capital_usd": 1926.61,
     "peak_concurrent": 8,
     "peak_date": "2026-10-12",
     "deployed_trades": 361,
-    "return_on_peak_pct": -28.66,
-    "win_rate_pct": 36.9,
-    "closed_count": 360,
+    "return_on_peak_pct": -32.11,
+    "win_rate_pct": 36.8,
+    "closed_count": 361,
     "per_system": {
       "Braam": {
         "realized_pnl_usd": -158.68,
@@ -4214,9 +4169,9 @@
         "closed_count": 200
       },
       "Mong": {
-        "realized_pnl_usd": -78.7,
+        "realized_pnl_usd": -145.07,
         "win_rate_pct": 0.0,
-        "closed_count": 1
+        "closed_count": 2
       }
     },
     "live_trade_count_total": 512,
