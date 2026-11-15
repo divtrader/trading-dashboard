@@ -1,5 +1,5 @@
 {
-  "last_updated_iso": "2026-11-15T06:07:03Z",
+  "last_updated_iso": "2026-11-15T08:06:37Z",
   "mexc_account": null,
   "api_keys": [
     {
@@ -45,7 +45,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 591.7,
+      "price_at_run": 586.2,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-11-05",
@@ -68,7 +68,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 0.1494,
+      "price_at_run": 0.1497,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-11-06",
@@ -91,7 +91,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 0.7172,
+      "price_at_run": 0.7131,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-11-07",
@@ -114,7 +114,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 1.617,
+      "price_at_run": 1.603,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-11-11",
@@ -137,7 +137,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 64353.64,
+      "price_at_run": 64002.56,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-11-14",
@@ -146,20 +146,43 @@
       "tp1_hit": false,
       "sl_moved_to_be": null,
       "pnl_tp1_realized_usd": null
+    },
+    {
+      "trade_id": "THETAUSDT_20261115_CJ_001",
+      "coin": "THETAUSDT",
+      "direction": "Short",
+      "entry_price": 0.133575,
+      "sl": 0.13793139,
+      "tp1": 0.10400796,
+      "tp2": 0.09271727,
+      "capital_usd": 100,
+      "leverage": 3,
+      "trading_system": "John",
+      "track_only": false,
+      "status": "PENDING",
+      "price_at_run": 0.1287,
+      "date_activated": null,
+      "time_activated_utc": null,
+      "date_opened": "2026-11-15",
+      "time_opened_utc": "08:02",
+      "conviction": "MEDIUM",
+      "tp1_hit": false,
+      "sl_moved_to_be": null,
+      "pnl_tp1_realized_usd": null
     }
   ],
   "recent_signals": [
     {
-      "trade_id": "BTCUSDT_20261114_CJ_001",
-      "coin": "BTCUSDT",
+      "trade_id": "THETAUSDT_20261115_CJ_001",
+      "coin": "THETAUSDT",
       "direction": "Short",
       "trading_system": "John",
-      "entry_price": 67343.79904807,
-      "tp1": 56948.56377698,
-      "sl": 68822.47984245,
+      "entry_price": 0.133575,
+      "tp1": 0.10400796,
+      "sl": 0.13793139,
       "conviction": "MEDIUM",
       "track_only": false,
-      "iso": "2026-11-14T20:02:00Z"
+      "iso": "2026-11-15T08:02:00Z"
     }
   ],
   "recent_opens": [
@@ -827,13 +850,6 @@
     }
   ],
   "recent_cancels": [
-    {
-      "coin": "RENDERUSDT",
-      "direction": "Long",
-      "trading_system": "John",
-      "close_reason": "Signal direction flipped to Short (5/8 signals) \u2014 original setup no longer valid",
-      "iso": "2026-11-14T20:02:00Z"
-    },
     {
       "coin": "TRXUSDT",
       "direction": "Short",
