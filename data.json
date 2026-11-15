@@ -1,5 +1,5 @@
 {
-  "last_updated_iso": "2026-11-15T16:07:07Z",
+  "last_updated_iso": "2026-11-15T18:07:00Z",
   "mexc_account": null,
   "api_keys": [
     {
@@ -33,29 +33,6 @@
   ],
   "active_trades": [
     {
-      "trade_id": "ADAUSDT_20261106_CJ_001",
-      "coin": "ADAUSDT",
-      "direction": "Short",
-      "entry_price": 0.18364195,
-      "sl": 0.1873777,
-      "tp1": 0.1553264,
-      "tp2": 0.1499446,
-      "capital_usd": 100,
-      "leverage": 3,
-      "trading_system": "John",
-      "track_only": false,
-      "status": "PENDING",
-      "price_at_run": 0.1528,
-      "date_activated": null,
-      "time_activated_utc": null,
-      "date_opened": "2026-11-06",
-      "time_opened_utc": "16:03",
-      "conviction": "MEDIUM",
-      "tp1_hit": false,
-      "sl_moved_to_be": null,
-      "pnl_tp1_realized_usd": null
-    },
-    {
       "trade_id": "CAKEUSDT_20261111_CJ_001",
       "coin": "CAKEUSDT",
       "direction": "Short",
@@ -68,7 +45,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 1.585,
+      "price_at_run": 1.583,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-11-11",
@@ -91,7 +68,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 64654.76,
+      "price_at_run": 64589.0,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-11-14",
@@ -137,7 +114,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 9.175,
+      "price_at_run": 9.225,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-11-15",
@@ -160,7 +137,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 190.0,
+      "price_at_run": 190.3,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-11-15",
@@ -183,7 +160,7 @@
       "trading_system": "Mong",
       "track_only": false,
       "status": "OPEN",
-      "price_at_run": 589.86,
+      "price_at_run": 591.19,
       "date_activated": "2026-11-15",
       "time_activated_utc": "12:02",
       "date_opened": "2026-11-15",
@@ -898,13 +875,6 @@
   ],
   "recent_cancels": [
     {
-      "coin": "TRXUSDT",
-      "direction": "Short",
-      "trading_system": "John",
-      "close_reason": "Entry window expired: unfilled 15.1d \u2265 90\u00d74H (360h) \u2014 mirrors backtest ENTRY_WIN",
-      "iso": "2026-11-15T06:02:00Z"
-    },
-    {
       "coin": "SUIUSDT",
       "direction": "Short",
       "trading_system": "John",
@@ -917,6 +887,13 @@
       "trading_system": "John",
       "close_reason": "Stale 24.0h \u2265 24h grace: Price $596.07 is 19.1% below entry $709.71",
       "iso": "2026-11-15T12:02:00Z"
+    },
+    {
+      "coin": "ADAUSDT",
+      "direction": "Short",
+      "trading_system": "John",
+      "close_reason": "Stale 26.0h \u2265 24h grace: Price $0.1534 is 19.7% below entry $0.1836",
+      "iso": "2026-11-15T18:02:00Z"
     }
   ],
   "tp1_hits_open": [],

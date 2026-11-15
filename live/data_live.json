@@ -1,16 +1,16 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-11-15T16:07:11Z",
+  "last_updated_iso": "2026-11-15T18:07:04Z",
   "mexc_account": {
     "unrealized_pnl": 0.0,
     "equity": 4043.8566,
-    "available": 3830.4896,
+    "available": 4043.8566,
     "position_margin": 0.0
   },
   "order_levels": {
-    "checked": 2,
-    "in_sync": 1,
+    "checked": 1,
+    "in_sync": 0,
     "drifted": [
       "CAKE"
     ],
@@ -102,7 +102,7 @@
       "key": "orphan_orders",
       "tier": 1,
       "label": "Order reconciliation",
-      "value": "in sync (1 resting = journal)",
+      "value": "in sync (0 resting = journal)",
       "status": "ok",
       "action": null
     },
@@ -149,38 +149,6 @@
   ],
   "active_trades": [
     {
-      "trade_id": "ADAUSDT_20261106_CJ_001",
-      "coin": "ADAUSDT",
-      "direction": "Short",
-      "entry_price": 0.18364195,
-      "sl": 0.1873777,
-      "tp1": 0.1553264,
-      "tp2": 0.1499446,
-      "capital_usd": 212.24,
-      "leverage": 3,
-      "trading_system": "John",
-      "track_only": false,
-      "status": "PENDING",
-      "price_at_run": 0.1528,
-      "date_activated": null,
-      "time_activated_utc": null,
-      "date_opened": "2026-11-06",
-      "time_opened_utc": "16:03",
-      "conviction": "MEDIUM",
-      "tp1_hit": false,
-      "sl_moved_to_be": null,
-      "pnl_tp1_realized_usd": null,
-      "tp2_hit": false,
-      "live_executed": null,
-      "live_entry_fill": null,
-      "live_exit_fill": null,
-      "live_entry_slippage_pct": null,
-      "live_fees_usd": null,
-      "live_funding_usd": null,
-      "live_tp1_pnl_usd": null,
-      "rehearsal": false
-    },
-    {
       "trade_id": "CAKEUSDT_20261111_CJ_001",
       "coin": "CAKEUSDT",
       "direction": "Short",
@@ -193,7 +161,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 1.585,
+      "price_at_run": 1.583,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-11-11",
@@ -4019,13 +3987,6 @@
   ],
   "recent_cancels": [
     {
-      "coin": "TRXUSDT",
-      "direction": "Short",
-      "trading_system": "John",
-      "close_reason": "Entry window expired: unfilled 15.1d \u2265 90\u00d74H (360h) \u2014 mirrors backtest ENTRY_WIN",
-      "iso": "2026-11-15T06:02:00Z"
-    },
-    {
       "coin": "SUIUSDT",
       "direction": "Short",
       "trading_system": "John",
@@ -4038,6 +3999,13 @@
       "trading_system": "John",
       "close_reason": "Stale 24.0h \u2265 24h grace: Price $596.07 is 19.1% below entry $709.71",
       "iso": "2026-11-15T12:02:00Z"
+    },
+    {
+      "coin": "ADAUSDT",
+      "direction": "Short",
+      "trading_system": "John",
+      "close_reason": "Stale 26.0h \u2265 24h grace: Price $0.1534 is 19.7% below entry $0.1836",
+      "iso": "2026-11-15T18:02:00Z"
     }
   ],
   "tp1_hits_open": [],
