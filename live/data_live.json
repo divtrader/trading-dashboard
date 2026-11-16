@@ -1,19 +1,31 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-11-16T14:05:50Z",
+  "last_updated_iso": "2026-11-16T15:39:47Z",
   "mexc_account": {
-    "unrealized_pnl": 11.8066,
-    "equity": 4055.3149,
-    "available": 3028.2675,
-    "position_margin": 202.8706
+    "unrealized_pnl": 17.1031,
+    "equity": 4060.2477,
+    "available": 3028.3887,
+    "position_margin": 405.4484
   },
   "order_levels": {
     "checked": 5,
-    "in_sync": 5,
-    "drifted": [],
+    "in_sync": 4,
+    "drifted": [
+      "LINK"
+    ],
     "reconciling": [],
-    "detail": []
+    "detail": [
+      {
+        "coin": "LINK",
+        "trade_id": "LINKUSDT_20261116_CJ_001",
+        "status": "PENDING",
+        "fields": [
+          "tp1"
+        ],
+        "synced_at": null
+      }
+    ]
   },
   "api_keys": [
     {
@@ -74,7 +86,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$4,055.31",
+      "value": "$4,060.25",
       "status": "ok",
       "action": null
     },
@@ -90,7 +102,7 @@
       "key": "orphan_orders",
       "tier": 1,
       "label": "Order reconciliation",
-      "value": "in sync (4 resting = journal)",
+      "value": "in sync (3 resting = journal)",
       "status": "ok",
       "action": null
     },
@@ -98,7 +110,7 @@
       "key": "position_protection",
       "tier": 1,
       "label": "Position protection",
-      "value": "all protected (1 open, 1 pre-TP1 runners)",
+      "value": "all protected (2 open, 1 pre-TP1 runners)",
       "status": "ok",
       "action": null
     },
@@ -270,8 +282,8 @@
       "direction": "Long",
       "entry_price": 9.0225,
       "sl": 8.75018151,
-      "tp1": 10.326507,
-      "tp2": 10.39963697,
+      "tp1": 9.342,
+      "tp2": 10.219,
       "capital_usd": 202.19,
       "leverage": 3,
       "trading_system": "John",
