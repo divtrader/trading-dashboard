@@ -1,6 +1,6 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-11-16T10:05Z",
+  "generated_utc": "2026-11-16T12:06Z",
   "master": "braam",
   "retention_hours": 48,
   "trade_count": 12,
@@ -143,16 +143,16 @@
       "sl": 1.90149587,
       "tp1": 1.52116224,
       "tp2": 1.03000826,
-      "status": "PENDING",
+      "status": "CANCELLED",
       "tp1_hit": false,
       "tp2_hit": false,
       "sl_hit": false,
-      "close_reason": null,
+      "close_reason": "CANCELLED: resting order lost to MEXC code 11444 during drift-replace 2026-11-16 10:04:52 UTC (cancel succeeded, re-place rejected); verified 0 open orders / 0 stop legs / 0 position on exchange",
       "date_opened": "2026-11-11",
       "time_opened_utc": "04:03",
       "code_sha": "0c38c2513b1d",
       "sl_mode": "initial",
-      "feed_updated_utc": "2026-11-11T04:03Z",
+      "feed_updated_utc": "2026-11-16T00:00Z",
       "activated_utc": null
     },
     {
