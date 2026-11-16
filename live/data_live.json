@@ -1,31 +1,19 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-11-16T15:39:47Z",
+  "last_updated_iso": "2026-11-16T15:40:36Z",
   "mexc_account": {
-    "unrealized_pnl": 17.1031,
-    "equity": 4060.2477,
+    "unrealized_pnl": 17.4554,
+    "equity": 4060.6,
     "available": 3028.3887,
     "position_margin": 405.4484
   },
   "order_levels": {
     "checked": 5,
-    "in_sync": 4,
-    "drifted": [
-      "LINK"
-    ],
+    "in_sync": 5,
+    "drifted": [],
     "reconciling": [],
-    "detail": [
-      {
-        "coin": "LINK",
-        "trade_id": "LINKUSDT_20261116_CJ_001",
-        "status": "PENDING",
-        "fields": [
-          "tp1"
-        ],
-        "synced_at": null
-      }
-    ]
+    "detail": []
   },
   "api_keys": [
     {
@@ -86,7 +74,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$4,060.25",
+      "value": "$4,060.60",
       "status": "ok",
       "action": null
     },
@@ -110,7 +98,7 @@
       "key": "position_protection",
       "tier": 1,
       "label": "Position protection",
-      "value": "all protected (2 open, 1 pre-TP1 runners)",
+      "value": "all protected (2 open, 2 pre-TP1 runners)",
       "status": "ok",
       "action": null
     },
@@ -288,10 +276,10 @@
       "leverage": 3,
       "trading_system": "John",
       "track_only": false,
-      "status": "PENDING",
+      "status": "OPEN",
       "price_at_run": 9.117,
-      "date_activated": null,
-      "time_activated_utc": null,
+      "date_activated": "2026-11-16",
+      "time_activated_utc": "15:24",
       "date_opened": "2026-11-16",
       "time_opened_utc": "00:02",
       "conviction": "MEDIUM",
@@ -299,11 +287,11 @@
       "sl_moved_to_be": null,
       "pnl_tp1_realized_usd": null,
       "tp2_hit": false,
-      "live_executed": null,
-      "live_entry_fill": null,
+      "live_executed": true,
+      "live_entry_fill": 9.022,
       "live_exit_fill": null,
-      "live_entry_slippage_pct": null,
-      "live_fees_usd": null,
+      "live_entry_slippage_pct": -0.0055,
+      "live_fees_usd": 0.3637,
       "live_funding_usd": null,
       "live_tp1_pnl_usd": null,
       "rehearsal": false
@@ -321,6 +309,18 @@
       "tp1_hit": false,
       "iso": "2026-11-16T04:19:00Z",
       "_iso_ms": 1794802740000,
+      "rehearsal": false
+    },
+    {
+      "trade_id": "LINKUSDT_20261116_CJ_001",
+      "coin": "LINKUSDT",
+      "direction": "Long",
+      "trading_system": "John",
+      "entry_price": 9.0225,
+      "live_entry_fill": 9.022,
+      "tp1_hit": false,
+      "iso": "2026-11-16T15:24:00Z",
+      "_iso_ms": 1794842640000,
       "rehearsal": false
     }
   ],
@@ -4134,7 +4134,7 @@
     "peak_capital_usd": 1926.61,
     "peak_concurrent": 8,
     "peak_date": "2026-10-12",
-    "deployed_trades": 362,
+    "deployed_trades": 363,
     "return_on_peak_pct": -32.11,
     "win_rate_pct": 36.8,
     "closed_count": 361,

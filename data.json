@@ -1,5 +1,5 @@
 {
-  "last_updated_iso": "2026-11-16T15:39:43Z",
+  "last_updated_iso": "2026-11-16T15:40:31Z",
   "mexc_account": null,
   "api_keys": [
     {
@@ -182,10 +182,10 @@
       "leverage": 3,
       "trading_system": "John",
       "track_only": false,
-      "status": "PENDING",
+      "status": "OPEN",
       "price_at_run": 9.117,
-      "date_activated": null,
-      "time_activated_utc": null,
+      "date_activated": "2026-11-16",
+      "time_activated_utc": "15:24",
       "date_opened": "2026-11-16",
       "time_opened_utc": "00:02",
       "conviction": "MEDIUM",
@@ -215,6 +215,16 @@
       "tp1_hit": false,
       "iso": "2026-11-16T04:19:00Z",
       "_iso_ms": 1794802740000
+    },
+    {
+      "trade_id": "LINKUSDT_20261116_CJ_001",
+      "coin": "LINKUSDT",
+      "direction": "Long",
+      "trading_system": "John",
+      "entry_price": 9.0225,
+      "tp1_hit": false,
+      "iso": "2026-11-16T15:24:00Z",
+      "_iso_ms": 1794842640000
     }
   ],
   "recent_closes": [
@@ -867,7 +877,7 @@
     "peak_capital_usd": 3300,
     "peak_concurrent": 33,
     "peak_date": "2026-06-22",
-    "deployed_trades": 849,
+    "deployed_trades": 850,
     "return_on_peak_pct": 24.59,
     "win_rate_pct": 33.4,
     "closed_count": 835,
