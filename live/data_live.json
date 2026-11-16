@@ -1,7 +1,7 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-11-15T22:05:46Z",
+  "last_updated_iso": "2026-11-16T00:06:52Z",
   "mexc_account": {
     "unrealized_pnl": 0.0,
     "equity": 4043.8566,
@@ -32,28 +32,28 @@
       "label": "MEXC AlgoTrading sub-account (live orders)",
       "name": "MEXC_ALGO_KEY",
       "expires": "2026-08-27",
-      "days_left": -80,
+      "days_left": -81,
       "status": "urgent"
     },
     {
       "label": "GitHub PAT (dashboard deploy)",
       "name": "DASHBOARD_PAT",
       "expires": "2126-01-01",
-      "days_left": 36206,
+      "days_left": 36205,
       "status": "ok"
     },
     {
       "label": "Google Drive OAuth (journal sync)",
       "name": "GDRIVE_OAUTH_TOKEN",
       "expires": "2126-01-01",
-      "days_left": 36206,
+      "days_left": 36205,
       "status": "ok"
     },
     {
       "label": "Telegram Bot (trade alerts)",
       "name": "TELEGRAM_TOKEN",
       "expires": "2126-01-01",
-      "days_left": 36206,
+      "days_left": 36205,
       "status": "ok"
     }
   ],
@@ -78,7 +78,7 @@
       "key": "state_file",
       "tier": 1,
       "label": "Trade journal",
-      "value": "OK (1292 records)",
+      "value": "OK (1294 records)",
       "status": "ok",
       "action": null
     },
@@ -118,7 +118,7 @@
       "key": "apikey_MEXC_ALGO_KEY",
       "tier": 1,
       "label": "MEXC AlgoTrading sub-account (live orders)",
-      "value": "-80d left (2026-08-27)",
+      "value": "-81d left (2026-08-27)",
       "status": "urgent",
       "action": "Rotate key + update GitHub/Cloudflare secret."
     },
@@ -126,7 +126,7 @@
       "key": "apikey_DASHBOARD_PAT",
       "tier": 1,
       "label": "GitHub PAT (dashboard deploy)",
-      "value": "36206d left (2126-01-01)",
+      "value": "36205d left (2126-01-01)",
       "status": "ok",
       "action": null
     },
@@ -134,7 +134,7 @@
       "key": "apikey_GDRIVE_OAUTH_TOKEN",
       "tier": 1,
       "label": "Google Drive OAuth (journal sync)",
-      "value": "36206d left (2126-01-01)",
+      "value": "36205d left (2126-01-01)",
       "status": "ok",
       "action": null
     },
@@ -142,7 +142,7 @@
       "key": "apikey_TELEGRAM_TOKEN",
       "tier": 1,
       "label": "Telegram Bot (trade alerts)",
-      "value": "36206d left (2126-01-01)",
+      "value": "36205d left (2126-01-01)",
       "status": "ok",
       "action": null
     }
@@ -161,7 +161,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 1.593,
+      "price_at_run": 1.599,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-11-11",
@@ -3986,13 +3986,6 @@
     }
   ],
   "recent_cancels": [
-    {
-      "coin": "BNBUSDT",
-      "direction": "Short",
-      "trading_system": "John",
-      "close_reason": "Stale 24.0h \u2265 24h grace: Price $596.07 is 19.1% below entry $709.71",
-      "iso": "2026-11-15T12:02:00Z"
-    },
     {
       "coin": "ADAUSDT",
       "direction": "Short",
