@@ -1,9 +1,9 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-11-17T18:05Z",
+  "generated_utc": "2026-11-17T20:07Z",
   "master": "braam",
   "retention_hours": 48,
-  "trade_count": 9,
+  "trade_count": 10,
   "trades": [
     {
       "trade_id": "CAKEUSDT_20261111_CJ_001",
@@ -228,6 +228,31 @@
       "code_sha": "fa6f581a32e5",
       "sl_mode": "initial",
       "feed_updated_utc": "2026-11-16T20:02Z",
+      "activated_utc": null
+    },
+    {
+      "trade_id": "BNBUSDT_20261117_CJ_001",
+      "coin": "BNBUSDT",
+      "direction": "Short",
+      "trading_system": "John",
+      "conviction": "MEDIUM",
+      "leverage": 3,
+      "entry_price": 602.22653534,
+      "entry_lo": 573.79692932,
+      "entry_hi": 611.70307068,
+      "sl": 612.59279102,
+      "tp1": 540.53830448,
+      "tp2": 521.36779066,
+      "status": "PENDING",
+      "tp1_hit": false,
+      "tp2_hit": false,
+      "sl_hit": false,
+      "close_reason": null,
+      "date_opened": "2026-11-17",
+      "time_opened_utc": "20:02",
+      "code_sha": "d96616eb64d0",
+      "sl_mode": "initial",
+      "feed_updated_utc": "2026-11-17T20:02Z",
       "activated_utc": null
     }
   ]
