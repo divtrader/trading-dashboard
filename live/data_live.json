@@ -1,12 +1,12 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-11-17T12:06:44Z",
+  "last_updated_iso": "2026-11-17T14:06:00Z",
   "mexc_account": {
-    "unrealized_pnl": 22.1677,
-    "equity": 4065.3691,
-    "available": 3028.4593,
-    "position_margin": 405.4484
+    "unrealized_pnl": 4.4086,
+    "equity": 4064.3164,
+    "available": 3207.3486,
+    "position_margin": 243.2655
   },
   "order_levels": {
     "checked": 5,
@@ -74,7 +74,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$4,065.37",
+      "value": "$4,064.32",
       "status": "ok",
       "action": null
     },
@@ -98,7 +98,7 @@
       "key": "position_protection",
       "tier": 1,
       "label": "Position protection",
-      "value": "all protected (2 open, 2 pre-TP1 runners)",
+      "value": "all protected (2 open, 1 pre-TP1 runners)",
       "status": "ok",
       "action": null
     },
@@ -149,7 +149,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "OPEN",
-      "price_at_run": 0.1324,
+      "price_at_run": 0.1335,
       "date_activated": "2026-11-16",
       "time_activated_utc": "04:19",
       "date_opened": "2026-11-15",
@@ -181,7 +181,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 9.254,
+      "price_at_run": 9.339,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-11-15",
@@ -213,7 +213,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 194.6,
+      "price_at_run": 194.4,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-11-15",
@@ -245,7 +245,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 0.0803,
+      "price_at_run": 0.0798,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-11-16",
@@ -277,23 +277,23 @@
       "trading_system": "John",
       "track_only": false,
       "status": "OPEN",
-      "price_at_run": 9.254,
+      "price_at_run": 9.339,
       "date_activated": "2026-11-16",
       "time_activated_utc": "15:24",
       "date_opened": "2026-11-16",
       "time_opened_utc": "00:02",
       "conviction": "MEDIUM",
-      "tp1_hit": false,
+      "tp1_hit": true,
       "sl_moved_to_be": null,
-      "pnl_tp1_realized_usd": null,
+      "pnl_tp1_realized_usd": 17.19,
       "tp2_hit": false,
       "live_executed": true,
       "live_entry_fill": 9.022,
       "live_exit_fill": null,
       "live_entry_slippage_pct": -0.0055,
-      "live_fees_usd": 0.3637,
+      "live_fees_usd": 0.7656,
       "live_funding_usd": null,
-      "live_tp1_pnl_usd": null,
+      "live_tp1_pnl_usd": 16.291,
       "rehearsal": false
     }
   ],
@@ -318,7 +318,7 @@
       "trading_system": "John",
       "entry_price": 9.0225,
       "live_entry_fill": 9.022,
-      "tp1_hit": false,
+      "tp1_hit": true,
       "iso": "2026-11-16T15:24:00Z",
       "_iso_ms": 1794842640000,
       "rehearsal": false
@@ -4127,7 +4127,14 @@
     }
   ],
   "recent_cancels": [],
-  "tp1_hits_open": [],
+  "tp1_hits_open": [
+    {
+      "coin": "LINKUSDT",
+      "direction": "Long",
+      "trading_system": "John",
+      "entry_price": 9.0225
+    }
+  ],
   "stats": {
     "realized_pnl_usd": -618.59,
     "realized_pnl_pct": -1.16,
