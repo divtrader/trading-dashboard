@@ -1,5 +1,5 @@
 {
-  "last_updated_iso": "2026-11-18T18:07:20Z",
+  "last_updated_iso": "2026-11-18T18:09:12Z",
   "mexc_account": null,
   "api_keys": [
     {
@@ -378,52 +378,6 @@
       "pnl_tp1_realized_usd": null
     },
     {
-      "trade_id": "APTUSDT_20261118_CB_001",
-      "coin": "APTUSDT",
-      "direction": "Short",
-      "entry_price": 0.46622596,
-      "sl": 0.48847063,
-      "tp1": 0.4315,
-      "tp2": 0.32491744,
-      "capital_usd": 150.0,
-      "leverage": 3,
-      "trading_system": "Braam",
-      "track_only": false,
-      "status": "PENDING",
-      "price_at_run": 0.4544,
-      "date_activated": null,
-      "time_activated_utc": null,
-      "date_opened": "2026-11-18",
-      "time_opened_utc": "00:02",
-      "conviction": "HIGH",
-      "tp1_hit": false,
-      "sl_moved_to_be": false,
-      "pnl_tp1_realized_usd": null
-    },
-    {
-      "trade_id": "LTCUSDT_20261118_CJ_001",
-      "coin": "LTCUSDT",
-      "direction": "Short",
-      "entry_price": 47.55980358,
-      "sl": 48.60898488,
-      "tp1": 42.04758698,
-      "tp2": 36.97203024,
-      "capital_usd": 100,
-      "leverage": 3,
-      "trading_system": "John",
-      "track_only": false,
-      "status": "PENDING",
-      "price_at_run": 43.76,
-      "date_activated": null,
-      "time_activated_utc": null,
-      "date_opened": "2026-11-18",
-      "time_opened_utc": "04:02",
-      "conviction": "MEDIUM",
-      "tp1_hit": false,
-      "sl_moved_to_be": null,
-      "pnl_tp1_realized_usd": null
-    },
-    {
       "trade_id": "ETHUSDT_20261118_CB_001",
       "coin": "ETHUSDT",
       "direction": "Short",
@@ -485,29 +439,6 @@
       "price_at_run": 9.215,
       "date_activated": "2026-11-18",
       "time_activated_utc": "06:03",
-      "date_opened": "2026-11-18",
-      "time_opened_utc": "04:02",
-      "conviction": "HIGH",
-      "tp1_hit": false,
-      "sl_moved_to_be": false,
-      "pnl_tp1_realized_usd": null
-    },
-    {
-      "trade_id": "LTCUSDT_20261118_CB_001",
-      "coin": "LTCUSDT",
-      "direction": "Short",
-      "entry_price": 45.38135107,
-      "sl": 46.95512302,
-      "tp1": 41.77697698,
-      "tp2": 35.13692582,
-      "capital_usd": 150.0,
-      "leverage": 3,
-      "trading_system": "Braam",
-      "track_only": false,
-      "status": "PENDING",
-      "price_at_run": 44.73,
-      "date_activated": null,
-      "time_activated_utc": null,
       "date_opened": "2026-11-18",
       "time_opened_utc": "04:02",
       "conviction": "HIGH",
@@ -605,29 +536,6 @@
       "conviction": "HIGH",
       "tp1_hit": false,
       "sl_moved_to_be": false,
-      "pnl_tp1_realized_usd": null
-    },
-    {
-      "trade_id": "APTUSDT_20261118_CJ_001",
-      "coin": "APTUSDT",
-      "direction": "Short",
-      "entry_price": 0.460975,
-      "sl": 0.47488212,
-      "tp1": 0.34227717,
-      "tp2": 0.28854744,
-      "capital_usd": 100,
-      "leverage": 3,
-      "trading_system": "John",
-      "track_only": false,
-      "status": "PENDING",
-      "price_at_run": 0.4281,
-      "date_activated": null,
-      "time_activated_utc": null,
-      "date_opened": "2026-11-18",
-      "time_opened_utc": "16:03",
-      "conviction": "MEDIUM",
-      "tp1_hit": false,
-      "sl_moved_to_be": null,
       "pnl_tp1_realized_usd": null
     },
     {
@@ -759,18 +667,6 @@
       "conviction": "HIGH",
       "track_only": false,
       "iso": "2026-11-18T12:03:00Z"
-    },
-    {
-      "trade_id": "APTUSDT_20261118_CJ_001",
-      "coin": "APTUSDT",
-      "direction": "Short",
-      "trading_system": "John",
-      "entry_price": 0.460975,
-      "tp1": 0.34227717,
-      "sl": 0.47488212,
-      "conviction": "MEDIUM",
-      "track_only": false,
-      "iso": "2026-11-18T16:03:00Z"
     },
     {
       "trade_id": "RENDERUSDT_20261118_CB_001",
@@ -1492,6 +1388,34 @@
       "trading_system": "John",
       "close_reason": "BTC entered full BEAR regime and XRPUSDT has 91% BTC correlation \u2014 active Long n",
       "iso": "2026-11-18T10:03:00Z"
+    },
+    {
+      "coin": "APTUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "close_reason": "CANCELLED by Braam 2026-11-18 18:10 UTC: wallet genuinely full (MEXC free $190);",
+      "iso": "2026-11-18T18:10:00Z"
+    },
+    {
+      "coin": "LTCUSDT",
+      "direction": "Short",
+      "trading_system": "John",
+      "close_reason": "CANCELLED by Braam 2026-11-18 18:10 UTC: wallet genuinely full (MEXC free $190);",
+      "iso": "2026-11-18T18:10:00Z"
+    },
+    {
+      "coin": "LTCUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "close_reason": "CANCELLED by Braam 2026-11-18 18:10 UTC: wallet genuinely full (MEXC free $190);",
+      "iso": "2026-11-18T18:10:00Z"
+    },
+    {
+      "coin": "APTUSDT",
+      "direction": "Short",
+      "trading_system": "John",
+      "close_reason": "CANCELLED by Braam 2026-11-18 18:10 UTC: wallet genuinely full (MEXC free $190);",
+      "iso": "2026-11-18T18:10:00Z"
     }
   ],
   "tp1_hits_open": [],
