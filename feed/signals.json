@@ -1,9 +1,9 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-11-19T18:07Z",
+  "generated_utc": "2026-11-19T20:09Z",
   "master": "braam",
   "retention_hours": 48,
-  "trade_count": 20,
+  "trade_count": 22,
   "trades": [
     {
       "trade_id": "THETAUSDT_20261115_CJ_001",
@@ -103,6 +103,31 @@
       "code_sha": "108b0e19a559",
       "sl_mode": "initial",
       "feed_updated_utc": "2026-11-16T00:02Z",
+      "activated_utc": null
+    },
+    {
+      "trade_id": "TAOUSDT_20261116_CJ_001",
+      "coin": "TAOUSDT",
+      "direction": "Long",
+      "trading_system": "John",
+      "conviction": "MEDIUM",
+      "leverage": 3,
+      "entry_price": 180.59817078,
+      "entry_lo": 174.84634156,
+      "entry_hi": 197.85365844,
+      "sl": 175.1765144,
+      "tp1": 199.7260363,
+      "tp2": 233.14697121,
+      "status": "PENDING",
+      "tp1_hit": false,
+      "tp2_hit": false,
+      "sl_hit": false,
+      "close_reason": null,
+      "date_opened": "2026-11-16",
+      "time_opened_utc": "20:02",
+      "code_sha": "fa6f581a32e5",
+      "sl_mode": "initial",
+      "feed_updated_utc": "2026-11-16T20:02Z",
       "activated_utc": null
     },
     {
@@ -504,6 +529,31 @@
       "sl_mode": "initial",
       "feed_updated_utc": "2026-11-19T09:01Z",
       "activated_utc": "2026-11-18T20:57Z"
+    },
+    {
+      "trade_id": "HBARUSDT_20261118_CB_001",
+      "coin": "HBARUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "conviction": "HIGH",
+      "leverage": 3,
+      "entry_price": 0.05769933,
+      "entry_lo": 0.05741083,
+      "entry_hi": 0.05798782,
+      "sl": 0.0598575,
+      "tp1": 0.05383055,
+      "tp2": 0.04408515,
+      "status": "PENDING",
+      "tp1_hit": false,
+      "tp2_hit": false,
+      "sl_hit": false,
+      "close_reason": null,
+      "date_opened": "2026-11-18",
+      "time_opened_utc": "20:03",
+      "code_sha": "52fe4a5bc905",
+      "sl_mode": "initial",
+      "feed_updated_utc": "2026-11-18T20:03Z",
+      "activated_utc": null
     }
   ]
 }
