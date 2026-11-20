@@ -1,0 +1,22 @@
+{
+  "venue": "kraken_futures",
+  "inception": "2026-11-20T00:00:00Z",
+  "mexc_key_created": null,
+  "mexc_key_expires": null,
+  "mexc_key_ip_locked": true,
+  "starting_capital": 4077.36,
+  "starting_capital_source": "first_snapshot",
+  "capital_events": [
+    {
+      "id": "kraken_log_1",
+      "txid": "87229700-8551-4434-bde9-be699c320105",
+      "ts": "2026-11-20T08:27:57Z",
+      "amount": 4077.846785,
+      "type": "deposit",
+      "currency": "USDC",
+      "info": "cross-exchange transfer"
+    }
+  ],
+  "capital_events_note": "Deposits/withdrawals from the Kraken account log (kraken_state/trade_history.json). amount is in `currency` (the flex wallet holds EUR collateral), not USD. Transfers before the go-live date funded the starting balance.",
+  "note": "Kraken Futures follower account (dashboard Kraken tab), written by kraken_publish.py. The key names starting mexc_ are the dashboard's field names; the values are Kraken's. Kraken API keys do not expire. starting_capital = flex-wallet equity at the first recorded snapshot. No calendar here on purpose - the dashboard loads the session calendar once, globally."
+}
