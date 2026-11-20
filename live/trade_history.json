@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-20T02:07:48Z",
+  "updated": "2026-11-20T04:08:54Z",
   "positions": {
     "1414291495": {
       "position_id": "1414291495",
@@ -6534,8 +6534,16 @@
       "leverage": 3,
       "entry_price": 8.894,
       "opened_at": "2026-11-18T16:41:36Z",
-      "status": "OPEN",
-      "braam_trade_id": "LINKUSDT_20261118_CJ_001"
+      "status": "CLOSED",
+      "braam_trade_id": "LINKUSDT_20261118_CJ_001",
+      "closed_at": "2026-11-20T02:30:21Z",
+      "close_price": 8.791,
+      "pnl_usd": -7.7529,
+      "margin_usd": 203.2,
+      "fees_usd": 0.9549,
+      "tag": "LOSS",
+      "close_type": 4,
+      "close_reason": "stop_loss"
     },
     "1540515111": {
       "position_id": "1540515111",
@@ -6611,15 +6619,6 @@
       "entry_price": 180.59817078,
       "resting_at": "2026-11-16T20:02:00Z",
       "braam_trade_id": "TAOUSDT_20261116_CJ_001",
-      "status": "RESTING"
-    },
-    "878067391434508864": {
-      "order_id": "878067391434508864",
-      "coin": "RENDERUSDT",
-      "direction": "Long",
-      "entry_price": 1.328,
-      "resting_at": "2026-11-16T20:02:00Z",
-      "braam_trade_id": "RENDERUSDT_20261116_CJ_001",
       "status": "RESTING"
     },
     "877764553856100864": {
