@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <meta name="robots" content="noindex,nofollow">
-<title>Spyker Trading Inc — Live MEXC Dashboard</title>
+<title>Spyker Trading Inc — Live Dashboard</title>
 <link rel="stylesheet" href="style.css?v=137">
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
@@ -43,7 +43,7 @@
 
 <main id="app" hidden>
   <header class="top">
-    <div class="brand"><span class="brand-co">Spyker Trading Inc</span> · Live MEXC Dashboard <span class="brand-live">● LIVE</span><span class="brand-rehearsal hidden" id="brand-rehearsal">● REHEARSAL MODE — dry-run trades, no real fills yet</span><span class="acct-toggle" id="acct-toggle" role="group" aria-label="Account"><button type="button" data-acct="braam">Braam</button><button type="button" data-acct="tjono">Tjono</button></span></div>
+    <div class="brand"><span class="brand-co">Spyker Trading Inc</span> · Live <span class="venue-name">MEXC</span> Dashboard <span class="brand-live">● LIVE</span><span class="brand-rehearsal hidden" id="brand-rehearsal">● REHEARSAL MODE — dry-run trades, no real fills yet</span><span class="acct-toggle" id="acct-toggle" role="group" aria-label="Account"><button type="button" data-acct="braam">Braam</button><button type="button" data-acct="tjono">Tjono</button></span></div>
     <div class="meta">
       <span id="last-cron">last run: —</span>
       <span class="dot" id="live-dot"></span>
@@ -64,7 +64,7 @@
         <div class="hero-pnls">
           <div class="pnl-block paper-block">
             <div class="paper-block-main">
-              <div class="pnl-block-label">Portfolio P&amp;L · Live MEXC <span class="live-pulse"></span></div>
+              <div class="pnl-block-label">Portfolio P&amp;L · Live <span class="venue-name">MEXC</span> <span class="live-pulse"></span></div>
               <div class="hero-value-row">
                 <div class="value hero-value" id="portfolio-total">—</div>
                 <div class="hero-pct-inline" id="hero-pct">—</div>
@@ -136,7 +136,7 @@
   </section>
 
   <section id="screen-2" class="screen">
-    <div class="screen-title">Open live MEXC trades <span class="trig-count" id="open-live-count">0</span> <span class="trig-live">● LIVE</span></div>
+    <div class="screen-title">Open live <span class="venue-name">MEXC</span> trades <span class="trig-count" id="open-live-count">0</span> <span class="trig-live">● LIVE</span></div>
     <div id="paper-bars" class="paper-bars"></div>
   </section>
 
@@ -259,7 +259,7 @@
   </div>
 </main>
 
-<script src="dashboard.js?v=240"></script>
+<script src="dashboard.js?v=241"></script>
 <script>
   // Account toggle wiring — sets localStorage.acct + reloads. Self-contained
   // (no dependency on dashboard.js, which reads localStorage.acct on load).

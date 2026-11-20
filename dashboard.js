@@ -64,7 +64,7 @@ const STALE_MS   = 5 * 60 * 60_000;
 // ── Set this to your Cloudflare Worker URL once deployed ──────────────────
 // e.g. "https://mexc-proxy.yourname.workers.dev"
 // Leave empty to rely on the 5-minute GHA snapshot fallback.
-const MEXC_WORKER_URL      = "https://mexc-proxy.braamdeclerk.workers.dev";
+const MEXC_WORKER_URL      = "https://kraken-braam-proxy.braamdeclerk.workers.dev";   // 2026-11-20: Braam on Kraken
 const BLOOMBERG_WORKER_URL = "https://bloomberg-news.braamdeclerk.workers.dev";
 // ─────────────────────────────────────────────────────────────────────────
 

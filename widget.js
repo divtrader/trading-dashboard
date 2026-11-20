@@ -6,7 +6,7 @@
 
 const DATA_URL = "https://divtrader.github.io/trading-dashboard/data.json";
 const LIVE_URL = "https://divtrader.github.io/trading-dashboard/live/data_live.json";
-const MEXC_URL = "https://mexc-proxy.braamdeclerk.workers.dev";
+const MEXC_URL = "https://kraken-braam-proxy.braamdeclerk.workers.dev";   // 2026-11-20: Braam on Kraken
 
 // -- Colours --
 const C = {

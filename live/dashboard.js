@@ -65,12 +65,14 @@ const URL_TOKEN = "LV9mKpQ3xR2tW8nB5cZ";
 const ACCOUNTS = {
   braam: {
     label: "Braam",
+    venue: "Kraken",       // 2026-11-20: Braam trades on Kraken Futures (MEXC history kept in data_live.json)
     data:  "data_live.json",
     liveAnalytics: "analytics.json",
-    worker: "https://mexc-proxy.braamdeclerk.workers.dev",
+    worker: "https://kraken-braam-proxy.braamdeclerk.workers.dev",
   },
   tjono: {
     label: "Tjono",
+    venue: "MEXC",
     data:  "https://raw.githubusercontent.com/Tjono/follower-data/main/data_live.json",
     liveAnalytics: "https://raw.githubusercontent.com/Tjono/follower-data/main/analytics.json",
     worker: "https://mexc-follower-proxy.futurefoliage.workers.dev",
@@ -78,6 +80,8 @@ const ACCOUNTS = {
 };
 const ACCOUNT_KEY = localStorage.getItem("acct") === "tjono" ? "tjono" : "braam";
 const ACCOUNT     = ACCOUNTS[ACCOUNT_KEY];
+const VENUE       = ACCOUNT.venue || "MEXC";
+document.querySelectorAll(".venue-name").forEach(el => { el.textContent = VENUE; });
 
 const DATA_URL  = ACCOUNT.data;
 const REFRESH_MS = 60_000;
@@ -916,7 +920,7 @@ function renderOrderHealth() {
     if (ol.drifted && ol.drifted.length) {
       levelsLine = `🟡 ${ol.drifted.length} not synced to MEXC: ${ol.drifted.join(" · ")} (edit didn't reach exchange)`;
     } else {
-      levelsLine = `Synced to MEXC ${ol.in_sync}/${ol.checked}`;
+      levelsLine = `Synced to ${VENUE} ${ol.in_sync}/${ol.checked}`;
     }
   }
   const levelsIsAlarm = levelsLine && levelsLine.startsWith("🟡");
@@ -994,8 +998,8 @@ function renderOrderHealth() {
     "Stops set — open positions with BOTH a stop-loss and take-profit resting on MEXC.",
     "Liquidation — how far the nearest position is from a forced liquidation (higher % = safer).",
     "Profit-lock — runners whose stop auto-moves up to TP1 once TP1 hits, banking a profit floor.",
-    "Synced to MEXC — live trades whose journal TP/SL match the orders actually on the exchange.",
-    "Reconciled — every order resting on MEXC has a matching trade in our system (no stray/orphan orders).",
+    `Synced to ${VENUE} — live trades whose journal TP/SL match the orders actually on the exchange.`,
+    `Reconciled — every order resting on ${VENUE} has a matching trade in our system (no stray/orphan orders).`,
     "Master parity — this account's TP/SL/status vs Braam's master feed. Amber = a level edit hasn't propagated yet (usually self-heals next follower run). Braam's own view is always full parity.",
     "Counts differ: Stops & Profit-lock count OPEN positions; Synced counts ALL live trades incl. pending entries.",
   ];
