@@ -1,5 +1,5 @@
 {
-  "last_updated_iso": "2026-11-20T20:07:24Z",
+  "last_updated_iso": "2026-11-20T22:06:59Z",
   "mexc_account": null,
   "api_keys": [
     {
@@ -45,7 +45,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 8.372,
+      "price_at_run": 8.516,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-11-15",
@@ -68,7 +68,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "OPEN",
-      "price_at_run": 176.5,
+      "price_at_run": 178.7,
       "date_activated": "2026-11-19",
       "time_activated_utc": "12:00",
       "date_opened": "2026-11-15",
@@ -91,7 +91,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 0.072,
+      "price_at_run": 0.0733,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-11-16",
@@ -114,7 +114,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 536.52,
+      "price_at_run": 539.38,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-11-17",
@@ -137,7 +137,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 0.3014,
+      "price_at_run": 0.3022,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-11-18",
@@ -344,7 +344,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 1608.75,
+      "price_at_run": 1618.89,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-11-18",
@@ -436,7 +436,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 0.3664,
+      "price_at_run": 0.3695,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-11-18",
@@ -551,7 +551,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 1.471,
+      "price_at_run": 1.482,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-11-19",
@@ -597,7 +597,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 39.98,
+      "price_at_run": 40.34,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-11-19",
@@ -635,7 +635,7 @@
       "coin": "NEARUSDT",
       "direction": "Short",
       "entry_price": 3.30537198,
-      "sl": 3.48851802,
+      "sl": 3.0887,
       "tp1": 2.78679247,
       "tp2": 1.91776738,
       "capital_usd": 100.0,
@@ -649,9 +649,9 @@
       "date_opened": "2026-11-19",
       "time_opened_utc": "16:03",
       "conviction": "MEDIUM",
-      "tp1_hit": false,
-      "sl_moved_to_be": false,
-      "pnl_tp1_realized_usd": null
+      "tp1_hit": true,
+      "sl_moved_to_be": true,
+      "pnl_tp1_realized_usd": 27.91
     },
     {
       "trade_id": "HBARUSDT_20261120_CJ_001",
@@ -666,7 +666,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 0.05068,
+      "price_at_run": 0.05154,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-11-20",
@@ -712,7 +712,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 1.25,
+      "price_at_run": 1.271,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-11-20",
@@ -735,7 +735,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 0.05322,
+      "price_at_run": 0.05409,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-11-20",
@@ -804,7 +804,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 4.351,
+      "price_at_run": 4.454,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-11-20",
@@ -827,7 +827,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 0.1251,
+      "price_at_run": 0.1275,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-11-20",
@@ -901,16 +901,6 @@
     }
   ],
   "recent_opens": [
-    {
-      "trade_id": "NEARUSDT_20261118_CB_001",
-      "coin": "NEARUSDT",
-      "direction": "Short",
-      "trading_system": "Braam",
-      "entry_price": 3.2744037,
-      "tp1_hit": false,
-      "iso": "2026-11-18T20:57:00Z",
-      "_iso_ms": 1795035420000
-    },
     {
       "trade_id": "TAOUSDT_20261118_CB_001",
       "coin": "TAOUSDT",
@@ -1007,7 +997,7 @@
       "direction": "Short",
       "trading_system": "Braam",
       "entry_price": 3.30537198,
-      "tp1_hit": false,
+      "tp1_hit": true,
       "iso": "2026-11-20T10:03:00Z",
       "_iso_ms": 1795168980000
     }
@@ -1703,6 +1693,12 @@
       "direction": "Short",
       "trading_system": "Braam",
       "entry_price": 0.05953576
+    },
+    {
+      "coin": "NEARUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "entry_price": 3.30537198
     }
   ],
   "stats": {
