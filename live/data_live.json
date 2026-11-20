@@ -2,14 +2,14 @@
   "mode": "live",
   "venue": "kraken",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-11-20T09:27:37Z",
+  "last_updated_iso": "2026-11-20T10:07:54Z",
   "freshness": {
-    "engine_run_iso": "2026-11-20T09:27:19Z",
+    "engine_run_iso": "2026-11-20T10:07:36Z",
     "engine_run_note": null,
     "engine_protect_iso": null,
-    "feed_generated_iso": "2026-11-20T09:26:00Z",
+    "feed_generated_iso": "2026-11-20T10:07:00Z",
     "feed_note": null,
-    "published_iso": "2026-11-20T09:27:37Z",
+    "published_iso": "2026-11-20T10:07:54Z",
     "cadence_min": 60.0,
     "run_warn_min": 80.0,
     "run_urgent_min": 135.0,
@@ -53,7 +53,7 @@
       "key": "signal_feed",
       "tier": 1,
       "label": "Engine feed",
-      "value": "1 min old",
+      "value": "54s old",
       "status": "ok",
       "action": null
     },
@@ -109,7 +109,7 @@
       "key": "signals_skipped",
       "tier": 1,
       "label": "Feed trades not taken",
-      "value": "4 (2 pre go live, 1 coin not listed, 1 coin slot taken)",
+      "value": "7 (4 coin slot taken, 2 pre go live, 1 coin not listed)",
       "status": "info",
       "action": null
     }
@@ -766,6 +766,45 @@
   "recent_signals": [],
   "recent_opens": [
     {
+      "trade_id": "SUIUSDT_20261118_CB_001",
+      "coin": "SUIUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "entry_price": 0.73478126,
+      "live_entry_fill": null,
+      "tp1_hit": false,
+      "iso": "2026-11-20T10:03:00Z",
+      "_iso_ms": 1795168980000,
+      "rehearsal": false,
+      "venue": "mexc"
+    },
+    {
+      "trade_id": "XRPUSDT_20261118_CB_001",
+      "coin": "XRPUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "entry_price": 0.97555263,
+      "live_entry_fill": null,
+      "tp1_hit": false,
+      "iso": "2026-11-20T10:03:00Z",
+      "_iso_ms": 1795168980000,
+      "rehearsal": false,
+      "venue": "mexc"
+    },
+    {
+      "trade_id": "UNIUSDT_20261118_CB_001",
+      "coin": "UNIUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "entry_price": 5.31256373,
+      "live_entry_fill": null,
+      "tp1_hit": false,
+      "iso": "2026-11-20T10:02:00Z",
+      "_iso_ms": 1795168920000,
+      "rehearsal": false,
+      "venue": "mexc"
+    },
+    {
       "trade_id": "ADAUSDT_20261118_CB_001",
       "coin": "ADAUSDT",
       "direction": "Short",
@@ -775,6 +814,19 @@
       "tp1_hit": false,
       "iso": "2026-11-19T13:07:00Z",
       "_iso_ms": 1795093620000,
+      "rehearsal": false,
+      "venue": "mexc"
+    },
+    {
+      "trade_id": "TAOUSDT_20261115_CJ_001",
+      "coin": "TAOUSDT",
+      "direction": "Short",
+      "trading_system": "John",
+      "entry_price": 200.5,
+      "live_entry_fill": null,
+      "tp1_hit": false,
+      "iso": "2026-11-19T12:00:00Z",
+      "_iso_ms": 1795089600000,
       "rehearsal": false,
       "venue": "mexc"
     },
@@ -4840,6 +4892,42 @@
   ],
   "recent_skips": [
     {
+      "trade_id": "ETHUSDT_20261118_CJ_001",
+      "coin": "ETHUSDT",
+      "direction": "Short",
+      "trading_system": "John",
+      "entry_price": 1865.60092826,
+      "reason_code": "coin_slot_taken",
+      "reason": "The engine runs one trade per coin on Kraken and ETH already has one (ETHUSDT_20261118_CB_001 is resting).",
+      "reason_short": "one trade per coin - slot taken",
+      "iso": "2026-11-20T10:07:36Z",
+      "last_seen_iso": "2026-11-20T10:07:36Z"
+    },
+    {
+      "trade_id": "APTUSDT_20261118_CB_002",
+      "coin": "APTUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "entry_price": 0.45461193,
+      "reason_code": "coin_slot_taken",
+      "reason": "The engine runs one trade per coin on Kraken and APT already has one (APTUSDT_20261118_CJ_002 is resting).",
+      "reason_short": "one trade per coin - slot taken",
+      "iso": "2026-11-20T10:07:36Z",
+      "last_seen_iso": "2026-11-20T10:07:36Z"
+    },
+    {
+      "trade_id": "ALGOUSDT_20261118_CB_001",
+      "coin": "ALGOUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "entry_price": 0.08044722,
+      "reason_code": "coin_slot_taken",
+      "reason": "The engine runs one trade per coin on Kraken and ALGO already has one (ALGOUSDT_20261116_CJ_001 is resting).",
+      "reason_short": "one trade per coin - slot taken",
+      "iso": "2026-11-20T10:07:36Z",
+      "last_seen_iso": "2026-11-20T10:07:36Z"
+    },
+    {
       "trade_id": "THETAUSDT_20261115_CJ_001",
       "coin": "THETAUSDT",
       "direction": "Short",
@@ -4873,7 +4961,7 @@
       "reason": "The engine runs one trade per coin on Kraken and LTC already has one (LTCUSDT_20261118_CB_002 is resting).",
       "reason_short": "one trade per coin - slot taken",
       "iso": "2026-11-20T08:32:32Z",
-      "last_seen_iso": "2026-11-20T09:27:19Z"
+      "last_seen_iso": "2026-11-20T10:07:36Z"
     },
     {
       "trade_id": "ADAUSDT_20261118_CB_001",
@@ -4916,9 +5004,9 @@
         "closed_count": 2
       }
     },
-    "live_trade_count_total": 554,
+    "live_trade_count_total": 561,
     "live_real_count": 531,
-    "live_rehearsal_count": 23,
+    "live_rehearsal_count": 30,
     "by_venue": {
       "mexc": {
         "realized_pnl_usd": -581.53,
@@ -4947,9 +5035,9 @@
             "closed_count": 2
           }
         },
-        "live_trade_count_total": 535,
+        "live_trade_count_total": 542,
         "live_real_count": 512,
-        "live_rehearsal_count": 23
+        "live_rehearsal_count": 30
       },
       "kraken": {
         "realized_pnl_usd": 0.0,
@@ -4971,29 +5059,29 @@
   "drift_vs_feed": {
     "available": true,
     "source": "Engine feed (divtrader signals.json)",
-    "feed_generated_utc": "2026-11-20T09:26Z",
-    "checked": 19,
-    "in_parity": 19,
+    "feed_generated_utc": "2026-11-20T10:07Z",
+    "checked": 18,
+    "in_parity": 18,
     "drifting": []
   },
   "drift_vs_master": {
     "available": true,
     "source": "Engine feed (divtrader signals.json)",
-    "feed_generated_utc": "2026-11-20T09:26Z",
-    "checked": 19,
-    "in_parity": 19,
+    "feed_generated_utc": "2026-11-20T10:07Z",
+    "checked": 18,
+    "in_parity": 18,
     "drifting": []
   },
   "drift_vs_db": {
     "available": true,
     "source": "Engine feed (divtrader signals.json)",
-    "feed_generated_utc": "2026-11-20T09:26Z",
-    "checked": 19,
-    "in_parity": 19,
+    "feed_generated_utc": "2026-11-20T10:07Z",
+    "checked": 18,
+    "in_parity": 18,
     "drifting": []
   },
   "vs_mexc": {
-    "updated_iso": "2026-11-20T09:27:37Z",
+    "updated_iso": "2026-11-20T10:07:54Z",
     "trades": [
       {
         "trade_id": "XLMUSDT_20261119_CB_001",
@@ -5255,5 +5343,5 @@
     "mexc",
     "kraken"
   ],
-  "mexc_history_last_updated_iso": "2026-11-20T09:26:51Z"
+  "mexc_history_last_updated_iso": "2026-11-20T10:07:09Z"
 }
