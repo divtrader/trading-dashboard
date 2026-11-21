@@ -1,9 +1,9 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-11-21T20:07Z",
+  "generated_utc": "2026-11-21T22:05Z",
   "master": "braam",
   "retention_hours": 48,
-  "trade_count": 34,
+  "trade_count": 35,
   "trades": [
     {
       "trade_id": "THETAUSDT_20261115_CJ_001",
@@ -853,6 +853,31 @@
       "code_sha": "dbe3fddf42f4",
       "sl_mode": "initial",
       "feed_updated_utc": "2026-11-21T16:02Z",
+      "activated_utc": null
+    },
+    {
+      "trade_id": "APTUSDT_20261121_CJ_001",
+      "coin": "APTUSDT",
+      "direction": "Short",
+      "trading_system": "John",
+      "conviction": "MEDIUM",
+      "leverage": 3,
+      "entry_price": 0.38699782,
+      "entry_lo": 0.36600435,
+      "entry_hi": 0.39399565,
+      "sl": 0.40316273,
+      "tp1": 0.30791099,
+      "tp2": 0.2293739,
+      "status": "PENDING",
+      "tp1_hit": false,
+      "tp2_hit": false,
+      "sl_hit": false,
+      "close_reason": null,
+      "date_opened": "2026-11-21",
+      "time_opened_utc": "20:03",
+      "code_sha": "acd58a12ddec",
+      "sl_mode": "initial",
+      "feed_updated_utc": "2026-11-21T20:03Z",
       "activated_utc": null
     }
   ]

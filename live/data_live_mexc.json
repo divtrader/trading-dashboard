@@ -1,7 +1,7 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-11-21T20:06:55Z",
+  "last_updated_iso": "2026-11-21T22:05:53Z",
   "mexc_account": {
     "unrealized_pnl": 0.0,
     "equity": 0.0,
@@ -135,7 +135,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 8.64,
+      "price_at_run": 8.601,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-11-15",
@@ -167,7 +167,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "OPEN",
-      "price_at_run": 185.4,
+      "price_at_run": 185.5,
       "date_activated": "2026-11-19",
       "time_activated_utc": "12:00",
       "date_opened": "2026-11-15",
@@ -199,7 +199,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 0.0744,
+      "price_at_run": 0.0742,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-11-16",
@@ -231,7 +231,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 0.3051,
+      "price_at_run": 0.3057,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-11-18",
@@ -393,7 +393,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 1686.68,
+      "price_at_run": 1687.05,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-11-18",
@@ -661,7 +661,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 0.1275,
+      "price_at_run": 0.1267,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-11-20",
@@ -695,7 +695,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 60362.63,
+      "price_at_run": 60427.44,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-11-21",
@@ -783,6 +783,40 @@
       "rehearsal": true,
       "rehearsal_size_usd": 203.86,
       "rehearsal_vol": 905
+    },
+    {
+      "trade_id": "APTUSDT_20261121_CJ_001",
+      "coin": "APTUSDT",
+      "direction": "Short",
+      "entry_price": 0.38699782,
+      "sl": 0.40316273,
+      "tp1": 0.30791099,
+      "tp2": 0.2293739,
+      "capital_usd": 18.56,
+      "leverage": 3,
+      "trading_system": "John",
+      "track_only": false,
+      "status": "PENDING",
+      "price_at_run": 0.3676,
+      "date_activated": null,
+      "time_activated_utc": null,
+      "date_opened": "2026-11-21",
+      "time_opened_utc": "20:03",
+      "conviction": "MEDIUM",
+      "tp1_hit": false,
+      "sl_moved_to_be": null,
+      "pnl_tp1_realized_usd": null,
+      "tp2_hit": false,
+      "live_executed": null,
+      "live_entry_fill": null,
+      "live_exit_fill": null,
+      "live_entry_slippage_pct": null,
+      "live_fees_usd": null,
+      "live_funding_usd": null,
+      "live_tp1_pnl_usd": null,
+      "rehearsal": true,
+      "rehearsal_size_usd": 18.56,
+      "rehearsal_vol": 1438
     }
   ],
   "recent_signals": [
@@ -823,6 +857,19 @@
       "conviction": "HIGH",
       "track_only": false,
       "iso": "2026-11-21T16:02:00Z",
+      "rehearsal": true
+    },
+    {
+      "trade_id": "APTUSDT_20261121_CJ_001",
+      "coin": "APTUSDT",
+      "direction": "Short",
+      "trading_system": "John",
+      "entry_price": 0.38699782,
+      "tp1": 0.30791099,
+      "sl": 0.40316273,
+      "conviction": "MEDIUM",
+      "track_only": false,
+      "iso": "2026-11-21T20:03:00Z",
       "rehearsal": true
     }
   ],
@@ -4724,8 +4771,8 @@
         "closed_count": 2
       }
     },
-    "live_trade_count_total": 549,
+    "live_trade_count_total": 550,
     "live_real_count": 511,
-    "live_rehearsal_count": 38
+    "live_rehearsal_count": 39
   }
 }
