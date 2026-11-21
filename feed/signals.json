@@ -1,9 +1,9 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-11-21T14:07Z",
+  "generated_utc": "2026-11-21T16:07Z",
   "master": "braam",
   "retention_hours": 48,
-  "trade_count": 31,
+  "trade_count": 32,
   "trades": [
     {
       "trade_id": "THETAUSDT_20261115_CJ_001",
@@ -778,6 +778,31 @@
       "code_sha": "72109d029819",
       "sl_mode": "initial",
       "feed_updated_utc": "2026-11-20T16:03Z",
+      "activated_utc": null
+    },
+    {
+      "trade_id": "BTCUSDT_20261121_CJ_001",
+      "coin": "BTCUSDT",
+      "direction": "Short",
+      "trading_system": "John",
+      "conviction": "HIGH",
+      "leverage": 3,
+      "entry_price": 63678.58305232,
+      "entry_lo": 60281.34389536,
+      "entry_hi": 64810.99610464,
+      "sl": 65290.54848302,
+      "tp1": 53876.29408231,
+      "tp2": 49148.90303397,
+      "status": "PENDING",
+      "tp1_hit": false,
+      "tp2_hit": false,
+      "sl_hit": false,
+      "close_reason": null,
+      "date_opened": "2026-11-21",
+      "time_opened_utc": "16:02",
+      "code_sha": "dbe3fddf42f4",
+      "sl_mode": "initial",
+      "feed_updated_utc": "2026-11-21T16:02Z",
       "activated_utc": null
     }
   ]
