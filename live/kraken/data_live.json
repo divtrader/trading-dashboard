@@ -2,14 +2,14 @@
   "mode": "live",
   "venue": "Kraken",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-11-22T21:18:22Z",
+  "last_updated_iso": "2026-11-22T22:07:22Z",
   "freshness": {
-    "engine_run_iso": "2026-11-22T21:17:58Z",
+    "engine_run_iso": "2026-11-22T22:07:00Z",
     "engine_run_note": null,
     "engine_protect_iso": null,
-    "feed_generated_iso": "2026-11-22T20:06:00Z",
+    "feed_generated_iso": "2026-11-22T22:06:00Z",
     "feed_note": null,
-    "published_iso": "2026-11-22T21:18:22Z",
+    "published_iso": "2026-11-22T22:07:22Z",
     "cadence_min": 60.0,
     "run_warn_min": 80.0,
     "run_urgent_min": 135.0,
@@ -18,9 +18,9 @@
     "publish_urgent_min": 135.0
   },
   "mexc_account": {
-    "unrealized_pnl": 1.9562,
-    "equity": 4079.0115,
-    "available": 2958.3792,
+    "unrealized_pnl": 1.461,
+    "equity": 4078.5315,
+    "available": 2957.8992,
     "position_margin": 60.967
   },
   "account_source": "live",
@@ -45,7 +45,7 @@
       "key": "engine_run",
       "tier": 1,
       "label": "Last engine run",
-      "value": "24s ago",
+      "value": "22s ago",
       "status": "ok",
       "action": null
     },
@@ -53,7 +53,7 @@
       "key": "signal_feed",
       "tier": 1,
       "label": "Engine feed",
-      "value": "72 min old",
+      "value": "82s old",
       "status": "ok",
       "action": null
     },
@@ -77,7 +77,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Kraken wallet",
-      "value": "$4,079.01",
+      "value": "$4,078.53",
       "status": "ok",
       "action": null
     },
@@ -109,7 +109,7 @@
       "key": "signals_skipped",
       "tier": 1,
       "label": "Feed trades not taken",
-      "value": "10 (4 coin slot taken, 2 margin cap, 2 coin not listed, 2 pre go live)",
+      "value": "11 (4 coin slot taken, 3 margin cap, 2 coin not listed, 2 pre go live)",
       "status": "info",
       "action": null
     }
@@ -880,6 +880,18 @@
   ],
   "recent_skips": [
     {
+      "trade_id": "RENDERUSDT_20261122_CJ_001",
+      "coin": "RENDERUSDT",
+      "direction": "Long",
+      "trading_system": "John",
+      "entry_price": 1.28904496,
+      "reason_code": "margin_cap",
+      "reason": "Not enough free margin on Kraken for another trade right now.",
+      "reason_short": "margin cap reached",
+      "iso": "2026-11-22T22:07:00Z",
+      "last_seen_iso": "2026-11-22T22:07:00Z"
+    },
+    {
       "trade_id": "AVAXUSDT_20261122_CJ_002",
       "coin": "AVAXUSDT",
       "direction": "Long",
@@ -901,7 +913,7 @@
       "reason": "Not enough free margin on Kraken for another trade right now.",
       "reason_short": "margin cap reached",
       "iso": "2026-11-22T14:07:31Z",
-      "last_seen_iso": "2026-11-22T21:17:58Z"
+      "last_seen_iso": "2026-11-22T22:07:00Z"
     },
     {
       "trade_id": "THETAUSDT_20261120_CJ_001",
@@ -913,7 +925,7 @@
       "reason": "THETA has no perpetual contract on Kraken.",
       "reason_short": "coin not on Kraken",
       "iso": "2026-11-21T14:07:33Z",
-      "last_seen_iso": "2026-11-22T21:17:58Z"
+      "last_seen_iso": "2026-11-22T22:07:00Z"
     },
     {
       "trade_id": "ETHUSDT_20261118_CJ_001",
@@ -925,7 +937,7 @@
       "reason": "The engine runs one trade per coin on Kraken and ETH already has one (ETHUSDT_20261118_CB_001 is resting).",
       "reason_short": "one trade per coin - slot taken",
       "iso": "2026-11-20T10:07:36Z",
-      "last_seen_iso": "2026-11-22T21:17:58Z"
+      "last_seen_iso": "2026-11-22T22:07:00Z"
     },
     {
       "trade_id": "APTUSDT_20261118_CB_002",
@@ -949,7 +961,7 @@
       "reason": "The engine runs one trade per coin on Kraken and ALGO already has one (ALGOUSDT_20261116_CJ_001 is resting).",
       "reason_short": "one trade per coin - slot taken",
       "iso": "2026-11-20T10:07:36Z",
-      "last_seen_iso": "2026-11-22T21:17:58Z"
+      "last_seen_iso": "2026-11-22T22:07:00Z"
     },
     {
       "trade_id": "THETAUSDT_20261115_CJ_001",
@@ -1019,7 +1031,7 @@
   "drift_vs_feed": {
     "available": true,
     "source": "Engine feed (divtrader signals.json)",
-    "feed_generated_utc": "2026-11-22T20:06Z",
+    "feed_generated_utc": "2026-11-22T22:06Z",
     "checked": 20,
     "in_parity": 20,
     "drifting": []
@@ -1027,7 +1039,7 @@
   "drift_vs_master": {
     "available": true,
     "source": "Engine feed (divtrader signals.json)",
-    "feed_generated_utc": "2026-11-22T20:06Z",
+    "feed_generated_utc": "2026-11-22T22:06Z",
     "checked": 20,
     "in_parity": 20,
     "drifting": []
@@ -1035,13 +1047,13 @@
   "drift_vs_db": {
     "available": true,
     "source": "Engine feed (divtrader signals.json)",
-    "feed_generated_utc": "2026-11-22T20:06Z",
+    "feed_generated_utc": "2026-11-22T22:06Z",
     "checked": 20,
     "in_parity": 20,
     "drifting": []
   },
   "vs_mexc": {
-    "updated_iso": "2026-11-22T21:18:22Z",
+    "updated_iso": "2026-11-22T22:07:22Z",
     "trades": [
       {
         "trade_id": "LINKUSDT_20261122_CJ_001",
