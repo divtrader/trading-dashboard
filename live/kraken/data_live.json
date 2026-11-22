@@ -2,14 +2,14 @@
   "mode": "live",
   "venue": "Kraken",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-11-21T23:18:16Z",
+  "last_updated_iso": "2026-11-22T00:08:16Z",
   "freshness": {
-    "engine_run_iso": "2026-11-21T23:17:56Z",
+    "engine_run_iso": "2026-11-22T00:07:57Z",
     "engine_run_note": null,
     "engine_protect_iso": null,
-    "feed_generated_iso": "2026-11-21T22:05:00Z",
+    "feed_generated_iso": "2026-11-22T00:07:00Z",
     "feed_note": null,
-    "published_iso": "2026-11-21T23:18:16Z",
+    "published_iso": "2026-11-22T00:08:16Z",
     "cadence_min": 60.0,
     "run_warn_min": 80.0,
     "run_urgent_min": 135.0,
@@ -19,8 +19,8 @@
   },
   "mexc_account": {
     "unrealized_pnl": 0.0,
-    "equity": 4077.3574,
-    "available": 2956.7235,
+    "equity": 4077.3982,
+    "available": 2956.7641,
     "position_margin": 0.0
   },
   "account_source": "live",
@@ -45,7 +45,7 @@
       "key": "engine_run",
       "tier": 1,
       "label": "Last engine run",
-      "value": "20s ago",
+      "value": "19s ago",
       "status": "ok",
       "action": null
     },
@@ -53,7 +53,7 @@
       "key": "signal_feed",
       "tier": 1,
       "label": "Engine feed",
-      "value": "73 min old",
+      "value": "76s old",
       "status": "ok",
       "action": null
     },
@@ -77,7 +77,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Kraken wallet",
-      "value": "$4,077.36",
+      "value": "$4,077.40",
       "status": "ok",
       "action": null
     },
@@ -849,12 +849,12 @@
       "coin": "THETAUSDT",
       "direction": "Short",
       "trading_system": "John",
-      "entry_price": 0.13448165,
+      "entry_price": 0.133575,
       "reason_code": "coin_not_listed",
       "reason": "THETA has no perpetual contract on Kraken.",
       "reason_short": "coin not on Kraken",
       "iso": "2026-11-21T14:07:33Z",
-      "last_seen_iso": "2026-11-21T23:17:56Z"
+      "last_seen_iso": "2026-11-22T00:07:57Z"
     },
     {
       "trade_id": "ETHUSDT_20261118_CJ_001",
@@ -866,7 +866,7 @@
       "reason": "The engine runs one trade per coin on Kraken and ETH already has one (ETHUSDT_20261118_CB_001 is resting).",
       "reason_short": "one trade per coin - slot taken",
       "iso": "2026-11-20T10:07:36Z",
-      "last_seen_iso": "2026-11-21T23:17:56Z"
+      "last_seen_iso": "2026-11-22T00:07:57Z"
     },
     {
       "trade_id": "APTUSDT_20261118_CB_002",
@@ -890,7 +890,7 @@
       "reason": "The engine runs one trade per coin on Kraken and ALGO already has one (ALGOUSDT_20261116_CJ_001 is resting).",
       "reason_short": "one trade per coin - slot taken",
       "iso": "2026-11-20T10:07:36Z",
-      "last_seen_iso": "2026-11-21T23:17:56Z"
+      "last_seen_iso": "2026-11-22T00:07:57Z"
     },
     {
       "trade_id": "THETAUSDT_20261115_CJ_001",
@@ -960,7 +960,7 @@
   "drift_vs_feed": {
     "available": true,
     "source": "Engine feed (divtrader signals.json)",
-    "feed_generated_utc": "2026-11-21T22:05Z",
+    "feed_generated_utc": "2026-11-22T00:07Z",
     "checked": 18,
     "in_parity": 18,
     "drifting": []
@@ -968,7 +968,7 @@
   "drift_vs_master": {
     "available": true,
     "source": "Engine feed (divtrader signals.json)",
-    "feed_generated_utc": "2026-11-21T22:05Z",
+    "feed_generated_utc": "2026-11-22T00:07Z",
     "checked": 18,
     "in_parity": 18,
     "drifting": []
@@ -976,13 +976,13 @@
   "drift_vs_db": {
     "available": true,
     "source": "Engine feed (divtrader signals.json)",
-    "feed_generated_utc": "2026-11-21T22:05Z",
+    "feed_generated_utc": "2026-11-22T00:07Z",
     "checked": 18,
     "in_parity": 18,
     "drifting": []
   },
   "vs_mexc": {
-    "updated_iso": "2026-11-21T23:18:16Z",
+    "updated_iso": "2026-11-22T00:08:16Z",
     "trades": [
       {
         "trade_id": "APTUSDT_20261121_CJ_001",
