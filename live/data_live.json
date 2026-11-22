@@ -2,14 +2,14 @@
   "mode": "live",
   "venue": "kraken",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-11-22T11:00:08Z",
+  "last_updated_iso": "2026-11-22T11:06:25Z",
   "freshness": {
-    "engine_run_iso": "2026-11-22T10:59:46Z",
+    "engine_run_iso": "2026-11-22T11:06:01Z",
     "engine_run_note": null,
     "engine_protect_iso": null,
-    "feed_generated_iso": "2026-11-22T10:18:00Z",
+    "feed_generated_iso": "2026-11-22T11:05:00Z",
     "feed_note": null,
-    "published_iso": "2026-11-22T11:00:08Z",
+    "published_iso": "2026-11-22T11:06:25Z",
     "cadence_min": 60.0,
     "run_warn_min": 80.0,
     "run_urgent_min": 135.0,
@@ -18,9 +18,9 @@
     "publish_urgent_min": 135.0
   },
   "mexc_account": {
-    "unrealized_pnl": 0.035,
-    "equity": 4077.0012,
-    "available": 2956.3687,
+    "unrealized_pnl": -0.9,
+    "equity": 4075.8412,
+    "available": 2955.2096,
     "position_margin": 60.967
   },
   "account_source": "live",
@@ -45,7 +45,7 @@
       "key": "engine_run",
       "tier": 1,
       "label": "Last engine run",
-      "value": "22s ago",
+      "value": "24s ago",
       "status": "ok",
       "action": null
     },
@@ -53,7 +53,7 @@
       "key": "signal_feed",
       "tier": 1,
       "label": "Engine feed",
-      "value": "42 min old",
+      "value": "85s old",
       "status": "ok",
       "action": null
     },
@@ -77,7 +77,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Kraken wallet",
-      "value": "$4,077.00",
+      "value": "$4,075.84",
       "status": "ok",
       "action": null
     },
@@ -631,8 +631,8 @@
       "direction": "Short",
       "entry_price": 3.00329113,
       "sl": 3.21565728,
-      "tp1": 2.4365871,
-      "tp2": 1.52687742,
+      "tp1": 2.883,
+      "tp2": 2.625,
       "capital_usd": 203.22,
       "leverage": 3,
       "trading_system": "Braam",
@@ -4872,7 +4872,7 @@
       "reason": "THETA has no perpetual contract on Kraken.",
       "reason_short": "coin not on Kraken",
       "iso": "2026-11-21T14:07:33Z",
-      "last_seen_iso": "2026-11-22T10:59:46Z"
+      "last_seen_iso": "2026-11-22T11:06:01Z"
     },
     {
       "trade_id": "ETHUSDT_20261118_CJ_001",
@@ -4884,7 +4884,7 @@
       "reason": "The engine runs one trade per coin on Kraken and ETH already has one (ETHUSDT_20261118_CB_001 is resting).",
       "reason_short": "one trade per coin - slot taken",
       "iso": "2026-11-20T10:07:36Z",
-      "last_seen_iso": "2026-11-22T10:59:46Z"
+      "last_seen_iso": "2026-11-22T11:06:01Z"
     },
     {
       "trade_id": "APTUSDT_20261118_CB_002",
@@ -4908,7 +4908,7 @@
       "reason": "The engine runs one trade per coin on Kraken and ALGO already has one (ALGOUSDT_20261116_CJ_001 is resting).",
       "reason_short": "one trade per coin - slot taken",
       "iso": "2026-11-20T10:07:36Z",
-      "last_seen_iso": "2026-11-22T10:59:46Z"
+      "last_seen_iso": "2026-11-22T11:06:01Z"
     },
     {
       "trade_id": "THETAUSDT_20261115_CJ_001",
@@ -5042,7 +5042,7 @@
   "drift_vs_feed": {
     "available": true,
     "source": "Engine feed (divtrader signals.json)",
-    "feed_generated_utc": "2026-11-22T10:18Z",
+    "feed_generated_utc": "2026-11-22T11:05Z",
     "checked": 19,
     "in_parity": 19,
     "drifting": []
@@ -5050,7 +5050,7 @@
   "drift_vs_master": {
     "available": true,
     "source": "Engine feed (divtrader signals.json)",
-    "feed_generated_utc": "2026-11-22T10:18Z",
+    "feed_generated_utc": "2026-11-22T11:05Z",
     "checked": 19,
     "in_parity": 19,
     "drifting": []
@@ -5058,13 +5058,13 @@
   "drift_vs_db": {
     "available": true,
     "source": "Engine feed (divtrader signals.json)",
-    "feed_generated_utc": "2026-11-22T10:18Z",
+    "feed_generated_utc": "2026-11-22T11:05Z",
     "checked": 19,
     "in_parity": 19,
     "drifting": []
   },
   "vs_mexc": {
-    "updated_iso": "2026-11-22T11:00:08Z",
+    "updated_iso": "2026-11-22T11:06:25Z",
     "trades": [
       {
         "trade_id": "NEARUSDT_20261121_CB_001",
@@ -5430,5 +5430,5 @@
     "mexc",
     "kraken"
   ],
-  "mexc_history_last_updated_iso": "2026-11-22T10:18:07Z"
+  "mexc_history_last_updated_iso": "2026-11-22T11:05:36Z"
 }
