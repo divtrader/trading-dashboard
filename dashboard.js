@@ -340,6 +340,7 @@ async function fetchData() {
     state.stats = d.stats || {};
     state.mexcAccount = d.mexc_account || null;
     state.apiKeys = d.api_keys || [];
+    state.trendPaper = d.trend_paper || null;       // Trend engine (new single-engine candidate) — paper only
     state.lastCronIso = d.last_updated_iso || null;
     state.lastFetch = Date.now();
 
@@ -1868,7 +1869,41 @@ function renderSystems() {
       </div>
     `;
   }).join("");
-  flipReplace($("systems"), html, "data-sys");
+  // Trend engine — the new single-engine candidate, PAPER ONLY (trend_engine.py). Its numbers come ready-made from
+  // data.json (trend_paper): $100 stake x3, costs already deducted. Shown only once the block exists.
+  const tp = state.trendPaper;
+  let trendRow = "";
+  if (tp) {
+    const wr = tp.win_rate_pct ?? 0, color = "#2FBF71";
+    const offset = circ - circ * Math.min(1, wr / 100);
+    const unreal = tp.unrealized_pnl_usd ?? 0, realized = tp.realized_pnl_usd ?? 0;
+    trendRow = `
+      <div class="sys-row" data-sys="Trend">
+        <div class="sys-name-block">
+          <div class="sys-ring-wrap">
+            <svg class="sys-ring-svg" viewBox="0 0 44 44">
+              <circle class="sys-ring-track" cx="22" cy="22" r="${r}"/>
+              <circle class="sys-ring-fill" cx="22" cy="22" r="${r}"
+                stroke="${color}"
+                stroke-dasharray="${circ.toFixed(1)}"
+                stroke-dashoffset="${offset.toFixed(1)}"/>
+            </svg>
+            <div class="sys-ring-label">${wr.toFixed(0)}%</div>
+          </div>
+          <div>
+            <div class="sys-name" style="color:${color}">Trend</div>
+            <div class="sys-tag">new · paper test</div>
+          </div>
+        </div>
+        <div class="metric"><span class="k">Open</span><span class="v">${tp.open_count ?? 0}</span></div>
+        <div class="metric"><span class="k">Pending</span><span class="v">—</span></div>
+        <div class="metric"><span class="k">Closed</span><span class="v">${tp.closed_count ?? 0}</span></div>
+        <div class="metric"><span class="k">Unrealized</span><span class="v ${cls(unreal)}">${fmtUsd(unreal)}</span></div>
+        <div class="metric"><span class="k">Realized</span><span class="v ${cls(realized)}">${fmtUsd(realized)}</span></div>
+      </div>
+    `;
+  }
+  flipReplace($("systems"), html + trendRow, "data-sys");
 }
 
 // Screen navigation (swipeable — no auto-rotation)
