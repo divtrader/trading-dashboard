@@ -2,14 +2,14 @@
   "mode": "live",
   "venue": "kraken",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-11-23T14:13:22Z",
+  "last_updated_iso": "2026-11-23T14:15:40Z",
   "freshness": {
-    "engine_run_iso": "2026-11-23T14:12:51Z",
+    "engine_run_iso": "2026-11-23T14:14:46Z",
     "engine_run_note": null,
     "engine_protect_iso": null,
     "feed_generated_iso": "2026-11-23T14:06:00Z",
     "feed_note": null,
-    "published_iso": "2026-11-23T14:13:22Z",
+    "published_iso": "2026-11-23T14:15:40Z",
     "cadence_min": 60.0,
     "run_warn_min": 80.0,
     "run_urgent_min": 135.0,
@@ -18,15 +18,15 @@
     "publish_urgent_min": 135.0
   },
   "mexc_account": {
-    "unrealized_pnl": -91.4495,
-    "equity": 3945.9699,
-    "available": 2947.8085,
-    "position_margin": 305.5385
+    "unrealized_pnl": -0.3461,
+    "equity": 3932.5913,
+    "available": 3069.2035,
+    "position_margin": 134.5116
   },
   "account_source": "live",
   "order_levels": {
-    "checked": 20,
-    "in_sync": 20,
+    "checked": 19,
+    "in_sync": 19,
     "drifted": [],
     "reconciling": [],
     "detail": []
@@ -45,7 +45,7 @@
       "key": "engine_run",
       "tier": 1,
       "label": "Last engine run",
-      "value": "31s ago",
+      "value": "54s ago",
       "status": "ok",
       "action": null
     },
@@ -53,7 +53,7 @@
       "key": "signal_feed",
       "tier": 1,
       "label": "Engine feed",
-      "value": "7 min old",
+      "value": "9 min old",
       "status": "ok",
       "action": null
     },
@@ -69,7 +69,7 @@
       "key": "state_file",
       "tier": 1,
       "label": "Trade journal",
-      "value": "OK (30 records, 15 resting, 5 open, 2 closed)",
+      "value": "OK (32 records, 16 resting, 3 open, 5 closed)",
       "status": "ok",
       "action": null
     },
@@ -77,7 +77,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Kraken wallet",
-      "value": "$3,945.97",
+      "value": "$3,932.59",
       "status": "ok",
       "action": null
     },
@@ -85,7 +85,7 @@
       "key": "orphan_orders",
       "tier": 1,
       "label": "Order reconciliation",
-      "value": "in sync (15 resting = journal)",
+      "value": "in sync (16 resting = journal)",
       "status": "ok",
       "action": null
     },
@@ -93,7 +93,7 @@
       "key": "position_protection",
       "tier": 1,
       "label": "Position protection",
-      "value": "all protected (5 open)",
+      "value": "all protected (3 open)",
       "status": "ok",
       "action": null
     },
@@ -101,7 +101,7 @@
       "key": "fee_tier",
       "tier": 1,
       "label": "Fee tier",
-      "value": "measured 0.035% per side",
+      "value": "measured 0.036% per side",
       "status": "ok",
       "action": null
     },
@@ -109,7 +109,7 @@
       "key": "signals_skipped",
       "tier": 1,
       "label": "Feed trades not taken",
-      "value": "13 (5 margin cap, 4 coin slot taken, 2 coin not listed, 2 pre go live)",
+      "value": "11 (4 coin slot taken, 3 margin cap, 2 coin not listed, 2 pre go live)",
       "status": "info",
       "action": null
     }
@@ -157,31 +157,31 @@
       "sl": 207.94143697,
       "tp1": 179.45768731,
       "tp2": 162.51712605,
-      "capital_usd": 203.86,
+      "capital_usd": 203.84,
       "leverage": 3,
       "trading_system": "John",
       "track_only": false,
-      "status": "PENDING",
+      "status": "OPEN",
       "price_at_run": null,
-      "date_activated": null,
-      "time_activated_utc": null,
+      "date_activated": "2026-11-23",
+      "time_activated_utc": "14:14",
       "date_opened": "2026-11-15",
       "time_opened_utc": "12:02",
       "conviction": "MEDIUM",
-      "tp1_hit": null,
-      "sl_moved_to_be": null,
+      "tp1_hit": true,
+      "sl_moved_to_be": false,
       "pnl_tp1_realized_usd": null,
       "tp2_hit": null,
       "pnl_tp1_estimated": null,
-      "live_executed": null,
-      "live_entry_fill": null,
+      "live_executed": true,
+      "live_entry_fill": 200.5,
       "live_exit_fill": null,
-      "live_entry_slippage_pct": null,
-      "live_fees_usd": null,
+      "live_entry_slippage_pct": -0.0,
+      "live_fees_usd": 0.0,
       "live_funding_usd": null,
-      "live_tp1_pnl_usd": null,
+      "live_tp1_pnl_usd": 0.9584,
       "rehearsal": false,
-      "live_filled_ts": null
+      "live_filled_ts": "2026-11-23T14:14:59+00:00"
     },
     {
       "trade_id": "AVAXUSDT_20261118_CB_001",
@@ -558,108 +558,6 @@
       "live_filled_ts": "2026-11-23T13:59:37.232000+00:00"
     },
     {
-      "trade_id": "NEARUSDT_20261121_CB_001",
-      "coin": "NEARUSDT",
-      "direction": "Short",
-      "entry_price": 3.00329113,
-      "sl": 3.21565728,
-      "tp1": 2.883,
-      "tp2": 2.625,
-      "capital_usd": 203.22,
-      "leverage": 3,
-      "trading_system": "Braam",
-      "track_only": false,
-      "status": "OPEN",
-      "price_at_run": null,
-      "date_activated": "2026-11-22",
-      "time_activated_utc": "10:59",
-      "date_opened": "2026-11-21",
-      "time_opened_utc": "16:02",
-      "conviction": "HIGH",
-      "tp1_hit": false,
-      "sl_moved_to_be": null,
-      "pnl_tp1_realized_usd": null,
-      "tp2_hit": null,
-      "pnl_tp1_estimated": null,
-      "live_executed": true,
-      "live_entry_fill": 3.0033,
-      "live_exit_fill": null,
-      "live_entry_slippage_pct": -0.0,
-      "live_fees_usd": 0.0,
-      "live_funding_usd": null,
-      "live_tp1_pnl_usd": null,
-      "rehearsal": false,
-      "live_filled_ts": "2026-11-22T10:59:32.355000+00:00"
-    },
-    {
-      "trade_id": "SUIUSDT_20261121_CB_001",
-      "coin": "SUIUSDT",
-      "direction": "Short",
-      "entry_price": 0.67550973,
-      "sl": 0.7122092,
-      "tp1": 0.61490103,
-      "tp2": 0.46724403,
-      "capital_usd": 203.78,
-      "leverage": 3,
-      "trading_system": "Braam",
-      "track_only": false,
-      "status": "OPEN",
-      "price_at_run": null,
-      "date_activated": "2026-11-23",
-      "time_activated_utc": "13:55",
-      "date_opened": "2026-11-21",
-      "time_opened_utc": "16:02",
-      "conviction": "HIGH",
-      "tp1_hit": false,
-      "sl_moved_to_be": null,
-      "pnl_tp1_realized_usd": null,
-      "tp2_hit": null,
-      "pnl_tp1_estimated": null,
-      "live_executed": true,
-      "live_entry_fill": 0.6755,
-      "live_exit_fill": null,
-      "live_entry_slippage_pct": -0.0,
-      "live_fees_usd": 0.0,
-      "live_funding_usd": null,
-      "live_tp1_pnl_usd": null,
-      "rehearsal": false,
-      "live_filled_ts": "2026-11-23T13:55:53.754000+00:00"
-    },
-    {
-      "trade_id": "APTUSDT_20261121_CJ_001",
-      "coin": "APTUSDT",
-      "direction": "Short",
-      "entry_price": 0.38699782,
-      "sl": 0.40316273,
-      "tp1": 0.3428,
-      "tp2": 0.2293739,
-      "capital_usd": 203.86,
-      "leverage": 3,
-      "trading_system": "John",
-      "track_only": false,
-      "status": "OPEN",
-      "price_at_run": null,
-      "date_activated": "2026-11-23",
-      "time_activated_utc": "05:46",
-      "date_opened": "2026-11-21",
-      "time_opened_utc": "20:03",
-      "conviction": "MEDIUM",
-      "tp1_hit": false,
-      "sl_moved_to_be": null,
-      "pnl_tp1_realized_usd": null,
-      "tp2_hit": null,
-      "pnl_tp1_estimated": null,
-      "live_executed": true,
-      "live_entry_fill": 0.387,
-      "live_exit_fill": null,
-      "live_entry_slippage_pct": -0.0,
-      "live_fees_usd": 0.0,
-      "live_funding_usd": null,
-      "live_tp1_pnl_usd": null,
-      "rehearsal": false,
-      "live_filled_ts": "2026-11-23T05:46:15.237000+00:00"
-    },
-    {
       "trade_id": "TAOUSDT_20261122_CJ_001",
       "coin": "TAOUSDT",
       "direction": "Long",
@@ -794,6 +692,74 @@
       "live_tp1_pnl_usd": null,
       "rehearsal": false,
       "live_filled_ts": null
+    },
+    {
+      "trade_id": "CAKEUSDT_20261123_CJ_001",
+      "coin": "CAKEUSDT",
+      "direction": "Long",
+      "entry_price": 1.46983783,
+      "sl": 1.43402426,
+      "tp1": 1.60502702,
+      "tp2": 1.70995149,
+      "capital_usd": 196.44,
+      "leverage": 3,
+      "trading_system": "John",
+      "track_only": false,
+      "status": "PENDING",
+      "price_at_run": null,
+      "date_activated": null,
+      "time_activated_utc": null,
+      "date_opened": "2026-11-23",
+      "time_opened_utc": "00:03",
+      "conviction": "MEDIUM",
+      "tp1_hit": null,
+      "sl_moved_to_be": null,
+      "pnl_tp1_realized_usd": null,
+      "tp2_hit": null,
+      "pnl_tp1_estimated": null,
+      "live_executed": null,
+      "live_entry_fill": null,
+      "live_exit_fill": null,
+      "live_entry_slippage_pct": null,
+      "live_fees_usd": null,
+      "live_funding_usd": null,
+      "live_tp1_pnl_usd": null,
+      "rehearsal": false,
+      "live_filled_ts": null
+    },
+    {
+      "trade_id": "HBARUSDT_20261123_CJ_001",
+      "coin": "HBARUSDT",
+      "direction": "Long",
+      "entry_price": 0.05144819,
+      "sl": 0.05015453,
+      "tp1": 0.05657941,
+      "tp2": 0.06109322,
+      "capital_usd": 196.44,
+      "leverage": 3,
+      "trading_system": "John",
+      "track_only": false,
+      "status": "PENDING",
+      "price_at_run": null,
+      "date_activated": null,
+      "time_activated_utc": null,
+      "date_opened": "2026-11-23",
+      "time_opened_utc": "08:03",
+      "conviction": "MEDIUM",
+      "tp1_hit": null,
+      "sl_moved_to_be": null,
+      "pnl_tp1_realized_usd": null,
+      "tp2_hit": null,
+      "pnl_tp1_estimated": null,
+      "live_executed": null,
+      "live_entry_fill": null,
+      "live_exit_fill": null,
+      "live_entry_slippage_pct": null,
+      "live_fees_usd": null,
+      "live_funding_usd": null,
+      "live_tp1_pnl_usd": null,
+      "rehearsal": false,
+      "live_filled_ts": null
     }
   ],
   "dry_run_plans": [],
@@ -813,6 +779,19 @@
     }
   ],
   "recent_opens": [
+    {
+      "trade_id": "TAOUSDT_20261115_CJ_001",
+      "coin": "TAOUSDT",
+      "direction": "Short",
+      "trading_system": "John",
+      "entry_price": 200.5,
+      "live_entry_fill": 200.5,
+      "tp1_hit": true,
+      "iso": "2026-11-23T14:14:59Z",
+      "_iso_ms": 1795443299000,
+      "rehearsal": false,
+      "venue": "kraken"
+    },
     {
       "trade_id": "ADAUSDT_20261120_CB_001",
       "coin": "ADAUSDT",
@@ -997,6 +976,78 @@
     }
   ],
   "recent_closes": [
+    {
+      "trade_id": "NEARUSDT_20261121_CB_001",
+      "coin": "NEARUSDT",
+      "direction": "Short",
+      "status": "STOPPED",
+      "pnl_usd": -44.3,
+      "close_reason": "stopped_out",
+      "date_closed": "2026-11-23",
+      "time_closed_utc": "14:14",
+      "trading_system": "Braam",
+      "live_entry_fill": 3.0033,
+      "live_exit_fill": 3.2197689655,
+      "live_entry_slippage_pct": -0.0,
+      "live_fees_usd": 0.4488,
+      "live_funding_usd": 0.0936,
+      "pnl_estimated": null,
+      "won": false,
+      "close_iso": "2026-11-23T14:14:31Z",
+      "rehearsal": false,
+      "close_cause": null,
+      "margin_usd": 203.2233,
+      "leverage": 3,
+      "venue": "kraken"
+    },
+    {
+      "trade_id": "SUIUSDT_20261121_CB_001",
+      "coin": "SUIUSDT",
+      "direction": "Short",
+      "status": "STOPPED",
+      "pnl_usd": -34.12,
+      "close_reason": "stopped_out",
+      "date_closed": "2026-11-23",
+      "time_closed_utc": "14:13",
+      "trading_system": "Braam",
+      "live_entry_fill": 0.6755,
+      "live_exit_fill": 0.7127024309,
+      "live_entry_slippage_pct": -0.0,
+      "live_fees_usd": 0.4447,
+      "live_funding_usd": -0.0025,
+      "pnl_estimated": null,
+      "won": false,
+      "close_iso": "2026-11-23T14:13:40Z",
+      "rehearsal": false,
+      "close_cause": null,
+      "margin_usd": 203.7758,
+      "leverage": 3,
+      "venue": "kraken"
+    },
+    {
+      "trade_id": "APTUSDT_20261121_CJ_001",
+      "coin": "APTUSDT",
+      "direction": "Short",
+      "status": "STOPPED",
+      "pnl_usd": -26.61,
+      "close_reason": "stopped_out",
+      "date_closed": "2026-11-23",
+      "time_closed_utc": "14:13",
+      "trading_system": "John",
+      "live_entry_fill": 0.387,
+      "live_exit_fill": 0.4035485034,
+      "live_entry_slippage_pct": -0.0,
+      "live_fees_usd": 0.4412,
+      "live_funding_usd": -0.0143,
+      "pnl_estimated": null,
+      "won": false,
+      "close_iso": "2026-11-23T14:13:39Z",
+      "rehearsal": false,
+      "close_cause": null,
+      "margin_usd": 203.8587,
+      "leverage": 3,
+      "venue": "kraken"
+    },
     {
       "trade_id": "SOLUSDT_20261120_CB_001",
       "coin": "SOLUSDT",
@@ -5086,18 +5137,6 @@
       "last_seen_iso": "2026-11-23T14:00:50Z"
     },
     {
-      "trade_id": "HBARUSDT_20261123_CJ_001",
-      "coin": "HBARUSDT",
-      "direction": "Long",
-      "trading_system": "John",
-      "entry_price": 0.05144819,
-      "reason_code": "margin_cap",
-      "reason": "Not enough free margin on Kraken for another trade right now.",
-      "reason_short": "margin cap reached",
-      "iso": "2026-11-23T10:07:23Z",
-      "last_seen_iso": "2026-11-23T14:12:51Z"
-    },
-    {
       "trade_id": "AVAXUSDT_20261123_CJ_001",
       "coin": "AVAXUSDT",
       "direction": "Long",
@@ -5108,18 +5147,6 @@
       "reason_short": "margin cap reached",
       "iso": "2026-11-23T08:07:29Z",
       "last_seen_iso": "2026-11-23T09:17:55Z"
-    },
-    {
-      "trade_id": "CAKEUSDT_20261123_CJ_001",
-      "coin": "CAKEUSDT",
-      "direction": "Long",
-      "trading_system": "John",
-      "entry_price": 1.46983783,
-      "reason_code": "margin_cap",
-      "reason": "Not enough free margin on Kraken for another trade right now.",
-      "reason_short": "margin cap reached",
-      "iso": "2026-11-23T00:07:23Z",
-      "last_seen_iso": "2026-11-23T14:12:51Z"
     },
     {
       "trade_id": "AVAXUSDT_20261122_CJ_002",
@@ -5143,7 +5170,7 @@
       "reason": "THETA has no perpetual contract on Kraken.",
       "reason_short": "coin not on Kraken",
       "iso": "2026-11-21T14:07:33Z",
-      "last_seen_iso": "2026-11-23T14:12:51Z"
+      "last_seen_iso": "2026-11-23T14:14:46Z"
     },
     {
       "trade_id": "ETHUSDT_20261118_CJ_001",
@@ -5155,7 +5182,7 @@
       "reason": "The engine runs one trade per coin on Kraken and ETH already has one (ETHUSDT_20261118_CB_001 is resting).",
       "reason_short": "one trade per coin - slot taken",
       "iso": "2026-11-20T10:07:36Z",
-      "last_seen_iso": "2026-11-23T14:12:51Z"
+      "last_seen_iso": "2026-11-23T14:14:46Z"
     },
     {
       "trade_id": "APTUSDT_20261118_CB_002",
@@ -5230,27 +5257,34 @@
       "last_seen_iso": "2026-11-20T09:17:56Z"
     }
   ],
-  "tp1_hits_open": [],
+  "tp1_hits_open": [
+    {
+      "coin": "TAOUSDT",
+      "direction": "Short",
+      "trading_system": "John",
+      "entry_price": 200.5
+    }
+  ],
   "stats": {
-    "realized_pnl_usd": -621.15,
-    "realized_pnl_pct": -1.13,
+    "realized_pnl_usd": -726.17,
+    "realized_pnl_pct": -1.31,
     "peak_capital_usd": 1926.61,
     "peak_concurrent": 8,
     "peak_date": "2026-10-12",
-    "deployed_trades": 374,
-    "return_on_peak_pct": -32.24,
-    "win_rate_pct": 36.9,
-    "closed_count": 369,
+    "deployed_trades": 375,
+    "return_on_peak_pct": -37.69,
+    "win_rate_pct": 36.6,
+    "closed_count": 372,
     "per_system": {
       "Braam": {
-        "realized_pnl_usd": -154.87,
-        "win_rate_pct": 41.1,
-        "closed_count": 163
+        "realized_pnl_usd": -233.28,
+        "win_rate_pct": 40.6,
+        "closed_count": 165
       },
       "John": {
-        "realized_pnl_usd": -321.21,
-        "win_rate_pct": 33.8,
-        "closed_count": 204
+        "realized_pnl_usd": -347.82,
+        "win_rate_pct": 33.7,
+        "closed_count": 205
       },
       "Mong": {
         "realized_pnl_usd": -145.07,
@@ -5258,8 +5292,8 @@
         "closed_count": 2
       }
     },
-    "live_trade_count_total": 581,
-    "live_real_count": 533,
+    "live_trade_count_total": 583,
+    "live_real_count": 535,
     "live_rehearsal_count": 48,
     "by_venue": {
       "mexc": {
@@ -5294,29 +5328,29 @@
         "live_rehearsal_count": 48
       },
       "kraken": {
-        "realized_pnl_usd": -39.62,
-        "realized_pnl_pct": -9.72,
+        "realized_pnl_usd": -144.64,
+        "realized_pnl_pct": -14.2,
         "peak_capital_usd": 1018.46,
         "peak_concurrent": 5,
         "peak_date": "2026-11-23",
-        "deployed_trades": 7,
-        "return_on_peak_pct": -3.89,
+        "deployed_trades": 8,
+        "return_on_peak_pct": -14.2,
         "win_rate_pct": 0.0,
-        "closed_count": 2,
+        "closed_count": 5,
         "per_system": {
           "Braam": {
-            "realized_pnl_usd": -21.24,
+            "realized_pnl_usd": -99.65,
             "win_rate_pct": 0.0,
-            "closed_count": 1
+            "closed_count": 3
           },
           "John": {
-            "realized_pnl_usd": -18.38,
+            "realized_pnl_usd": -44.99,
             "win_rate_pct": 0.0,
-            "closed_count": 1
+            "closed_count": 2
           }
         },
-        "live_trade_count_total": 22,
-        "live_real_count": 22,
+        "live_trade_count_total": 24,
+        "live_real_count": 24,
         "live_rehearsal_count": 0
       }
     }
@@ -5325,29 +5359,81 @@
     "available": true,
     "source": "Engine feed (divtrader signals.json)",
     "feed_generated_utc": "2026-11-23T14:06Z",
-    "checked": 20,
-    "in_parity": 20,
+    "checked": 19,
+    "in_parity": 19,
     "drifting": []
   },
   "drift_vs_master": {
     "available": true,
     "source": "Engine feed (divtrader signals.json)",
     "feed_generated_utc": "2026-11-23T14:06Z",
-    "checked": 20,
-    "in_parity": 20,
+    "checked": 19,
+    "in_parity": 19,
     "drifting": []
   },
   "drift_vs_db": {
     "available": true,
     "source": "Engine feed (divtrader signals.json)",
     "feed_generated_utc": "2026-11-23T14:06Z",
-    "checked": 20,
-    "in_parity": 20,
+    "checked": 19,
+    "in_parity": 19,
     "drifting": []
   },
   "vs_mexc": {
-    "updated_iso": "2026-11-23T14:13:22Z",
+    "updated_iso": "2026-11-23T14:15:40Z",
     "trades": [
+      {
+        "trade_id": "TAOUSDT_20261115_CJ_001",
+        "coin": "TAOUSDT",
+        "direction": "Short",
+        "trading_system": "John",
+        "kraken": {
+          "status": "OPEN",
+          "ret_pct": null,
+          "pnl_usd": null,
+          "margin_usd": 203.8417
+        },
+        "mexc": null
+      },
+      {
+        "trade_id": "NEARUSDT_20261121_CB_001",
+        "coin": "NEARUSDT",
+        "direction": "Short",
+        "trading_system": "Braam",
+        "kraken": {
+          "status": "CLOSED",
+          "ret_pct": -21.798,
+          "pnl_usd": -44.2984,
+          "margin_usd": 203.2233
+        },
+        "mexc": null
+      },
+      {
+        "trade_id": "SUIUSDT_20261121_CB_001",
+        "coin": "SUIUSDT",
+        "direction": "Short",
+        "trading_system": "Braam",
+        "kraken": {
+          "status": "CLOSED",
+          "ret_pct": -16.742,
+          "pnl_usd": -34.1154,
+          "margin_usd": 203.7758
+        },
+        "mexc": null
+      },
+      {
+        "trade_id": "APTUSDT_20261121_CJ_001",
+        "coin": "APTUSDT",
+        "direction": "Short",
+        "trading_system": "John",
+        "kraken": {
+          "status": "CLOSED",
+          "ret_pct": -13.052,
+          "pnl_usd": -26.6071,
+          "margin_usd": 203.8587
+        },
+        "mexc": null
+      },
       {
         "trade_id": "ADAUSDT_20261120_CB_001",
         "coin": "ADAUSDT",
@@ -5388,19 +5474,6 @@
         "mexc": null
       },
       {
-        "trade_id": "SUIUSDT_20261121_CB_001",
-        "coin": "SUIUSDT",
-        "direction": "Short",
-        "trading_system": "Braam",
-        "kraken": {
-          "status": "OPEN",
-          "ret_pct": null,
-          "pnl_usd": null,
-          "margin_usd": 203.7758
-        },
-        "mexc": null
-      },
-      {
         "trade_id": "ALGOUSDT_20261116_CJ_001",
         "coin": "ALGOUSDT",
         "direction": "Short",
@@ -5414,15 +5487,28 @@
         "mexc": null
       },
       {
-        "trade_id": "APTUSDT_20261121_CJ_001",
-        "coin": "APTUSDT",
-        "direction": "Short",
+        "trade_id": "HBARUSDT_20261123_CJ_001",
+        "coin": "HBARUSDT",
+        "direction": "Long",
         "trading_system": "John",
         "kraken": {
-          "status": "OPEN",
+          "status": "RESTING",
           "ret_pct": null,
           "pnl_usd": null,
-          "margin_usd": 203.8587
+          "margin_usd": 196.44
+        },
+        "mexc": null
+      },
+      {
+        "trade_id": "CAKEUSDT_20261123_CJ_001",
+        "coin": "CAKEUSDT",
+        "direction": "Long",
+        "trading_system": "John",
+        "kraken": {
+          "status": "RESTING",
+          "ret_pct": null,
+          "pnl_usd": null,
+          "margin_usd": 196.44
         },
         "mexc": null
       },
@@ -5462,19 +5548,6 @@
           "ret_pct": null,
           "pnl_usd": null,
           "margin_usd": 198.37
-        },
-        "mexc": null
-      },
-      {
-        "trade_id": "NEARUSDT_20261121_CB_001",
-        "coin": "NEARUSDT",
-        "direction": "Short",
-        "trading_system": "Braam",
-        "kraken": {
-          "status": "OPEN",
-          "ret_pct": null,
-          "pnl_usd": null,
-          "margin_usd": 203.2233
         },
         "mexc": null
       },
@@ -5693,19 +5766,6 @@
         "trading_system": "John",
         "kraken": {
           "status": "CANCELLED",
-          "ret_pct": null,
-          "pnl_usd": null,
-          "margin_usd": 203.86
-        },
-        "mexc": null
-      },
-      {
-        "trade_id": "TAOUSDT_20261115_CJ_001",
-        "coin": "TAOUSDT",
-        "direction": "Short",
-        "trading_system": "John",
-        "kraken": {
-          "status": "RESTING",
           "ret_pct": null,
           "pnl_usd": null,
           "margin_usd": 203.86
