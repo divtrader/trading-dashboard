@@ -2,14 +2,14 @@
   "mode": "live",
   "venue": "Kraken",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-11-23T14:27:19Z",
+  "last_updated_iso": "2026-11-23T14:30:23Z",
   "freshness": {
-    "engine_run_iso": "2026-11-23T14:26:49Z",
+    "engine_run_iso": "2026-11-23T14:29:51Z",
     "engine_run_note": null,
     "engine_protect_iso": null,
     "feed_generated_iso": "2026-11-23T14:06:00Z",
     "feed_note": null,
-    "published_iso": "2026-11-23T14:27:19Z",
+    "published_iso": "2026-11-23T14:30:23Z",
     "cadence_min": 60.0,
     "run_warn_min": 80.0,
     "run_urgent_min": 135.0,
@@ -18,19 +18,17 @@
     "publish_urgent_min": 135.0
   },
   "mexc_account": {
-    "unrealized_pnl": -29.8293,
-    "equity": 3899.874,
-    "available": 3025.4737,
+    "unrealized_pnl": -19.2708,
+    "equity": 3913.5311,
+    "available": 3039.1308,
     "position_margin": 305.5096
   },
   "account_source": "live",
   "order_levels": {
-    "checked": 17,
-    "in_sync": 17,
+    "checked": 18,
+    "in_sync": 18,
     "drifted": [],
-    "reconciling": [
-      "CAKE"
-    ],
+    "reconciling": [],
     "detail": []
   },
   "api_keys": [],
@@ -47,7 +45,7 @@
       "key": "engine_run",
       "tier": 1,
       "label": "Last engine run",
-      "value": "30s ago",
+      "value": "32s ago",
       "status": "ok",
       "action": null
     },
@@ -55,7 +53,7 @@
       "key": "signal_feed",
       "tier": 1,
       "label": "Engine feed",
-      "value": "21 min old",
+      "value": "24 min old",
       "status": "ok",
       "action": null
     },
@@ -71,7 +69,7 @@
       "key": "state_file",
       "tier": 1,
       "label": "Trade journal",
-      "value": "OK (32 records, 14 resting, 4 open, 6 closed)",
+      "value": "OK (32 records, 13 resting, 5 open, 6 closed)",
       "status": "ok",
       "action": null
     },
@@ -79,7 +77,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Kraken wallet",
-      "value": "$3,899.87",
+      "value": "$3,913.53",
       "status": "ok",
       "action": null
     },
@@ -87,9 +85,9 @@
       "key": "orphan_orders",
       "tier": 1,
       "label": "Order reconciliation",
-      "value": "1 journal order(s) not resting on Kraken",
-      "status": "warn",
-      "action": "Filled or cancelled since the last engine run - the next run reconciles: CAKE Short"
+      "value": "in sync (13 resting = journal)",
+      "status": "ok",
+      "action": null
     },
     {
       "key": "position_protection",
@@ -295,31 +293,31 @@
       "sl": 1.68464667,
       "tp1": 1.36244947,
       "tp2": 1.12333155,
-      "capital_usd": 203.86,
+      "capital_usd": 203.51,
       "leverage": 3,
       "trading_system": "Braam",
       "track_only": false,
-      "status": "PENDING",
+      "status": "OPEN",
       "price_at_run": null,
-      "date_activated": null,
-      "time_activated_utc": null,
+      "date_activated": "2026-11-23",
+      "time_activated_utc": "14:27",
       "date_opened": "2026-11-18",
       "time_opened_utc": "12:03",
       "conviction": "HIGH",
-      "tp1_hit": null,
+      "tp1_hit": false,
       "sl_moved_to_be": null,
       "pnl_tp1_realized_usd": null,
       "tp2_hit": null,
       "pnl_tp1_estimated": null,
-      "live_executed": null,
-      "live_entry_fill": null,
+      "live_executed": true,
+      "live_entry_fill": 1.6324,
       "live_exit_fill": null,
-      "live_entry_slippage_pct": null,
-      "live_fees_usd": null,
+      "live_entry_slippage_pct": -0.0,
+      "live_fees_usd": 0.0,
       "live_funding_usd": null,
       "live_tp1_pnl_usd": null,
       "rehearsal": false,
-      "live_filled_ts": null
+      "live_filled_ts": "2026-11-23T14:27:05.594000+00:00"
     },
     {
       "trade_id": "HBARUSDT_20261118_CB_001",
@@ -866,6 +864,18 @@
       "iso": "2026-11-23T14:25:38Z",
       "_iso_ms": 1795443938000,
       "rehearsal": false
+    },
+    {
+      "trade_id": "CAKEUSDT_20261118_CB_001",
+      "coin": "CAKEUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "entry_price": 1.63244825,
+      "live_entry_fill": 1.6324,
+      "tp1_hit": false,
+      "iso": "2026-11-23T14:27:05Z",
+      "_iso_ms": 1795444025000,
+      "rehearsal": false
     }
   ],
   "recent_closes": [
@@ -1064,7 +1074,7 @@
       "reason": "THETA has no perpetual contract on Kraken.",
       "reason_short": "coin not on Kraken",
       "iso": "2026-11-21T14:07:33Z",
-      "last_seen_iso": "2026-11-23T14:26:49Z"
+      "last_seen_iso": "2026-11-23T14:29:51Z"
     },
     {
       "trade_id": "ETHUSDT_20261118_CJ_001",
@@ -1076,7 +1086,7 @@
       "reason": "The engine runs one trade per coin on Kraken and ETH already has one (ETHUSDT_20261118_CB_001 is open).",
       "reason_short": "one trade per coin - slot taken",
       "iso": "2026-11-20T10:07:36Z",
-      "last_seen_iso": "2026-11-23T14:26:49Z"
+      "last_seen_iso": "2026-11-23T14:29:51Z"
     },
     {
       "trade_id": "APTUSDT_20261118_CB_002",
@@ -1158,7 +1168,7 @@
     "peak_capital_usd": 1018.46,
     "peak_concurrent": 5,
     "peak_date": "2026-11-23",
-    "deployed_trades": 10,
+    "deployed_trades": 11,
     "return_on_peak_pct": -14.16,
     "win_rate_pct": 16.7,
     "closed_count": 6,
@@ -1203,8 +1213,21 @@
     "drifting": []
   },
   "vs_mexc": {
-    "updated_iso": "2026-11-23T14:27:19Z",
+    "updated_iso": "2026-11-23T14:30:23Z",
     "trades": [
+      {
+        "trade_id": "CAKEUSDT_20261118_CB_001",
+        "coin": "CAKEUSDT",
+        "direction": "Short",
+        "trading_system": "Braam",
+        "kraken": {
+          "status": "OPEN",
+          "ret_pct": null,
+          "pnl_usd": null,
+          "margin_usd": 203.5059
+        },
+        "mexc": null
+      },
       {
         "trade_id": "ETHUSDT_20261118_CB_001",
         "coin": "ETHUSDT",
@@ -1511,19 +1534,6 @@
         "trading_system": "Braam",
         "kraken": {
           "status": "CANCELLED",
-          "ret_pct": null,
-          "pnl_usd": null,
-          "margin_usd": 203.86
-        },
-        "mexc": null
-      },
-      {
-        "trade_id": "CAKEUSDT_20261118_CB_001",
-        "coin": "CAKEUSDT",
-        "direction": "Short",
-        "trading_system": "Braam",
-        "kraken": {
-          "status": "RESTING",
           "ret_pct": null,
           "pnl_usd": null,
           "margin_usd": 203.86
