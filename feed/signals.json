@@ -1,9 +1,9 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-11-23T08:07Z",
+  "generated_utc": "2026-11-23T10:07Z",
   "master": "braam",
   "retention_hours": 48,
-  "trade_count": 36,
+  "trade_count": 37,
   "trades": [
     {
       "trade_id": "LINKUSDT_20261115_CJ_001",
@@ -168,7 +168,7 @@
       "sl": 0.08342279,
       "tp1": 0.0756,
       "tp2": 0.06153435,
-      "status": "PENDING",
+      "status": "OPEN",
       "tp1_hit": false,
       "tp2_hit": false,
       "sl_hit": false,
@@ -177,8 +177,8 @@
       "time_opened_utc": "00:02",
       "code_sha": "3bb6c80c8059",
       "sl_mode": "initial",
-      "feed_updated_utc": "2026-11-18T00:02Z",
-      "activated_utc": null
+      "feed_updated_utc": "2026-11-23T10:03Z",
+      "activated_utc": "2026-11-23T10:03Z"
     },
     {
       "trade_id": "ETHUSDT_20261118_CB_001",
@@ -893,6 +893,31 @@
       "sl": 6.30790574,
       "tp1": 6.94428232,
       "tp2": 7.56818852,
+      "status": "CANCELLED",
+      "tp1_hit": false,
+      "tp2_hit": false,
+      "sl_hit": false,
+      "close_reason": "BTC entered full BEAR regime and AVAXUSDT has 88% BTC correlation \u2014 active Long not advised",
+      "date_opened": "2026-11-23",
+      "time_opened_utc": "08:03",
+      "code_sha": "45afa1b488ec",
+      "sl_mode": "initial",
+      "feed_updated_utc": "2026-11-23T10:03Z",
+      "activated_utc": null
+    },
+    {
+      "trade_id": "HBARUSDT_20261123_CJ_001",
+      "coin": "HBARUSDT",
+      "direction": "Long",
+      "trading_system": "John",
+      "conviction": "MEDIUM",
+      "leverage": 3,
+      "entry_price": 0.05144819,
+      "entry_lo": 0.05089638,
+      "entry_hi": 0.05310362,
+      "sl": 0.05015453,
+      "tp1": 0.05657941,
+      "tp2": 0.06109322,
       "status": "PENDING",
       "tp1_hit": false,
       "tp2_hit": false,
