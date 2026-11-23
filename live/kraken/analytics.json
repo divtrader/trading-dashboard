@@ -1,39 +1,39 @@
 {
-  "generated_at_utc": "2026-11-23T13:03:18+00:00",
+  "generated_at_utc": "2026-11-23T13:18:36+00:00",
   "venue": "Kraken",
   "all_time": {
-    "total_trades": 0,
+    "total_trades": 1,
     "wins": 0,
-    "losses": 0,
+    "losses": 1,
     "win_rate": 0.0,
-    "total_pnl_usd": 0.0,
-    "avg_pnl_usd": 0.0,
-    "best_usd": 0.0,
-    "worst_usd": 0.0,
+    "total_pnl_usd": -18.38,
+    "avg_pnl_usd": -18.38,
+    "best_usd": -18.38,
+    "worst_usd": -18.38,
     "avg_win_usd": 0.0,
-    "avg_loss_usd": 0.0,
-    "expectancy_usd": 0.0,
+    "avg_loss_usd": -18.38,
+    "expectancy_usd": -18.38,
     "profit_factor": 0.0,
     "longest_win_streak": 0,
-    "longest_loss_streak": 0,
-    "current_streak_type": null,
-    "current_streak_count": 0,
-    "avg_hold_hours": null,
-    "median_hold_hours": null
+    "longest_loss_streak": 1,
+    "current_streak_type": "loss",
+    "current_streak_count": 1,
+    "avg_hold_hours": 2.0,
+    "median_hold_hours": 2.0
   },
   "by_system": {
     "John": {
-      "n": 0,
+      "n": 1,
       "wins": 0,
       "wr": 0.0,
-      "pnl": 0.0,
-      "avg": 0.0,
+      "pnl": -18.38,
+      "avg": -18.38,
       "inception": "2026-11-23",
       "days_active": 1,
-      "pnl_per_day": 0.0,
+      "pnl_per_day": -18.38,
       "status": "active",
-      "open": 2,
-      "pending": 7
+      "open": 1,
+      "pending": 8
     },
     "Braam": {
       "n": 0,
@@ -68,13 +68,13 @@
       "name": "John",
       "inception": "2026-11-23",
       "days_active": 1,
-      "closed": 0,
+      "closed": 1,
       "wins": 0,
       "wr": 0.0,
-      "pnl": 0.0,
-      "pnl_per_day": 0.0,
-      "open": 2,
-      "pending": 7
+      "pnl": -18.38,
+      "pnl_per_day": -18.38,
+      "open": 1,
+      "pending": 8
     },
     {
       "name": "Braam",
@@ -101,38 +101,124 @@
       "pending": 0
     }
   ],
-  "monthly": [],
-  "equity_curve": [],
+  "monthly": [
+    {
+      "month": "2026-11",
+      "n": 1,
+      "wins": 0,
+      "wr": 0.0,
+      "pnl": -18.38,
+      "cumulative_pnl": -18.38
+    }
+  ],
+  "equity_curve": [
+    {
+      "iso": "2026-11-23T13:05:55Z",
+      "pnl": -18.38,
+      "cumulative": -18.38,
+      "won": false
+    }
+  ],
   "benchmark": {
     "inception_iso": "2026-11-20T00:00:00Z",
     "base_usd": 4077.36,
     "base_source": "first_snapshot",
-    "ours": [],
+    "ours": [
+      {
+        "iso": "2026-11-23",
+        "pct": -0.451
+      }
+    ],
     "spx": [],
-    "ours_pct": 0.0,
+    "ours_pct": -0.451,
     "spx_pct": null,
     "spx_last_close_iso": null
   },
-  "by_direction": {},
-  "by_conviction": {},
+  "by_direction": {
+    "Short": {
+      "n": 1,
+      "wins": 0,
+      "wr": 0.0,
+      "pnl": -18.38,
+      "avg": -18.38
+    }
+  },
+  "by_conviction": {
+    "MEDIUM": {
+      "n": 1,
+      "wins": 0,
+      "wr": 0.0,
+      "pnl": -18.38,
+      "avg": -18.38
+    }
+  },
   "by_entry_type": {},
   "by_confluence_score": {},
   "by_session": {},
   "by_audit_verdict": {},
   "by_dow": {},
   "by_hour": {},
-  "best_coins": [],
-  "worst_coins": [],
-  "best_trade": null,
-  "worst_trade": null,
-  "recent_closes": [],
+  "best_coins": [
+    {
+      "coin": "ALGO",
+      "n": 1,
+      "wins": 0,
+      "wr": 0.0,
+      "pnl": -18.38,
+      "avg": -18.38
+    }
+  ],
+  "worst_coins": [
+    {
+      "coin": "ALGO",
+      "n": 1,
+      "wins": 0,
+      "wr": 0.0,
+      "pnl": -18.38,
+      "avg": -18.38
+    }
+  ],
+  "best_trade": {
+    "trade_id": "ALGOUSDT_20261116_CJ_001",
+    "coin": "ALGO",
+    "direction": "Short",
+    "system": "John",
+    "pnl_usd": -18.38,
+    "pnl_pct": -9.02,
+    "date_closed": "2026-11-23",
+    "close_reason": "stopped_out",
+    "conviction": "MEDIUM"
+  },
+  "worst_trade": {
+    "trade_id": "ALGOUSDT_20261116_CJ_001",
+    "coin": "ALGO",
+    "direction": "Short",
+    "system": "John",
+    "pnl_usd": -18.38,
+    "pnl_pct": -9.02,
+    "date_closed": "2026-11-23",
+    "close_reason": "stopped_out",
+    "conviction": "MEDIUM"
+  },
+  "recent_closes": [
+    {
+      "trade_id": "ALGOUSDT_20261116_CJ_001",
+      "coin": "ALGO",
+      "direction": "Short",
+      "system": "John",
+      "pnl_usd": -18.38,
+      "won": false,
+      "close_reason": "stopped_out",
+      "iso": "2026-11-23T13:05:55+00:00"
+    }
+  ],
   "live_positions": {
-    "open_count": 3,
+    "open_count": 2,
     "open_long": 0,
-    "open_short": 3,
-    "pending_count": 17,
-    "capital_open_usd": 610.93,
-    "capital_pending_usd": 3460.16
+    "open_short": 2,
+    "pending_count": 18,
+    "capital_open_usd": 407.08,
+    "capital_pending_usd": 3660.82
   },
   "macro": {
     "vix": null,
