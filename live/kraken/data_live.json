@@ -2,14 +2,14 @@
   "mode": "live",
   "venue": "Kraken",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-11-23T00:07:47Z",
+  "last_updated_iso": "2026-11-23T00:18:26Z",
   "freshness": {
-    "engine_run_iso": "2026-11-23T00:07:23Z",
+    "engine_run_iso": "2026-11-23T00:18:02Z",
     "engine_run_note": null,
     "engine_protect_iso": null,
     "feed_generated_iso": "2026-11-23T00:07:00Z",
     "feed_note": null,
-    "published_iso": "2026-11-23T00:07:47Z",
+    "published_iso": "2026-11-23T00:18:26Z",
     "cadence_min": 60.0,
     "run_warn_min": 80.0,
     "run_urgent_min": 135.0,
@@ -18,9 +18,9 @@
     "publish_urgent_min": 135.0
   },
   "mexc_account": {
-    "unrealized_pnl": 4.4804,
-    "equity": 4081.4726,
-    "available": 2960.8402,
+    "unrealized_pnl": 3.8005,
+    "equity": 4080.8569,
+    "available": 2960.2246,
     "position_margin": 60.967
   },
   "account_source": "live",
@@ -53,7 +53,7 @@
       "key": "signal_feed",
       "tier": 1,
       "label": "Engine feed",
-      "value": "47s old",
+      "value": "11 min old",
       "status": "ok",
       "action": null
     },
@@ -77,7 +77,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Kraken wallet",
-      "value": "$4,081.47",
+      "value": "$4,080.86",
       "status": "ok",
       "action": null
     },
@@ -875,7 +875,7 @@
       "reason": "Not enough free margin on Kraken for another trade right now.",
       "reason_short": "margin cap reached",
       "iso": "2026-11-23T00:07:23Z",
-      "last_seen_iso": "2026-11-23T00:07:23Z"
+      "last_seen_iso": "2026-11-23T00:18:02Z"
     },
     {
       "trade_id": "RENDERUSDT_20261122_CJ_001",
@@ -887,7 +887,7 @@
       "reason": "Not enough free margin on Kraken for another trade right now.",
       "reason_short": "margin cap reached",
       "iso": "2026-11-22T22:07:00Z",
-      "last_seen_iso": "2026-11-23T00:07:23Z"
+      "last_seen_iso": "2026-11-23T00:18:02Z"
     },
     {
       "trade_id": "AVAXUSDT_20261122_CJ_002",
@@ -911,7 +911,7 @@
       "reason": "Not enough free margin on Kraken for another trade right now.",
       "reason_short": "margin cap reached",
       "iso": "2026-11-22T14:07:31Z",
-      "last_seen_iso": "2026-11-23T00:07:23Z"
+      "last_seen_iso": "2026-11-23T00:18:02Z"
     },
     {
       "trade_id": "THETAUSDT_20261120_CJ_001",
@@ -923,7 +923,7 @@
       "reason": "THETA has no perpetual contract on Kraken.",
       "reason_short": "coin not on Kraken",
       "iso": "2026-11-21T14:07:33Z",
-      "last_seen_iso": "2026-11-23T00:07:23Z"
+      "last_seen_iso": "2026-11-23T00:18:02Z"
     },
     {
       "trade_id": "ETHUSDT_20261118_CJ_001",
@@ -935,7 +935,7 @@
       "reason": "The engine runs one trade per coin on Kraken and ETH already has one (ETHUSDT_20261118_CB_001 is resting).",
       "reason_short": "one trade per coin - slot taken",
       "iso": "2026-11-20T10:07:36Z",
-      "last_seen_iso": "2026-11-23T00:07:23Z"
+      "last_seen_iso": "2026-11-23T00:18:02Z"
     },
     {
       "trade_id": "APTUSDT_20261118_CB_002",
@@ -959,7 +959,7 @@
       "reason": "The engine runs one trade per coin on Kraken and ALGO already has one (ALGOUSDT_20261116_CJ_001 is resting).",
       "reason_short": "one trade per coin - slot taken",
       "iso": "2026-11-20T10:07:36Z",
-      "last_seen_iso": "2026-11-23T00:07:23Z"
+      "last_seen_iso": "2026-11-23T00:18:02Z"
     },
     {
       "trade_id": "THETAUSDT_20261115_CJ_001",
@@ -1051,7 +1051,7 @@
     "drifting": []
   },
   "vs_mexc": {
-    "updated_iso": "2026-11-23T00:07:47Z",
+    "updated_iso": "2026-11-23T00:18:26Z",
     "trades": [
       {
         "trade_id": "LINKUSDT_20261122_CJ_001",
