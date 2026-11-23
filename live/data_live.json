@@ -2,14 +2,14 @@
   "mode": "live",
   "venue": "kraken",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-11-23T22:31:16Z",
+  "last_updated_iso": "2026-11-23T22:34:20Z",
   "freshness": {
-    "engine_run_iso": "2026-11-23T22:30:45Z",
+    "engine_run_iso": "2026-11-23T22:33:47Z",
     "engine_run_note": null,
     "engine_protect_iso": null,
     "feed_generated_iso": "2026-11-23T22:06:00Z",
     "feed_note": null,
-    "published_iso": "2026-11-23T22:31:16Z",
+    "published_iso": "2026-11-23T22:34:20Z",
     "cadence_min": 60.0,
     "run_warn_min": 80.0,
     "run_urgent_min": 135.0,
@@ -18,10 +18,10 @@
     "publish_urgent_min": 135.0
   },
   "mexc_account": {
-    "unrealized_pnl": 157.3998,
-    "equity": 4089.9008,
-    "available": 3156.3293,
-    "position_margin": 305.5253
+    "unrealized_pnl": 161.0152,
+    "equity": 4093.533,
+    "available": 3162.1775,
+    "position_margin": 364.4334
   },
   "account_source": "live",
   "order_levels": {
@@ -45,7 +45,7 @@
       "key": "engine_run",
       "tier": 1,
       "label": "Last engine run",
-      "value": "31s ago",
+      "value": "33s ago",
       "status": "ok",
       "action": null
     },
@@ -53,7 +53,7 @@
       "key": "signal_feed",
       "tier": 1,
       "label": "Engine feed",
-      "value": "25 min old",
+      "value": "28 min old",
       "status": "ok",
       "action": null
     },
@@ -69,7 +69,7 @@
       "key": "state_file",
       "tier": 1,
       "label": "Trade journal",
-      "value": "OK (33 records, 14 resting, 5 open, 6 closed)",
+      "value": "OK (33 records, 13 resting, 6 open, 6 closed)",
       "status": "ok",
       "action": null
     },
@@ -77,7 +77,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Kraken wallet",
-      "value": "$4,089.90",
+      "value": "$4,093.53",
       "status": "ok",
       "action": null
     },
@@ -85,7 +85,7 @@
       "key": "orphan_orders",
       "tier": 1,
       "label": "Order reconciliation",
-      "value": "in sync (14 resting = journal)",
+      "value": "in sync (13 resting = journal)",
       "status": "ok",
       "action": null
     },
@@ -701,31 +701,31 @@
       "sl": 0.05081245,
       "tp1": 0.06252304,
       "tp2": 0.06919049,
-      "capital_usd": 196.44,
+      "capital_usd": 196.41,
       "leverage": 3,
       "trading_system": "John",
       "track_only": false,
-      "status": "PENDING",
+      "status": "OPEN",
       "price_at_run": null,
-      "date_activated": null,
-      "time_activated_utc": null,
+      "date_activated": "2026-11-23",
+      "time_activated_utc": "22:33",
       "date_opened": "2026-11-23",
       "time_opened_utc": "08:03",
       "conviction": "MEDIUM",
-      "tp1_hit": null,
+      "tp1_hit": false,
       "sl_moved_to_be": null,
       "pnl_tp1_realized_usd": null,
       "tp2_hit": null,
       "pnl_tp1_estimated": null,
-      "live_executed": null,
-      "live_entry_fill": null,
+      "live_executed": true,
+      "live_entry_fill": 0.0524,
       "live_exit_fill": null,
-      "live_entry_slippage_pct": null,
-      "live_fees_usd": null,
+      "live_entry_slippage_pct": 0.0,
+      "live_fees_usd": 0.0,
       "live_funding_usd": null,
       "live_tp1_pnl_usd": null,
       "rehearsal": false,
-      "live_filled_ts": null
+      "live_filled_ts": "2026-11-23T22:33:08.055000+00:00"
     },
     {
       "trade_id": "BNBUSDT_20261123_CJ_001",
@@ -792,6 +792,19 @@
     }
   ],
   "recent_opens": [
+    {
+      "trade_id": "HBARUSDT_20261123_CJ_001",
+      "coin": "HBARUSDT",
+      "direction": "Long",
+      "trading_system": "John",
+      "entry_price": 0.05240447,
+      "live_entry_fill": 0.0524,
+      "tp1_hit": false,
+      "iso": "2026-11-23T22:33:08Z",
+      "_iso_ms": 1795473188000,
+      "rehearsal": false,
+      "venue": "kraken"
+    },
     {
       "trade_id": "ETHUSDT_20261118_CB_001",
       "coin": "ETHUSDT",
@@ -5285,7 +5298,7 @@
       "reason": "The engine runs one trade per coin on Kraken and RENDER already has one (RENDERUSDT_20261120_CJ_001 is resting).",
       "reason_short": "one trade per coin - slot taken",
       "iso": "2026-11-23T22:07:11Z",
-      "last_seen_iso": "2026-11-23T22:30:45Z"
+      "last_seen_iso": "2026-11-23T22:33:47Z"
     },
     {
       "trade_id": "AVAXUSDT_20261123_CJ_002",
@@ -5333,7 +5346,7 @@
       "reason": "THETA has no perpetual contract on Kraken.",
       "reason_short": "coin not on Kraken",
       "iso": "2026-11-21T14:07:33Z",
-      "last_seen_iso": "2026-11-23T22:30:45Z"
+      "last_seen_iso": "2026-11-23T22:33:47Z"
     },
     {
       "trade_id": "ETHUSDT_20261118_CJ_001",
@@ -5345,7 +5358,7 @@
       "reason": "The engine runs one trade per coin on Kraken and ETH already has one (ETHUSDT_20261118_CB_001 is open).",
       "reason_short": "one trade per coin - slot taken",
       "iso": "2026-11-20T10:07:36Z",
-      "last_seen_iso": "2026-11-23T22:30:45Z"
+      "last_seen_iso": "2026-11-23T22:33:47Z"
     },
     {
       "trade_id": "APTUSDT_20261118_CB_002",
@@ -5427,7 +5440,7 @@
     "peak_capital_usd": 1926.61,
     "peak_concurrent": 8,
     "peak_date": "2026-10-12",
-    "deployed_trades": 378,
+    "deployed_trades": 379,
     "return_on_peak_pct": -37.67,
     "win_rate_pct": 36.8,
     "closed_count": 373,
@@ -5486,11 +5499,11 @@
       "kraken": {
         "realized_pnl_usd": -144.23,
         "realized_pnl_pct": -11.8,
-        "peak_capital_usd": 1018.46,
-        "peak_concurrent": 5,
+        "peak_capital_usd": 1214.78,
+        "peak_concurrent": 6,
         "peak_date": "2026-11-23",
-        "deployed_trades": 11,
-        "return_on_peak_pct": -14.16,
+        "deployed_trades": 12,
+        "return_on_peak_pct": -11.87,
         "win_rate_pct": 16.7,
         "closed_count": 6,
         "per_system": {
@@ -5536,8 +5549,21 @@
     "drifting": []
   },
   "vs_mexc": {
-    "updated_iso": "2026-11-23T22:31:16Z",
+    "updated_iso": "2026-11-23T22:34:20Z",
     "trades": [
+      {
+        "trade_id": "HBARUSDT_20261123_CJ_001",
+        "coin": "HBARUSDT",
+        "direction": "Long",
+        "trading_system": "John",
+        "kraken": {
+          "status": "OPEN",
+          "ret_pct": null,
+          "pnl_usd": null,
+          "margin_usd": 196.4127
+        },
+        "mexc": null
+      },
       {
         "trade_id": "BNBUSDT_20261123_CJ_001",
         "coin": "BNBUSDT",
@@ -5691,19 +5717,6 @@
           "ret_pct": -9.018,
           "pnl_usd": -18.3832,
           "margin_usd": 203.847
-        },
-        "mexc": null
-      },
-      {
-        "trade_id": "HBARUSDT_20261123_CJ_001",
-        "coin": "HBARUSDT",
-        "direction": "Long",
-        "trading_system": "John",
-        "kraken": {
-          "status": "RESTING",
-          "ret_pct": null,
-          "pnl_usd": null,
-          "margin_usd": 196.44
         },
         "mexc": null
       },
