@@ -1,9 +1,9 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-11-23T14:06Z",
+  "generated_utc": "2026-11-23T16:06Z",
   "master": "braam",
   "retention_hours": 48,
-  "trade_count": 33,
+  "trade_count": 34,
   "trades": [
     {
       "trade_id": "LINKUSDT_20261115_CJ_001",
@@ -43,16 +43,16 @@
       "sl": 200.5,
       "tp1": 179.45768731,
       "tp2": 162.51712605,
-      "status": "OPEN",
+      "status": "STOPPED_AFTER_TP1",
       "tp1_hit": true,
       "tp2_hit": false,
-      "sl_hit": false,
-      "close_reason": null,
+      "sl_hit": true,
+      "close_reason": "SL hit",
       "date_opened": "2026-11-15",
       "time_opened_utc": "12:02",
       "code_sha": "2ac6c28a5fb3",
       "sl_mode": "breakeven",
-      "feed_updated_utc": "2026-11-19T12:00Z",
+      "feed_updated_utc": "2026-11-23T12:00Z",
       "activated_utc": "2026-11-19T12:00Z"
     },
     {
@@ -168,7 +168,7 @@
       "sl": 1900.29729773,
       "tp1": 1688.37998837,
       "tp2": 1438.35774031,
-      "status": "PENDING",
+      "status": "OPEN",
       "tp1_hit": false,
       "tp2_hit": false,
       "sl_hit": false,
@@ -177,8 +177,8 @@
       "time_opened_utc": "04:02",
       "code_sha": "a438b8b6243a",
       "sl_mode": "initial",
-      "feed_updated_utc": "2026-11-18T04:02Z",
-      "activated_utc": null
+      "feed_updated_utc": "2026-11-23T16:02Z",
+      "activated_utc": "2026-11-23T16:02Z"
     },
     {
       "trade_id": "ONDOUSDT_20261118_CB_001",
@@ -193,7 +193,7 @@
       "sl": 0.32461687,
       "tp1": 0.2635,
       "tp2": 0.19590741,
-      "status": "PENDING",
+      "status": "OPEN",
       "tp1_hit": false,
       "tp2_hit": false,
       "sl_hit": false,
@@ -202,8 +202,8 @@
       "time_opened_utc": "08:03",
       "code_sha": "e2b0d17f8747",
       "sl_mode": "initial",
-      "feed_updated_utc": "2026-11-18T08:03Z",
-      "activated_utc": null
+      "feed_updated_utc": "2026-11-23T16:02Z",
+      "activated_utc": "2026-11-23T16:02Z"
     },
     {
       "trade_id": "ETHUSDT_20261118_CJ_001",
@@ -243,7 +243,7 @@
       "sl": 1.68464667,
       "tp1": 1.36244947,
       "tp2": 1.12333155,
-      "status": "PENDING",
+      "status": "OPEN",
       "tp1_hit": false,
       "tp2_hit": false,
       "sl_hit": false,
@@ -252,8 +252,8 @@
       "time_opened_utc": "12:03",
       "code_sha": "816f06f44591",
       "sl_mode": "initial",
-      "feed_updated_utc": "2026-11-18T12:03Z",
-      "activated_utc": null
+      "feed_updated_utc": "2026-11-23T16:02Z",
+      "activated_utc": "2026-11-23T16:02Z"
     },
     {
       "trade_id": "APTUSDT_20261118_CJ_002",
@@ -468,7 +468,7 @@
       "sl": 0.15778573,
       "tp1": 0.13836059,
       "tp2": 0.1154949,
-      "status": "PENDING",
+      "status": "OPEN",
       "tp1_hit": false,
       "tp2_hit": false,
       "sl_hit": false,
@@ -477,8 +477,8 @@
       "time_opened_utc": "12:02",
       "code_sha": "e2731422eaab",
       "sl_mode": "initial",
-      "feed_updated_utc": "2026-11-20T12:02Z",
-      "activated_utc": null
+      "feed_updated_utc": "2026-11-23T16:02Z",
+      "activated_utc": "2026-11-23T16:02Z"
     },
     {
       "trade_id": "THETAUSDT_20261120_CJ_001",
@@ -493,7 +493,7 @@
       "sl": 0.13758848,
       "tp1": 0.10615618,
       "tp2": 0.09577892,
-      "status": "PENDING",
+      "status": "OPEN",
       "tp1_hit": false,
       "tp2_hit": false,
       "sl_hit": false,
@@ -502,8 +502,8 @@
       "time_opened_utc": "16:03",
       "code_sha": "72109d029819",
       "sl_mode": "initial",
-      "feed_updated_utc": "2026-11-20T16:03Z",
-      "activated_utc": null
+      "feed_updated_utc": "2026-11-23T12:00Z",
+      "activated_utc": "2026-11-23T12:00Z"
     },
     {
       "trade_id": "BTCUSDT_20261121_CJ_001",
@@ -543,16 +543,16 @@
       "sl": 3.21565728,
       "tp1": 2.883,
       "tp2": 2.625,
-      "status": "OPEN",
+      "status": "STOPPED",
       "tp1_hit": false,
       "tp2_hit": false,
-      "sl_hit": false,
-      "close_reason": null,
+      "sl_hit": true,
+      "close_reason": "SL hit",
       "date_opened": "2026-11-21",
       "time_opened_utc": "16:02",
       "code_sha": "dbe3fddf42f4",
       "sl_mode": "initial",
-      "feed_updated_utc": "2026-11-22T12:03Z",
+      "feed_updated_utc": "2026-11-23T12:00Z",
       "activated_utc": "2026-11-22T12:03Z"
     },
     {
@@ -568,16 +568,16 @@
       "sl": 0.7122092,
       "tp1": 0.61490103,
       "tp2": 0.46724403,
-      "status": "OPEN",
+      "status": "STOPPED",
       "tp1_hit": false,
       "tp2_hit": false,
-      "sl_hit": false,
-      "close_reason": null,
+      "sl_hit": true,
+      "close_reason": "SL hit",
       "date_opened": "2026-11-21",
       "time_opened_utc": "16:02",
       "code_sha": "dbe3fddf42f4",
       "sl_mode": "initial",
-      "feed_updated_utc": "2026-11-23T14:02Z",
+      "feed_updated_utc": "2026-11-23T16:00Z",
       "activated_utc": "2026-11-23T14:02Z"
     },
     {
@@ -593,16 +593,16 @@
       "sl": 0.40316273,
       "tp1": 0.3428,
       "tp2": 0.2293739,
-      "status": "OPEN",
+      "status": "STOPPED",
       "tp1_hit": false,
       "tp2_hit": false,
-      "sl_hit": false,
-      "close_reason": null,
+      "sl_hit": true,
+      "close_reason": "SL hit",
       "date_opened": "2026-11-21",
       "time_opened_utc": "20:03",
       "code_sha": "acd58a12ddec",
       "sl_mode": "initial",
-      "feed_updated_utc": "2026-11-23T08:02Z",
+      "feed_updated_utc": "2026-11-23T12:00Z",
       "activated_utc": "2026-11-23T04:00Z"
     },
     {
@@ -828,6 +828,31 @@
       "code_sha": "a8d4ac64629d",
       "sl_mode": "initial",
       "feed_updated_utc": "2026-11-23T14:02Z",
+      "activated_utc": null
+    },
+    {
+      "trade_id": "BNBUSDT_20261123_CJ_001",
+      "coin": "BNBUSDT",
+      "direction": "Short",
+      "trading_system": "John",
+      "conviction": "MEDIUM",
+      "leverage": 3,
+      "entry_price": 603.965,
+      "entry_lo": 573.5,
+      "entry_hi": 614.12,
+      "sl": 616.22071506,
+      "tp1": 501.13299409,
+      "tp2": 470.89856988,
+      "status": "PENDING",
+      "tp1_hit": false,
+      "tp2_hit": false,
+      "sl_hit": false,
+      "close_reason": null,
+      "date_opened": "2026-11-23",
+      "time_opened_utc": "16:03",
+      "code_sha": "b51fb633fa8f",
+      "sl_mode": "initial",
+      "feed_updated_utc": "2026-11-23T16:03Z",
       "activated_utc": null
     }
   ]
