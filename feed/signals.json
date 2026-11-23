@@ -1,6 +1,6 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-11-23T12:07Z",
+  "generated_utc": "2026-11-23T14:06Z",
   "master": "braam",
   "retention_hours": 48,
   "trade_count": 33,
@@ -68,16 +68,16 @@
       "sl": 0.08424682,
       "tp1": 0.0719354,
       "tp2": 0.06541359,
-      "status": "OPEN",
+      "status": "STOPPED",
       "tp1_hit": false,
       "tp2_hit": false,
-      "sl_hit": false,
-      "close_reason": null,
+      "sl_hit": true,
+      "close_reason": "SL hit",
       "date_opened": "2026-11-16",
       "time_opened_utc": "00:02",
       "code_sha": "108b0e19a559",
       "sl_mode": "initial",
-      "feed_updated_utc": "2026-11-23T08:00Z",
+      "feed_updated_utc": "2026-11-23T12:00Z",
       "activated_utc": "2026-11-23T08:00Z"
     },
     {
@@ -443,7 +443,7 @@
       "sl": 75.96920355,
       "tp1": 65.95269551,
       "tp2": 56.31334919,
-      "status": "PENDING",
+      "status": "OPEN",
       "tp1_hit": false,
       "tp2_hit": false,
       "sl_hit": false,
@@ -452,8 +452,8 @@
       "time_opened_utc": "12:02",
       "code_sha": "e2731422eaab",
       "sl_mode": "initial",
-      "feed_updated_utc": "2026-11-20T12:02Z",
-      "activated_utc": null
+      "feed_updated_utc": "2026-11-23T14:02Z",
+      "activated_utc": "2026-11-23T14:02Z"
     },
     {
       "trade_id": "ADAUSDT_20261120_CB_001",
@@ -518,7 +518,7 @@
       "sl": 65290.54848302,
       "tp1": 53876.29408231,
       "tp2": 49148.90303397,
-      "status": "PENDING",
+      "status": "OPEN",
       "tp1_hit": false,
       "tp2_hit": false,
       "sl_hit": false,
@@ -527,8 +527,8 @@
       "time_opened_utc": "16:02",
       "code_sha": "dbe3fddf42f4",
       "sl_mode": "initial",
-      "feed_updated_utc": "2026-11-21T16:02Z",
-      "activated_utc": null
+      "feed_updated_utc": "2026-11-23T12:00Z",
+      "activated_utc": "2026-11-23T12:00Z"
     },
     {
       "trade_id": "NEARUSDT_20261121_CB_001",
@@ -568,7 +568,7 @@
       "sl": 0.7122092,
       "tp1": 0.61490103,
       "tp2": 0.46724403,
-      "status": "PENDING",
+      "status": "OPEN",
       "tp1_hit": false,
       "tp2_hit": false,
       "sl_hit": false,
@@ -577,8 +577,8 @@
       "time_opened_utc": "16:02",
       "code_sha": "dbe3fddf42f4",
       "sl_mode": "initial",
-      "feed_updated_utc": "2026-11-21T16:02Z",
-      "activated_utc": null
+      "feed_updated_utc": "2026-11-23T14:02Z",
+      "activated_utc": "2026-11-23T14:02Z"
     },
     {
       "trade_id": "APTUSDT_20261121_CJ_001",
@@ -818,16 +818,16 @@
       "sl": 6.31328871,
       "tp1": 6.94376047,
       "tp2": 7.65042257,
-      "status": "PENDING",
+      "status": "CANCELLED",
       "tp1_hit": false,
       "tp2_hit": false,
       "sl_hit": false,
-      "close_reason": null,
+      "close_reason": "BTC entered full BEAR regime and AVAXUSDT has 88% BTC correlation \u2014 active Long not advised",
       "date_opened": "2026-11-23",
       "time_opened_utc": "12:03",
       "code_sha": "a8d4ac64629d",
       "sl_mode": "initial",
-      "feed_updated_utc": "2026-11-23T12:03Z",
+      "feed_updated_utc": "2026-11-23T14:02Z",
       "activated_utc": null
     }
   ]
