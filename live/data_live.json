@@ -2,14 +2,14 @@
   "mode": "live",
   "venue": "kraken",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-11-23T05:47:10Z",
+  "last_updated_iso": "2026-11-23T06:07:18Z",
   "freshness": {
-    "engine_run_iso": "2026-11-23T05:46:44Z",
+    "engine_run_iso": "2026-11-23T06:06:53Z",
     "engine_run_note": null,
     "engine_protect_iso": null,
-    "feed_generated_iso": "2026-11-23T04:06:00Z",
+    "feed_generated_iso": "2026-11-23T06:06:00Z",
     "feed_note": null,
-    "published_iso": "2026-11-23T05:47:10Z",
+    "published_iso": "2026-11-23T06:07:18Z",
     "cadence_min": 60.0,
     "run_warn_min": 80.0,
     "run_urgent_min": 135.0,
@@ -18,9 +18,9 @@
     "publish_urgent_min": 135.0
   },
   "mexc_account": {
-    "unrealized_pnl": -6.8145,
-    "equity": 4069.7612,
-    "available": 2949.1294,
+    "unrealized_pnl": -1.8131,
+    "equity": 4075.0404,
+    "available": 2954.4087,
     "position_margin": 122.1246
   },
   "account_source": "live",
@@ -45,7 +45,7 @@
       "key": "engine_run",
       "tier": 1,
       "label": "Last engine run",
-      "value": "26s ago",
+      "value": "25s ago",
       "status": "ok",
       "action": null
     },
@@ -53,7 +53,7 @@
       "key": "signal_feed",
       "tier": 1,
       "label": "Engine feed",
-      "value": "101 min old",
+      "value": "78s old",
       "status": "ok",
       "action": null
     },
@@ -77,7 +77,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Kraken wallet",
-      "value": "$4,069.76",
+      "value": "$4,075.04",
       "status": "ok",
       "action": null
     },
@@ -838,6 +838,19 @@
       "_iso_ms": 1795412775000,
       "rehearsal": false,
       "venue": "kraken"
+    },
+    {
+      "trade_id": "APTUSDT_20261121_CJ_001",
+      "coin": "APTUSDT",
+      "direction": "Short",
+      "trading_system": "John",
+      "entry_price": 0.38699782,
+      "live_entry_fill": null,
+      "tp1_hit": false,
+      "iso": "2026-11-23T04:00:00Z",
+      "_iso_ms": 1795406400000,
+      "rehearsal": true,
+      "venue": "mexc"
     },
     {
       "trade_id": "NEARUSDT_20261121_CB_001",
@@ -4945,7 +4958,7 @@
       "reason": "Not enough free margin on Kraken for another trade right now.",
       "reason_short": "margin cap reached",
       "iso": "2026-11-23T00:07:23Z",
-      "last_seen_iso": "2026-11-23T05:46:44Z"
+      "last_seen_iso": "2026-11-23T06:06:53Z"
     },
     {
       "trade_id": "RENDERUSDT_20261122_CJ_001",
@@ -4957,7 +4970,7 @@
       "reason": "Not enough free margin on Kraken for another trade right now.",
       "reason_short": "margin cap reached",
       "iso": "2026-11-22T22:07:00Z",
-      "last_seen_iso": "2026-11-23T05:46:44Z"
+      "last_seen_iso": "2026-11-23T06:06:53Z"
     },
     {
       "trade_id": "AVAXUSDT_20261122_CJ_002",
@@ -4981,7 +4994,7 @@
       "reason": "Not enough free margin on Kraken for another trade right now.",
       "reason_short": "margin cap reached",
       "iso": "2026-11-22T14:07:31Z",
-      "last_seen_iso": "2026-11-23T05:46:44Z"
+      "last_seen_iso": "2026-11-23T06:06:53Z"
     },
     {
       "trade_id": "THETAUSDT_20261120_CJ_001",
@@ -4993,7 +5006,7 @@
       "reason": "THETA has no perpetual contract on Kraken.",
       "reason_short": "coin not on Kraken",
       "iso": "2026-11-21T14:07:33Z",
-      "last_seen_iso": "2026-11-23T05:46:44Z"
+      "last_seen_iso": "2026-11-23T06:06:53Z"
     },
     {
       "trade_id": "ETHUSDT_20261118_CJ_001",
@@ -5005,7 +5018,7 @@
       "reason": "The engine runs one trade per coin on Kraken and ETH already has one (ETHUSDT_20261118_CB_001 is resting).",
       "reason_short": "one trade per coin - slot taken",
       "iso": "2026-11-20T10:07:36Z",
-      "last_seen_iso": "2026-11-23T05:46:44Z"
+      "last_seen_iso": "2026-11-23T06:06:53Z"
     },
     {
       "trade_id": "APTUSDT_20261118_CB_002",
@@ -5029,7 +5042,7 @@
       "reason": "The engine runs one trade per coin on Kraken and ALGO already has one (ALGOUSDT_20261116_CJ_001 is resting).",
       "reason_short": "one trade per coin - slot taken",
       "iso": "2026-11-20T10:07:36Z",
-      "last_seen_iso": "2026-11-23T05:46:44Z"
+      "last_seen_iso": "2026-11-23T06:06:53Z"
     },
     {
       "trade_id": "THETAUSDT_20261115_CJ_001",
@@ -5163,7 +5176,7 @@
   "drift_vs_feed": {
     "available": true,
     "source": "Engine feed (divtrader signals.json)",
-    "feed_generated_utc": "2026-11-23T04:06Z",
+    "feed_generated_utc": "2026-11-23T06:06Z",
     "checked": 20,
     "in_parity": 20,
     "drifting": []
@@ -5171,7 +5184,7 @@
   "drift_vs_master": {
     "available": true,
     "source": "Engine feed (divtrader signals.json)",
-    "feed_generated_utc": "2026-11-23T04:06Z",
+    "feed_generated_utc": "2026-11-23T06:06Z",
     "checked": 20,
     "in_parity": 20,
     "drifting": []
@@ -5179,13 +5192,13 @@
   "drift_vs_db": {
     "available": true,
     "source": "Engine feed (divtrader signals.json)",
-    "feed_generated_utc": "2026-11-23T04:06Z",
+    "feed_generated_utc": "2026-11-23T06:06Z",
     "checked": 20,
     "in_parity": 20,
     "drifting": []
   },
   "vs_mexc": {
-    "updated_iso": "2026-11-23T05:47:10Z",
+    "updated_iso": "2026-11-23T06:07:18Z",
     "trades": [
       {
         "trade_id": "APTUSDT_20261121_CJ_001",
@@ -5564,5 +5577,5 @@
     "mexc",
     "kraken"
   ],
-  "mexc_history_last_updated_iso": "2026-11-23T04:06:41Z"
+  "mexc_history_last_updated_iso": "2026-11-23T06:06:27Z"
 }
