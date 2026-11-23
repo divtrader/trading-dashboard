@@ -1,9 +1,9 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-11-23T20:06Z",
+  "generated_utc": "2026-11-23T22:06Z",
   "master": "braam",
   "retention_hours": 48,
-  "trade_count": 31,
+  "trade_count": 32,
   "trades": [
     {
       "trade_id": "LINKUSDT_20261115_CJ_001",
@@ -568,7 +568,7 @@
       "sl": 8.52137572,
       "tp1": 9.93030706,
       "tp2": 10.04571526,
-      "status": "PENDING",
+      "status": "OPEN",
       "tp1_hit": false,
       "tp2_hit": false,
       "sl_hit": false,
@@ -577,8 +577,8 @@
       "time_opened_utc": "12:03",
       "code_sha": "63c9144f46e4",
       "sl_mode": "initial",
-      "feed_updated_utc": "2026-11-22T12:03Z",
-      "activated_utc": null
+      "feed_updated_utc": "2026-11-22T12:00Z",
+      "activated_utc": "2026-11-22T12:00Z"
     },
     {
       "trade_id": "SUIUSDT_20261122_CJ_001",
@@ -718,7 +718,7 @@
       "sl": 0.05081245,
       "tp1": 0.06252304,
       "tp2": 0.06919049,
-      "status": "PENDING",
+      "status": "OPEN",
       "tp1_hit": false,
       "tp2_hit": false,
       "sl_hit": false,
@@ -727,8 +727,8 @@
       "time_opened_utc": "08:03",
       "code_sha": "45afa1b488ec",
       "sl_mode": "initial",
-      "feed_updated_utc": "2026-11-23T08:03Z",
-      "activated_utc": null
+      "feed_updated_utc": "2026-11-23T08:00Z",
+      "activated_utc": "2026-11-23T08:00Z"
     },
     {
       "trade_id": "AVAXUSDT_20261123_CJ_002",
@@ -778,6 +778,31 @@
       "code_sha": "b51fb633fa8f",
       "sl_mode": "initial",
       "feed_updated_utc": "2026-11-23T16:03Z",
+      "activated_utc": null
+    },
+    {
+      "trade_id": "RENDERUSDT_20261123_CB_001",
+      "coin": "RENDERUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "conviction": "HIGH",
+      "leverage": 3,
+      "entry_price": 1.33141024,
+      "entry_lo": 1.32475319,
+      "entry_hi": 1.3380673,
+      "sl": 1.39723869,
+      "tp1": 1.217,
+      "tp2": 0.95797446,
+      "status": "PENDING",
+      "tp1_hit": false,
+      "tp2_hit": false,
+      "sl_hit": false,
+      "close_reason": null,
+      "date_opened": "2026-11-23",
+      "time_opened_utc": "20:02",
+      "code_sha": "d0534a4f53c8",
+      "sl_mode": "initial",
+      "feed_updated_utc": "2026-11-23T20:02Z",
       "activated_utc": null
     }
   ]
