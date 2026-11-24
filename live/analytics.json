@@ -1,37 +1,37 @@
 {
-  "generated_at_utc": "2026-11-24T12:18:36+00:00",
+  "generated_at_utc": "2026-11-24T13:10:33+00:00",
   "all_time": {
-    "total_trades": 373,
+    "total_trades": 374,
     "wins": 138,
-    "losses": 235,
-    "win_rate": 37.0,
-    "total_pnl_usd": -725.76,
-    "avg_pnl_usd": -1.95,
+    "losses": 236,
+    "win_rate": 36.9,
+    "total_pnl_usd": -745.08,
+    "avg_pnl_usd": -1.99,
     "best_usd": 68.07,
     "worst_usd": -78.7,
     "avg_win_usd": 17.92,
-    "avg_loss_usd": -13.61,
-    "expectancy_usd": -1.95,
+    "avg_loss_usd": -13.63,
+    "expectancy_usd": -1.99,
     "profit_factor": 0.77,
     "longest_win_streak": 5,
     "longest_loss_streak": 14,
-    "current_streak_type": "win",
+    "current_streak_type": "loss",
     "current_streak_count": 1,
-    "avg_hold_hours": 46.6,
+    "avg_hold_hours": 46.5,
     "median_hold_hours": 26.5
   },
   "by_system": {
     "John": {
-      "n": 206,
+      "n": 207,
       "wins": 71,
-      "wr": 34.5,
-      "pnl": -347.4,
-      "avg": -1.69,
+      "wr": 34.3,
+      "pnl": -366.73,
+      "avg": -1.77,
       "inception": "2026-06-14",
       "days_active": 163,
-      "pnl_per_day": -2.13,
+      "pnl_per_day": -2.25,
       "status": "active",
-      "open": 4,
+      "open": 3,
       "pending": 8
     },
     "Braam": {
@@ -76,12 +76,12 @@
       "name": "John",
       "inception": "2026-06-14",
       "days_active": 163,
-      "closed": 206,
+      "closed": 207,
       "wins": 71,
-      "wr": 34.5,
-      "pnl": -347.4,
-      "pnl_per_day": -2.13,
-      "open": 4,
+      "wr": 34.3,
+      "pnl": -366.73,
+      "pnl_per_day": -2.25,
+      "open": 3,
       "pending": 8
     },
     {
@@ -152,11 +152,11 @@
     },
     {
       "month": "2026-11",
-      "n": 37,
+      "n": 38,
       "wins": 8,
-      "wr": 21.6,
-      "pnl": -430.01,
-      "cumulative_pnl": -725.76
+      "wr": 21.1,
+      "pnl": -449.34,
+      "cumulative_pnl": -745.08
     }
   ],
   "equity_curve": [
@@ -2397,6 +2397,12 @@
       "pnl": 0.41,
       "cumulative": -725.76,
       "won": true
+    },
+    {
+      "iso": "2026-11-24T13:08:00+00:00",
+      "pnl": -19.32,
+      "cumulative": -745.08,
+      "won": false
     }
   ],
   "benchmark": {
@@ -3894,10 +3900,14 @@
       {
         "iso": "2026-11-23",
         "pct": -43.704
+      },
+      {
+        "iso": "2026-11-24",
+        "pct": -44.867
       }
     ],
     "spx": [],
-    "ours_pct": -43.704,
+    "ours_pct": -44.867,
     "spx_pct": null
   },
   "by_direction": {
@@ -3909,20 +3919,20 @@
       "avg": -0.3
     },
     "Long": {
-      "n": 169,
+      "n": 170,
       "wins": 55,
-      "wr": 32.5,
-      "pnl": -665.56,
-      "avg": -3.94
+      "wr": 32.4,
+      "pnl": -684.88,
+      "avg": -4.03
     }
   },
   "by_conviction": {
     "MEDIUM": {
-      "n": 312,
+      "n": 313,
       "wins": 119,
-      "wr": 38.1,
-      "pnl": -524.48,
-      "avg": -1.68
+      "wr": 38.0,
+      "pnl": -543.8,
+      "avg": -1.74
     },
     "HIGH": {
       "n": 60,
@@ -4402,6 +4412,16 @@
   },
   "recent_closes": [
     {
+      "trade_id": "HBARUSDT_20261123_CJ_001",
+      "coin": "HBAR",
+      "direction": "Long",
+      "system": "John",
+      "pnl_usd": -19.32,
+      "won": false,
+      "close_reason": "live Kraken exit: sl @ 0.05072",
+      "iso": "2026-11-24T13:08:00+00:00"
+    },
+    {
       "trade_id": "TAOUSDT_20261115_CJ_001",
       "coin": "TAO",
       "direction": "Short",
@@ -4490,24 +4510,14 @@
       "won": true,
       "close_reason": "live MEXC exit: manual @ 0.1326",
       "iso": "2026-11-20T08:08:00+00:00"
-    },
-    {
-      "trade_id": "LINKUSDT_20261118_CJ_001",
-      "coin": "LINK",
-      "direction": "Long",
-      "system": "John",
-      "pnl_usd": -7.75,
-      "won": false,
-      "close_reason": "live MEXC exit: sl @ 8.791",
-      "iso": "2026-11-20T02:30:00+00:00"
     }
   ],
   "live_positions": {
-    "open_count": 9,
-    "open_long": 3,
+    "open_count": 8,
+    "open_long": 2,
     "open_short": 6,
     "pending_count": 12,
-    "capital_open_usd": 900,
+    "capital_open_usd": 800,
     "capital_pending_usd": 1200
   },
   "macro": {
