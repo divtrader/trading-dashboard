@@ -1,6 +1,6 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-11-25T19:58Z",
+  "generated_utc": "2026-11-25T20:06Z",
   "master": "braam",
   "retention_hours": 48,
   "trade_count": 34,
@@ -118,16 +118,16 @@
       "sl": 0.28096254,
       "tp1": 0.2752,
       "tp2": 0.2452,
-      "status": "OPEN",
+      "status": "STOPPED_AFTER_TP1",
       "tp1_hit": true,
       "tp2_hit": false,
-      "sl_hit": false,
-      "close_reason": null,
+      "sl_hit": true,
+      "close_reason": "SL hit",
       "date_opened": "2026-11-18",
       "time_opened_utc": "08:03",
       "code_sha": "e2b0d17f8747",
       "sl_mode": "breakeven",
-      "feed_updated_utc": "2026-11-23T20:02Z",
+      "feed_updated_utc": "2026-11-25T16:00Z",
       "activated_utc": "2026-11-23T16:02Z"
     },
     {
@@ -268,16 +268,16 @@
       "sl": 1.52257543,
       "tp1": 1.27372835,
       "tp2": 1.06784914,
-      "status": "PENDING",
+      "status": "CANCELLED",
       "tp1_hit": false,
       "tp2_hit": false,
       "sl_hit": false,
-      "close_reason": null,
+      "close_reason": "Stale 24.0h \u2265 24h grace: Price $1.2780 is 15.7% below entry $1.4790",
       "date_opened": "2026-11-20",
       "time_opened_utc": "08:03",
       "code_sha": "ee57acda786f",
       "sl_mode": "initial",
-      "feed_updated_utc": "2026-11-20T08:03Z",
+      "feed_updated_utc": "2026-11-25T20:02Z",
       "activated_utc": null
     },
     {
@@ -318,16 +318,16 @@
       "sl": 0.14537516,
       "tp1": 0.1393,
       "tp2": 0.1344,
-      "status": "OPEN",
+      "status": "STOPPED_AFTER_TP1",
       "tp1_hit": true,
       "tp2_hit": false,
-      "sl_hit": false,
-      "close_reason": null,
+      "sl_hit": true,
+      "close_reason": "SL hit",
       "date_opened": "2026-11-20",
       "time_opened_utc": "12:02",
       "code_sha": "e2731422eaab",
       "sl_mode": "breakeven",
-      "feed_updated_utc": "2026-11-25T14:02Z",
+      "feed_updated_utc": "2026-11-25T16:00Z",
       "activated_utc": "2026-11-23T16:02Z"
     },
     {
@@ -693,7 +693,7 @@
       "sl": 0.70146422,
       "tp1": 0.6272,
       "tp2": 0.6146,
-      "status": "PENDING",
+      "status": "OPEN",
       "tp1_hit": false,
       "tp2_hit": false,
       "sl_hit": false,
@@ -702,8 +702,8 @@
       "time_opened_utc": "12:02",
       "code_sha": "2bfdda233d4e",
       "sl_mode": "initial",
-      "feed_updated_utc": "2026-11-24T12:02Z",
-      "activated_utc": null
+      "feed_updated_utc": "2026-11-25T20:02Z",
+      "activated_utc": "2026-11-25T20:02Z"
     },
     {
       "trade_id": "TAOUSDT_20261124_CJ_001",
@@ -712,12 +712,12 @@
       "trading_system": "John",
       "conviction": "MEDIUM",
       "leverage": 3,
-      "entry_price": 191.3445861,
-      "entry_lo": 174.1858278,
-      "entry_hi": 197.0641722,
-      "sl": 196.58423439,
-      "tp1": 149.02711004,
-      "tp2": 127.33153122,
+      "entry_price": 191.79780657,
+      "entry_lo": 182.96921964,
+      "entry_hi": 194.74066888,
+      "sl": 197.61464617,
+      "tp1": 151.97713191,
+      "tp2": 147.05515063,
       "status": "PENDING",
       "tp1_hit": false,
       "tp2_hit": false,
@@ -743,7 +743,7 @@
       "sl": 0.97597357,
       "tp1": 0.8953,
       "tp2": 0.8637,
-      "status": "PENDING",
+      "status": "OPEN",
       "tp1_hit": false,
       "tp2_hit": false,
       "sl_hit": false,
@@ -752,8 +752,8 @@
       "time_opened_utc": "16:03",
       "code_sha": "26e43bcf6b63",
       "sl_mode": "initial",
-      "feed_updated_utc": "2026-11-24T16:03Z",
-      "activated_utc": null
+      "feed_updated_utc": "2026-11-25T20:02Z",
+      "activated_utc": "2026-11-25T20:02Z"
     },
     {
       "trade_id": "SUIUSDT_20261125_CJ_001",
@@ -793,7 +793,7 @@
       "sl": 5.00060326,
       "tp1": 4.483,
       "tp2": 4.221,
-      "status": "PENDING",
+      "status": "OPEN",
       "tp1_hit": false,
       "tp2_hit": false,
       "sl_hit": false,
@@ -802,8 +802,8 @@
       "time_opened_utc": "04:03",
       "code_sha": "44998d144d45",
       "sl_mode": "initial",
-      "feed_updated_utc": "2026-11-25T04:03Z",
-      "activated_utc": null
+      "feed_updated_utc": "2026-11-25T20:02Z",
+      "activated_utc": "2026-11-25T20:02Z"
     },
     {
       "trade_id": "ALGOUSDT_20261125_CB_001",
@@ -818,7 +818,7 @@
       "sl": 0.08184219,
       "tp1": 0.07225012,
       "tp2": 0.0581636,
-      "status": "PENDING",
+      "status": "OPEN",
       "tp1_hit": false,
       "tp2_hit": false,
       "sl_hit": false,
@@ -827,8 +827,8 @@
       "time_opened_utc": "12:03",
       "code_sha": "33c09034c522",
       "sl_mode": "initial",
-      "feed_updated_utc": "2026-11-25T12:03Z",
-      "activated_utc": null
+      "feed_updated_utc": "2026-11-25T20:02Z",
+      "activated_utc": "2026-11-25T20:02Z"
     },
     {
       "trade_id": "UNIUSDT_20261125_CJ_001",
@@ -843,7 +843,7 @@
       "sl": 4.85422083,
       "tp1": 4.26609244,
       "tp2": 3.72855834,
-      "status": "PENDING",
+      "status": "OPEN",
       "tp1_hit": false,
       "tp2_hit": false,
       "sl_hit": false,
@@ -852,8 +852,8 @@
       "time_opened_utc": "16:02",
       "code_sha": "d6d026b10078",
       "sl_mode": "initial",
-      "feed_updated_utc": "2026-11-25T16:02Z",
-      "activated_utc": null
+      "feed_updated_utc": "2026-11-25T16:00Z",
+      "activated_utc": "2026-11-25T16:00Z"
     }
   ]
 }
