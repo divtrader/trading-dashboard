@@ -1,22 +1,22 @@
 {
-  "generated_at_utc": "2026-11-25T18:40:28+00:00",
+  "generated_at_utc": "2026-11-25T19:16:29+00:00",
   "all_time": {
-    "total_trades": 377,
-    "wins": 138,
+    "total_trades": 378,
+    "wins": 139,
     "losses": 239,
-    "win_rate": 36.6,
-    "total_pnl_usd": -794.41,
-    "avg_pnl_usd": -2.11,
+    "win_rate": 36.8,
+    "total_pnl_usd": -755.12,
+    "avg_pnl_usd": -2.0,
     "best_usd": 68.07,
     "worst_usd": -78.7,
-    "avg_win_usd": 17.92,
+    "avg_win_usd": 18.07,
     "avg_loss_usd": -13.67,
-    "expectancy_usd": -2.11,
-    "profit_factor": 0.76,
+    "expectancy_usd": -2.0,
+    "profit_factor": 0.77,
     "longest_win_streak": 5,
     "longest_loss_streak": 14,
-    "current_streak_type": "loss",
-    "current_streak_count": 4,
+    "current_streak_type": "win",
+    "current_streak_count": 1,
     "avg_hold_hours": 46.3,
     "median_hold_hours": 26.5
   },
@@ -35,17 +35,17 @@
       "pending": 6
     },
     "Braam": {
-      "n": 165,
-      "wins": 67,
-      "wr": 40.6,
-      "pnl": -233.28,
-      "avg": -1.41,
+      "n": 166,
+      "wins": 68,
+      "wr": 41.0,
+      "pnl": -193.99,
+      "avg": -1.17,
       "inception": "2026-06-11",
       "days_active": 167,
-      "pnl_per_day": -1.4,
+      "pnl_per_day": -1.16,
       "status": "active",
       "open": 5,
-      "pending": 7
+      "pending": 6
     },
     "Mong": {
       "n": 2,
@@ -88,13 +88,13 @@
       "name": "Braam",
       "inception": "2026-06-11",
       "days_active": 167,
-      "closed": 165,
-      "wins": 67,
-      "wr": 40.6,
-      "pnl": -233.28,
-      "pnl_per_day": -1.4,
+      "closed": 166,
+      "wins": 68,
+      "wr": 41.0,
+      "pnl": -193.99,
+      "pnl_per_day": -1.16,
       "open": 5,
-      "pending": 7
+      "pending": 6
     },
     {
       "name": "Mong",
@@ -152,11 +152,11 @@
     },
     {
       "month": "2026-11",
-      "n": 41,
-      "wins": 8,
-      "wr": 19.5,
-      "pnl": -498.66,
-      "cumulative_pnl": -794.41
+      "n": 42,
+      "wins": 9,
+      "wr": 21.4,
+      "pnl": -459.37,
+      "cumulative_pnl": -755.12
     }
   ],
   "equity_curve": [
@@ -2421,6 +2421,12 @@
       "pnl": -17.07,
       "cumulative": -794.41,
       "won": false
+    },
+    {
+      "iso": "2026-11-25T19:05:00+00:00",
+      "pnl": 39.29,
+      "cumulative": -755.12,
+      "won": true
     }
   ],
   "benchmark": {
@@ -3934,19 +3940,23 @@
       {
         "iso": "2026-11-25",
         "pct": -47.838
+      },
+      {
+        "iso": "2026-11-25",
+        "pct": -45.472
       }
     ],
     "spx": [],
-    "ours_pct": -47.838,
+    "ours_pct": -45.472,
     "spx_pct": null
   },
   "by_direction": {
     "Short": {
-      "n": 204,
-      "wins": 83,
-      "wr": 40.7,
-      "pnl": -60.2,
-      "avg": -0.3
+      "n": 205,
+      "wins": 84,
+      "wr": 41.0,
+      "pnl": -20.91,
+      "avg": -0.1
     },
     "Long": {
       "n": 173,
@@ -3965,11 +3975,11 @@
       "avg": -1.88
     },
     "HIGH": {
-      "n": 60,
-      "wins": 18,
-      "wr": 30.0,
-      "pnl": -226.46,
-      "avg": -3.77
+      "n": 61,
+      "wins": 19,
+      "wr": 31.1,
+      "pnl": -187.17,
+      "avg": -3.07
     },
     "VERY HIGH": {
       "n": 1,
@@ -4368,12 +4378,12 @@
       "avg": 1.81
     },
     {
-      "coin": "XRP",
-      "n": 21,
+      "coin": "ADA",
+      "n": 16,
       "wins": 6,
-      "wr": 28.6,
-      "pnl": 25.02,
-      "avg": 1.19
+      "wr": 37.5,
+      "pnl": 25.09,
+      "avg": 1.57
     }
   ],
   "worst_coins": [
@@ -4441,6 +4451,16 @@
     "conviction": "HIGH"
   },
   "recent_closes": [
+    {
+      "trade_id": "ADAUSDT_20261120_CB_001",
+      "coin": "ADA",
+      "direction": "Short",
+      "system": "Braam",
+      "pnl_usd": 39.29,
+      "won": true,
+      "close_reason": "live Kraken exit: sl @ 0.14541306925759842",
+      "iso": "2026-11-25T19:05:00+00:00"
+    },
     {
       "trade_id": "LINKUSDT_20261122_CJ_001",
       "coin": "LINK",
@@ -4530,25 +4550,15 @@
       "won": false,
       "close_reason": "live Kraken exit: sl @ 75.96",
       "iso": "2026-11-23T13:58:00+00:00"
-    },
-    {
-      "trade_id": "ALGOUSDT_20261116_CJ_001",
-      "coin": "ALGO",
-      "direction": "Short",
-      "system": "John",
-      "pnl_usd": -18.38,
-      "won": false,
-      "close_reason": "live Kraken exit: sl @ 0.08441699973175966",
-      "iso": "2026-11-23T13:05:00+00:00"
     }
   ],
   "live_positions": {
     "open_count": 8,
     "open_long": 2,
     "open_short": 6,
-    "pending_count": 13,
+    "pending_count": 12,
     "capital_open_usd": 800,
-    "capital_pending_usd": 1300
+    "capital_pending_usd": 1200
   },
   "macro": {
     "btc_price_last_seen": 62410.67,
