@@ -2,14 +2,14 @@
   "mode": "live",
   "venue": "kraken",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-11-25T19:16:27Z",
+  "last_updated_iso": "2026-11-25T19:18:27Z",
   "freshness": {
-    "engine_run_iso": "2026-11-25T19:15:49Z",
+    "engine_run_iso": "2026-11-25T19:17:55Z",
     "engine_run_note": null,
     "engine_protect_iso": null,
     "feed_generated_iso": "2026-11-25T18:05:00Z",
     "feed_note": null,
-    "published_iso": "2026-11-25T19:16:27Z",
+    "published_iso": "2026-11-25T19:18:27Z",
     "cadence_min": 60.0,
     "run_warn_min": 80.0,
     "run_urgent_min": 135.0,
@@ -18,15 +18,15 @@
     "publish_urgent_min": 135.0
   },
   "mexc_account": {
-    "unrealized_pnl": 113.4075,
-    "equity": 4132.8289,
-    "available": 3140.2526,
-    "position_margin": 239.4448
+    "unrealized_pnl": 75.5932,
+    "equity": 4124.3415,
+    "available": 3162.3464,
+    "position_margin": 208.8637
   },
   "account_source": "live",
   "order_levels": {
-    "checked": 20,
-    "in_sync": 20,
+    "checked": 19,
+    "in_sync": 19,
     "drifted": [],
     "reconciling": [],
     "detail": []
@@ -45,7 +45,7 @@
       "key": "engine_run",
       "tier": 1,
       "label": "Last engine run",
-      "value": "38s ago",
+      "value": "32s ago",
       "status": "ok",
       "action": null
     },
@@ -53,7 +53,7 @@
       "key": "signal_feed",
       "tier": 1,
       "label": "Engine feed",
-      "value": "71 min old",
+      "value": "73 min old",
       "status": "ok",
       "action": null
     },
@@ -69,7 +69,7 @@
       "key": "state_file",
       "tier": 1,
       "label": "Trade journal",
-      "value": "OK (40 records, 12 resting, 8 open, 11 closed)",
+      "value": "OK (40 records, 12 resting, 7 open, 12 closed)",
       "status": "ok",
       "action": null
     },
@@ -77,7 +77,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Kraken wallet",
-      "value": "$4,132.83",
+      "value": "$4,124.34",
       "status": "ok",
       "action": null
     },
@@ -93,7 +93,7 @@
       "key": "position_protection",
       "tier": 1,
       "label": "Position protection",
-      "value": "all protected (7 open)",
+      "value": "all protected (6 open)",
       "status": "ok",
       "action": null
     },
@@ -250,40 +250,6 @@
       "live_tp1_pnl_usd": 24.1649,
       "rehearsal": false,
       "live_filled_ts": "2026-11-23T14:25:38.132000+00:00"
-    },
-    {
-      "trade_id": "ONDOUSDT_20261118_CB_001",
-      "coin": "ONDOUSDT",
-      "direction": "Short",
-      "entry_price": 0.31109667,
-      "sl": 0.28096254,
-      "tp1": 0.2752,
-      "tp2": 0.2452,
-      "capital_usd": 203.77,
-      "leverage": 3,
-      "trading_system": "Braam",
-      "track_only": false,
-      "status": "OPEN",
-      "price_at_run": null,
-      "date_activated": "2026-11-23",
-      "time_activated_utc": "14:16",
-      "date_opened": "2026-11-18",
-      "time_opened_utc": "08:03",
-      "conviction": "HIGH",
-      "tp1_hit": true,
-      "sl_moved_to_be": true,
-      "pnl_tp1_realized_usd": null,
-      "tp2_hit": null,
-      "pnl_tp1_estimated": null,
-      "live_executed": true,
-      "live_entry_fill": 0.3111,
-      "live_exit_fill": null,
-      "live_entry_slippage_pct": -0.0,
-      "live_fees_usd": 0.0,
-      "live_funding_usd": null,
-      "live_tp1_pnl_usd": 33.4864,
-      "rehearsal": false,
-      "live_filled_ts": "2026-11-23T14:16:27.261000+00:00"
     },
     {
       "trade_id": "CAKEUSDT_20261118_CB_001",
@@ -997,6 +963,30 @@
     }
   ],
   "recent_closes": [
+    {
+      "trade_id": "ONDOUSDT_20261118_CB_001",
+      "coin": "ONDOUSDT",
+      "direction": "Short",
+      "status": "STOPPED_AFTER_TP1",
+      "pnl_usd": 62.14,
+      "close_reason": "tp1_trail",
+      "date_closed": "2026-11-25",
+      "time_closed_utc": "19:17",
+      "trading_system": "Braam",
+      "live_entry_fill": 0.3111,
+      "live_exit_fill": 0.2812,
+      "live_entry_slippage_pct": -0.0,
+      "live_fees_usd": 0.3966,
+      "live_funding_usd": -0.3396,
+      "pnl_estimated": null,
+      "won": true,
+      "close_iso": "2026-11-25T19:17:00Z",
+      "rehearsal": false,
+      "close_cause": null,
+      "margin_usd": 203.7705,
+      "leverage": 3,
+      "venue": "kraken"
+    },
     {
       "trade_id": "ADAUSDT_20261120_CB_001",
       "coin": "ADAUSDT",
@@ -5283,7 +5273,7 @@
       "reason": "The engine runs one trade per coin on Kraken and UNI already has one (UNIUSDT_20261125_CB_001 is resting).",
       "reason_short": "one trade per coin - slot taken",
       "iso": "2026-11-25T16:07:35Z",
-      "last_seen_iso": "2026-11-25T19:15:49Z"
+      "last_seen_iso": "2026-11-25T19:17:55Z"
     },
     {
       "trade_id": "ALGOUSDT_20261125_CB_001",
@@ -5295,7 +5285,7 @@
       "reason": "The engine runs one trade per coin on Kraken and ALGO already has one (ALGOUSDT_20261124_CJ_001 is resting).",
       "reason_short": "one trade per coin - slot taken",
       "iso": "2026-11-25T12:08:35Z",
-      "last_seen_iso": "2026-11-25T19:15:49Z"
+      "last_seen_iso": "2026-11-25T19:17:55Z"
     },
     {
       "trade_id": "SUIUSDT_20261125_CJ_001",
@@ -5307,7 +5297,7 @@
       "reason": "The engine runs one trade per coin on Kraken and SUI already has one (SUIUSDT_20261124_CB_001 is resting).",
       "reason_short": "one trade per coin - slot taken",
       "iso": "2026-11-25T00:07:14Z",
-      "last_seen_iso": "2026-11-25T19:15:49Z"
+      "last_seen_iso": "2026-11-25T19:17:55Z"
     },
     {
       "trade_id": "TAOUSDT_20261124_CB_001",
@@ -5319,7 +5309,7 @@
       "reason": "The engine runs one trade per coin on Kraken and TAO already has one (TAOUSDT_20261124_CJ_001 is resting).",
       "reason_short": "one trade per coin - slot taken",
       "iso": "2026-11-24T20:07:17Z",
-      "last_seen_iso": "2026-11-25T19:15:49Z"
+      "last_seen_iso": "2026-11-25T19:17:55Z"
     },
     {
       "trade_id": "RENDERUSDT_20261123_CB_001",
@@ -5331,7 +5321,7 @@
       "reason": "The engine runs one trade per coin on Kraken and RENDER already has one (RENDERUSDT_20261120_CJ_001 is resting).",
       "reason_short": "one trade per coin - slot taken",
       "iso": "2026-11-23T22:07:11Z",
-      "last_seen_iso": "2026-11-25T19:15:49Z"
+      "last_seen_iso": "2026-11-25T19:17:55Z"
     },
     {
       "trade_id": "AVAXUSDT_20261123_CJ_002",
@@ -5379,7 +5369,7 @@
       "reason": "THETA has no perpetual contract on Kraken.",
       "reason_short": "coin not on Kraken",
       "iso": "2026-11-21T14:07:33Z",
-      "last_seen_iso": "2026-11-25T19:15:49Z"
+      "last_seen_iso": "2026-11-25T19:17:55Z"
     },
     {
       "trade_id": "ETHUSDT_20261118_CJ_001",
@@ -5391,7 +5381,7 @@
       "reason": "The engine runs one trade per coin on Kraken and ETH already has one (ETHUSDT_20261118_CB_001 is open).",
       "reason_short": "one trade per coin - slot taken",
       "iso": "2026-11-20T10:07:36Z",
-      "last_seen_iso": "2026-11-25T19:15:49Z"
+      "last_seen_iso": "2026-11-25T19:17:55Z"
     },
     {
       "trade_id": "APTUSDT_20261118_CB_002",
@@ -5472,29 +5462,23 @@
       "direction": "Short",
       "trading_system": "Braam",
       "entry_price": 1833.18084727
-    },
-    {
-      "coin": "ONDOUSDT",
-      "direction": "Short",
-      "trading_system": "Braam",
-      "entry_price": 0.31109667
     }
   ],
   "stats": {
-    "realized_pnl_usd": -754.97,
-    "realized_pnl_pct": -1.34,
+    "realized_pnl_usd": -692.83,
+    "realized_pnl_pct": -1.22,
     "peak_capital_usd": 1926.61,
     "peak_concurrent": 9,
     "peak_date": "2026-10-12",
     "deployed_trades": 386,
-    "return_on_peak_pct": -39.19,
-    "win_rate_pct": 36.6,
-    "closed_count": 378,
+    "return_on_peak_pct": -35.96,
+    "win_rate_pct": 36.7,
+    "closed_count": 379,
     "per_system": {
       "Braam": {
-        "realized_pnl_usd": -194.13,
-        "win_rate_pct": 41.0,
-        "closed_count": 166
+        "realized_pnl_usd": -131.99,
+        "win_rate_pct": 41.4,
+        "closed_count": 167
       },
       "John": {
         "realized_pnl_usd": -415.77,
@@ -5543,20 +5527,20 @@
         "live_rehearsal_count": 62
       },
       "kraken": {
-        "realized_pnl_usd": -173.44,
-        "realized_pnl_pct": -8.11,
+        "realized_pnl_usd": -111.3,
+        "realized_pnl_pct": -4.75,
         "peak_capital_usd": 1739.45,
         "peak_concurrent": 9,
         "peak_date": "2026-11-24",
         "deployed_trades": 19,
-        "return_on_peak_pct": -9.97,
-        "win_rate_pct": 18.2,
-        "closed_count": 11,
+        "return_on_peak_pct": -6.4,
+        "win_rate_pct": 25.0,
+        "closed_count": 12,
         "per_system": {
           "Braam": {
-            "realized_pnl_usd": -60.5,
-            "win_rate_pct": 25.0,
-            "closed_count": 4
+            "realized_pnl_usd": 1.64,
+            "win_rate_pct": 40.0,
+            "closed_count": 5
           },
           "John": {
             "realized_pnl_usd": -112.94,
@@ -5574,29 +5558,42 @@
     "available": true,
     "source": "Engine feed (divtrader signals.json)",
     "feed_generated_utc": "2026-11-25T18:05Z",
-    "checked": 20,
-    "in_parity": 20,
+    "checked": 19,
+    "in_parity": 19,
     "drifting": []
   },
   "drift_vs_master": {
     "available": true,
     "source": "Engine feed (divtrader signals.json)",
     "feed_generated_utc": "2026-11-25T18:05Z",
-    "checked": 20,
-    "in_parity": 20,
+    "checked": 19,
+    "in_parity": 19,
     "drifting": []
   },
   "drift_vs_db": {
     "available": true,
     "source": "Engine feed (divtrader signals.json)",
     "feed_generated_utc": "2026-11-25T18:05Z",
-    "checked": 20,
-    "in_parity": 20,
+    "checked": 19,
+    "in_parity": 19,
     "drifting": []
   },
   "vs_mexc": {
-    "updated_iso": "2026-11-25T19:16:27Z",
+    "updated_iso": "2026-11-25T19:18:27Z",
     "trades": [
+      {
+        "trade_id": "ONDOUSDT_20261118_CB_001",
+        "coin": "ONDOUSDT",
+        "direction": "Short",
+        "trading_system": "Braam",
+        "kraken": {
+          "status": "CLOSED",
+          "ret_pct": 30.496,
+          "pnl_usd": 62.1419,
+          "margin_usd": 203.7705
+        },
+        "mexc": null
+      },
       {
         "trade_id": "XRPUSDT_20261124_CB_001",
         "coin": "XRPUSDT",
@@ -5802,19 +5799,6 @@
           "ret_pct": null,
           "pnl_usd": null,
           "margin_usd": 203.4852
-        },
-        "mexc": null
-      },
-      {
-        "trade_id": "ONDOUSDT_20261118_CB_001",
-        "coin": "ONDOUSDT",
-        "direction": "Short",
-        "trading_system": "Braam",
-        "kraken": {
-          "status": "OPEN",
-          "ret_pct": null,
-          "pnl_usd": null,
-          "margin_usd": 203.7705
         },
         "mexc": null
       },
