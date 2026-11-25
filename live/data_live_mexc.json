@@ -1,23 +1,47 @@
 {
   "mode": "live",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-11-25T12:07:57Z",
-  "mexc_account": {
-    "unrealized_pnl": 0.0,
-    "equity": 0.0,
-    "available": 0.0,
-    "position_margin": 0.0
-  },
+  "last_updated_iso": "2026-11-25T14:06:57Z",
+  "mexc_account": null,
   "order_levels": {
-    "checked": 3,
+    "checked": 6,
     "in_sync": 3,
-    "drifted": [],
-    "reconciling": [
+    "drifted": [
       "ETH",
       "ONDO",
       "CAKE"
     ],
-    "detail": []
+    "reconciling": [],
+    "detail": [
+      {
+        "coin": "ETH",
+        "trade_id": "ETHUSDT_20261118_CB_001",
+        "status": "OPEN",
+        "fields": [
+          "sl"
+        ],
+        "synced_at": null
+      },
+      {
+        "coin": "ONDO",
+        "trade_id": "ONDOUSDT_20261118_CB_001",
+        "status": "OPEN",
+        "fields": [
+          "tp1",
+          "sl"
+        ],
+        "synced_at": null
+      },
+      {
+        "coin": "CAKE",
+        "trade_id": "CAKEUSDT_20261118_CB_001",
+        "status": "OPEN",
+        "fields": [
+          "tp1"
+        ],
+        "synced_at": null
+      }
+    ]
   },
   "api_keys": [
     {
@@ -78,9 +102,9 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Sub wallet (algo)",
-      "value": "$0.00",
-      "status": "ok",
-      "action": null
+      "value": "unavailable",
+      "status": "warn",
+      "action": "Worker fetch failed \u2014 check mexc-proxy + ALGO key."
     },
     {
       "key": "worker_deploy",
@@ -137,7 +161,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "OPEN",
-      "price_at_run": 8.604,
+      "price_at_run": 8.56,
       "date_activated": "2026-11-23",
       "time_activated_utc": "12:00",
       "date_opened": "2026-11-15",
@@ -171,7 +195,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 0.308,
+      "price_at_run": 0.3061,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-11-18",
@@ -227,7 +251,7 @@
       "coin": "ETHUSDT",
       "direction": "Short",
       "entry_price": 1833.18084727,
-      "sl": 1716.85207206,
+      "sl": 1710.54207206,
       "tp1": 1688.37998837,
       "tp2": 1560,
       "capital_usd": 203.4,
@@ -259,7 +283,7 @@
       "coin": "ONDOUSDT",
       "direction": "Short",
       "entry_price": 0.31109667,
-      "sl": 0.28416254,
+      "sl": 0.28096254,
       "tp1": 0.2752,
       "tp2": 0.2452,
       "capital_usd": 203.41,
@@ -299,7 +323,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 1640.2,
+      "price_at_run": 1633.89,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-11-18",
@@ -465,7 +489,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 1.227,
+      "price_at_run": 1.224,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-11-20",
@@ -525,7 +549,7 @@
       "coin": "ADAUSDT",
       "direction": "Short",
       "entry_price": 0.15233856,
-      "sl": 0.15778573,
+      "sl": 0.14537516,
       "tp1": 0.1393,
       "tp2": 0.1344,
       "capital_usd": 203.87,
@@ -539,9 +563,9 @@
       "date_opened": "2026-11-20",
       "time_opened_utc": "12:02",
       "conviction": "HIGH",
-      "tp1_hit": false,
-      "sl_moved_to_be": false,
-      "pnl_tp1_realized_usd": null,
+      "tp1_hit": true,
+      "sl_moved_to_be": true,
+      "pnl_tp1_realized_usd": 28.62,
       "tp2_hit": false,
       "live_executed": null,
       "live_entry_fill": null,
@@ -567,7 +591,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "OPEN",
-      "price_at_run": 0.1227,
+      "price_at_run": 0.1216,
       "date_activated": "2026-11-23",
       "time_activated_utc": "12:00",
       "date_opened": "2026-11-20",
@@ -601,7 +625,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "OPEN",
-      "price_at_run": 58616.01,
+      "price_at_run": 58170.48,
       "date_activated": "2026-11-23",
       "time_activated_utc": "12:00",
       "date_opened": "2026-11-21",
@@ -635,7 +659,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "OPEN",
-      "price_at_run": 8.604,
+      "price_at_run": 8.56,
       "date_activated": "2026-11-22",
       "time_activated_utc": "12:00",
       "date_opened": "2026-11-22",
@@ -669,7 +693,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 1.492,
+      "price_at_run": 1.48,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-11-23",
@@ -703,7 +727,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 538.93,
+      "price_at_run": 533.94,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-11-23",
@@ -804,10 +828,10 @@
       "leverage": 3,
       "trading_system": "John",
       "track_only": false,
-      "status": "PENDING",
-      "price_at_run": 2.818,
-      "date_activated": null,
-      "time_activated_utc": null,
+      "status": "OPEN",
+      "price_at_run": 2.778,
+      "date_activated": "2026-11-25",
+      "time_activated_utc": "12:00",
       "date_opened": "2026-11-24",
       "time_opened_utc": "04:02",
       "conviction": "MEDIUM",
@@ -839,7 +863,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 0.0769,
+      "price_at_run": 0.0756,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-11-24",
@@ -941,7 +965,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 173.5,
+      "price_at_run": 171.3,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-11-24",
@@ -1009,7 +1033,7 @@
       "trading_system": "John",
       "track_only": false,
       "status": "PENDING",
-      "price_at_run": 0.6286,
+      "price_at_run": 0.6209,
       "date_activated": null,
       "time_activated_utc": null,
       "date_opened": "2026-11-25",
@@ -1129,30 +1153,6 @@
   ],
   "recent_opens": [
     {
-      "trade_id": "SOLUSDT_20261120_CB_001",
-      "coin": "SOLUSDT",
-      "direction": "Short",
-      "trading_system": "Braam",
-      "entry_price": 73.45831634,
-      "live_entry_fill": null,
-      "tp1_hit": false,
-      "iso": "2026-11-23T14:02:00Z",
-      "_iso_ms": 1795442520000,
-      "rehearsal": true
-    },
-    {
-      "trade_id": "SUIUSDT_20261121_CB_001",
-      "coin": "SUIUSDT",
-      "direction": "Short",
-      "trading_system": "Braam",
-      "entry_price": 0.67550973,
-      "live_entry_fill": null,
-      "tp1_hit": false,
-      "iso": "2026-11-23T14:02:00Z",
-      "_iso_ms": 1795442520000,
-      "rehearsal": true
-    },
-    {
       "trade_id": "ETHUSDT_20261118_CB_001",
       "coin": "ETHUSDT",
       "direction": "Short",
@@ -1195,7 +1195,7 @@
       "trading_system": "Braam",
       "entry_price": 0.15233856,
       "live_entry_fill": null,
-      "tp1_hit": false,
+      "tp1_hit": true,
       "iso": "2026-11-23T16:02:00Z",
       "_iso_ms": 1795449720000,
       "rehearsal": true
@@ -1234,6 +1234,18 @@
       "tp1_hit": false,
       "iso": "2026-11-24T02:02:00Z",
       "_iso_ms": 1795485720000,
+      "rehearsal": true
+    },
+    {
+      "trade_id": "NEARUSDT_20261124_CJ_001",
+      "coin": "NEARUSDT",
+      "direction": "Long",
+      "trading_system": "John",
+      "entry_price": 2.78836659,
+      "live_entry_fill": null,
+      "tp1_hit": false,
+      "iso": "2026-11-25T12:00:00Z",
+      "_iso_ms": 1795608000000,
       "rehearsal": true
     }
   ],
@@ -5052,6 +5064,12 @@
       "direction": "Short",
       "trading_system": "Braam",
       "entry_price": 0.31109667
+    },
+    {
+      "coin": "ADAUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "entry_price": 0.15233856
     }
   ],
   "stats": {
