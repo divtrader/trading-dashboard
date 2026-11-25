@@ -1,9 +1,9 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-11-24T22:06Z",
+  "generated_utc": "2026-11-25T00:06Z",
   "master": "braam",
   "retention_hours": 48,
-  "trade_count": 38,
+  "trade_count": 39,
   "trades": [
     {
       "trade_id": "LINKUSDT_20261115_CJ_001",
@@ -190,7 +190,7 @@
       "entry_price": 0.31109667,
       "entry_lo": 0.30954119,
       "entry_hi": 0.31265215,
-      "sl": 0.29575222,
+      "sl": 0.29549605,
       "tp1": 0.2752,
       "tp2": 0.2452,
       "status": "OPEN",
@@ -953,6 +953,31 @@
       "code_sha": "26e43bcf6b63",
       "sl_mode": "initial",
       "feed_updated_utc": "2026-11-24T16:03Z",
+      "activated_utc": null
+    },
+    {
+      "trade_id": "SUIUSDT_20261125_CJ_001",
+      "coin": "SUIUSDT",
+      "direction": "Short",
+      "trading_system": "John",
+      "conviction": "MEDIUM",
+      "leverage": 3,
+      "entry_price": 0.68955,
+      "entry_lo": 0.6354,
+      "entry_hi": 0.7076,
+      "sl": 0.71054113,
+      "tp1": 0.52665885,
+      "tp2": 0.47761542,
+      "status": "PENDING",
+      "tp1_hit": false,
+      "tp2_hit": false,
+      "sl_hit": false,
+      "close_reason": null,
+      "date_opened": "2026-11-25",
+      "time_opened_utc": "00:02",
+      "code_sha": "84017791b219",
+      "sl_mode": "initial",
+      "feed_updated_utc": "2026-11-25T00:02Z",
       "activated_utc": null
     }
   ]
