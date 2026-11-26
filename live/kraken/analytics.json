@@ -1,25 +1,25 @@
 {
-  "generated_at_utc": "2026-11-26T00:07:43+00:00",
+  "generated_at_utc": "2026-11-26T00:18:44+00:00",
   "venue": "Kraken",
   "all_time": {
-    "total_trades": 12,
-    "wins": 3,
+    "total_trades": 13,
+    "wins": 4,
     "losses": 9,
-    "win_rate": 25.0,
-    "total_pnl_usd": -111.3,
-    "avg_pnl_usd": -9.27,
+    "win_rate": 30.8,
+    "total_pnl_usd": -67.22,
+    "avg_pnl_usd": -5.17,
     "best_usd": 62.14,
     "worst_usd": -44.3,
-    "avg_win_usd": 33.9,
+    "avg_win_usd": 36.45,
     "avg_loss_usd": -23.67,
-    "expectancy_usd": -9.27,
-    "profit_factor": 0.48,
-    "longest_win_streak": 2,
+    "expectancy_usd": -5.17,
+    "profit_factor": 0.68,
+    "longest_win_streak": 3,
     "longest_loss_streak": 5,
     "current_streak_type": "win",
-    "current_streak_count": 2,
-    "avg_hold_hours": 18.5,
-    "median_hold_hours": 13.4
+    "current_streak_count": 3,
+    "avg_hold_hours": 21.5,
+    "median_hold_hours": 14.6
   },
   "by_system": {
     "John": {
@@ -33,19 +33,19 @@
       "pnl_per_day": -28.23,
       "status": "active",
       "open": 3,
-      "pending": 5
+      "pending": 6
     },
     "Braam": {
-      "n": 5,
-      "wins": 2,
-      "wr": 40.0,
-      "pnl": 1.64,
-      "avg": 0.33,
+      "n": 6,
+      "wins": 3,
+      "wr": 50.0,
+      "pnl": 45.72,
+      "avg": 7.62,
       "inception": "2026-11-22",
       "days_active": 5,
-      "pnl_per_day": 0.33,
+      "pnl_per_day": 9.14,
       "status": "active",
-      "open": 6,
+      "open": 5,
       "pending": 5
     },
     "Mong": {
@@ -74,18 +74,18 @@
       "pnl": -112.94,
       "pnl_per_day": -28.23,
       "open": 3,
-      "pending": 5
+      "pending": 6
     },
     {
       "name": "Braam",
       "inception": "2026-11-22",
       "days_active": 5,
-      "closed": 5,
-      "wins": 2,
-      "wr": 40.0,
-      "pnl": 1.64,
-      "pnl_per_day": 0.33,
-      "open": 6,
+      "closed": 6,
+      "wins": 3,
+      "wr": 50.0,
+      "pnl": 45.72,
+      "pnl_per_day": 9.14,
+      "open": 5,
       "pending": 5
     },
     {
@@ -104,11 +104,11 @@
   "monthly": [
     {
       "month": "2026-11",
-      "n": 12,
-      "wins": 3,
-      "wr": 25.0,
-      "pnl": -111.3,
-      "cumulative_pnl": -111.3
+      "n": 13,
+      "wins": 4,
+      "wr": 30.8,
+      "pnl": -67.22,
+      "cumulative_pnl": -67.22
     }
   ],
   "equity_curve": [
@@ -183,6 +183,12 @@
       "pnl": 62.14,
       "cumulative": -111.3,
       "won": true
+    },
+    {
+      "iso": "2026-11-26T00:16:31Z",
+      "pnl": 44.08,
+      "cumulative": -67.22,
+      "won": true
     }
   ],
   "benchmark": {
@@ -237,10 +243,14 @@
       {
         "iso": "2026-11-25",
         "pct": -2.73
+      },
+      {
+        "iso": "2026-11-26",
+        "pct": -1.649
       }
     ],
     "spx": [],
-    "ours_pct": -2.73,
+    "ours_pct": -1.649,
     "spx_pct": null,
     "spx_last_close_iso": null
   },
@@ -253,20 +263,20 @@
       "avg": -17.09
     },
     "Short": {
-      "n": 8,
-      "wins": 3,
-      "wr": 37.5,
-      "pnl": -42.94,
-      "avg": -5.37
+      "n": 9,
+      "wins": 4,
+      "wr": 44.4,
+      "pnl": 1.14,
+      "avg": 0.13
     }
   },
   "by_conviction": {
     "HIGH": {
-      "n": 5,
-      "wins": 2,
-      "wr": 40.0,
-      "pnl": 1.64,
-      "avg": 0.33
+      "n": 6,
+      "wins": 3,
+      "wr": 50.0,
+      "pnl": 45.72,
+      "avg": 7.62
     },
     "MEDIUM": {
       "n": 7,
@@ -292,6 +302,14 @@
       "avg": 62.14
     },
     {
+      "coin": "ETH",
+      "n": 1,
+      "wins": 1,
+      "wr": 100.0,
+      "pnl": 44.08,
+      "avg": 44.08
+    },
+    {
       "coin": "ADA",
       "n": 1,
       "wins": 1,
@@ -314,14 +332,6 @@
       "wr": 0.0,
       "pnl": -17.07,
       "avg": -17.07
-    },
-    {
-      "coin": "ALGO",
-      "n": 1,
-      "wins": 0,
-      "wr": 0.0,
-      "pnl": -18.38,
-      "avg": -18.38
     }
   ],
   "worst_coins": [
@@ -389,6 +399,16 @@
     "conviction": "HIGH"
   },
   "recent_closes": [
+    {
+      "trade_id": "ETHUSDT_20261118_CB_001",
+      "coin": "ETH",
+      "direction": "Short",
+      "system": "Braam",
+      "pnl_usd": 44.08,
+      "won": true,
+      "close_reason": "tp1_trail",
+      "iso": "2026-11-26T00:16:31+00:00"
+    },
     {
       "trade_id": "ONDOUSDT_20261118_CB_001",
       "coin": "ONDO",
@@ -478,25 +498,15 @@
       "won": false,
       "close_reason": "stopped_out",
       "iso": "2026-11-23T14:13:40+00:00"
-    },
-    {
-      "trade_id": "APTUSDT_20261121_CJ_001",
-      "coin": "APT",
-      "direction": "Short",
-      "system": "John",
-      "pnl_usd": -26.61,
-      "won": false,
-      "close_reason": "stopped_out",
-      "iso": "2026-11-23T14:13:39+00:00"
     }
   ],
   "live_positions": {
-    "open_count": 9,
+    "open_count": 8,
     "open_long": 2,
-    "open_short": 7,
-    "pending_count": 10,
-    "capital_open_usd": 1603.03,
-    "capital_pending_usd": 2033.47
+    "open_short": 6,
+    "pending_count": 11,
+    "capital_open_usd": 1399.54,
+    "capital_pending_usd": 2238.08
   },
   "macro": {
     "vix": null,

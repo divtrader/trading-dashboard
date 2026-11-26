@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-26T00:07:42Z",
+  "updated": "2026-11-26T00:18:43Z",
   "venue": "mexc+kraken",
   "positions": {
     "1414291495": {
@@ -7169,7 +7169,7 @@
       "fill_ids": [
         "fa42deb5-045a-47ff-9c5a-33dde3f4b385"
       ],
-      "unrealized_pnl": 31.557270021857736,
+      "unrealized_pnl": 24.587921380835514,
       "fee_asset": [
         "usd"
       ],
@@ -7290,28 +7290,29 @@
       "leverage": 3,
       "entry_price": 1833.2,
       "entry_size": 0.333,
-      "exit_size": 0.167,
+      "exit_size": 0.333,
       "opened_at": "2026-11-23T14:25:38Z",
-      "closed_at": null,
-      "close_price": null,
+      "closed_at": "2026-11-26T00:16:31Z",
+      "close_price": 1699.4171171171,
       "margin_usd": 203.4852,
-      "status": "OPEN",
-      "close_reason": null,
-      "close_fills": null,
-      "pnl_gross_usd": 24.1649,
-      "pnl_usd": null,
-      "tag": null,
-      "fees_usd": 0.2631,
-      "funding_usd": null,
+      "status": "CLOSED",
+      "close_reason": "tp1_trail",
+      "close_fills": 2,
+      "pnl_gross_usd": 44.5497,
+      "pnl_usd": 44.0786,
+      "tag": "WIN",
+      "fees_usd": 0.4051,
+      "funding_usd": -0.066,
       "fill_ids": [
         "fad31e81-295a-40af-b456-146c87d4c2b6",
-        "51802912-b056-441a-b194-685543541bab"
+        "51802912-b056-441a-b194-685543541bab",
+        "838bcf8b-b00a-4aeb-a08c-7d9852898957"
       ],
       "unrealized_pnl": 23.697971418707933,
       "fee_asset": [
         "usd"
       ],
-      "pnl_basis": null,
+      "pnl_basis": "net",
       "venue": "kraken"
     },
     "CAKEUSDT_20261118_CB_001": {
@@ -7342,7 +7343,7 @@
         "f740d536-84d4-429f-9c9e-a5d0519f3c6e",
         "2c849d62-f600-49fc-8049-b83095aa6891"
       ],
-      "unrealized_pnl": 2.4152851886800026,
+      "unrealized_pnl": 2.7018441364199988,
       "fee_asset": [
         "usd"
       ],
@@ -7410,7 +7411,7 @@
       "fill_ids": [
         "3fefd6ff-8844-4c16-9e56-3473ed39d983"
       ],
-      "unrealized_pnl": 18.515704964747957,
+      "unrealized_pnl": 12.945300142118988,
       "fee_asset": [
         "usd"
       ],
@@ -7539,7 +7540,7 @@
       "fill_ids": [
         "e39088b8-2c5d-4900-ab8e-57b6c44df853"
       ],
-      "unrealized_pnl": 6.6902964127199915,
+      "unrealized_pnl": 7.30681607112,
       "resting_at": "2026-11-24T04:07:36Z",
       "fee_asset": [
         "usd"
@@ -7605,7 +7606,7 @@
         "094ce345-0f70-4226-8c30-7e8bef91a5a7",
         "8d7c9236-e1e2-40b9-9b60-f01dbe5eca84"
       ],
-      "unrealized_pnl": 0.2544489012599933,
+      "unrealized_pnl": -3.777282809100014,
       "fee_asset": [
         "usd"
       ],
@@ -7636,7 +7637,7 @@
       "fill_ids": [
         "55e25863-dd6f-4bd8-864b-b65af6fad6e4"
       ],
-      "unrealized_pnl": -1.0530994314000208,
+      "unrealized_pnl": -7.294002015600003,
       "fee_asset": [
         "usd"
       ],
@@ -7667,7 +7668,7 @@
       "fill_ids": [
         "90b49e33-97bc-4313-b329-ea08d95bbbfc"
       ],
-      "unrealized_pnl": 0.8567500926599605,
+      "unrealized_pnl": -6.040028546510076,
       "fee_asset": [
         "usd"
       ],
@@ -8106,6 +8107,15 @@
       "entry_price": 1.3314,
       "resting_at": "2026-11-25T20:07:32Z",
       "braam_trade_id": "RENDERUSDT_20261123_CB_001",
+      "status": "RESTING"
+    },
+    "a35049b2-3003-47bf-991a-54b8e76aeb02": {
+      "order_id": "a35049b2-3003-47bf-991a-54b8e76aeb02",
+      "coin": "ETHUSDT",
+      "direction": "Short",
+      "entry_price": 1865.6,
+      "resting_at": "2026-11-26T00:18:11Z",
+      "braam_trade_id": "ETHUSDT_20261118_CJ_001",
       "status": "RESTING"
     }
   },
