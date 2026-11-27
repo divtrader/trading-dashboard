@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-27T06:43:16Z",
+  "updated": "2026-11-27T07:18:25Z",
   "venue": "mexc+kraken",
   "positions": {
     "1414291495": {
@@ -7169,7 +7169,7 @@
       "fill_ids": [
         "fa42deb5-045a-47ff-9c5a-33dde3f4b385"
       ],
-      "unrealized_pnl": 19.804308703618823,
+      "unrealized_pnl": 18.097357864479278,
       "fee_asset": [
         "usd"
       ],
@@ -7343,7 +7343,7 @@
         "f740d536-84d4-429f-9c9e-a5d0519f3c6e",
         "2c849d62-f600-49fc-8049-b83095aa6891"
       ],
-      "unrealized_pnl": 1.5456683269800142,
+      "unrealized_pnl": 0.782139307860028,
       "fee_asset": [
         "usd"
       ],
@@ -7411,7 +7411,7 @@
       "fill_ids": [
         "3fefd6ff-8844-4c16-9e56-3473ed39d983"
       ],
-      "unrealized_pnl": -14.241490066007971,
+      "unrealized_pnl": -13.830186110471997,
       "fee_asset": [
         "usd"
       ],
@@ -7540,7 +7540,7 @@
       "fill_ids": [
         "e39088b8-2c5d-4900-ab8e-57b6c44df853"
       ],
-      "unrealized_pnl": 7.33022638752,
+      "unrealized_pnl": 7.65495507072,
       "resting_at": "2026-11-24T04:07:36Z",
       "fee_asset": [
         "usd"
@@ -7591,28 +7591,30 @@
       "leverage": 3,
       "entry_price": 0.9374,
       "entry_size": 486.0,
-      "exit_size": 0,
+      "exit_size": 486.0,
       "opened_at": "2026-11-25T19:15:34Z",
-      "closed_at": null,
-      "close_price": null,
+      "closed_at": "2026-11-27T07:16:20Z",
+      "close_price": 0.9763,
       "margin_usd": 151.8588,
-      "status": "OPEN",
-      "close_reason": null,
-      "close_fills": null,
-      "pnl_gross_usd": null,
-      "pnl_usd": null,
-      "tag": null,
-      "fees_usd": 0.0911,
-      "funding_usd": null,
+      "status": "CLOSED",
+      "close_reason": "stopped_out",
+      "close_fills": 1,
+      "pnl_gross_usd": -18.9054,
+      "pnl_usd": -19.1038,
+      "tag": "LOSS",
+      "fees_usd": 0.3283,
+      "funding_usd": 0.1299,
       "fill_ids": [
         "094ce345-0f70-4226-8c30-7e8bef91a5a7",
-        "8d7c9236-e1e2-40b9-9b60-f01dbe5eca84"
+        "8d7c9236-e1e2-40b9-9b60-f01dbe5eca84",
+        "10f0292b-03fc-491e-8b59-2af3e26a334a",
+        "78af9297-6326-4a23-a488-8672d4b1bc0c"
       ],
       "unrealized_pnl": -15.71798150478002,
       "fee_asset": [
         "usd"
       ],
-      "pnl_basis": null,
+      "pnl_basis": "net",
       "venue": "kraken"
     },
     "SUIUSDT_20261124_CB_001": {
@@ -7639,7 +7641,7 @@
       "fill_ids": [
         "55e25863-dd6f-4bd8-864b-b65af6fad6e4"
       ],
-      "unrealized_pnl": -15.416317003499977,
+      "unrealized_pnl": -14.820849591300075,
       "fee_asset": [
         "usd"
       ],
@@ -7670,7 +7672,7 @@
       "fill_ids": [
         "90b49e33-97bc-4313-b329-ea08d95bbbfc"
       ],
-      "unrealized_pnl": -14.303195190340002,
+      "unrealized_pnl": -19.074553683710036,
       "fee_asset": [
         "usd"
       ],
@@ -7701,7 +7703,7 @@
       "fill_ids": [
         "b6e25de3-09b3-41d4-af1d-047cd2959692"
       ],
-      "unrealized_pnl": -12.528474265296017,
+      "unrealized_pnl": -15.643329520122023,
       "fee_asset": [
         "usd"
       ],
