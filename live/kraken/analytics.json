@@ -1,38 +1,38 @@
 {
-  "generated_at_utc": "2026-11-27T05:18:32+00:00",
+  "generated_at_utc": "2026-11-27T06:08:02+00:00",
   "venue": "Kraken",
   "all_time": {
-    "total_trades": 13,
+    "total_trades": 14,
     "wins": 4,
-    "losses": 9,
-    "win_rate": 30.8,
-    "total_pnl_usd": -67.22,
-    "avg_pnl_usd": -5.17,
+    "losses": 10,
+    "win_rate": 28.6,
+    "total_pnl_usd": -80.17,
+    "avg_pnl_usd": -5.73,
     "best_usd": 62.14,
     "worst_usd": -44.3,
     "avg_win_usd": 36.45,
-    "avg_loss_usd": -23.67,
-    "expectancy_usd": -5.17,
-    "profit_factor": 0.68,
+    "avg_loss_usd": -22.6,
+    "expectancy_usd": -5.73,
+    "profit_factor": 0.65,
     "longest_win_streak": 3,
     "longest_loss_streak": 5,
-    "current_streak_type": "win",
-    "current_streak_count": 3,
-    "avg_hold_hours": 21.5,
-    "median_hold_hours": 14.6
+    "current_streak_type": "loss",
+    "current_streak_count": 1,
+    "avg_hold_hours": 20.3,
+    "median_hold_hours": 13.4
   },
   "by_system": {
     "John": {
-      "n": 7,
+      "n": 8,
       "wins": 1,
-      "wr": 14.3,
-      "pnl": -112.94,
-      "avg": -16.13,
+      "wr": 12.5,
+      "pnl": -125.89,
+      "avg": -15.74,
       "inception": "2026-11-23",
       "days_active": 5,
-      "pnl_per_day": -22.59,
+      "pnl_per_day": -25.18,
       "status": "active",
-      "open": 4,
+      "open": 3,
       "pending": 5
     },
     "Braam": {
@@ -68,12 +68,12 @@
       "name": "John",
       "inception": "2026-11-23",
       "days_active": 5,
-      "closed": 7,
+      "closed": 8,
       "wins": 1,
-      "wr": 14.3,
-      "pnl": -112.94,
-      "pnl_per_day": -22.59,
-      "open": 4,
+      "wr": 12.5,
+      "pnl": -125.89,
+      "pnl_per_day": -25.18,
+      "open": 3,
       "pending": 5
     },
     {
@@ -104,11 +104,11 @@
   "monthly": [
     {
       "month": "2026-11",
-      "n": 13,
+      "n": 14,
       "wins": 4,
-      "wr": 30.8,
-      "pnl": -67.22,
-      "cumulative_pnl": -67.22
+      "wr": 28.6,
+      "pnl": -80.17,
+      "cumulative_pnl": -80.17
     }
   ],
   "equity_curve": [
@@ -189,6 +189,12 @@
       "pnl": 44.08,
       "cumulative": -67.22,
       "won": true
+    },
+    {
+      "iso": "2026-11-27T06:07:33Z",
+      "pnl": -12.95,
+      "cumulative": -80.17,
+      "won": false
     }
   ],
   "benchmark": {
@@ -247,10 +253,14 @@
       {
         "iso": "2026-11-26",
         "pct": -1.649
+      },
+      {
+        "iso": "2026-11-27",
+        "pct": -1.966
       }
     ],
     "spx": [],
-    "ours_pct": -1.649,
+    "ours_pct": -1.966,
     "spx_pct": null,
     "spx_last_close_iso": null
   },
@@ -263,11 +273,11 @@
       "avg": -17.09
     },
     "Short": {
-      "n": 9,
+      "n": 10,
       "wins": 4,
-      "wr": 44.4,
-      "pnl": 1.14,
-      "avg": 0.13
+      "wr": 40.0,
+      "pnl": -11.81,
+      "avg": -1.18
     }
   },
   "by_conviction": {
@@ -279,11 +289,11 @@
       "avg": 7.62
     },
     "MEDIUM": {
-      "n": 7,
+      "n": 8,
       "wins": 1,
-      "wr": 14.3,
-      "pnl": -112.94,
-      "avg": -16.13
+      "wr": 12.5,
+      "pnl": -125.89,
+      "avg": -15.74
     }
   },
   "by_entry_type": {},
@@ -326,12 +336,12 @@
       "avg": -12.05
     },
     {
-      "coin": "LINK",
+      "coin": "ALGO",
       "n": 1,
       "wins": 0,
       "wr": 0.0,
-      "pnl": -17.07,
-      "avg": -17.07
+      "pnl": -18.38,
+      "avg": -18.38
     }
   ],
   "worst_coins": [
@@ -352,6 +362,14 @@
       "avg": -34.12
     },
     {
+      "coin": "LINK",
+      "n": 2,
+      "wins": 0,
+      "wr": 0.0,
+      "pnl": -30.02,
+      "avg": -15.01
+    },
+    {
       "coin": "APT",
       "n": 1,
       "wins": 0,
@@ -366,14 +384,6 @@
       "wr": 0.0,
       "pnl": -21.24,
       "avg": -21.24
-    },
-    {
-      "coin": "TAO",
-      "n": 2,
-      "wins": 1,
-      "wr": 50.0,
-      "pnl": -19.79,
-      "avg": -9.9
     }
   ],
   "best_trade": {
@@ -399,6 +409,16 @@
     "conviction": "HIGH"
   },
   "recent_closes": [
+    {
+      "trade_id": "LINKUSDT_20261115_CJ_001",
+      "coin": "LINK",
+      "direction": "Short",
+      "system": "John",
+      "pnl_usd": -12.95,
+      "won": false,
+      "close_reason": "engine_close",
+      "iso": "2026-11-27T06:07:33+00:00"
+    },
     {
       "trade_id": "ETHUSDT_20261118_CB_001",
       "coin": "ETH",
@@ -488,24 +508,14 @@
       "won": false,
       "close_reason": "stopped_out",
       "iso": "2026-11-23T14:14:31+00:00"
-    },
-    {
-      "trade_id": "SUIUSDT_20261121_CB_001",
-      "coin": "SUI",
-      "direction": "Short",
-      "system": "Braam",
-      "pnl_usd": -34.12,
-      "won": false,
-      "close_reason": "stopped_out",
-      "iso": "2026-11-23T14:13:40+00:00"
     }
   ],
   "live_positions": {
-    "open_count": 10,
+    "open_count": 9,
     "open_long": 2,
-    "open_short": 8,
+    "open_short": 7,
     "pending_count": 9,
-    "capital_open_usd": 1810.53,
+    "capital_open_usd": 1606.97,
     "capital_pending_usd": 1826.75
   },
   "macro": {
