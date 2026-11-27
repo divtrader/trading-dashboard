@@ -1,9 +1,9 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-11-27T06:07Z",
+  "generated_utc": "2026-11-27T08:07Z",
   "master": "braam",
   "retention_hours": 48,
-  "trade_count": 30,
+  "trade_count": 31,
   "trades": [
     {
       "trade_id": "LINKUSDT_20261115_CJ_001",
@@ -643,16 +643,16 @@
       "sl": 0.97597357,
       "tp1": 0.8953,
       "tp2": 0.8637,
-      "status": "OPEN",
+      "status": "STOPPED",
       "tp1_hit": false,
       "tp2_hit": false,
-      "sl_hit": false,
-      "close_reason": null,
+      "sl_hit": true,
+      "close_reason": "SL hit",
       "date_opened": "2026-11-24",
       "time_opened_utc": "16:03",
       "code_sha": "26e43bcf6b63",
       "sl_mode": "initial",
-      "feed_updated_utc": "2026-11-25T20:02Z",
+      "feed_updated_utc": "2026-11-27T04:00Z",
       "activated_utc": "2026-11-25T20:02Z"
     },
     {
@@ -754,6 +754,31 @@
       "sl_mode": "initial",
       "feed_updated_utc": "2026-11-26T00:00Z",
       "activated_utc": "2026-11-25T16:00Z"
+    },
+    {
+      "trade_id": "LINKUSDT_20261127_CJ_001",
+      "coin": "LINKUSDT",
+      "direction": "Short",
+      "trading_system": "John",
+      "conviction": "MEDIUM",
+      "leverage": 3,
+      "entry_price": 10.3347852,
+      "entry_lo": 9.6529296,
+      "entry_hi": 10.5620704,
+      "sl": 10.5540855,
+      "tp1": 9.39604,
+      "tp2": 7.74882899,
+      "status": "PENDING",
+      "tp1_hit": false,
+      "tp2_hit": false,
+      "sl_hit": false,
+      "close_reason": null,
+      "date_opened": "2026-11-27",
+      "time_opened_utc": "08:02",
+      "code_sha": "d647323dfb70",
+      "sl_mode": "initial",
+      "feed_updated_utc": "2026-11-27T08:02Z",
+      "activated_utc": null
     }
   ]
 }
