@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-27T15:30:19Z",
+  "updated": "2026-11-27T16:08:01Z",
   "venue": "mexc+kraken",
   "positions": {
     "1414291495": {
@@ -7169,7 +7169,7 @@
       "fill_ids": [
         "fa42deb5-045a-47ff-9c5a-33dde3f4b385"
       ],
-      "unrealized_pnl": 37.59000898194182,
+      "unrealized_pnl": 35.51667060889005,
       "fee_asset": [
         "usd"
       ],
@@ -7343,7 +7343,7 @@
         "f740d536-84d4-429f-9c9e-a5d0519f3c6e",
         "2c849d62-f600-49fc-8049-b83095aa6891"
       ],
-      "unrealized_pnl": 15.166814050200031,
+      "unrealized_pnl": 14.131175089200045,
       "fee_asset": [
         "usd"
       ],
@@ -7411,7 +7411,7 @@
       "fill_ids": [
         "3fefd6ff-8844-4c16-9e56-3473ed39d983"
       ],
-      "unrealized_pnl": 11.33782665458398,
+      "unrealized_pnl": 6.458696121927022,
       "fee_asset": [
         "usd"
       ],
@@ -7540,7 +7540,7 @@
       "fill_ids": [
         "e39088b8-2c5d-4900-ab8e-57b6c44df853"
       ],
-      "unrealized_pnl": 4.808167462319993,
+      "unrealized_pnl": 5.351555091359998,
       "resting_at": "2026-11-24T04:07:36Z",
       "fee_asset": [
         "usd"
@@ -7641,7 +7641,7 @@
       "fill_ids": [
         "55e25863-dd6f-4bd8-864b-b65af6fad6e4"
       ],
-      "unrealized_pnl": 2.5335788096999936,
+      "unrealized_pnl": -1.8083540403000342,
       "fee_asset": [
         "usd"
       ],
@@ -7672,7 +7672,7 @@
       "fill_ids": [
         "90b49e33-97bc-4313-b329-ea08d95bbbfc"
       ],
-      "unrealized_pnl": 0.9278161648699497,
+      "unrealized_pnl": -4.327798384840103,
       "fee_asset": [
         "usd"
       ],
@@ -7687,27 +7687,28 @@
       "leverage": 3,
       "entry_price": 1.3314,
       "entry_size": 467.4,
-      "exit_size": 0,
+      "exit_size": 467.4,
       "opened_at": "2026-11-26T02:12:56Z",
-      "closed_at": null,
-      "close_price": null,
+      "closed_at": "2026-11-27T16:07:34Z",
+      "close_price": 1.3838,
       "margin_usd": 207.43212,
-      "status": "OPEN",
-      "close_reason": null,
-      "close_fills": null,
-      "pnl_gross_usd": null,
-      "pnl_usd": null,
-      "tag": null,
-      "fees_usd": 0.1245,
-      "funding_usd": null,
+      "status": "CLOSED",
+      "close_reason": "engine_close",
+      "close_fills": 1,
+      "pnl_gross_usd": -24.49176,
+      "pnl_usd": -24.94506,
+      "tag": "LOSS",
+      "fees_usd": 0.4479,
+      "funding_usd": -0.0054,
       "fill_ids": [
-        "b6e25de3-09b3-41d4-af1d-047cd2959692"
+        "b6e25de3-09b3-41d4-af1d-047cd2959692",
+        "64aaeb4d-e9d6-4ca7-ba8b-e33ceaf7097c"
       ],
       "unrealized_pnl": -16.07413451658008,
       "fee_asset": [
         "usd"
       ],
-      "pnl_basis": null,
+      "pnl_basis": "net",
       "venue": "kraken"
     },
     "LINKUSDT_20261115_CJ_001": {
@@ -8202,6 +8203,15 @@
       "entry_price": 10.335,
       "resting_at": "2026-11-27T08:08:01Z",
       "braam_trade_id": "LINKUSDT_20261127_CJ_001",
+      "status": "RESTING"
+    },
+    "a353a03f-09e7-4038-8c0c-248c3d7df7e0": {
+      "order_id": "a353a03f-09e7-4038-8c0c-248c3d7df7e0",
+      "coin": "ALGOUSDT",
+      "direction": "Short",
+      "entry_price": 0.0846,
+      "resting_at": "2026-11-27T16:07:40Z",
+      "braam_trade_id": "ALGOUSDT_20261124_CJ_001",
       "status": "RESTING"
     }
   },
