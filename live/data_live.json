@@ -2,14 +2,14 @@
   "mode": "live",
   "venue": "kraken",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-11-27T23:44:16Z",
+  "last_updated_iso": "2026-11-28T00:08:14Z",
   "freshness": {
-    "engine_run_iso": "2026-11-27T23:43:44Z",
+    "engine_run_iso": "2026-11-28T00:07:39Z",
     "engine_run_note": null,
     "engine_protect_iso": null,
-    "feed_generated_iso": "2026-11-27T22:06:00Z",
+    "feed_generated_iso": "2026-11-28T00:07:00Z",
     "feed_note": null,
-    "published_iso": "2026-11-27T23:44:16Z",
+    "published_iso": "2026-11-28T00:08:14Z",
     "cadence_min": 60.0,
     "run_warn_min": 80.0,
     "run_urgent_min": 135.0,
@@ -18,9 +18,9 @@
     "publish_urgent_min": 135.0
   },
   "mexc_account": {
-    "unrealized_pnl": 34.3289,
-    "equity": 4048.3968,
-    "available": 3059.1591,
+    "unrealized_pnl": 25.4399,
+    "equity": 4039.7764,
+    "available": 3050.5444,
     "position_margin": 362.7172
   },
   "account_source": "live",
@@ -45,7 +45,7 @@
       "key": "engine_run",
       "tier": 1,
       "label": "Last engine run",
-      "value": "32s ago",
+      "value": "35s ago",
       "status": "ok",
       "action": null
     },
@@ -53,7 +53,7 @@
       "key": "signal_feed",
       "tier": 1,
       "label": "Engine feed",
-      "value": "98 min old",
+      "value": "74s old",
       "status": "ok",
       "action": null
     },
@@ -77,7 +77,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Kraken wallet",
-      "value": "$4,048.40",
+      "value": "$4,039.78",
       "status": "ok",
       "action": null
     },
@@ -493,10 +493,10 @@
       "trade_id": "ALGOUSDT_20261124_CJ_001",
       "coin": "ALGOUSDT",
       "direction": "Short",
-      "entry_price": 0.08460439,
-      "sl": 0.08678183,
-      "tp1": 0.06931508,
-      "tp2": 0.06793634,
+      "entry_price": 0.08840387,
+      "sl": 0.09046606,
+      "tp1": 0.0790417,
+      "tp2": 0.06326788,
       "capital_usd": 196.05,
       "leverage": 3,
       "trading_system": "John",
@@ -697,10 +697,10 @@
       "trade_id": "RENDERUSDT_20261127_CJ_001",
       "coin": "RENDERUSDT",
       "direction": "Long",
-      "entry_price": 1.3535,
-      "sl": 1.31740475,
-      "tp1": 1.51866064,
-      "tp2": 1.55919049,
+      "entry_price": 1.32618627,
+      "sl": 1.29009782,
+      "tp1": 1.4528528,
+      "tp2": 1.58980436,
       "capital_usd": 202.59,
       "leverage": 3,
       "trading_system": "John",
@@ -735,9 +735,9 @@
       "coin": "RENDERUSDT",
       "direction": "Long",
       "trading_system": "John",
-      "entry_price": 1.3535,
-      "tp1": 1.51866064,
-      "sl": 1.31740475,
+      "entry_price": 1.32618627,
+      "tp1": 1.4528528,
+      "sl": 1.29009782,
       "conviction": "MEDIUM",
       "track_only": false,
       "iso": "2026-11-27T20:02:00Z",
@@ -745,6 +745,19 @@
     }
   ],
   "recent_opens": [
+    {
+      "trade_id": "LTCUSDT_20261118_CB_002",
+      "coin": "LTCUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "entry_price": 44.95061478,
+      "live_entry_fill": null,
+      "tp1_hit": false,
+      "iso": "2026-11-28T00:02:00Z",
+      "_iso_ms": 1795824120000,
+      "rehearsal": true,
+      "venue": "mexc"
+    },
     {
       "trade_id": "LTCUSDT_20261118_CB_002",
       "coin": "LTCUSDT",
@@ -5246,7 +5259,7 @@
       "reason": "The engine runs one trade per coin on Kraken and SUI already has one (SUIUSDT_20261124_CB_001 is open).",
       "reason_short": "one trade per coin - slot taken",
       "iso": "2026-11-25T00:07:14Z",
-      "last_seen_iso": "2026-11-27T23:43:44Z"
+      "last_seen_iso": "2026-11-28T00:07:39Z"
     },
     {
       "trade_id": "TAOUSDT_20261124_CB_001",
@@ -5258,7 +5271,7 @@
       "reason": "The engine runs one trade per coin on Kraken and TAO already has one (TAOUSDT_20261124_CJ_001 is resting).",
       "reason_short": "one trade per coin - slot taken",
       "iso": "2026-11-24T20:07:17Z",
-      "last_seen_iso": "2026-11-27T23:43:44Z"
+      "last_seen_iso": "2026-11-28T00:07:39Z"
     },
     {
       "trade_id": "AVAXUSDT_20261123_CJ_002",
@@ -5482,7 +5495,7 @@
   "drift_vs_feed": {
     "available": true,
     "source": "Engine feed (divtrader signals.json)",
-    "feed_generated_utc": "2026-11-27T22:06Z",
+    "feed_generated_utc": "2026-11-28T00:07Z",
     "checked": 18,
     "in_parity": 18,
     "drifting": []
@@ -5490,7 +5503,7 @@
   "drift_vs_master": {
     "available": true,
     "source": "Engine feed (divtrader signals.json)",
-    "feed_generated_utc": "2026-11-27T22:06Z",
+    "feed_generated_utc": "2026-11-28T00:07Z",
     "checked": 18,
     "in_parity": 18,
     "drifting": []
@@ -5498,13 +5511,13 @@
   "drift_vs_db": {
     "available": true,
     "source": "Engine feed (divtrader signals.json)",
-    "feed_generated_utc": "2026-11-27T22:06Z",
+    "feed_generated_utc": "2026-11-28T00:07Z",
     "checked": 18,
     "in_parity": 18,
     "drifting": []
   },
   "vs_mexc": {
-    "updated_iso": "2026-11-27T23:44:16Z",
+    "updated_iso": "2026-11-28T00:08:14Z",
     "trades": [
       {
         "trade_id": "LTCUSDT_20261118_CB_002",
@@ -6091,5 +6104,5 @@
     "mexc",
     "kraken"
   ],
-  "mexc_history_last_updated_iso": "2026-11-27T22:06:52Z"
+  "mexc_history_last_updated_iso": "2026-11-28T00:07:14Z"
 }
