@@ -1,9 +1,9 @@
 {
   "feed_version": 1,
-  "generated_utc": "2026-11-28T10:05Z",
+  "generated_utc": "2026-11-28T12:06Z",
   "master": "braam",
   "retention_hours": 48,
-  "trade_count": 27,
+  "trade_count": 28,
   "trades": [
     {
       "trade_id": "LINKUSDT_20261115_CJ_001",
@@ -678,6 +678,31 @@
       "code_sha": "48ed851b5900",
       "sl_mode": "initial",
       "feed_updated_utc": "2026-11-28T08:02Z",
+      "activated_utc": null
+    },
+    {
+      "trade_id": "ONDOUSDT_20261128_CB_001",
+      "coin": "ONDOUSDT",
+      "direction": "Short",
+      "trading_system": "Braam",
+      "conviction": "MEDIUM",
+      "leverage": 3,
+      "entry_price": 0.28612423,
+      "entry_lo": 0.28469361,
+      "entry_hi": 0.28755486,
+      "sl": 0.29668742,
+      "tp1": 0.24835312,
+      "tp2": 0.19053434,
+      "status": "PENDING",
+      "tp1_hit": false,
+      "tp2_hit": false,
+      "sl_hit": false,
+      "close_reason": null,
+      "date_opened": "2026-11-28",
+      "time_opened_utc": "12:02",
+      "code_sha": "ce7a35044610",
+      "sl_mode": "initial",
+      "feed_updated_utc": "2026-11-28T12:02Z",
       "activated_utc": null
     }
   ]
