@@ -2,14 +2,14 @@
   "mode": "live",
   "venue": "kraken",
   "rehearsal_mode": false,
-  "last_updated_iso": "2026-11-28T02:49:45Z",
+  "last_updated_iso": "2026-11-28T03:18:24Z",
   "freshness": {
-    "engine_run_iso": "2026-11-28T02:49:15Z",
+    "engine_run_iso": "2026-11-28T03:17:54Z",
     "engine_run_note": null,
     "engine_protect_iso": null,
     "feed_generated_iso": "2026-11-28T02:06:00Z",
     "feed_note": null,
-    "published_iso": "2026-11-28T02:49:45Z",
+    "published_iso": "2026-11-28T03:18:24Z",
     "cadence_min": 60.0,
     "run_warn_min": 80.0,
     "run_urgent_min": 135.0,
@@ -18,9 +18,9 @@
     "publish_urgent_min": 135.0
   },
   "mexc_account": {
-    "unrealized_pnl": 44.8791,
-    "equity": 4058.7593,
-    "available": 3069.5282,
+    "unrealized_pnl": 49.4229,
+    "equity": 4063.4619,
+    "available": 3074.2308,
     "position_margin": 362.7172
   },
   "account_source": "live",
@@ -53,7 +53,7 @@
       "key": "signal_feed",
       "tier": 1,
       "label": "Engine feed",
-      "value": "43 min old",
+      "value": "72 min old",
       "status": "ok",
       "action": null
     },
@@ -77,7 +77,7 @@
       "key": "sub_wallet",
       "tier": 1,
       "label": "Kraken wallet",
-      "value": "$4,058.76",
+      "value": "$4,063.46",
       "status": "ok",
       "action": null
     },
@@ -5246,7 +5246,7 @@
       "reason": "The engine runs one trade per coin on Kraken and SUI already has one (SUIUSDT_20261124_CB_001 is open).",
       "reason_short": "one trade per coin - slot taken",
       "iso": "2026-11-25T00:07:14Z",
-      "last_seen_iso": "2026-11-28T02:49:15Z"
+      "last_seen_iso": "2026-11-28T03:17:54Z"
     },
     {
       "trade_id": "TAOUSDT_20261124_CB_001",
@@ -5258,7 +5258,7 @@
       "reason": "The engine runs one trade per coin on Kraken and TAO already has one (TAOUSDT_20261124_CJ_001 is resting).",
       "reason_short": "one trade per coin - slot taken",
       "iso": "2026-11-24T20:07:17Z",
-      "last_seen_iso": "2026-11-28T02:49:15Z"
+      "last_seen_iso": "2026-11-28T03:17:54Z"
     },
     {
       "trade_id": "AVAXUSDT_20261123_CJ_002",
@@ -5504,7 +5504,7 @@
     "drifting": []
   },
   "vs_mexc": {
-    "updated_iso": "2026-11-28T02:49:45Z",
+    "updated_iso": "2026-11-28T03:18:24Z",
     "trades": [
       {
         "trade_id": "LTCUSDT_20261118_CB_002",
